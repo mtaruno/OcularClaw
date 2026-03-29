@@ -6,7 +6,9 @@ const STORAGE_KEYS = {
   apiSettings: "benchmark-lab-api-settings",
   videoUrls: "benchmark-lab-video-urls",
   manualComments: "benchmark-lab-manual-comments",
+  candidateRanks: "benchmark-lab-candidate-ranks",
   theme: "benchmark-lab-theme",
+  selectedMethod: "benchmark-lab-selected-method",
 };
 
 const reviewSheetColumns = [
@@ -39,6 +41,24 @@ const reviewSheetColumns = [
 
 const reviewDecisions = ["accepted", "edited", "rejected"];
 const recommendationModes = ["say", "know", "both"];
+const candidateRankingColumns = [
+  "method_id",
+  "window_id",
+  "conversation_id",
+  "video_name",
+  "trigger_id",
+  "trigger_timestamp",
+  "candidate_id",
+  "candidate_position",
+  "mode",
+  "text",
+  "rationale",
+  "intended_benefit",
+  "model_rank",
+  "human_rank",
+  "selected_top2",
+  "review_notes",
+];
 
 function cn(...values) {
   return values.filter(Boolean).join(" ");
@@ -67,8 +87,12 @@ function rowsToCsv(columns, rows) {
   return [header, ...body].join("\n");
 }
 
-function triggerKey(windowId, triggerId) {
-  return `${windowId}::${triggerId}`;
+function triggerKey(methodId, windowId, triggerId) {
+  return `${methodId}::${windowId}::${triggerId}`;
+}
+
+function candidateKey(methodId, windowId, triggerId, candidateId) {
+  return `${methodId}::${windowId}::${triggerId}::${candidateId}`;
 }
 
 function parseTranscriptLine(line) {
@@ -86,28 +110,54 @@ function parseTranscriptLine(line) {
   };
 }
 
-function buildInitialReviewMap(windows) {
+function buildInitialReviewMap(methods) {
   const next = {};
-  for (const windowEntry of windows) {
-    for (const trigger of windowEntry.triggers) {
-      const key = triggerKey(windowEntry.window_id, trigger.trigger_id);
-      next[key] = {
-        review_decision: trigger.review_decision || "",
-        useful_1: trigger.useful_1 || "",
-        useful_2: trigger.useful_2 || "",
-        grounded: trigger.grounded || "",
-        distinct_pair: trigger.distinct_pair || "",
-        final_trigger_timestamp: trigger.final_trigger_timestamp || trigger.trigger_timestamp || "",
-        final_recommendation_mode:
-          trigger.final_recommendation_mode || trigger.recommendation_mode || "say",
-        final_recommendation_1:
-          trigger.final_recommendation_1 || trigger.recommendation_1 || "",
-        final_recommendation_2:
-          trigger.final_recommendation_2 || trigger.recommendation_2 || "",
-        final_urgency: trigger.final_urgency || trigger.urgency || "",
-        final_rationale: trigger.final_rationale || trigger.rationale || "",
-        review_notes: trigger.review_notes || "",
-      };
+  for (const methodEntry of methods) {
+    for (const windowEntry of methodEntry.windows || []) {
+      for (const trigger of windowEntry.triggers) {
+        const key = triggerKey(methodEntry.id, windowEntry.window_id, trigger.trigger_id);
+        next[key] = {
+          review_decision: trigger.review_decision || "",
+          useful_1: trigger.useful_1 || "",
+          useful_2: trigger.useful_2 || "",
+          grounded: trigger.grounded || "",
+          distinct_pair: trigger.distinct_pair || "",
+          final_trigger_timestamp: trigger.final_trigger_timestamp || trigger.trigger_timestamp || "",
+          final_recommendation_mode:
+            trigger.final_recommendation_mode || trigger.recommendation_mode || "say",
+          final_recommendation_1:
+            trigger.final_recommendation_1 || trigger.recommendation_1 || "",
+          final_recommendation_2:
+            trigger.final_recommendation_2 || trigger.recommendation_2 || "",
+          final_urgency: trigger.final_urgency || trigger.urgency || "",
+          final_rationale: trigger.final_rationale || trigger.rationale || "",
+          review_notes: trigger.review_notes || "",
+        };
+      }
+    }
+  }
+  return next;
+}
+
+function buildInitialCandidateRankMap(methods) {
+  const next = {};
+  for (const methodEntry of methods) {
+    for (const windowEntry of methodEntry.windows || []) {
+      for (const trigger of windowEntry.triggers || []) {
+        for (const candidate of trigger.candidates || []) {
+          const key = candidateKey(
+            methodEntry.id,
+            windowEntry.window_id,
+            trigger.trigger_id,
+            candidate.candidate_id,
+          );
+          next[key] = {
+            human_rank: candidate.human_rank || "",
+            selected_top2: candidate.selected_top2 || "",
+            review_notes: candidate.review_notes || "",
+          };
+        }
+      }
     }
   }
   return next;
@@ -255,12 +305,18 @@ function TextArea({ label, value, onChange, rows = 3, placeholder }) {
 export default function App() {
   const playerRef = useRef(null);
   const [dataset, setDataset] = useState(null);
+  const [selectedMethodId, setSelectedMethodId] = useState(
+    () => localStorage.getItem(STORAGE_KEYS.selectedMethod) || "",
+  );
   const [selectedWindowId, setSelectedWindowId] = useState("");
   const [selectedTriggerId, setSelectedTriggerId] = useState("");
   const [reviewMap, setReviewMap] = useState({});
   const [videoUrls, setVideoUrls] = useState(() => parseJsonStorage(STORAGE_KEYS.videoUrls, {}));
   const [manualComments, setManualComments] = useState(() =>
     parseJsonStorage(STORAGE_KEYS.manualComments, {}),
+  );
+  const [candidateRankMap, setCandidateRankMap] = useState(() =>
+    parseJsonStorage(STORAGE_KEYS.candidateRanks, {}),
   );
   const [apiSettings, setApiSettings] = useState(() =>
     parseJsonStorage(STORAGE_KEYS.apiSettings, {
@@ -291,10 +347,23 @@ export default function App() {
         loadJson("/data/video-manifest.json", {}),
       ]);
       setDataset(labData);
-      const initialWindowId = labData.windows?.[0]?.window_id || "";
+      const methods = labData.methods || [];
+      const initialMethodId =
+        localStorage.getItem(STORAGE_KEYS.selectedMethod) ||
+        labData.default_method_id ||
+        methods[0]?.id ||
+        "";
+      const initialMethod =
+        methods.find((entry) => entry.id === initialMethodId) || methods[0] || { windows: [] };
+      const initialWindowId = initialMethod.windows?.[0]?.window_id || "";
+      setSelectedMethodId(initialMethodId);
       setSelectedWindowId(initialWindowId);
-      setSelectedTriggerId(labData.windows?.[0]?.triggers?.[0]?.trigger_id || "");
-      setReviewMap(buildInitialReviewMap(labData.windows || []));
+      setSelectedTriggerId(initialMethod.windows?.[0]?.triggers?.[0]?.trigger_id || "");
+      setReviewMap(buildInitialReviewMap(methods));
+      setCandidateRankMap((current) => {
+        const seeded = buildInitialCandidateRankMap(methods);
+        return { ...seeded, ...current };
+      });
       setVideoUrls((current) => ({ ...manifest, ...current }));
     }
     bootstrap();
@@ -309,6 +378,10 @@ export default function App() {
   }, [manualComments]);
 
   useEffect(() => {
+    localStorage.setItem(STORAGE_KEYS.candidateRanks, JSON.stringify(candidateRankMap));
+  }, [candidateRankMap]);
+
+  useEffect(() => {
     localStorage.setItem(STORAGE_KEYS.apiSettings, JSON.stringify(apiSettings));
   }, [apiSettings]);
 
@@ -317,7 +390,19 @@ export default function App() {
     document.documentElement.classList.toggle("dark", theme === "dark");
   }, [theme]);
 
-  const windows = dataset?.windows || [];
+  useEffect(() => {
+    if (selectedMethodId) {
+      localStorage.setItem(STORAGE_KEYS.selectedMethod, selectedMethodId);
+    }
+  }, [selectedMethodId]);
+
+  const methods = dataset?.methods || [];
+  const selectedMethod = useMemo(
+    () => methods.find((entry) => entry.id === selectedMethodId) || methods[0] || null,
+    [methods, selectedMethodId],
+  );
+
+  const windows = selectedMethod?.windows || dataset?.windows || [];
 
   const selectedWindow = useMemo(
     () => windows.find((entry) => entry.window_id === selectedWindowId) || windows[0] || null,
@@ -344,13 +429,15 @@ export default function App() {
     [selectedWindow],
   );
 
-  const activeTriggerKey = selectedWindow && selectedTrigger
-    ? triggerKey(selectedWindow.window_id, selectedTrigger.trigger_id)
+  const activeTriggerKey = selectedMethod && selectedWindow && selectedTrigger
+    ? triggerKey(selectedMethod.id, selectedWindow.window_id, selectedTrigger.trigger_id)
     : null;
 
   const activeReviewState = activeTriggerKey
     ? reviewMap[activeTriggerKey] || {}
     : {};
+
+  const selectedCandidates = selectedTrigger?.candidates || [];
 
   const currentWindowComments = selectedWindow
     ? manualComments[selectedWindow.window_id] || []
@@ -403,8 +490,13 @@ export default function App() {
   const exportPayload = useMemo(() => {
     const triggerReviews = windows.flatMap((windowEntry) =>
       windowEntry.triggers.map((trigger) => {
-        const key = triggerKey(windowEntry.window_id, trigger.trigger_id);
+        const key = triggerKey(
+          selectedMethod?.id || "active_method",
+          windowEntry.window_id,
+          trigger.trigger_id,
+        );
         return {
+          method_id: selectedMethod?.id || "active_method",
           window_id: windowEntry.window_id,
           conversation_id: windowEntry.conversation_id,
           video_name: windowEntry.video_name,
@@ -417,6 +509,7 @@ export default function App() {
 
     return {
       updated_at: new Date().toISOString(),
+      method_id: selectedMethod?.id || "active_method",
       windows: windows.map((windowEntry) => ({
         window_id: windowEntry.window_id,
         video_name: windowEntry.video_name,
@@ -425,16 +518,42 @@ export default function App() {
         reviewer_notes: windowEntry.reviewer_notes,
       })),
       trigger_reviews: triggerReviews,
+      candidate_rankings: selectedMethod
+        ? windows.flatMap((windowEntry) =>
+            (windowEntry.triggers || []).flatMap((trigger) =>
+              (trigger.candidates || []).map((candidate) => {
+                const key = candidateKey(
+                  selectedMethod.id,
+                  windowEntry.window_id,
+                  trigger.trigger_id,
+                  candidate.candidate_id,
+                );
+                return {
+                  method_id: selectedMethod.id,
+                  window_id: windowEntry.window_id,
+                  trigger_id: trigger.trigger_id,
+                  candidate_id: candidate.candidate_id,
+                  proposed: candidate,
+                  review: candidateRankMap[key] || {},
+                };
+              }),
+            ),
+          )
+        : [],
       manual_comments: manualComments,
       video_urls: videoUrls,
     };
-  }, [manualComments, reviewMap, videoUrls, windows]);
+  }, [candidateRankMap, manualComments, reviewMap, selectedMethod, videoUrls, windows]);
 
   const reviewSheetRows = useMemo(
     () =>
       windows.flatMap((windowEntry) =>
         windowEntry.triggers.map((trigger) => {
-          const key = triggerKey(windowEntry.window_id, trigger.trigger_id);
+          const key = triggerKey(
+            selectedMethod?.id || "active_method",
+            windowEntry.window_id,
+            trigger.trigger_id,
+          );
           const review = reviewMap[key] || {};
           return {
             window_id: windowEntry.window_id,
@@ -479,7 +598,43 @@ export default function App() {
           };
         }),
       ),
-    [reviewMap, windows],
+    [reviewMap, selectedMethod, windows],
+  );
+
+  const candidateRankingRows = useMemo(
+    () =>
+      windows.flatMap((windowEntry) =>
+        (windowEntry.triggers || []).flatMap((trigger) =>
+          (trigger.candidates || []).map((candidate) => {
+            const key = candidateKey(
+              selectedMethod?.id || "active_method",
+              windowEntry.window_id,
+              trigger.trigger_id,
+              candidate.candidate_id,
+            );
+            const state = candidateRankMap[key] || {};
+            return {
+              method_id: selectedMethod?.id || "active_method",
+              window_id: windowEntry.window_id,
+              conversation_id: windowEntry.conversation_id,
+              video_name: windowEntry.video_name,
+              trigger_id: trigger.trigger_id,
+              trigger_timestamp: trigger.trigger_timestamp ?? "",
+              candidate_id: candidate.candidate_id ?? "",
+              candidate_position: candidate.candidate_position ?? "",
+              mode: candidate.mode ?? "",
+              text: candidate.text ?? "",
+              rationale: candidate.rationale ?? "",
+              intended_benefit: candidate.intended_benefit ?? "",
+              model_rank: candidate.model_rank ?? candidate.candidate_position ?? "",
+              human_rank: state.human_rank ?? "",
+              selected_top2: state.selected_top2 ?? "",
+              review_notes: state.review_notes ?? "",
+            };
+          }),
+        ),
+      ),
+    [candidateRankMap, selectedMethod, windows],
   );
 
   function seekTo(seconds) {
@@ -498,6 +653,25 @@ export default function App() {
       ...current,
       [activeTriggerKey]: {
         ...current[activeTriggerKey],
+        [field]: value,
+      },
+    }));
+  }
+
+  function updateCandidateField(candidateId, field, value) {
+    if (!selectedMethod || !selectedWindow || !selectedTrigger) {
+      return;
+    }
+    const key = candidateKey(
+      selectedMethod.id,
+      selectedWindow.window_id,
+      selectedTrigger.trigger_id,
+      candidateId,
+    );
+    setCandidateRankMap((current) => ({
+      ...current,
+      [key]: {
+        ...current[key],
         [field]: value,
       },
     }));
@@ -619,6 +793,17 @@ export default function App() {
     URL.revokeObjectURL(url);
   }
 
+  function downloadCandidateRankingCsv() {
+    const csvText = rowsToCsv(candidateRankingColumns, candidateRankingRows);
+    const blob = new Blob([csvText], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = "egocom_candidate_rankings_from_frontend.csv";
+    anchor.click();
+    URL.revokeObjectURL(url);
+  }
+
   if (!selectedWindow) {
     return <div className="p-10 text-sm text-slate-500">Loading benchmark lab...</div>;
   }
@@ -633,6 +818,11 @@ export default function App() {
             <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
               Review proactive recommendation triggers against transcript context, video, and scorecard feedback.
             </p>
+            {selectedMethod ? (
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-labPurple">
+                {selectedMethod.label}
+              </p>
+            ) : null}
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -642,6 +832,28 @@ export default function App() {
             >
               {theme === "dark" ? "Light Mode" : "Dark Mode"}
             </button>
+            <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Method
+            </label>
+            <select
+              value={selectedMethod?.id || ""}
+              onChange={(event) => {
+                const nextMethodId = event.target.value;
+                setSelectedMethodId(nextMethodId);
+                const nextMethod = methods.find((entry) => entry.id === nextMethodId);
+                const nextWindow = nextMethod?.windows?.[0];
+                setSelectedWindowId(nextWindow?.window_id || "");
+                setSelectedTriggerId(nextWindow?.triggers?.[0]?.trigger_id || "");
+                setGeneratedDraft(null);
+              }}
+              className="min-w-[220px] rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-labPurple focus:ring-2 focus:ring-purple-100 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:focus:ring-purple-900/40"
+            >
+              {methods.map((entry) => (
+                <option key={entry.id} value={entry.id}>
+                  {entry.label}
+                </option>
+              ))}
+            </select>
             <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
               Window ID
             </label>
@@ -868,7 +1080,7 @@ export default function App() {
 
         <Panel
           title="Transcript & AI Drafting"
-          subtitle={`${selectedWindow.triggers.length} AI triggers for this window`}
+          subtitle={`${selectedWindow.triggers.length} AI decision points for this window`}
           action={
             <button
               type="button"
@@ -947,6 +1159,100 @@ export default function App() {
                     </div>
                     <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">{selectedTrigger.rationale}</p>
                   </div>
+                </div>
+              </div>
+            ) : null}
+
+            {selectedTrigger && selectedCandidates.length ? (
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+                      Candidate Recommendations
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                      Rank these by usefulness for the wearer at this fixed trigger anchor.
+                    </p>
+                  </div>
+                  <span className="rounded-full bg-purple-50 px-3 py-1 text-xs font-semibold text-labPurple dark:bg-purple-950/40">
+                    {selectedCandidates.length} candidates
+                  </span>
+                </div>
+                <div className="mt-4 space-y-3">
+                  {selectedCandidates.map((candidate) => {
+                    const state =
+                      candidateRankMap[
+                        candidateKey(
+                          selectedMethod?.id || "active_method",
+                          selectedWindow.window_id,
+                          selectedTrigger.trigger_id,
+                          candidate.candidate_id,
+                        )
+                      ] || {};
+                    return (
+                      <div
+                        key={candidate.candidate_id}
+                        className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50"
+                      >
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                          <div>
+                            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                              {candidate.candidate_id} · model rank {candidate.model_rank || candidate.candidate_position}
+                            </div>
+                            <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                              {candidate.mode} · intended benefit: {candidate.intended_benefit || "n/a"}
+                            </div>
+                          </div>
+                          <div className="flex flex-wrap items-center gap-3">
+                            <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                              Human Rank
+                            </label>
+                            <select
+                              value={state.human_rank || ""}
+                              onChange={(event) =>
+                                updateCandidateField(candidate.candidate_id, "human_rank", event.target.value)
+                              }
+                              className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-labPurple focus:ring-2 focus:ring-purple-100 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:focus:ring-purple-900/40"
+                            >
+                              <option value="">Unranked</option>
+                              {selectedCandidates.map((_, index) => (
+                                <option key={index + 1} value={String(index + 1)}>
+                                  {index + 1}
+                                </option>
+                              ))}
+                            </select>
+                            <label className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
+                              <input
+                                type="checkbox"
+                                checked={state.selected_top2 === "1"}
+                                onChange={(event) =>
+                                  updateCandidateField(
+                                    candidate.candidate_id,
+                                    "selected_top2",
+                                    event.target.checked ? "1" : "0",
+                                  )
+                                }
+                              />
+                              Top-2
+                            </label>
+                          </div>
+                        </div>
+                        <p className="mt-3 text-sm text-slate-900 dark:text-slate-100">{candidate.text}</p>
+                        {candidate.rationale ? (
+                          <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">{candidate.rationale}</p>
+                        ) : null}
+                        <textarea
+                          value={state.review_notes || ""}
+                          onChange={(event) =>
+                            updateCandidateField(candidate.candidate_id, "review_notes", event.target.value)
+                          }
+                          rows={2}
+                          placeholder="Why this candidate deserves its rank."
+                          className="mt-3 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-labPurple focus:ring-2 focus:ring-purple-100 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:focus:ring-purple-900/40"
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ) : null}
@@ -1190,7 +1496,11 @@ export default function App() {
               </div>
               <div className="max-h-[360px] space-y-3 overflow-auto px-4 py-4">
                 {selectedWindow.triggers.map((trigger) => {
-                  const key = triggerKey(selectedWindow.window_id, trigger.trigger_id);
+                  const key = triggerKey(
+                    selectedMethod?.id || "active_method",
+                    selectedWindow.window_id,
+                    trigger.trigger_id,
+                  );
                   const state = reviewMap[key] || {};
                   return (
                     <button
@@ -1241,6 +1551,13 @@ export default function App() {
             {exportPreview ? "Review state saved locally." : "Save progress into a local JSON export object."}
           </div>
           <div className="flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              onClick={downloadCandidateRankingCsv}
+              className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-600"
+            >
+              Download Candidate CSV
+            </button>
             <button
               type="button"
               onClick={downloadReviewCsv}

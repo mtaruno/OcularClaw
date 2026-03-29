@@ -173,6 +173,54 @@ python3 scripts/summarize_trigger_review.py \
 There is also a Jupyter notebook for exploratory analysis:
 - `notebooks/egocom_eda.ipynb`
 
+## Recommendation Experiment
+
+This repo now also includes an experiment runner for comparing recommendation
+quality at fixed trigger anchors from the current pilot.
+
+Design doc:
+- `docs/ocularclaw_recommendation_pipeline.md`
+- `prompts/ocularclaw_recommendation_experiment_schemas.md`
+
+Runner:
+- `scripts/run_ocularclaw_recommendation_experiment.py`
+
+The comparison is:
+- `direct2_from_anchors`: use the current-pilot trigger anchor, build local context up to that moment, and directly generate the final two recommendations
+- `generate5_from_anchors`: use the same fixed trigger anchor, build local context up to that moment, and generate five candidates for human reranking
+
+Dry-run the pipeline to inspect context slicing:
+
+```bash
+python3 scripts/run_ocularclaw_recommendation_experiment.py \
+  --input-windows analysis/egocom_annotation_windows_test_host_enriched.csv \
+  --output-dir analysis/experiment_runs \
+  --limit 1 \
+  --dry-run
+```
+
+Run the anchor-based experiment with an OpenAI-compatible endpoint:
+
+```bash
+python3 scripts/run_ocularclaw_recommendation_experiment.py \
+  --input-windows analysis/egocom_annotation_windows_test_host_enriched.csv \
+  --output-dir analysis/experiment_runs \
+  --methods direct2_from_anchors,generate5_from_anchors \
+  --candidate-count 5 \
+  --context-seconds 20
+```
+
+Outputs are written per method:
+- `*_window_reviews.csv`
+- `*_triggers.csv`
+- `*_candidates.csv` for candidate-generation methods
+- `*_review_sheet.csv`
+- `*_raw.jsonl`
+
+That means you can review the direct baseline and the generate-5 candidate set
+separately using the same manual rubric, while still relying on the current
+pilot annotations internally as the trigger-anchor source.
+
 ## Benchmark Lab Frontend
 
 This repo now includes a local React + Vite + Tailwind review app for benchmark

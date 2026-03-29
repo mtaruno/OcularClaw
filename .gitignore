@@ -40,3 +40,7 @@ public/window-clips/
 *.tmp
 *.swp
 *.swo
+
+# Generated benchmark experiment artifacts
+analysis/experiment_runs/
+analysis/archive/legacy_experiments/

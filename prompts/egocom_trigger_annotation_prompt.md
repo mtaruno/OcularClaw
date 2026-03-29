@@ -18,9 +18,7 @@ Important rules:
 - Do not invent facts not supported by the conversation.
 - Do not give generic coaching.
 - The two recommendations for a trigger must be distinct.
-- Treat a trigger as valid whenever a timely suggestion would improve the wearer's
-  participation, awareness, clarity, follow-up, or conversational performance,
-  even if the conversation is informal.
+- Treat a trigger as valid whenever a timely suggestion would improve the wearer's participation, awareness, clarity, follow-up, or conversational performance, even if the conversation is informal.
 
 Recommendation modes:
 - `say`: both recommendations are things the wearer could say
@@ -87,6 +85,7 @@ Use `has_triggers` if:
 - the wearer is missing or about to miss something useful
 - a well-timed suggestion or informational pointer would improve performance
 - a better question, observation, clarification, or internal note would help the wearer engage more effectively
+- these triggers are not allowed to use future knowledge, but can use all available context up to the trigger timestamp
 
 Prefer `1-2` well-grounded triggers over many weak ones, but do not force a fixed number.
 

@@ -12,6 +12,12 @@ def load_csv(path):
         return list(csv.DictReader(handle))
 
 
+def load_csv_if_exists(path):
+    if not path.exists():
+        return []
+    return load_csv(path)
+
+
 def parse_transcript_lines(transcript_text):
     lines = []
     for raw_line in transcript_text.splitlines():
@@ -108,37 +114,115 @@ def build_context_intro(window_row):
     }
 
 
-def main():
-    repo_root = Path(__file__).resolve().parents[1]
-    windows_path = repo_root / "analysis" / "egocom_annotation_windows_test_host_ai_proposed.csv"
-    triggers_path = repo_root / "analysis" / "egocom_trigger_annotations_ai_proposed.csv"
-    review_path = repo_root / "analysis" / "egocom_trigger_review_sheet.csv"
-    output_path = repo_root / "public" / "data" / "benchmark-lab.json"
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-
-    windows = load_csv(windows_path)
-    triggers = load_csv(triggers_path)
-    review_rows = load_csv(review_path)
+def build_method_bundle(
+    base_windows,
+    trigger_rows,
+    review_rows,
+    window_review_rows,
+    method_id,
+    label,
+    candidate_rows=None,
+):
     review_by_key = {
         f"{row['window_id']}::{row['trigger_id']}": row
         for row in review_rows
     }
+    candidates_by_key = {}
+    for row in candidate_rows or []:
+        key = f"{row['window_id']}::{row['trigger_id']}"
+        candidates_by_key.setdefault(key, []).append(row)
+    for values in candidates_by_key.values():
+        values.sort(key=lambda item: int(item.get("candidate_position", "999") or "999"))
+    window_review_by_id = {row["window_id"]: row for row in window_review_rows}
 
     grouped = {}
-    for window_row in windows:
-        grouped[window_row["window_id"]] = {
-            **window_row,
-            "context_intro": build_context_intro(window_row),
-            "triggers": [],
-        }
+    for base_window in base_windows:
+        merged_window = dict(base_window)
+        overlay = window_review_by_id.get(base_window["window_id"], {})
+        for key in ("review_status", "trigger_decision", "reviewer_notes"):
+            if overlay.get(key) is not None and overlay.get(key) != "":
+                merged_window[key] = overlay[key]
+        merged_window["context_intro"] = build_context_intro(merged_window)
+        merged_window["triggers"] = []
+        grouped[base_window["window_id"]] = merged_window
 
-    for trigger_row in triggers:
+    for trigger_row in trigger_rows:
         key = f"{trigger_row['window_id']}::{trigger_row['trigger_id']}"
         review = review_by_key.get(key, {})
-        grouped[trigger_row["window_id"]]["triggers"].append({**trigger_row, **review})
+        if trigger_row["window_id"] not in grouped:
+            continue
+        grouped[trigger_row["window_id"]]["triggers"].append(
+            {
+                **trigger_row,
+                **review,
+                "candidates": candidates_by_key.get(key, []),
+            }
+        )
+
+    return {
+        "id": method_id,
+        "label": label,
+        "windows": list(grouped.values()),
+    }
+
+
+def main():
+    repo_root = Path(__file__).resolve().parents[1]
+    base_windows_path = repo_root / "analysis" / "egocom_annotation_windows_test_host_enriched.csv"
+    windows_path = repo_root / "analysis" / "egocom_annotation_windows_test_host_ai_proposed.csv"
+    triggers_path = repo_root / "analysis" / "egocom_trigger_annotations_ai_proposed.csv"
+    review_path = repo_root / "analysis" / "egocom_trigger_review_sheet.csv"
+    experiment_dir = repo_root / "analysis" / "experiment_runs"
+    output_path = repo_root / "public" / "data" / "benchmark-lab.json"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    base_windows = load_csv(base_windows_path)
+
+    anchor_source_bundle = build_method_bundle(
+        base_windows=base_windows,
+        trigger_rows=load_csv(triggers_path),
+        review_rows=load_csv(review_path),
+        window_review_rows=load_csv(windows_path),
+        method_id="anchor_source",
+        label="Anchor Source",
+        candidate_rows=[],
+    )
+    methods = []
+
+    experiment_specs = [
+        ("direct2_from_anchors", "Direct-2 From Anchors"),
+        ("generate5_from_anchors", "Generate-5 From Anchors"),
+    ]
+    for method_id, label in experiment_specs:
+        method_windows_path = experiment_dir / f"{method_id}_window_reviews.csv"
+        method_triggers_path = experiment_dir / f"{method_id}_triggers.csv"
+        method_review_path = experiment_dir / f"{method_id}_review_sheet.csv"
+        method_candidates_path = experiment_dir / f"{method_id}_candidates.csv"
+        if not (method_windows_path.exists() and method_triggers_path.exists()):
+            continue
+        methods.append(
+            build_method_bundle(
+                base_windows=base_windows,
+                trigger_rows=load_csv(method_triggers_path),
+                review_rows=load_csv_if_exists(method_review_path),
+                window_review_rows=load_csv(method_windows_path),
+                method_id=method_id,
+                label=label,
+                candidate_rows=load_csv_if_exists(method_candidates_path),
+            )
+        )
+
+    if not methods:
+        methods = [anchor_source_bundle]
 
     payload = {
-        "windows": list(grouped.values()),
+        "default_method_id": methods[0]["id"],
+        "methods": methods,
+        "windows": methods[0]["windows"],
+        "anchor_source": {
+            "method_id": anchor_source_bundle["id"],
+            "label": anchor_source_bundle["label"],
+        },
     }
     output_path.write_text(json.dumps(payload, indent=2))
     print(f"wrote benchmark lab dataset to {output_path}")
