@@ -135,12 +135,6 @@ The first method comparison should be:
 - build local context up to that trigger moment
 - directly generate the final two recommendations
 
-### Candidate-generation method: `generate5_from_anchors`
-- use the same fixed trigger anchor
-- build trigger-safe local context up to that moment
-- generate five recommendation candidates
-- let a human reviewer rank them and select the best pair
-
 ## Metrics
 
 Use the existing review rubric:
@@ -159,8 +153,8 @@ Derived comparison metrics:
 
 ## Thesis Framing
 
-This pipeline supports a stronger thesis claim:
+This minimum viable pipeline supports a cleaner thesis claim:
 
-OcularClaw is not only a benchmark-construction workflow. It is an anchor-based
-recommendation-generation pipeline that compares direct recommendation
-generation against broader candidate generation under the same trigger context.
+OcularClaw is an anchor-based recommendation-generation benchmark that tests
+whether a model can produce two grounded and useful recommendations from
+context available only up to a fixed trigger moment.

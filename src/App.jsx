@@ -6,7 +6,6 @@ const STORAGE_KEYS = {
   apiSettings: "benchmark-lab-api-settings",
   videoUrls: "benchmark-lab-video-urls",
   manualComments: "benchmark-lab-manual-comments",
-  candidateRanks: "benchmark-lab-candidate-ranks",
   theme: "benchmark-lab-theme",
   selectedMethod: "benchmark-lab-selected-method",
 };
@@ -41,24 +40,6 @@ const reviewSheetColumns = [
 
 const reviewDecisions = ["accepted", "edited", "rejected"];
 const recommendationModes = ["say", "know", "both"];
-const candidateRankingColumns = [
-  "method_id",
-  "window_id",
-  "conversation_id",
-  "video_name",
-  "trigger_id",
-  "trigger_timestamp",
-  "candidate_id",
-  "candidate_position",
-  "mode",
-  "text",
-  "rationale",
-  "intended_benefit",
-  "model_rank",
-  "human_rank",
-  "selected_top2",
-  "review_notes",
-];
 
 function cn(...values) {
   return values.filter(Boolean).join(" ");
@@ -89,10 +70,6 @@ function rowsToCsv(columns, rows) {
 
 function triggerKey(methodId, windowId, triggerId) {
   return `${methodId}::${windowId}::${triggerId}`;
-}
-
-function candidateKey(methodId, windowId, triggerId, candidateId) {
-  return `${methodId}::${windowId}::${triggerId}::${candidateId}`;
 }
 
 function parseTranscriptLine(line) {
@@ -133,30 +110,6 @@ function buildInitialReviewMap(methods) {
           final_rationale: trigger.final_rationale || trigger.rationale || "",
           review_notes: trigger.review_notes || "",
         };
-      }
-    }
-  }
-  return next;
-}
-
-function buildInitialCandidateRankMap(methods) {
-  const next = {};
-  for (const methodEntry of methods) {
-    for (const windowEntry of methodEntry.windows || []) {
-      for (const trigger of windowEntry.triggers || []) {
-        for (const candidate of trigger.candidates || []) {
-          const key = candidateKey(
-            methodEntry.id,
-            windowEntry.window_id,
-            trigger.trigger_id,
-            candidate.candidate_id,
-          );
-          next[key] = {
-            human_rank: candidate.human_rank || "",
-            selected_top2: candidate.selected_top2 || "",
-            review_notes: candidate.review_notes || "",
-          };
-        }
       }
     }
   }
@@ -315,9 +268,6 @@ export default function App() {
   const [manualComments, setManualComments] = useState(() =>
     parseJsonStorage(STORAGE_KEYS.manualComments, {}),
   );
-  const [candidateRankMap, setCandidateRankMap] = useState(() =>
-    parseJsonStorage(STORAGE_KEYS.candidateRanks, {}),
-  );
   const [apiSettings, setApiSettings] = useState(() =>
     parseJsonStorage(STORAGE_KEYS.apiSettings, {
       baseUrl: "https://openrouter.ai/api/v1",
@@ -360,10 +310,6 @@ export default function App() {
       setSelectedWindowId(initialWindowId);
       setSelectedTriggerId(initialMethod.windows?.[0]?.triggers?.[0]?.trigger_id || "");
       setReviewMap(buildInitialReviewMap(methods));
-      setCandidateRankMap((current) => {
-        const seeded = buildInitialCandidateRankMap(methods);
-        return { ...seeded, ...current };
-      });
       setVideoUrls((current) => ({ ...manifest, ...current }));
     }
     bootstrap();
@@ -376,10 +322,6 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem(STORAGE_KEYS.manualComments, JSON.stringify(manualComments));
   }, [manualComments]);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.candidateRanks, JSON.stringify(candidateRankMap));
-  }, [candidateRankMap]);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEYS.apiSettings, JSON.stringify(apiSettings));
@@ -436,8 +378,6 @@ export default function App() {
   const activeReviewState = activeTriggerKey
     ? reviewMap[activeTriggerKey] || {}
     : {};
-
-  const selectedCandidates = selectedTrigger?.candidates || [];
 
   const currentWindowComments = selectedWindow
     ? manualComments[selectedWindow.window_id] || []
@@ -518,32 +458,10 @@ export default function App() {
         reviewer_notes: windowEntry.reviewer_notes,
       })),
       trigger_reviews: triggerReviews,
-      candidate_rankings: selectedMethod
-        ? windows.flatMap((windowEntry) =>
-            (windowEntry.triggers || []).flatMap((trigger) =>
-              (trigger.candidates || []).map((candidate) => {
-                const key = candidateKey(
-                  selectedMethod.id,
-                  windowEntry.window_id,
-                  trigger.trigger_id,
-                  candidate.candidate_id,
-                );
-                return {
-                  method_id: selectedMethod.id,
-                  window_id: windowEntry.window_id,
-                  trigger_id: trigger.trigger_id,
-                  candidate_id: candidate.candidate_id,
-                  proposed: candidate,
-                  review: candidateRankMap[key] || {},
-                };
-              }),
-            ),
-          )
-        : [],
       manual_comments: manualComments,
       video_urls: videoUrls,
     };
-  }, [candidateRankMap, manualComments, reviewMap, selectedMethod, videoUrls, windows]);
+  }, [manualComments, reviewMap, selectedMethod, videoUrls, windows]);
 
   const reviewSheetRows = useMemo(
     () =>
@@ -601,42 +519,6 @@ export default function App() {
     [reviewMap, selectedMethod, windows],
   );
 
-  const candidateRankingRows = useMemo(
-    () =>
-      windows.flatMap((windowEntry) =>
-        (windowEntry.triggers || []).flatMap((trigger) =>
-          (trigger.candidates || []).map((candidate) => {
-            const key = candidateKey(
-              selectedMethod?.id || "active_method",
-              windowEntry.window_id,
-              trigger.trigger_id,
-              candidate.candidate_id,
-            );
-            const state = candidateRankMap[key] || {};
-            return {
-              method_id: selectedMethod?.id || "active_method",
-              window_id: windowEntry.window_id,
-              conversation_id: windowEntry.conversation_id,
-              video_name: windowEntry.video_name,
-              trigger_id: trigger.trigger_id,
-              trigger_timestamp: trigger.trigger_timestamp ?? "",
-              candidate_id: candidate.candidate_id ?? "",
-              candidate_position: candidate.candidate_position ?? "",
-              mode: candidate.mode ?? "",
-              text: candidate.text ?? "",
-              rationale: candidate.rationale ?? "",
-              intended_benefit: candidate.intended_benefit ?? "",
-              model_rank: candidate.model_rank ?? candidate.candidate_position ?? "",
-              human_rank: state.human_rank ?? "",
-              selected_top2: state.selected_top2 ?? "",
-              review_notes: state.review_notes ?? "",
-            };
-          }),
-        ),
-      ),
-    [candidateRankMap, selectedMethod, windows],
-  );
-
   function seekTo(seconds) {
     const clipSeconds = absoluteToClipSeconds(seconds);
     if (playerRef.current && Number.isFinite(clipSeconds)) {
@@ -653,25 +535,6 @@ export default function App() {
       ...current,
       [activeTriggerKey]: {
         ...current[activeTriggerKey],
-        [field]: value,
-      },
-    }));
-  }
-
-  function updateCandidateField(candidateId, field, value) {
-    if (!selectedMethod || !selectedWindow || !selectedTrigger) {
-      return;
-    }
-    const key = candidateKey(
-      selectedMethod.id,
-      selectedWindow.window_id,
-      selectedTrigger.trigger_id,
-      candidateId,
-    );
-    setCandidateRankMap((current) => ({
-      ...current,
-      [key]: {
-        ...current[key],
         [field]: value,
       },
     }));
@@ -789,17 +652,6 @@ export default function App() {
     const anchor = document.createElement("a");
     anchor.href = url;
     anchor.download = "egocom_trigger_review_sheet_from_frontend.csv";
-    anchor.click();
-    URL.revokeObjectURL(url);
-  }
-
-  function downloadCandidateRankingCsv() {
-    const csvText = rowsToCsv(candidateRankingColumns, candidateRankingRows);
-    const blob = new Blob([csvText], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = "egocom_candidate_rankings_from_frontend.csv";
     anchor.click();
     URL.revokeObjectURL(url);
   }
@@ -1163,100 +1015,6 @@ export default function App() {
               </div>
             ) : null}
 
-            {selectedTrigger && selectedCandidates.length ? (
-              <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">
-                      Candidate Recommendations
-                    </h3>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                      Rank these by usefulness for the wearer at this fixed trigger anchor.
-                    </p>
-                  </div>
-                  <span className="rounded-full bg-purple-50 px-3 py-1 text-xs font-semibold text-labPurple dark:bg-purple-950/40">
-                    {selectedCandidates.length} candidates
-                  </span>
-                </div>
-                <div className="mt-4 space-y-3">
-                  {selectedCandidates.map((candidate) => {
-                    const state =
-                      candidateRankMap[
-                        candidateKey(
-                          selectedMethod?.id || "active_method",
-                          selectedWindow.window_id,
-                          selectedTrigger.trigger_id,
-                          candidate.candidate_id,
-                        )
-                      ] || {};
-                    return (
-                      <div
-                        key={candidate.candidate_id}
-                        className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50"
-                      >
-                        <div className="flex flex-wrap items-center justify-between gap-3">
-                          <div>
-                            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                              {candidate.candidate_id} · model rank {candidate.model_rank || candidate.candidate_position}
-                            </div>
-                            <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                              {candidate.mode} · intended benefit: {candidate.intended_benefit || "n/a"}
-                            </div>
-                          </div>
-                          <div className="flex flex-wrap items-center gap-3">
-                            <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                              Human Rank
-                            </label>
-                            <select
-                              value={state.human_rank || ""}
-                              onChange={(event) =>
-                                updateCandidateField(candidate.candidate_id, "human_rank", event.target.value)
-                              }
-                              className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-labPurple focus:ring-2 focus:ring-purple-100 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:focus:ring-purple-900/40"
-                            >
-                              <option value="">Unranked</option>
-                              {selectedCandidates.map((_, index) => (
-                                <option key={index + 1} value={String(index + 1)}>
-                                  {index + 1}
-                                </option>
-                              ))}
-                            </select>
-                            <label className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
-                              <input
-                                type="checkbox"
-                                checked={state.selected_top2 === "1"}
-                                onChange={(event) =>
-                                  updateCandidateField(
-                                    candidate.candidate_id,
-                                    "selected_top2",
-                                    event.target.checked ? "1" : "0",
-                                  )
-                                }
-                              />
-                              Top-2
-                            </label>
-                          </div>
-                        </div>
-                        <p className="mt-3 text-sm text-slate-900 dark:text-slate-100">{candidate.text}</p>
-                        {candidate.rationale ? (
-                          <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">{candidate.rationale}</p>
-                        ) : null}
-                        <textarea
-                          value={state.review_notes || ""}
-                          onChange={(event) =>
-                            updateCandidateField(candidate.candidate_id, "review_notes", event.target.value)
-                          }
-                          rows={2}
-                          placeholder="Why this candidate deserves its rank."
-                          className="mt-3 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-labPurple focus:ring-2 focus:ring-purple-100 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:focus:ring-purple-900/40"
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ) : null}
-
             <details className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
               <summary className="cursor-pointer list-none text-sm font-semibold text-slate-800 dark:text-slate-100">
                 Lab Settings
@@ -1551,13 +1309,6 @@ export default function App() {
             {exportPreview ? "Review state saved locally." : "Save progress into a local JSON export object."}
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <button
-              type="button"
-              onClick={downloadCandidateRankingCsv}
-              className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-600"
-            >
-              Download Candidate CSV
-            </button>
             <button
               type="button"
               onClick={downloadReviewCsv}

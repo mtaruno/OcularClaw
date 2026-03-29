@@ -185,9 +185,8 @@ Design doc:
 Runner:
 - `scripts/run_ocularclaw_recommendation_experiment.py`
 
-The comparison is:
-- `direct2_from_anchors`: use the current-pilot trigger anchor, build local context up to that moment, and directly generate the final two recommendations
-- `generate5_from_anchors`: use the same fixed trigger anchor, build local context up to that moment, and generate five candidates for human reranking
+The active method is:
+- `direct2_from_anchors`: use the reviewed trigger anchor, build local context up to that moment, and directly generate the final two recommendations
 
 Dry-run the pipeline to inspect context slicing:
 
@@ -205,21 +204,18 @@ Run the anchor-based experiment with an OpenAI-compatible endpoint:
 python3 scripts/run_ocularclaw_recommendation_experiment.py \
   --input-windows analysis/egocom_annotation_windows_test_host_enriched.csv \
   --output-dir analysis/experiment_runs \
-  --methods direct2_from_anchors,generate5_from_anchors \
-  --candidate-count 5 \
+  --methods direct2_from_anchors \
   --context-seconds 20
 ```
 
-Outputs are written per method:
+Outputs are written as:
 - `*_window_reviews.csv`
 - `*_triggers.csv`
-- `*_candidates.csv` for candidate-generation methods
 - `*_review_sheet.csv`
 - `*_raw.jsonl`
 
-That means you can review the direct baseline and the generate-5 candidate set
-separately using the same manual rubric, while still relying on the current
-pilot annotations internally as the trigger-anchor source.
+This keeps the benchmark simple: fixed trigger anchor, local context up to that
+moment, and exactly two generated recommendations for human review.
 
 ## Benchmark Lab Frontend
 

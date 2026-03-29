@@ -1,10 +1,13 @@
 # OcularClaw Recommendation Experiment Schemas
 
-This note records the JSON structures used by the anchor-based experiment runner
-in `scripts/run_ocularclaw_recommendation_experiment.py`.
+This note records the JSON structure used by the minimum viable anchor-based
+recommendation experiment runner in
+`scripts/run_ocularclaw_recommendation_experiment.py`.
 
-The current benchmark compares recommendation quality at fixed trigger anchors
-from the current pilot.
+The active benchmark task is:
+- take a reviewed trigger anchor
+- construct only the local context available up to that trigger time
+- generate exactly two recommendations for human review
 
 ## Direct-2 From Anchors Output
 
@@ -18,30 +21,14 @@ from the current pilot.
 }
 ```
 
-## Generate-5 Candidates Output
-
-```json
-{
-  "candidates": [
-    {
-      "candidate_id": "c1",
-      "mode": "say",
-      "text": "",
-      "rationale": "",
-      "intended_benefit": ""
-    }
-  ]
-}
-```
-
 ## Review Workflow
 
-Each method run writes:
+Each run writes:
 - a trigger CSV compatible with the existing benchmark artifact schema
-- a candidate CSV for ranking-oriented methods
 - a review sheet CSV compatible with the existing manual rubric
 - a raw JSONL trace for debugging and analysis
 
-This keeps the comparison between `direct2_from_anchors` and
-`generate5_from_anchors` inside the same reviewer workflow already used in the
-thesis.
+This keeps the benchmark focused on one clear question:
+given a fixed trigger moment and only the context available up to that point,
+can the method generate two useful, grounded, and non-redundant
+recommendations?

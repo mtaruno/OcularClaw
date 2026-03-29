@@ -191,7 +191,6 @@ def main():
 
     experiment_specs = [
         ("direct2_from_anchors", "Direct-2 From Anchors"),
-        ("generate5_from_anchors", "Generate-5 From Anchors"),
     ]
     for method_id, label in experiment_specs:
         method_windows_path = experiment_dir / f"{method_id}_window_reviews.csv"

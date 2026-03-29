@@ -332,36 +332,6 @@ def build_review_rows(trigger_rows: list[dict[str, str]]) -> list[dict[str, str]
     return rows
 
 
-def build_candidate_record(
-    row: dict[str, str],
-    trigger_id: str,
-    trigger_timestamp: float,
-    candidate: dict[str, object],
-    position: int,
-    annotation_status: str,
-) -> dict[str, str]:
-    mode = str(candidate.get("mode", "both")).strip().lower()
-    if mode not in VALID_RECOMMENDATION_MODES:
-        mode = "both"
-    return {
-        "window_id": row["window_id"],
-        "conversation_id": row["conversation_id"],
-        "video_name": row["video_name"],
-        "start_sec": row["start_sec"],
-        "end_sec": row["end_sec"],
-        "trigger_id": trigger_id,
-        "trigger_timestamp": f"{trigger_timestamp:.2f}",
-        "candidate_id": str(candidate.get("candidate_id") or f"c{position}"),
-        "candidate_position": str(position),
-        "mode": mode,
-        "text": str(candidate.get("text", "")).strip(),
-        "rationale": str(candidate.get("rationale", "")).strip(),
-        "intended_benefit": str(candidate.get("intended_benefit", "")).strip(),
-        "annotation_status": annotation_status,
-        "model_rank": str(position),
-    }
-
-
 def load_anchor_rows(review_sheet_path: str | None, triggers_path: str | None) -> list[dict[str, str]]:
     anchors: list[dict[str, str]] = []
     if review_sheet_path and Path(review_sheet_path).exists():
@@ -407,42 +377,6 @@ def index_anchors_by_window(anchor_rows: list[dict[str, str]]) -> dict[str, list
     for values in grouped.values():
         values.sort(key=lambda item: float(item.get("trigger_timestamp", 0) or 0))
     return grouped
-
-
-def candidate_generation_prompts(context_packet: dict[str, object], candidate_count: int) -> tuple[str, str]:
-    system_prompt = (
-        "You generate candidate proactive recommendations for OcularClaw. "
-        "Return JSON only. "
-        "Use only the provided local context packet and help the wearer directly. "
-        "You are acting online at the trigger moment and cannot see or infer future transcript content."
-    )
-    user_prompt = f"""You are given a local context packet for one trigger candidate.
-
-Context packet:
-{json.dumps(context_packet, ensure_ascii=True, indent=2)}
-
-Task:
-- Generate exactly {candidate_count} candidate recommendations for this trigger.
-- Each candidate must have mode, text, rationale, and intended_benefit.
-- mode must be say, know, or both.
-- Recommendations must be specific, grounded, and immediately useful.
-- Do not use any information beyond the packet.
-- Do not use or infer any future transcript content after the trigger timestamp.
-- Avoid generic coaching.
-
-Return JSON in this shape:
-{{
-  "candidates": [
-    {{
-      "candidate_id": "c1",
-      "mode": "say",
-      "text": "",
-      "rationale": "",
-      "intended_benefit": ""
-    }}
-  ]
-}}"""
-    return system_prompt, user_prompt
 
 
 def direct2_anchor_prompts(context_packet: dict[str, object]) -> tuple[str, str]:
@@ -541,88 +475,6 @@ def run_direct2_from_anchors(
     return review, triggers, [], {"anchors": raw_anchors}
 
 
-def run_generate5_from_anchors(
-    row: dict[str, str],
-    turns: list[dict[str, object]],
-    anchor_rows: list[dict[str, str]],
-    base_url: str,
-    api_key: str,
-    model: str,
-    temperature: float,
-    candidate_count: int,
-    context_seconds: float,
-    timeout_seconds: float,
-    retry_count: int,
-) -> tuple[dict[str, str], list[dict[str, str]], list[dict[str, str]], dict]:
-    review = {
-        "window_id": row["window_id"],
-        "review_status": "reviewed",
-        "trigger_decision": "has_triggers" if anchor_rows else "no_trigger",
-        "reviewer_notes": "Candidate ranking evaluated on fixed current-pilot anchors.",
-    }
-    if not anchor_rows:
-        return review, [], [], {"anchors": []}
-
-    triggers: list[dict[str, str]] = []
-    candidate_rows: list[dict[str, str]] = []
-    raw_anchors: list[dict[str, object]] = []
-    for anchor in anchor_rows:
-        trigger_timestamp = float(anchor["trigger_timestamp"])
-        context_packet = build_local_context_packet(row, turns, trigger_timestamp, context_seconds)
-        system_prompt, user_prompt = candidate_generation_prompts(context_packet, candidate_count)
-        payload = call_chat_completion(
-            base_url,
-            api_key,
-            model,
-            system_prompt,
-            user_prompt,
-            temperature,
-            timeout_seconds,
-            retry_count,
-        )
-        candidates = payload.get("candidates", [])[:candidate_count]
-        if not candidates:
-            continue
-        for position, candidate in enumerate(candidates, start=1):
-            candidate_rows.append(
-                build_candidate_record(
-                    row=row,
-                    trigger_id=str(anchor.get("trigger_id") or f"anchor_{len(triggers) + 1}"),
-                    trigger_timestamp=trigger_timestamp,
-                    candidate=candidate,
-                    position=position,
-                    annotation_status="proposed_by_ai__generate5_from_anchors",
-                )
-            )
-        first = candidates[0]
-        second = candidates[1] if len(candidates) > 1 else candidates[0]
-        triggers.append(
-            build_trigger_record(
-                row=row,
-                trigger_id=str(anchor.get("trigger_id") or f"anchor_{len(triggers) + 1}"),
-                trigger_timestamp=trigger_timestamp,
-                recommendation_mode=combine_modes(
-                    [str(first.get("mode", "")), str(second.get("mode", ""))]
-                ),
-                recommendation_1=str(first.get("text", "")),
-                recommendation_2=str(second.get("text", "")),
-                urgency="medium",
-                rationale="Candidate set generated for human reranking at a fixed trigger anchor.",
-                annotation_status="proposed_by_ai__generate5_from_anchors",
-            )
-        )
-        raw_anchors.append(
-            {
-                "anchor": anchor,
-                "context_packet": context_packet,
-                "generated": payload,
-            }
-        )
-    if not triggers:
-        review["trigger_decision"] = "no_trigger"
-    return review, triggers, candidate_rows, {"anchors": raw_anchors}
-
-
 def method_filenames(output_dir: Path, method_name: str) -> dict[str, Path]:
     return {
         "window_reviews": output_dir / f"{method_name}_window_reviews.csv",
@@ -642,7 +494,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--api-key", default=None)
     parser.add_argument("--model", default=None)
     parser.add_argument("--temperature", type=float, default=0.3)
-    parser.add_argument("--methods", default="direct2_from_anchors,generate5_from_anchors")
+    parser.add_argument("--methods", default="direct2_from_anchors")
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--window-ids", default="")
     parser.add_argument(
@@ -653,7 +505,6 @@ def parse_args() -> argparse.Namespace:
         "--anchor-triggers",
         default="/Users/matthewtaruno/Dev/OcularClaw/analysis/egocom_trigger_annotations_ai_proposed.csv",
     )
-    parser.add_argument("--candidate-count", type=int, default=5)
     parser.add_argument("--context-seconds", type=float, default=20.0)
     parser.add_argument("--request-timeout", type=float, default=180.0)
     parser.add_argument("--retry-count", type=int, default=1)
@@ -733,23 +584,9 @@ def main() -> int:
                         timeout_seconds=args.request_timeout,
                         retry_count=args.retry_count,
                     )
-                elif method == "generate5_from_anchors":
-                    review, trigger_rows, candidate_chunk, raw_payload = run_generate5_from_anchors(
-                        row=row,
-                        turns=turns,
-                        anchor_rows=window_anchors,
-                        base_url=base_url,
-                        api_key=api_key,
-                        model=model,
-                        temperature=args.temperature,
-                        candidate_count=args.candidate_count,
-                        context_seconds=args.context_seconds,
-                        timeout_seconds=args.request_timeout,
-                        retry_count=args.retry_count,
-                    )
                 else:
                     raise ValueError(
-                        f"unsupported method: {method}. Supported methods are direct2_from_anchors and generate5_from_anchors."
+                        f"unsupported method: {method}. Supported methods are direct2_from_anchors."
                     )
             except Exception as exc:
                 if args.stop_on_error:
