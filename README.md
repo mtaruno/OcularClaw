@@ -220,8 +220,17 @@ conversational moment warrants a proactive recommendation.
 
 ### Setup
 
+Activate the project virtualenv (located at `.venv` in the repo root):
+
 ```bash
-pip3 install faster-whisper sounddevice numpy
+cd /path/to/OcularClaw
+source .venv/bin/activate
+```
+
+Install audio and transcription dependencies if not already present:
+
+```bash
+pip install faster-whisper sounddevice numpy
 ```
 
 Configure your `.env` with an OpenAI-compatible endpoint:
@@ -232,17 +241,47 @@ OPENAI_BASE_URL=https://api.openai.com/v1
 OPENAI_MODEL=gpt-4.1-mini
 ```
 
-### Running
+The first run downloads the Whisper model (~150MB). After that it loads instantly.
+
+### Running — live mic
 
 ```bash
 python3 scripts/run_live_proactive_agent.py --duration 300
 ```
 
+Speak into your mic. Every `--check-interval` seconds the agent checks the rolling
+transcript and either stays silent or fires a recommendation.
+
+```bash
+# Longer session with persona context and saved log
+python3 scripts/run_live_proactive_agent.py \
+  --duration 600 \
+  --check-interval 15 \
+  --persona "PhD student defending thesis to committee" \
+  --save-log
+```
+
+### Running — scenario replay (no mic needed)
+
+Feed a benchmark scenario transcript directly. Useful for testing models without speaking.
+
+```bash
+# List available scenario IDs (pass any unknown id to see the list)
+python3 scripts/run_live_proactive_agent.py --scenario list
+
+# Replay a specific scenario
+python3 scripts/run_live_proactive_agent.py \
+  --scenario salary_negotiation_01 \
+  --save-log
+```
+
 Options:
-- `--duration` — session length in seconds (default 120)
+- `--duration` — session length in seconds for live mic mode (default 120)
 - `--persona` — wearer role context (e.g., "senior engineer in a sprint standup")
-- `--check-interval` — seconds between LLM checks (default 8)
-- `--chunk-seconds` — audio chunk length for transcription (default 3)
+- `--check-interval` — seconds between LLM checks (default 10)
+- `--chunk-seconds` — audio chunk length for transcription (default 5)
+- `--scenario` — scenario ID from `scenario_transcripts.json` for replay mode
+- `--save-log` — save session JSON to `analysis/live_sessions/`
 
 ### How it works
 
