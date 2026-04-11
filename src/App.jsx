@@ -1395,59 +1395,139 @@ export default function App() {
                 Transcript
               </div>
               <div className="max-h-[720px] space-y-2 overflow-auto px-4 py-4">
-                {transcriptLines.map((line, index) => {
-                  const activeSeconds = Number(
-                    activeReviewState.final_trigger_timestamp || selectedTrigger?.trigger_timestamp,
-                  );
-                  const highlighted =
-                    line.seconds !== null && Number.isFinite(activeSeconds)
-                      ? Math.abs(line.seconds - activeSeconds) <= 1.5
-                      : false;
-                  return (
-                    <button
-                      key={`${line.raw}-${index}`}
-                      type="button"
-                      onClick={() => {
-                        if (line.seconds !== null) {
-                          seekTo(line.seconds);
-                          setDraftComment((current) => ({
-                            ...current,
-                            timestamp: String(line.seconds),
-                          }));
-                        }
-                      }}
-                      className={cn(
-                        "block w-full rounded-xl border px-4 py-3 text-left transition",
-                        highlighted
-                          ? "border-purple-200 bg-purple-50 shadow-sm dark:border-purple-900/50 dark:bg-purple-950/30"
-                          : "border-transparent bg-white hover:border-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:hover:border-slate-800 dark:hover:bg-slate-950/50",
-                      )}
-                    >
-                      <div className="flex gap-3 text-sm">
-                        <span
-                          className={cn(
-                            "min-w-[86px] font-mono text-xs",
-                            highlighted ? "text-labPurple" : "text-slate-400 dark:text-slate-500",
-                          )}
-                        >
-                          {line.seconds !== null
-                            ? hasWindowClip
-                              ? `${absoluteToClipSeconds(line.seconds).toFixed(2)}s`
-                              : `${line.seconds.toFixed(2)}s`
-                            : "note"}
-                        </span>
-                        <div>
-                          {line.speaker ? (
-                            <span className="mr-2 font-semibold text-slate-700 dark:text-slate-300">{line.speaker}</span>
-                          ) : null}
-                          <span className={highlighted ? "text-slate-900 dark:text-slate-100" : "text-slate-700 dark:text-slate-300"}>
-                            {line.text}
+                {(() => {
+                  // Build a map of trigger insertions: after which transcript line index should we show each trigger?
+                  const triggers = selectedWindow?.triggers || [];
+                  const triggerInsertMap = {};
+                  for (const trigger of triggers) {
+                    const triggerSec = Number(trigger.trigger_timestamp);
+                    if (!Number.isFinite(triggerSec)) continue;
+                    // Find the last transcript line at or before the trigger timestamp
+                    let bestIdx = -1;
+                    for (let i = 0; i < transcriptLines.length; i++) {
+                      if (transcriptLines[i].seconds !== null && transcriptLines[i].seconds <= triggerSec + 0.5) {
+                        bestIdx = i;
+                      }
+                    }
+                    if (bestIdx === -1) bestIdx = 0;
+                    if (!triggerInsertMap[bestIdx]) triggerInsertMap[bestIdx] = [];
+                    triggerInsertMap[bestIdx].push(trigger);
+                  }
+
+                  const elements = [];
+                  transcriptLines.forEach((line, index) => {
+                    const activeSeconds = Number(
+                      activeReviewState.final_trigger_timestamp || selectedTrigger?.trigger_timestamp,
+                    );
+                    const highlighted =
+                      line.seconds !== null && Number.isFinite(activeSeconds)
+                        ? Math.abs(line.seconds - activeSeconds) <= 1.5
+                        : false;
+                    elements.push(
+                      <button
+                        key={`line-${index}`}
+                        type="button"
+                        onClick={() => {
+                          if (line.seconds !== null) {
+                            seekTo(line.seconds);
+                            setDraftComment((current) => ({
+                              ...current,
+                              timestamp: String(line.seconds),
+                            }));
+                          }
+                        }}
+                        className={cn(
+                          "block w-full rounded-xl border px-4 py-3 text-left transition",
+                          highlighted
+                            ? "border-purple-200 bg-purple-50 shadow-sm dark:border-purple-900/50 dark:bg-purple-950/30"
+                            : "border-transparent bg-white hover:border-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:hover:border-slate-800 dark:hover:bg-slate-950/50",
+                        )}
+                      >
+                        <div className="flex gap-3 text-sm">
+                          <span
+                            className={cn(
+                              "min-w-[86px] font-mono text-xs",
+                              highlighted ? "text-labPurple" : "text-slate-400 dark:text-slate-500",
+                            )}
+                          >
+                            {line.seconds !== null
+                              ? hasWindowClip
+                                ? `${absoluteToClipSeconds(line.seconds).toFixed(2)}s`
+                                : `${line.seconds.toFixed(2)}s`
+                              : "note"}
                           </span>
+                          <div>
+                            {line.speaker ? (
+                              <span className="mr-2 font-semibold text-slate-700 dark:text-slate-300">{line.speaker}</span>
+                            ) : null}
+                            <span className={highlighted ? "text-slate-900 dark:text-slate-100" : "text-slate-700 dark:text-slate-300"}>
+                              {line.text}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </button>
-                  );
-                })}
+                      </button>,
+                    );
+
+                    // Insert inline trigger cards after this line
+                    if (triggerInsertMap[index]) {
+                      for (const trigger of triggerInsertMap[index]) {
+                        const isSelected = trigger.trigger_id === selectedTrigger?.trigger_id;
+                        const urgencyColors = { low: "border-blue-300 bg-blue-50 dark:border-blue-800 dark:bg-blue-950/40", medium: "border-amber-300 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/40", high: "border-rose-300 bg-rose-50 dark:border-rose-800 dark:bg-rose-950/40" };
+                        const urgencyBorder = urgencyColors[trigger.urgency] || urgencyColors.medium;
+                        elements.push(
+                          <button
+                            key={`trigger-${trigger.trigger_id}`}
+                            type="button"
+                            onClick={() => setSelectedTriggerId(trigger.trigger_id)}
+                            className={cn(
+                              "block w-full rounded-xl border-2 px-4 py-3 text-left transition",
+                              isSelected ? "border-purple-400 bg-purple-50 ring-2 ring-purple-200 dark:border-purple-500 dark:bg-purple-950/40 dark:ring-purple-800" : urgencyBorder,
+                            )}
+                          >
+                            <div className="flex items-center gap-2 text-xs">
+                              <span className="rounded-full bg-purple-100 px-2 py-0.5 font-bold text-purple-700 dark:bg-purple-900/60 dark:text-purple-300">
+                                AGENT
+                              </span>
+                              <span className="font-mono text-slate-500">{trigger.trigger_timestamp}s</span>
+                              <span className="rounded-full bg-slate-200 px-2 py-0.5 font-semibold text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+                                {trigger.recommendation_mode}
+                              </span>
+                              {trigger.proactive_score !== "" && trigger.proactive_score != null && (
+                                <span className="rounded-full bg-amber-100 px-2 py-0.5 font-semibold text-amber-700 dark:bg-amber-900/60 dark:text-amber-300">
+                                  {trigger.proactive_score}/5
+                                </span>
+                              )}
+                              {trigger.signal_type && (
+                                <span className="rounded-full bg-rose-100 px-2 py-0.5 font-semibold text-rose-600 dark:bg-rose-900/60 dark:text-rose-300">
+                                  {trigger.signal_type}
+                                </span>
+                              )}
+                              <span className="rounded-full bg-slate-200 px-2 py-0.5 font-semibold text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+                                {trigger.urgency}
+                              </span>
+                            </div>
+                            <div className="mt-2 grid gap-1.5">
+                              <div className="flex gap-2 text-sm">
+                                <span className="font-bold text-cyan-600 dark:text-cyan-400">1:</span>
+                                <span className="text-slate-800 dark:text-slate-200">{trigger.recommendation_1}</span>
+                              </div>
+                              <div className="flex gap-2 text-sm">
+                                <span className="font-bold text-cyan-600 dark:text-cyan-400">2:</span>
+                                <span className="text-slate-800 dark:text-slate-200">{trigger.recommendation_2}</span>
+                              </div>
+                            </div>
+                            {trigger.rationale && (
+                              <p className="mt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                {trigger.rationale}
+                              </p>
+                            )}
+                          </button>,
+                        );
+                      }
+                    }
+                  });
+                  return elements;
+                })()}
               </div>
             </div>
           </div>
