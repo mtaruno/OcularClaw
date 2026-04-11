@@ -230,25 +230,46 @@ pipeline-compatible files:
 
 ### Using the benchmark
 
-1. **Batch evaluation** — run different models on the same scenarios:
+1. **Run models on scenarios** — compare models back-to-back:
+
+```bash
+python3 scripts/run_live_proactive_agent.py \
+  --scenario work_negotiation_01 \
+  --models "gpt-4.1-mini,gpt-4o,o3-mini" \
+  --save-log
+```
+
+2. **Import results into the frontend** — makes model outputs reviewable:
+
+```bash
+python3 scripts/import_model_runs.py
+```
+
+This reads `compare_*.json` logs from `analysis/live_sessions/` and merges them
+into `benchmark-lab-scenarios.json` as additional methods. The frontend then shows
+a method switcher: Ground Truth / gpt-4.1-mini / gpt-4o / etc.
+
+3. **Human review** — score each model's outputs in the benchmark lab:
+
+```bash
+npm run dev
+```
+
+Switch between methods using the dropdown. The reviewer stays on the same scenario
+when switching methods, making side-by-side comparison easy.
+
+4. **Export scores** — download per-reviewer CSV for analysis:
+
+The exported CSV includes `method_id` so scores are tied to specific models.
+Collect CSVs from multiple reviewers for inter-annotator agreement analysis.
+
+5. **Batch evaluation** (alternative) — use the experiment runner:
 
 ```bash
 python3 scripts/run_ocularclaw_recommendation_experiment.py \
   --input-windows analysis/live_scenarios/scenario_windows.csv \
   --anchor-triggers analysis/live_scenarios/scenario_triggers.csv \
   --output-dir analysis/scenario_runs/
-```
-
-2. **Live role-play testing** — speak the P1 lines into your mic:
-
-```bash
-python3 scripts/run_live_proactive_agent.py --duration 300
-```
-
-3. **Frontend review** — inspect in the benchmark lab:
-
-```bash
-npm run dev
 ```
 
 ### Evaluation criteria

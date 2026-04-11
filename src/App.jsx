@@ -21,6 +21,7 @@ function reviewerKey(baseKey, reviewerId) {
 
 const reviewSheetColumns = [
   "reviewer_id",
+  "method_id",
   "window_id",
   "conversation_id",
   "video_name",
@@ -961,7 +962,10 @@ export default function App() {
                     const nextMethodId = event.target.value;
                     setSelectedMethodId(nextMethodId);
                     const nextMethod = methods.find((entry) => entry.id === nextMethodId);
-                    const nextWindow = nextMethod?.windows?.[0];
+                    // Try to stay on the same scenario window when switching methods
+                    const currentWindowId = selectedWindow?.window_id;
+                    const sameWindow = currentWindowId && nextMethod?.windows?.find((w) => w.window_id === currentWindowId);
+                    const nextWindow = sameWindow || nextMethod?.windows?.[0];
                     setSelectedWindowId(nextWindow?.window_id || "");
                     setSelectedTriggerId(nextWindow?.triggers?.[0]?.trigger_id || "");
                     setGeneratedDraft(null);
@@ -1463,6 +1467,17 @@ export default function App() {
                         {selectedTrigger.proactive_score !== "" && selectedTrigger.proactive_score != null && (
                           <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-700 dark:bg-amber-950/50 dark:text-amber-400">
                             score {selectedTrigger.proactive_score}/5
+                          </span>
+                        )}
+                        {selectedTrigger.signal_type && (
+                          <span className="ml-2 rounded-full bg-rose-100 px-2 py-0.5 text-xs font-semibold text-rose-700 dark:bg-rose-950/50 dark:text-rose-400">
+                            {selectedTrigger.signal_type}
+                          </span>
+                        )}
+                        {selectedTrigger.wearer_goal && (
+                          <span className="ml-2 text-xs text-slate-500 dark:text-slate-400">
+                            goal: {selectedTrigger.wearer_goal}
+                            {selectedTrigger.goal_type ? ` [${selectedTrigger.goal_type}]` : ""}
                           </span>
                         )}
                       </p>
