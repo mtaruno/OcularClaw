@@ -391,7 +391,8 @@ def load_scenario(scenario_id: str, scenario_file: str | None, repo_root: Path) 
     ]
     for path in candidates:
         if path and path.exists():
-            scenarios = json.loads(path.read_text())
+            data = json.loads(path.read_text())
+            scenarios = data["scenarios"] if isinstance(data, dict) and "scenarios" in data else data
             for s in scenarios:
                 if s["id"] == scenario_id:
                     return s
