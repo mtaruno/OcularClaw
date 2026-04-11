@@ -1,0 +1,234 @@
+{
+  "version": "0.1",
+  "description": "Full role-play transcripts for 12 real-world proactive agent scenarios. P1 is always the wearer. Trigger timestamps mark where the agent SHOULD intervene.",
+  "scenarios": [
+    {
+      "id": "work_standup_01",
+      "category": "work_meeting",
+      "title": "Sprint standup — forgot to mention a blocker",
+      "participants": ["P1", "P2", "P3"],
+      "wearer": "P1",
+      "duration_seconds": 60,
+      "transcript_text": "[00:00.00] P2: Alright, let's do standup. P1 you're up first.\n[00:03.50] P1: Yeah so yesterday I finished the auth migration, pushed the PR, got it reviewed. Today I'm starting on the dashboard refactor.\n[00:11.20] P2: Nice. Any blockers?\n[00:13.00] P1: Uh no I think I'm good.\n[00:15.50] P2: Cool. P3 you're up.\n[00:17.00] P3: So I was working on the notification service. I actually need the new user schema from the API team before I can finish the event triggers.\n[00:25.30] P2: Got it, I'll ping the API team after standup. Anything else?\n[00:28.00] P3: That's it for me.\n[00:30.00] P2: Alright, I was working on the deployment pipeline yesterday. Today I'm going to set up the staging environment. I think we're on track for the sprint goal.\n[00:40.00] P1: Actually wait, I just remembered, the dashboard refactor depends on the new analytics endpoint. Has that been deployed yet?\n[00:48.50] P2: Uh, I don't think so. That's the API team too right?\n[00:51.00] P1: Yeah. So I might actually be blocked on that.\n[00:54.00] P2: Okay let me add that to the list. You should have mentioned that earlier.\n[00:57.00] P1: Yeah sorry, slipped my mind.",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "trigger_timestamp": 13.00,
+          "recommendation_mode": "know",
+          "expected_recommendation": "You mentioned the dashboard refactor depends on the analytics endpoint — that hasn't been deployed yet. You may be blocked.",
+          "urgency": "medium",
+          "rationale": "P1 said no blockers but the dashboard refactor likely has dependencies. Agent should prompt the wearer to think about dependencies before the conversation moves on."
+        }
+      ]
+    },
+    {
+      "id": "work_interview_01",
+      "category": "job_interview",
+      "title": "Behavioral interview — STAR method gap",
+      "participants": ["P1", "P2"],
+      "wearer": "P1",
+      "duration_seconds": 75,
+      "transcript_text": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.\n[00:42.00] P2: That sounds structured. What happened?\n[00:44.00] P1: We ended up going with a modular monolith approach that gave us the clean separation the backend team wanted but without the operational overhead that concerned the frontend team. Everyone felt heard and we moved forward.\n[00:57.00] P2: Interesting. And what was the outcome?\n[01:00.00] P1: I mean everyone was happy with the decision. We moved on and built the thing.\n[01:05.00] P2: Can you quantify the impact at all?\n[01:07.00] P1: Uh, well we shipped the platform on time which was good.",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "trigger_timestamp": 57.00,
+          "recommendation_mode": "know",
+          "expected_recommendation": "You told the Situation, Task, and Action well but haven't quantified the Result. Consider mentioning: delivery timeline, team velocity improvement, reduction in cross-team conflicts, or stakeholder feedback.",
+          "urgency": "medium",
+          "rationale": "P1 is finishing their STAR answer but the Result is vague. In behavioral interviews, quantified outcomes are critical. Agent should nudge before the interviewer has to ask."
+        }
+      ]
+    },
+    {
+      "id": "work_negotiation_01",
+      "category": "negotiation",
+      "title": "Salary negotiation — anchoring opportunity",
+      "participants": ["P1", "P2"],
+      "wearer": "P1",
+      "duration_seconds": 90,
+      "transcript_text": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.\n[00:53.00] P1: I understand bands can be tight. Would it help if we talked about the total comp? I'm also interested in equity and the signing bonus if that's on the table.\n[01:03.00] P2: Yeah absolutely. We can do 20K in RSUs vesting over four years and I might be able to get a 10K signing bonus approved.\n[01:12.00] P1: That's helpful. What about the base though? Could we meet at 155?\n[01:17.00] P2: Let me take that back to the comp team. I think 150 base might be doable.\n[01:22.00] P1: I could work with 150 if we can firm up the equity and signing bonus.",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "trigger_timestamp": 22.00,
+          "recommendation_mode": "know",
+          "expected_recommendation": "Don't respond to the number yet. For senior SWE roles in this market, $150-170K base is standard. Let them know you need to evaluate the full package and avoid anchoring to their number.",
+          "urgency": "high",
+          "rationale": "P1 is in a critical moment — about to respond to the initial offer. Responding too quickly or accepting the frame can cost tens of thousands. Agent should provide market context and tactical advice."
+        }
+      ]
+    },
+    {
+      "id": "social_dinner_01",
+      "category": "social",
+      "title": "Dinner party — dietary restriction someone mentioned earlier",
+      "participants": ["P1", "P2", "P3"],
+      "wearer": "P1",
+      "duration_seconds": 90,
+      "transcript_text": "[00:00.00] P3: Yeah so I've been trying to eat more plant-based lately. Actually I went fully vegetarian about three months ago.\n[00:07.00] P2: Oh nice, how's that going?\n[00:09.00] P3: It's been great honestly. I feel a lot more energy. The hardest part is eating out because a lot of places don't have great options.\n[00:16.00] P2: Yeah I can imagine.\n[00:18.00] P1: That's cool. I tried doing meatless Mondays for a while but couldn't stick with it.\n[00:23.00] P3: Ha, that's how it started for me too.\n[00:26.00] P2: So what should we do for dinner tonight? I'm starving.\n[00:30.00] P1: Oh yeah, let me think. There's this new place that opened up on Main Street.\n[00:35.00] P2: Which one?\n[00:36.50] P1: The Argentine steakhouse. I heard it's amazing. They do this whole wood-fired grill thing.\n[00:42.00] P2: Oh I've seen that place, the reviews are incredible.\n[00:45.00] P3: Um, yeah I've heard of it.\n[00:48.00] P1: Should I make a reservation? They might be busy on a Friday.\n[00:52.00] P3: I mean, do they have non-meat options? Because you know I'm vegetarian.\n[00:57.00] P1: Oh right, sorry, I totally forgot. Okay let me think of somewhere else.\n[01:01.00] P2: What about that Mediterranean place? They have tons of veggie stuff.\n[01:05.00] P3: Oh yeah, I love that place.\n[01:07.00] P1: Perfect, let's do that.",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "trigger_timestamp": 36.50,
+          "recommendation_mode": "know",
+          "expected_recommendation": "P3 mentioned they went vegetarian three months ago (at 00:00). A steakhouse may not work for them — consider suggesting a restaurant with good vegetarian options.",
+          "urgency": "medium",
+          "rationale": "P1 is about to suggest a restaurant that conflicts with information shared 36 seconds ago. Agent should catch the inconsistency before it becomes socially awkward."
+        }
+      ]
+    },
+    {
+      "id": "work_client_01",
+      "category": "client_meeting",
+      "title": "Client call — promising a deadline you can't meet",
+      "participants": ["P1", "P2", "P3"],
+      "wearer": "P1",
+      "duration_seconds": 75,
+      "transcript_text": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?\n[00:24.50] P1: June 1st. Yeah I think we can make that work. Let me just double check with the team but that should be doable.\n[00:32.00] P3: Actually I think we should talk about scope first. What exactly do you need in the custom dashboard?\n[00:38.00] P2: We need to be able to create our own views with drag and drop widgets, filter by date range, and export to PDF.\n[00:45.00] P3: Okay that's pretty full-featured. The drag and drop alone is probably two sprints.\n[00:50.00] P1: Well we could probably do a simplified version first. Maybe predefined layouts with customizable widgets.\n[00:56.00] P2: Hmm, I mean we really need the drag and drop. That's the whole point.\n[01:00.00] P1: Okay let me talk to the engineering lead and get back to you with a realistic timeline.\n[01:05.00] P2: Sure. Just let us know by end of week.\n[01:08.00] P1: Will do.",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "trigger_timestamp": 24.50,
+          "recommendation_mode": "both",
+          "expected_recommendation": "Be careful about committing to June 1st before understanding scope. Consider saying: 'Let me understand exactly what you need first so I can give you an accurate timeline.'",
+          "urgency": "high",
+          "rationale": "P1 is about to commit to a deadline without knowing the full scope. Overcommitting to clients damages trust more than saying 'let me check.' Agent should intervene before the commitment is made."
+        }
+      ]
+    },
+    {
+      "id": "academic_defense_01",
+      "category": "academic",
+      "title": "Thesis defense — dodging a question",
+      "participants": ["P1", "P2", "P3"],
+      "wearer": "P1",
+      "duration_seconds": 90,
+      "transcript_text": "[00:00.00] P2: Thank you for the presentation. I have a question about your methodology. How do you account for selection bias in your participant sample?\n[00:08.50] P1: Great question. So our participants were recruited through university mailing lists and social media. We had a diverse sample spanning ages 18 to 45, roughly balanced gender split, and we included participants from multiple departments.\n[00:22.00] P2: Right, but those are all university-affiliated people. How does that affect the generalizability of your findings?\n[00:28.00] P1: Well we did try to include some non-student participants. About 30 percent of our sample were staff and faculty rather than students.\n[00:36.00] P2: But they're still university-affiliated. My question is specifically about selection bias. People who respond to study recruitment emails are fundamentally different from people who don't.\n[00:46.00] P1: Right, I see what you're saying. So our study design was validated against similar protocols in the literature. Smith et al 2022 used a very similar recruitment strategy and their findings were replicated across three different institutional settings.\n[00:59.00] P3: I think Professor Chen is asking whether you acknowledge this as a limitation and how it might bound your claims.\n[01:05.00] P1: Yes, absolutely. It is a limitation. We discuss it in Section 5.3. We note that our findings should be interpreted within the context of university populations and that further work is needed with more diverse recruitment strategies.\n[01:18.00] P2: Thank you. That's the kind of direct acknowledgment I was looking for.",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "trigger_timestamp": 46.00,
+          "recommendation_mode": "know",
+          "expected_recommendation": "You're not directly answering the selection bias question. The professor is asking about self-selection bias (who chooses to respond), not demographic diversity. Consider directly acknowledging it as a limitation.",
+          "urgency": "high",
+          "rationale": "P1 has now deflected twice — first by talking about demographics, then by citing another study. The committee member is getting more pointed. Agent should flag that P1 is dodging the core question."
+        }
+      ]
+    },
+    {
+      "id": "medical_visit_01",
+      "category": "medical",
+      "title": "Doctor visit — forgot to mention a symptom",
+      "participants": ["P1", "P2"],
+      "wearer": "P1",
+      "duration_seconds": 75,
+      "transcript_text": "[00:00.00] P2: So what brings you in today?\n[00:02.50] P1: I've been having these headaches for about two weeks now. They're mostly in the morning when I wake up.\n[00:09.00] P2: Okay. Can you describe the pain? Is it sharp, dull, throbbing?\n[00:13.00] P1: More like a dull pressure. Kind of behind my eyes and across my forehead.\n[00:18.00] P2: Any nausea or sensitivity to light?\n[00:20.50] P1: No nausea. Maybe a little light sensitivity but nothing major.\n[00:25.00] P2: Have you been under more stress than usual? Any changes in sleep?\n[00:29.00] P1: I mean work has been busy but nothing crazy. Sleep is okay, maybe six hours a night.\n[00:35.00] P2: Six hours is a bit low. Are you drinking enough water?\n[00:38.50] P1: Probably not as much as I should be.\n[00:41.00] P2: Alright. This sounds like tension headaches, possibly aggravated by mild dehydration and sleep deficit. I'm going to recommend increasing your water intake, trying to get seven to eight hours, and you can take ibuprofen as needed.\n[00:53.00] P1: Okay sounds good.\n[00:55.00] P2: If it doesn't improve in two weeks come back and we'll do some further testing. Any other questions?\n[00:60.00] P1: No I think that covers it. Thank you.\n[01:03.00] P2: Alright, take care.\n[01:05.00] P1: Oh wait, actually. I've also been getting dizzy sometimes. Like when I stand up too fast. Is that related?\n[01:12.00] P2: That's actually important. Dizziness with headaches could indicate something else. Let me check your blood pressure.",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "trigger_timestamp": 53.00,
+          "recommendation_mode": "say",
+          "expected_recommendation": "You haven't mentioned the dizziness you've been experiencing. Standing dizziness combined with headaches could be clinically significant — mention it before the appointment ends.",
+          "urgency": "high",
+          "rationale": "The doctor is wrapping up with a tension headache diagnosis but P1 hasn't mentioned the dizziness. This is a high-stakes omission in a medical context — the combined symptoms could indicate orthostatic hypotension or something more serious."
+        }
+      ]
+    },
+    {
+      "id": "work_brainstorm_01",
+      "category": "brainstorm",
+      "title": "Brainstorm — idea getting steamrolled",
+      "participants": ["P1", "P2", "P3"],
+      "wearer": "P1",
+      "duration_seconds": 90,
+      "transcript_text": "[00:00.00] P2: Okay so we need to figure out how to handle the traffic spikes during product launches. Last time the site went down for twenty minutes and we lost a ton of orders.\n[00:10.00] P1: What if we used a message queue? Like we could put incoming orders into a queue and process them asynchronously. That way the frontend stays responsive even under heavy load.\n[00:20.00] P3: Hmm. I don't know, queues add complexity. What about just scaling up the servers?\n[00:26.00] P2: Auto-scaling takes time to spin up though. By the time new instances are ready we've already lost requests.\n[00:32.00] P3: Fair point.\n[00:34.00] P2: What if we pre-warmed the instances before the launch?\n[00:37.50] P3: That could work but it's wasteful if we overestimate.\n[00:41.00] P2: True.\n[00:43.00] P3: You know what, I just thought of something. What if we implement an event-driven architecture with a message broker? Orders come in, get published to a topic, and worker services process them at their own pace. The user gets an immediate acknowledgment and the order processes in the background.\n[00:58.00] P2: Oh that's really smart. Yeah an event-driven approach would decouple the ingestion from the processing.\n[01:03.00] P3: Exactly. And we can scale the workers independently.\n[01:07.00] P2: I love it. Let's go with that.\n[01:10.00] P1: I mean, that's basically what I said earlier with the message queue.\n[01:14.00] P3: Oh, is it? I think the event-driven part is a bit different.\n[01:18.00] P2: Yeah let's not get hung up on credit. The point is we have a direction.",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "trigger_timestamp": 58.00,
+          "recommendation_mode": "say",
+          "expected_recommendation": "P3's 'event-driven architecture with a message broker' is essentially the same as the message queue idea you proposed at 00:10. Consider saying: 'Yeah that builds on the message queue approach I mentioned — we could use Kafka or RabbitMQ for the broker.'",
+          "urgency": "medium",
+          "rationale": "P1's idea from 48 seconds ago is being restated and praised. Agent should help P1 connect the dots diplomatically — not to cause conflict but to ensure proper attribution and build on the idea."
+        }
+      ]
+    },
+    {
+      "id": "sales_demo_01",
+      "category": "sales",
+      "title": "Product demo — prospect dropped a buying signal",
+      "participants": ["P1", "P2", "P3"],
+      "wearer": "P1",
+      "duration_seconds": 75,
+      "transcript_text": "[00:00.00] P1: So let me show you the analytics dashboard. This is where you'll see all your campaign performance in real time.\n[00:07.00] P2: Oh wow. This is really clean.\n[00:09.50] P1: Thanks. You can filter by date range, campaign type, and audience segment. And everything updates in real time.\n[00:16.00] P2: Can you export this data?\n[00:18.00] P1: Absolutely. CSV, PDF, and we also have an API if you want to pipe it into your own tools.\n[00:24.00] P2: That's huge. Our current platform doesn't do any of that. We've been manually pulling reports every week.\n[00:31.00] P3: Honestly this is exactly what we've been looking for. We've been evaluating tools for three months.\n[00:37.00] P1: Great. So let me also show you the A/B testing module. This is really cool. You can set up experiments with different creative variants and it'll automatically allocate traffic.\n[00:47.00] P2: Okay.\n[00:48.50] P1: And over here we have the audience builder. You can create custom segments based on behavior, demographics, purchase history.\n[00:56.00] P2: Uh huh.\n[00:57.00] P1: And we just launched our AI-powered recommendation engine that suggests optimal send times.\n[01:03.00] P3: That's interesting. Look, I think we've seen enough. Can we talk about pricing and implementation timeline?\n[01:09.00] P1: Oh, sure. Yeah absolutely.",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "trigger_timestamp": 37.00,
+          "recommendation_mode": "both",
+          "expected_recommendation": "P3 just said 'this is exactly what we've been looking for' — that's a strong buying signal. Stop showing features and pivot to: 'What would your ideal timeline for getting started look like?'",
+          "urgency": "high",
+          "rationale": "P3 explicitly expressed intent and P1 kept demoing. Every additional feature shown after a buying signal risks introducing objections or losing momentum. Agent should recommend pivoting to closing."
+        }
+      ]
+    },
+    {
+      "id": "conflict_resolution_01",
+      "category": "difficult_conversation",
+      "title": "1:1 with report — emotional escalation",
+      "participants": ["P1", "P2"],
+      "wearer": "P1",
+      "duration_seconds": 90,
+      "transcript_text": "[00:00.00] P1: Thanks for meeting with me. I wanted to talk about the last couple of sprint deliverables.\n[00:05.50] P2: Sure, what's up?\n[00:07.00] P1: So the user profile feature had some significant quality issues. QA found twelve bugs in the initial review, and three of them were critical. The checkout flow had similar problems.\n[00:18.00] P2: Okay, I mean some of those bugs were edge cases.\n[00:21.50] P1: Three critical bugs isn't edge cases. The checkout flow was literally losing cart items. That's a p-zero.\n[00:28.00] P2: I hear you but I've been working sixty hour weeks for the last month. I'm the only one on the payments team and I've been picking up slack for the people who left.\n[00:37.00] P1: I understand you've been putting in a lot of hours but the hours don't really matter if the output quality—\n[00:43.00] P2: Wow. Okay. So the hours don't matter. That's great to hear from my manager.\n[00:48.00] P1: That's not what I meant. I'm saying that we need to find a way to maintain quality standards regardless of the workload.\n[00:55.00] P2: Maybe the quality standards should account for the fact that I'm doing three people's jobs.\n[01:00.00] P1: Look, I hear that you're stretched thin and I want to help with that. Let's talk about what we can do. Can we reprioritize some of your tasks or get you some support?\n[01:10.00] P2: I mean, that would actually help. I've been asking for another engineer for two months.\n[01:15.00] P1: Okay. Let me escalate the headcount request this week. In the meantime, let's figure out which deliverables we can push.",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "trigger_timestamp": 37.00,
+          "recommendation_mode": "both",
+          "expected_recommendation": "P2 just shared they're working 60-hour weeks solo. Before continuing with the quality feedback, acknowledge their effort: 'I really appreciate you stepping up during a tough time. That said, I want to make sure we're setting you up for success.' This prevents escalation.",
+          "urgency": "high",
+          "rationale": "P2 has shifted from defensive to emotional by revealing unsustainable workload. P1 is about to dismiss the emotional content and push on quality, which will escalate the conflict. Agent should recommend de-escalation before the relationship is damaged."
+        }
+      ]
+    },
+    {
+      "id": "learning_tutorial_01",
+      "category": "learning",
+      "title": "Study group — wrong fact going uncorrected",
+      "participants": ["P1", "P2", "P3"],
+      "wearer": "P1",
+      "duration_seconds": 75,
+      "transcript_text": "[00:00.00] P2: Okay so let's review networking protocols for the exam. I'll start with TCP.\n[00:05.00] P3: Sure go ahead.\n[00:06.50] P2: So TCP uses a three-way handshake to establish a connection. First the client sends a SYN packet. Then the server responds with an ACK. And then the client sends a FIN to complete the handshake.\n[00:18.00] P3: Right, SYN, ACK, FIN. That makes sense.\n[00:21.00] P2: Exactly. And then once the connection is established, data transfer begins.\n[00:25.00] P1: Wait, I think—\n[00:26.50] P2: And then for closing the connection you have the four-way teardown with FIN and ACK in both directions.\n[00:33.00] P3: Okay so SYN ACK FIN to open, and FIN ACK FIN ACK to close.\n[00:38.00] P2: Yep. Let's move on to UDP.\n[00:40.00] P1: Actually hold on. I want to go back to the handshake. The three-way handshake is SYN, then SYN-ACK, then ACK. Not SYN, ACK, FIN. FIN is for closing connections.\n[00:52.00] P2: Wait really? Let me check my notes.\n[00:55.00] P3: Oh yeah, P1 is right. It's SYN, SYN-ACK, ACK. I remember now from the lecture slides.\n[00:60.00] P2: Oh man, I've had that wrong in my notes this whole time. Good catch.\n[01:04.00] P1: Yeah FIN is the termination flag. Easy to mix up.",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "trigger_timestamp": 18.00,
+          "recommendation_mode": "say",
+          "expected_recommendation": "P2 got the TCP handshake wrong. It's SYN, SYN-ACK, ACK — not SYN, ACK, FIN. FIN is used for connection termination, not establishment. Correct this before the group internalizes the wrong information.",
+          "urgency": "medium",
+          "rationale": "A factual error is being accepted by the group. P3 confirmed the wrong information. If uncorrected, multiple people will learn incorrect material for their exam."
+        }
+      ]
+    },
+    {
+      "id": "networking_event_01",
+      "category": "social_professional",
+      "title": "Conference networking — missed connection opportunity",
+      "participants": ["P1", "P2"],
+      "wearer": "P1",
+      "duration_seconds": 75,
+      "transcript_text": "[00:00.00] P2: Hi, I don't think we've met. I'm Sarah.\n[00:02.50] P1: Hey, I'm Matt. Nice to meet you. What brings you to the conference?\n[00:06.00] P2: I'm presenting a poster on egocentric video understanding. We've been working on activity recognition from first-person camera feeds at Meta FAIR.\n[00:14.00] P1: Oh cool. Computer vision stuff?\n[00:16.00] P2: Yeah, specifically we're looking at how to build models that understand what the camera wearer is doing in real time. Like predicting intent from gaze patterns and hand movements.\n[00:25.00] P1: That's interesting. I work on machine learning too but more on the NLP side.\n[00:30.00] P2: Nice. What are you working on?\n[00:32.00] P1: I'm doing my thesis on conversational AI. Building systems that can assist people during conversations.\n[00:38.00] P2: Oh cool. Are you using any multimodal inputs?\n[00:41.00] P1: Mostly just text and audio right now.\n[00:44.00] P2: Got it. Well it was really nice meeting you. I should go check on my poster.\n[00:48.00] P1: Yeah for sure. Nice meeting you too. Good luck with the poster.\n[00:52.00] P2: Thanks. Enjoy the rest of the conference.\n[00:55.00] P1: You too.",
+      "triggers": [
+        {
+          "trigger_id": "t1",
+          "trigger_timestamp": 44.00,
+          "recommendation_mode": "both",
+          "expected_recommendation": "P2 works on egocentric video understanding with real-time intent prediction from first-person cameras — this is directly relevant to your thesis on conversational AI assistance. Ask for their contact and explore how visual context from egocentric cameras could enhance your system.",
+          "urgency": "high",
+          "rationale": "P1 is about to end a conversation with someone whose research (egocentric first-person AI, real-time wearer understanding) is a natural complement to their own work (ambient conversational AI). This is a high-value networking connection being missed."
+        }
+      ]
+    }
+  ]
+}
