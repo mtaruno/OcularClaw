@@ -111,49 +111,30 @@ class ChunkedAudioCapture:
 
 
 # ---------------------------------------------------------------------------
-# Whisper transcription
+# Whisper transcription (local via faster-whisper)
 # ---------------------------------------------------------------------------
 
-def transcribe_whisper_api(wav_path: Path, api_key: str) -> str:
-    """Transcribe a WAV file using the OpenAI Whisper API (multipart POST)."""
-    boundary = f"----OcularClawBoundary{int(time.time() * 1000)}"
+_whisper_model = None
 
-    with open(wav_path, "rb") as f:
-        audio_data = f.read()
 
-    parts = []
-    # file field
-    parts.append(f"--{boundary}\r\n".encode())
-    parts.append(b'Content-Disposition: form-data; name="file"; filename="chunk.wav"\r\n')
-    parts.append(b"Content-Type: audio/wav\r\n\r\n")
-    parts.append(audio_data)
-    parts.append(b"\r\n")
-    # model field
-    parts.append(f"--{boundary}\r\n".encode())
-    parts.append(b'Content-Disposition: form-data; name="model"\r\n\r\n')
-    parts.append(b"whisper-1\r\n")
-    # language hint (English)
-    parts.append(f"--{boundary}\r\n".encode())
-    parts.append(b'Content-Disposition: form-data; name="language"\r\n\r\n')
-    parts.append(b"en\r\n")
-    # close
-    parts.append(f"--{boundary}--\r\n".encode())
+def get_whisper_model(model_size: str = "base.en"):
+    """Lazy-load the faster-whisper model (downloaded on first use)."""
+    global _whisper_model
+    if _whisper_model is None:
+        from faster_whisper import WhisperModel
+        print(f"  [whisper] loading local model '{model_size}' (first run downloads ~150MB)...")
+        _whisper_model = WhisperModel(model_size, device="cpu", compute_type="int8")
+        print(f"  [whisper] model ready.")
+    return _whisper_model
 
-    body = b"".join(parts)
-    req = urllib.request.Request(
-        "https://api.openai.com/v1/audio/transcriptions",
-        data=body,
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": f"multipart/form-data; boundary={boundary}",
-        },
-        method="POST",
-    )
+
+def transcribe_local(wav_path: Path, model_size: str = "base.en") -> str:
+    """Transcribe a WAV file using local faster-whisper. No API key needed."""
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            result = json.loads(resp.read().decode("utf-8"))
-        return result.get("text", "").strip()
-    except (urllib.error.URLError, socket.timeout, TimeoutError) as exc:
+        model = get_whisper_model(model_size)
+        segments, _ = model.transcribe(str(wav_path), language="en", beam_size=1)
+        return " ".join(seg.text.strip() for seg in segments).strip()
+    except Exception as exc:
         print(f"  [whisper] transcription error: {exc}", file=sys.stderr)
         return ""
 
@@ -349,7 +330,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--base-url", default=None, help="Chat completion API base URL")
     parser.add_argument("--api-key", default=None, help="Chat completion API key")
     parser.add_argument("--model", default=None, help="Chat completion model")
-    parser.add_argument("--whisper-api-key", default=None, help="OpenAI API key for Whisper (defaults to OPENAI_API_KEY)")
+    parser.add_argument("--whisper-model", default="base.en", help="Local whisper model size (default base.en)")
     parser.add_argument("--agent-mode", default="proagent", choices=["proagent"], help="Agent mode (default proagent)")
     parser.add_argument("--save-log", action="store_true", help="Save session log to analysis/live_sessions/")
     parser.add_argument("--temperature", type=float, default=0.3, help="LLM temperature")
@@ -365,14 +346,13 @@ def main() -> int:
     base_url = args.base_url or os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
     api_key = args.api_key or os.environ.get("OPENAI_API_KEY", "")
     model = args.model or os.environ.get("OPENAI_MODEL", "gpt-4.1-mini")
-    whisper_key = args.whisper_api_key or os.environ.get("WHISPER_API_KEY", "") or os.environ.get("OPENAI_API_KEY", "")
 
     if not api_key:
         print("Error: no API key. Set OPENAI_API_KEY or pass --api-key.", file=sys.stderr)
         return 1
-    if not whisper_key:
-        print("Error: no Whisper API key. Set WHISPER_API_KEY or OPENAI_API_KEY.", file=sys.stderr)
-        return 1
+
+    # Pre-load local whisper model
+    get_whisper_model(args.whisper_model)
 
     # Initialize components
     audio = ChunkedAudioCapture(sample_rate=args.sample_rate, chunk_seconds=args.chunk_seconds)
@@ -410,7 +390,7 @@ def main() -> int:
             if chunk_data and len(chunk_data) > 1000:  # skip near-empty chunks
                 wav_path = tmp_dir / "chunk.wav"
                 audio.save_chunk_wav(chunk_data, wav_path)
-                text = transcribe_whisper_api(wav_path, whisper_key)
+                text = transcribe_local(wav_path, args.whisper_model)
                 if text:
                     transcript.add(text, elapsed)
                     print(f"\r  {DIM}[{elapsed:5.1f}s]{RESET} {text}")
