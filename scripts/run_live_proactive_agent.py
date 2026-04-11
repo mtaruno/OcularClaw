@@ -389,6 +389,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--temperature", type=float, default=0.3, help="LLM temperature")
     parser.add_argument("--scenario", default=None, help="Scenario ID from scenario_transcripts.json (e.g. 'salary_negotiation_01'). Replays the transcript instead of using the mic.")
     parser.add_argument("--scenario-file", default=None, help="Path to scenario_transcripts.json (default: auto-detect)")
+    parser.add_argument("--rerun", action="store_true", help="Re-run even if logs already exist for a (scenario, model) pair")
     return parser.parse_args()
 
 
@@ -663,16 +664,38 @@ def print_model_comparison(comparison: list[dict]) -> None:
     print()
 
 
+def _has_existing_log(log_dir: Path, scenario_id: str, model_name: str) -> Path | None:
+    """Check if a compare log already exists for this (scenario, model) pair."""
+    safe_model = model_name.replace("/", "_").replace(":", "_")
+    pattern = f"compare_{scenario_id}__{safe_model}__*.json"
+    matches = sorted(log_dir.glob(pattern))
+    return matches[-1] if matches else None
+
+
 def _run_comparison_single(args, base_url: str, api_key: str, models: list[str], scenario_id: str, repo_root: Path) -> None:
     """Run one scenario through multiple models."""
-    # Temporarily set scenario on args
     original_scenario = args.scenario
     args.scenario = scenario_id
 
     comparison = []
     log_dir = repo_root / "analysis" / "live_sessions"
+    skip_existing = not getattr(args, "rerun", False)
 
     for model in models:
+        # Skip if log already exists (unless --rerun)
+        if skip_existing and args.save_log:
+            existing = _has_existing_log(log_dir, scenario_id, model)
+            if existing:
+                print(f"{DIM}--- Skipping: {model} on {scenario_id} (already exists: {existing.name}) ---{RESET}")
+                # Load existing results for comparison display
+                existing_data = json.loads(existing.read_text())
+                comparison.append({
+                    "model": model,
+                    "checks": existing_data.get("total_checks", 0),
+                    "triggers": existing_data.get("triggers", []),
+                })
+                continue
+
         print(f"{BOLD}{CYAN}--- Running: {model} on {scenario_id} ---{RESET}")
         elapsed_total, checks, triggers_count, transcript, session_log = run_scenario_replay(
             args, base_url, api_key, model, repo_root
