@@ -286,7 +286,7 @@ If triggering, identify which signal_type best describes why.
 Task B — Recommendation (only if intervening):
 Generate exactly two recommendations that are aligned with the wearer's goal:
   - recommendation_mode: "say" (suggest what to say), "know" (internal info), or "both"
-  - recommendation_1 and recommendation_2 should be distinct and non-redundant
+  - recommendation_1 and recommendation_2 should be distinct and non-redundant, and informative that helps the wearer achieve the goal, your goal is to add value
   - proactive_score: 1-5 (1=no intervention needed, 5=critical moment)
   - rationale: why this moment matters for the wearer's goal
 
@@ -371,7 +371,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--env-file", default=str(repo_root / ".env"), help="Path to .env file")
     parser.add_argument("--base-url", default=None, help="Chat completion API base URL")
     parser.add_argument("--api-key", default=None, help="Chat completion API key")
-    parser.add_argument("--model", default=None, help="Chat completion model")
+    parser.add_argument("--model", default=None, help="Chat completion model (e.g. gpt-4.1-mini, gpt-4o, o1-mini)")
+    parser.add_argument("--models", default=None, help="Comma-separated list of models to compare on the same scenario (e.g. 'gpt-4.1-mini,gpt-4o'). Requires --scenario.")
     parser.add_argument("--whisper-model", default="base.en", help="Local whisper model size (default base.en)")
     parser.add_argument("--agent-mode", default="proagent", choices=["proagent"], help="Agent mode (default proagent)")
     parser.add_argument("--persona", default="", help="Wearer persona description (e.g. 'Senior engineer in a salary negotiation')")
@@ -615,6 +616,93 @@ def run_live_mic(args, base_url: str, api_key: str, model: str) -> tuple[float, 
 
     return elapsed_total, checks, triggers, transcript, session_log
 
+def print_model_comparison(comparison: list[dict]) -> None:
+    """Print a side-by-side summary comparing multiple models on the same scenario."""
+    print()
+    print(f"{BOLD}{'=' * 70}{RESET}")
+    print(f"{BOLD}  MODEL COMPARISON SUMMARY{RESET}")
+    print(f"{BOLD}{'=' * 70}{RESET}")
+    for entry in comparison:
+        m = entry["model"]
+        triggers = entry["triggers"]
+        checks = entry["checks"]
+        rate = f"{100 * len(triggers) / checks:.0f}%" if checks else "n/a"
+        print()
+        print(f"  {BOLD}{CYAN}{m}{RESET}  (triggers: {len(triggers)}/{checks} checks = {rate})")
+        if triggers:
+            for i, t in enumerate(triggers, 1):
+                score = t.get("proactive_score", "?")
+                urgency = t.get("urgency", "?")
+                signal = t.get("signal_type", "?")
+                color = URGENCY_COLOR.get(urgency, YELLOW)
+                print(f"    {DIM}trigger {i} @ {t['trigger_timestamp']:.1f}s  score={score}/5  urgency={color}{urgency}{RESET}  signal={signal}")
+                print(f"      {CYAN}1:{RESET} {t.get('recommendation_1', '')}")
+                print(f"      {CYAN}2:{RESET} {t.get('recommendation_2', '')}")
+                print(f"      {DIM}rationale: {t.get('rationale', '')}{RESET}")
+        else:
+            print(f"    {DIM}(no triggers){RESET}")
+    print()
+    print(f"{BOLD}{'=' * 70}{RESET}")
+    print()
+
+
+def run_comparison(args, base_url: str, api_key: str, models: list[str], repo_root: Path) -> None:
+    """Run the same scenario through multiple models and compare results."""
+    if not args.scenario:
+        print("Error: --models requires --scenario.", file=sys.stderr)
+        raise SystemExit(1)
+
+    print(f"{BOLD}OcularClaw Model Comparison{RESET}")
+    print(f"  scenario:   {args.scenario}")
+    print(f"  models:     {', '.join(models)}")
+    print()
+
+    comparison = []
+    log_dir = repo_root / "analysis" / "live_sessions"
+
+    for model in models:
+        print(f"{BOLD}{CYAN}--- Running: {model} ---{RESET}")
+        elapsed_total, checks, triggers_count, transcript, session_log = run_scenario_replay(
+            args, base_url, api_key, model, repo_root
+        )
+
+        # Collect trigger entries for comparison display
+        trigger_entries = []
+        for entry in session_log:
+            result = entry.get("result", {})
+            if result.get("action") == "recommend":
+                trigger_entries.append({
+                    "trigger_timestamp": entry["elapsed"],
+                    "signal_type": result.get("signal_type", ""),
+                    "proactive_score": result.get("proactive_score", ""),
+                    "recommendation_mode": result.get("recommendation_mode", "both"),
+                    "recommendation_1": result.get("recommendation_1", ""),
+                    "recommendation_2": result.get("recommendation_2", ""),
+                    "urgency": result.get("urgency", "medium"),
+                    "rationale": result.get("rationale", ""),
+                })
+
+        comparison.append({"model": model, "checks": checks, "triggers": trigger_entries})
+
+        if args.save_log:
+            log_dir.mkdir(parents=True, exist_ok=True)
+            ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+            safe_model = model.replace("/", "_").replace(":", "_")
+            log_path = log_dir / f"compare_{args.scenario}__{safe_model}__{ts}.json"
+            log_path.write_text(json.dumps({
+                "model": model, "scenario_id": args.scenario,
+                "duration_seconds": round(elapsed_total, 2),
+                "check_interval": args.check_interval,
+                "total_checks": checks, "total_triggers": triggers_count,
+                "triggers": trigger_entries, "raw_log": session_log,
+            }, indent=2))
+            print(f"  log: {log_path}")
+
+        print()
+
+    print_model_comparison(comparison)
+
+
 def main() -> int:
     args = parse_args()
     repo_root = Path(__file__).resolve().parents[1]
@@ -628,6 +716,15 @@ def main() -> int:
     if not api_key:
         print("Error: no API key. Set OPENAI_API_KEY or pass --api-key.", file=sys.stderr)
         return 1
+
+    # Multi-model comparison mode
+    if args.models:
+        models = [m.strip() for m in args.models.split(",") if m.strip()]
+        if not models:
+            print("Error: --models requires at least one model.", file=sys.stderr)
+            return 1
+        run_comparison(args, base_url, api_key, models, repo_root)
+        return 0
 
     # Run either scenario replay or live mic
     if args.scenario:

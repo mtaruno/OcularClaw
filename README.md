@@ -154,6 +154,21 @@ Options:
 - `--chunk-seconds` — audio chunk length for transcription (default 5)
 - `--scenario` — scenario ID from `scenario_transcripts.json` for replay mode
 - `--save-log` — save session JSON to `analysis/live_sessions/`
+- `--model` — LLM model to use (e.g. `gpt-4.1-mini`, `gpt-4o`, `o3-mini`)
+- `--models` — comma-separated list of models to compare on the same scenario
+
+### Comparing models
+
+Run the same scenario through multiple models back-to-back and see a side-by-side summary:
+
+```bash
+python3 scripts/run_live_proactive_agent.py \
+  --scenario salary_negotiation_01 \
+  --models "gpt-4.1-mini,gpt-4o" \
+  --save-log
+```
+
+Each model runs the full scenario independently. At the end a comparison table shows trigger counts, proactive scores, and the actual recommendations from each model so you can judge quality directly.
 
 ### How it works
 
