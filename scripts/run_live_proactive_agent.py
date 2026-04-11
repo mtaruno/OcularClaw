@@ -190,6 +190,12 @@ class TranscriptBuffer:
 # Proactive agent – LLM calls
 # ---------------------------------------------------------------------------
 
+def _is_o_series(model: str) -> bool:
+    """Check if a model is an OpenAI o-series (o1, o3, etc.) which doesn't support temperature."""
+    base = model.split("/")[-1]  # handle openrouter-style "openai/o3-mini"
+    return bool(re.match(r"^o\d", base))
+
+
 def build_chat_request(
     base_url: str, api_key: str, model: str,
     system_prompt: str, user_prompt: str, temperature: float,
@@ -197,13 +203,15 @@ def build_chat_request(
     url = base_url.rstrip("/") + "/chat/completions"
     payload = {
         "model": model,
-        "temperature": temperature,
         "response_format": {"type": "json_object"},
         "messages": [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ],
     }
+    # o-series models don't support temperature parameter
+    if not _is_o_series(model):
+        payload["temperature"] = temperature
     return urllib.request.Request(
         url,
         data=json.dumps(payload).encode("utf-8"),
