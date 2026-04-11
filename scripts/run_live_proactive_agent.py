@@ -286,7 +286,8 @@ If triggering, identify which signal_type best describes why.
 Task B — Recommendation (only if intervening):
 Generate exactly two recommendations that are aligned with the wearer's goal:
   - recommendation_mode: "say" (suggest what to say), "know" (internal info), or "both"
-  - recommendation_1 and recommendation_2 should be distinct and non-redundant, and informative that helps the wearer achieve the goal, your goal is to add value
+  - recommendation_1 and recommendation_2 should be distinct, non-redundant, and directly useful in this moment
+  - "know" recommendations MUST contain the actual information the wearer needs — never tell them to "go research" or "look up" something. The wearer is in a live conversation and cannot pause to do research. If you would recommend knowing a fact, provide the fact itself (e.g., "Senior SWE median salary in SF is $185-210k base" not "Research salary ranges")
   - proactive_score: 1-5 (1=no intervention needed, 5=critical moment)
   - rationale: why this moment matters for the wearer's goal
 
