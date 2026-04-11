@@ -233,42 +233,51 @@ def call_llm_json(
 
 PROAGENT_SYSTEM = """\
 You are OcularClaw, an ambient proactive agent observing a live conversation \
-through the wearer's perspective. Your job is to decide whether THIS is a moment \
-where a helpful recommendation would genuinely assist the wearer — and if so, \
-generate exactly two recommendations.
+through the wearer's perspective. You perform three tasks in sequence:
+
+Task C (Goal Inference): What is the wearer trying to accomplish right now?
+Task A (Intervention Decision): Should you intervene at this moment?
+Task B (Recommendation): If yes, generate two recommendations aligned with the wearer's goal.
 
 You must be selective. Most moments do NOT warrant intervention. Only trigger when \
-you detect a clear signal: a question the wearer might struggle with, a decision \
-point, a factual gap, a social cue they might miss, or an actionable opportunity.
+you detect a clear conversational signal: a self-contradiction, a question being \
+dodged, emotional escalation, a factual error, a missed social cue, a premature \
+commitment, or an actionable opportunity the wearer is about to miss.
 
 Return JSON only."""
 
 PROAGENT_USER = """\
 Below is the live rolling transcript of the conversation so far (from the wearer's \
 microphone). The current elapsed time is {elapsed:.1f} seconds.
-
+{persona_block}
 --- TRANSCRIPT ---
 {transcript}
 --- END TRANSCRIPT ---
 
-Based on what you observe RIGHT NOW, decide:
+Perform these three tasks in order:
 
-1. Should the agent intervene at this moment? Be selective — only intervene if there \
-is a clear, concrete reason.
+Task C — Goal Inference:
+What is the wearer (P1) trying to accomplish in this conversation right now? \
+Be specific and concrete, not generic.
 
-2. If yes, generate exactly two recommendations:
-   - recommendation_mode: "say" (suggest what to say), "know" (internal info for the wearer), or "both"
-   - recommendation_1 and recommendation_2 should be distinct and non-redundant
-   - urgency: "low", "medium", or "high"
-   - rationale: why this moment matters
+Task A — Intervention Decision:
+Given the wearer's goal, should you intervene at this exact moment? \
+Be selective — only intervene if there is a clear, concrete signal.
+
+Task B — Recommendation (only if intervening):
+Generate exactly two recommendations that are aligned with the wearer's goal:
+  - recommendation_mode: "say" (suggest what to say), "know" (internal info), or "both"
+  - recommendation_1 and recommendation_2 should be distinct and non-redundant
+  - proactive_score: 1-5 (1=no intervention needed, 5=critical moment)
+  - rationale: why this moment matters for the wearer's goal
 
 Return one of:
 
 If NO intervention needed:
-{{"action": "none", "reason": "brief reason why no intervention is needed"}}
+{{"action": "none", "wearer_goal": "what the wearer is trying to do", "proactive_score": 1, "reason": "brief reason"}}
 
 If intervention IS warranted:
-{{"action": "recommend", "recommendation_mode": "say|know|both", "recommendation_1": "...", "recommendation_2": "...", "urgency": "low|medium|high", "rationale": "..."}}"""
+{{"action": "recommend", "wearer_goal": "what the wearer is trying to do", "proactive_score": 3, "recommendation_mode": "say|know|both", "recommendation_1": "...", "recommendation_2": "...", "urgency": "low|medium|high", "rationale": "..."}}"""
 
 
 # ---------------------------------------------------------------------------
@@ -290,12 +299,16 @@ def print_recommendation(result: dict, elapsed: float) -> None:
     urgency = result.get("urgency", "medium")
     color = URGENCY_COLOR.get(urgency, YELLOW)
     mode = result.get("recommendation_mode", "both")
+    score = result.get("proactive_score", "?")
+    goal = result.get("wearer_goal", "")
 
     print()
     print(f"{BOLD}{GREEN}{'=' * 60}{RESET}")
     print(f"{BOLD}{GREEN}  PROACTIVE RECOMMENDATION @ {elapsed:.1f}s{RESET}")
     print(f"{GREEN}{'=' * 60}{RESET}")
-    print(f"  {DIM}mode:{RESET} {mode}  {DIM}urgency:{RESET} {color}{urgency}{RESET}")
+    if goal:
+        print(f"  {DIM}goal:{RESET}  {goal}")
+    print(f"  {DIM}mode:{RESET}  {mode}  {DIM}urgency:{RESET} {color}{urgency}{RESET}  {DIM}score:{RESET} {score}/5")
     print()
     print(f"  {CYAN}1:{RESET} {result.get('recommendation_1', '(empty)')}")
     print(f"  {CYAN}2:{RESET} {result.get('recommendation_2', '(empty)')}")
@@ -332,6 +345,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--model", default=None, help="Chat completion model")
     parser.add_argument("--whisper-model", default="base.en", help="Local whisper model size (default base.en)")
     parser.add_argument("--agent-mode", default="proagent", choices=["proagent"], help="Agent mode (default proagent)")
+    parser.add_argument("--persona", default="", help="Wearer persona description (e.g. 'Senior engineer in a salary negotiation')")
     parser.add_argument("--save-log", action="store_true", help="Save session log to analysis/live_sessions/")
     parser.add_argument("--temperature", type=float, default=0.3, help="LLM temperature")
     return parser.parse_args()
@@ -400,7 +414,10 @@ def main() -> int:
                 last_check_time = now
                 checks += 1
                 formatted = transcript.format_transcript()
-                user_prompt = PROAGENT_USER.format(elapsed=elapsed, transcript=formatted)
+                persona_block = ""
+                if args.persona:
+                    persona_block = f"\n--- WEARER PERSONA ---\n{args.persona}\n--- END PERSONA ---\n"
+                user_prompt = PROAGENT_USER.format(elapsed=elapsed, transcript=formatted, persona_block=persona_block)
 
                 print_status(elapsed, len(transcript.turns), checks, triggers)
 
@@ -425,7 +442,9 @@ def main() -> int:
                         print_recommendation(result, elapsed)
                     else:
                         reason = result.get("reason", "")
-                        print(f"\r  {DIM}[{elapsed:5.1f}s] check #{checks}: no action – {reason}{RESET}")
+                        goal = result.get("wearer_goal", "")
+                        goal_str = f" | goal: {goal}" if goal else ""
+                        print(f"\r  {DIM}[{elapsed:5.1f}s] check #{checks}: no action – {reason}{goal_str}{RESET}")
 
                 except Exception as exc:
                     print(f"\n  {RED}[error] LLM call failed: {exc}{RESET}")
