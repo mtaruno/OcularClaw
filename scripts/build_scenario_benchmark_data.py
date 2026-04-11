@@ -42,6 +42,10 @@ WINDOW_FIELDS = [
     "transcript_turn_count",
     "transcript_speaker_ids",
     "transcript_text",
+    "persona",
+    "proactive_index",
+    "proactive_score",
+    "signal_type",
 ]
 
 TRIGGER_FIELDS = [
@@ -123,6 +127,10 @@ def build_window_row(scenario: dict) -> dict:
         "transcript_turn_count": str(count_turns(transcript)),
         "transcript_speaker_ids": speaker_nums,
         "transcript_text": transcript,
+        "persona": scenario.get("persona", ""),
+        "proactive_index": str(scenario.get("proactive_index", "")),
+        "proactive_score": str(scenario.get("proactive_score", "")),
+        "signal_type": scenario.get("signal_type", "none"),
     }
 
 
@@ -271,17 +279,31 @@ def main() -> None:
     print(f"  wrote frontend JSON → {lab_path}")
 
     # Summary
+    from collections import Counter
     print()
     print("Scenario Benchmark Summary")
-    print(f"  scenarios:  {len(scenarios)}")
-    print(f"  windows:    {len(window_rows)}")
-    print(f"  triggers:   {len(all_trigger_rows)}")
+    print(f"  scenarios:     {len(scenarios)}")
+    print(f"  windows:       {len(window_rows)}")
+    print(f"  triggers:      {len(all_trigger_rows)}")
+    pos = sum(1 for s in scenarios if s.get("proactive_index") is True)
+    neg = sum(1 for s in scenarios if s.get("proactive_index") is False)
+    print(f"  positive:      {pos} ({100*pos/len(scenarios):.0f}%)")
+    print(f"  negative:      {neg} ({100*neg/len(scenarios):.0f}%)")
     print()
     print("Categories:")
-    from collections import Counter
     cats = Counter(s["category"] for s in scenarios)
     for cat, count in cats.most_common():
         print(f"  {cat}: {count}")
+    print()
+    print("Signal types:")
+    sigs = Counter(s.get("signal_type", "none") for s in scenarios)
+    for sig, count in sigs.most_common():
+        print(f"  {sig}: {count}")
+    print()
+    print("Proactive score distribution:")
+    scores = Counter(s.get("proactive_score", 0) for s in scenarios)
+    for score, count in sorted(scores.items()):
+        print(f"  score {score}: {count}")
     print()
     print("How to use:")
     print("  1. Batch eval:  python scripts/run_ocularclaw_recommendation_experiment.py \\")

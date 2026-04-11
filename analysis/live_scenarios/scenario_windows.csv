@@ -1,4 +1,4 @@
-window_id,video_name,conversation_id,split,start_sec,end_sec,duration_seconds,window_word_count,window_speaker_count,speaker_ids_in_window,background_fan,background_music,review_status,trigger_decision,reviewer_notes,transcript_turn_count,transcript_speaker_ids,transcript_text
+window_id,video_name,conversation_id,split,start_sec,end_sec,duration_seconds,window_word_count,window_speaker_count,speaker_ids_in_window,background_fan,background_music,review_status,trigger_decision,reviewer_notes,transcript_turn_count,transcript_speaker_ids,transcript_text,persona,proactive_index,proactive_score,signal_type
 scenario__social_dinner_01__0000_0090,scenario__social_dinner_01,scenario__social__social_dinner_01,scenario_test,0,90,90,226,3,1 2 3,False,False,reviewed,has_triggers,Scenario: Dinner party — dietary restriction mentioned earlier in conversation. Category: social.,18,1 2 3,"[00:00.00] P3: Yeah so I've been trying to eat more plant-based lately. Actually I went fully vegetarian about three months ago.
 [00:07.00] P2: Oh nice, how's that going?
 [00:09.00] P3: It's been great honestly. I feel a lot more energy. The hardest part is eating out because a lot of places don't have great options.
@@ -16,7 +16,7 @@ scenario__social_dinner_01__0000_0090,scenario__social_dinner_01,scenario__socia
 [00:57.00] P1: Oh right, sorry, I totally forgot. Okay let me think of somewhere else.
 [01:01.00] P2: What about that Mediterranean place? They have tons of veggie stuff.
 [01:05.00] P3: Oh yeah, I love that place.
-[01:07.00] P1: Perfect, let's do that."
+[01:07.00] P1: Perfect, let's do that.",Hosting a dinner with friends. Tends to get enthusiastic about restaurant recommendations and sometimes forgets details others have shared.,True,4,self_contradiction_recall
 scenario__work_interview_01__0000_0075,scenario__work_interview_01,scenario__job_interview__work_interview_01,scenario_test,0,75,75,237,2,1 2,False,False,reviewed,has_triggers,Scenario: Behavioral interview — incomplete STAR answer. Category: job_interview.,11,1 2,"[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.
 [00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.
 [00:15.50] P2: What was the disagreement about specifically?
@@ -27,7 +27,7 @@ scenario__work_interview_01__0000_0075,scenario__work_interview_01,scenario__job
 [00:57.00] P2: Interesting. And what was the outcome?
 [01:00.00] P1: I mean everyone was happy with the decision. We moved on and built the thing.
 [01:05.00] P2: Can you quantify the impact at all?
-[01:07.00] P1: Uh, well we shipped the platform on time which was good."
+[01:07.00] P1: Uh, well we shipped the platform on time which was good.",Software engineer interviewing for a senior role. Good at telling stories but tends to skip quantifiable outcomes.,True,4,structural_gap
 scenario__work_negotiation_01__0000_0090,scenario__work_negotiation_01,scenario__negotiation__work_negotiation_01,scenario_test,0,90,90,275,2,1 2,False,False,reviewed,has_triggers,Scenario: Salary negotiation — initial offer response. Category: negotiation.,14,1 2,"[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.
 [00:06.00] P1: Great, I'm excited to hear it.
 [00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.
@@ -41,7 +41,7 @@ scenario__work_negotiation_01__0000_0090,scenario__work_negotiation_01,scenario_
 [01:03.00] P2: Yeah absolutely. We can do 20K in RSUs vesting over four years and I might be able to get a 10K signing bonus approved.
 [01:12.00] P1: That's helpful. What about the base though? Could we meet at 155?
 [01:17.00] P2: Let me take that back to the comp team. I think 150 base might be doable.
-[01:22.00] P1: I could work with 150 if we can firm up the equity and signing bonus."
+[01:22.00] P1: I could work with 150 if we can firm up the equity and signing bonus.",Senior engineer receiving a job offer. Competent technically but inexperienced with salary negotiations.,True,5,high_stakes_decision_point
 scenario__work_client_01__0000_0075,scenario__work_client_01,scenario__client_meeting__work_client_01,scenario_test,0,75,75,236,3,1 2 3,False,False,reviewed,has_triggers,Scenario: Client call — committing to timeline before understanding scope. Category: client_meeting.,14,1 2 3,"[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.
 [00:07.00] P1: Great to hear, glad it's working out.
 [00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?
@@ -55,7 +55,7 @@ scenario__work_client_01__0000_0075,scenario__work_client_01,scenario__client_me
 [00:56.00] P2: Hmm, I mean we really need the drag and drop. That's the whole point.
 [01:00.00] P1: Okay let me talk to the engineering lead and get back to you with a realistic timeline.
 [01:05.00] P2: Sure. Just let us know by end of week.
-[01:08.00] P1: Will do."
+[01:08.00] P1: Will do.",Product manager on a client call. Eager to please clients and tends to over-commit on timelines.,True,5,premature_commitment
 scenario__academic_defense_01__0000_0090,scenario__academic_defense_01,scenario__academic__academic_defense_01,scenario_test,0,90,90,246,3,1 2 3,False,False,reviewed,has_triggers,Scenario: Thesis defense — deflecting instead of answering. Category: academic.,9,1 2 3,"[00:00.00] P2: Thank you for the presentation. I have a question about your methodology. How do you account for selection bias in your participant sample?
 [00:08.50] P1: Great question. So our participants were recruited through university mailing lists and social media. We had a diverse sample spanning ages 18 to 45, roughly balanced gender split, and we included participants from multiple departments.
 [00:22.00] P2: Right, but those are all university-affiliated people. How does that affect the generalizability of your findings?
@@ -64,8 +64,8 @@ scenario__academic_defense_01__0000_0090,scenario__academic_defense_01,scenario_
 [00:46.00] P1: Right, I see what you're saying. So our study design was validated against similar protocols in the literature. Smith et al 2022 used a very similar recruitment strategy and their findings were replicated across three different institutional settings.
 [00:59.00] P3: I think Professor Chen is asking whether you acknowledge this as a limitation and how it might bound your claims.
 [01:05.00] P1: Yes, absolutely. It is a limitation. We discuss it in Section 5.3. We note that our findings should be interpreted within the context of university populations and that further work is needed with more diverse recruitment strategies.
-[01:18.00] P2: Thank you. That's the kind of direct acknowledgment I was looking for."
-scenario__medical_visit_01__0000_0075,scenario__medical_visit_01,scenario__medical__medical_visit_01,scenario_test,0,75,75,247,2,1 2,False,False,reviewed,has_triggers,Scenario: Doctor visit — forgetting to mention a related symptom. Category: medical.,16,1 2,"[00:00.00] P2: So what brings you in today?
+[01:18.00] P2: Thank you. That's the kind of direct acknowledgment I was looking for.",PhD student defending their thesis. Nervous and tends to deflect tough methodological questions by citing other papers or talking about demographics.,True,5,question_dodge
+scenario__medical_visit_01__0000_0075,scenario__medical_visit_01,scenario__medical__medical_visit_01,scenario_test,0,75,75,247,2,1 2,False,False,reviewed,has_triggers,Scenario: Doctor visit — contradicting own earlier statement. Category: medical.,16,1 2,"[00:00.00] P2: So what brings you in today?
 [00:02.50] P1: I've been having these headaches for about two weeks now. They're mostly in the morning when I wake up. Also I've been getting a bit dizzy sometimes but the headaches are the main thing.
 [00:12.00] P2: Okay. Can you describe the headache pain? Is it sharp, dull, throbbing?
 [00:16.00] P1: More like a dull pressure. Kind of behind my eyes and across my forehead.
@@ -80,7 +80,7 @@ scenario__medical_visit_01__0000_0075,scenario__medical_visit_01,scenario__medic
 [00:50.00] P2: Alright. This sounds like tension headaches, possibly aggravated by mild dehydration and sleep deficit. I'm going to recommend increasing your water intake, trying to get seven to eight hours, and you can take ibuprofen as needed.
 [01:01.00] P1: Okay sounds good.
 [01:03.00] P2: If it doesn't improve in two weeks come back and we'll do some further testing. Any other questions?
-[01:08.00] P1: No I think that covers it. Thank you."
+[01:08.00] P1: No I think that covers it. Thank you.",Patient visiting doctor for headaches. Mentioned dizziness early but then forgot about it when asked directly.,True,5,self_contradiction_recall
 scenario__work_brainstorm_01__0000_0090,scenario__work_brainstorm_01,scenario__brainstorm__work_brainstorm_01,scenario_test,0,90,90,263,3,1 2 3,False,False,reviewed,has_triggers,Scenario: Brainstorm — idea restated by someone else and praised. Category: brainstorm.,15,1 2 3,"[00:00.00] P2: Okay so we need to figure out how to handle the traffic spikes during product launches. Last time the site went down for twenty minutes and we lost a ton of orders.
 [00:10.00] P1: What if we used a message queue? Like we could put incoming orders into a queue and process them asynchronously. That way the frontend stays responsive even under heavy load.
 [00:20.00] P3: Hmm. I don't know, queues add complexity. What about just scaling up the servers?
@@ -95,7 +95,7 @@ scenario__work_brainstorm_01__0000_0090,scenario__work_brainstorm_01,scenario__b
 [01:07.00] P2: I love it. Let's go with that.
 [01:10.00] P1: I mean, that's basically what I said earlier with the message queue.
 [01:14.00] P3: Oh, is it? I think the event-driven part is a bit different.
-[01:18.00] P2: Yeah let's not get hung up on credit. The point is we have a direction."
+[01:18.00] P2: Yeah let's not get hung up on credit. The point is we have a direction.",Engineer in a brainstorm meeting. Proposed a good idea early but it was dismissed. Tends to not push back when ideas get overlooked.,True,3,idea_co_option
 scenario__sales_demo_01__0000_0075,scenario__sales_demo_01,scenario__sales__sales_demo_01,scenario_test,0,75,75,213,3,1 2 3,False,False,reviewed,has_triggers,Scenario: Product demo — missed buying signal. Category: sales.,14,1 2 3,"[00:00.00] P1: So let me show you the analytics dashboard. This is where you'll see all your campaign performance in real time.
 [00:07.00] P2: Oh wow. This is really clean.
 [00:09.50] P1: Thanks. You can filter by date range, campaign type, and audience segment. And everything updates in real time.
@@ -109,7 +109,7 @@ scenario__sales_demo_01__0000_0075,scenario__sales_demo_01,scenario__sales__sale
 [00:56.00] P2: Uh huh.
 [00:57.00] P1: And we just launched our AI-powered recommendation engine that suggests optimal send times.
 [01:03.00] P3: That's interesting. Look, I think we've seen enough. Can we talk about pricing and implementation timeline?
-[01:09.00] P1: Oh, sure. Yeah absolutely."
+[01:09.00] P1: Oh, sure. Yeah absolutely.",Account executive demoing analytics product. Loves showing features and tends to over-demo rather than closing when the prospect is ready.,True,5,missed_buying_signal
 scenario__conflict_resolution_01__0000_0090,scenario__conflict_resolution_01,scenario__difficult_conversation__conflict_resolution_01,scenario_test,0,90,90,274,2,1 2,False,False,reviewed,has_triggers,Scenario: 1:1 feedback — about to dismiss emotional response. Category: difficult_conversation.,13,1 2,"[00:00.00] P1: Thanks for meeting with me. I wanted to talk about the last couple of sprint deliverables.
 [00:05.50] P2: Sure, what's up?
 [00:07.00] P1: So the user profile feature had some significant quality issues. QA found twelve bugs in the initial review, and three of them were critical. The checkout flow had similar problems.
@@ -122,7 +122,7 @@ scenario__conflict_resolution_01__0000_0090,scenario__conflict_resolution_01,sce
 [00:55.00] P2: Maybe the quality standards should account for the fact that I'm doing three people's jobs.
 [01:00.00] P1: Look, I hear that you're stretched thin and I want to help with that. Let's talk about what we can do. Can we reprioritize some of your tasks or get you some support?
 [01:10.00] P2: I mean, that would actually help. I've been asking for another engineer for two months.
-[01:15.00] P1: Okay. Let me escalate the headcount request this week. In the meantime, let's figure out which deliverables we can push."
+[01:15.00] P1: Okay. Let me escalate the headcount request this week. In the meantime, let's figure out which deliverables we can push.",Engineering manager giving performance feedback. Direct communicator who sometimes prioritizes outcomes over emotional safety.,True,5,emotional_escalation
 scenario__learning_tutorial_01__0000_0075,scenario__learning_tutorial_01,scenario__learning__learning_tutorial_01,scenario_test,0,75,75,214,3,1 2 3,False,False,reviewed,has_triggers,Scenario: Study group — factual error being accepted. Category: learning.,14,1 2 3,"[00:00.00] P2: Okay so let's review networking protocols for the exam. I'll start with TCP.
 [00:05.00] P3: Sure go ahead.
 [00:06.50] P2: So TCP uses a three-way handshake to establish a connection. First the client sends a SYN packet. Then the server responds with an ACK. And then the client sends a FIN to complete the handshake.
@@ -136,7 +136,7 @@ scenario__learning_tutorial_01__0000_0075,scenario__learning_tutorial_01,scenari
 [00:52.00] P2: Wait really? Let me check my notes.
 [00:55.00] P3: Oh yeah, P1 is right. It's SYN, SYN-ACK, ACK. I remember now from the lecture slides.
 [00:60.00] P2: Oh man, I've had that wrong in my notes this whole time. Good catch.
-[01:04.00] P1: Yeah FIN is the termination flag. Easy to mix up."
+[01:04.00] P1: Yeah FIN is the termination flag. Easy to mix up.",Computer science student studying for a networking exam. Knows TCP well but tends to be quiet in group settings.,True,4,factual_error
 scenario__networking_event_01__0000_0075,scenario__networking_event_01,scenario__social_professional__networking_event_01,scenario_test,0,75,75,191,2,1 2,False,False,reviewed,has_triggers,Scenario: Conference networking — relevant connection about to walk away. Category: social_professional.,14,1 2,"[00:00.00] P2: Hi, I don't think we've met. I'm Sarah.
 [00:02.50] P1: Hey, I'm Matt. Nice to meet you. What brings you to the conference?
 [00:06.00] P2: I'm presenting a poster on egocentric video understanding. We've been working on activity recognition from first-person camera feeds at Meta FAIR.
@@ -150,8 +150,8 @@ scenario__networking_event_01__0000_0075,scenario__networking_event_01,scenario_
 [00:44.00] P2: Got it. Well it was really nice meeting you. I should go check on my poster.
 [00:48.00] P1: Yeah for sure. Nice meeting you too. Good luck with the poster.
 [00:52.00] P2: Thanks. Enjoy the rest of the conference.
-[00:55.00] P1: You too."
-scenario__negative_casual_chat_01__0000_0060,scenario__negative_casual_chat_01,scenario__negative_example__negative_casual_chat_01,scenario_test,0,60,60,201,2,1 2,False,False,reviewed,no_trigger,Scenario: Casual chat — no intervention needed. Category: negative_example.,16,1 2,"[00:00.00] P1: Hey how was your weekend?
+[00:55.00] P1: You too.",ML thesis student working on conversational AI assistance. At a computer vision conference and tends to wrap up networking conversations too quickly.,True,5,missed_connection_opportunity
+scenario__negative_casual_chat_01__0000_0060,scenario__negative_casual_chat_01,scenario__social__negative_casual_chat_01,scenario_test,0,60,60,201,2,1 2,False,False,reviewed,no_trigger,Scenario: Casual chat — no intervention needed. Category: social.,16,1 2,"[00:00.00] P1: Hey how was your weekend?
 [00:02.00] P2: It was great. We went hiking up at Point Reyes. The weather was perfect.
 [00:07.00] P1: Oh nice, I love Point Reyes. Which trail did you do?
 [00:10.00] P2: We did Tomales Point. It's about nine miles round trip. Saw a bunch of elk.
@@ -166,8 +166,8 @@ scenario__negative_casual_chat_01__0000_0060,scenario__negative_casual_chat_01,s
 [00:47.00] P1: Oh nice, that should be a good one. Rivalry games are always fun.
 [00:51.00] P2: For sure. Anyway, should we grab lunch? I'm starving.
 [00:54.00] P1: Yeah let's do it. Pho place?
-[00:56.00] P2: Sounds good to me."
-scenario__negative_presentation_01__0000_0060,scenario__negative_presentation_01,scenario__negative_example__negative_presentation_01,scenario_test,0,60,60,188,3,1 2 3,False,False,reviewed,no_trigger,Scenario: Smooth presentation — no issues to flag. Category: negative_example.,11,1 2 3,"[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.
+[00:56.00] P2: Sounds good to me.",Coworker chatting with a friend during a break.,False,1,none
+scenario__negative_presentation_01__0000_0060,scenario__negative_presentation_01,scenario__work_meeting__negative_presentation_01,scenario_test,0,60,60,188,3,1 2 3,False,False,reviewed,no_trigger,Scenario: Smooth presentation — no issues to flag. Category: work_meeting.,11,1 2 3,"[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.
 [00:08.00] P1: Customer acquisition cost came down by 12 percent thanks to the organic channel investments we made in Q1.
 [00:15.00] P1: And churn held steady at 3.2 percent which is within our target range.
 [00:20.00] P2: That's great. What's driving the enterprise growth specifically?
@@ -177,8 +177,8 @@ scenario__negative_presentation_01__0000_0060,scenario__negative_presentation_01
 [00:47.00] P2: And the churn number, is that net or gross?
 [00:50.00] P1: That's gross churn. Net revenue retention is actually 108 percent because of expansion within existing accounts.
 [00:57.00] P3: Impressive. Nice work.
-[00:59.00] P1: Thanks. Happy to dig into any of these numbers in more detail."
-scenario__negative_planning_01__0000_0060,scenario__negative_planning_01,scenario__negative_example__negative_planning_01,scenario_test,0,60,60,200,3,1 2 3,False,False,reviewed,no_trigger,Scenario: Trip planning — collaborative and going well. Category: negative_example.,15,1 2 3,"[00:00.00] P1: Okay so for the Portland trip, I was thinking we fly out Friday morning and come back Sunday night.
+[00:59.00] P1: Thanks. Happy to dig into any of these numbers in more detail.",VP of Growth presenting quarterly results to the leadership team.,False,1,none
+scenario__negative_planning_01__0000_0060,scenario__negative_planning_01,scenario__social__negative_planning_01,scenario_test,0,60,60,200,3,1 2 3,False,False,reviewed,no_trigger,Scenario: Trip planning — collaborative and going well. Category: social.,15,1 2 3,"[00:00.00] P1: Okay so for the Portland trip, I was thinking we fly out Friday morning and come back Sunday night.
 [00:06.00] P2: That works for me. Friday the 15th right?
 [00:08.50] P1: Yeah the 15th through the 17th.
 [00:11.00] P3: I'm good with those dates too. Should we get an Airbnb or hotel?
@@ -192,4 +192,37 @@ scenario__negative_planning_01__0000_0060,scenario__negative_planning_01,scenari
 [00:49.00] P1: I'm good with anything. P2?
 [00:51.00] P2: Same here. No restrictions.
 [00:53.00] P3: Easy. Alright I'm excited. This is going to be great.
-[00:56.00] P1: Same. Let's get everything booked by Wednesday."
+[00:56.00] P1: Same. Let's get everything booked by Wednesday.",Friend organizing a weekend trip to Portland with two others.,False,1,none
+scenario__negative_standup_01__0000_0060,scenario__negative_standup_01,scenario__work_meeting__negative_standup_01,scenario_test,0,60,60,169,3,1 2 3,False,False,reviewed,no_trigger,Scenario: Standup — everything going smoothly. Category: work_meeting.,12,1 2 3,"[00:00.00] P2: Alright let's do standup. P1 you first.
+[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.
+[00:10.00] P2: Nice. P3?
+[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker — I need the staging environment credentials from DevOps.
+[00:22.00] P2: Got it, I'll ping DevOps after this. My update — I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.
+[00:33.00] P1: Quick question — are we still targeting Friday for the staging deploy?
+[00:37.00] P2: Yeah, Friday afternoon. P3, will the webhook be ready by then?
+[00:41.00] P3: Should be, as long as I get those credentials today.
+[00:44.00] P2: I'll make sure you get them this morning. Anything else?
+[00:47.00] P1: Nope, good here.
+[00:48.50] P3: All good.
+[00:50.00] P2: Cool, let's ship it. Have a good one.",Software engineer in a daily standup with their team.,False,1,none
+scenario__negative_mentoring_01__0000_0060,scenario__negative_mentoring_01,scenario__learning__negative_mentoring_01,scenario_test,0,60,60,218,2,1 2,False,False,reviewed,no_trigger,Scenario: Mentoring session — effective guidance happening naturally. Category: learning.,10,1 2,"[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?
+[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational — lots of joins, foreign keys, transactions that need to be atomic — SQL is usually the right choice.
+[00:18.00] P2: So like our user management system?
+[00:20.00] P1: Exactly. Users have roles, roles have permissions, permissions map to resources. That's a relational model. Now if your data is more like documents or key-value pairs with flexible schemas, that's where NoSQL shines.
+[00:32.00] P2: Like our event logging system?
+[00:34.00] P1: Exactly. High write throughput, append-only, schema varies by event type. Perfect NoSQL use case.
+[00:40.00] P2: What about the analytics dashboard we're building? It needs to join user data with event data.
+[00:46.00] P1: That's a great example of a hybrid approach. You could keep the source of truth in SQL for users, stream events to NoSQL, and use something like Spark or a materialized view for the join.
+[00:55.00] P2: That makes a lot of sense. Thanks, this really clarifies it.
+[00:58.00] P1: Happy to help. Let me know when you start on the schema design and we can review it together.",Senior engineer mentoring a junior colleague on system design.,False,1,none
+scenario__negative_coffee_order_01__0000_0045,scenario__negative_coffee_order_01,scenario__social__negative_coffee_order_01,scenario_test,0,45,45,93,3,1 2 3,False,False,reviewed,no_trigger,Scenario: Coffee run — simple coordination. Category: social.,11,1 2 3,"[00:00.00] P1: Hey I'm doing a coffee run, anyone want anything?
+[00:03.00] P2: Oh yes please. Can I get an oat milk latte?
+[00:06.00] P1: Sure. Hot or iced?
+[00:08.00] P2: Iced. Thanks.
+[00:10.00] P3: I'll take a drip coffee, black. Large.
+[00:13.00] P1: Got it. Oat milk iced latte for you, large black drip for you. Anyone want a pastry or anything?
+[00:19.00] P2: I'm good, just the latte.
+[00:21.00] P3: Same, just coffee. Thanks.
+[00:23.00] P1: Cool, I'll be back in ten.
+[00:25.00] P2: You're the best.
+[00:27.00] P1: I know.",Office worker coordinating a coffee run with colleagues.,False,1,none
