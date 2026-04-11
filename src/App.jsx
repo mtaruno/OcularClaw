@@ -5,6 +5,7 @@ const STORAGE_KEYS = {
   reviewerId: "benchmark-lab-reviewer-id",
   reviewExport: "benchmark-lab-review-export",
   reviewMap: "benchmark-lab-review-map",
+  preferenceMap: "benchmark-lab-preference-map",
   apiSettings: "benchmark-lab-api-settings",
   videoUrls: "benchmark-lab-video-urls",
   manualComments: "benchmark-lab-manual-comments",
@@ -257,55 +258,22 @@ function ReviewRubric() {
       </summary>
       <div className="mt-4 space-y-4 text-sm text-slate-700 dark:text-slate-300">
         <div>
-          <h4 className="font-semibold text-slate-900 dark:text-slate-100">Review Decision</h4>
+          <h4 className="font-semibold text-indigo-800 dark:text-indigo-300">Step 1: Preference Ranking (per scenario)</h4>
+          <p className="mt-1">For each scenario, switch between methods using the dropdown. Read the agent&apos;s recommendations inline in the transcript. Then pick which model you&apos;d most want as your assistant.</p>
           <ul className="mt-1 space-y-1 pl-4">
-            <li><span className="font-mono text-xs bg-emerald-100 px-1.5 py-0.5 rounded dark:bg-emerald-950/50 dark:text-emerald-400">accepted</span> — The trigger and both recommendations are correct as-is. No changes needed.</li>
-            <li><span className="font-mono text-xs bg-amber-100 px-1.5 py-0.5 rounded dark:bg-amber-950/50 dark:text-amber-400">edited</span> — The trigger moment is valid but one or more fields need correction. Fill in the Final fields below.</li>
-            <li><span className="font-mono text-xs bg-rose-100 px-1.5 py-0.5 rounded dark:bg-rose-950/50 dark:text-rose-400">rejected</span> — This trigger should not exist. It is a false positive, the timing is wrong, or the recommendations are not useful.</li>
+            <li><strong>Preferred Method</strong> — Which model&apos;s overall output (timing + recommendations) would be most helpful to you in this situation?</li>
+            <li><strong>Overall Usefulness</strong> — How useful was the best output? 1 = useless/distracting, 3 = somewhat helpful, 5 = exactly what I&apos;d want</li>
+            <li><strong>Why?</strong> — Optional: what made one model better? (better timing, more specific, less noisy, etc.)</li>
           </ul>
         </div>
         <div>
-          <h4 className="font-semibold text-emerald-700 dark:text-emerald-400">Task A — Intervention Decision</h4>
+          <h4 className="font-semibold text-slate-900 dark:text-slate-100">Step 2: Per-Trigger Diagnostics (optional, for deeper analysis)</h4>
+          <p className="mt-1">Click any trigger card in the transcript to score it individually. This is optional but gives richer data.</p>
           <ul className="mt-1 space-y-1 pl-4">
-            <li><strong>Appropriate</strong> — Should the agent have triggered at this moment? Was there a real signal worth intervening on? (1 = yes, 0 = no)</li>
-            <li><strong>Worth Interruption</strong> — Given the interruption cost (breaking the wearer's flow), was it worth it? A correct signal may still not justify interruption. (1 = yes, 0 = no)</li>
-            <li><strong>Timing</strong> — 1 = wrong moment (too early/late), 2 = close but slightly off, 3 = perfect timing</li>
+            <li><strong>Task A</strong> — Was this the right moment? Appropriate (yes/no), Worth Interruption (yes/no), Timing (1-3)</li>
+            <li><strong>Task B</strong> — Are the recommendations useful, grounded in the transcript, and distinct from each other?</li>
+            <li><strong>Task C</strong> — Is the inferred goal plausible, specific, and useful for producing good recommendations?</li>
           </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold text-labPurple">Task B — Recommendation Quality</h4>
-          <ul className="mt-1 space-y-1 pl-4">
-            <li><strong>Useful 1</strong> — Would recommendation 1 actually help the wearer at this moment? (1 = yes, 0 = no)</li>
-            <li><strong>Useful 2</strong> — Would recommendation 2 actually help the wearer at this moment? (1 = yes, 0 = no)</li>
-            <li><strong>Grounded</strong> — Are both recommendations supported by the transcript and immediate context? Not speculative or based on external knowledge. (1 = yes, 0 = no)</li>
-            <li><strong>Distinct Pair</strong> — Are the two recommendations meaningfully different from each other? Not just rephrasing the same idea. (1 = yes, 0 = no)</li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold text-amber-700 dark:text-amber-400">Task C — Goal Inference</h4>
-          <ul className="mt-1 space-y-1 pl-4">
-            <li><strong>Plausible</strong> — Does the inferred goal fit the conversational context? Would a reasonable observer agree? (1 = yes, 0 = no)</li>
-            <li><strong>Specific</strong> — Is the goal concrete and actionable, not generic? &ldquo;Negotiate a higher salary by anchoring first&rdquo; is specific. &ldquo;Communicate effectively&rdquo; is not. (1 = yes, 0 = no)</li>
-            <li><strong>Useful for Recs</strong> — Does knowing this goal actually produce better recommendations than not knowing it? (1 = yes, 0 = no)</li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold text-slate-900 dark:text-slate-100">Recommendation Modes</h4>
-          <ul className="mt-1 space-y-1 pl-4">
-            <li><span className="font-mono text-xs bg-slate-200 px-1.5 py-0.5 rounded dark:bg-slate-800">say</span> — Both recommendations are things the wearer could say next</li>
-            <li><span className="font-mono text-xs bg-slate-200 px-1.5 py-0.5 rounded dark:bg-slate-800">know</span> — Both recommendations are internal pointers the wearer should be aware of, even if not spoken aloud</li>
-            <li><span className="font-mono text-xs bg-slate-200 px-1.5 py-0.5 rounded dark:bg-slate-800">both</span> — One to say, one to know, or the moment supports both styles</li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold text-slate-900 dark:text-slate-100">When Should a Trigger Exist?</h4>
-          <p className="mt-1">A trigger is valid only if the intervention is:</p>
-          <ul className="mt-1 space-y-1 pl-4">
-            <li><strong>Timely</strong> — It matters at that specific moment, not just somewhere in the conversation</li>
-            <li><strong>Useful</strong> — It would help the wearer act, decide, respond, or notice something important</li>
-            <li><strong>Grounded</strong> — It is supported by the transcript and immediate context</li>
-          </ul>
-          <p className="mt-2">Reject triggers that are: generic filler advice, information already obvious, speculative claims not in the transcript, or duplicates of nearby triggers.</p>
         </div>
         <div>
           <h4 className="font-semibold text-slate-900 dark:text-slate-100">Good vs Bad Recommendations</h4>
@@ -314,7 +282,7 @@ function ReviewRubric() {
               <div className="text-xs font-semibold text-emerald-700 dark:text-emerald-400">Good</div>
               <ul className="mt-1 space-y-1 text-xs">
                 <li>&ldquo;Ask whether they mean current or projected revenue.&rdquo;</li>
-                <li>&ldquo;The speaker shifted from a firm claim to a softer hedge.&rdquo;</li>
+                <li>&ldquo;Senior SWE median in SF is $185-210k base — you have room to push.&rdquo;</li>
                 <li>&ldquo;Capture the action item: owner and deadline.&rdquo;</li>
               </ul>
             </div>
@@ -322,8 +290,8 @@ function ReviewRubric() {
               <div className="text-xs font-semibold text-rose-700 dark:text-rose-400">Bad</div>
               <ul className="mt-1 space-y-1 text-xs">
                 <li>&ldquo;Be more confident.&rdquo;</li>
-                <li>&ldquo;Say something useful.&rdquo;</li>
-                <li>&ldquo;This seems important.&rdquo;</li>
+                <li>&ldquo;Research salary ranges for your area.&rdquo;</li>
+                <li>&ldquo;Express appreciation and ask about flexibility.&rdquo;</li>
               </ul>
             </div>
           </div>
@@ -401,6 +369,9 @@ export default function App() {
   const [selectedWindowId, setSelectedWindowId] = useState("");
   const [selectedTriggerId, setSelectedTriggerId] = useState("");
   const [reviewMap, setReviewMap] = useState({});
+  const [preferenceMap, setPreferenceMap] = useState(() =>
+    parseJsonStorage(reviewerKey(STORAGE_KEYS.preferenceMap, localStorage.getItem(STORAGE_KEYS.reviewerId) || ""), {}),
+  );
   const [videoUrls, setVideoUrls] = useState(() => parseJsonStorage(STORAGE_KEYS.videoUrls, {}));
   const [manualComments, setManualComments] = useState(() =>
     parseJsonStorage(reviewerKey(STORAGE_KEYS.manualComments, localStorage.getItem(STORAGE_KEYS.reviewerId) || ""), {}),
@@ -507,6 +478,11 @@ export default function App() {
     }
   }, [reviewMap, reviewerId]);
 
+  // Autosave preference rankings
+  useEffect(() => {
+    localStorage.setItem(reviewerKey(STORAGE_KEYS.preferenceMap, reviewerId), JSON.stringify(preferenceMap));
+  }, [preferenceMap, reviewerId]);
+
   // Handle reviewer switch — save current, load new reviewer's data
   useEffect(() => {
     if (lastReviewerIdRef.current === reviewerId) return;
@@ -530,8 +506,9 @@ export default function App() {
     }
     setReviewMap(freshMap);
 
-    // Reload manual comments for the new reviewer
+    // Reload manual comments and preferences for the new reviewer
     setManualComments(parseJsonStorage(reviewerKey(STORAGE_KEYS.manualComments, reviewerId), {}));
+    setPreferenceMap(parseJsonStorage(reviewerKey(STORAGE_KEYS.preferenceMap, reviewerId), {}));
     setExportPreview(parseJsonStorage(reviewerKey(STORAGE_KEYS.reviewExport, reviewerId), null));
   }, [reviewerId, datasets]);
 
@@ -586,6 +563,21 @@ export default function App() {
         .map((line) => parseTranscriptLine(line)),
     [selectedWindow],
   );
+
+  // Collect all methods' outputs for the current scenario (for preference comparison)
+  const methodSummaries = useMemo(() => {
+    if (!selectedWindow || methods.length <= 1) return [];
+    const windowId = selectedWindow.window_id;
+    return methods.map((method) => {
+      const win = method.windows?.find((w) => w.window_id === windowId);
+      return {
+        methodId: method.id,
+        label: method.label,
+        triggers: win?.triggers || [],
+        hasTriggers: (win?.triggers || []).length > 0,
+      };
+    });
+  }, [methods, selectedWindow]);
 
   const activeTriggerKey = selectedMethod && selectedWindow && selectedTrigger
     ? triggerKey(selectedMethod.id, selectedWindow.window_id, selectedTrigger.trigger_id)
@@ -675,10 +667,11 @@ export default function App() {
         reviewer_notes: windowEntry.reviewer_notes,
       })),
       trigger_reviews: triggerReviews,
+      preferences: preferenceMap,
       manual_comments: manualComments,
       video_urls: videoUrls,
     };
-  }, [manualComments, reviewerId, reviewMap, selectedMethod, videoUrls, windows]);
+  }, [manualComments, preferenceMap, reviewerId, reviewMap, selectedMethod, videoUrls, windows]);
 
   const reviewSheetRows = useMemo(
     () =>
@@ -692,6 +685,7 @@ export default function App() {
           const review = reviewMap[key] || {};
           return {
             reviewer_id: reviewerId || "anonymous",
+            method_id: selectedMethod?.id || "active_method",
             window_id: windowEntry.window_id,
             conversation_id: windowEntry.conversation_id,
             video_name: windowEntry.video_name,
@@ -876,6 +870,25 @@ export default function App() {
     const anchor = document.createElement("a");
     anchor.href = url;
     anchor.download = `trigger_review_sheet${reviewerId ? `_${reviewerId}` : ""}.csv`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function downloadPreferenceCsv() {
+    const prefColumns = ["reviewer_id", "window_id", "preferred_method", "overall_usefulness", "preference_notes"];
+    const prefRows = Object.entries(preferenceMap).map(([windowId, pref]) => ({
+      reviewer_id: reviewerId || "anonymous",
+      window_id: windowId,
+      preferred_method: pref.preferred_method || "",
+      overall_usefulness: pref.overall_usefulness ?? "",
+      preference_notes: pref.preference_notes || "",
+    }));
+    const csvText = rowsToCsv(prefColumns, prefRows);
+    const blob = new Blob([csvText], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `preference_ranking${reviewerId ? `_${reviewerId}` : ""}.csv`;
     anchor.click();
     URL.revokeObjectURL(url);
   }
@@ -1533,39 +1546,134 @@ export default function App() {
           </div>
         </Panel>
 
-        <Panel title="The Scorecard" subtitle="Review decision, binary checks, and final edits">
+        <Panel title="The Scorecard" subtitle="Preference ranking and per-trigger diagnostics">
           <div className="flex h-full flex-col gap-4">
             <ReviewRubric />
+
+            {/* ── Preference Ranking (across methods for this scenario) ── */}
+            {methodSummaries.length > 1 && selectedWindow && (
+              <div className="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-4 dark:border-indigo-800 dark:bg-indigo-950/30">
+                <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-200">
+                  Preference Ranking
+                </h3>
+                <p className="mt-1 text-xs text-indigo-700 dark:text-indigo-400">
+                  Which model&apos;s output would you most want as your assistant for this scenario? Read the recommendations inline in the transcript (switch methods to compare), then pick your preferred one.
+                </p>
+                <div className="mt-3 space-y-2">
+                  {methodSummaries.map((ms) => {
+                    const isPreferred = preferenceMap[selectedWindow.window_id]?.preferred_method === ms.methodId;
+                    const triggerCount = ms.triggers.length;
+                    return (
+                      <button
+                        key={ms.methodId}
+                        type="button"
+                        onClick={() => {
+                          setPreferenceMap((current) => ({
+                            ...current,
+                            [selectedWindow.window_id]: {
+                              ...current[selectedWindow.window_id],
+                              preferred_method: isPreferred ? "" : ms.methodId,
+                            },
+                          }));
+                        }}
+                        className={cn(
+                          "flex w-full items-center justify-between rounded-xl border-2 px-4 py-3 text-left text-sm transition",
+                          isPreferred
+                            ? "border-indigo-500 bg-indigo-100 text-indigo-900 ring-2 ring-indigo-300 dark:border-indigo-400 dark:bg-indigo-900/40 dark:text-indigo-100 dark:ring-indigo-700"
+                            : "border-slate-200 bg-white text-slate-700 hover:border-indigo-300 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-indigo-700",
+                        )}
+                      >
+                        <div className="flex items-center gap-2">
+                          <span className={cn("text-lg", isPreferred ? "opacity-100" : "opacity-30")}>
+                            {isPreferred ? "\u2605" : "\u2606"}
+                          </span>
+                          <span className="font-semibold">{ms.label}</span>
+                          <span className="rounded-full bg-slate-200 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-700 dark:text-slate-400">
+                            {triggerCount} trigger{triggerCount !== 1 ? "s" : ""}
+                          </span>
+                        </div>
+                        {isPreferred && (
+                          <span className="rounded-full bg-indigo-200 px-2 py-0.5 text-xs font-bold text-indigo-800 dark:bg-indigo-800 dark:text-indigo-200">
+                            PREFERRED
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+                <div className="mt-3">
+                  <TextArea
+                    label="Why this preference? (optional)"
+                    rows={2}
+                    value={preferenceMap[selectedWindow?.window_id]?.preference_notes || ""}
+                    onChange={(value) => {
+                      setPreferenceMap((current) => ({
+                        ...current,
+                        [selectedWindow.window_id]: {
+                          ...current[selectedWindow.window_id],
+                          preference_notes: value,
+                        },
+                      }));
+                    }}
+                    placeholder="e.g., Better timing, more actionable recs, less over-triggering..."
+                  />
+                </div>
+                <div className="mt-3">
+                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600 dark:text-indigo-400">
+                    Overall Usefulness (1-5)
+                  </span>
+                  <p className="mt-0.5 text-xs text-indigo-600/70 dark:text-indigo-400/70">
+                    How useful was the best agent output for this scenario? 1 = useless, 3 = somewhat helpful, 5 = exactly what I&apos;d want
+                  </p>
+                  <div className="mt-2 flex gap-2">
+                    {[1, 2, 3, 4, 5].map((value) => (
+                      <button
+                        key={value}
+                        type="button"
+                        onClick={() => {
+                          setPreferenceMap((current) => ({
+                            ...current,
+                            [selectedWindow.window_id]: {
+                              ...current[selectedWindow.window_id],
+                              overall_usefulness: preferenceMap[selectedWindow.window_id]?.overall_usefulness === value ? null : value,
+                            },
+                          }));
+                        }}
+                        className={cn(
+                          "rounded-lg border px-4 py-2 text-sm font-semibold transition",
+                          preferenceMap[selectedWindow?.window_id]?.overall_usefulness === value
+                            ? "border-indigo-500 bg-indigo-100 text-indigo-700 dark:border-indigo-400 dark:bg-indigo-900/40 dark:text-indigo-300"
+                            : "border-slate-300 bg-white text-slate-600 hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400",
+                        )}
+                      >
+                        {value}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* ── Per-trigger diagnostics ── */}
             {selectedTrigger ? (
               <>
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Current Scorecard</h3>
-                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                        {selectedTrigger.trigger_id} · {selectedTrigger.trigger_timestamp}s · {selectedTrigger.recommendation_mode}
-                        {selectedTrigger.proactive_score !== "" && selectedTrigger.proactive_score != null && (
-                          <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-700 dark:bg-amber-950/50 dark:text-amber-400">
-                            score {selectedTrigger.proactive_score}/5
-                          </span>
-                        )}
-                        {selectedTrigger.signal_type && (
-                          <span className="ml-2 rounded-full bg-rose-100 px-2 py-0.5 text-xs font-semibold text-rose-700 dark:bg-rose-950/50 dark:text-rose-400">
-                            {selectedTrigger.signal_type}
-                          </span>
-                        )}
-                        {selectedTrigger.wearer_goal && (
-                          <span className="ml-2 text-xs text-slate-500 dark:text-slate-400">
-                            goal: {selectedTrigger.wearer_goal}
-                            {selectedTrigger.goal_type ? ` [${selectedTrigger.goal_type}]` : ""}
-                          </span>
-                        )}
-                      </p>
-                    </div>
-                    <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-500 dark:bg-slate-900 dark:text-slate-400">
+                <details className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50" open>
+                  <summary className="cursor-pointer list-none text-sm font-semibold text-slate-900 dark:text-slate-100">
+                    Trigger Diagnostics: {selectedTrigger.trigger_id} · {selectedTrigger.trigger_timestamp}s
+                    {selectedTrigger.proactive_score !== "" && selectedTrigger.proactive_score != null && (
+                      <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-700 dark:bg-amber-950/50 dark:text-amber-400">
+                        score {selectedTrigger.proactive_score}/5
+                      </span>
+                    )}
+                    {selectedTrigger.signal_type && (
+                      <span className="ml-2 rounded-full bg-rose-100 px-2 py-0.5 text-xs font-semibold text-rose-700 dark:bg-rose-950/50 dark:text-rose-400">
+                        {selectedTrigger.signal_type}
+                      </span>
+                    )}
+                    <span className="ml-2 rounded-full bg-white px-3 py-0.5 text-xs font-medium text-slate-500 dark:bg-slate-900 dark:text-slate-400">
                       {activeReviewState.review_decision || "pending"}
                     </span>
-                  </div>
+                  </summary>
 
                   <div className="mt-4">
                     <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
@@ -1594,265 +1702,91 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Task A — Intervention Decision */}
-                  <div className="mt-5">
+                  {/* Task A — Was this the right moment? */}
+                  <div className="mt-4">
                     <div className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-400">
-                      Task A — Intervention Decision
+                      Task A — Was this the right moment?
                     </div>
-                    <div className="mt-2 grid gap-3 md:grid-cols-2">
-                      <label
-                        title="Should the agent have triggered at this moment?"
-                        className="flex items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 cursor-pointer"
-                      >
-                        <input
-                          type="checkbox"
-                          checked={activeReviewState.trigger_appropriate === "1"}
-                          onChange={(event) =>
-                            updateReviewField("trigger_appropriate", event.target.checked ? "1" : "0")
-                          }
-                        />
-                        <div>
-                          <span>Appropriate</span>
-                          <span className="ml-1 text-xs text-slate-400 dark:text-slate-500">?</span>
-                        </div>
+                    <div className="mt-2 flex flex-wrap gap-3">
+                      <label title="Should the agent have triggered here?" className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                        <input type="checkbox" checked={activeReviewState.trigger_appropriate === "1"} onChange={(e) => updateReviewField("trigger_appropriate", e.target.checked ? "1" : "0")} />
+                        Appropriate
                       </label>
-                      <label
-                        title="Was this intervention worth the interruption cost?"
-                        className="flex items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 cursor-pointer"
-                      >
-                        <input
-                          type="checkbox"
-                          checked={activeReviewState.interruption_worthy === "1"}
-                          onChange={(event) =>
-                            updateReviewField("interruption_worthy", event.target.checked ? "1" : "0")
-                          }
-                        />
-                        <div>
-                          <span>Worth Interruption</span>
-                          <span className="ml-1 text-xs text-slate-400 dark:text-slate-500">?</span>
-                        </div>
+                      <label title="Worth the interruption cost?" className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                        <input type="checkbox" checked={activeReviewState.interruption_worthy === "1"} onChange={(e) => updateReviewField("interruption_worthy", e.target.checked ? "1" : "0")} />
+                        Worth Interruption
                       </label>
-                    </div>
-                    <div className="mt-2">
-                      <label className="block">
-                        <span className="mb-1 block text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                          Timing (1 = wrong, 2 = close, 3 = perfect)
-                        </span>
-                        <div className="flex gap-2">
-                          {[1, 2, 3].map((value) => (
-                            <button
-                              key={value}
-                              type="button"
-                              onClick={() => updateReviewField("trigger_timing", String(value))}
-                              className={cn(
-                                "rounded-lg border px-4 py-2 text-sm font-semibold transition",
-                                activeReviewState.trigger_timing === String(value)
-                                  ? "border-emerald-400 bg-emerald-50 text-emerald-700 dark:border-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400"
-                                  : "border-slate-300 bg-white text-slate-600 hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400",
-                              )}
-                            >
-                              {value}
-                            </button>
-                          ))}
-                          {activeReviewState.trigger_timing && (
-                            <button
-                              type="button"
-                              onClick={() => updateReviewField("trigger_timing", "")}
-                              className="rounded-lg px-2 py-2 text-xs text-slate-400 hover:text-slate-600"
-                            >
-                              clear
-                            </button>
-                          )}
-                        </div>
-                      </label>
+                      <div className="flex items-center gap-1">
+                        <span className="text-xs text-slate-500">Timing:</span>
+                        {[1, 2, 3].map((v) => (
+                          <button key={v} type="button" onClick={() => updateReviewField("trigger_timing", String(v))}
+                            className={cn("rounded-lg border px-3 py-1.5 text-xs font-semibold", activeReviewState.trigger_timing === String(v) ? "border-emerald-400 bg-emerald-50 text-emerald-700 dark:border-emerald-700 dark:bg-emerald-950/40" : "border-slate-300 bg-white text-slate-500 dark:border-slate-700 dark:bg-slate-900")}>
+                            {v}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
-                  {/* Task B — Recommendation Quality */}
-                  <div className="mt-5">
+                  {/* Task B — Rec quality */}
+                  <div className="mt-4">
                     <div className="text-xs font-semibold uppercase tracking-[0.18em] text-labPurple">
                       Task B — Recommendation Quality
                     </div>
-                    <div className="mt-2 grid gap-3 md:grid-cols-2">
+                    <div className="mt-2 flex flex-wrap gap-3">
                       {[
-                        ["useful_1", "Useful 1", "Would rec 1 actually help the wearer right now?"],
-                        ["useful_2", "Useful 2", "Would rec 2 actually help the wearer right now?"],
-                        ["grounded", "Grounded", "Are both recs supported by the transcript, not speculative?"],
-                        ["distinct_pair", "Distinct Pair", "Are the two recs meaningfully different from each other?"],
-                      ].map(([field, label, tooltip]) => (
-                        <label
-                          key={field}
-                          title={tooltip}
-                          className="flex items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 cursor-pointer"
-                        >
-                          <input
-                            type="checkbox"
-                            checked={activeReviewState[field] === "1"}
-                            onChange={(event) =>
-                              updateReviewField(field, event.target.checked ? "1" : "0")
-                            }
-                          />
-                          <div>
-                            <span>{label}</span>
-                            <span className="ml-1 text-xs text-slate-400 dark:text-slate-500">?</span>
-                          </div>
+                        ["useful_1", "Useful 1"],
+                        ["useful_2", "Useful 2"],
+                        ["grounded", "Grounded"],
+                        ["distinct_pair", "Distinct Pair"],
+                      ].map(([field, label]) => (
+                        <label key={field} className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                          <input type="checkbox" checked={activeReviewState[field] === "1"} onChange={(e) => updateReviewField(field, e.target.checked ? "1" : "0")} />
+                          {label}
                         </label>
                       ))}
                     </div>
                   </div>
 
-                  {/* Task C — Goal Inference */}
-                  <div className="mt-5">
+                  {/* Task C — Goal inference */}
+                  <div className="mt-4">
                     <div className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-600 dark:text-amber-400">
                       Task C — Goal Inference
                     </div>
-                    {selectedWindow?.scenario_meta?.wearer_goal && (
-                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 italic">
-                        Ground truth: &ldquo;{selectedWindow.scenario_meta.wearer_goal}&rdquo;
-                        {selectedWindow.scenario_meta.goal_type && (
-                          <span className="not-italic"> [{selectedWindow.scenario_meta.goal_type}]</span>
-                        )}
+                    {selectedTrigger.wearer_goal && (
+                      <p className="mt-1 text-xs text-slate-500 italic dark:text-slate-400">
+                        Agent inferred: &ldquo;{selectedTrigger.wearer_goal}&rdquo;
+                        {selectedTrigger.goal_type ? ` [${selectedTrigger.goal_type}]` : ""}
                       </p>
                     )}
-                    <div className="mt-2 grid gap-3 md:grid-cols-3">
+                    <div className="mt-2 flex flex-wrap gap-3">
                       {[
-                        ["goal_plausible", "Plausible", "Does the inferred goal fit the conversational context?"],
-                        ["goal_specific", "Specific", "Is the goal concrete rather than generic (e.g. not just 'communicate')?"],
-                        ["goal_useful_for_recs", "Useful for Recs", "Does this goal actually help produce better recommendations?"],
-                      ].map(([field, label, tooltip]) => (
-                        <label
-                          key={field}
-                          title={tooltip}
-                          className="flex items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 cursor-pointer"
-                        >
-                          <input
-                            type="checkbox"
-                            checked={activeReviewState[field] === "1"}
-                            onChange={(event) =>
-                              updateReviewField(field, event.target.checked ? "1" : "0")
-                            }
-                          />
-                          <div>
-                            <span>{label}</span>
-                            <span className="ml-1 text-xs text-slate-400 dark:text-slate-500">?</span>
-                          </div>
+                        ["goal_plausible", "Plausible"],
+                        ["goal_specific", "Specific"],
+                        ["goal_useful_for_recs", "Useful for Recs"],
+                      ].map(([field, label]) => (
+                        <label key={field} className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                          <input type="checkbox" checked={activeReviewState[field] === "1"} onChange={(e) => updateReviewField(field, e.target.checked ? "1" : "0")} />
+                          {label}
                         </label>
                       ))}
                     </div>
                   </div>
-                </div>
 
-                {activeReviewState.review_decision === "edited" ? (
-                  <div className="rounded-2xl border border-purple-200 bg-purple-50 p-4 dark:border-purple-900/50 dark:bg-purple-950/30">
-                    <div className="grid gap-4">
-                      <div className="grid gap-4 md:grid-cols-2">
-                        <TextInput
-                          label="Final Timestamp"
-                          value={activeReviewState.final_trigger_timestamp || ""}
-                          onChange={(value) => updateReviewField("final_trigger_timestamp", value)}
-                        />
-                        <label className="block">
-                          <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                            Final Mode
-                          </span>
-                          <select
-                            value={activeReviewState.final_recommendation_mode || "say"}
-                            onChange={(event) =>
-                              updateReviewField("final_recommendation_mode", event.target.value)
-                            }
-                            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-labPurple focus:ring-2 focus:ring-purple-100 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:focus:ring-purple-900/40"
-                          >
-                            {recommendationModes.map((mode) => (
-                              <option key={mode} value={mode}>
-                                {mode}
-                              </option>
-                            ))}
-                          </select>
-                        </label>
-                      </div>
-                      <TextArea
-                        label="Final Recommendation 1"
-                        value={activeReviewState.final_recommendation_1 || ""}
-                        onChange={(value) => updateReviewField("final_recommendation_1", value)}
-                      />
-                      <TextArea
-                        label="Final Recommendation 2"
-                        value={activeReviewState.final_recommendation_2 || ""}
-                        onChange={(value) => updateReviewField("final_recommendation_2", value)}
-                      />
-                      <TextArea
-                        label="Final Rationale"
-                        rows={2}
-                        value={activeReviewState.final_rationale || ""}
-                        onChange={(value) => updateReviewField("final_rationale", value)}
-                      />
-                    </div>
+                  <div className="mt-4">
+                    <TextArea
+                      label="Notes"
+                      rows={2}
+                      value={activeReviewState.review_notes || ""}
+                      onChange={(value) => updateReviewField("review_notes", value)}
+                      placeholder="Optional notes on this specific trigger."
+                    />
                   </div>
-                ) : null}
-
-                <TextArea
-                  label="Review Notes"
-                  rows={3}
-                  value={activeReviewState.review_notes || ""}
-                  onChange={(value) => updateReviewField("review_notes", value)}
-                  placeholder="Why this trigger was accepted, edited, or rejected."
-                />
+                </details>
               </>
             ) : (
-              <p className="text-sm text-slate-500 dark:text-slate-400">This window has no AI trigger proposals.</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Select a trigger from the transcript to review it.</p>
             )}
-
-            <div className="min-h-0 flex-1 overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
-              <div className="border-b border-slate-200 px-4 py-3 text-sm font-semibold text-slate-800 dark:border-slate-800 dark:text-slate-100">
-                Entire Scorecard for Current Window
-              </div>
-              <div className="max-h-[360px] space-y-3 overflow-auto px-4 py-4">
-                {selectedWindow.triggers.map((trigger) => {
-                  const key = triggerKey(
-                    selectedMethod?.id || "active_method",
-                    selectedWindow.window_id,
-                    trigger.trigger_id,
-                  );
-                  const state = reviewMap[key] || {};
-                  return (
-                    <button
-                      key={key}
-                      type="button"
-                      onClick={() => setSelectedTriggerId(trigger.trigger_id)}
-                      className={cn(
-                        "block w-full rounded-xl border px-4 py-3 text-left transition",
-                        selectedTrigger?.trigger_id === trigger.trigger_id
-                          ? "border-labPurple bg-purple-50 dark:bg-purple-950/30"
-                          : "border-slate-200 bg-white hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-950/50",
-                      )}
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                          {trigger.trigger_id} · {trigger.trigger_timestamp}s
-                        </span>
-                        <span className="rounded-full bg-white px-3 py-1 text-xs text-slate-500 dark:bg-slate-950 dark:text-slate-400">
-                          {state.review_decision || "pending"}
-                        </span>
-                      </div>
-                      <p className="mt-2 line-clamp-2 text-sm text-slate-700 dark:text-slate-300">
-                        {state.final_recommendation_1 || trigger.recommendation_1}
-                      </p>
-                      <div className="mt-2 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.16em] text-slate-400 dark:text-slate-500">
-                        <span>
-                          {formatTriggerLabel(
-                            state.final_trigger_timestamp || trigger.trigger_timestamp,
-                          )}
-                        </span>
-                        <span>u1:{state.useful_1 || "-"}</span>
-                        <span>u2:{state.useful_2 || "-"}</span>
-                        <span>g:{state.grounded || "-"}</span>
-                        <span>d:{state.distinct_pair || "-"}</span>
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
           </div>
         </Panel>
       </main>
@@ -1888,6 +1822,13 @@ export default function App() {
               className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-600"
             >
               Download Review CSV
+            </button>
+            <button
+              type="button"
+              onClick={downloadPreferenceCsv}
+              className="rounded-xl border border-indigo-300 px-4 py-3 text-sm font-semibold text-indigo-700 transition hover:border-indigo-400 dark:border-indigo-700 dark:text-indigo-300 dark:hover:border-indigo-600"
+            >
+              Download Preferences CSV
             </button>
             <button
               type="button"
