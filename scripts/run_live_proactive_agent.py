@@ -244,6 +244,23 @@ you detect a clear conversational signal: a self-contradiction, a question being
 dodged, emotional escalation, a factual error, a missed social cue, a premature \
 commitment, or an actionable opportunity the wearer is about to miss.
 
+Signal types you should watch for:
+- self_contradiction_recall: wearer contradicts something said earlier
+- question_dodge: wearer pivots away from the actual question
+- emotional_escalation: conversation tension is rising
+- idea_co_option: someone restates the wearer's earlier idea as their own
+- missed_buying_signal: prospect signals interest but wearer keeps pitching
+- premature_commitment: wearer is about to overcommit
+- factual_error: incorrect information going uncorrected
+- structural_gap: response is missing a key component (e.g., STAR result)
+- high_stakes_decision_point: critical moment requiring careful response
+- missed_connection_opportunity: relevant connection the wearer is about to miss
+
+Goal types to choose from:
+persuasion, negotiation, social_coordination, relationship_management, \
+information_exchange, collaborative_problem_solving, collaborative_learning, \
+relationship_building, social_bonding, information_delivery, teaching
+
 Return JSON only."""
 
 PROAGENT_USER = """\
@@ -258,11 +275,13 @@ Perform these three tasks in order:
 
 Task C — Goal Inference:
 What is the wearer (P1) trying to accomplish in this conversation right now? \
-Be specific and concrete, not generic.
+Be specific and concrete, not generic. Pick the closest goal_type from the list. \
+Rate your confidence: high, medium, or low.
 
 Task A — Intervention Decision:
 Given the wearer's goal, should you intervene at this exact moment? \
-Be selective — only intervene if there is a clear, concrete signal.
+Be selective — only intervene if there is a clear, concrete signal. \
+If triggering, identify which signal_type best describes why.
 
 Task B — Recommendation (only if intervening):
 Generate exactly two recommendations that are aligned with the wearer's goal:
@@ -274,10 +293,10 @@ Generate exactly two recommendations that are aligned with the wearer's goal:
 Return one of:
 
 If NO intervention needed:
-{{"action": "none", "wearer_goal": "what the wearer is trying to do", "proactive_score": 1, "reason": "brief reason"}}
+{{"action": "none", "wearer_goal": "what the wearer is trying to do", "goal_type": "closest_type", "goal_confidence": "high|medium|low", "proactive_score": 1, "reason": "brief reason"}}
 
 If intervention IS warranted:
-{{"action": "recommend", "wearer_goal": "what the wearer is trying to do", "proactive_score": 3, "recommendation_mode": "say|know|both", "recommendation_1": "...", "recommendation_2": "...", "urgency": "low|medium|high", "rationale": "..."}}"""
+{{"action": "recommend", "wearer_goal": "what the wearer is trying to do", "goal_type": "closest_type", "goal_confidence": "high|medium|low", "signal_type": "detected_signal", "proactive_score": 3, "recommendation_mode": "say|know|both", "recommendation_1": "...", "recommendation_2": "...", "urgency": "low|medium|high", "rationale": "..."}}"""
 
 
 # ---------------------------------------------------------------------------
@@ -301,13 +320,23 @@ def print_recommendation(result: dict, elapsed: float) -> None:
     mode = result.get("recommendation_mode", "both")
     score = result.get("proactive_score", "?")
     goal = result.get("wearer_goal", "")
+    goal_type = result.get("goal_type", "")
+    goal_conf = result.get("goal_confidence", "")
+    signal = result.get("signal_type", "")
 
     print()
     print(f"{BOLD}{GREEN}{'=' * 60}{RESET}")
     print(f"{BOLD}{GREEN}  PROACTIVE RECOMMENDATION @ {elapsed:.1f}s{RESET}")
     print(f"{GREEN}{'=' * 60}{RESET}")
+    # Task C — Goal
     if goal:
-        print(f"  {DIM}goal:{RESET}  {goal}")
+        conf_str = f" ({goal_conf})" if goal_conf else ""
+        type_str = f" [{goal_type}]" if goal_type else ""
+        print(f"  {DIM}Task C goal:{RESET} {goal}{type_str}{conf_str}")
+    # Task A — Signal
+    if signal:
+        print(f"  {DIM}Task A signal:{RESET} {YELLOW}{signal}{RESET}")
+    # Task B — Recommendations
     print(f"  {DIM}mode:{RESET}  {mode}  {DIM}urgency:{RESET} {color}{urgency}{RESET}  {DIM}score:{RESET} {score}/5")
     print()
     print(f"  {CYAN}1:{RESET} {result.get('recommendation_1', '(empty)')}")
@@ -348,27 +377,175 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--persona", default="", help="Wearer persona description (e.g. 'Senior engineer in a salary negotiation')")
     parser.add_argument("--save-log", action="store_true", help="Save session log to analysis/live_sessions/")
     parser.add_argument("--temperature", type=float, default=0.3, help="LLM temperature")
+    parser.add_argument("--scenario", default=None, help="Scenario ID from scenario_transcripts.json (e.g. 'salary_negotiation_01'). Replays the transcript instead of using the mic.")
+    parser.add_argument("--scenario-file", default=None, help="Path to scenario_transcripts.json (default: auto-detect)")
     return parser.parse_args()
 
 
-def main() -> int:
-    args = parse_args()
-    repo_root = Path(__file__).resolve().parents[1]
-    load_env_file(args.env_file)
+def load_scenario(scenario_id: str, scenario_file: str | None, repo_root: Path) -> dict | None:
+    """Load a scenario from scenario_transcripts.json by ID."""
+    candidates = [
+        Path(scenario_file) if scenario_file else None,
+        repo_root / "analysis" / "live_scenarios" / "scenario_transcripts.json",
+    ]
+    for path in candidates:
+        if path and path.exists():
+            scenarios = json.loads(path.read_text())
+            for s in scenarios:
+                if s["id"] == scenario_id:
+                    return s
+            # Try partial match
+            for s in scenarios:
+                if scenario_id in s["id"]:
+                    return s
+            print(f"  Available scenarios:", file=sys.stderr)
+            for s in scenarios:
+                print(f"    {s['id']}  –  {s['title']}", file=sys.stderr)
+            return None
+    print(f"Error: scenario_transcripts.json not found.", file=sys.stderr)
+    return None
 
-    # Resolve API credentials
-    base_url = args.base_url or os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
-    api_key = args.api_key or os.environ.get("OPENAI_API_KEY", "")
-    model = args.model or os.environ.get("OPENAI_MODEL", "gpt-4.1-mini")
 
-    if not api_key:
-        print("Error: no API key. Set OPENAI_API_KEY or pass --api-key.", file=sys.stderr)
-        return 1
+def parse_scenario_turns(transcript_text: str) -> list[dict]:
+    """Parse transcript text into timed turns for replay."""
+    turns = []
+    for line in transcript_text.strip().split("\n"):
+        line = line.strip()
+        if not line:
+            continue
+        match = re.match(r"^\[(\d+):(\d+\.\d+)\]\s+(P\d+):\s+(.*)$", line)
+        if match:
+            minutes = int(match.group(1))
+            seconds = float(match.group(2))
+            turns.append({
+                "seconds": minutes * 60 + seconds,
+                "speaker": match.group(3),
+                "text": match.group(4),
+            })
+    return turns
 
+
+def run_proactive_check(
+    base_url: str, api_key: str, model: str, temperature: float,
+    transcript: TranscriptBuffer, elapsed: float, persona: str,
+    checks: int, triggers: int, session_log: list[dict],
+) -> tuple[int, int]:
+    """Run a single proactive check against the LLM. Returns updated (checks, triggers)."""
+    checks += 1
+    formatted = transcript.format_transcript()
+    persona_block = ""
+    if persona:
+        persona_block = f"\n--- WEARER PERSONA ---\n{persona}\n--- END PERSONA ---\n"
+    user_prompt = PROAGENT_USER.format(elapsed=elapsed, transcript=formatted, persona_block=persona_block)
+
+    print_status(elapsed, len(transcript.turns), checks, triggers)
+
+    try:
+        result = call_llm_json(
+            base_url, api_key, model,
+            PROAGENT_SYSTEM, user_prompt,
+            temperature=temperature,
+        )
+        action = result.get("action", "none")
+
+        log_entry = {
+            "elapsed": round(elapsed, 2),
+            "check_number": checks,
+            "transcript_snapshot": formatted,
+            "result": result,
+        }
+        session_log.append(log_entry)
+
+        if action == "recommend":
+            triggers += 1
+            print_recommendation(result, elapsed)
+        else:
+            reason = result.get("reason", "")
+            goal = result.get("wearer_goal", "")
+            goal_type = result.get("goal_type", "")
+            goal_conf = result.get("goal_confidence", "")
+            goal_str = f" | goal: {goal}" if goal else ""
+            if goal_type:
+                goal_str += f" [{goal_type}]"
+            if goal_conf:
+                goal_str += f" ({goal_conf})"
+            print(f"\r  {DIM}[{elapsed:5.1f}s] check #{checks}: no action – {reason}{goal_str}{RESET}")
+
+    except Exception as exc:
+        print(f"\n  {RED}[error] LLM call failed: {exc}{RESET}")
+        session_log.append({"elapsed": round(elapsed, 2), "error": str(exc)})
+
+    return checks, triggers
+
+
+def run_scenario_replay(args, base_url: str, api_key: str, model: str, repo_root: Path) -> tuple[float, int, int, TranscriptBuffer, list]:
+    """Replay a scenario transcript, running proactive checks at the specified interval."""
+    scenario = load_scenario(args.scenario, args.scenario_file, repo_root)
+    if not scenario:
+        print(f"Error: scenario '{args.scenario}' not found.", file=sys.stderr)
+        raise SystemExit(1)
+
+    turns = parse_scenario_turns(scenario["transcript_text"])
+    if not turns:
+        print(f"Error: scenario has no parseable transcript turns.", file=sys.stderr)
+        raise SystemExit(1)
+
+    persona = args.persona or scenario.get("persona", "")
+    transcript = TranscriptBuffer(max_seconds=args.context_window)
+    session_log: list[dict] = []
+
+    print(f"{BOLD}OcularClaw Scenario Replay{RESET}")
+    print(f"  scenario:       {scenario['id']}")
+    print(f"  title:          {scenario['title']}")
+    print(f"  category:       {scenario.get('category', '')}")
+    if persona:
+        print(f"  persona:        {persona}")
+    print(f"  turns:          {len(turns)}")
+    print(f"  duration:       {scenario.get('duration_seconds', '?')}s")
+    print(f"  ground truth:   trigger={'yes' if scenario.get('proactive_index') else 'no'}  score={scenario.get('proactive_score', '?')}/5")
+    if scenario.get("wearer_goal"):
+        print(f"  wearer goal:    {scenario['wearer_goal']}")
+    if scenario.get("signal_type") and scenario["signal_type"] != "none":
+        print(f"  signal type:    {scenario['signal_type']}")
+    print(f"  check interval: {args.check_interval:.1f}s")
+    print(f"  model:          {model}")
+    print()
+
+    checks = 0
+    triggers = 0
+    next_check_at = args.check_interval
+
+    for turn in turns:
+        elapsed = turn["seconds"]
+        transcript.add(turn["text"], elapsed, speaker=turn["speaker"])
+        print(f"  {DIM}[{elapsed:5.1f}s]{RESET} {DIM}{turn['speaker']}:{RESET} {turn['text']}")
+
+        # Run proactive check if enough time has passed
+        while elapsed >= next_check_at and transcript.has_content():
+            checks, triggers = run_proactive_check(
+                base_url, api_key, model, args.temperature,
+                transcript, next_check_at, persona,
+                checks, triggers, session_log,
+            )
+            next_check_at += args.check_interval
+
+    # Final check at end of transcript
+    if transcript.has_content():
+        checks, triggers = run_proactive_check(
+            base_url, api_key, model, args.temperature,
+            transcript, turns[-1]["seconds"], persona,
+            checks, triggers, session_log,
+        )
+
+    elapsed_total = turns[-1]["seconds"] if turns else 0
+    return elapsed_total, checks, triggers, transcript, session_log
+
+
+def run_live_mic(args, base_url: str, api_key: str, model: str) -> tuple[float, int, int, TranscriptBuffer, list]:
+    """Run the live mic capture loop."""
     # Pre-load local whisper model
     get_whisper_model(args.whisper_model)
 
-    # Initialize components
     audio = ChunkedAudioCapture(sample_rate=args.sample_rate, chunk_seconds=args.chunk_seconds)
     transcript = TranscriptBuffer(max_seconds=args.context_window)
     session_log: list[dict] = []
@@ -380,6 +557,8 @@ def main() -> int:
     print(f"  check interval: {args.check_interval:.1f}s")
     print(f"  model:          {model}")
     print(f"  base_url:       {base_url}")
+    if args.persona:
+        print(f"  persona:        {args.persona}")
     print()
     print(f"{DIM}Starting audio capture... speak into your mic.{RESET}")
     print()
@@ -401,7 +580,7 @@ def main() -> int:
 
             # --- Drain and transcribe audio chunk ---
             chunk_data = audio.drain_chunk()
-            if chunk_data and len(chunk_data) > 1000:  # skip near-empty chunks
+            if chunk_data and len(chunk_data) > 1000:
                 wav_path = tmp_dir / "chunk.wav"
                 audio.save_chunk_wav(chunk_data, wav_path)
                 text = transcribe_local(wav_path, args.whisper_model)
@@ -412,43 +591,11 @@ def main() -> int:
             # --- Proactive check ---
             if (now - last_check_time) >= args.check_interval and transcript.has_content():
                 last_check_time = now
-                checks += 1
-                formatted = transcript.format_transcript()
-                persona_block = ""
-                if args.persona:
-                    persona_block = f"\n--- WEARER PERSONA ---\n{args.persona}\n--- END PERSONA ---\n"
-                user_prompt = PROAGENT_USER.format(elapsed=elapsed, transcript=formatted, persona_block=persona_block)
-
-                print_status(elapsed, len(transcript.turns), checks, triggers)
-
-                try:
-                    result = call_llm_json(
-                        base_url, api_key, model,
-                        PROAGENT_SYSTEM, user_prompt,
-                        temperature=args.temperature,
-                    )
-                    action = result.get("action", "none")
-
-                    log_entry = {
-                        "elapsed": round(elapsed, 2),
-                        "check_number": checks,
-                        "transcript_snapshot": formatted,
-                        "result": result,
-                    }
-                    session_log.append(log_entry)
-
-                    if action == "recommend":
-                        triggers += 1
-                        print_recommendation(result, elapsed)
-                    else:
-                        reason = result.get("reason", "")
-                        goal = result.get("wearer_goal", "")
-                        goal_str = f" | goal: {goal}" if goal else ""
-                        print(f"\r  {DIM}[{elapsed:5.1f}s] check #{checks}: no action – {reason}{goal_str}{RESET}")
-
-                except Exception as exc:
-                    print(f"\n  {RED}[error] LLM call failed: {exc}{RESET}")
-                    session_log.append({"elapsed": round(elapsed, 2), "error": str(exc)})
+                checks, triggers = run_proactive_check(
+                    base_url, api_key, model, args.temperature,
+                    transcript, elapsed, args.persona,
+                    checks, triggers, session_log,
+                )
 
             # Sleep until next chunk is ready
             sleep_for = args.chunk_seconds - (time.time() - now)
@@ -461,35 +608,102 @@ def main() -> int:
         audio.stop()
 
     elapsed_total = time.time() - start_time
+
+    # Cleanup temp files
+    import shutil
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    return elapsed_total, checks, triggers, transcript, session_log
+
+def main() -> int:
+    args = parse_args()
+    repo_root = Path(__file__).resolve().parents[1]
+    load_env_file(args.env_file)
+
+    # Resolve API credentials
+    base_url = args.base_url or os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
+    api_key = args.api_key or os.environ.get("OPENAI_API_KEY", "")
+    model = args.model or os.environ.get("OPENAI_MODEL", "gpt-4.1-mini")
+
+    if not api_key:
+        print("Error: no API key. Set OPENAI_API_KEY or pass --api-key.", file=sys.stderr)
+        return 1
+
+    # Run either scenario replay or live mic
+    if args.scenario:
+        elapsed_total, checks, triggers, transcript, session_log = run_scenario_replay(
+            args, base_url, api_key, model, repo_root
+        )
+    else:
+        elapsed_total, checks, triggers, transcript, session_log = run_live_mic(
+            args, base_url, api_key, model
+        )
+
     print()
     print(f"{BOLD}Session complete{RESET}")
     print(f"  duration:  {elapsed_total:.1f}s")
     print(f"  checks:    {checks}")
     print(f"  triggers:  {triggers}")
 
-    # Save session log
+    # Save session log (benchmark-compatible)
     if args.save_log or session_log:
         log_dir = repo_root / "analysis" / "live_sessions"
         log_dir.mkdir(parents=True, exist_ok=True)
         ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         log_path = log_dir / f"session_{ts}.json"
 
+        # Extract benchmark-compatible triggers from log entries
+        trigger_entries = []
+        for entry in session_log:
+            result = entry.get("result", {})
+            if result.get("action") == "recommend":
+                trigger_entries.append({
+                    "trigger_timestamp": entry["elapsed"],
+                    "wearer_goal": result.get("wearer_goal", ""),
+                    "goal_type": result.get("goal_type", ""),
+                    "goal_confidence": result.get("goal_confidence", ""),
+                    "signal_type": result.get("signal_type", ""),
+                    "proactive_score": result.get("proactive_score", ""),
+                    "recommendation_mode": result.get("recommendation_mode", "both"),
+                    "recommendation_1": result.get("recommendation_1", ""),
+                    "recommendation_2": result.get("recommendation_2", ""),
+                    "urgency": result.get("urgency", "medium"),
+                    "rationale": result.get("rationale", ""),
+                })
+
+        # Extract all goal inferences (including non-trigger checks) for Task C eval
+        goal_inferences = []
+        for entry in session_log:
+            result = entry.get("result", {})
+            if result.get("wearer_goal"):
+                goal_inferences.append({
+                    "timestamp": entry["elapsed"],
+                    "wearer_goal": result["wearer_goal"],
+                    "goal_type": result.get("goal_type", ""),
+                    "goal_confidence": result.get("goal_confidence", ""),
+                    "triggered": result.get("action") == "recommend",
+                })
+
         session_data = {
             "agent_mode": args.agent_mode,
             "model": model,
+            "persona": args.persona,
+            "scenario_id": args.scenario or None,
             "duration_seconds": round(elapsed_total, 2),
             "check_interval": args.check_interval,
             "total_checks": checks,
             "total_triggers": triggers,
-            "transcript": transcript.format_transcript(),
-            "log": session_log,
+            "transcript_text": transcript.format_transcript(),
+            # Benchmark-compatible arrays
+            "triggers": trigger_entries,
+            "goal_inferences": goal_inferences,
+            # Full raw log for debugging
+            "raw_log": session_log,
         }
         log_path.write_text(json.dumps(session_data, indent=2))
         print(f"  log:       {log_path}")
-
-    # Cleanup temp files
-    import shutil
-    shutil.rmtree(tmp_dir, ignore_errors=True)
+        print(f"  triggers:  {len(trigger_entries)} saved")
+        print(f"  goals:     {len(goal_inferences)} inferences logged")
 
     return 0
 

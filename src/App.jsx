@@ -2,15 +2,25 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import ReactPlayer from "react-player";
 
 const STORAGE_KEYS = {
+  reviewerId: "benchmark-lab-reviewer-id",
   reviewExport: "benchmark-lab-review-export",
+  reviewMap: "benchmark-lab-review-map",
   apiSettings: "benchmark-lab-api-settings",
   videoUrls: "benchmark-lab-video-urls",
   manualComments: "benchmark-lab-manual-comments",
   theme: "benchmark-lab-theme",
   selectedMethod: "benchmark-lab-selected-method",
+  selectedDataset: "benchmark-lab-selected-dataset",
 };
 
+/** Prefix a storage key with the reviewer ID so each reviewer gets their own namespace. */
+function reviewerKey(baseKey, reviewerId) {
+  if (!reviewerId) return baseKey;
+  return `${baseKey}::${reviewerId}`;
+}
+
 const reviewSheetColumns = [
+  "reviewer_id",
   "window_id",
   "conversation_id",
   "video_name",
@@ -25,10 +35,16 @@ const reviewSheetColumns = [
   "rationale",
   "annotation_status",
   "review_decision",
+  "trigger_appropriate",
+  "trigger_timing",
+  "interruption_worthy",
   "useful_1",
   "useful_2",
   "grounded",
   "distinct_pair",
+  "goal_plausible",
+  "goal_specific",
+  "goal_useful_for_recs",
   "final_trigger_timestamp",
   "final_recommendation_mode",
   "final_recommendation_1",
@@ -95,10 +111,19 @@ function buildInitialReviewMap(methods) {
         const key = triggerKey(methodEntry.id, windowEntry.window_id, trigger.trigger_id);
         next[key] = {
           review_decision: trigger.review_decision || "",
+          // Task A
+          trigger_appropriate: trigger.trigger_appropriate || "",
+          trigger_timing: trigger.trigger_timing || "",
+          interruption_worthy: trigger.interruption_worthy || "",
+          // Task B
           useful_1: trigger.useful_1 || "",
           useful_2: trigger.useful_2 || "",
           grounded: trigger.grounded || "",
           distinct_pair: trigger.distinct_pair || "",
+          // Task C
+          goal_plausible: trigger.goal_plausible || "",
+          goal_specific: trigger.goal_specific || "",
+          goal_useful_for_recs: trigger.goal_useful_for_recs || "",
           final_trigger_timestamp: trigger.final_trigger_timestamp || trigger.trigger_timestamp || "",
           final_recommendation_mode:
             trigger.final_recommendation_mode || trigger.recommendation_mode || "say",
@@ -139,15 +164,19 @@ async function generateAiRecommendation({
     ? `Use ${selectedTrigger.trigger_timestamp}s as the anchor moment if it still makes sense.`
     : "Identify the single best trigger moment within the current window.";
 
-  const prompt = `You are reviewing one egocentric conversation window for proactive assistance.
+  const scenarioMeta = windowEntry.scenario_meta;
+  const scenarioContext = scenarioMeta
+    ? `\nScenario context:\n- persona: ${scenarioMeta.persona || "unknown"}\n- wearer goal: ${scenarioMeta.wearer_goal || "unknown"}\n- signal type: ${scenarioMeta.signal_type || "none"}\n`
+    : "";
+
+  const prompt = `You are reviewing a conversation window for proactive assistance.
 
 Window metadata:
 - window_id: ${windowEntry.window_id}
-- video_name: ${windowEntry.video_name}
 - conversation_id: ${windowEntry.conversation_id}
 - start_sec: ${windowEntry.start_sec}
 - end_sec: ${windowEntry.end_sec}
-
+${scenarioContext}
 Transcript:
 ${windowEntry.transcript_text}
 
@@ -200,6 +229,107 @@ Return JSON only in this shape:
   }
   const clean = content.replace(/^```json\s*/i, "").replace(/```$/, "").trim();
   return JSON.parse(clean);
+}
+
+/** Scan localStorage for all reviewer IDs that have saved review data. */
+function getKnownReviewerIds() {
+  const prefix = STORAGE_KEYS.reviewMap + "::";
+  const ids = new Set();
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key && key.startsWith(prefix)) {
+      ids.add(key.slice(prefix.length));
+    }
+  }
+  // Also include anonymous (no suffix) if it exists
+  if (localStorage.getItem(STORAGE_KEYS.reviewMap)) {
+    ids.add("");
+  }
+  return [...ids].sort();
+}
+
+function ReviewRubric() {
+  return (
+    <details className="rounded-2xl border border-blue-200 bg-blue-50 p-4 dark:border-blue-900/50 dark:bg-blue-950/20">
+      <summary className="cursor-pointer list-none text-sm font-semibold text-blue-800 dark:text-blue-300">
+        Review Rubric & Guidelines
+      </summary>
+      <div className="mt-4 space-y-4 text-sm text-slate-700 dark:text-slate-300">
+        <div>
+          <h4 className="font-semibold text-slate-900 dark:text-slate-100">Review Decision</h4>
+          <ul className="mt-1 space-y-1 pl-4">
+            <li><span className="font-mono text-xs bg-emerald-100 px-1.5 py-0.5 rounded dark:bg-emerald-950/50 dark:text-emerald-400">accepted</span> — The trigger and both recommendations are correct as-is. No changes needed.</li>
+            <li><span className="font-mono text-xs bg-amber-100 px-1.5 py-0.5 rounded dark:bg-amber-950/50 dark:text-amber-400">edited</span> — The trigger moment is valid but one or more fields need correction. Fill in the Final fields below.</li>
+            <li><span className="font-mono text-xs bg-rose-100 px-1.5 py-0.5 rounded dark:bg-rose-950/50 dark:text-rose-400">rejected</span> — This trigger should not exist. It is a false positive, the timing is wrong, or the recommendations are not useful.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold text-emerald-700 dark:text-emerald-400">Task A — Intervention Decision</h4>
+          <ul className="mt-1 space-y-1 pl-4">
+            <li><strong>Appropriate</strong> — Should the agent have triggered at this moment? Was there a real signal worth intervening on? (1 = yes, 0 = no)</li>
+            <li><strong>Worth Interruption</strong> — Given the interruption cost (breaking the wearer's flow), was it worth it? A correct signal may still not justify interruption. (1 = yes, 0 = no)</li>
+            <li><strong>Timing</strong> — 1 = wrong moment (too early/late), 2 = close but slightly off, 3 = perfect timing</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold text-labPurple">Task B — Recommendation Quality</h4>
+          <ul className="mt-1 space-y-1 pl-4">
+            <li><strong>Useful 1</strong> — Would recommendation 1 actually help the wearer at this moment? (1 = yes, 0 = no)</li>
+            <li><strong>Useful 2</strong> — Would recommendation 2 actually help the wearer at this moment? (1 = yes, 0 = no)</li>
+            <li><strong>Grounded</strong> — Are both recommendations supported by the transcript and immediate context? Not speculative or based on external knowledge. (1 = yes, 0 = no)</li>
+            <li><strong>Distinct Pair</strong> — Are the two recommendations meaningfully different from each other? Not just rephrasing the same idea. (1 = yes, 0 = no)</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold text-amber-700 dark:text-amber-400">Task C — Goal Inference</h4>
+          <ul className="mt-1 space-y-1 pl-4">
+            <li><strong>Plausible</strong> — Does the inferred goal fit the conversational context? Would a reasonable observer agree? (1 = yes, 0 = no)</li>
+            <li><strong>Specific</strong> — Is the goal concrete and actionable, not generic? &ldquo;Negotiate a higher salary by anchoring first&rdquo; is specific. &ldquo;Communicate effectively&rdquo; is not. (1 = yes, 0 = no)</li>
+            <li><strong>Useful for Recs</strong> — Does knowing this goal actually produce better recommendations than not knowing it? (1 = yes, 0 = no)</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold text-slate-900 dark:text-slate-100">Recommendation Modes</h4>
+          <ul className="mt-1 space-y-1 pl-4">
+            <li><span className="font-mono text-xs bg-slate-200 px-1.5 py-0.5 rounded dark:bg-slate-800">say</span> — Both recommendations are things the wearer could say next</li>
+            <li><span className="font-mono text-xs bg-slate-200 px-1.5 py-0.5 rounded dark:bg-slate-800">know</span> — Both recommendations are internal pointers the wearer should be aware of, even if not spoken aloud</li>
+            <li><span className="font-mono text-xs bg-slate-200 px-1.5 py-0.5 rounded dark:bg-slate-800">both</span> — One to say, one to know, or the moment supports both styles</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold text-slate-900 dark:text-slate-100">When Should a Trigger Exist?</h4>
+          <p className="mt-1">A trigger is valid only if the intervention is:</p>
+          <ul className="mt-1 space-y-1 pl-4">
+            <li><strong>Timely</strong> — It matters at that specific moment, not just somewhere in the conversation</li>
+            <li><strong>Useful</strong> — It would help the wearer act, decide, respond, or notice something important</li>
+            <li><strong>Grounded</strong> — It is supported by the transcript and immediate context</li>
+          </ul>
+          <p className="mt-2">Reject triggers that are: generic filler advice, information already obvious, speculative claims not in the transcript, or duplicates of nearby triggers.</p>
+        </div>
+        <div>
+          <h4 className="font-semibold text-slate-900 dark:text-slate-100">Good vs Bad Recommendations</h4>
+          <div className="mt-1 grid gap-2 md:grid-cols-2">
+            <div className="rounded-lg bg-emerald-50 p-2 dark:bg-emerald-950/30">
+              <div className="text-xs font-semibold text-emerald-700 dark:text-emerald-400">Good</div>
+              <ul className="mt-1 space-y-1 text-xs">
+                <li>&ldquo;Ask whether they mean current or projected revenue.&rdquo;</li>
+                <li>&ldquo;The speaker shifted from a firm claim to a softer hedge.&rdquo;</li>
+                <li>&ldquo;Capture the action item: owner and deadline.&rdquo;</li>
+              </ul>
+            </div>
+            <div className="rounded-lg bg-rose-50 p-2 dark:bg-rose-950/30">
+              <div className="text-xs font-semibold text-rose-700 dark:text-rose-400">Bad</div>
+              <ul className="mt-1 space-y-1 text-xs">
+                <li>&ldquo;Be more confident.&rdquo;</li>
+                <li>&ldquo;Say something useful.&rdquo;</li>
+                <li>&ldquo;This seems important.&rdquo;</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
+  );
 }
 
 function Panel({ title, subtitle, children, action }) {
@@ -257,7 +387,13 @@ function TextArea({ label, value, onChange, rows = 3, placeholder }) {
 
 export default function App() {
   const playerRef = useRef(null);
-  const [dataset, setDataset] = useState(null);
+  const [reviewerId, setReviewerId] = useState(
+    () => localStorage.getItem(STORAGE_KEYS.reviewerId) || "",
+  );
+  const [datasets, setDatasets] = useState({ egocom: null, scenarios: null });
+  const [selectedDataset, setSelectedDataset] = useState(
+    () => localStorage.getItem(STORAGE_KEYS.selectedDataset) || "egocom",
+  );
   const [selectedMethodId, setSelectedMethodId] = useState(
     () => localStorage.getItem(STORAGE_KEYS.selectedMethod) || "",
   );
@@ -266,7 +402,7 @@ export default function App() {
   const [reviewMap, setReviewMap] = useState({});
   const [videoUrls, setVideoUrls] = useState(() => parseJsonStorage(STORAGE_KEYS.videoUrls, {}));
   const [manualComments, setManualComments] = useState(() =>
-    parseJsonStorage(STORAGE_KEYS.manualComments, {}),
+    parseJsonStorage(reviewerKey(STORAGE_KEYS.manualComments, localStorage.getItem(STORAGE_KEYS.reviewerId) || ""), {}),
   );
   const [apiSettings, setApiSettings] = useState(() =>
     parseJsonStorage(STORAGE_KEYS.apiSettings, {
@@ -287,30 +423,55 @@ export default function App() {
   const [generatedDraft, setGeneratedDraft] = useState(null);
   const [generatorState, setGeneratorState] = useState({ loading: false, error: "" });
   const [exportPreview, setExportPreview] = useState(() =>
-    parseJsonStorage(STORAGE_KEYS.reviewExport, null),
+    parseJsonStorage(reviewerKey(STORAGE_KEYS.reviewExport, localStorage.getItem(STORAGE_KEYS.reviewerId) || ""), null),
   );
+
+  // Track the last reviewer ID to detect switches
+  const lastReviewerIdRef = useRef(reviewerId);
 
   useEffect(() => {
     async function bootstrap() {
-      const [labData, manifest] = await Promise.all([
-        loadJson("/data/benchmark-lab.json", { windows: [] }),
+      const [egocomData, scenarioData, manifest] = await Promise.all([
+        loadJson("/data/benchmark-lab.json", { methods: [] }),
+        loadJson("/data/benchmark-lab-scenarios.json", { methods: [] }),
         loadJson("/data/video-manifest.json", {}),
       ]);
-      setDataset(labData);
-      const methods = labData.methods || [];
+
+      const nextDatasets = { egocom: egocomData, scenarios: scenarioData };
+      setDatasets(nextDatasets);
+
+      // Build combined review map from both datasets so autosave covers all keys
+      const allMethods = [
+        ...(egocomData.methods || []),
+        ...(scenarioData.methods || []),
+      ];
+      const initialMap = buildInitialReviewMap(allMethods);
+      const currentReviewer = localStorage.getItem(STORAGE_KEYS.reviewerId) || "";
+      const savedMap = parseJsonStorage(reviewerKey(STORAGE_KEYS.reviewMap, currentReviewer), null);
+      if (savedMap && typeof savedMap === "object") {
+        for (const [key, value] of Object.entries(savedMap)) {
+          if (key in initialMap) {
+            initialMap[key] = { ...initialMap[key], ...value };
+          }
+        }
+      }
+      setReviewMap(initialMap);
+      setVideoUrls((current) => ({ ...manifest, ...current }));
+
+      // Initialize selection for the active dataset
+      const activeDataset = localStorage.getItem(STORAGE_KEYS.selectedDataset) || "egocom";
+      const activeData = nextDatasets[activeDataset] || egocomData;
+      const methods = activeData.methods || [];
       const initialMethodId =
         localStorage.getItem(STORAGE_KEYS.selectedMethod) ||
-        labData.default_method_id ||
+        activeData.default_method_id ||
         methods[0]?.id ||
         "";
       const initialMethod =
         methods.find((entry) => entry.id === initialMethodId) || methods[0] || { windows: [] };
-      const initialWindowId = initialMethod.windows?.[0]?.window_id || "";
       setSelectedMethodId(initialMethodId);
-      setSelectedWindowId(initialWindowId);
+      setSelectedWindowId(initialMethod.windows?.[0]?.window_id || "");
       setSelectedTriggerId(initialMethod.windows?.[0]?.triggers?.[0]?.trigger_id || "");
-      setReviewMap(buildInitialReviewMap(methods));
-      setVideoUrls((current) => ({ ...manifest, ...current }));
     }
     bootstrap();
   }, []);
@@ -320,8 +481,8 @@ export default function App() {
   }, [videoUrls]);
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.manualComments, JSON.stringify(manualComments));
-  }, [manualComments]);
+    localStorage.setItem(reviewerKey(STORAGE_KEYS.manualComments, reviewerId), JSON.stringify(manualComments));
+  }, [manualComments, reviewerId]);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEYS.apiSettings, JSON.stringify(apiSettings));
@@ -337,6 +498,60 @@ export default function App() {
       localStorage.setItem(STORAGE_KEYS.selectedMethod, selectedMethodId);
     }
   }, [selectedMethodId]);
+
+  // Autosave review decisions to localStorage on every change (namespaced by reviewer)
+  useEffect(() => {
+    if (Object.keys(reviewMap).length > 0) {
+      localStorage.setItem(reviewerKey(STORAGE_KEYS.reviewMap, reviewerId), JSON.stringify(reviewMap));
+    }
+  }, [reviewMap, reviewerId]);
+
+  // Handle reviewer switch — save current, load new reviewer's data
+  useEffect(() => {
+    if (lastReviewerIdRef.current === reviewerId) return;
+    localStorage.setItem(STORAGE_KEYS.reviewerId, reviewerId);
+    lastReviewerIdRef.current = reviewerId;
+
+    // Reload review map for the new reviewer
+    const allMethods = [
+      ...(datasets.egocom?.methods || []),
+      ...(datasets.scenarios?.methods || []),
+    ];
+    if (allMethods.length === 0) return; // not bootstrapped yet
+    const freshMap = buildInitialReviewMap(allMethods);
+    const savedMap = parseJsonStorage(reviewerKey(STORAGE_KEYS.reviewMap, reviewerId), null);
+    if (savedMap && typeof savedMap === "object") {
+      for (const [key, value] of Object.entries(savedMap)) {
+        if (key in freshMap) {
+          freshMap[key] = { ...freshMap[key], ...value };
+        }
+      }
+    }
+    setReviewMap(freshMap);
+
+    // Reload manual comments for the new reviewer
+    setManualComments(parseJsonStorage(reviewerKey(STORAGE_KEYS.manualComments, reviewerId), {}));
+    setExportPreview(parseJsonStorage(reviewerKey(STORAGE_KEYS.reviewExport, reviewerId), null));
+  }, [reviewerId, datasets]);
+
+  // Active dataset derived from selection
+  const dataset = datasets[selectedDataset] || null;
+
+  function switchDataset(nextDataset) {
+    setSelectedDataset(nextDataset);
+    localStorage.setItem(STORAGE_KEYS.selectedDataset, nextDataset);
+    const activeData = datasets[nextDataset];
+    if (!activeData) return;
+    const methods = activeData.methods || [];
+    const initialMethodId = activeData.default_method_id || methods[0]?.id || "";
+    const initialMethod =
+      methods.find((entry) => entry.id === initialMethodId) || methods[0] || { windows: [] };
+    const firstWindow = initialMethod.windows?.[0];
+    setSelectedMethodId(initialMethodId);
+    setSelectedWindowId(firstWindow?.window_id || "");
+    setSelectedTriggerId(firstWindow?.triggers?.[0]?.trigger_id || "");
+    setGeneratedDraft(null);
+  }
 
   const methods = dataset?.methods || [];
   const selectedMethod = useMemo(
@@ -449,6 +664,7 @@ export default function App() {
 
     return {
       updated_at: new Date().toISOString(),
+      reviewer_id: reviewerId || "anonymous",
       method_id: selectedMethod?.id || "active_method",
       windows: windows.map((windowEntry) => ({
         window_id: windowEntry.window_id,
@@ -461,7 +677,7 @@ export default function App() {
       manual_comments: manualComments,
       video_urls: videoUrls,
     };
-  }, [manualComments, reviewMap, selectedMethod, videoUrls, windows]);
+  }, [manualComments, reviewerId, reviewMap, selectedMethod, videoUrls, windows]);
 
   const reviewSheetRows = useMemo(
     () =>
@@ -474,6 +690,7 @@ export default function App() {
           );
           const review = reviewMap[key] || {};
           return {
+            reviewer_id: reviewerId || "anonymous",
             window_id: windowEntry.window_id,
             conversation_id: windowEntry.conversation_id,
             video_name: windowEntry.video_name,
@@ -488,10 +705,16 @@ export default function App() {
             rationale: trigger.rationale ?? "",
             annotation_status: trigger.annotation_status ?? "",
             review_decision: review.review_decision ?? "",
+            trigger_appropriate: review.trigger_appropriate ?? "",
+            trigger_timing: review.trigger_timing ?? "",
+            interruption_worthy: review.interruption_worthy ?? "",
             useful_1: review.useful_1 ?? "",
             useful_2: review.useful_2 ?? "",
             grounded: review.grounded ?? "",
             distinct_pair: review.distinct_pair ?? "",
+            goal_plausible: review.goal_plausible ?? "",
+            goal_specific: review.goal_specific ?? "",
+            goal_useful_for_recs: review.goal_useful_for_recs ?? "",
             final_trigger_timestamp:
               review.final_trigger_timestamp ?? trigger.final_trigger_timestamp ?? trigger.trigger_timestamp ?? "",
             final_recommendation_mode:
@@ -620,7 +843,7 @@ export default function App() {
   function saveAndNext() {
     const payload = exportPayload;
     setExportPreview(payload);
-    localStorage.setItem(STORAGE_KEYS.reviewExport, JSON.stringify(payload));
+    localStorage.setItem(reviewerKey(STORAGE_KEYS.reviewExport, reviewerId), JSON.stringify(payload));
     if (!selectedWindow) {
       return;
     }
@@ -640,7 +863,7 @@ export default function App() {
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = "benchmark-lab-review-export.json";
+    anchor.download = `benchmark-lab-review-export${reviewerId ? `_${reviewerId}` : ""}.json`;
     anchor.click();
     URL.revokeObjectURL(url);
   }
@@ -651,7 +874,7 @@ export default function App() {
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = "egocom_trigger_review_sheet_from_frontend.csv";
+    anchor.download = `trigger_review_sheet${reviewerId ? `_${reviewerId}` : ""}.csv`;
     anchor.click();
     URL.revokeObjectURL(url);
   }
@@ -676,7 +899,50 @@ export default function App() {
               </p>
             ) : null}
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
+            {/* Reviewer ID */}
+            <div className="flex items-center gap-2">
+              <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                Reviewer
+              </label>
+              <input
+                type="text"
+                value={reviewerId}
+                onChange={(event) => {
+                  const next = event.target.value.replace(/[^a-zA-Z0-9_-]/g, "");
+                  setReviewerId(next);
+                  localStorage.setItem(STORAGE_KEYS.reviewerId, next);
+                }}
+                placeholder="your_id"
+                className={cn(
+                  "w-28 rounded-xl border px-3 py-2.5 text-sm outline-none transition",
+                  reviewerId
+                    ? "border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-400"
+                    : "border-rose-300 bg-rose-50 text-rose-700 dark:border-rose-800 dark:bg-rose-950/30 dark:text-rose-400",
+                )}
+              />
+            </div>
+            {/* Dataset switcher */}
+            <div className="flex rounded-xl border border-slate-300 bg-white overflow-hidden dark:border-slate-700 dark:bg-slate-950">
+              {[
+                { id: "egocom", label: "EgoCom" },
+                { id: "scenarios", label: "Scenarios" },
+              ].map(({ id, label }) => (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => switchDataset(id)}
+                  className={cn(
+                    "px-4 py-2.5 text-sm font-semibold transition",
+                    selectedDataset === id
+                      ? "bg-labPurple text-white"
+                      : "text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-900",
+                  )}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
             <button
               type="button"
               onClick={() => setTheme((current) => (current === "dark" ? "light" : "dark"))}
@@ -684,30 +950,34 @@ export default function App() {
             >
               {theme === "dark" ? "Light Mode" : "Dark Mode"}
             </button>
+            {methods.length > 1 && (
+              <>
+                <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  Method
+                </label>
+                <select
+                  value={selectedMethod?.id || ""}
+                  onChange={(event) => {
+                    const nextMethodId = event.target.value;
+                    setSelectedMethodId(nextMethodId);
+                    const nextMethod = methods.find((entry) => entry.id === nextMethodId);
+                    const nextWindow = nextMethod?.windows?.[0];
+                    setSelectedWindowId(nextWindow?.window_id || "");
+                    setSelectedTriggerId(nextWindow?.triggers?.[0]?.trigger_id || "");
+                    setGeneratedDraft(null);
+                  }}
+                  className="min-w-[220px] rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-labPurple focus:ring-2 focus:ring-purple-100 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:focus:ring-purple-900/40"
+                >
+                  {methods.map((entry) => (
+                    <option key={entry.id} value={entry.id}>
+                      {entry.label}
+                    </option>
+                  ))}
+                </select>
+              </>
+            )}
             <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-              Method
-            </label>
-            <select
-              value={selectedMethod?.id || ""}
-              onChange={(event) => {
-                const nextMethodId = event.target.value;
-                setSelectedMethodId(nextMethodId);
-                const nextMethod = methods.find((entry) => entry.id === nextMethodId);
-                const nextWindow = nextMethod?.windows?.[0];
-                setSelectedWindowId(nextWindow?.window_id || "");
-                setSelectedTriggerId(nextWindow?.triggers?.[0]?.trigger_id || "");
-                setGeneratedDraft(null);
-              }}
-              className="min-w-[220px] rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-labPurple focus:ring-2 focus:ring-purple-100 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:focus:ring-purple-900/40"
-            >
-              {methods.map((entry) => (
-                <option key={entry.id} value={entry.id}>
-                  {entry.label}
-                </option>
-              ))}
-            </select>
-            <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-              Window ID
+              {selectedDataset === "scenarios" ? "Scenario" : "Window"}
             </label>
             <select
               value={selectedWindow.window_id}
@@ -722,7 +992,7 @@ export default function App() {
             >
               {windows.map((entry) => (
                 <option key={entry.window_id} value={entry.window_id}>
-                  {entry.window_id}
+                  {entry.context_intro?.title || entry.window_id}
                 </option>
               ))}
             </select>
@@ -775,6 +1045,65 @@ export default function App() {
                 </div>
               </div>
             </div>
+
+            {/* Scenario metadata — only shown for scenario benchmark */}
+            {selectedWindow.scenario_meta && (
+              <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-900/50 dark:bg-amber-950/20">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Scenario Metadata</h3>
+                  <div className="flex items-center gap-2">
+                    {selectedWindow.scenario_meta.proactive_index === true && (
+                      <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400">
+                        Should Trigger
+                      </span>
+                    )}
+                    {selectedWindow.scenario_meta.proactive_index === false && (
+                      <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+                        Negative Example
+                      </span>
+                    )}
+                    {selectedWindow.scenario_meta.proactive_score !== "" && (
+                      <span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-700 dark:bg-amber-950/50 dark:text-amber-400">
+                        Score {selectedWindow.scenario_meta.proactive_score}/5
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="mt-3 grid gap-2">
+                  {selectedWindow.scenario_meta.persona && (
+                    <div>
+                      <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">Wearer Persona</div>
+                      <p className="mt-1 text-sm text-slate-700 dark:text-slate-300">{selectedWindow.scenario_meta.persona}</p>
+                    </div>
+                  )}
+                  {selectedWindow.scenario_meta.wearer_goal && (
+                    <div>
+                      <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                        Wearer Goal
+                        {selectedWindow.scenario_meta.goal_type && (
+                          <span className="ml-2 normal-case font-normal text-slate-400">· {selectedWindow.scenario_meta.goal_type}</span>
+                        )}
+                      </div>
+                      <p className="mt-1 text-sm text-slate-700 dark:text-slate-300">{selectedWindow.scenario_meta.wearer_goal}</p>
+                    </div>
+                  )}
+                  {selectedWindow.scenario_meta.signal_type && selectedWindow.scenario_meta.signal_type !== "none" && (
+                    <div>
+                      <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">Signal Type</div>
+                      <span className="mt-1 inline-block rounded-lg bg-white px-2.5 py-1 text-xs font-mono text-slate-700 dark:bg-slate-900 dark:text-slate-300">
+                        {selectedWindow.scenario_meta.signal_type}
+                      </span>
+                    </div>
+                  )}
+                  {selectedWindow.scenario_meta.context_note && (
+                    <div>
+                      <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">Context Note</div>
+                      <p className="mt-1 text-sm text-slate-600 italic dark:text-slate-400">{selectedWindow.scenario_meta.context_note}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             <div className="rounded-2xl border border-slate-200 bg-slate-950 p-3">
               <div className="aspect-video overflow-hidden rounded-xl bg-slate-900">
@@ -1122,6 +1451,7 @@ export default function App() {
 
         <Panel title="The Scorecard" subtitle="Review decision, binary checks, and final edits">
           <div className="flex h-full flex-col gap-4">
+            <ReviewRubric />
             {selectedTrigger ? (
               <>
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50">
@@ -1130,6 +1460,11 @@ export default function App() {
                       <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Current Scorecard</h3>
                       <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                         {selectedTrigger.trigger_id} · {selectedTrigger.trigger_timestamp}s · {selectedTrigger.recommendation_mode}
+                        {selectedTrigger.proactive_score !== "" && selectedTrigger.proactive_score != null && (
+                          <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-700 dark:bg-amber-950/50 dark:text-amber-400">
+                            score {selectedTrigger.proactive_score}/5
+                          </span>
+                        )}
                       </p>
                     </div>
                     <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-500 dark:bg-slate-900 dark:text-slate-400">
@@ -1164,27 +1499,151 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="mt-4 grid gap-3 md:grid-cols-2">
-                    {[
-                      ["useful_1", "Useful 1"],
-                      ["useful_2", "Useful 2"],
-                      ["grounded", "Grounded"],
-                      ["distinct_pair", "Distinct Pair"],
-                    ].map(([field, label]) => (
+                  {/* Task A — Intervention Decision */}
+                  <div className="mt-5">
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-400">
+                      Task A — Intervention Decision
+                    </div>
+                    <div className="mt-2 grid gap-3 md:grid-cols-2">
                       <label
-                        key={field}
-                        className="flex items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+                        title="Should the agent have triggered at this moment?"
+                        className="flex items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 cursor-pointer"
                       >
                         <input
                           type="checkbox"
-                          checked={activeReviewState[field] === "1"}
+                          checked={activeReviewState.trigger_appropriate === "1"}
                           onChange={(event) =>
-                            updateReviewField(field, event.target.checked ? "1" : "0")
+                            updateReviewField("trigger_appropriate", event.target.checked ? "1" : "0")
                           }
                         />
-                        <span>{label}</span>
+                        <div>
+                          <span>Appropriate</span>
+                          <span className="ml-1 text-xs text-slate-400 dark:text-slate-500">?</span>
+                        </div>
                       </label>
-                    ))}
+                      <label
+                        title="Was this intervention worth the interruption cost?"
+                        className="flex items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 cursor-pointer"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={activeReviewState.interruption_worthy === "1"}
+                          onChange={(event) =>
+                            updateReviewField("interruption_worthy", event.target.checked ? "1" : "0")
+                          }
+                        />
+                        <div>
+                          <span>Worth Interruption</span>
+                          <span className="ml-1 text-xs text-slate-400 dark:text-slate-500">?</span>
+                        </div>
+                      </label>
+                    </div>
+                    <div className="mt-2">
+                      <label className="block">
+                        <span className="mb-1 block text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                          Timing (1 = wrong, 2 = close, 3 = perfect)
+                        </span>
+                        <div className="flex gap-2">
+                          {[1, 2, 3].map((value) => (
+                            <button
+                              key={value}
+                              type="button"
+                              onClick={() => updateReviewField("trigger_timing", String(value))}
+                              className={cn(
+                                "rounded-lg border px-4 py-2 text-sm font-semibold transition",
+                                activeReviewState.trigger_timing === String(value)
+                                  ? "border-emerald-400 bg-emerald-50 text-emerald-700 dark:border-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400"
+                                  : "border-slate-300 bg-white text-slate-600 hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400",
+                              )}
+                            >
+                              {value}
+                            </button>
+                          ))}
+                          {activeReviewState.trigger_timing && (
+                            <button
+                              type="button"
+                              onClick={() => updateReviewField("trigger_timing", "")}
+                              className="rounded-lg px-2 py-2 text-xs text-slate-400 hover:text-slate-600"
+                            >
+                              clear
+                            </button>
+                          )}
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Task B — Recommendation Quality */}
+                  <div className="mt-5">
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-labPurple">
+                      Task B — Recommendation Quality
+                    </div>
+                    <div className="mt-2 grid gap-3 md:grid-cols-2">
+                      {[
+                        ["useful_1", "Useful 1", "Would rec 1 actually help the wearer right now?"],
+                        ["useful_2", "Useful 2", "Would rec 2 actually help the wearer right now?"],
+                        ["grounded", "Grounded", "Are both recs supported by the transcript, not speculative?"],
+                        ["distinct_pair", "Distinct Pair", "Are the two recs meaningfully different from each other?"],
+                      ].map(([field, label, tooltip]) => (
+                        <label
+                          key={field}
+                          title={tooltip}
+                          className="flex items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 cursor-pointer"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={activeReviewState[field] === "1"}
+                            onChange={(event) =>
+                              updateReviewField(field, event.target.checked ? "1" : "0")
+                            }
+                          />
+                          <div>
+                            <span>{label}</span>
+                            <span className="ml-1 text-xs text-slate-400 dark:text-slate-500">?</span>
+                          </div>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Task C — Goal Inference */}
+                  <div className="mt-5">
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-600 dark:text-amber-400">
+                      Task C — Goal Inference
+                    </div>
+                    {selectedWindow?.scenario_meta?.wearer_goal && (
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 italic">
+                        Ground truth: &ldquo;{selectedWindow.scenario_meta.wearer_goal}&rdquo;
+                        {selectedWindow.scenario_meta.goal_type && (
+                          <span className="not-italic"> [{selectedWindow.scenario_meta.goal_type}]</span>
+                        )}
+                      </p>
+                    )}
+                    <div className="mt-2 grid gap-3 md:grid-cols-3">
+                      {[
+                        ["goal_plausible", "Plausible", "Does the inferred goal fit the conversational context?"],
+                        ["goal_specific", "Specific", "Is the goal concrete rather than generic (e.g. not just 'communicate')?"],
+                        ["goal_useful_for_recs", "Useful for Recs", "Does this goal actually help produce better recommendations?"],
+                      ].map(([field, label, tooltip]) => (
+                        <label
+                          key={field}
+                          title={tooltip}
+                          className="flex items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 cursor-pointer"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={activeReviewState[field] === "1"}
+                            onChange={(event) =>
+                              updateReviewField(field, event.target.checked ? "1" : "0")
+                            }
+                          />
+                          <div>
+                            <span>{label}</span>
+                            <span className="ml-1 text-xs text-slate-400 dark:text-slate-500">?</span>
+                          </div>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
@@ -1306,7 +1765,26 @@ export default function App() {
       <footer className="sticky bottom-0 border-t border-slate-200 bg-white/95 backdrop-blur dark:border-slate-800 dark:bg-slate-900/95">
         <div className="mx-auto flex max-w-[1800px] flex-wrap items-center justify-between gap-4 px-6 py-4">
           <div className="text-sm text-slate-500 dark:text-slate-400">
-            {exportPreview ? "Review state saved locally." : "Save progress into a local JSON export object."}
+            {!reviewerId && (
+              <span className="mr-2 rounded-full bg-rose-100 px-2.5 py-1 text-xs font-semibold text-rose-700 dark:bg-rose-950/40 dark:text-rose-400">
+                Set reviewer ID to track your progress
+              </span>
+            )}
+            {reviewerId && (
+              <span className="mr-2 rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400">
+                {reviewerId}
+              </span>
+            )}
+            {exportPreview ? "Autosaved." : "Review decisions autosave on every change."}
+            {(() => {
+              const known = getKnownReviewerIds().filter(Boolean);
+              if (known.length === 0) return null;
+              return (
+                <span className="ml-2 text-xs text-slate-400 dark:text-slate-500">
+                  Reviewers: {known.join(", ")}
+                </span>
+              );
+            })()}
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <button

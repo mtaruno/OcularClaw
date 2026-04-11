@@ -187,6 +187,9 @@ def build_benchmark_lab_json(scenarios: list[dict], window_rows: list[dict], tri
     windows = []
     for scenario, win_row in zip(scenarios, window_rows):
         win_triggers = triggers_by_window.get(win_row["window_id"], [])
+        # Index trigger proactive_scores from source scenario for per-trigger lookup
+        trigger_scores = {t["trigger_id"]: t.get("proactive_score", "") for t in scenario.get("triggers", [])}
+
         trigger_entries = []
         for tr in win_triggers:
             trigger_entries.append({
@@ -198,6 +201,7 @@ def build_benchmark_lab_json(scenarios: list[dict], window_rows: list[dict], tri
                 "urgency": tr["urgency"],
                 "rationale": tr["rationale"],
                 "annotation_status": tr["annotation_status"],
+                "proactive_score": trigger_scores.get(tr["trigger_id"], ""),
                 "review_decision": "",
                 "useful_1": "",
                 "useful_2": "",
@@ -224,6 +228,19 @@ def build_benchmark_lab_json(scenarios: list[dict], window_rows: list[dict], tri
             "transcript_turn_count": win_row["transcript_turn_count"],
             "transcript_speaker_ids": win_row["transcript_speaker_ids"],
             "transcript_text": win_row["transcript_text"],
+            # Scenario-level metadata for the frontend reviewer
+            "scenario_meta": {
+                "category": scenario.get("category", ""),
+                "difficulty": scenario.get("difficulty", ""),
+                "persona": scenario.get("persona", ""),
+                "signal_type": scenario.get("signal_type", ""),
+                "wearer_goal": scenario.get("wearer_goal", ""),
+                "goal_type": scenario.get("goal_type", ""),
+                "goal_confidence": scenario.get("goal_confidence", ""),
+                "context_note": scenario.get("context_note", ""),
+                "proactive_index": scenario.get("proactive_index", None),
+                "proactive_score": scenario.get("proactive_score", ""),
+            },
             "context_intro": {
                 "title": scenario["title"],
                 "summary": f"Category: {scenario['category']}. {scenario['title']}.",
