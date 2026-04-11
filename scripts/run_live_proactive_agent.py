@@ -392,8 +392,8 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def load_scenario(scenario_id: str, scenario_file: str | None, repo_root: Path) -> dict | None:
-    """Load a scenario from scenario_transcripts.json by ID."""
+def _load_scenario_list(scenario_file: str | None, repo_root: Path) -> list[dict]:
+    """Load all scenarios from scenario_transcripts.json."""
     candidates = [
         Path(scenario_file) if scenario_file else None,
         repo_root / "analysis" / "live_scenarios" / "scenario_transcripts.json",
@@ -401,19 +401,26 @@ def load_scenario(scenario_id: str, scenario_file: str | None, repo_root: Path) 
     for path in candidates:
         if path and path.exists():
             data = json.loads(path.read_text())
-            scenarios = data["scenarios"] if isinstance(data, dict) and "scenarios" in data else data
-            for s in scenarios:
-                if s["id"] == scenario_id:
-                    return s
-            # Try partial match
-            for s in scenarios:
-                if scenario_id in s["id"]:
-                    return s
-            print(f"  Available scenarios:", file=sys.stderr)
-            for s in scenarios:
-                print(f"    {s['id']}  –  {s['title']}", file=sys.stderr)
-            return None
-    print(f"Error: scenario_transcripts.json not found.", file=sys.stderr)
+            return data["scenarios"] if isinstance(data, dict) and "scenarios" in data else data
+    return []
+
+
+def load_scenario(scenario_id: str, scenario_file: str | None, repo_root: Path) -> dict | None:
+    """Load a scenario from scenario_transcripts.json by ID."""
+    scenarios = _load_scenario_list(scenario_file, repo_root)
+    if not scenarios:
+        print(f"Error: scenario_transcripts.json not found.", file=sys.stderr)
+        return None
+    for s in scenarios:
+        if s["id"] == scenario_id:
+            return s
+    # Try partial match
+    for s in scenarios:
+        if scenario_id in s["id"]:
+            return s
+    print(f"  Available scenarios:", file=sys.stderr)
+    for s in scenarios:
+        print(f"    {s['id']}  –  {s['title']}", file=sys.stderr)
     return None
 
 
@@ -656,27 +663,21 @@ def print_model_comparison(comparison: list[dict]) -> None:
     print()
 
 
-def run_comparison(args, base_url: str, api_key: str, models: list[str], repo_root: Path) -> None:
-    """Run the same scenario through multiple models and compare results."""
-    if not args.scenario:
-        print("Error: --models requires --scenario.", file=sys.stderr)
-        raise SystemExit(1)
-
-    print(f"{BOLD}OcularClaw Model Comparison{RESET}")
-    print(f"  scenario:   {args.scenario}")
-    print(f"  models:     {', '.join(models)}")
-    print()
+def _run_comparison_single(args, base_url: str, api_key: str, models: list[str], scenario_id: str, repo_root: Path) -> None:
+    """Run one scenario through multiple models."""
+    # Temporarily set scenario on args
+    original_scenario = args.scenario
+    args.scenario = scenario_id
 
     comparison = []
     log_dir = repo_root / "analysis" / "live_sessions"
 
     for model in models:
-        print(f"{BOLD}{CYAN}--- Running: {model} ---{RESET}")
+        print(f"{BOLD}{CYAN}--- Running: {model} on {scenario_id} ---{RESET}")
         elapsed_total, checks, triggers_count, transcript, session_log = run_scenario_replay(
             args, base_url, api_key, model, repo_root
         )
 
-        # Collect trigger entries for comparison display
         trigger_entries = []
         for entry in session_log:
             result = entry.get("result", {})
@@ -698,9 +699,9 @@ def run_comparison(args, base_url: str, api_key: str, models: list[str], repo_ro
             log_dir.mkdir(parents=True, exist_ok=True)
             ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
             safe_model = model.replace("/", "_").replace(":", "_")
-            log_path = log_dir / f"compare_{args.scenario}__{safe_model}__{ts}.json"
+            log_path = log_dir / f"compare_{scenario_id}__{safe_model}__{ts}.json"
             log_path.write_text(json.dumps({
-                "model": model, "scenario_id": args.scenario,
+                "model": model, "scenario_id": scenario_id,
                 "duration_seconds": round(elapsed_total, 2),
                 "check_interval": args.check_interval,
                 "total_checks": checks, "total_triggers": triggers_count,
@@ -711,6 +712,39 @@ def run_comparison(args, base_url: str, api_key: str, models: list[str], repo_ro
         print()
 
     print_model_comparison(comparison)
+    args.scenario = original_scenario
+
+
+def run_comparison(args, base_url: str, api_key: str, models: list[str], repo_root: Path) -> None:
+    """Run scenario(s) through multiple models and compare results."""
+    if not args.scenario:
+        print("Error: --models requires --scenario (use 'all' for all scenarios).", file=sys.stderr)
+        raise SystemExit(1)
+
+    # Resolve scenario list
+    if args.scenario == "all":
+        all_scenarios = _load_scenario_list(args.scenario_file, repo_root)
+        scenario_ids = [s["id"] for s in all_scenarios]
+        if not scenario_ids:
+            print("Error: no scenarios found.", file=sys.stderr)
+            raise SystemExit(1)
+        print(f"{BOLD}OcularClaw Full Benchmark Run{RESET}")
+        print(f"  scenarios:  {len(scenario_ids)}")
+        print(f"  models:     {', '.join(models)}")
+        print()
+        for i, sid in enumerate(scenario_ids, 1):
+            print(f"\n{BOLD}{'#' * 70}{RESET}")
+            print(f"{BOLD}  Scenario {i}/{len(scenario_ids)}: {sid}{RESET}")
+            print(f"{BOLD}{'#' * 70}{RESET}\n")
+            _run_comparison_single(args, base_url, api_key, models, sid, repo_root)
+        print(f"\n{BOLD}{GREEN}All {len(scenario_ids)} scenarios complete.{RESET}")
+        print(f"Import results: python3 scripts/import_model_runs.py")
+    else:
+        print(f"{BOLD}OcularClaw Model Comparison{RESET}")
+        print(f"  scenario:   {args.scenario}")
+        print(f"  models:     {', '.join(models)}")
+        print()
+        _run_comparison_single(args, base_url, api_key, models, args.scenario, repo_root)
 
 
 def main() -> int:
