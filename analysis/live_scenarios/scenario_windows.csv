@@ -56,15 +56,16 @@ scenario__work_client_01__0000_0075,scenario__work_client_01,scenario__client_me
 [01:00.00] P1: Okay let me talk to the engineering lead and get back to you with a realistic timeline.
 [01:05.00] P2: Sure. Just let us know by end of week.
 [01:08.00] P1: Will do.",Product manager on a client call. Eager to please clients and tends to over-commit on timelines.,True,5,premature_commitment
-scenario__academic_defense_01__0000_0090,scenario__academic_defense_01,scenario__academic__academic_defense_01,scenario_test,0,90,90,246,3,1 2 3,False,False,reviewed,has_triggers,Scenario: Thesis defense — deflecting instead of answering. Category: academic.,9,1 2 3,"[00:00.00] P2: Thank you for the presentation. I have a question about your methodology. How do you account for selection bias in your participant sample?
+scenario__academic_defense_01__0000_0090,scenario__academic_defense_01,scenario__academic__academic_defense_01,scenario_test,0,90,90,244,3,1 2 3,False,False,reviewed,has_triggers,Scenario: Thesis defense — deflecting instead of answering. Category: academic.,10,1 2 3,"[00:00.00] P2: Thank you for the presentation. I have a question about your methodology. How do you account for selection bias in your participant sample?
 [00:08.50] P1: Great question. So our participants were recruited through university mailing lists and social media. We had a diverse sample spanning ages 18 to 45, roughly balanced gender split, and we included participants from multiple departments.
 [00:22.00] P2: Right, but those are all university-affiliated people. How does that affect the generalizability of your findings?
 [00:28.00] P1: Well we did try to include some non-student participants. About 30 percent of our sample were staff and faculty rather than students.
 [00:36.00] P2: But they're still university-affiliated. My question is specifically about selection bias. People who respond to study recruitment emails are fundamentally different from people who don't.
 [00:46.00] P1: Right, I see what you're saying. So our study design was validated against similar protocols in the literature. Smith et al 2022 used a very similar recruitment strategy and their findings were replicated across three different institutional settings.
-[00:59.00] P3: I think Professor Chen is asking whether you acknowledge this as a limitation and how it might bound your claims.
-[01:05.00] P1: Yes, absolutely. It is a limitation. We discuss it in Section 5.3. We note that our findings should be interpreted within the context of university populations and that further work is needed with more diverse recruitment strategies.
-[01:18.00] P2: Thank you. That's the kind of direct acknowledgment I was looking for.",PhD student defending their thesis. Nervous and tends to deflect tough methodological questions by citing other papers or talking about demographics.,True,5,question_dodge
+[00:59.00] P2: I appreciate the reference but that doesn't address the core concern. Let me move on to my next question.
+[01:05.00] P3: Actually before we move on, I want to come back to this. Can you state clearly whether selection bias is a limitation of your study?
+[01:13.00] P1: Well, as I said, the recruitment protocol follows established literature and we had demographic diversity across our sample.
+[01:20.00] P2: Noted. Let's proceed.",PhD student defending their thesis. Nervous and tends to deflect tough methodological questions by citing other papers or talking about demographics.,True,5,question_dodge
 scenario__medical_visit_01__0000_0075,scenario__medical_visit_01,scenario__medical__medical_visit_01,scenario_test,0,75,75,247,2,1 2,False,False,reviewed,has_triggers,Scenario: Doctor visit — contradicting own earlier statement. Category: medical.,16,1 2,"[00:00.00] P2: So what brings you in today?
 [00:02.50] P1: I've been having these headaches for about two weeks now. They're mostly in the morning when I wake up. Also I've been getting a bit dizzy sometimes but the headaches are the main thing.
 [00:12.00] P2: Okay. Can you describe the headache pain? Is it sharp, dull, throbbing?
@@ -81,7 +82,7 @@ scenario__medical_visit_01__0000_0075,scenario__medical_visit_01,scenario__medic
 [01:01.00] P1: Okay sounds good.
 [01:03.00] P2: If it doesn't improve in two weeks come back and we'll do some further testing. Any other questions?
 [01:08.00] P1: No I think that covers it. Thank you.",Patient visiting doctor for headaches. Mentioned dizziness early but then forgot about it when asked directly.,True,5,self_contradiction_recall
-scenario__work_brainstorm_01__0000_0090,scenario__work_brainstorm_01,scenario__brainstorm__work_brainstorm_01,scenario_test,0,90,90,263,3,1 2 3,False,False,reviewed,has_triggers,Scenario: Brainstorm — idea restated by someone else and praised. Category: brainstorm.,15,1 2 3,"[00:00.00] P2: Okay so we need to figure out how to handle the traffic spikes during product launches. Last time the site went down for twenty minutes and we lost a ton of orders.
+scenario__work_brainstorm_01__0000_0090,scenario__work_brainstorm_01,scenario__brainstorm__work_brainstorm_01,scenario_test,0,90,90,265,3,1 2 3,False,False,reviewed,has_triggers,Scenario: Brainstorm — idea restated by someone else and praised. Category: brainstorm.,16,1 2 3,"[00:00.00] P2: Okay so we need to figure out how to handle the traffic spikes during product launches. Last time the site went down for twenty minutes and we lost a ton of orders.
 [00:10.00] P1: What if we used a message queue? Like we could put incoming orders into a queue and process them asynchronously. That way the frontend stays responsive even under heavy load.
 [00:20.00] P3: Hmm. I don't know, queues add complexity. What about just scaling up the servers?
 [00:26.00] P2: Auto-scaling takes time to spin up though. By the time new instances are ready we've already lost requests.
@@ -92,10 +93,11 @@ scenario__work_brainstorm_01__0000_0090,scenario__work_brainstorm_01,scenario__b
 [00:43.00] P3: You know what, I just thought of something. What if we implement an event-driven architecture with a message broker? Orders come in, get published to a topic, and worker services process them at their own pace. The user gets an immediate acknowledgment and the order processes in the background.
 [00:58.00] P2: Oh that's really smart. Yeah an event-driven approach would decouple the ingestion from the processing.
 [01:03.00] P3: Exactly. And we can scale the workers independently.
-[01:07.00] P2: I love it. Let's go with that.
-[01:10.00] P1: I mean, that's basically what I said earlier with the message queue.
-[01:14.00] P3: Oh, is it? I think the event-driven part is a bit different.
-[01:18.00] P2: Yeah let's not get hung up on credit. The point is we have a direction.",Engineer in a brainstorm meeting. Proposed a good idea early but it was dismissed. Tends to not push back when ideas get overlooked.,True,3,idea_co_option
+[01:07.00] P2: I love it. Let's go with that. P3, can you write up the architecture doc?
+[01:12.00] P3: Sure, I'll have a draft by tomorrow.
+[01:15.00] P2: Great. Let's reconvene Thursday to review. Anything else on the traffic issue?
+[01:20.00] P1: I mean... no, I think that covers it.
+[01:23.00] P2: Perfect. Let's move on.",Engineer in a brainstorm meeting. Proposed a good idea early but it was dismissed. Tends to not push back when ideas get overlooked.,True,3,idea_co_option
 scenario__sales_demo_01__0000_0075,scenario__sales_demo_01,scenario__sales__sales_demo_01,scenario_test,0,75,75,213,3,1 2 3,False,False,reviewed,has_triggers,Scenario: Product demo — missed buying signal. Category: sales.,14,1 2 3,"[00:00.00] P1: So let me show you the analytics dashboard. This is where you'll see all your campaign performance in real time.
 [00:07.00] P2: Oh wow. This is really clean.
 [00:09.50] P1: Thanks. You can filter by date range, campaign type, and audience segment. And everything updates in real time.
@@ -137,21 +139,21 @@ scenario__learning_tutorial_01__0000_0075,scenario__learning_tutorial_01,scenari
 [00:55.00] P3: Oh yeah, P1 is right. It's SYN, SYN-ACK, ACK. I remember now from the lecture slides.
 [00:60.00] P2: Oh man, I've had that wrong in my notes this whole time. Good catch.
 [01:04.00] P1: Yeah FIN is the termination flag. Easy to mix up.",Computer science student studying for a networking exam. Knows TCP well but tends to be quiet in group settings.,True,4,factual_error
-scenario__networking_event_01__0000_0075,scenario__networking_event_01,scenario__social_professional__networking_event_01,scenario_test,0,75,75,191,2,1 2,False,False,reviewed,has_triggers,Scenario: Conference networking — relevant connection about to walk away. Category: social_professional.,14,1 2,"[00:00.00] P2: Hi, I don't think we've met. I'm Sarah.
+scenario__networking_event_01__0000_0070,scenario__networking_event_01,scenario__social_professional__networking_event_01,scenario_test,0,70,70,236,2,1 2,False,False,reviewed,has_triggers,Scenario: Conference networking — relevant connection about to walk away. Category: social_professional.,14,1 2,"[00:00.00] P2: Hi, I don't think we've met. I'm Sarah.
 [00:02.50] P1: Hey, I'm Matt. Nice to meet you. What brings you to the conference?
-[00:06.00] P2: I'm presenting a poster on egocentric video understanding. We've been working on activity recognition from first-person camera feeds at Meta FAIR.
-[00:14.00] P1: Oh cool. Computer vision stuff?
-[00:16.00] P2: Yeah, specifically we're looking at how to build models that understand what the camera wearer is doing in real time. Like predicting intent from gaze patterns and hand movements.
-[00:25.00] P1: That's interesting. I work on machine learning too but more on the NLP side.
-[00:30.00] P2: Nice. What are you working on?
-[00:32.00] P1: I'm doing my thesis on conversational AI. Building systems that can assist people during conversations.
-[00:38.00] P2: Oh cool. Are you using any multimodal inputs?
-[00:41.00] P1: Mostly just text and audio right now.
-[00:44.00] P2: Got it. Well it was really nice meeting you. I should go check on my poster.
-[00:48.00] P1: Yeah for sure. Nice meeting you too. Good luck with the poster.
-[00:52.00] P2: Thanks. Enjoy the rest of the conference.
-[00:55.00] P1: You too.",ML thesis student working on conversational AI assistance. At a computer vision conference and tends to wrap up networking conversations too quickly.,True,5,missed_connection_opportunity
-scenario__negative_casual_chat_01__0000_0060,scenario__negative_casual_chat_01,scenario__social__negative_casual_chat_01,scenario_test,0,60,60,201,2,1 2,False,False,reviewed,no_trigger,Scenario: Casual chat — no intervention needed. Category: social.,16,1 2,"[00:00.00] P1: Hey how was your weekend?
+[00:06.00] P2: I'm presenting a poster on egocentric video understanding. We've been working on real-time assistance for smart glasses at Meta FAIR.
+[00:14.00] P1: Oh cool. Smart glasses?
+[00:16.00] P2: Yeah, we're building models that understand what the glasses wearer is doing and proactively surface relevant information. Like if you're cooking, it recognizes the recipe step and shows the next one.
+[00:27.00] P1: That's really interesting actually. I work on something similar but from the audio side.
+[00:32.00] P2: Oh yeah? What do you mean?
+[00:34.00] P1: I'm doing my thesis on proactive conversational AI. Like an agent that listens to your conversations through smart glasses and gives you real-time recommendations when it detects you need help.
+[00:43.00] P2: Wait, that's super relevant to what we're doing. We've been wanting to add conversational understanding to our pipeline but nobody on our team does NLP.
+[00:50.00] P1: Ha yeah, and I've been looking for a way to add visual context to my system.
+[00:55.00] P2: That's funny. Well it was really nice meeting you. I should go check on my poster before the session ends.
+[01:00.00] P1: Yeah for sure. Nice meeting you too. Good luck with the poster.
+[01:04.00] P2: Thanks. Enjoy the rest of the conference.
+[01:06.00] P1: You too.",ML thesis student working on conversational AI assistance. At a computer vision conference and tends to wrap up networking conversations too quickly.,True,5,missed_connection_opportunity
+scenario__negative_casual_chat_01__0000_0090,scenario__negative_casual_chat_01,scenario__social__negative_casual_chat_01,scenario_test,0,90,90,273,2,1 2,False,False,reviewed,no_trigger,Scenario: Casual chat — no intervention needed. Category: social.,22,1 2,"[00:00.00] P1: Hey how was your weekend?
 [00:02.00] P2: It was great. We went hiking up at Point Reyes. The weather was perfect.
 [00:07.00] P1: Oh nice, I love Point Reyes. Which trail did you do?
 [00:10.00] P2: We did Tomales Point. It's about nine miles round trip. Saw a bunch of elk.
@@ -164,10 +166,16 @@ scenario__negative_casual_chat_01__0000_0060,scenario__negative_casual_chat_01,s
 [00:38.00] P1: Yeah it's been painful to watch. At least the Giants are looking decent.
 [00:42.00] P2: True. I'm going to a game next month actually. Got tickets for the Dodgers series.
 [00:47.00] P1: Oh nice, that should be a good one. Rivalry games are always fun.
-[00:51.00] P2: For sure. Anyway, should we grab lunch? I'm starving.
-[00:54.00] P1: Yeah let's do it. Pho place?
-[00:56.00] P2: Sounds good to me.",Coworker chatting with a friend during a break.,False,1,none
-scenario__negative_presentation_01__0000_0060,scenario__negative_presentation_01,scenario__work_meeting__negative_presentation_01,scenario_test,0,60,60,188,3,1 2 3,False,False,reviewed,no_trigger,Scenario: Smooth presentation — no issues to flag. Category: work_meeting.,11,1 2 3,"[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.
+[00:51.00] P2: For sure. Hey have you tried that new ramen place on Valencia?
+[00:55.00] P1: No not yet. Is it good?
+[00:57.00] P2: Really good. The tonkotsu is amazing and they have this spicy miso that's incredible.
+[01:02.00] P1: Oh man, I love a good spicy miso. We should go sometime.
+[01:06.00] P2: Definitely. They don't take reservations though so you gotta go early.
+[01:10.00] P1: Good to know. Anyway, should we grab lunch? I'm starving.
+[01:14.00] P2: Yeah let's do it. Pho place?
+[01:16.00] P1: Always. Let's go.
+[01:18.00] P2: Nice. I'll grab my jacket.",Coworker chatting with a friend during a break.,False,1,none
+scenario__negative_presentation_01__0000_0085,scenario__negative_presentation_01,scenario__work_meeting__negative_presentation_01,scenario_test,0,85,85,316,3,1 2 3,False,False,reviewed,no_trigger,Scenario: Smooth presentation — no issues to flag. Category: work_meeting.,17,1 2 3,"[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.
 [00:08.00] P1: Customer acquisition cost came down by 12 percent thanks to the organic channel investments we made in Q1.
 [00:15.00] P1: And churn held steady at 3.2 percent which is within our target range.
 [00:20.00] P2: That's great. What's driving the enterprise growth specifically?
@@ -176,8 +184,14 @@ scenario__negative_presentation_01__0000_0060,scenario__negative_presentation_01
 [00:37.50] P1: Strong. We have about 2.5 million in qualified pipeline with a 40 percent expected close rate. That would put us ahead of our Q3 target by roughly 10 percent.
 [00:47.00] P2: And the churn number, is that net or gross?
 [00:50.00] P1: That's gross churn. Net revenue retention is actually 108 percent because of expansion within existing accounts.
-[00:57.00] P3: Impressive. Nice work.
-[00:59.00] P1: Thanks. Happy to dig into any of these numbers in more detail.",VP of Growth presenting quarterly results to the leadership team.,False,1,none
+[00:57.00] P3: That's solid. What about the marketing spend breakdown? How much went to paid vs organic?
+[01:02.00] P1: Great question. About 60 percent organic, 40 percent paid. The organic share is up from 45 percent last quarter, which is why CAC came down. The blog and SEO investments are really paying off.
+[01:13.00] P2: Any risks you're tracking for Q3?
+[01:15.50] P1: The main one is the enterprise deal cycle lengthening. We're seeing procurement teams add an extra review stage, which pushes close dates out by two to three weeks. We've adjusted our forecast to account for that.
+[01:25.00] P3: Smart. Anything you need from us?
+[01:27.00] P1: Just continued investment in the content team. They're producing great work and it's directly driving pipeline.
+[01:33.00] P2: Makes sense. Nice work this quarter.
+[01:35.00] P1: Thanks. Happy to dig into any of these numbers in more detail.",VP of Growth presenting quarterly results to the leadership team.,False,1,none
 scenario__negative_planning_01__0000_0060,scenario__negative_planning_01,scenario__social__negative_planning_01,scenario_test,0,60,60,200,3,1 2 3,False,False,reviewed,no_trigger,Scenario: Trip planning — collaborative and going well. Category: social.,15,1 2 3,"[00:00.00] P1: Okay so for the Portland trip, I was thinking we fly out Friday morning and come back Sunday night.
 [00:06.00] P2: That works for me. Friday the 15th right?
 [00:08.50] P1: Yeah the 15th through the 17th.
