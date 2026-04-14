@@ -3,6 +3,8 @@
 OcularClaw is a research prototype for proactive AI assistance in live human
 interaction.
 
+It is a benchmark for offline data for the reviewer to judge the quality of the recommendation across different scenarios and models.
+
 The core contribution is an agentic pipeline that turns multimodal real-world
 context into timely, useful recommendations during ongoing conversation. Rather
 than treating assistance as a static chatbot problem, OcularClaw is designed for
@@ -32,23 +34,359 @@ This means the main problem is not only generation quality. It is also:
 - whether that help should be spoken, shown, or deferred
 - how to ground recommendations in immediate multimodal context
 
+## Task Framework (A / B / C)
+
+OcularClaw decomposes proactive assistance into three interdependent tasks:
+
+- **Task C — Goal Inference**: What is the wearer trying to accomplish right now?
+  Infers the wearer's conversational goal from context (e.g., persuasion,
+  negotiation, relationship building). This drives both intervention timing and
+  recommendation content.
+
+- **Task A — Intervention Decision**: Should the agent intervene at this moment?
+  A calibrated trigger decision using a proactive score (1–5 scale). The agent
+  must balance helpfulness against interruption cost.
+
+- **Task B — Recommendation Generation**: What should the wearer say or know?
+  Produces exactly two compact recommendations in one of three modes:
+  - `say`: candidate utterances the wearer could speak
+  - `know`: internal pointers or situational awareness
+  - `both`: one of each
+
+The pipeline runs C → A → B: infer the goal first, then decide whether to
+intervene, then generate recommendations aligned with that goal.
+
 ## Core Idea
 
 OcularClaw models assistance as a trigger-based agentic workflow:
 1. ingest live context from transcript, audio, video, and system state
-2. detect whether the current moment warrants intervention
-3. decide whether the user needs something to `say`, something to `know`, or both
-4. generate two compact recommendations for that moment
-5. optionally route richer follow-up work into an asynchronous artifact lane
+2. infer the wearer's conversational goal (Task C)
+3. detect whether the current moment warrants intervention (Task A)
+4. decide an action mode (`say`, `know`, or `both`)
+5. generate two compact recommendations for that moment (Task B)
+6. optionally route richer follow-up work into an asynchronous artifact lane
 
-This is the motivation behind the project’s broader Laminar framing: low-latency
+This is the motivation behind the project's broader Laminar framing: low-latency
 foreground assistance for the human conversation, plus slower background support
 for higher-density artifacts.
 
-## EgoCom Pilot Data Prep
+### Signal Types
 
-This repo now includes a small utility for preparing annotation-ready 1-minute
-conversation windows from the EgoCom dataset.
+The agent detects these conversational signal patterns:
+- `self_contradiction_recall` — wearer contradicts something said earlier
+- `question_dodge` — wearer pivots away from the actual question
+- `emotional_escalation` — conversation tension is rising
+- `idea_co_option` — someone restates the wearer's earlier idea
+- `missed_buying_signal` — prospect signals interest but wearer keeps pitching
+- `premature_commitment` — wearer is about to overcommit
+- `factual_error` — incorrect information going uncorrected
+- `structural_gap` — wearer's response is missing a key component (e.g., STAR result)
+- `high_stakes_decision_point` — critical moment requiring careful response
+- `missed_connection_opportunity` — relevant connection the wearer is about to miss
+
+## Live Proactive Agent
+
+The live agent captures audio from your Mac microphone in real time, transcribes
+locally with faster-whisper, and periodically checks whether the current
+conversational moment warrants a proactive recommendation.
+
+### Setup
+
+Activate the project virtualenv (located at `.venv` in the repo root):
+
+```bash
+cd /path/to/OcularClaw
+source .venv/bin/activate
+```
+
+Install audio and transcription dependencies if not already present:
+
+```bash
+pip install faster-whisper sounddevice numpy
+```
+
+Configure your `.env` with an OpenAI-compatible endpoint:
+
+```env
+OPENAI_API_KEY=your_key_here
+OPENAI_BASE_URL=https://api.openai.com/v1
+OPENAI_MODEL=gpt-4.1-mini
+```
+
+The first run downloads the Whisper model (~150MB). After that it loads instantly.
+
+### Running — live mic
+
+```bash
+python3 scripts/run_live_proactive_agent.py --duration 300
+```
+
+Speak into your mic. Every `--check-interval` seconds the agent checks the rolling
+transcript and either stays silent or fires a recommendation.
+
+```bash
+# Longer session with persona context and saved log
+python3 scripts/run_live_proactive_agent.py \
+  --duration 600 \
+  --check-interval 15 \
+  --persona "PhD student defending thesis to committee" \
+  --save-log
+```
+
+### Running — scenario replay (no mic needed)
+
+Feed a benchmark scenario transcript directly. Useful for testing models without speaking.
+
+```bash
+# List available scenario IDs (pass any unknown id to see the list)
+python3 scripts/run_live_proactive_agent.py --scenario list
+
+# Replay a specific scenario
+python3 scripts/run_live_proactive_agent.py \
+  --scenario salary_negotiation_01 \
+  --save-log
+```
+
+Options:
+- `--duration` — session length in seconds for live mic mode (default 120)
+- `--persona` — wearer role context (e.g., "senior engineer in a sprint standup")
+- `--check-interval` — seconds between LLM checks (default 10)
+- `--chunk-seconds` — audio chunk length for transcription (default 5)
+- `--scenario` — scenario ID from `scenario_transcripts.json` for replay mode
+- `--save-log` — save session JSON to `analysis/live_sessions/`
+- `--model` — LLM model to use (e.g. `gpt-4.1-mini`, `gpt-4o`, `o3-mini`)
+- `--models` — comma-separated list of models to compare on the same scenario
+
+### Comparing models
+
+Run the same scenario through multiple models back-to-back and see a side-by-side summary:
+
+```bash
+python3 scripts/run_live_proactive_agent.py \
+  --scenario salary_negotiation_01 \
+  --models "gpt-4.1-mini,gpt-4o" \
+  --save-log
+```
+
+Each model runs the full scenario independently. At the end a comparison table shows trigger counts, proactive scores, and the actual recommendations from each model so you can judge quality directly.
+
+### How it works
+
+1. **Audio capture**: `sounddevice` records from the default mic in a callback loop
+2. **Local transcription**: `faster-whisper` (base.en, int8, CPU) transcribes each chunk
+3. **Rolling buffer**: A `TranscriptBuffer` maintains the last N seconds of transcript
+4. **Periodic LLM check**: Every `--check-interval` seconds, the buffer is sent to the
+   LLM with the Task C→A→B prompt
+5. **Display**: If the agent triggers, it prints the wearer goal, proactive score,
+   recommendation mode, two recommendations, urgency, and rationale
+
+### Architecture
+
+```
+Mic → ChunkedAudioCapture → faster-whisper (local)
+                                    ↓
+                            TranscriptBuffer (rolling)
+                                    ↓
+                          Periodic LLM check (C→A→B)
+                                    ↓
+                     Display: goal, score, recommendations
+```
+
+## Scenario Benchmark
+
+The scenario benchmark provides 17 real-world conversational scenarios for testing
+the proactive agent. Unlike the EgoCom pilot data (which uses existing lab
+recordings), these scenarios are designed specifically for the kinds of
+conversational intelligence that OcularClaw targets.
+
+### Scenarios
+
+11 positive (should trigger) and 6 negative (should not trigger), spanning:
+- work meetings, job interviews, negotiations
+- client calls, sales demos, brainstorms
+- academic defense, medical visits
+- social situations, difficult conversations
+- study groups, networking events
+
+Each scenario includes:
+- full multi-turn transcript text
+- ground-truth trigger timestamps and proactive scores (1–5)
+- wearer persona and goal
+- signal type classification
+- recommendation mode and content
+
+### Building benchmark data
+
+```bash
+python3 scripts/build_scenario_benchmark_data.py
+```
+
+This reads `analysis/live_scenarios/scenario_transcripts.json` and outputs
+pipeline-compatible files:
+- `analysis/live_scenarios/scenario_windows.csv` — window format (17 rows)
+- `analysis/live_scenarios/scenario_triggers.csv` — trigger format (14 rows)
+- `analysis/live_scenarios/scenario_review_sheet.csv` — for human evaluation
+- `public/data/benchmark-lab-scenarios.json` — frontend review lab data
+
+### Using the benchmark
+
+1. **Run models on scenarios** — compare models back-to-back:
+
+```bash
+python3 scripts/run_live_proactive_agent.py \
+  --scenario work_negotiation_01 \
+  --models "gpt-4.1-mini,gpt-4o,o3-mini" \
+  --save-log
+```
+
+2. **Import results into the frontend** — makes model outputs reviewable:
+
+```bash
+python3 scripts/import_model_runs.py
+```
+
+This reads `compare_*.json` logs from `analysis/live_sessions/` and merges them
+into `benchmark-lab-scenarios.json` as additional methods. The frontend then shows
+a method switcher: Ground Truth / gpt-4.1-mini / gpt-4o / etc.
+
+3. **Human review** — score each model's outputs in the benchmark lab:
+
+```bash
+npm run dev
+```
+
+Switch between methods using the dropdown. The reviewer stays on the same scenario
+when switching methods, making side-by-side comparison easy.
+
+4. **Export scores** — download per-reviewer CSV for analysis:
+
+The exported CSV includes `method_id` so scores are tied to specific models.
+Collect CSVs from multiple reviewers for inter-annotator agreement analysis.
+
+5. **Batch evaluation** (alternative) — use the experiment runner:
+
+```bash
+python3 scripts/run_ocularclaw_recommendation_experiment.py \
+  --input-windows analysis/live_scenarios/scenario_windows.csv \
+  --anchor-triggers analysis/live_scenarios/scenario_triggers.csv \
+  --output-dir analysis/scenario_runs/
+```
+
+### Evaluation criteria
+
+- **Trigger timing**: Did the agent trigger at the right moment?
+- **Trigger precision**: Did it correctly identify why this moment matters?
+- **Recommendation quality**: Are the recommendations actionable and non-generic?
+- **Recommendation mode**: Is say/know/both appropriate for the situation?
+- **False positive rate**: Does the agent stay quiet during negative scenarios?
+- **Urgency calibration**: Is urgency appropriate (high for medical/negotiation, low for social)?
+
+### Goal types (Task C)
+
+The benchmark covers 11 conversational goal types:
+persuasion, negotiation, social coordination, relationship management,
+information exchange, collaborative problem solving, collaborative learning,
+relationship building, social bonding, information delivery, teaching.
+
+## Benchmark Lab Frontend
+
+This repo now includes a local React + Vite + Tailwind review app for benchmark
+inspection and trigger scoring.
+
+Core features:
+- switch between EgoCom and Scenarios datasets
+- enter a reviewer ID for per-reviewer progress tracking and CSV exports
+- select a window or scenario to review
+- see scenario metadata (persona, wearer goal, signal type, proactive score)
+- review transcript with trigger highlighting
+- score Task A (trigger appropriate, timing, interruption worthy)
+- score Task B (useful 1/2, grounded, distinct pair)
+- score Task C (goal plausible, specific, useful for recs)
+- view inline review rubric with color-coded criteria for all three tasks
+- mark `accepted`, `edited`, or `rejected`
+- add manual recommendation comments at specific timestamps
+- generate fresh AI recommendation drafts for the current window
+- autosave — review decisions persist to localStorage on every change
+- export a per-reviewer CSV for inter-annotator agreement analysis
+
+Build the frontend datasets:
+
+```bash
+npm run build:data                                    # EgoCom benchmark
+python3 scripts/build_scenario_benchmark_data.py      # scenario benchmark
+```
+
+Start the app:
+
+```bash
+npm install
+npm run dev
+```
+
+Then open the local Vite URL in your browser.
+
+Files:
+- `src/App.jsx`
+- `public/data/benchmark-lab.json` — EgoCom benchmark data
+- `public/data/benchmark-lab-scenarios.json` — scenario benchmark data
+- `public/data/video-manifest.json`
+- `scripts/run_live_proactive_agent.py` — live proactive agent
+- `scripts/build_scenario_benchmark_data.py` — scenario benchmark builder
+- `analysis/live_scenarios/scenario_transcripts.json` — 17 scenario ground truth
+- `analysis/live_scenarios/scenario_benchmark.json` — scenario definitions
+
+## Recommendation Experiment
+
+This repo also includes an experiment runner for comparing recommendation
+quality at fixed trigger anchors.
+
+Design doc:
+- `docs/ocularclaw_recommendation_pipeline.md`
+- `prompts/ocularclaw_recommendation_experiment_schemas.md`
+
+Runner:
+- `scripts/run_ocularclaw_recommendation_experiment.py`
+
+The active method is:
+- `direct2_from_anchors`: use the reviewed trigger anchor, build local context up to that moment, and directly generate the final two recommendations
+
+Dry-run the pipeline to inspect context slicing:
+
+```bash
+python3 scripts/run_ocularclaw_recommendation_experiment.py \
+  --input-windows analysis/egocom_annotation_windows_test_host_enriched.csv \
+  --output-dir analysis/experiment_runs \
+  --limit 1 \
+  --dry-run
+```
+
+Run the anchor-based experiment with an OpenAI-compatible endpoint:
+
+```bash
+python3 scripts/run_ocularclaw_recommendation_experiment.py \
+  --input-windows analysis/egocom_annotation_windows_test_host_enriched.csv \
+  --output-dir analysis/experiment_runs \
+  --methods direct2_from_anchors \
+  --context-seconds 20
+```
+
+Outputs are written as:
+- `*_window_reviews.csv`
+- `*_triggers.csv`
+- `*_review_sheet.csv`
+- `*_raw.jsonl`
+
+---
+
+## EgoCom Pilot Data (Legacy)
+
+The following section documents the original EgoCom pipeline. This is lower
+priority than the scenario benchmark and live agent above.
+
+### Data Prep
+
+A small utility for preparing annotation-ready 1-minute conversation windows
+from the EgoCom dataset.
 
 Script:
 - `scripts/prepare_egocom_annotation_windows.py`
@@ -89,9 +427,6 @@ python3 scripts/enrich_egocom_annotation_windows.py \
   --output-csv analysis/egocom_annotation_windows_test_host_enriched.csv \
   --output-md analysis/egocom_annotation_workbook.md
 ```
-
-The enriched CSV adds transcript text per window, and the workbook gives you a
-single file to review without reopening the raw EgoCom transcript dump.
 
 To annotate dynamic trigger moments, initialize a separate trigger-level CSV:
 
@@ -136,18 +471,6 @@ python3 scripts/run_egocom_trigger_annotation.py \
   --json-mode
 ```
 
-This script reads each enriched window, renders the standardized prompt, calls an
-OpenAI-compatible chat endpoint, and writes draft outputs for manual review.
-
-By default the script will load `/Users/matthewtaruno/Dev/OcularClaw/.env`, so you
-can keep OpenRouter settings there:
-
-```env
-OPENAI_API_KEY=replace_with_your_openrouter_api_key
-OPENAI_BASE_URL=https://openrouter.ai/api/v1
-OPENAI_MODEL=openai/gpt-4.1-mini
-```
-
 To create a spreadsheet-style review sheet from the AI proposals:
 
 ```bash
@@ -173,104 +496,7 @@ python3 scripts/summarize_trigger_review.py \
 There is also a Jupyter notebook for exploratory analysis:
 - `notebooks/egocom_eda.ipynb`
 
-## Recommendation Experiment
-
-This repo now also includes an experiment runner for comparing recommendation
-quality at fixed trigger anchors from the current pilot.
-
-Design doc:
-- `docs/ocularclaw_recommendation_pipeline.md`
-- `prompts/ocularclaw_recommendation_experiment_schemas.md`
-
-Runner:
-- `scripts/run_ocularclaw_recommendation_experiment.py`
-
-The active method is:
-- `direct2_from_anchors`: use the reviewed trigger anchor, build local context up to that moment, and directly generate the final two recommendations
-
-Dry-run the pipeline to inspect context slicing:
-
-```bash
-python3 scripts/run_ocularclaw_recommendation_experiment.py \
-  --input-windows analysis/egocom_annotation_windows_test_host_enriched.csv \
-  --output-dir analysis/experiment_runs \
-  --limit 1 \
-  --dry-run
-```
-
-Run the anchor-based experiment with an OpenAI-compatible endpoint:
-
-```bash
-python3 scripts/run_ocularclaw_recommendation_experiment.py \
-  --input-windows analysis/egocom_annotation_windows_test_host_enriched.csv \
-  --output-dir analysis/experiment_runs \
-  --methods direct2_from_anchors \
-  --context-seconds 20
-```
-
-Outputs are written as:
-- `*_window_reviews.csv`
-- `*_triggers.csv`
-- `*_review_sheet.csv`
-- `*_raw.jsonl`
-
-This keeps the benchmark simple: fixed trigger anchor, local context up to that
-moment, and exactly two generated recommendations for human review.
-
-## Benchmark Lab Frontend
-
-This repo now includes a local React + Vite + Tailwind review app for benchmark
-inspection and trigger scoring.
-
-Core features:
-- select a `window_id`
-- see a transcript-derived context introduction for what is happening in the current window
-- load or paste a video URL for the current window
-- toggle between light and dark mode
-- jump to trigger timestamps
-- review transcript with trigger highlighting
-- inspect AI recommendations and rationale
-- mark `accepted`, `edited`, or `rejected`
-- score `useful_1`, `useful_2`, `grounded`, and `distinct_pair`
-- add your own recommendation comments at specific timestamps
-- generate fresh AI recommendation drafts for the current window
-- save progress into a local JSON export
-- export a CSV matching `analysis/egocom_trigger_review_sheet.csv`
-
-Build the frontend dataset:
-
-```bash
-npm run build:data
-```
-
-Start the app:
-
-```bash
-npm install
-npm run dev
-```
-
-Then open the local Vite URL in your browser.
-
-Frontend export workflow:
-- use `Save & Next` while reviewing to keep local state in the browser
-- use `Download Review CSV` to export a review sheet that matches `analysis/egocom_trigger_review_sheet.csv`
-- run `scripts/summarize_trigger_review.py` on that exported CSV to generate thesis-ready summary metrics
-
-Files:
-- `src/App.jsx`
-- `public/data/benchmark-lab.json`
-- `public/data/video-manifest.json`
-- `scripts/trim_egocom_window_videos.py`
-
-Video handling:
-- if you have a served video URL, paste it into the `Video URL` field
-- if not, use `Load Local Video` to attach a local file during the session
-
-Context introduction:
-- the frontend now generates a transcript-derived introduction for each window so the reviewer has a quick sense of what is happening before scoring triggers
-- this current intro is based on transcript content and turn structure, not full multimodal scene understanding
-- later versions can incorporate second-brain factors such as prior-person memory, persistent conversational history, direct visual cues, and richer audio interaction signals
+### Video clips
 
 To create synced per-window clips automatically from EgoCom `5min_parts` videos:
 
@@ -284,8 +510,3 @@ python3 scripts/trim_egocom_window_videos.py \
 
 This expects `ffmpeg` to be installed. The app will automatically prefer a
 `window_id` clip from `video-manifest.json` when available.
-
-Open it to inspect:
-- dataset composition from `video_info.csv`
-- transcript timing and speaker-switch dynamics
-- the current 60-second annotation-window slice used by OcularClaw

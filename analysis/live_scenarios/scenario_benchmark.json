@@ -1,0 +1,205 @@
+{
+  "benchmark_version": "0.1",
+  "description": "Real-world scenario benchmark for testing live proactive agent. Each scenario defines a situation where ambient recommendations would be genuinely useful. Designed for role-play testing with the live agent.",
+  "scenarios": [
+    {
+      "id": "work_standup_01",
+      "category": "work_meeting",
+      "title": "Sprint standup — blocked task you forgot to mention",
+      "difficulty": "easy",
+      "setup": "You're in a daily standup. You mentioned what you did yesterday but forgot to mention you're blocked on a dependency from another team. The conversation is moving to the next person.",
+      "script_outline": [
+        "P1 (you): Yesterday I finished the auth migration and started on the dashboard refactor.",
+        "P2: Cool, anything blocking you?",
+        "P1: Uh, no I think I'm good. [PAUSE — agent should trigger here]",
+        "P2: Alright, P3 your turn."
+      ],
+      "expected_trigger_moment": "When P1 says 'no I think I'm good' — the agent knows from prior context that the dashboard refactor needs the API team's schema changes",
+      "expected_recommendation_type": "know",
+      "notes": "Tests whether the agent can catch omissions the wearer might forget under time pressure"
+    },
+    {
+      "id": "work_interview_01",
+      "category": "job_interview",
+      "title": "Behavioral interview — STAR method gap",
+      "difficulty": "medium",
+      "setup": "You're being interviewed and asked 'Tell me about a time you dealt with conflict.' You start telling the story but skip the Result part of STAR.",
+      "script_outline": [
+        "P2 (interviewer): Tell me about a time you had to deal with a difficult team conflict.",
+        "P1 (you): Sure, so at my last company we had a disagreement about the architecture. The backend team wanted microservices but frontend wanted a monolith. I set up a meeting and we mapped out the trade-offs on a whiteboard. We ended up going with a hybrid approach.",
+        "[PAUSE — agent should trigger: you didn't state the RESULT/impact]"
+      ],
+      "expected_trigger_moment": "After P1 finishes the story without quantifying the outcome",
+      "expected_recommendation_type": "know",
+      "notes": "Agent should suggest adding the result: timeline improvement, team satisfaction, etc."
+    },
+    {
+      "id": "work_negotiation_01",
+      "category": "negotiation",
+      "title": "Salary negotiation — anchoring opportunity",
+      "difficulty": "hard",
+      "setup": "You're negotiating a job offer. The recruiter just named a number that's below market. You're about to respond.",
+      "script_outline": [
+        "P2 (recruiter): Based on your experience, we're thinking $130K base with standard benefits.",
+        "P1 (you): Hmm okay, that's... [PAUSE — agent should trigger before you respond]"
+      ],
+      "expected_trigger_moment": "Right when P1 hesitates — before they accidentally anchor low",
+      "expected_recommendation_type": "know",
+      "notes": "Agent should surface market data context and suggest counter-anchoring technique"
+    },
+    {
+      "id": "social_dinner_01",
+      "category": "social",
+      "title": "Dinner party — dietary restriction someone mentioned earlier",
+      "difficulty": "easy",
+      "setup": "You're hosting dinner. Earlier a guest mentioned they're vegetarian but now you're about to suggest ordering from a steakhouse.",
+      "script_outline": [
+        "P1 (you): Okay so for dinner I was thinking we could order from that new steakhouse on—",
+        "[AGENT should trigger: P3 mentioned being vegetarian 10 minutes ago]"
+      ],
+      "expected_trigger_moment": "When P1 starts suggesting the steakhouse",
+      "expected_recommendation_type": "know",
+      "notes": "Tests long-context recall — the agent heard the dietary mention earlier in the buffer"
+    },
+    {
+      "id": "work_client_01",
+      "category": "client_meeting",
+      "title": "Client call — promising a deadline you can't meet",
+      "difficulty": "medium",
+      "setup": "You're on a call with a client who asks when a feature will ship. You're about to say 'two weeks' but your team's sprint is already full.",
+      "script_outline": [
+        "P2 (client): So when can we expect the analytics dashboard to be ready?",
+        "P1 (you): I think we can probably get that to you in about two weeks—",
+        "[AGENT should trigger: you're overcommitting]"
+      ],
+      "expected_trigger_moment": "When P1 starts committing to a timeline",
+      "expected_recommendation_type": "both",
+      "notes": "Tests whether agent catches overcommitment. In real use, agent would have calendar/project context."
+    },
+    {
+      "id": "academic_defense_01",
+      "category": "academic",
+      "title": "Thesis defense — committee question you're dodging",
+      "difficulty": "hard",
+      "setup": "A committee member asks about a limitation of your methodology. You start answering but drift to a different topic.",
+      "script_outline": [
+        "P2 (professor): How do you account for selection bias in your participant sample?",
+        "P1 (you): Great question. So our participants were recruited through university channels and we had a diverse age range from 18 to 45. The study design was validated by...",
+        "[AGENT should trigger: you didn't actually address selection bias]"
+      ],
+      "expected_trigger_moment": "When P1 pivots away from the actual question",
+      "expected_recommendation_type": "know",
+      "notes": "Tests detecting question-dodge patterns"
+    },
+    {
+      "id": "medical_visit_01",
+      "category": "medical",
+      "title": "Doctor visit — forgot to mention a symptom",
+      "difficulty": "easy",
+      "setup": "You're at the doctor describing headaches but forgot to mention the dizziness that's been happening too. The doctor is about to wrap up.",
+      "script_outline": [
+        "P1 (you): Yeah the headaches have been happening for about two weeks, mostly in the morning.",
+        "P2 (doctor): Okay, that sounds like it could be tension headaches. I'll prescribe some—",
+        "[AGENT should trigger: you also mentioned dizziness to someone last week]"
+      ],
+      "expected_trigger_moment": "When the doctor starts concluding without P1 mentioning the dizziness",
+      "expected_recommendation_type": "say",
+      "notes": "High-stakes omission. Agent needs to catch that the wearer is forgetting to mention something important."
+    },
+    {
+      "id": "work_brainstorm_01",
+      "category": "brainstorm",
+      "title": "Brainstorm — idea getting steamrolled",
+      "difficulty": "medium",
+      "setup": "You proposed an idea 3 minutes ago that got ignored. Someone else just proposed something similar and is getting praise.",
+      "script_outline": [
+        "P1 (you): [3 minutes ago] What if we used a queue-based system to handle the spikes?",
+        "P3: Hmm I don't know...",
+        "P2: [now] I think we should implement a message queue to manage traffic bursts.",
+        "P3: Oh that's brilliant, yeah let's do that.",
+        "[AGENT should trigger: P2 just restated your idea]"
+      ],
+      "expected_trigger_moment": "When P3 praises P2's idea that matches P1's earlier suggestion",
+      "expected_recommendation_type": "say",
+      "notes": "Tests social awareness — detecting when the wearer's contribution was co-opted"
+    },
+    {
+      "id": "sales_demo_01",
+      "category": "sales",
+      "title": "Product demo — prospect dropped a buying signal",
+      "difficulty": "medium",
+      "setup": "You're demoing your product. The prospect just said 'We've been looking for exactly this' but you kept demoing features instead of closing.",
+      "script_outline": [
+        "P2 (prospect): Honestly this is exactly what we've been looking for. Our current tool doesn't do half of this.",
+        "P1 (you): Great! So let me also show you the reporting module, it has these charts—",
+        "[AGENT should trigger: stop demoing, start closing]"
+      ],
+      "expected_trigger_moment": "When P1 continues demoing after a clear buying signal",
+      "expected_recommendation_type": "both",
+      "notes": "Tests detecting buying/commitment signals and recommending a strategic pivot"
+    },
+    {
+      "id": "conflict_resolution_01",
+      "category": "difficult_conversation",
+      "title": "1:1 with report — they're about to escalate emotionally",
+      "difficulty": "hard",
+      "setup": "You're giving feedback to a direct report. Their tone is getting defensive and you're about to push harder on the point.",
+      "script_outline": [
+        "P1 (you/manager): The last two deliverables had significant quality issues and it's impacting the team.",
+        "P2 (report): I mean, I've been working 60 hour weeks and nobody seems to notice that.",
+        "P1: Well the hours don't matter if the output—",
+        "[AGENT should trigger: de-escalation needed]"
+      ],
+      "expected_trigger_moment": "When P1 starts dismissing P2's emotional response",
+      "expected_recommendation_type": "both",
+      "notes": "Tests emotional intelligence — agent should recommend acknowledging the effort before continuing the feedback"
+    },
+    {
+      "id": "learning_tutorial_01",
+      "category": "learning",
+      "title": "Study group — fundamental misconception going uncorrected",
+      "difficulty": "medium",
+      "setup": "You're in a study group. Someone just explained a concept incorrectly and others are nodding along. You noticed the error but the conversation moved on.",
+      "script_outline": [
+        "P2: So basically in TCP, the three-way handshake is SYN, ACK, FIN.",
+        "P3: Right, that makes sense.",
+        "P2: And then the connection is established.",
+        "[AGENT should trigger: it's SYN, SYN-ACK, ACK — not SYN, ACK, FIN]"
+      ],
+      "expected_trigger_moment": "When the incorrect explanation is accepted by the group",
+      "expected_recommendation_type": "say",
+      "notes": "Tests factual correction in educational context"
+    },
+    {
+      "id": "networking_event_01",
+      "category": "social_professional",
+      "title": "Conference networking — missed connection opportunity",
+      "difficulty": "easy",
+      "setup": "Someone at a conference just mentioned they work on a project related to your research. You're about to end the conversation with a generic 'nice to meet you.'",
+      "script_outline": [
+        "P2: Yeah so I've been working on egocentric video understanding at Meta FAIR.",
+        "P1 (you): Oh that's cool. Well it was nice meeting you—",
+        "[AGENT should trigger: this person's work is directly relevant to your thesis]"
+      ],
+      "expected_trigger_moment": "When P1 starts wrapping up without recognizing the connection",
+      "expected_recommendation_type": "both",
+      "notes": "Tests recognizing relevance to wearer's known interests/work"
+    }
+  ],
+  "testing_instructions": {
+    "how_to_test": "Role-play each scenario by speaking the P1 lines into your mic while running the live proactive agent. You can play P2/P3 yourself or have a friend help.",
+    "evaluation_criteria": [
+      "trigger_timing: Did the agent trigger at the right moment (not too early, not too late)?",
+      "trigger_precision: Did the agent correctly identify WHY this moment matters?",
+      "recommendation_quality: Are the 2 recommendations actionable and non-generic?",
+      "recommendation_mode: Is the mode (say/know/both) appropriate for the situation?",
+      "false_positive_rate: Does the agent stay quiet during non-trigger moments?",
+      "urgency_calibration: Is the urgency level appropriate (high for medical/negotiation, low for social)?"
+    ],
+    "scoring": {
+      "trigger_timing": "1 = wrong moment, 2 = close but off, 3 = perfect timing",
+      "recommendation_quality": "1 = generic/useless, 2 = somewhat helpful, 3 = genuinely would have helped",
+      "overall_useful": "binary — would you have wanted this recommendation in real life?"
+    }
+  }
+}
