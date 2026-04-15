@@ -409,13 +409,6 @@ Return JSON in this shape:
     return system_prompt, user_prompt
 
 
-def combine_modes(modes: list[str]) -> str:
-    normalized = {mode.strip().lower() for mode in modes if mode}
-    if len(normalized) == 1:
-        return next(iter(normalized))
-    return "both"
-
-
 def run_direct2_from_anchors(
     row: dict[str, str],
     turns: list[dict[str, object]],
@@ -489,7 +482,8 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input-windows", required=True)
     parser.add_argument("--output-dir", required=True)
-    parser.add_argument("--env-file", default="/Users/matthewtaruno/Dev/OcularClaw/.env")
+    _repo_root = Path(__file__).resolve().parents[1]
+    parser.add_argument("--env-file", default=str(_repo_root / ".env"))
     parser.add_argument("--base-url", default=None)
     parser.add_argument("--api-key", default=None)
     parser.add_argument("--model", default=None)
@@ -499,11 +493,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--window-ids", default="")
     parser.add_argument(
         "--anchor-review-sheet",
-        default="/Users/matthewtaruno/Dev/OcularClaw/analysis/egocom_trigger_review_sheet.csv",
+        default=str(_repo_root / "analysis" / "egocom_trigger_review_sheet.csv"),
     )
     parser.add_argument(
         "--anchor-triggers",
-        default="/Users/matthewtaruno/Dev/OcularClaw/analysis/egocom_trigger_annotations_ai_proposed.csv",
+        default=str(_repo_root / "analysis" / "egocom_trigger_annotations_ai_proposed.csv"),
     )
     parser.add_argument("--context-seconds", type=float, default=20.0)
     parser.add_argument("--request-timeout", type=float, default=180.0)
