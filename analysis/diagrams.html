@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OcularClaw System Architecture</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1e293b; padding: 48px; }
+
+  .page { max-width: 1100px; margin: 0 auto 80px; }
+  .page-title {
+    font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #94a3b8; margin-bottom: 8px;
+  }
+  h1 { font-size: 32px; font-weight: 800; margin-bottom: 4px; }
+  .subtitle { font-size: 15px; color: #64748b; margin-bottom: 48px; }
+
+  /* Diagram container */
+  .diagram {
+    background: white; border-radius: 20px; padding: 48px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.03);
+    margin-bottom: 48px; page-break-inside: avoid;
+  }
+  .diagram h2 {
+    font-size: 20px; font-weight: 700; margin-bottom: 6px;
+  }
+  .diagram .desc {
+    font-size: 13px; color: #64748b; margin-bottom: 32px;
+  }
+
+  /* ── Diagram 1: High-Level Overview ── */
+  .overview-row {
+    display: flex; align-items: stretch; gap: 0; justify-content: center;
+  }
+  .overview-box {
+    flex: 1; max-width: 280px; padding: 28px 24px; border-radius: 16px;
+    position: relative;
+  }
+  .overview-box h3 { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+  .overview-box ul { list-style: none; font-size: 13px; line-height: 2; }
+  .overview-box ul li::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+
+  .ob-input { background: #eff6ff; border: 1.5px solid #bfdbfe; }
+  .ob-input h3 { color: #1d4ed8; }
+  .ob-input ul li::before { background: #3b82f6; }
+
+  .ob-process { background: #fefce8; border: 1.5px solid #fde68a; }
+  .ob-process h3 { color: #a16207; }
+  .ob-process ul li::before { background: #eab308; }
+
+  .ob-output { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
+  .ob-output h3 { color: #15803d; }
+  .ob-output ul li::before { background: #22c55e; }
+
+  .arrow-between {
+    display: flex; align-items: center; justify-content: center;
+    width: 48px; flex-shrink: 0;
+  }
+  .arrow-between svg { width: 32px; height: 32px; }
+
+  /* ── Diagram 2: 3-Task Pipeline ── */
+  .pipeline { display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .task-card {
+    width: 100%; max-width: 560px; padding: 24px 28px; border-radius: 16px;
+    position: relative;
+  }
+  .task-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+  .task-card .task-q { font-size: 13px; font-style: italic; margin-bottom: 10px; }
+  .task-card .fields { display: flex; flex-wrap: wrap; gap: 6px; }
+  .task-card .field {
+    font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 100px;
+  }
+
+  .task-a { background: #fffbeb; border: 1.5px solid #fde68a; }
+  .task-a h3 { color: #92400e; }
+  .task-a .task-q { color: #a16207; }
+  .task-a .field { background: #fef3c7; color: #92400e; }
+
+  .task-b { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
+  .task-b h3 { color: #166534; }
+  .task-b .task-q { color: #15803d; }
+  .task-b .field { background: #dcfce7; color: #166534; }
+
+  .task-c { background: #faf5ff; border: 1.5px solid #e9d5ff; }
+  .task-c h3 { color: #6b21a8; }
+  .task-c .task-q { color: #7c3aed; }
+  .task-c .field { background: #f3e8ff; color: #6b21a8; }
+
+  .pipe-arrow {
+    display: flex; flex-direction: column; align-items: center;
+    height: 40px; justify-content: center; position: relative;
+  }
+  .pipe-arrow .line { width: 2px; height: 20px; background: #cbd5e1; }
+  .pipe-arrow svg { width: 16px; height: 16px; }
+
+  .decision-diamond {
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    margin: 0 auto; padding: 12px 0;
+  }
+  .diamond {
+    width: 140px; height: 48px; display: flex; align-items: center; justify-content: center;
+    background: #f1f5f9; border: 1.5px solid #cbd5e1; border-radius: 12px;
+    font-size: 12px; font-weight: 600; color: #475569;
+  }
+  .decision-branch {
+    display: flex; gap: 32px; align-items: flex-start; justify-content: center;
+    width: 100%; max-width: 560px;
+  }
+  .branch-label {
+    font-size: 11px; font-weight: 700; color: #94a3b8; text-transform: uppercase;
+    letter-spacing: 0.08em; text-align: center; padding: 8px 0;
+  }
+  .silent-box {
+    padding: 16px 24px; background: #f1f5f9; border: 1.5px dashed #cbd5e1;
+    border-radius: 12px; font-size: 13px; color: #64748b; text-align: center;
+    font-weight: 500;
+  }
+
+  /* ── Diagram 3: Signal Taxonomy ── */
+  .signal-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .signal-col { padding: 20px; border-radius: 14px; }
+  .signal-col h4 {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .signal-col .signal-tag {
+    display: inline-block; font-size: 12px; font-weight: 500; padding: 4px 12px;
+    border-radius: 8px; margin: 3px 2px;
+  }
+  .sig-high { background: #fef2f2; border: 1px solid #fecaca; }
+  .sig-high h4 { color: #991b1b; }
+  .sig-high .signal-tag { background: white; color: #991b1b; border: 1px solid #fecaca; }
+
+  .sig-med { background: #fffbeb; border: 1px solid #fde68a; }
+  .sig-med h4 { color: #92400e; }
+  .sig-med .signal-tag { background: white; color: #92400e; border: 1px solid #fde68a; }
+
+  .sig-low { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .sig-low h4 { color: #166534; }
+  .sig-low .signal-tag { background: white; color: #166534; border: 1px solid #bbf7d0; }
+
+  /* ── Diagram 4: Live Session Flow ── */
+  .flow-row {
+    display: flex; align-items: center; justify-content: center; gap: 0;
+    flex-wrap: nowrap;
+  }
+  .flow-node {
+    padding: 16px 20px; border-radius: 14px; text-align: center; min-width: 130px;
+  }
+  .flow-node h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+  .flow-node p { font-size: 11px; line-height: 1.4; }
+  .flow-arrow { width: 40px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .flow-arrow svg { width: 24px; height: 24px; }
+
+  .fn-blue { background: #eff6ff; border: 1.5px solid #bfdbfe; }
+  .fn-blue h4 { color: #1d4ed8; }
+  .fn-blue p { color: #3b82f6; }
+
+  .fn-amber { background: #fffbeb; border: 1.5px solid #fde68a; }
+  .fn-amber h4 { color: #a16207; }
+  .fn-amber p { color: #a16207; }
+
+  .fn-green { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
+  .fn-green h4 { color: #15803d; }
+  .fn-green p { color: #15803d; }
+
+  .fn-purple { background: #faf5ff; border: 1.5px solid #e9d5ff; }
+  .fn-purple h4 { color: #6b21a8; }
+  .fn-purple p { color: #7c3aed; }
+
+  .fn-slate { background: #f1f5f9; border: 1.5px solid #cbd5e1; }
+  .fn-slate h4 { color: #334155; }
+  .fn-slate p { color: #64748b; }
+
+  .flow-down {
+    display: flex; flex-direction: column; align-items: center;
+    height: 36px; justify-content: center;
+  }
+  .flow-down svg { width: 20px; height: 20px; transform: rotate(90deg); }
+
+  /* ── Diagram 5: Evaluation Framework ── */
+  .eval-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .eval-card { padding: 24px; border-radius: 16px; }
+  .eval-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+  .eval-card .eval-who { font-size: 12px; margin-bottom: 12px; }
+  .eval-card ul { list-style: none; font-size: 13px; line-height: 1.9; }
+  .eval-card ul li::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+  .eval-card .rq-tags { margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .eval-card .rq-tag {
+    font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  .ev-blue { background: #eff6ff; border: 1.5px solid #bfdbfe; }
+  .ev-blue h3 { color: #1d4ed8; }
+  .ev-blue .eval-who { color: #3b82f6; }
+  .ev-blue ul li::before { background: #3b82f6; }
+  .ev-blue .rq-tag { background: #dbeafe; color: #1d4ed8; }
+
+  .ev-amber { background: #fffbeb; border: 1.5px solid #fde68a; }
+  .ev-amber h3 { color: #92400e; }
+  .ev-amber .eval-who { color: #a16207; }
+  .ev-amber ul li::before { background: #eab308; }
+  .ev-amber .rq-tag { background: #fef3c7; color: #92400e; }
+
+  .ev-green { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
+  .ev-green h3 { color: #166534; }
+  .ev-green .eval-who { color: #15803d; }
+  .ev-green ul li::before { background: #22c55e; }
+  .ev-green .rq-tag { background: #dcfce7; color: #166534; }
+
+  .eval-full { grid-column: 1 / -1; }
+
+  /* ── Diagram 6: Calibration Gradient ── */
+  .gradient-row { display: flex; gap: 8px; align-items: stretch; }
+  .grad-card {
+    flex: 1; padding: 20px 16px; border-radius: 14px; text-align: center;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .grad-card .score { font-size: 28px; font-weight: 800; }
+  .grad-card .label { font-size: 12px; font-weight: 600; margin-top: 4px; }
+  .grad-card .expect { font-size: 11px; margin-top: 8px; padding-top: 8px; border-top: 1px solid; font-weight: 500; }
+
+  .gc-5 { background: #fef2f2; border: 1.5px solid #fecaca; }
+  .gc-5 .score, .gc-5 .label { color: #991b1b; }
+  .gc-5 .expect { color: #b91c1c; border-color: #fecaca; }
+
+  .gc-4 { background: #fff7ed; border: 1.5px solid #fed7aa; }
+  .gc-4 .score, .gc-4 .label { color: #9a3412; }
+  .gc-4 .expect { color: #c2410c; border-color: #fed7aa; }
+
+  .gc-3 { background: #fffbeb; border: 1.5px solid #fde68a; }
+  .gc-3 .score, .gc-3 .label { color: #92400e; }
+  .gc-3 .expect { color: #a16207; border-color: #fde68a; }
+
+  .gc-2 { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
+  .gc-2 .score, .gc-2 .label { color: #166534; }
+  .gc-2 .expect { color: #15803d; border-color: #bbf7d0; }
+
+  .gc-1 { background: #f8fafc; border: 1.5px solid #e2e8f0; }
+  .gc-1 .score, .gc-1 .label { color: #475569; }
+  .gc-1 .expect { color: #64748b; border-color: #e2e8f0; }
+
+  /* Arrow SVG helper */
+  .arrow-r { color: #94a3b8; }
+
+  /* Print */
+  @media print {
+    body { padding: 24px; }
+    .diagram { box-shadow: none; border: 1px solid #e2e8f0; page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="page-title">OcularClaw</div>
+  <h1>System Architecture</h1>
+  <p class="subtitle">Proactive Conversational AI Agent for Smart Glasses</p>
+
+  <!-- ════════ DIAGRAM 1: HIGH-LEVEL OVERVIEW ════════ -->
+  <div class="diagram">
+    <h2>High-Level System Overview</h2>
+    <p class="desc">Three-layer architecture: capture input, process through LLM pipeline, deliver recommendations</p>
+
+    <div class="overview-row">
+      <div class="overview-box ob-input">
+        <h3>Input Layer</h3>
+        <ul>
+          <li>Microphone (smart glasses)</li>
+          <li>Web Speech API / Whisper</li>
+          <li>Rolling transcript buffer</li>
+          <li>Speaker diarization (P1/P2)</li>
+        </ul>
+      </div>
+
+      <div class="arrow-between">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+
+      <div class="overview-box ob-process">
+        <h3>Processing Layer</h3>
+        <ul>
+          <li>Task A: Goal Inference</li>
+          <li>Task B: Intervention Decision</li>
+          <li>Task C: Recommendation Gen</li>
+          <li>LLM (GPT-4.1-mini)</li>
+        </ul>
+      </div>
+
+      <div class="arrow-between">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+
+      <div class="overview-box ob-output">
+        <h3>Output Layer</h3>
+        <ul>
+          <li>Visual HUD overlay</li>
+          <li>2 recommendations (say/know)</li>
+          <li>Urgency + proactive score</li>
+          <li>Session log (JSON)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════ DIAGRAM 2: 3-TASK PIPELINE ════════ -->
+  <div class="diagram">
+    <h2>Core Pipeline: A &rarr; B &rarr; C</h2>
+    <p class="desc">Every 15 seconds, the agent runs three tasks in sequence on the latest transcript</p>
+
+    <div class="pipeline">
+      <!-- Transcript input -->
+      <div style="padding: 14px 24px; background: #f1f5f9; border: 1.5px solid #cbd5e1; border-radius: 12px; text-align: center; max-width: 560px; width: 100%;">
+        <span style="font-size: 12px; font-weight: 700; color: #475569;">Rolling Transcript Buffer</span>
+        <span style="font-size: 11px; color: #94a3b8; margin-left: 8px;">(last ~120s of conversation)</span>
+      </div>
+
+      <div class="pipe-arrow">
+        <div class="line"></div>
+        <svg viewBox="0 0 16 16" fill="#94a3b8"><path d="M8 12l-4-4h8z"/></svg>
+      </div>
+
+      <!-- Task A -->
+      <div class="task-card task-a">
+        <h3>Task A — Goal Inference</h3>
+        <p class="task-q">"What is the wearer trying to accomplish?"</p>
+        <div class="fields">
+          <span class="field">wearer_goal</span>
+          <span class="field">goal_type</span>
+          <span class="field">goal_confidence</span>
+        </div>
+      </div>
+
+      <div class="pipe-arrow">
+        <div class="line"></div>
+        <svg viewBox="0 0 16 16" fill="#94a3b8"><path d="M8 12l-4-4h8z"/></svg>
+      </div>
+
+      <!-- Task B -->
+      <div class="task-card task-b">
+        <h3>Task B — Intervention Decision</h3>
+        <p class="task-q">"Should I speak up right now?"</p>
+        <div class="fields">
+          <span class="field">action (none / recommend)</span>
+          <span class="field">proactive_score (1-5)</span>
+          <span class="field">signal_type</span>
+          <span class="field">reason</span>
+        </div>
+      </div>
+
+      <div class="pipe-arrow">
+        <div class="line"></div>
+        <svg viewBox="0 0 16 16" fill="#94a3b8"><path d="M8 12l-4-4h8z"/></svg>
+      </div>
+
+      <!-- Decision -->
+      <div class="diamond">action = "recommend"?</div>
+
+      <div style="height: 12px;"></div>
+
+      <div class="decision-branch">
+        <div style="flex: 1; text-align: center;">
+          <div class="branch-label">No &rarr; Silent</div>
+          <div class="silent-box">No intervention. Wait for next check.</div>
+        </div>
+        <div style="flex: 1; text-align: center;">
+          <div class="branch-label">Yes &rarr; Generate</div>
+          <!-- Task C -->
+          <div class="task-card task-c" style="text-align: left;">
+            <h3>Task C — Recommendation</h3>
+            <p class="task-q">"What should they say or know?"</p>
+            <div class="fields">
+              <span class="field">recommendation_1</span>
+              <span class="field">recommendation_2</span>
+              <span class="field">rec_mode (say/know/both)</span>
+              <span class="field">urgency</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════ DIAGRAM 3: SIGNAL TAXONOMY ════════ -->
+  <div class="diagram">
+    <h2>Signal Type Taxonomy</h2>
+    <p class="desc">Categorization of conversational signals the agent detects, by severity</p>
+
+    <div class="signal-grid">
+      <div class="signal-col sig-high">
+        <h4>High Stakes (Score 4-5)</h4>
+        <span class="signal-tag">structural_gap</span>
+        <span class="signal-tag">comprehension_gap</span>
+        <span class="signal-tag">high_stakes_decision</span>
+        <span class="signal-tag">premature_commitment</span>
+        <span class="signal-tag">self_contradiction</span>
+        <span class="signal-tag">question_dodge</span>
+        <span class="signal-tag">factual_error</span>
+      </div>
+      <div class="signal-col sig-med">
+        <h4>Medium (Score 3)</h4>
+        <span class="signal-tag">emotional_escalation</span>
+        <span class="signal-tag">idea_co_option</span>
+        <span class="signal-tag">missed_buying_signal</span>
+        <span class="signal-tag">missed_connection_opp</span>
+      </div>
+      <div class="signal-col sig-low">
+        <h4>Low / None (Score 1-2)</h4>
+        <span class="signal-tag">information_enrichment</span>
+        <span class="signal-tag">none</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════ DIAGRAM 4: LIVE SESSION DATA FLOW ════════ -->
+  <div class="diagram">
+    <h2>Live Session Data Flow</h2>
+    <p class="desc">Real-time path from microphone to on-screen recommendations</p>
+
+    <div class="flow-row">
+      <div class="flow-node fn-blue">
+        <h4>Microphone</h4>
+        <p>Smart glasses /<br>laptop mic</p>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="flow-node fn-blue">
+        <h4>Speech-to-Text</h4>
+        <p>Web Speech API<br>(browser, real-time)</p>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="flow-node fn-amber">
+        <h4>Transcript Buffer</h4>
+        <p>Rolling 120s<br>P1/P2 tagged</p>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="flow-node fn-green">
+        <h4>LLM Agent</h4>
+        <p>GPT-4.1-mini<br>every 15s</p>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="flow-node fn-purple">
+        <h4>HUD Display</h4>
+        <p>2 recommendations<br>+ urgency badge</p>
+      </div>
+    </div>
+
+    <div class="flow-down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-node fn-slate" style="max-width: 200px;">
+        <h4>Post-Session Survey</h4>
+        <p>Q1-Q4 Likert + Q5-Q7 free-text</p>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="flow-node fn-slate" style="max-width: 200px;">
+        <h4>Session JSON Export</h4>
+        <p>Transcript + triggers + ratings + free-text</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════ DIAGRAM 5: BENCHMARK FLOW ════════ -->
+  <div class="diagram">
+    <h2>Automated Benchmark Data Flow</h2>
+    <p class="desc">Batch evaluation of models against 17 ground-truth scenarios</p>
+
+    <div class="flow-row">
+      <div class="flow-node fn-blue" style="min-width: 150px;">
+        <h4>17 Scenarios</h4>
+        <p>11 positive<br>6 negative<br>+ ground truth</p>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="flow-node fn-amber" style="min-width: 150px;">
+        <h4>Replay Engine</h4>
+        <p>Progressive<br>transcript feed<br>(simulated real-time)</p>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="flow-node fn-green" style="min-width: 150px;">
+        <h4>Model Under Test</h4>
+        <p>GPT-4o, 4.1-mini,<br>Gemini, Claude,<br>o3-mini</p>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="flow-node fn-purple" style="min-width: 150px;">
+        <h4>Result JSON</h4>
+        <p>Triggers fired<br>Timing deltas<br>Proactive scores</p>
+      </div>
+    </div>
+
+    <div class="flow-down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+      <div class="flow-node fn-slate" style="min-width: 320px;">
+        <h4>Aggregate Metrics</h4>
+        <p>Precision / Recall / Specificity / Timing RMSE / Score Calibration / Model Comparison</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════ DIAGRAM 6: 3-PART EVALUATION ════════ -->
+  <div class="diagram">
+    <h2>3-Part Evaluation Framework</h2>
+    <p class="desc">Triangulated evaluation: automated metrics + expert annotation + live participant study</p>
+
+    <div class="eval-grid">
+      <div class="eval-card ev-blue">
+        <h3>Part 1: Automated Benchmark</h3>
+        <p class="eval-who">Researcher only</p>
+        <ul>
+          <li>17 scenarios &times; 7 models</li>
+          <li>Task B precision / recall</li>
+          <li>Trigger timing delta</li>
+          <li>Proactive score RMSE</li>
+          <li>Goal inference accuracy</li>
+        </ul>
+        <div class="rq-tags">
+          <span class="rq-tag">RQ1</span>
+          <span class="rq-tag">RQ4</span>
+          <span class="rq-tag">RQ5</span>
+        </div>
+      </div>
+
+      <div class="eval-card ev-amber">
+        <h3>Part 2: Expert Scorecard</h3>
+        <p class="eval-who">Researcher + 1-2 labmates</p>
+        <ul>
+          <li>Per-trigger quality annotation</li>
+          <li>8 binary metrics (Tasks A/B/C)</li>
+          <li>Accept / edit / reject decisions</li>
+          <li>Inter-rater agreement (Cohen's &kappa;)</li>
+        </ul>
+        <div class="rq-tags">
+          <span class="rq-tag">RQ2</span>
+          <span class="rq-tag">RQ4</span>
+        </div>
+      </div>
+
+      <div class="eval-card ev-green eval-full">
+        <h3>Part 3: Live Role-Play</h3>
+        <p class="eval-who">10 participants &times; 5 scenarios</p>
+        <ul style="column-count: 2;">
+          <li>Real-time agent interaction</li>
+          <li>Calibration gradient (score 4 &rarr; 1)</li>
+          <li>Post-session: 4 Likert + 3 free-text</li>
+          <li>Exit survey: frequency pref, best/worst</li>
+          <li>Helpfulness, timing, goal, adoption ratings</li>
+          <li>Qualitative thematic coding</li>
+        </ul>
+        <div class="rq-tags">
+          <span class="rq-tag">RQ3</span>
+          <span class="rq-tag">RQ5</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════ DIAGRAM 7: CALIBRATION GRADIENT ════════ -->
+  <div class="diagram">
+    <h2>User Study Calibration Gradient</h2>
+    <p class="desc">5 scenarios testing whether the agent appropriately scales its intervention level</p>
+
+    <div class="gradient-row">
+      <div class="grad-card gc-4">
+        <div>
+          <div class="score">4</div>
+          <div class="label">S1: Team Meeting</div>
+        </div>
+        <div class="expect">Intervene clearly</div>
+      </div>
+      <div class="grad-card gc-4">
+        <div>
+          <div class="score">4</div>
+          <div class="label">S2: One-on-One</div>
+        </div>
+        <div class="expect">Intervene clearly</div>
+      </div>
+      <div class="grad-card gc-3">
+        <div>
+          <div class="score">3</div>
+          <div class="label">S3: Coffee Chat</div>
+        </div>
+        <div class="expect">Intervene gently</div>
+      </div>
+      <div class="grad-card gc-2">
+        <div>
+          <div class="score">2</div>
+          <div class="label">S4: Weekend Plans</div>
+        </div>
+        <div class="expect">Optional / quiet</div>
+      </div>
+      <div class="grad-card gc-1">
+        <div>
+          <div class="score">1</div>
+          <div class="label">S5: Elevator Talk</div>
+        </div>
+        <div class="expect">Stay silent</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
