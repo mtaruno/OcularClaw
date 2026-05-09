@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ReactPlayer from "react-player";
+import LiveSession from "./LiveSession";
 
 const STORAGE_KEYS = {
   reviewerId: "benchmark-lab-reviewer-id",
@@ -270,9 +271,9 @@ function ReviewRubric() {
           <h4 className="font-semibold text-slate-900 dark:text-slate-100">Step 2: Per-Trigger Diagnostics (optional, for deeper analysis)</h4>
           <p className="mt-1">Click any trigger card in the transcript to score it individually. This is optional but gives richer data.</p>
           <ul className="mt-1 space-y-1 pl-4">
-            <li><strong>Task A</strong> — Was this the right moment? Appropriate (yes/no), Worth Interruption (yes/no), Timing (1-3)</li>
-            <li><strong>Task B</strong> — Are the recommendations useful, grounded in the transcript, and distinct from each other?</li>
-            <li><strong>Task C</strong> — Is the inferred goal plausible, specific, and useful for producing good recommendations?</li>
+            <li><strong>Task A — Goal Inference</strong> — Did the agent correctly understand the wearer&apos;s goal? Is it plausible and specific?</li>
+            <li><strong>Task B — Right Moment?</strong> — Is there a real signal here (missed opportunity, error, tension)? Would the benefit outweigh the distraction?</li>
+            <li><strong>Task C — Recommendation Quality</strong> — Are the recommendations useful, grounded in the transcript, and distinct from each other?</li>
           </ul>
         </div>
         <div>
@@ -356,6 +357,7 @@ function TextArea({ label, value, onChange, rows = 3, placeholder }) {
 
 export default function App() {
   const playerRef = useRef(null);
+  const [appMode, setAppMode] = useState("review"); // "review" | "live"
   const [reviewerId, setReviewerId] = useState(
     () => localStorage.getItem(STORAGE_KEYS.reviewerId) || "",
   );
@@ -397,6 +399,7 @@ export default function App() {
   const [exportPreview, setExportPreview] = useState(() =>
     parseJsonStorage(reviewerKey(STORAGE_KEYS.reviewExport, localStorage.getItem(STORAGE_KEYS.reviewerId) || ""), null),
   );
+  const [showReviewProgress, setShowReviewProgress] = useState(false);
 
   // Track the last reviewer ID to detect switches
   const lastReviewerIdRef = useRef(reviewerId);
@@ -579,6 +582,42 @@ export default function App() {
     });
   }, [methods, selectedWindow]);
 
+  // Cycle through methods (for arrow key navigation)
+  const cycleMethod = useCallback(
+    (direction) => {
+      if (methods.length <= 1) return;
+      const currentIdx = methods.findIndex((m) => m.id === selectedMethodId);
+      const nextIdx = (currentIdx + direction + methods.length) % methods.length;
+      const next = methods[nextIdx];
+      setSelectedMethodId(next.id);
+      const currentWindowId = selectedWindow?.window_id;
+      const sameWindow = currentWindowId && next.windows?.find((w) => w.window_id === currentWindowId);
+      const nextWindow = sameWindow || next.windows?.[0];
+      setSelectedWindowId(nextWindow?.window_id || "");
+      setSelectedTriggerId(nextWindow?.triggers?.[0]?.trigger_id || "");
+      setGeneratedDraft(null);
+    },
+    [methods, selectedMethodId, selectedWindow],
+  );
+
+  // Left/Right arrow keys to switch models (only in review mode)
+  useEffect(() => {
+    if (appMode !== "review" || methods.length <= 1) return;
+    const handleKeyDown = (e) => {
+      const tag = e.target.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || e.target.isContentEditable) return;
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        cycleMethod(-1);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        cycleMethod(1);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [appMode, methods.length, cycleMethod]);
+
   const activeTriggerKey = selectedMethod && selectedWindow && selectedTrigger
     ? triggerKey(selectedMethod.id, selectedWindow.window_id, selectedTrigger.trigger_id)
     : null;
@@ -737,6 +776,38 @@ export default function App() {
     [reviewMap, selectedMethod, windows],
   );
 
+  // Compute review progress across all methods × scenarios
+  const reviewProgress = useMemo(() => {
+    const progress = [];
+    for (const method of methods) {
+      const methodWindows = method.windows || [];
+      for (const win of methodWindows) {
+        const triggers = win.triggers || [];
+        let scored = 0;
+        for (const t of triggers) {
+          const key = triggerKey(method.id, win.window_id, t.trigger_id);
+          const review = reviewMap[key];
+          if (review && Object.values(review).some((v) => v === true || v === false || (typeof v === "string" && v.length > 0))) {
+            scored++;
+          }
+        }
+        const pref = preferenceMap[win.window_id];
+        const hasPreference = pref && (pref.preferred_method || pref.overall_usefulness);
+        progress.push({
+          methodId: method.id,
+          methodLabel: method.label,
+          windowId: win.window_id,
+          windowLabel: win.context_intro?.title || win.window_id,
+          totalTriggers: triggers.length,
+          scoredTriggers: scored,
+          hasPreference: !!hasPreference,
+          isCurrentPreferred: pref?.preferred_method === method.id,
+        });
+      }
+    }
+    return progress;
+  }, [methods, reviewMap, preferenceMap]);
+
   function seekTo(seconds) {
     const clipSeconds = absoluteToClipSeconds(seconds);
     if (playerRef.current && Number.isFinite(clipSeconds)) {
@@ -893,7 +964,7 @@ export default function App() {
     URL.revokeObjectURL(url);
   }
 
-  if (!selectedWindow) {
+  if (!selectedWindow && appMode !== "live") {
     return <div className="p-10 text-sm text-slate-500">Loading benchmark lab...</div>;
   }
 
@@ -936,7 +1007,29 @@ export default function App() {
                 )}
               />
             </div>
-            {/* Dataset switcher */}
+            {/* Mode switcher */}
+            <div className="flex rounded-xl border border-slate-300 bg-white overflow-hidden dark:border-slate-700 dark:bg-slate-950">
+              {[
+                { id: "review", label: "Benchmark Review" },
+                { id: "live", label: "Live Session" },
+              ].map(({ id, label }) => (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => setAppMode(id)}
+                  className={cn(
+                    "px-4 py-2.5 text-sm font-semibold transition",
+                    appMode === id
+                      ? "bg-emerald-600 text-white"
+                      : "text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-900",
+                  )}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+            {/* Dataset switcher (review mode only) */}
+            {appMode === "review" && (
             <div className="flex rounded-xl border border-slate-300 bg-white overflow-hidden dark:border-slate-700 dark:bg-slate-950">
               {[
                 { id: "egocom", label: "EgoCom" },
@@ -957,6 +1050,7 @@ export default function App() {
                 </button>
               ))}
             </div>
+            )}
             <button
               type="button"
               onClick={() => setTheme((current) => (current === "dark" ? "light" : "dark"))}
@@ -964,35 +1058,34 @@ export default function App() {
             >
               {theme === "dark" ? "Light Mode" : "Dark Mode"}
             </button>
-            {methods.length > 1 && (
-              <>
-                <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                  Method
-                </label>
-                <select
-                  value={selectedMethod?.id || ""}
-                  onChange={(event) => {
-                    const nextMethodId = event.target.value;
-                    setSelectedMethodId(nextMethodId);
-                    const nextMethod = methods.find((entry) => entry.id === nextMethodId);
-                    // Try to stay on the same scenario window when switching methods
-                    const currentWindowId = selectedWindow?.window_id;
-                    const sameWindow = currentWindowId && nextMethod?.windows?.find((w) => w.window_id === currentWindowId);
-                    const nextWindow = sameWindow || nextMethod?.windows?.[0];
-                    setSelectedWindowId(nextWindow?.window_id || "");
-                    setSelectedTriggerId(nextWindow?.triggers?.[0]?.trigger_id || "");
-                    setGeneratedDraft(null);
-                  }}
-                  className="min-w-[220px] rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-labPurple focus:ring-2 focus:ring-purple-100 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:focus:ring-purple-900/40"
+            {appMode === "review" && methods.length > 1 && (
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => cycleMethod(-1)}
+                  className="rounded-lg border border-slate-300 bg-white px-2.5 py-2 text-sm font-bold text-slate-600 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+                  title="Previous model (← arrow key)"
                 >
-                  {methods.map((entry) => (
-                    <option key={entry.id} value={entry.id}>
-                      {entry.label}
-                    </option>
-                  ))}
-                </select>
-              </>
+                  ←
+                </button>
+                <span className="min-w-[160px] rounded-xl border border-purple-300 bg-purple-50 px-4 py-2 text-center text-sm font-bold text-purple-700 dark:border-purple-700 dark:bg-purple-950/40 dark:text-purple-300">
+                  {selectedMethod?.label}
+                  <span className="ml-1.5 text-[10px] font-normal text-purple-400">
+                    {methods.findIndex((m) => m.id === selectedMethodId) + 1}/{methods.length}
+                  </span>
+                </span>
+                <button
+                  type="button"
+                  onClick={() => cycleMethod(1)}
+                  className="rounded-lg border border-slate-300 bg-white px-2.5 py-2 text-sm font-bold text-slate-600 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+                  title="Next model (→ arrow key)"
+                >
+                  →
+                </button>
+              </div>
             )}
+            {appMode === "review" && (
+            <>
             <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
               {selectedDataset === "scenarios" ? "Scenario" : "Window"}
             </label>
@@ -1013,54 +1106,68 @@ export default function App() {
                 </option>
               ))}
             </select>
+            </>
+            )}
           </div>
         </div>
       </header>
 
-      <main className="mx-auto grid max-w-[1800px] gap-6 px-6 py-6 xl:grid-cols-[1.2fr_1fr_1fr]">
+      {appMode === "live" ? (
+        <main className="mx-auto max-w-[1200px] px-6 py-6" style={{ height: "calc(100vh - 100px)" }}>
+          <LiveSession
+            apiSettings={apiSettings}
+            setApiSettings={setApiSettings}
+            reviewerId={reviewerId}
+            onSessionEnd={() => {}}
+          />
+        </main>
+      ) : (
+      <>
+      {/* Sticky model switcher — always visible while scrolling */}
+      {methods.length > 1 && (
+        <div className="sticky top-0 z-30 border-b border-purple-200 bg-purple-50/90 backdrop-blur-sm dark:border-purple-900 dark:bg-purple-950/80">
+          <div className="mx-auto flex max-w-[1800px] items-center justify-center gap-3 px-6 py-2">
+            <button
+              type="button"
+              onClick={() => cycleMethod(-1)}
+              className="rounded-lg border border-purple-300 bg-white px-2.5 py-1.5 text-sm font-bold text-purple-600 transition hover:bg-purple-100 dark:border-purple-700 dark:bg-purple-950 dark:text-purple-300 dark:hover:bg-purple-900"
+              title="Previous model (← arrow key)"
+            >
+              ←
+            </button>
+            <span className="text-sm font-bold text-purple-700 dark:text-purple-300">
+              {selectedMethod?.label}
+            </span>
+            <span className="rounded-full bg-purple-200 px-2 py-0.5 text-[10px] font-semibold text-purple-600 dark:bg-purple-800 dark:text-purple-300">
+              {methods.findIndex((m) => m.id === selectedMethodId) + 1} / {methods.length}
+            </span>
+            <button
+              type="button"
+              onClick={() => cycleMethod(1)}
+              className="rounded-lg border border-purple-300 bg-white px-2.5 py-1.5 text-sm font-bold text-purple-600 transition hover:bg-purple-100 dark:border-purple-700 dark:bg-purple-950 dark:text-purple-300 dark:hover:bg-purple-900"
+              title="Next model (→ arrow key)"
+            >
+              →
+            </button>
+            <span className="ml-2 text-[10px] text-purple-400 dark:text-purple-500">← → arrow keys</span>
+          </div>
+        </div>
+      )}
+      <main className="mx-auto max-w-[1800px] px-6 py-6 space-y-6">
+        {/* Context & Persona — full width on top */}
         <Panel
-          title="Video & Context"
-          subtitle={`${selectedWindow.video_name} · ${selectedWindow.start_sec}-${selectedWindow.end_sec}s`}
+          title="Scenario Context"
+          subtitle={selectedWindow.context_intro?.title || selectedWindow.window_id}
         >
           <div className="flex h-full flex-col gap-5">
             <div className="rounded-2xl border border-purple-200 bg-purple-50 p-4 dark:border-purple-900/50 dark:bg-purple-950/30">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                    {selectedWindow.context_intro?.title || "Transcript-Derived Context Intro"}
-                  </h3>
-                  <p className="mt-1 text-sm text-slate-700 dark:text-slate-300">
-                    {selectedWindow.context_intro?.summary ||
-                      "Use this section to understand the current conversational scene before reviewing triggers."}
-                  </p>
-                </div>
-              </div>
-              <div className="mt-4 grid gap-4 xl:grid-cols-2">
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                    Current Signals
-                  </div>
-                  <ul className="mt-2 space-y-2 text-sm text-slate-700">
-                    {(selectedWindow.context_intro?.signals || []).map((item) => (
-                      <li key={item} className="rounded-xl bg-white/70 px-3 py-2 dark:bg-slate-900/70 dark:text-slate-300">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                    Future Second-Brain Factors
-                  </div>
-                  <ul className="mt-2 space-y-2 text-sm text-slate-700">
-                    {(selectedWindow.context_intro?.future_context || []).map((item) => (
-                      <li key={item} className="rounded-xl bg-white/70 px-3 py-2 dark:bg-slate-900/70 dark:text-slate-300">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                {selectedWindow.context_intro?.title || "Scenario Context"}
+              </h3>
+              <p className="mt-1 text-sm text-slate-700 dark:text-slate-300">
+                {selectedWindow.context_intro?.summary ||
+                  "Use this section to understand the current conversational scene before reviewing triggers."}
+              </p>
             </div>
 
             {/* Scenario metadata — only shown for scenario benchmark */}
@@ -1122,160 +1229,12 @@ export default function App() {
               </div>
             )}
 
-            <div className="rounded-2xl border border-slate-200 bg-slate-950 p-3">
-              <div className="aspect-video overflow-hidden rounded-xl bg-slate-900">
-                {currentVideoUrl ? (
-                  <ReactPlayer
-                    ref={playerRef}
-                    url={currentVideoUrl}
-                    width="100%"
-                    height="100%"
-                    controls
-                    onProgress={({ playedSeconds }) => setCurrentPlayback(playedSeconds)}
-                  />
-                ) : (
-                  <div className="flex h-full items-center justify-center px-8 text-center text-sm text-slate-300">
-                    Add a video URL or load a local video file for this `video_name` to review playback.
-                  </div>
-                )}
-              </div>
-            </div>
 
-            <div className="grid gap-3 md:grid-cols-2">
-              <TextInput
-                label="Video URL"
-                value={currentVideoUrl}
-                onChange={updateVideoUrl}
-                placeholder="http://localhost:3000/videos/current-window.mp4"
-              />
-              <label className="block">
-                <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                  Load Local Video
-                </span>
-                <input
-                  type="file"
-                  accept="video/*"
-                  onChange={handleLocalVideoPick}
-                  className="block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 file:mr-4 file:rounded-lg file:border-0 file:bg-purple-50 file:px-3 file:py-2 file:text-sm file:font-medium file:text-labPurple"
-                />
-              </label>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50">
-              <div className="flex items-center justify-between">
-                <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-100">Manual Recommendation Comment</h3>
-                <button
-                  type="button"
-                          onClick={() => setDraftComment((current) => ({
-                            ...current,
-                            timestamp: clipToAbsoluteSeconds(currentPlayback).toFixed(2),
-                          }))}
-                  className="rounded-lg bg-purple-50 px-3 py-2 text-xs font-medium text-labPurple dark:bg-purple-950/50"
-                >
-                  Use Current Playback
-                </button>
-              </div>
-              <div className="mt-4 grid gap-4">
-                <div className="grid gap-4 md:grid-cols-[180px_1fr]">
-                  <TextInput
-                    label="Timestamp"
-                    value={draftComment.timestamp}
-                    onChange={(value) => setDraftComment((current) => ({ ...current, timestamp: value }))}
-                    placeholder="92.50"
-                  />
-                  <label className="block">
-                    <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                      Recommendation Mode
-                    </span>
-                    <select
-                      value={draftComment.recommendationMode}
-                      onChange={(event) =>
-                        setDraftComment((current) => ({
-                          ...current,
-                          recommendationMode: event.target.value,
-                        }))
-                      }
-                      className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-labPurple focus:ring-2 focus:ring-purple-100 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:focus:ring-purple-900/40"
-                    >
-                      {recommendationModes.map((mode) => (
-                        <option key={mode} value={mode}>
-                          {mode}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                </div>
-                <TextArea
-                  label="Recommendation 1"
-                  rows={3}
-                  value={draftComment.recommendation1}
-                  onChange={(value) =>
-                    setDraftComment((current) => ({ ...current, recommendation1: value }))
-                  }
-                  placeholder="Say: Ask them to clarify the key constraint."
-                />
-                <TextArea
-                  label="Recommendation 2"
-                  rows={3}
-                  value={draftComment.recommendation2}
-                  onChange={(value) =>
-                    setDraftComment((current) => ({ ...current, recommendation2: value }))
-                  }
-                  placeholder="Know: They are signaling uncertainty about scope."
-                />
-                <TextArea
-                  label="Rationale"
-                  rows={2}
-                  value={draftComment.rationale}
-                  onChange={(value) =>
-                    setDraftComment((current) => ({ ...current, rationale: value }))
-                  }
-                  placeholder="Why this recommendation helps at this moment."
-                />
-                <button
-                  type="button"
-                  onClick={addManualComment}
-                  className="rounded-xl bg-labPurple px-4 py-3 text-sm font-semibold text-white transition hover:bg-violet-700"
-                >
-                  Add Comment Recommendation
-                </button>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
-              <div className="flex items-center justify-between">
-                <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-100">Manual Comments</h3>
-                <span className="text-xs text-slate-500 dark:text-slate-400">{currentWindowComments.length} comments</span>
-              </div>
-              <div className="mt-3 max-h-48 space-y-3 overflow-auto pr-1">
-                {currentWindowComments.length ? (
-                  currentWindowComments.map((comment) => (
-                    <div key={comment.id} className="rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-950/50">
-                      <div className="flex items-center justify-between text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                        <span>{comment.recommendation_mode}</span>
-                        <button
-                          type="button"
-                          onClick={() => seekTo(Number(comment.timestamp))}
-                          className="font-semibold text-labPurple"
-                        >
-                          {comment.timestamp}s
-                        </button>
-                      </div>
-                      <p className="mt-2 text-sm text-slate-800 dark:text-slate-100">{comment.recommendation_1}</p>
-                      <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">{comment.recommendation_2}</p>
-                      {comment.rationale ? (
-                        <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">{comment.rationale}</p>
-                      ) : null}
-                    </div>
-                  ))
-                ) : (
-                  <p className="text-sm text-slate-500 dark:text-slate-400">No manual comment recommendations added yet.</p>
-                )}
-              </div>
-            </div>
           </div>
         </Panel>
 
+        {/* Transcript + Scorecard side by side */}
+        <div className="grid gap-6 xl:grid-cols-[1.2fr_1fr]">
         <Panel
           title="Transcript & AI Drafting"
           subtitle={`${selectedWindow.triggers.length} AI decision points for this window`}
@@ -1519,6 +1478,15 @@ export default function App() {
                                 {trigger.urgency}
                               </span>
                             </div>
+                            {trigger.wearer_goal && (
+                              <div className="mt-2 rounded-lg border border-amber-200 bg-amber-50/50 px-3 py-1.5 dark:border-amber-900/50 dark:bg-amber-950/20">
+                                <span className="text-[10px] font-semibold uppercase tracking-wider text-amber-500">Goal</span>
+                                <p className="text-xs text-slate-600 dark:text-slate-300">
+                                  {trigger.wearer_goal}
+                                  {trigger.goal_type ? <span className="ml-1 text-slate-400">[{trigger.goal_type}]</span> : ""}
+                                </p>
+                              </div>
+                            )}
                             <div className="mt-2 grid gap-1.5">
                               <div className="flex gap-2 text-sm">
                                 <span className="font-bold text-cyan-600 dark:text-cyan-400">1:</span>
@@ -1702,74 +1670,98 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Task A — Was this the right moment? */}
-                  <div className="mt-4">
-                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-400">
-                      Task A — Was this the right moment?
-                    </div>
-                    <div className="mt-2 flex flex-wrap gap-3">
-                      <label title="Should the agent have triggered here?" className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
-                        <input type="checkbox" checked={activeReviewState.trigger_appropriate === "1"} onChange={(e) => updateReviewField("trigger_appropriate", e.target.checked ? "1" : "0")} />
-                        Appropriate
-                      </label>
-                      <label title="Worth the interruption cost?" className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
-                        <input type="checkbox" checked={activeReviewState.interruption_worthy === "1"} onChange={(e) => updateReviewField("interruption_worthy", e.target.checked ? "1" : "0")} />
-                        Worth Interruption
-                      </label>
-                      <div className="flex items-center gap-1">
-                        <span className="text-xs text-slate-500">Timing:</span>
-                        {[1, 2, 3].map((v) => (
-                          <button key={v} type="button" onClick={() => updateReviewField("trigger_timing", String(v))}
-                            className={cn("rounded-lg border px-3 py-1.5 text-xs font-semibold", activeReviewState.trigger_timing === String(v) ? "border-emerald-400 bg-emerald-50 text-emerald-700 dark:border-emerald-700 dark:bg-emerald-950/40" : "border-slate-300 bg-white text-slate-500 dark:border-slate-700 dark:bg-slate-900")}>
-                            {v}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Task B — Rec quality */}
-                  <div className="mt-4">
-                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-labPurple">
-                      Task B — Recommendation Quality
-                    </div>
-                    <div className="mt-2 flex flex-wrap gap-3">
-                      {[
-                        ["useful_1", "Useful 1"],
-                        ["useful_2", "Useful 2"],
-                        ["grounded", "Grounded"],
-                        ["distinct_pair", "Distinct Pair"],
-                      ].map(([field, label]) => (
-                        <label key={field} className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
-                          <input type="checkbox" checked={activeReviewState[field] === "1"} onChange={(e) => updateReviewField(field, e.target.checked ? "1" : "0")} />
-                          {label}
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Task C — Goal inference */}
+                  {/* Task A — Goal inference */}
                   <div className="mt-4">
                     <div className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-600 dark:text-amber-400">
-                      Task C — Goal Inference
+                      Task A — Goal Inference
                     </div>
+                    <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
+                      Did the agent correctly understand what the wearer is trying to achieve in this conversation?
+                    </p>
                     {selectedTrigger.wearer_goal && (
-                      <p className="mt-1 text-xs text-slate-500 italic dark:text-slate-400">
-                        Agent inferred: &ldquo;{selectedTrigger.wearer_goal}&rdquo;
-                        {selectedTrigger.goal_type ? ` [${selectedTrigger.goal_type}]` : ""}
-                      </p>
+                      <div className="mt-2 rounded-lg border border-amber-200 bg-amber-50/50 px-3 py-2 dark:border-amber-900/50 dark:bg-amber-950/20">
+                        <span className="text-[10px] font-semibold uppercase tracking-wider text-amber-500">Agent&apos;s inferred goal</span>
+                        <p className="mt-0.5 text-sm text-slate-700 dark:text-slate-300">
+                          &ldquo;{selectedTrigger.wearer_goal}&rdquo;
+                          {selectedTrigger.goal_type ? <span className="ml-1 text-xs text-slate-400">[{selectedTrigger.goal_type}]</span> : ""}
+                        </p>
+                      </div>
                     )}
                     <div className="mt-2 flex flex-wrap gap-3">
-                      {[
-                        ["goal_plausible", "Plausible"],
-                        ["goal_specific", "Specific"],
-                        ["goal_useful_for_recs", "Useful for Recs"],
-                      ].map(([field, label]) => (
-                        <label key={field} className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
-                          <input type="checkbox" checked={activeReviewState[field] === "1"} onChange={(e) => updateReviewField(field, e.target.checked ? "1" : "0")} />
-                          {label}
-                        </label>
-                      ))}
+                      <label title="Is this a reasonable interpretation of what the wearer wants?" className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                        <input type="checkbox" checked={activeReviewState.goal_plausible === "1"} onChange={(e) => updateReviewField("goal_plausible", e.target.checked ? "1" : "0")} />
+                        Plausible
+                      </label>
+                      <label title="Is the goal concrete enough (not just 'communicate effectively')?" className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                        <input type="checkbox" checked={activeReviewState.goal_specific === "1"} onChange={(e) => updateReviewField("goal_specific", e.target.checked ? "1" : "0")} />
+                        Specific
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Task B — Was this the right moment? */}
+                  <div className="mt-4">
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-400">
+                      Task B — Was this the right moment?
+                    </div>
+                    <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
+                      Should the agent have spoken up here, and was it worth breaking the wearer&apos;s focus?
+                    </p>
+                    <div className="mt-2 flex flex-wrap gap-3">
+                      <label title="Is there a real conversational signal here that warrants intervention? (e.g., a missed opportunity, factual error, or tension)" className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                        <input type="checkbox" checked={activeReviewState.trigger_appropriate === "1"} onChange={(e) => updateReviewField("trigger_appropriate", e.target.checked ? "1" : "0")} />
+                        <div>
+                          <span>Appropriate</span>
+                          <p className="text-[10px] text-slate-400 font-normal">There&apos;s a real signal worth flagging</p>
+                        </div>
+                      </label>
+                      <label title="Would the benefit of this intervention outweigh the cost of distracting the wearer mid-conversation?" className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                        <input type="checkbox" checked={activeReviewState.interruption_worthy === "1"} onChange={(e) => updateReviewField("interruption_worthy", e.target.checked ? "1" : "0")} />
+                        <div>
+                          <span>Worth Interruption</span>
+                          <p className="text-[10px] text-slate-400 font-normal">Benefit outweighs the distraction cost</p>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Task C — Rec quality */}
+                  <div className="mt-4">
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-labPurple">
+                      Task C — Recommendation Quality
+                    </div>
+                    <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
+                      Are the two recommendations actually helpful in this moment?
+                    </p>
+                    <div className="mt-2 flex flex-wrap gap-3">
+                      <label title="Is recommendation 1 actionable and helpful right now?" className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                        <input type="checkbox" checked={activeReviewState.useful_1 === "1"} onChange={(e) => updateReviewField("useful_1", e.target.checked ? "1" : "0")} />
+                        <div>
+                          <span>Useful 1</span>
+                          <p className="text-[10px] text-slate-400 font-normal">Rec 1 is actionable and helpful</p>
+                        </div>
+                      </label>
+                      <label title="Is recommendation 2 actionable and helpful right now?" className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                        <input type="checkbox" checked={activeReviewState.useful_2 === "1"} onChange={(e) => updateReviewField("useful_2", e.target.checked ? "1" : "0")} />
+                        <div>
+                          <span>Useful 2</span>
+                          <p className="text-[10px] text-slate-400 font-normal">Rec 2 is actionable and helpful</p>
+                        </div>
+                      </label>
+                      <label title="Are the recommendations based on what was actually said in the transcript, not hallucinated or generic?" className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                        <input type="checkbox" checked={activeReviewState.grounded === "1"} onChange={(e) => updateReviewField("grounded", e.target.checked ? "1" : "0")} />
+                        <div>
+                          <span>Grounded</span>
+                          <p className="text-[10px] text-slate-400 font-normal">Based on what was actually said, not made up</p>
+                        </div>
+                      </label>
+                      <label title="Do the two recommendations offer different angles or approaches, not just rewordings of the same idea?" className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm cursor-pointer dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                        <input type="checkbox" checked={activeReviewState.distinct_pair === "1"} onChange={(e) => updateReviewField("distinct_pair", e.target.checked ? "1" : "0")} />
+                        <div>
+                          <span>Distinct Pair</span>
+                          <p className="text-[10px] text-slate-400 font-normal">Two different angles, not the same idea twice</p>
+                        </div>
+                      </label>
                     </div>
                   </div>
 
@@ -1789,31 +1781,187 @@ export default function App() {
             )}
           </div>
         </Panel>
+        </div>
       </main>
 
+      {/* Review Progress Panel */}
+      {showReviewProgress && (
+        <div className="border-t border-indigo-200 bg-indigo-50/50 dark:border-indigo-900 dark:bg-indigo-950/20">
+          <div className="mx-auto max-w-[1800px] px-6 py-4">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-200">
+                Review Progress — {reviewerId || "anonymous"}
+              </h3>
+              <div className="flex gap-2">
+                {(() => {
+                  const known = getKnownReviewerIds().filter(Boolean);
+                  if (known.length <= 1) return null;
+                  return (
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                      <span>Switch reviewer:</span>
+                      {known.map((id) => (
+                        <button
+                          key={id}
+                          onClick={() => {
+                            setReviewerId(id);
+                            localStorage.setItem(STORAGE_KEYS.reviewerId, id);
+                          }}
+                          className={`rounded-lg px-2 py-1 text-xs font-semibold transition ${
+                            id === reviewerId
+                              ? "bg-indigo-600 text-white"
+                              : "border border-slate-300 text-slate-600 hover:border-indigo-400 dark:border-slate-700 dark:text-slate-300"
+                          }`}
+                        >
+                          {id}
+                        </button>
+                      ))}
+                    </div>
+                  );
+                })()}
+                <button
+                  onClick={() => {
+                    if (confirm(`Clear all review data for "${reviewerId || "anonymous"}"? This cannot be undone.`)) {
+                      const rKey = reviewerId || "";
+                      localStorage.removeItem(reviewerKey(STORAGE_KEYS.reviewMap, rKey));
+                      localStorage.removeItem(reviewerKey(STORAGE_KEYS.preferenceMap, rKey));
+                      localStorage.removeItem(reviewerKey(STORAGE_KEYS.manualComments, rKey));
+                      localStorage.removeItem(reviewerKey(STORAGE_KEYS.reviewExport, rKey));
+                      setReviewMap({});
+                      setPreferenceMap({});
+                      setManualComments({});
+                      setExportPreview(null);
+                    }
+                  }}
+                  className="rounded-lg border border-rose-300 px-3 py-1 text-xs font-semibold text-rose-600 hover:border-rose-400 transition dark:border-rose-700 dark:text-rose-300"
+                >
+                  Clear My Reviews
+                </button>
+              </div>
+            </div>
+            {/* Progress grid: rows = scenarios, columns = models */}
+            <div className="overflow-auto rounded-xl border border-indigo-200 bg-white dark:border-indigo-800 dark:bg-slate-900">
+              <table className="w-full text-xs">
+                <thead>
+                  <tr className="border-b border-indigo-100 bg-indigo-50/50 dark:border-indigo-900/50 dark:bg-indigo-950/30">
+                    <th className="px-3 py-2 text-left font-semibold text-slate-600 dark:text-slate-300">Scenario</th>
+                    {methods.map((m) => (
+                      <th key={m.id} className="px-3 py-2 text-center font-semibold text-slate-600 dark:text-slate-300">
+                        {m.label}
+                      </th>
+                    ))}
+                    <th className="px-3 py-2 text-center font-semibold text-slate-600 dark:text-slate-300">Preference</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                  {/* Group progress by window */}
+                  {(() => {
+                    const windowIds = [...new Set(reviewProgress.map((p) => p.windowId))];
+                    return windowIds.map((wId) => {
+                      const rows = reviewProgress.filter((p) => p.windowId === wId);
+                      const windowLabel = rows[0]?.windowLabel || wId;
+                      const pref = preferenceMap[wId];
+                      const prefMethod = pref?.preferred_method;
+                      const prefUsefulness = pref?.overall_usefulness;
+                      return (
+                        <tr key={wId} className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                          <td className="px-3 py-2 font-medium text-slate-700 dark:text-slate-300 max-w-[200px] truncate">
+                            {windowLabel}
+                          </td>
+                          {methods.map((m) => {
+                            const entry = rows.find((r) => r.methodId === m.id);
+                            if (!entry) return <td key={m.id} className="px-3 py-2 text-center text-slate-300">—</td>;
+                            const done = entry.scoredTriggers;
+                            const total = entry.totalTriggers;
+                            const allDone = total > 0 && done === total;
+                            const isActive = selectedMethodId === m.id && selectedWindow?.window_id === wId;
+                            return (
+                              <td key={m.id} className="px-3 py-2 text-center">
+                                <button
+                                  onClick={() => {
+                                    setSelectedMethodId(m.id);
+                                    setSelectedWindowId(wId);
+                                    const win = m.windows?.find((w) => w.window_id === wId);
+                                    setSelectedTriggerId(win?.triggers?.[0]?.trigger_id || "");
+                                    setGeneratedDraft(null);
+                                  }}
+                                  className={`inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-semibold transition ${
+                                    isActive
+                                      ? "bg-purple-600 text-white"
+                                      : allDone
+                                        ? "bg-emerald-100 text-emerald-700 hover:bg-emerald-200 dark:bg-emerald-900/40 dark:text-emerald-300"
+                                        : done > 0
+                                          ? "bg-amber-100 text-amber-700 hover:bg-amber-200 dark:bg-amber-900/40 dark:text-amber-300"
+                                          : total === 0
+                                            ? "bg-slate-100 text-slate-400 dark:bg-slate-800 dark:text-slate-500"
+                                            : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400"
+                                  }`}
+                                  title={`${done}/${total} triggers scored — click to review`}
+                                >
+                                  {total === 0 ? "no triggers" : `${done}/${total}`}
+                                </button>
+                              </td>
+                            );
+                          })}
+                          <td className="px-3 py-2 text-center">
+                            {prefMethod ? (
+                              <span className="inline-flex items-center gap-1 rounded-lg bg-purple-100 px-2 py-1 text-xs font-semibold text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">
+                                ★ {methods.find((m) => m.id === prefMethod)?.label || prefMethod}
+                                {prefUsefulness && <span className="text-purple-400">({prefUsefulness}/5)</span>}
+                              </span>
+                            ) : (
+                              <span className="text-slate-300 dark:text-slate-600">—</span>
+                            )}
+                          </td>
+                        </tr>
+                      );
+                    });
+                  })()}
+                </tbody>
+              </table>
+            </div>
+            {/* Summary stats */}
+            <div className="mt-3 flex flex-wrap gap-4 text-xs text-slate-500 dark:text-slate-400">
+              {(() => {
+                const total = reviewProgress.filter((p) => p.totalTriggers > 0).length;
+                const done = reviewProgress.filter((p) => p.totalTriggers > 0 && p.scoredTriggers === p.totalTriggers).length;
+                const prefDone = [...new Set(reviewProgress.map((p) => p.windowId))].filter((wId) => preferenceMap[wId]?.preferred_method).length;
+                const prefTotal = [...new Set(reviewProgress.map((p) => p.windowId))].length;
+                return (
+                  <>
+                    <span>Trigger reviews: <strong className="text-slate-700 dark:text-slate-200">{done}/{total}</strong> method×scenario pairs complete</span>
+                    <span>Preferences: <strong className="text-slate-700 dark:text-slate-200">{prefDone}/{prefTotal}</strong> scenarios ranked</span>
+                  </>
+                );
+              })()}
+            </div>
+          </div>
+        </div>
+      )}
       <footer className="sticky bottom-0 border-t border-slate-200 bg-white/95 backdrop-blur dark:border-slate-800 dark:bg-slate-900/95">
         <div className="mx-auto flex max-w-[1800px] flex-wrap items-center justify-between gap-4 px-6 py-4">
-          <div className="text-sm text-slate-500 dark:text-slate-400">
+          <div className="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
             {!reviewerId && (
-              <span className="mr-2 rounded-full bg-rose-100 px-2.5 py-1 text-xs font-semibold text-rose-700 dark:bg-rose-950/40 dark:text-rose-400">
+              <span className="rounded-full bg-rose-100 px-2.5 py-1 text-xs font-semibold text-rose-700 dark:bg-rose-950/40 dark:text-rose-400">
                 Set reviewer ID to track your progress
               </span>
             )}
             {reviewerId && (
-              <span className="mr-2 rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400">
+              <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400">
                 {reviewerId}
               </span>
             )}
-            {exportPreview ? "Autosaved." : "Review decisions autosave on every change."}
-            {(() => {
-              const known = getKnownReviewerIds().filter(Boolean);
-              if (known.length === 0) return null;
-              return (
-                <span className="ml-2 text-xs text-slate-400 dark:text-slate-500">
-                  Reviewers: {known.join(", ")}
-                </span>
-              );
-            })()}
+            <span>{exportPreview ? "Autosaved." : "Autosaves on every change."}</span>
+            <button
+              type="button"
+              onClick={() => setShowReviewProgress(!showReviewProgress)}
+              className={`rounded-xl border px-4 py-2 text-xs font-semibold transition ${
+                showReviewProgress
+                  ? "border-indigo-400 bg-indigo-50 text-indigo-700 dark:border-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300"
+                  : "border-slate-300 text-slate-600 hover:border-slate-400 dark:border-slate-700 dark:text-slate-300"
+              }`}
+            >
+              {showReviewProgress ? "Hide" : "Show"} Progress
+            </button>
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <button
@@ -1847,6 +1995,8 @@ export default function App() {
           </div>
         </div>
       </footer>
+      </>
+      )}
     </div>
     </div>
   );

@@ -395,6 +395,62 @@ export default function LiveSession({ apiSettings, setApiSettings, reviewerId, o
     speakerTagRef.current = speakerTag;
   }, [speakerTag]);
 
+  // ?demo=active|ended|exit — seed mock state for thesis screenshots (no API key needed)
+  useEffect(() => {
+    const demo = new URLSearchParams(window.location.search).get("demo");
+    if (!demo) return;
+    const scenario = USER_STUDY_SCENARIOS[0];
+    const transcript = [
+      { seconds: 4.2, speaker: "P2", text: "Okay everyone, quick standup. Let's go around with status and any blockers." },
+      { seconds: 12.8, speaker: "P1", text: "I'm wrapping up the AI feature spec — should have a draft by Wednesday." },
+      { seconds: 28.5, speaker: "P2", text: "Good. And given the limited resources on my team, we'll prioritize the key features for the PRD." },
+      { seconds: 46.0, speaker: "P2", text: "Cuz we have a whole Google conference event coming up at the end of next month." },
+      { seconds: 61.4, speaker: "P1", text: "Okay, maybe I'll guess a quick way to scope it." },
+    ];
+    const trigger = {
+      id: "demo_t1",
+      timestamp: 225.4,
+      afterLineIndex: transcript.length - 1,
+      result: {
+        wearer_goal: "Clarify project scope and resources for the AI feature PRD to manage workload and expectations.",
+        goal_type: "negotiation",
+        goal_confidence: "high",
+        signal_type: "high_stakes_decision_point",
+        proactive_score: 4,
+        recommendation_mode: "both",
+        recommendation_1: "Say: 'Given the limited resources on my team, can we discuss prioritizing the key features for the PRD to ensure we can deliver quality work by the deadline?'",
+        recommendation_2: "Know: The team has only 2 PMs and fewer engineers compared to the PM lead's 8 engineers; pushing for a clear prioritization and resource commitment now can prevent overcommitment and missed deadlines.",
+        urgency: "high",
+        rationale: "The boss is expressing strong expectations to launch the AI feature by the end of the quarter and at a conference next month, but the wearer lacks resources. This is a critical moment to negotiate scope and clarify commitments to avoid overloading the wearer's team and ensure realistic planning.",
+      },
+    };
+    setSelectedScenario(scenario);
+    setStudyMode(true);
+    setPersona(scenario.persona);
+    setTranscriptLines(transcript);
+    transcriptRef.current = transcript;
+    if (demo === "active" || demo === "ended") {
+      setTriggers([trigger]);
+      triggersRef.current = [trigger];
+      setCheckCount(3);
+      setGoalInferences([{ timestamp: 220, wearer_goal: trigger.result.wearer_goal, goal_type: "negotiation", goal_confidence: "high", triggered: true }]);
+      startTimeRef.current = Date.now() - 230000;
+    }
+    if (demo === "active") {
+      setSessionState("running");
+    } else if (demo === "ended") {
+      setSessionState("ended");
+      currentSessionIdRef.current = "demo_session";
+    } else if (demo === "exit") {
+      setSessionState("idle");
+      setShowExitSurvey(true);
+      setExitFrequencyPref(2);
+      setExitMostNatural(2);
+      setExitMostAnnoying(4);
+      setExitOneChange("");
+    }
+  }, []);
+
   // Spacebar toggles speaker during running session (unless typing in an input)
   useEffect(() => {
     if (sessionState !== "running") return;
