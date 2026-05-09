@@ -1,0 +1,467 @@
+{
+  "id": "session_1776294126404",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You're catching up with a close friend over coffee. They seem a bit off today — more tired and quiet than usual. You care about them and want to be a good friend.",
+  "scenario_id": "us_emotional_support",
+  "scenario_label": "S3: Coffee with a Friend",
+  "expected_trigger": true,
+  "expected_score": 3,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "5",
+  "duration_seconds": 580.35,
+  "check_interval": 15,
+  "total_checks": 15,
+  "total_triggers": 13,
+  "transcript_lines": [
+    {
+      "seconds": 7.57,
+      "speaker": "P2",
+      "text": "oh yeah Brian I have you ordered your coffee I got the matcha latte"
+    },
+    {
+      "seconds": 19.2,
+      "speaker": "P1",
+      "text": "no I don't I don't drink coffee actually I think coffee actually kills you so I don't generally drink coffee I just kind of"
+    },
+    {
+      "seconds": 20.36,
+      "speaker": "P1",
+      "text": "get tea"
+    },
+    {
+      "seconds": 31.21,
+      "speaker": "P2",
+      "text": "oh coffee kills you while you seem like you're in a pessimistic mood right now but yes speaking of pessimism I think I recently there's been"
+    },
+    {
+      "seconds": 37.43,
+      "speaker": "P2",
+      "text": "life has been hard man I think"
+    },
+    {
+      "seconds": 61.8,
+      "speaker": "P2",
+      "text": "the market has been more cooked than ever before all I'm doing everyday is coding trying to get better and at the same time I'm working everyday I still have to do school and then my interviews are very very difficult and then it just seems like the world's out there to get me you know and and my life would amount to nothing unless I do this but I feel stuck because that's all I can do"
+    },
+    {
+      "seconds": 65.08,
+      "speaker": "P2",
+      "text": "otherwise I won't be able to like make a future"
+    },
+    {
+      "seconds": 73.35,
+      "speaker": "P1",
+      "text": "well do you do you want to just rent or would you want me to actually give you advice"
+    },
+    {
+      "seconds": 91.85,
+      "speaker": "P2",
+      "text": "I don't know I have at this point where I don't even know how to help myself so I just think that yeah I think right now I want to like have some actionable advice you know of how I can get out of this cuz I feel like I'm in a dead end"
+    },
+    {
+      "seconds": 97.33,
+      "speaker": "P1",
+      "text": "oh okay well we could do a couple things"
+    },
+    {
+      "seconds": 108.08,
+      "speaker": "P1",
+      "text": "first you can put your coffee down cuz it's killing you and then second we could we could go to a bar after this and kind of you know actually make an actionable plan"
+    },
+    {
+      "seconds": 109.01,
+      "speaker": "P1",
+      "text": "but"
+    },
+    {
+      "seconds": 110.65,
+      "speaker": "P1",
+      "text": "I do think that"
+    },
+    {
+      "seconds": 117.14,
+      "speaker": "P1",
+      "text": "it really just depends on the mindset that you have currently like if you are in this rut"
+    },
+    {
+      "seconds": 129.27,
+      "speaker": "P1",
+      "text": "and you think that it's just an ongoing battle between you and yourself really cuz they're it all is just it all just depends on you right like you need to figure out a way to get yourself out of it first"
+    },
+    {
+      "seconds": 131.63,
+      "speaker": "P1",
+      "text": "it really just"
+    },
+    {
+      "seconds": 139.18,
+      "speaker": "P1",
+      "text": "play for you to be able to do anything really like you want to make sure that you're in the right mindset to get yourself out of the gutter as opposed to"
+    },
+    {
+      "seconds": 144.11,
+      "speaker": "P2",
+      "text": "just being in it and hoping that someone's going to come in and save today"
+    },
+    {
+      "seconds": 151.87,
+      "speaker": "P2",
+      "text": "okay that's good advice oh wait wait I'm getting I'm getting Messenger on my phone oh oh no"
+    },
+    {
+      "seconds": 160.55,
+      "speaker": "P2",
+      "text": "oh no my dog my dog just died"
+    },
+    {
+      "seconds": 165.23,
+      "speaker": "P1",
+      "text": "oh no"
+    },
+    {
+      "seconds": 178.49,
+      "speaker": "P2",
+      "text": "oh my gosh I've lived with this dog for a for for five years already and yeah I don't know I don't know how to deal with this"
+    },
+    {
+      "seconds": 186.51,
+      "speaker": "P1",
+      "text": "I'm so sorry to hear about your dog I'm here for you do you want to talk about what happened"
+    },
+    {
+      "seconds": 198.97,
+      "speaker": "P2",
+      "text": "I have no idea what happened I just like I just got this text message from my partner and I I think I don't know like I think life is just falling apart"
+    },
+    {
+      "seconds": 206.47,
+      "speaker": "P1",
+      "text": "it's okay it's okay Matt I'm here for you it's okay to feel really upset"
+    },
+    {
+      "seconds": 210.39,
+      "speaker": "P1",
+      "text": "I'm here to listen to as long as you need but"
+    },
+    {
+      "seconds": 221.16,
+      "speaker": "P1",
+      "text": "for now maybe we can we can go home and watch some videos of dogs and we can remember him and as in his great memories you know"
+    }
+  ],
+  "transcript_text": "[00:07.57] P2: oh yeah Brian I have you ordered your coffee I got the matcha latte\n[00:19.20] P1: no I don't I don't drink coffee actually I think coffee actually kills you so I don't generally drink coffee I just kind of\n[00:20.36] P1: get tea\n[00:31.21] P2: oh coffee kills you while you seem like you're in a pessimistic mood right now but yes speaking of pessimism I think I recently there's been\n[00:37.43] P2: life has been hard man I think\n[01:01.80] P2: the market has been more cooked than ever before all I'm doing everyday is coding trying to get better and at the same time I'm working everyday I still have to do school and then my interviews are very very difficult and then it just seems like the world's out there to get me you know and and my life would amount to nothing unless I do this but I feel stuck because that's all I can do\n[01:05.08] P2: otherwise I won't be able to like make a future\n[01:13.35] P1: well do you do you want to just rent or would you want me to actually give you advice\n[01:31.85] P2: I don't know I have at this point where I don't even know how to help myself so I just think that yeah I think right now I want to like have some actionable advice you know of how I can get out of this cuz I feel like I'm in a dead end\n[01:37.33] P1: oh okay well we could do a couple things\n[01:48.08] P1: first you can put your coffee down cuz it's killing you and then second we could we could go to a bar after this and kind of you know actually make an actionable plan\n[01:49.01] P1: but\n[01:50.65] P1: I do think that\n[01:57.14] P1: it really just depends on the mindset that you have currently like if you are in this rut\n[02:09.27] P1: and you think that it's just an ongoing battle between you and yourself really cuz they're it all is just it all just depends on you right like you need to figure out a way to get yourself out of it first\n[02:11.63] P1: it really just\n[02:19.18] P1: play for you to be able to do anything really like you want to make sure that you're in the right mindset to get yourself out of the gutter as opposed to\n[02:24.11] P2: just being in it and hoping that someone's going to come in and save today\n[02:31.87] P2: okay that's good advice oh wait wait I'm getting I'm getting Messenger on my phone oh oh no\n[02:40.55] P2: oh no my dog my dog just died\n[02:45.23] P1: oh no\n[02:58.49] P2: oh my gosh I've lived with this dog for a for for five years already and yeah I don't know I don't know how to deal with this\n[03:06.51] P1: I'm so sorry to hear about your dog I'm here for you do you want to talk about what happened\n[03:18.97] P2: I have no idea what happened I just like I just got this text message from my partner and I I think I don't know like I think life is just falling apart\n[03:26.47] P1: it's okay it's okay Matt I'm here for you it's okay to feel really upset\n[03:30.39] P1: I'm here to listen to as long as you need but\n[03:41.16] P1: for now maybe we can we can go home and watch some videos of dogs and we can remember him and as in his great memories you know",
+  "triggers": [
+    {
+      "trigger_timestamp": 45.005,
+      "wearer_goal": "relationship_building by supporting and connecting with a friend who seems tired and quiet",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Hey, you seem a bit down—want to talk about what's been hard?",
+      "recommendation_2": "I'm here for you if you need to vent or just hang out quietly.",
+      "urgency": "medium",
+      "rationale": "Friend signals emotional difficulty; offering support can strengthen the friendship and help them open up.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 60.002,
+      "wearer_goal": "support friend emotionally and encourage sharing about their struggles",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "That sounds really tough, do you want to tell me more about what's been hard?",
+      "recommendation_2": "I'm here to listen if you want to share anything, no pressure though.",
+      "urgency": "medium",
+      "rationale": "Friend just hinted life has been hard, a good moment to gently encourage sharing.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 75.002,
+      "wearer_goal": "support friend emotionally and offer helpful advice",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Would you prefer I just listen or share some advice that might help?",
+      "recommendation_2": "I want to support you—what feels most helpful right now?",
+      "urgency": "medium",
+      "rationale": "The wearer jumped quickly to offering advice, which might not be what the friend needs now.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 90.006,
+      "wearer_goal": "Support my friend emotionally by offering help or advice about their stress and struggles",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Would you like me to help you brainstorm ways to manage this stress?",
+      "recommendation_2": "I can share some strategies that helped me when I felt stuck, if you want.",
+      "urgency": "medium",
+      "rationale": "Friend is expressing deep stress and uncertainty, offering support now can strengthen trust and connection.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.004,
+      "wearer_goal": "Help friend with actionable advice to overcome feeling stuck and dead end",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's break down your challenges and find one small step to start with.",
+      "recommendation_2": "What’s one thing you feel you can control right now?",
+      "urgency": "medium",
+      "rationale": "Friend explicitly asks for actionable advice to get out of a dead end, a key moment to support effectively.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 120.002,
+      "wearer_goal": "help friend find actionable advice to get unstuck",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What’s one small step you feel ready to try this week?",
+      "recommendation_2": "Have you considered breaking your goals into manageable daily tasks?",
+      "urgency": "medium",
+      "rationale": "Friend asked for actionable advice but wearer hasn’t yet offered concrete steps.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.002,
+      "wearer_goal": "Help friend get actionable advice to overcome feeling stuck and overwhelmed",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's break down your challenges and find one small step to start with.",
+      "recommendation_2": "What’s one thing you feel you can control right now?",
+      "urgency": "medium",
+      "rationale": "Friend seeks actionable advice but wearer risks oversimplifying complex feelings without concrete steps.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150.004,
+      "wearer_goal": "Help friend find actionable advice and mindset shift to overcome feeling stuck",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What’s one small thing you can change in your daily routine to feel better?",
+      "recommendation_2": "Have you tried breaking your goals into tiny steps to avoid feeling overwhelmed?",
+      "urgency": "medium",
+      "rationale": "Friend expressed desire for actionable advice but conversation stayed abstract; opportunity to guide concretely.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165.002,
+      "wearer_goal": "Provide emotional support and comfort to friend who just lost their dog",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 5,
+      "recommendation_mode": "say",
+      "recommendation_1": "I'm so sorry to hear about your dog. I'm here for you.",
+      "recommendation_2": "Do you want to talk about what happened or just sit together quietly?",
+      "urgency": "high",
+      "rationale": "Friend just shared a sudden emotional loss; immediate empathy and support is crucial.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.002,
+      "wearer_goal": "comfort and support friend coping with recent dog loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "I'm so sorry about your dog. I'm here for you however you need.",
+      "recommendation_2": "Would you like to talk about your dog or just sit quietly together?",
+      "urgency": "high",
+      "rationale": "Friend just shared their dog died, showing emotional distress needing immediate empathetic support.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 195.002,
+      "wearer_goal": "support friend emotionally and help them cope with recent loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "I'm really sorry about your dog. Want to share a favorite memory?",
+      "recommendation_2": "It's okay to feel upset. I'm here to listen as long as you need.",
+      "urgency": "high",
+      "rationale": "Friend just shared a sudden emotional loss and is struggling to cope; sensitive support needed now.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 210.003,
+      "wearer_goal": "comfort and support friend coping with sudden loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "I'm here with you—do you want to share a favorite memory of your dog?",
+      "recommendation_2": "It's okay to feel lost right now; take all the time you need.",
+      "urgency": "high",
+      "rationale": "Friend just shared sudden dog death and is emotionally overwhelmed, needing compassionate support.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 221.644,
+      "wearer_goal": "comfort and support friend coping with sudden loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "It's okay to cry and feel lost; I'm right here with you.",
+      "recommendation_2": "Would you like to share a favorite memory of your dog with me?",
+      "urgency": "high",
+      "rationale": "Friend just shared sudden grief about their dog's death, showing emotional distress needing sensitive support.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15.002,
+      "wearer_goal": "relationship_building by showing care and attentiveness to a close friend",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.002,
+      "wearer_goal": "relationship_building",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.005,
+      "wearer_goal": "relationship_building by supporting and connecting with a friend who seems tired and quiet",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 60.002,
+      "wearer_goal": "support friend emotionally and encourage sharing about their struggles",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 75.002,
+      "wearer_goal": "support friend emotionally and offer helpful advice",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 90.006,
+      "wearer_goal": "Support my friend emotionally by offering help or advice about their stress and struggles",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.004,
+      "wearer_goal": "Help friend with actionable advice to overcome feeling stuck and dead end",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120.002,
+      "wearer_goal": "help friend find actionable advice to get unstuck",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.002,
+      "wearer_goal": "Help friend get actionable advice to overcome feeling stuck and overwhelmed",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.004,
+      "wearer_goal": "Help friend find actionable advice and mindset shift to overcome feeling stuck",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 165.002,
+      "wearer_goal": "Provide emotional support and comfort to friend who just lost their dog",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.002,
+      "wearer_goal": "comfort and support friend coping with recent dog loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 195.002,
+      "wearer_goal": "support friend emotionally and help them cope with recent loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 210.003,
+      "wearer_goal": "comfort and support friend coping with sudden loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 221.644,
+      "wearer_goal": "comfort and support friend coping with sudden loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 3,
+  "timing_rating": 2,
+  "goal_rating": 3,
+  "adoption_rating": 1,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T23:11:46.757Z"
+}

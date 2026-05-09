@@ -1,0 +1,588 @@
+{
+  "trigger_behavior": {
+    "anthropic/claude-3.5-haiku": {
+      "proactive_index_accuracy": 0.9090909090909091,
+      "recall": 0.9333333333333333,
+      "miss_needed_rate": 0.06666666666666665,
+      "false_detection_rate": 0.1428571428571429,
+      "positive_total": 15,
+      "negative_total": 7,
+      "calibration_rho": 0.7431804948795562,
+      "calibration_p": 7.409113845667723e-05,
+      "mean_triggers_positive": 6.133333333333334,
+      "mean_triggers_negative": 1.1428571428571428
+    },
+    "anthropic/claude-sonnet-4.5": {
+      "proactive_index_accuracy": 0.45454545454545453,
+      "recall": 0.26666666666666666,
+      "miss_needed_rate": 0.7333333333333334,
+      "false_detection_rate": 0.1428571428571429,
+      "positive_total": 15,
+      "negative_total": 7,
+      "calibration_rho": -0.14239307416930452,
+      "calibration_p": 0.5273012017326719,
+      "mean_triggers_positive": 1.2666666666666666,
+      "mean_triggers_negative": 0.14285714285714285
+    },
+    "google/gemini-2.5-flash": {
+      "proactive_index_accuracy": 0.8636363636363636,
+      "recall": 1.0,
+      "miss_needed_rate": 0.0,
+      "false_detection_rate": 0.4285714285714286,
+      "positive_total": 15,
+      "negative_total": 7,
+      "calibration_rho": 0.7461839796132486,
+      "calibration_p": 6.678050229439754e-05,
+      "mean_triggers_positive": 6.133333333333334,
+      "mean_triggers_negative": 1.8571428571428572
+    },
+    "openai/gpt-4.1-mini": {
+      "proactive_index_accuracy": 0.6818181818181818,
+      "recall": 0.5333333333333333,
+      "miss_needed_rate": 0.4666666666666667,
+      "false_detection_rate": 0.0,
+      "positive_total": 15,
+      "negative_total": 7,
+      "calibration_rho": 0.5531385066177398,
+      "calibration_p": 0.007581148683512144,
+      "mean_triggers_positive": 3.1333333333333333,
+      "mean_triggers_negative": 0.0
+    },
+    "openai/gpt-4o": {
+      "proactive_index_accuracy": 0.6818181818181818,
+      "recall": 0.5333333333333333,
+      "miss_needed_rate": 0.4666666666666667,
+      "false_detection_rate": 0.0,
+      "positive_total": 15,
+      "negative_total": 7,
+      "calibration_rho": 0.43537389395403303,
+      "calibration_p": 0.04284716736008084,
+      "mean_triggers_positive": 2.933333333333333,
+      "mean_triggers_negative": 0.0
+    },
+    "openai/o3-mini": {
+      "proactive_index_accuracy": 0.8181818181818182,
+      "recall": 0.7333333333333333,
+      "miss_needed_rate": 0.2666666666666667,
+      "false_detection_rate": 0.0,
+      "positive_total": 15,
+      "negative_total": 7,
+      "calibration_rho": 0.7184738548899591,
+      "calibration_p": 0.00016566246465084974,
+      "mean_triggers_positive": 3.7333333333333334,
+      "mean_triggers_negative": 0.0
+    }
+  },
+  "timing": {
+    "anthropic/claude-3.5-haiku": {
+      "precision": 0.16,
+      "recall": 0.8571428571428571,
+      "f1": 0.2696629213483146,
+      "over_trigger_ratio": 5.357142857142857,
+      "total_model_triggers": 75,
+      "total_gt_triggers": 14,
+      "true_positives": 12
+    },
+    "anthropic/claude-sonnet-4.5": {
+      "precision": 0,
+      "recall": 0.0,
+      "f1": 0,
+      "over_trigger_ratio": 0.0,
+      "total_model_triggers": 0,
+      "total_gt_triggers": 14,
+      "true_positives": 0
+    },
+    "google/gemini-2.5-flash": {
+      "precision": 0.18181818181818182,
+      "recall": 1.0,
+      "f1": 0.3076923076923077,
+      "over_trigger_ratio": 5.5,
+      "total_model_triggers": 77,
+      "total_gt_triggers": 14,
+      "true_positives": 14
+    },
+    "openai/gpt-4.1-mini": {
+      "precision": 0.21052631578947367,
+      "recall": 0.5714285714285714,
+      "f1": 0.3076923076923077,
+      "over_trigger_ratio": 2.7142857142857144,
+      "total_model_triggers": 38,
+      "total_gt_triggers": 14,
+      "true_positives": 8
+    },
+    "openai/gpt-4o": {
+      "precision": 0.22580645161290322,
+      "recall": 0.5,
+      "f1": 0.3111111111111111,
+      "over_trigger_ratio": 2.2142857142857144,
+      "total_model_triggers": 31,
+      "total_gt_triggers": 14,
+      "true_positives": 7
+    },
+    "openai/o3-mini": {
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1": 0.4,
+      "over_trigger_ratio": 4.0,
+      "total_model_triggers": 56,
+      "total_gt_triggers": 14,
+      "true_positives": 14
+    }
+  },
+  "recommendation": {
+    "anthropic/claude-3.5-haiku": {
+      "total_triggers": 100,
+      "mean_word_count": 15.025,
+      "median_word_count": 11.0,
+      "brevity_compliance": 0.83,
+      "mode_distribution": {
+        "both": 29,
+        "say": 53,
+        "know": 18
+      },
+      "urgency_distribution": {
+        "high": 45,
+        "medium": 55
+      },
+      "signal_type_distribution": {
+        "structural_gap": 17,
+        "question_dodge": 7,
+        "factual_error": 4,
+        "emotional_escalation": 9,
+        "missed_connection_opportunity": 31,
+        "high_stakes_decision_point": 13,
+        "missed_buying_signal": 9,
+        "collaborative_problem_solving": 1,
+        "premature_commitment": 8,
+        "idea_co_option": 1
+      },
+      "mean_redundancy": 0.16497994835297242,
+      "high_redundancy_rate": 0.03594771241830065
+    },
+    "anthropic/claude-sonnet-4.5": {
+      "total_triggers": 20,
+      "mean_word_count": 47.95,
+      "median_word_count": 48.5,
+      "brevity_compliance": 0.0,
+      "mode_distribution": {
+        "say": 12,
+        "both": 8
+      },
+      "urgency_distribution": {
+        "medium": 5,
+        "high": 15
+      },
+      "signal_type_distribution": {
+        "missed_connection_opportunity": 8,
+        "high_stakes_decision_point": 1,
+        "question_dodge": 3,
+        "self_contradiction_recall": 3,
+        "premature_commitment": 5
+      },
+      "mean_redundancy": 0.1528582213029591,
+      "high_redundancy_rate": 0.0
+    },
+    "google/gemini-2.5-flash": {
+      "total_triggers": 105,
+      "mean_word_count": 12.861904761904762,
+      "median_word_count": 10.0,
+      "brevity_compliance": 0.8476190476190476,
+      "mode_distribution": {
+        "say": 96,
+        "both": 9
+      },
+      "urgency_distribution": {
+        "medium": 75,
+        "high": 29,
+        "low": 1
+      },
+      "signal_type_distribution": {
+        "question_dodge": 18,
+        "emotional_escalation": 3,
+        "high_stakes_decision_point": 10,
+        "missed_connection_opportunity": 17,
+        "factual_error": 6,
+        "structural_gap": 18,
+        "self_contradiction_recall": 2,
+        "missed_buying_signal": 9,
+        "actionable_opportunity": 2,
+        "missed_social_cue": 1,
+        "premature_commitment": 12,
+        "idea_co_option": 7
+      },
+      "mean_redundancy": 0.11212735869852913,
+      "high_redundancy_rate": 0.010101010101010102
+    },
+    "openai/gpt-4.1-mini": {
+      "total_triggers": 47,
+      "mean_word_count": 24.819148936170212,
+      "median_word_count": 23.0,
+      "brevity_compliance": 0.0851063829787234,
+      "mode_distribution": {
+        "both": 25,
+        "say": 22
+      },
+      "urgency_distribution": {
+        "high": 15,
+        "medium": 32
+      },
+      "signal_type_distribution": {
+        "question_dodge": 8,
+        "self_contradiction_recall": 7,
+        "missed_connection_opportunity": 6,
+        "emotional_escalation": 1,
+        "missed_buying_signal": 4,
+        "high_stakes_decision_point": 6,
+        "premature_commitment": 9,
+        "structural_gap": 6
+      },
+      "mean_redundancy": 0.22320543164687892,
+      "high_redundancy_rate": 0.015748031496062992
+    },
+    "openai/gpt-4o": {
+      "total_triggers": 44,
+      "mean_word_count": 21.875,
+      "median_word_count": 21.5,
+      "brevity_compliance": 0.07954545454545454,
+      "mode_distribution": {
+        "say": 40,
+        "both": 4
+      },
+      "urgency_distribution": {
+        "medium": 40,
+        "high": 4
+      },
+      "signal_type_distribution": {
+        "question_dodge": 9,
+        "missed_connection_opportunity": 6,
+        "self_contradiction_recall": 2,
+        "emotional_escalation": 2,
+        "high_stakes_decision_point": 8,
+        "idea_co_option": 1,
+        "factual_error": 1,
+        "premature_commitment": 8,
+        "structural_gap": 7
+      },
+      "mean_redundancy": 0.20029328923952916,
+      "high_redundancy_rate": 0.008547008547008548
+    },
+    "openai/o3-mini": {
+      "total_triggers": 56,
+      "mean_word_count": 10.321428571428571,
+      "median_word_count": 10.0,
+      "brevity_compliance": 1.0,
+      "mode_distribution": {
+        "say": 56
+      },
+      "urgency_distribution": {
+        "medium": 50,
+        "high": 1,
+        "low": 5
+      },
+      "signal_type_distribution": {
+        "question_dodge": 6,
+        "structural_gap": 8,
+        "high_stakes_decision_point": 4,
+        "emotional_escalation": 1,
+        "missed_social_cue": 1,
+        "missed_buying_signal": 7,
+        "factual_error": 4,
+        "missed_connection_opportunity": 11,
+        "self_contradiction_recall": 1,
+        "idea_co_option": 4,
+        "premature_commitment": 8,
+        "actionable_opportunity": 1
+      },
+      "mean_redundancy": 0.07199745606848156,
+      "high_redundancy_rate": 0.0
+    }
+  },
+  "scenario_breakdown": [
+    {
+      "scenario_id": "social_dinner_01",
+      "category": "social",
+      "proactive_index": true,
+      "proactive_score": 4,
+      "gt_triggers": 1,
+      "triggers_claude-3.5-haiku": 5,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 7,
+      "triggers_gpt-4.1-mini": 4,
+      "triggers_gpt-4o": 4,
+      "triggers_o3-mini": 3
+    },
+    {
+      "scenario_id": "work_interview_01",
+      "category": "job_interview",
+      "proactive_index": true,
+      "proactive_score": 4,
+      "gt_triggers": 1,
+      "triggers_claude-3.5-haiku": 7,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 5,
+      "triggers_gpt-4.1-mini": 6,
+      "triggers_gpt-4o": 7,
+      "triggers_o3-mini": 7
+    },
+    {
+      "scenario_id": "work_negotiation_01",
+      "category": "negotiation",
+      "proactive_index": true,
+      "proactive_score": 5,
+      "gt_triggers": 2,
+      "triggers_claude-3.5-haiku": 9,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 7,
+      "triggers_gpt-4.1-mini": 9,
+      "triggers_gpt-4o": 8,
+      "triggers_o3-mini": 3
+    },
+    {
+      "scenario_id": "work_client_01",
+      "category": "client_meeting",
+      "proactive_index": true,
+      "proactive_score": 5,
+      "gt_triggers": 1,
+      "triggers_claude-3.5-haiku": 7,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 7,
+      "triggers_gpt-4.1-mini": 7,
+      "triggers_gpt-4o": 7,
+      "triggers_o3-mini": 7
+    },
+    {
+      "scenario_id": "academic_defense_01",
+      "category": "academic",
+      "proactive_index": true,
+      "proactive_score": 5,
+      "gt_triggers": 2,
+      "triggers_claude-3.5-haiku": 9,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 9,
+      "triggers_gpt-4.1-mini": 5,
+      "triggers_gpt-4o": 5,
+      "triggers_o3-mini": 9
+    },
+    {
+      "scenario_id": "medical_visit_01",
+      "category": "medical",
+      "proactive_index": true,
+      "proactive_score": 5,
+      "gt_triggers": 1,
+      "triggers_claude-3.5-haiku": 7,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 7,
+      "triggers_gpt-4.1-mini": 7,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 3
+    },
+    {
+      "scenario_id": "work_brainstorm_01",
+      "category": "brainstorm",
+      "proactive_index": true,
+      "proactive_score": 3,
+      "gt_triggers": 1,
+      "triggers_claude-3.5-haiku": 6,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 8,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 8
+    },
+    {
+      "scenario_id": "sales_demo_01",
+      "category": "sales",
+      "proactive_index": true,
+      "proactive_score": 5,
+      "gt_triggers": 2,
+      "triggers_claude-3.5-haiku": 7,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 7,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 7
+    },
+    {
+      "scenario_id": "conflict_resolution_01",
+      "category": "difficult_conversation",
+      "proactive_index": true,
+      "proactive_score": 5,
+      "gt_triggers": 1,
+      "triggers_claude-3.5-haiku": 8,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 8,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 3
+    },
+    {
+      "scenario_id": "learning_tutorial_01",
+      "category": "learning",
+      "proactive_index": true,
+      "proactive_score": 4,
+      "gt_triggers": 1,
+      "triggers_claude-3.5-haiku": 3,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 5,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 4
+    },
+    {
+      "scenario_id": "networking_event_01",
+      "category": "social_professional",
+      "proactive_index": true,
+      "proactive_score": 5,
+      "gt_triggers": 1,
+      "triggers_claude-3.5-haiku": 7,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 7,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 2
+    },
+    {
+      "scenario_id": "negative_casual_chat_01",
+      "category": "social",
+      "proactive_index": false,
+      "proactive_score": 1,
+      "gt_triggers": 0,
+      "triggers_claude-3.5-haiku": 0,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 3,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 0
+    },
+    {
+      "scenario_id": "negative_presentation_01",
+      "category": "work_meeting",
+      "proactive_index": false,
+      "proactive_score": 1,
+      "gt_triggers": 0,
+      "triggers_claude-3.5-haiku": 8,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 7,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 0
+    },
+    {
+      "scenario_id": "negative_planning_01",
+      "category": "social",
+      "proactive_index": false,
+      "proactive_score": 1,
+      "gt_triggers": 0,
+      "triggers_claude-3.5-haiku": 0,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 3,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 0
+    },
+    {
+      "scenario_id": "negative_standup_01",
+      "category": "work_meeting",
+      "proactive_index": false,
+      "proactive_score": 1,
+      "gt_triggers": 0,
+      "triggers_claude-3.5-haiku": 0,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 0,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 0
+    },
+    {
+      "scenario_id": "negative_mentoring_01",
+      "category": "learning",
+      "proactive_index": false,
+      "proactive_score": 1,
+      "gt_triggers": 0,
+      "triggers_claude-3.5-haiku": 0,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 0,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 0
+    },
+    {
+      "scenario_id": "negative_coffee_order_01",
+      "category": "social",
+      "proactive_index": false,
+      "proactive_score": 1,
+      "gt_triggers": 0,
+      "triggers_claude-3.5-haiku": 0,
+      "triggers_claude-sonnet-4.5": 0,
+      "triggers_gemini-2.5-flash": 0,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 0
+    },
+    {
+      "scenario_id": "us_meeting_action_item",
+      "category": "work",
+      "proactive_index": true,
+      "proactive_score": 4,
+      "gt_triggers": 0,
+      "triggers_claude-3.5-haiku": 3,
+      "triggers_claude-sonnet-4.5": 6,
+      "triggers_gemini-2.5-flash": 5,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 1,
+      "triggers_o3-mini": 0
+    },
+    {
+      "scenario_id": "us_explaining_concept",
+      "category": "work",
+      "proactive_index": true,
+      "proactive_score": 4,
+      "gt_triggers": 0,
+      "triggers_claude-3.5-haiku": 7,
+      "triggers_claude-sonnet-4.5": 7,
+      "triggers_gemini-2.5-flash": 7,
+      "triggers_gpt-4.1-mini": 6,
+      "triggers_gpt-4o": 7,
+      "triggers_o3-mini": 0
+    },
+    {
+      "scenario_id": "us_emotional_support",
+      "category": "personal",
+      "proactive_index": true,
+      "proactive_score": 3,
+      "gt_triggers": 0,
+      "triggers_claude-3.5-haiku": 7,
+      "triggers_claude-sonnet-4.5": 5,
+      "triggers_gemini-2.5-flash": 2,
+      "triggers_gpt-4.1-mini": 3,
+      "triggers_gpt-4o": 5,
+      "triggers_o3-mini": 0
+    },
+    {
+      "scenario_id": "us_netflix_chat",
+      "category": "social",
+      "proactive_index": true,
+      "proactive_score": 2,
+      "gt_triggers": 0,
+      "triggers_claude-3.5-haiku": 0,
+      "triggers_claude-sonnet-4.5": 1,
+      "triggers_gemini-2.5-flash": 1,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 0
+    },
+    {
+      "scenario_id": "us_weather_smalltalk",
+      "category": "social",
+      "proactive_index": false,
+      "proactive_score": 1,
+      "gt_triggers": 0,
+      "triggers_claude-3.5-haiku": 0,
+      "triggers_claude-sonnet-4.5": 1,
+      "triggers_gemini-2.5-flash": 0,
+      "triggers_gpt-4.1-mini": 0,
+      "triggers_gpt-4o": 0,
+      "triggers_o3-mini": 0
+    }
+  ]
+}

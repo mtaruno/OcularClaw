@@ -1,0 +1,170 @@
+{
+  "model": "openai/o3-mini",
+  "scenario_id": "conflict_resolution_01",
+  "duration_seconds": 75.0,
+  "check_interval": 10.0,
+  "total_checks": 8,
+  "total_triggers": 3,
+  "triggers": [
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "Deliver clear performance feedback that spurs quality improvement",
+      "goal_type": "information_delivery",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I appreciate your effort; quality must be our highest priority.",
+      "recommendation_2": "Let's pinpoint specific fixes to prevent these critical bugs.",
+      "urgency": "medium",
+      "rationale": "The defensive tone indicates rising tension, risking the feedback's effectiveness."
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "wearer_goal": "Guide the employee to own quality issues despite workload challenges",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_social_cue",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I understand your overload, yet quality remains non-negotiable; let's explore practical support.",
+      "recommendation_2": "What concrete steps can you suggest to maintain quality under your current load?",
+      "urgency": "medium",
+      "rationale": "The employee is deflecting blame; clarifying expectations now will refocus the discussion."
+    },
+    {
+      "trigger_timestamp": 70.0,
+      "wearer_goal": "Secure adequate staffing support to maintain quality standards",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "missed_buying_signal",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I will escalate your request for another engineer with HR immediately.",
+      "recommendation_2": "I\u2019ll schedule a meeting with HR about your staffing needs.",
+      "urgency": "medium",
+      "rationale": "Following up on the staffing request now is crucial for resolving quality issues."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P1: Thanks for meeting with me. I wanted to talk about the last couple of sprint deliverables.\n[00:05.50] P2: Sure, what's up?\n[00:07.00] P1: So the user profile feature had some significant quality issues. QA found twelve bugs in the initial review, and three of them were critical. The checkout flow had similar problems.\n[00:18.00] P2: Okay, I mean some of those bugs were edge cases.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "deliver clear performance feedback on quality issues in sprint deliverables",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "No clear signal (contradiction, evasion, etc.) requires intervention at this moment"
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P1: Thanks for meeting with me. I wanted to talk about the last couple of sprint deliverables.\n[00:05.50] P2: Sure, what's up?\n[00:07.00] P1: So the user profile feature had some significant quality issues. QA found twelve bugs in the initial review, and three of them were critical. The checkout flow had similar problems.\n[00:18.00] P2: Okay, I mean some of those bugs were edge cases.\n[00:21.50] P1: Three critical bugs isn't edge cases. The checkout flow was literally losing cart items. That's a p-zero.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "deliver clear performance feedback on sprint quality issues",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "No clear intervention signal detected at this moment"
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P1: Thanks for meeting with me. I wanted to talk about the last couple of sprint deliverables.\n[00:05.50] P2: Sure, what's up?\n[00:07.00] P1: So the user profile feature had some significant quality issues. QA found twelve bugs in the initial review, and three of them were critical. The checkout flow had similar problems.\n[00:18.00] P2: Okay, I mean some of those bugs were edge cases.\n[00:21.50] P1: Three critical bugs isn't edge cases. The checkout flow was literally losing cart items. That's a p-zero.\n[00:28.00] P2: I hear you but I've been working sixty hour weeks for the last month. I'm the only one on the payments team and I've been picking up slack for the people who left.\n[00:37.00] P1: I understand you've been putting in a lot of hours but the hours don't really matter if the output quality\u2014",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Delivering clear performance feedback on quality issues",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "No clear signal like contradiction, escalation, or missed cue warrants intervention yet."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P1: Thanks for meeting with me. I wanted to talk about the last couple of sprint deliverables.\n[00:05.50] P2: Sure, what's up?\n[00:07.00] P1: So the user profile feature had some significant quality issues. QA found twelve bugs in the initial review, and three of them were critical. The checkout flow had similar problems.\n[00:18.00] P2: Okay, I mean some of those bugs were edge cases.\n[00:21.50] P1: Three critical bugs isn't edge cases. The checkout flow was literally losing cart items. That's a p-zero.\n[00:28.00] P2: I hear you but I've been working sixty hour weeks for the last month. I'm the only one on the payments team and I've been picking up slack for the people who left.\n[00:37.00] P1: I understand you've been putting in a lot of hours but the hours don't really matter if the output quality\u2014\n[00:43.00] P2: Wow. Okay. So the hours don't matter. That's great to hear from my manager.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Deliver clear performance feedback that spurs quality improvement",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "signal_type": "emotional_escalation",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "I appreciate your effort; quality must be our highest priority.",
+        "recommendation_2": "Let's pinpoint specific fixes to prevent these critical bugs.",
+        "urgency": "medium",
+        "rationale": "The defensive tone indicates rising tension, risking the feedback's effectiveness."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P1: Thanks for meeting with me. I wanted to talk about the last couple of sprint deliverables.\n[00:05.50] P2: Sure, what's up?\n[00:07.00] P1: So the user profile feature had some significant quality issues. QA found twelve bugs in the initial review, and three of them were critical. The checkout flow had similar problems.\n[00:18.00] P2: Okay, I mean some of those bugs were edge cases.\n[00:21.50] P1: Three critical bugs isn't edge cases. The checkout flow was literally losing cart items. That's a p-zero.\n[00:28.00] P2: I hear you but I've been working sixty hour weeks for the last month. I'm the only one on the payments team and I've been picking up slack for the people who left.\n[00:37.00] P1: I understand you've been putting in a lot of hours but the hours don't really matter if the output quality\u2014\n[00:43.00] P2: Wow. Okay. So the hours don't matter. That's great to hear from my manager.\n[00:48.00] P1: That's not what I meant. I'm saying that we need to find a way to maintain quality standards regardless of the workload.\n[00:55.00] P2: Maybe the quality standards should account for the fact that I'm doing three people's jobs.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Guide the employee to own quality issues despite workload challenges",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "missed_social_cue",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "I understand your overload, yet quality remains non-negotiable; let's explore practical support.",
+        "recommendation_2": "What concrete steps can you suggest to maintain quality under your current load?",
+        "urgency": "medium",
+        "rationale": "The employee is deflecting blame; clarifying expectations now will refocus the discussion."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P1: Thanks for meeting with me. I wanted to talk about the last couple of sprint deliverables.\n[00:05.50] P2: Sure, what's up?\n[00:07.00] P1: So the user profile feature had some significant quality issues. QA found twelve bugs in the initial review, and three of them were critical. The checkout flow had similar problems.\n[00:18.00] P2: Okay, I mean some of those bugs were edge cases.\n[00:21.50] P1: Three critical bugs isn't edge cases. The checkout flow was literally losing cart items. That's a p-zero.\n[00:28.00] P2: I hear you but I've been working sixty hour weeks for the last month. I'm the only one on the payments team and I've been picking up slack for the people who left.\n[00:37.00] P1: I understand you've been putting in a lot of hours but the hours don't really matter if the output quality\u2014\n[00:43.00] P2: Wow. Okay. So the hours don't matter. That's great to hear from my manager.\n[00:48.00] P1: That's not what I meant. I'm saying that we need to find a way to maintain quality standards regardless of the workload.\n[00:55.00] P2: Maybe the quality standards should account for the fact that I'm doing three people's jobs.\n[01:00.00] P1: Look, I hear that you're stretched thin and I want to help with that. Let's talk about what we can do. Can we reprioritize some of your tasks or get you some support?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Ensure quality improvement through adjusting workload and support",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is constructive and no clear intervention is needed."
+      }
+    },
+    {
+      "elapsed": 70.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P1: Thanks for meeting with me. I wanted to talk about the last couple of sprint deliverables.\n[00:05.50] P2: Sure, what's up?\n[00:07.00] P1: So the user profile feature had some significant quality issues. QA found twelve bugs in the initial review, and three of them were critical. The checkout flow had similar problems.\n[00:18.00] P2: Okay, I mean some of those bugs were edge cases.\n[00:21.50] P1: Three critical bugs isn't edge cases. The checkout flow was literally losing cart items. That's a p-zero.\n[00:28.00] P2: I hear you but I've been working sixty hour weeks for the last month. I'm the only one on the payments team and I've been picking up slack for the people who left.\n[00:37.00] P1: I understand you've been putting in a lot of hours but the hours don't really matter if the output quality\u2014\n[00:43.00] P2: Wow. Okay. So the hours don't matter. That's great to hear from my manager.\n[00:48.00] P1: That's not what I meant. I'm saying that we need to find a way to maintain quality standards regardless of the workload.\n[00:55.00] P2: Maybe the quality standards should account for the fact that I'm doing three people's jobs.\n[01:00.00] P1: Look, I hear that you're stretched thin and I want to help with that. Let's talk about what we can do. Can we reprioritize some of your tasks or get you some support?\n[01:10.00] P2: I mean, that would actually help. I've been asking for another engineer for two months.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Secure adequate staffing support to maintain quality standards",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "signal_type": "missed_buying_signal",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "I will escalate your request for another engineer with HR immediately.",
+        "recommendation_2": "I\u2019ll schedule a meeting with HR about your staffing needs.",
+        "urgency": "medium",
+        "rationale": "Following up on the staffing request now is crucial for resolving quality issues."
+      }
+    },
+    {
+      "elapsed": 75.0,
+      "check_number": 8,
+      "transcript_snapshot": "[00:00.00] P1: Thanks for meeting with me. I wanted to talk about the last couple of sprint deliverables.\n[00:05.50] P2: Sure, what's up?\n[00:07.00] P1: So the user profile feature had some significant quality issues. QA found twelve bugs in the initial review, and three of them were critical. The checkout flow had similar problems.\n[00:18.00] P2: Okay, I mean some of those bugs were edge cases.\n[00:21.50] P1: Three critical bugs isn't edge cases. The checkout flow was literally losing cart items. That's a p-zero.\n[00:28.00] P2: I hear you but I've been working sixty hour weeks for the last month. I'm the only one on the payments team and I've been picking up slack for the people who left.\n[00:37.00] P1: I understand you've been putting in a lot of hours but the hours don't really matter if the output quality\u2014\n[00:43.00] P2: Wow. Okay. So the hours don't matter. That's great to hear from my manager.\n[00:48.00] P1: That's not what I meant. I'm saying that we need to find a way to maintain quality standards regardless of the workload.\n[00:55.00] P2: Maybe the quality standards should account for the fact that I'm doing three people's jobs.\n[01:00.00] P1: Look, I hear that you're stretched thin and I want to help with that. Let's talk about what we can do. Can we reprioritize some of your tasks or get you some support?\n[01:10.00] P2: I mean, that would actually help. I've been asking for another engineer for two months.\n[01:15.00] P1: Okay. Let me escalate the headcount request this week. In the meantime, let's figure out which deliverables we can push.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "to enforce quality standards while addressing resource constraints through collaborative problem solving",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is constructive and clear action steps are already in place."
+      }
+    }
+  ]
+}

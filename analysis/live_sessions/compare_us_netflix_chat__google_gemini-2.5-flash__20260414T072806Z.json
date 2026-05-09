@@ -1,0 +1,108 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "scenario_id": "us_netflix_chat",
+  "duration_seconds": 75.0,
+  "check_interval": 15.0,
+  "total_checks": 6,
+  "total_triggers": 1,
+  "triggers": [
+    {
+      "trigger_timestamp": 60.0,
+      "wearer_goal": "To recommend 'The Bear' to Riley as a show she might enjoy, despite its reputation for being stressful, and to understand her preferences for TV shows.",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "It can be intense, but it's also incredibly rewarding and has a lot of heart. The stress is part of what makes it so good.",
+      "recommendation_2": "What kind of 'stressful' are you trying to avoid? Like, is it the fast pace, or the emotional intensity, or something else?",
+      "urgency": "medium",
+      "rationale": "Riley just expressed a concern about 'The Bear' being stressful. This is a critical moment for the wearer to address that concern directly and persuasively, or to understand Riley's specific aversion to 'stressful' shows to better tailor future recommendations. Failing to address it now might lead Riley to dismiss the show entirely."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 15.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P1: Dude have you finished Severance season 2 yet?\n[00:03.00] P2: Yes! I binged the last three episodes on Sunday. I could not stop watching.\n[00:07.00] P1: Same. That finale was wild. I did not see that twist coming with Helly.\n[00:11.00] P2: I know right? And the whole thing with Mark finally figuring out what happened to his wife? I was like screaming at the TV.\n[00:17.00] P1: The writing is so good. Like every episode has this slow burn tension where you know something is going to happen but you don't know when.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "To share and discuss their shared enjoyment and specific plot points of the Netflix show 'Severance' with their friend Riley.",
+        "goal_type": "social_bonding",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing naturally, and both participants are actively engaged in discussing the show. There are no immediate signals requiring intervention."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P1: Dude have you finished Severance season 2 yet?\n[00:03.00] P2: Yes! I binged the last three episodes on Sunday. I could not stop watching.\n[00:07.00] P1: Same. That finale was wild. I did not see that twist coming with Helly.\n[00:11.00] P2: I know right? And the whole thing with Mark finally figuring out what happened to his wife? I was like screaming at the TV.\n[00:17.00] P1: The writing is so good. Like every episode has this slow burn tension where you know something is going to happen but you don't know when.\n[00:23.00] P2: And the cinematography. Those long hallway shots where you can't tell if it's real or the testing floor? Genius.\n[00:29.00] P1: Honestly I think it's the best show on TV right now. And I watch a lot of TV.\n[00:33.00] P2: Same. I keep trying to find something that gives me the same vibe and nothing comes close.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "To share and compare opinions about the TV show 'Severance' with Riley, reinforcing their shared enjoyment and connection over the series.",
+        "goal_type": "social_bonding",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing naturally and both participants are actively engaged in discussing the show. There are no immediate signals requiring intervention."
+      }
+    },
+    {
+      "elapsed": 45.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P1: Dude have you finished Severance season 2 yet?\n[00:03.00] P2: Yes! I binged the last three episodes on Sunday. I could not stop watching.\n[00:07.00] P1: Same. That finale was wild. I did not see that twist coming with Helly.\n[00:11.00] P2: I know right? And the whole thing with Mark finally figuring out what happened to his wife? I was like screaming at the TV.\n[00:17.00] P1: The writing is so good. Like every episode has this slow burn tension where you know something is going to happen but you don't know when.\n[00:23.00] P2: And the cinematography. Those long hallway shots where you can't tell if it's real or the testing floor? Genius.\n[00:29.00] P1: Honestly I think it's the best show on TV right now. And I watch a lot of TV.\n[00:33.00] P2: Same. I keep trying to find something that gives me the same vibe and nothing comes close.\n[00:37.00] P1: Have you tried The Diplomat? Someone told me it's similar.\n[00:40.00] P2: I watched the first episode but it didn't grab me. It's more political thriller, less mind-bending sci-fi.\n[00:45.00] P1: Fair. What about that Korean show everyone was talking about? Squid Game season 2?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "To find another TV show that gives a similar 'mind-bending sci-fi' vibe to Severance, which both P1 and P2 enjoyed.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing naturally towards the wearer's goal. P2 is actively engaging and providing feedback on suggestions. No intervention is needed at this moment."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P1: Dude have you finished Severance season 2 yet?\n[00:03.00] P2: Yes! I binged the last three episodes on Sunday. I could not stop watching.\n[00:07.00] P1: Same. That finale was wild. I did not see that twist coming with Helly.\n[00:11.00] P2: I know right? And the whole thing with Mark finally figuring out what happened to his wife? I was like screaming at the TV.\n[00:17.00] P1: The writing is so good. Like every episode has this slow burn tension where you know something is going to happen but you don't know when.\n[00:23.00] P2: And the cinematography. Those long hallway shots where you can't tell if it's real or the testing floor? Genius.\n[00:29.00] P1: Honestly I think it's the best show on TV right now. And I watch a lot of TV.\n[00:33.00] P2: Same. I keep trying to find something that gives me the same vibe and nothing comes close.\n[00:37.00] P1: Have you tried The Diplomat? Someone told me it's similar.\n[00:40.00] P2: I watched the first episode but it didn't grab me. It's more political thriller, less mind-bending sci-fi.\n[00:45.00] P1: Fair. What about that Korean show everyone was talking about? Squid Game season 2?\n[00:49.00] P2: Started it, didn't love it. Felt like they were trying too hard to recapture the original magic.\n[00:53.00] P1: Yeah that's what I heard. You know what actually surprised me though was The Bear season 3. I wasn't expecting much but it was incredible.\n[01:00.00] P2: Oh I keep meaning to watch that. Is it stressful? Because I've heard it's like anxiety-inducing.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To recommend 'The Bear' to Riley as a show she might enjoy, despite its reputation for being stressful, and to understand her preferences for TV shows.",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "It can be intense, but it's also incredibly rewarding and has a lot of heart. The stress is part of what makes it so good.",
+        "recommendation_2": "What kind of 'stressful' are you trying to avoid? Like, is it the fast pace, or the emotional intensity, or something else?",
+        "urgency": "medium",
+        "rationale": "Riley just expressed a concern about 'The Bear' being stressful. This is a critical moment for the wearer to address that concern directly and persuasively, or to understand Riley's specific aversion to 'stressful' shows to better tailor future recommendations. Failing to address it now might lead Riley to dismiss the show entirely."
+      }
+    },
+    {
+      "elapsed": 75.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P1: Dude have you finished Severance season 2 yet?\n[00:03.00] P2: Yes! I binged the last three episodes on Sunday. I could not stop watching.\n[00:07.00] P1: Same. That finale was wild. I did not see that twist coming with Helly.\n[00:11.00] P2: I know right? And the whole thing with Mark finally figuring out what happened to his wife? I was like screaming at the TV.\n[00:17.00] P1: The writing is so good. Like every episode has this slow burn tension where you know something is going to happen but you don't know when.\n[00:23.00] P2: And the cinematography. Those long hallway shots where you can't tell if it's real or the testing floor? Genius.\n[00:29.00] P1: Honestly I think it's the best show on TV right now. And I watch a lot of TV.\n[00:33.00] P2: Same. I keep trying to find something that gives me the same vibe and nothing comes close.\n[00:37.00] P1: Have you tried The Diplomat? Someone told me it's similar.\n[00:40.00] P2: I watched the first episode but it didn't grab me. It's more political thriller, less mind-bending sci-fi.\n[00:45.00] P1: Fair. What about that Korean show everyone was talking about? Squid Game season 2?\n[00:49.00] P2: Started it, didn't love it. Felt like they were trying too hard to recapture the original magic.\n[00:53.00] P1: Yeah that's what I heard. You know what actually surprised me though was The Bear season 3. I wasn't expecting much but it was incredible.\n[01:00.00] P2: Oh I keep meaning to watch that. Is it stressful? Because I've heard it's like anxiety-inducing.\n[01:04.00] P1: It is but in a good way. Like you feel the kitchen chaos but the character development is really beautiful.\n[01:09.00] P2: OK you've convinced me. I'll start it tonight.\n[01:12.00] P1: You won't regret it. Let me know what you think after the first two episodes.\n[01:15.00] P2: Deal.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "To share and discuss TV show recommendations with Riley, specifically focusing on shows they both might enjoy after watching 'Severance'.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing naturally, and the wearer successfully recommended 'The Bear' to P2, who agreed to watch it. No intervention is needed as the goal is being met."
+      }
+    },
+    {
+      "elapsed": 75.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P1: Dude have you finished Severance season 2 yet?\n[00:03.00] P2: Yes! I binged the last three episodes on Sunday. I could not stop watching.\n[00:07.00] P1: Same. That finale was wild. I did not see that twist coming with Helly.\n[00:11.00] P2: I know right? And the whole thing with Mark finally figuring out what happened to his wife? I was like screaming at the TV.\n[00:17.00] P1: The writing is so good. Like every episode has this slow burn tension where you know something is going to happen but you don't know when.\n[00:23.00] P2: And the cinematography. Those long hallway shots where you can't tell if it's real or the testing floor? Genius.\n[00:29.00] P1: Honestly I think it's the best show on TV right now. And I watch a lot of TV.\n[00:33.00] P2: Same. I keep trying to find something that gives me the same vibe and nothing comes close.\n[00:37.00] P1: Have you tried The Diplomat? Someone told me it's similar.\n[00:40.00] P2: I watched the first episode but it didn't grab me. It's more political thriller, less mind-bending sci-fi.\n[00:45.00] P1: Fair. What about that Korean show everyone was talking about? Squid Game season 2?\n[00:49.00] P2: Started it, didn't love it. Felt like they were trying too hard to recapture the original magic.\n[00:53.00] P1: Yeah that's what I heard. You know what actually surprised me though was The Bear season 3. I wasn't expecting much but it was incredible.\n[01:00.00] P2: Oh I keep meaning to watch that. Is it stressful? Because I've heard it's like anxiety-inducing.\n[01:04.00] P1: It is but in a good way. Like you feel the kitchen chaos but the character development is really beautiful.\n[01:09.00] P2: OK you've convinced me. I'll start it tonight.\n[01:12.00] P1: You won't regret it. Let me know what you think after the first two episodes.\n[01:15.00] P2: Deal.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "To share and discuss TV show recommendations with their friend Riley, specifically focusing on shows that evoke a similar feeling to 'Severance' and successfully recommending 'The Bear' season 3.",
+        "goal_type": "social_bonding",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing naturally, and the wearer has successfully recommended 'The Bear' to P2, who has agreed to watch it. There are no immediate signals requiring intervention."
+      }
+    }
+  ]
+}

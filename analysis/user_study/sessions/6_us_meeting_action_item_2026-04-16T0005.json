@@ -1,0 +1,428 @@
+{
+  "id": "session_1776297379444",
+  "agent_mode": "proagent",
+  "model": "anthropic/claude-3.5-haiku",
+  "persona": "You work at a mid-size company. You're in a team meeting where your boss is handing out tasks for the week. You've got a lot on your plate and are thinking about your own to-do list.",
+  "scenario_id": "us_meeting_action_item",
+  "scenario_label": "S1: Team Meeting",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "6",
+  "duration_seconds": 575.22,
+  "check_interval": 15,
+  "total_checks": 13,
+  "total_triggers": 12,
+  "transcript_lines": [
+    {
+      "seconds": 9.2,
+      "speaker": "P2",
+      "text": "okay so I think for the upcoming quarter we are going to launch iPhone 18"
+    },
+    {
+      "seconds": 16.78,
+      "speaker": "P2",
+      "text": "and I was wondering what sort of features you think would be incredibly helpful for us to"
+    },
+    {
+      "seconds": 21.48,
+      "speaker": "P2",
+      "text": "do to do a successful iPhone launch"
+    },
+    {
+      "seconds": 26.19,
+      "speaker": "P1",
+      "text": "let me think"
+    },
+    {
+      "seconds": 30.28,
+      "speaker": "P1",
+      "text": "I think we can improve on Siri"
+    },
+    {
+      "seconds": 34.13,
+      "speaker": "P1",
+      "text": "and have it be a better personal assistant"
+    },
+    {
+      "seconds": 49.85,
+      "speaker": "P2",
+      "text": "okay yeah Siri sounds like a really good thing to improve on especially since we've heard it's probably the highest on the user complaint reports for the things you should improve on this year"
+    },
+    {
+      "seconds": 54.59,
+      "speaker": "P2",
+      "text": "so what part of Siri do you think we should improve"
+    },
+    {
+      "seconds": 60.66,
+      "speaker": "P1",
+      "text": "I think"
+    },
+    {
+      "seconds": 62.94,
+      "speaker": "P1",
+      "text": "it would be helpful"
+    },
+    {
+      "seconds": 65.01,
+      "speaker": "P1",
+      "text": "if Siri"
+    },
+    {
+      "seconds": 68.33,
+      "speaker": "P1",
+      "text": "could take care of"
+    },
+    {
+      "seconds": 76.8,
+      "speaker": "P1",
+      "text": "like I guess small errands you do on your phone for example looking back on old texts or"
+    },
+    {
+      "seconds": 78.99,
+      "speaker": "P1",
+      "text": "remembering"
+    },
+    {
+      "seconds": 83.93,
+      "speaker": "P1",
+      "text": "your schedule for the day over there for the next day"
+    },
+    {
+      "seconds": 89.4,
+      "speaker": "P1",
+      "text": "if it can be more implemented"
+    },
+    {
+      "seconds": 98.74,
+      "speaker": "P1",
+      "text": "into your actual like behavior of what you actually do on your iPhone whether it's messaging or reading news articles"
+    },
+    {
+      "seconds": 104.19,
+      "speaker": "P1",
+      "text": "I'm being more immersed in that and being more personable I guess"
+    },
+    {
+      "seconds": 105.88,
+      "speaker": "P1",
+      "text": "okay"
+    },
+    {
+      "seconds": 126.11,
+      "speaker": "P2",
+      "text": "sounds good I think making it more personable would be really helpful for the next generation of Siri so I currently have four Engineers that want to work on this so I think I was thinking do you think that making Siri more personable is at the top of our priority list"
+    },
+    {
+      "seconds": 149.47,
+      "speaker": "P1",
+      "text": "yeah I think"
+    },
+    {
+      "seconds": 157.17,
+      "speaker": "P1",
+      "text": "off the cuff I think Siri improving Siri makes sense but"
+    },
+    {
+      "seconds": 161.43,
+      "speaker": "P1",
+      "text": "if you give me some more time to think about"
+    },
+    {
+      "seconds": 169.68,
+      "speaker": "P1",
+      "text": "all the other options I could come back with a prioritizer list of how to best use the engineers time"
+    },
+    {
+      "seconds": 178.08,
+      "speaker": "P2",
+      "text": "okay sounds good sounds like the iPhone 18 big feature this year would be a better Siri"
+    }
+  ],
+  "transcript_text": "[00:09.20] P2: okay so I think for the upcoming quarter we are going to launch iPhone 18\n[00:16.78] P2: and I was wondering what sort of features you think would be incredibly helpful for us to\n[00:21.48] P2: do to do a successful iPhone launch\n[00:26.19] P1: let me think\n[00:30.28] P1: I think we can improve on Siri\n[00:34.13] P1: and have it be a better personal assistant\n[00:49.85] P2: okay yeah Siri sounds like a really good thing to improve on especially since we've heard it's probably the highest on the user complaint reports for the things you should improve on this year\n[00:54.59] P2: so what part of Siri do you think we should improve\n[01:00.66] P1: I think\n[01:02.94] P1: it would be helpful\n[01:05.01] P1: if Siri\n[01:08.33] P1: could take care of\n[01:16.80] P1: like I guess small errands you do on your phone for example looking back on old texts or\n[01:18.99] P1: remembering\n[01:23.93] P1: your schedule for the day over there for the next day\n[01:29.40] P1: if it can be more implemented\n[01:38.74] P1: into your actual like behavior of what you actually do on your iPhone whether it's messaging or reading news articles\n[01:44.19] P1: I'm being more immersed in that and being more personable I guess\n[01:45.88] P1: okay\n[02:06.11] P2: sounds good I think making it more personable would be really helpful for the next generation of Siri so I currently have four Engineers that want to work on this so I think I was thinking do you think that making Siri more personable is at the top of our priority list\n[02:29.47] P1: yeah I think\n[02:37.17] P1: off the cuff I think Siri improving Siri makes sense but\n[02:41.43] P1: if you give me some more time to think about\n[02:49.68] P1: all the other options I could come back with a prioritizer list of how to best use the engineers time\n[02:58.08] P2: okay sounds good sounds like the iPhone 18 big feature this year would be a better Siri",
+  "triggers": [
+    {
+      "trigger_timestamp": 29.999,
+      "wearer_goal": "Formulate innovative iPhone feature suggestions quickly",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "medium",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Recent Apple user surveys highlight privacy and battery life as top concerns",
+      "recommendation_2": "Emerging AI integration trends suggest intelligent contextual features",
+      "urgency": "medium",
+      "rationale": "Wearer seems momentarily unprepared to generate substantive feature ideas",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 45.005,
+      "wearer_goal": "Contribute meaningful product feature suggestions for iPhone 18 launch",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Recent Apple surveys show privacy and battery life are top user concerns",
+      "recommendation_2": "AI integration could provide intelligent, contextual smartphone features",
+      "urgency": "medium",
+      "rationale": "Wearer needs substantive input beyond generic Siri improvement suggestion",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 59.999,
+      "wearer_goal": "Contribute meaningful input on Siri feature improvements for iPhone 18 launch",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's discuss specific Siri pain points from recent user feedback surveys",
+      "recommendation_2": "We should prioritize natural language understanding and contextual awareness",
+      "urgency": "medium",
+      "rationale": "The wearer needs to provide more substantive, data-driven suggestions about Siri improvements",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 75,
+      "wearer_goal": "Contribute meaningful suggestions for Siri's improvement during iPhone 18 feature planning",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's discuss specific user pain points with current Siri interactions",
+      "recommendation_2": "We should focus on natural language understanding and contextual awareness",
+      "urgency": "medium",
+      "rationale": "Wearer seems hesitant and needs structured guidance to provide concrete Siri improvement suggestions",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 89.999,
+      "wearer_goal": "Provide concrete, actionable suggestions for improving Siri's functionality",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Suggest implementing contextual memory for tracking user's daily micro-tasks",
+      "recommendation_2": "Highlight potential AI-powered predictive scheduling capabilities",
+      "urgency": "medium",
+      "rationale": "Wearer is vaguely describing Siri improvements without specific technical implementation strategies",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.001,
+      "wearer_goal": "Provide strategic input on improving Siri's functionality for the next iPhone launch",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's discuss specific user pain points that make Siri feel less personalized.",
+      "recommendation_2": "Can we explore machine learning techniques to make Siri more contextually aware?",
+      "urgency": "medium",
+      "rationale": "The wearer's suggestions are conceptual but lack concrete, actionable insights for Siri improvement.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 119.999,
+      "wearer_goal": "Propose concrete Siri improvement strategies during product planning discussion",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's discuss specific user interaction pain points that make Siri feel disconnected.",
+      "recommendation_2": "Can we map out exact micro-tasks where Siri's contextual understanding breaks down?",
+      "urgency": "medium",
+      "rationale": "Wearer is proposing Siri improvements but lacks concrete, actionable specifics",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 134.999,
+      "wearer_goal": "Provide strategic input on improving Siri's personalization and user experience",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's discuss specific user micro-interactions where Siri feels disconnected",
+      "recommendation_2": "Can we map out daily scenarios where personalization would add most value?",
+      "urgency": "medium",
+      "rationale": "The wearer has a vague vision but lacks concrete implementation details for Siri improvement",
+      "feedback_vote": "up",
+      "feedback_comment": "both were generally helpful, he took a mix of two of these"
+    },
+    {
+      "trigger_timestamp": 149.999,
+      "wearer_goal": "Provide strategic input on improving Siri's personalization for iPhone 18",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we explore specific user micro-interactions where personalization would help?",
+      "recommendation_2": "What data sources are we using to understand user experience gaps?",
+      "urgency": "medium",
+      "rationale": "The wearer is offering high-level suggestions but lacks concrete implementation details",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 164.999,
+      "wearer_goal": "Provide thoughtful input on improving Siri's personalization for iPhone 18 launch",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's break down specific user micro-interactions where Siri feels disconnected",
+      "recommendation_2": "Can we map out daily scenarios where personalization would add most value?",
+      "urgency": "medium",
+      "rationale": "Wearer seems hesitant and needs structured approach to provide more concrete Siri improvement suggestions",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 179.999,
+      "wearer_goal": "Strategically position Siri improvement as a key priority for iPhone 18 engineering resources",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's outline specific user experience gaps we want Siri to address",
+      "recommendation_2": "Can we quantify the impact of these Siri improvements?",
+      "urgency": "medium",
+      "rationale": "Wearer risks agreeing to Siri improvement without concrete implementation strategy",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 181.146,
+      "wearer_goal": "Strategically position Siri improvement as a key priority for iPhone 18 engineering resources",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's outline specific user experience gaps we've identified with Siri",
+      "recommendation_2": "Can we quantify the impact of these Siri improvements on user satisfaction?",
+      "urgency": "medium",
+      "rationale": "Wearer risks agreeing to Siri improvements without concrete, measurable objectives",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15,
+      "wearer_goal": "Track potential task assignments and understand project priorities",
+      "goal_type": "information_exchange",
+      "goal_confidence": "medium",
+      "triggered": false
+    },
+    {
+      "timestamp": 29.999,
+      "wearer_goal": "Formulate innovative iPhone feature suggestions quickly",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "medium",
+      "triggered": true
+    },
+    {
+      "timestamp": 45.005,
+      "wearer_goal": "Contribute meaningful product feature suggestions for iPhone 18 launch",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 59.999,
+      "wearer_goal": "Contribute meaningful input on Siri feature improvements for iPhone 18 launch",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 75,
+      "wearer_goal": "Contribute meaningful suggestions for Siri's improvement during iPhone 18 feature planning",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 89.999,
+      "wearer_goal": "Provide concrete, actionable suggestions for improving Siri's functionality",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.001,
+      "wearer_goal": "Provide strategic input on improving Siri's functionality for the next iPhone launch",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 119.999,
+      "wearer_goal": "Propose concrete Siri improvement strategies during product planning discussion",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 134.999,
+      "wearer_goal": "Provide strategic input on improving Siri's personalization and user experience",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 149.999,
+      "wearer_goal": "Provide strategic input on improving Siri's personalization for iPhone 18",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 164.999,
+      "wearer_goal": "Provide thoughtful input on improving Siri's personalization for iPhone 18 launch",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 179.999,
+      "wearer_goal": "Strategically position Siri improvement as a key priority for iPhone 18 engineering resources",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 181.146,
+      "wearer_goal": "Strategically position Siri improvement as a key priority for iPhone 18 engineering resources",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 3,
+  "timing_rating": 2,
+  "goal_rating": 4,
+  "adoption_rating": 3,
+  "session_notes": "pulling out a conclusion or headline would be more helpful, like 80% of users wanted a new siri. it would be more helpful than suggesting a document",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-16T00:05:54.667Z"
+}

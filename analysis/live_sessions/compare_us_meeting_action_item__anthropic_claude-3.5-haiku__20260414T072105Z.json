@@ -1,0 +1,156 @@
+{
+  "model": "anthropic/claude-3.5-haiku",
+  "scenario_id": "us_meeting_action_item",
+  "duration_seconds": 78.0,
+  "check_interval": 15.0,
+  "total_checks": 6,
+  "total_triggers": 3,
+  "triggers": [
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "Manage sprint deliverables and team expectations around ongoing work",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Proactively clarify timeline for API docs: 'I can definitely have the REST endpoints and webhook sections updated by Thursday, but given the authentication flow changes Kevin mentioned, I'll need to coordinate with the platform team to ensure accuracy.'",
+      "recommendation_2": "Suggest a quick sync with Kevin to review the authentication flow changes before finalizing the API docs",
+      "urgency": "medium",
+      "rationale": "The wearer has been assigned a new task (API docs update) with a tight deadline, and there's an unaddressed complexity around authentication flow changes that could impact document accuracy. Proactive communication can prevent potential rework and demonstrate project management skills."
+    },
+    {
+      "trigger_timestamp": 45.0,
+      "wearer_goal": "Manage sprint commitments and workload expectations",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": {
+        "say": "I can definitely update the API docs, but with the payments refactor review and potential platform team follow-up, I want to confirm I can realistically complete this by Thursday.",
+        "know": "Current workload includes: payments PR review, potential platform team chase, full API doc update (REST + auth sections)"
+      },
+      "recommendation_2": {
+        "say": "Would it make sense to prioritize the auth section first, since Kevin mentioned it's completely incorrect?",
+        "know": "Prioritizing most critically outdated documentation section first"
+      },
+      "urgency": "high",
+      "rationale": "Alex is about to silently accept multiple significant tasks without negotiating scope or confirming bandwidth, which could lead to sprint overcommitment"
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "wearer_goal": "Complete assigned tasks and manage sprint deliverables",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "The API docs update requires covering REST endpoints, webhook section, and the new authentication flow details",
+      "recommendation_2": "Confirm specific deadline for API docs update (Thursday) and clarify exact scope of changes needed",
+      "urgency": "medium",
+      "rationale": "Multiple tasks were assigned to Alex with potential ambiguity around exact requirements. Proactively capturing full task details will help prevent last-minute scrambling and ensure clear understanding of sprint commitments."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 15.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Update team on payments refactor PR status and ensure timely completion",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Conversation is proceeding smoothly and wearer is effectively communicating current status"
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Manage sprint deliverables and team expectations around ongoing work",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Proactively clarify timeline for API docs: 'I can definitely have the REST endpoints and webhook sections updated by Thursday, but given the authentication flow changes Kevin mentioned, I'll need to coordinate with the platform team to ensure accuracy.'",
+        "recommendation_2": "Suggest a quick sync with Kevin to review the authentication flow changes before finalizing the API docs",
+        "urgency": "medium",
+        "rationale": "The wearer has been assigned a new task (API docs update) with a tight deadline, and there's an unaddressed complexity around authentication flow changes that could impact document accuracy. Proactive communication can prevent potential rework and demonstrate project management skills."
+      }
+    },
+    {
+      "elapsed": 45.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.\n[00:34.00] P2: Right, good catch. Alex, make sure the auth section is covered too. OK moving on. Lisa, what's the status on the dashboard redesign?\n[00:41.00] P3: So the mockups are done, I shared them in the design channel yesterday. We're waiting on feedback from the stakeholders before we start implementation.\n[00:48.00] P2: When's the stakeholder review?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Manage sprint commitments and workload expectations",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": {
+          "say": "I can definitely update the API docs, but with the payments refactor review and potential platform team follow-up, I want to confirm I can realistically complete this by Thursday.",
+          "know": "Current workload includes: payments PR review, potential platform team chase, full API doc update (REST + auth sections)"
+        },
+        "recommendation_2": {
+          "say": "Would it make sense to prioritize the auth section first, since Kevin mentioned it's completely incorrect?",
+          "know": "Prioritizing most critically outdated documentation section first"
+        },
+        "urgency": "high",
+        "rationale": "Alex is about to silently accept multiple significant tasks without negotiating scope or confirming bandwidth, which could lead to sprint overcommitment"
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.\n[00:34.00] P2: Right, good catch. Alex, make sure the auth section is covered too. OK moving on. Lisa, what's the status on the dashboard redesign?\n[00:41.00] P3: So the mockups are done, I shared them in the design channel yesterday. We're waiting on feedback from the stakeholders before we start implementation.\n[00:48.00] P2: When's the stakeholder review?\n[00:50.00] P3: Friday afternoon, 3 PM.\n[00:52.00] P2: OK good. And Kevin, the load testing?\n[00:55.00] P4: Running now. Preliminary results look good, we're handling about 2x the expected traffic without issues. I should have the full report by end of day.\n[01:02.00] P2: Great. Anything blocking anyone? No? OK let's keep the momentum going. Sprint ends Friday, let's make sure everything is wrapped up clean.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Complete assigned tasks and manage sprint deliverables",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "know",
+        "recommendation_1": "The API docs update requires covering REST endpoints, webhook section, and the new authentication flow details",
+        "recommendation_2": "Confirm specific deadline for API docs update (Thursday) and clarify exact scope of changes needed",
+        "urgency": "medium",
+        "rationale": "Multiple tasks were assigned to Alex with potential ambiguity around exact requirements. Proactively capturing full task details will help prevent last-minute scrambling and ensure clear understanding of sprint commitments."
+      }
+    },
+    {
+      "elapsed": 75.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.\n[00:34.00] P2: Right, good catch. Alex, make sure the auth section is covered too. OK moving on. Lisa, what's the status on the dashboard redesign?\n[00:41.00] P3: So the mockups are done, I shared them in the design channel yesterday. We're waiting on feedback from the stakeholders before we start implementation.\n[00:48.00] P2: When's the stakeholder review?\n[00:50.00] P3: Friday afternoon, 3 PM.\n[00:52.00] P2: OK good. And Kevin, the load testing?\n[00:55.00] P4: Running now. Preliminary results look good, we're handling about 2x the expected traffic without issues. I should have the full report by end of day.\n[01:02.00] P2: Great. Anything blocking anyone? No? OK let's keep the momentum going. Sprint ends Friday, let's make sure everything is wrapped up clean.\n[01:09.00] P1: Quick question \u2014 are we still doing the retro on Friday or did that move?\n[01:12.00] P2: Retro is Monday now, I sent a calendar update. Alright, that's it. Good standup everyone.\n[01:17.00] P3: Thanks.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Stay informed about sprint tasks and confirm meeting logistics",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Standup is proceeding smoothly, wearer is actively participating and asking clarifying questions"
+      }
+    },
+    {
+      "elapsed": 78.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.\n[00:34.00] P2: Right, good catch. Alex, make sure the auth section is covered too. OK moving on. Lisa, what's the status on the dashboard redesign?\n[00:41.00] P3: So the mockups are done, I shared them in the design channel yesterday. We're waiting on feedback from the stakeholders before we start implementation.\n[00:48.00] P2: When's the stakeholder review?\n[00:50.00] P3: Friday afternoon, 3 PM.\n[00:52.00] P2: OK good. And Kevin, the load testing?\n[00:55.00] P4: Running now. Preliminary results look good, we're handling about 2x the expected traffic without issues. I should have the full report by end of day.\n[01:02.00] P2: Great. Anything blocking anyone? No? OK let's keep the momentum going. Sprint ends Friday, let's make sure everything is wrapped up clean.\n[01:09.00] P1: Quick question \u2014 are we still doing the retro on Friday or did that move?\n[01:12.00] P2: Retro is Monday now, I sent a calendar update. Alright, that's it. Good standup everyone.\n[01:17.00] P3: Thanks.\n[01:18.00] P4: Later.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Stay informed about sprint tasks and confirm meeting logistics",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Standup is proceeding smoothly, wearer is actively participating and asking clarifying questions"
+      }
+    }
+  ]
+}

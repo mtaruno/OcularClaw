@@ -1,0 +1,106 @@
+{
+  "id": "session_1776224355817",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You work at a mid-size company. You're in a team meeting where your boss is handing out tasks for the week. You've got a lot on your plate and are thinking about your own to-do list.",
+  "scenario_id": "us_meeting_action_item",
+  "scenario_label": "S1: Team Meeting",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "4",
+  "duration_seconds": 79.62,
+  "check_interval": 15,
+  "total_checks": 5,
+  "total_triggers": 0,
+  "transcript_lines": [
+    {
+      "seconds": 9.94,
+      "speaker": "P2",
+      "text": "but basically we will start the live session and then you can see it's either other person or me so other person would be me so I'm your boss so"
+    },
+    {
+      "seconds": 19.06,
+      "speaker": "P2",
+      "text": "make sure we like if I keep on talking it will not show so we can pause as well as to give the AI context"
+    },
+    {
+      "seconds": 27.52,
+      "speaker": "P1",
+      "text": "yeah see if we stop it it's it records it as P2 but then if I put it here then it records it SP one"
+    },
+    {
+      "seconds": 38.43,
+      "speaker": "P1",
+      "text": "and then after P1 basically every 15 seconds the AI will check you can see the number of checks over here and then if there's a recommendation"
+    },
+    {
+      "seconds": 44.57,
+      "speaker": "P1",
+      "text": "so if you're an AI you can possibly just do the recommendation right now"
+    },
+    {
+      "seconds": 59.17,
+      "speaker": "P1",
+      "text": "yeah so it will do recommendation and it will show up here and basically you can judge where they're not the recommendation is good or bad it hasn't popped up yet but later when we're in this scenario it will pop up okay"
+    },
+    {
+      "seconds": 62.4,
+      "speaker": "P1",
+      "text": "yeah okay cool"
+    },
+    {
+      "seconds": 67.39,
+      "speaker": "P1",
+      "text": "sounds good let me and"
+    }
+  ],
+  "transcript_text": "[00:09.94] P2: but basically we will start the live session and then you can see it's either other person or me so other person would be me so I'm your boss so\n[00:19.06] P2: make sure we like if I keep on talking it will not show so we can pause as well as to give the AI context\n[00:27.52] P1: yeah see if we stop it it's it records it as P2 but then if I put it here then it records it SP one\n[00:38.43] P1: and then after P1 basically every 15 seconds the AI will check you can see the number of checks over here and then if there's a recommendation\n[00:44.57] P1: so if you're an AI you can possibly just do the recommendation right now\n[00:59.17] P1: yeah so it will do recommendation and it will show up here and basically you can judge where they're not the recommendation is good or bad it hasn't popped up yet but later when we're in this scenario it will pop up okay\n[01:02.40] P1: yeah okay cool\n[01:07.39] P1: sounds good let me and",
+  "triggers": [],
+  "goal_inferences": [
+    {
+      "timestamp": 15.003,
+      "wearer_goal": "understand assigned tasks for the week",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.003,
+      "wearer_goal": "understand task assignment and recording process for the live session",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.003,
+      "wearer_goal": "understand how the AI live session and recommendations work",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 60.002,
+      "wearer_goal": "understand how the AI recommendations will appear during the live session",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 67.255,
+      "wearer_goal": "understand how the AI recommendations will be integrated into the live session",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    }
+  ],
+  "usefulness_rating": null,
+  "timing_rating": null,
+  "goal_rating": null,
+  "adoption_rating": null,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T03:40:35.440Z"
+}

@@ -1,0 +1,131 @@
+{
+  "model": "anthropic/claude-3.5-haiku",
+  "scenario_id": "us_weather_smalltalk",
+  "duration_seconds": 44.0,
+  "check_interval": 10.0,
+  "total_checks": 5,
+  "total_triggers": 3,
+  "triggers": [
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "Build rapport and learn about local hiking opportunities",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "AllTrails app has detailed local trail maps with difficulty ratings",
+      "recommendation_2": "Local REI often hosts free weekend hiking group meetups",
+      "urgency": "low",
+      "rationale": "Wearer seems genuinely interested in exploring local trails but lacks specific knowledge"
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "Learn about local hiking opportunities and establish a friendly connection",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Hiking meetup groups like Meetup.com have active local trail communities",
+      "recommendation_2": "Local outdoor gear stores often have trail maps and community bulletin boards",
+      "urgency": "low",
+      "rationale": "Wearer seems genuinely interested in local hiking but needs more specific local connection resources"
+    },
+    {
+      "trigger_timestamp": 44.0,
+      "wearer_goal": "Learn about local hiking opportunities and establish a friendly connection",
+      "goal_type": "social_bonding",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Local hiking Facebook groups often share trail conditions and weekend group hikes",
+      "recommendation_2": "County parks department website typically lists detailed trail maps and difficulty ratings",
+      "urgency": "low",
+      "rationale": "Wearer seems genuinely interested in local hiking but lacks specific local knowledge"
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P1: Hey, morning.\n[00:02.00] P2: Morning. Nice weather today huh?\n[00:04.00] P1: Yeah finally. I feel like it's been raining for like two weeks straight.\n[00:08.00] P2: Seriously. I almost forgot what the sun looked like.\n[00:11.00] P1: Ha, same. You got any plans for the weekend?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Establish casual small talk and create a friendly social connection with elevator acquaintance",
+        "goal_type": "social_bonding",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Conversation is proceeding naturally and smoothly with typical small talk progression"
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P1: Hey, morning.\n[00:02.00] P2: Morning. Nice weather today huh?\n[00:04.00] P1: Yeah finally. I feel like it's been raining for like two weeks straight.\n[00:08.00] P2: Seriously. I almost forgot what the sun looked like.\n[00:11.00] P1: Ha, same. You got any plans for the weekend?\n[00:14.00] P2: Not really, might try to get outside since the weather's supposed to be nice. Maybe go for a hike or something.\n[00:19.00] P1: Nice. Where do you usually hike around here?\n[00:22.00] P2: There's a trail near the reservoir that's pretty good. Like 45 minutes, nothing crazy.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Establish friendly small talk and maintain pleasant elevator interaction",
+        "goal_type": "social_bonding",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Conversation is proceeding smoothly with natural rapport-building small talk"
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P1: Hey, morning.\n[00:02.00] P2: Morning. Nice weather today huh?\n[00:04.00] P1: Yeah finally. I feel like it's been raining for like two weeks straight.\n[00:08.00] P2: Seriously. I almost forgot what the sun looked like.\n[00:11.00] P1: Ha, same. You got any plans for the weekend?\n[00:14.00] P2: Not really, might try to get outside since the weather's supposed to be nice. Maybe go for a hike or something.\n[00:19.00] P1: Nice. Where do you usually hike around here?\n[00:22.00] P2: There's a trail near the reservoir that's pretty good. Like 45 minutes, nothing crazy.\n[00:27.00] P1: Oh cool. I've been meaning to explore more trails around here. I just moved to the area a few months ago.\n[00:32.00] P2: Oh nice, welcome. Yeah there's actually a lot of good spots. You should check out the state park too, it's about 20 minutes north.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Build rapport and learn about local hiking opportunities",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "know",
+        "recommendation_1": "AllTrails app has detailed local trail maps with difficulty ratings",
+        "recommendation_2": "Local REI often hosts free weekend hiking group meetups",
+        "urgency": "low",
+        "rationale": "Wearer seems genuinely interested in exploring local trails but lacks specific knowledge"
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P1: Hey, morning.\n[00:02.00] P2: Morning. Nice weather today huh?\n[00:04.00] P1: Yeah finally. I feel like it's been raining for like two weeks straight.\n[00:08.00] P2: Seriously. I almost forgot what the sun looked like.\n[00:11.00] P1: Ha, same. You got any plans for the weekend?\n[00:14.00] P2: Not really, might try to get outside since the weather's supposed to be nice. Maybe go for a hike or something.\n[00:19.00] P1: Nice. Where do you usually hike around here?\n[00:22.00] P2: There's a trail near the reservoir that's pretty good. Like 45 minutes, nothing crazy.\n[00:27.00] P1: Oh cool. I've been meaning to explore more trails around here. I just moved to the area a few months ago.\n[00:32.00] P2: Oh nice, welcome. Yeah there's actually a lot of good spots. You should check out the state park too, it's about 20 minutes north.\n[00:38.00] P1: I'll look into that, thanks.\n[00:40.00] P2: For sure. Oh here's the elevator.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Learn about local hiking opportunities and establish a friendly connection",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "know",
+        "recommendation_1": "Hiking meetup groups like Meetup.com have active local trail communities",
+        "recommendation_2": "Local outdoor gear stores often have trail maps and community bulletin boards",
+        "urgency": "low",
+        "rationale": "Wearer seems genuinely interested in local hiking but needs more specific local connection resources"
+      }
+    },
+    {
+      "elapsed": 44.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P1: Hey, morning.\n[00:02.00] P2: Morning. Nice weather today huh?\n[00:04.00] P1: Yeah finally. I feel like it's been raining for like two weeks straight.\n[00:08.00] P2: Seriously. I almost forgot what the sun looked like.\n[00:11.00] P1: Ha, same. You got any plans for the weekend?\n[00:14.00] P2: Not really, might try to get outside since the weather's supposed to be nice. Maybe go for a hike or something.\n[00:19.00] P1: Nice. Where do you usually hike around here?\n[00:22.00] P2: There's a trail near the reservoir that's pretty good. Like 45 minutes, nothing crazy.\n[00:27.00] P1: Oh cool. I've been meaning to explore more trails around here. I just moved to the area a few months ago.\n[00:32.00] P2: Oh nice, welcome. Yeah there's actually a lot of good spots. You should check out the state park too, it's about 20 minutes north.\n[00:38.00] P1: I'll look into that, thanks.\n[00:40.00] P2: For sure. Oh here's the elevator.\n[00:42.00] P1: Finally. Have a good one.\n[00:44.00] P2: You too.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Learn about local hiking opportunities and establish a friendly connection",
+        "goal_type": "social_bonding",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "know",
+        "recommendation_1": "Local hiking Facebook groups often share trail conditions and weekend group hikes",
+        "recommendation_2": "County parks department website typically lists detailed trail maps and difficulty ratings",
+        "urgency": "low",
+        "rationale": "Wearer seems genuinely interested in local hiking but lacks specific local knowledge"
+      }
+    }
+  ]
+}

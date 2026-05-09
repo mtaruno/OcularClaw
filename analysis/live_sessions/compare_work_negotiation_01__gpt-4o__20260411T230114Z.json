@@ -1,0 +1,249 @@
+{
+  "model": "gpt-4o",
+  "scenario_id": "work_negotiation_01",
+  "duration_seconds": 82.0,
+  "check_interval": 10.0,
+  "total_checks": 9,
+  "total_triggers": 8,
+  "triggers": [
+    {
+      "trigger_timestamp": 10.0,
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Express appreciation for the offer and ask if there's flexibility in the salary or bonus structure.",
+      "recommendation_2": "Inquire about additional benefits or stock options that might be available.",
+      "urgency": "medium",
+      "rationale": "The wearer is at a critical point where they can negotiate the terms of the offer. Asking about flexibility and additional benefits can lead to a more favorable package."
+    },
+    {
+      "trigger_timestamp": 20.0,
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Express appreciation for the offer and ask if there's flexibility in the base salary or bonus.",
+      "recommendation_2": "Inquire about additional benefits or perks that might be negotiable, such as stock options or professional development opportunities.",
+      "urgency": "medium",
+      "rationale": "This is a critical moment to negotiate terms before accepting the offer. Engaging in negotiation now can lead to a better overall package."
+    },
+    {
+      "trigger_timestamp": 30.0,
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Express appreciation for the offer and highlight specific achievements or skills that justify your desired salary.",
+      "recommendation_2": "Ask if there is flexibility in the offer, particularly regarding the base salary, to open up the conversation for further negotiation.",
+      "urgency": "medium",
+      "rationale": "This is a critical moment in the negotiation process where the wearer has expressed a counter-offer. Providing additional context and opening the door for further discussion can strengthen their position."
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Express appreciation for their flexibility and ask if they can explore options to get closer to 160K, perhaps through additional benefits or stock options.",
+      "recommendation_2": "Inquire about the possibility of a performance review after 6 months that could lead to a salary adjustment.",
+      "urgency": "medium",
+      "rationale": "This is a critical moment in the negotiation where the wearer can leverage the employer's stated flexibility to potentially improve the offer."
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "both",
+      "recommendation_1": "say: 'I appreciate the flexibility on your end. Could we explore increasing the base salary to 150K and discuss potential equity options to make the total package more competitive?'",
+      "recommendation_2": "know: Be aware that discussing equity and signing bonuses can often provide additional leverage in negotiations, especially if the base salary is at the top of their band.",
+      "urgency": "medium",
+      "rationale": "This is a critical moment in the negotiation where the wearer can leverage the company's flexibility to improve the offer. Addressing both salary and equity can maximize the total compensation package."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Express appreciation for the offer and reiterate your enthusiasm for the role, then ask if there's room to increase the equity component or explore other benefits like additional vacation days.",
+      "recommendation_2": "Ask if there's flexibility in the timeline for making a decision, to allow time for considering the offer and any potential counteroffers.",
+      "urgency": "medium",
+      "rationale": "This is a critical moment in the negotiation where the wearer can leverage the employer's flexibility to improve the offer further."
+    },
+    {
+      "trigger_timestamp": 70.0,
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Emphasize your unique skills and contributions that justify the higher base salary, such as specific projects or leadership roles you've excelled in.",
+      "recommendation_2": "Ask if there are other forms of compensation or benefits that could be adjusted to meet your expectations, like additional RSUs or increased bonus percentage.",
+      "urgency": "medium",
+      "rationale": "This moment is crucial as the wearer is negotiating for a higher salary, and effectively communicating their value and exploring all compensation options can lead to a better offer."
+    },
+    {
+      "trigger_timestamp": 80.0,
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Before agreeing to the 150K base, confirm if the equity and signing bonus can be increased or if there are other benefits that can be negotiated.",
+      "recommendation_2": "Express appreciation for the offer and ask if there are any additional perks or professional development opportunities that could be included to enhance the overall package.",
+      "urgency": "medium",
+      "rationale": "The wearer is close to accepting the offer at 150K base but should ensure all components of the compensation package are maximized before committing."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a better salary package for the job offer",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Express appreciation for the offer and ask if there's flexibility in the salary or bonus structure.",
+        "recommendation_2": "Inquire about additional benefits or stock options that might be available.",
+        "urgency": "medium",
+        "rationale": "The wearer is at a critical point where they can negotiate the terms of the offer. Asking about flexibility and additional benefits can lead to a more favorable package."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a better salary package",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Express appreciation for the offer and ask if there's flexibility in the base salary or bonus.",
+        "recommendation_2": "Inquire about additional benefits or perks that might be negotiable, such as stock options or professional development opportunities.",
+        "urgency": "medium",
+        "rationale": "This is a critical moment to negotiate terms before accepting the offer. Engaging in negotiation now can lead to a better overall package."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a higher salary offer",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Express appreciation for the offer and highlight specific achievements or skills that justify your desired salary.",
+        "recommendation_2": "Ask if there is flexibility in the offer, particularly regarding the base salary, to open up the conversation for further negotiation.",
+        "urgency": "medium",
+        "rationale": "This is a critical moment in the negotiation process where the wearer has expressed a counter-offer. Providing additional context and opening the door for further discussion can strengthen their position."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a higher salary offer",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Express appreciation for their flexibility and ask if they can explore options to get closer to 160K, perhaps through additional benefits or stock options.",
+        "recommendation_2": "Inquire about the possibility of a performance review after 6 months that could lead to a salary adjustment.",
+        "urgency": "medium",
+        "rationale": "This is a critical moment in the negotiation where the wearer can leverage the employer's stated flexibility to potentially improve the offer."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.\n[00:53.00] P1: I understand bands can be tight. Would it help if we talked about the total comp? I'm also interested in equity and the signing bonus if that's on the table.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a higher total compensation package including base salary, equity, and signing bonus",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 3,
+        "recommendation_mode": "both",
+        "recommendation_1": "say: 'I appreciate the flexibility on your end. Could we explore increasing the base salary to 150K and discuss potential equity options to make the total package more competitive?'",
+        "recommendation_2": "know: Be aware that discussing equity and signing bonuses can often provide additional leverage in negotiations, especially if the base salary is at the top of their band.",
+        "urgency": "medium",
+        "rationale": "This is a critical moment in the negotiation where the wearer can leverage the company's flexibility to improve the offer. Addressing both salary and equity can maximize the total compensation package."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.\n[00:53.00] P1: I understand bands can be tight. Would it help if we talked about the total comp? I'm also interested in equity and the signing bonus if that's on the table.\n[01:03.00] P2: Yeah absolutely. We can do 20K in RSUs vesting over four years and I might be able to get a 10K signing bonus approved.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a better compensation package including salary, equity, and signing bonus",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Express appreciation for the offer and reiterate your enthusiasm for the role, then ask if there's room to increase the equity component or explore other benefits like additional vacation days.",
+        "recommendation_2": "Ask if there's flexibility in the timeline for making a decision, to allow time for considering the offer and any potential counteroffers.",
+        "urgency": "medium",
+        "rationale": "This is a critical moment in the negotiation where the wearer can leverage the employer's flexibility to improve the offer further."
+      }
+    },
+    {
+      "elapsed": 70.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.\n[00:53.00] P1: I understand bands can be tight. Would it help if we talked about the total comp? I'm also interested in equity and the signing bonus if that's on the table.\n[01:03.00] P2: Yeah absolutely. We can do 20K in RSUs vesting over four years and I might be able to get a 10K signing bonus approved.\n[01:12.00] P1: That's helpful. What about the base though? Could we meet at 155?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a higher base salary and better overall compensation package",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Emphasize your unique skills and contributions that justify the higher base salary, such as specific projects or leadership roles you've excelled in.",
+        "recommendation_2": "Ask if there are other forms of compensation or benefits that could be adjusted to meet your expectations, like additional RSUs or increased bonus percentage.",
+        "urgency": "medium",
+        "rationale": "This moment is crucial as the wearer is negotiating for a higher salary, and effectively communicating their value and exploring all compensation options can lead to a better offer."
+      }
+    },
+    {
+      "elapsed": 80.0,
+      "check_number": 8,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.\n[00:53.00] P1: I understand bands can be tight. Would it help if we talked about the total comp? I'm also interested in equity and the signing bonus if that's on the table.\n[01:03.00] P2: Yeah absolutely. We can do 20K in RSUs vesting over four years and I might be able to get a 10K signing bonus approved.\n[01:12.00] P1: That's helpful. What about the base though? Could we meet at 155?\n[01:17.00] P2: Let me take that back to the comp team. I think 150 base might be doable.\n[01:22.00] P1: I could work with 150 if we can firm up the equity and signing bonus.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a better compensation package for the job offer",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Before agreeing to the 150K base, confirm if the equity and signing bonus can be increased or if there are other benefits that can be negotiated.",
+        "recommendation_2": "Express appreciation for the offer and ask if there are any additional perks or professional development opportunities that could be included to enhance the overall package.",
+        "urgency": "medium",
+        "rationale": "The wearer is close to accepting the offer at 150K base but should ensure all components of the compensation package are maximized before committing."
+      }
+    },
+    {
+      "elapsed": 82.0,
+      "check_number": 9,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.\n[00:53.00] P1: I understand bands can be tight. Would it help if we talked about the total comp? I'm also interested in equity and the signing bonus if that's on the table.\n[01:03.00] P2: Yeah absolutely. We can do 20K in RSUs vesting over four years and I might be able to get a 10K signing bonus approved.\n[01:12.00] P1: That's helpful. What about the base though? Could we meet at 155?\n[01:17.00] P2: Let me take that back to the comp team. I think 150 base might be doable.\n[01:22.00] P1: I could work with 150 if we can firm up the equity and signing bonus.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "negotiate a better compensation package including base salary, equity, and signing bonus",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is effectively negotiating and has already made progress in increasing the base salary and discussing additional compensation components. There is no clear signal indicating a need for intervention at this moment."
+      }
+    }
+  ]
+}

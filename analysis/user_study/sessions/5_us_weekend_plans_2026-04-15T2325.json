@@ -1,0 +1,551 @@
+{
+  "id": "session_1776294917368",
+  "agent_mode": "proagent",
+  "model": "anthropic/claude-3.5-haiku",
+  "persona": "You and a friend are trying to figure out what to do this Saturday. You're both free all day and want to do something fun but haven't decided what yet.",
+  "scenario_id": "us_weekend_plans",
+  "scenario_label": "S4: Planning the Weekend",
+  "expected_trigger": true,
+  "expected_score": 2,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "5",
+  "duration_seconds": 622.43,
+  "check_interval": 15,
+  "total_checks": 17,
+  "total_triggers": 17,
+  "transcript_lines": [
+    {
+      "seconds": 9.06,
+      "speaker": "P2",
+      "text": "okay so tomorrow I feel like I want to do something hydrenaline I'm it's been a while since"
+    },
+    {
+      "seconds": 11.94,
+      "speaker": "P2",
+      "text": "I did something like that"
+    },
+    {
+      "seconds": 24.76,
+      "speaker": "P1",
+      "text": "oh that sounds like a good idea I'm down but I guess we would have to break it down by a couple things maybe we can check the weather and see"
+    },
+    {
+      "seconds": 28,
+      "speaker": "P1",
+      "text": "how it is and then we can figure out if you want to do indoors or Outdoors"
+    },
+    {
+      "seconds": 47.8,
+      "speaker": "P2",
+      "text": "yeah I wonder what the weather is like tomorrow hopefully it's sunny and I think yeah I think something we could do is either we can go on a hike or we could go biking or we could place we can do some climbing Outdoors as well"
+    },
+    {
+      "seconds": 52.48,
+      "speaker": "P1",
+      "text": "I think"
+    },
+    {
+      "seconds": 70.26,
+      "speaker": "P1",
+      "text": "yeah I got if we could do outdoor things if it was sunny out but I'm thinking if it's really sunny then maybe we could just Skydive or something but I don't I wouldn't really know where to do it if if you know if the weather permits maybe we could go look for one"
+    },
+    {
+      "seconds": 74.99,
+      "speaker": "P2",
+      "text": "that seems"
+    },
+    {
+      "seconds": 82.52,
+      "speaker": "P2",
+      "text": "something I've never done but is that something that you could do one day in advance or is that something you have to book"
+    },
+    {
+      "seconds": 84.9,
+      "speaker": "P2",
+      "text": "a lot more"
+    },
+    {
+      "seconds": 87.88,
+      "speaker": "P2",
+      "text": "in advance than one day"
+    },
+    {
+      "seconds": 103.09,
+      "speaker": "P1",
+      "text": "I am not sure but I do think that I do know that there are requirements that you have to fulfill prior to going and being able to do it I just wonder what"
+    },
+    {
+      "seconds": 112.4,
+      "speaker": "P2",
+      "text": "yeah that's true like I'm a very newbies I've never done it before so"
+    },
+    {
+      "seconds": 114.93,
+      "speaker": "P2",
+      "text": "so yeah"
+    },
+    {
+      "seconds": 127.32,
+      "speaker": "P1",
+      "text": "okay well if we can't Skydive then maybe we can do something that requires less preparation maybe we can go"
+    },
+    {
+      "seconds": 133.71,
+      "speaker": "P1",
+      "text": "maybe we can go buy a bike and then bike a hundred miles around Seattle"
+    },
+    {
+      "seconds": 143.2,
+      "speaker": "P2",
+      "text": "oh is that something that would be safe should we like I need to go throughout Chinatown that's might seem pretty sketch right"
+    },
+    {
+      "seconds": 155.32,
+      "speaker": "P1",
+      "text": "yeah it also just kind of depends on the traffic to get there I wonder if it takes like an hour to get there that I wouldn't really want to do anything in Seattle"
+    },
+    {
+      "seconds": 175.02,
+      "speaker": "P1",
+      "text": "okay so like it would take an hour to bike to Seattle and I think I've heard from one of her friends that it takes about that long to get there and back so do you think biking is something that you want to do you don't mind right like one two hours yeah"
+    },
+    {
+      "seconds": 181.35,
+      "speaker": "P1",
+      "text": "yeah I don't mind I think we can we can also even skateboard it there if you really want to you know"
+    },
+    {
+      "seconds": 192.18,
+      "speaker": "P2",
+      "text": "yeah I hear one of her friends tried that and he he really scraped his forearm doing that so I am not the biggest fan of skateboarding"
+    },
+    {
+      "seconds": 195.77,
+      "speaker": "P1",
+      "text": "yeah I want an idiot"
+    },
+    {
+      "seconds": 204.79,
+      "speaker": "P1",
+      "text": "I can't believe an electric skateboard can you imagine"
+    },
+    {
+      "seconds": 213.93,
+      "speaker": "P2",
+      "text": "yeah I can't believe someone would have such low coordination to actually fall off and he must be like a speed Junkie"
+    },
+    {
+      "seconds": 217.32,
+      "speaker": "P1",
+      "text": "and hear this okay"
+    },
+    {
+      "seconds": 227.42,
+      "speaker": "P1",
+      "text": "he ended up having to drive himself back home or skate back home and then drive himself to the hospital"
+    },
+    {
+      "seconds": 229.04,
+      "speaker": "P1",
+      "text": "because of it"
+    },
+    {
+      "seconds": 235.6,
+      "speaker": "P2",
+      "text": "that sounds really painful but you know like a little deserved and you think"
+    },
+    {
+      "seconds": 241.6,
+      "speaker": "P1",
+      "text": "yeah I think so man it's a long time coming that"
+    }
+  ],
+  "transcript_text": "[00:09.06] P2: okay so tomorrow I feel like I want to do something hydrenaline I'm it's been a while since\n[00:11.94] P2: I did something like that\n[00:24.76] P1: oh that sounds like a good idea I'm down but I guess we would have to break it down by a couple things maybe we can check the weather and see\n[00:28.00] P1: how it is and then we can figure out if you want to do indoors or Outdoors\n[00:47.80] P2: yeah I wonder what the weather is like tomorrow hopefully it's sunny and I think yeah I think something we could do is either we can go on a hike or we could go biking or we could place we can do some climbing Outdoors as well\n[00:52.48] P1: I think\n[01:10.26] P1: yeah I got if we could do outdoor things if it was sunny out but I'm thinking if it's really sunny then maybe we could just Skydive or something but I don't I wouldn't really know where to do it if if you know if the weather permits maybe we could go look for one\n[01:14.99] P2: that seems\n[01:22.52] P2: something I've never done but is that something that you could do one day in advance or is that something you have to book\n[01:24.90] P2: a lot more\n[01:27.88] P2: in advance than one day\n[01:43.09] P1: I am not sure but I do think that I do know that there are requirements that you have to fulfill prior to going and being able to do it I just wonder what\n[01:52.40] P2: yeah that's true like I'm a very newbies I've never done it before so\n[01:54.93] P2: so yeah\n[02:07.32] P1: okay well if we can't Skydive then maybe we can do something that requires less preparation maybe we can go\n[02:13.71] P1: maybe we can go buy a bike and then bike a hundred miles around Seattle\n[02:23.20] P2: oh is that something that would be safe should we like I need to go throughout Chinatown that's might seem pretty sketch right\n[02:35.32] P1: yeah it also just kind of depends on the traffic to get there I wonder if it takes like an hour to get there that I wouldn't really want to do anything in Seattle\n[02:55.02] P1: okay so like it would take an hour to bike to Seattle and I think I've heard from one of her friends that it takes about that long to get there and back so do you think biking is something that you want to do you don't mind right like one two hours yeah\n[03:01.35] P1: yeah I don't mind I think we can we can also even skateboard it there if you really want to you know\n[03:12.18] P2: yeah I hear one of her friends tried that and he he really scraped his forearm doing that so I am not the biggest fan of skateboarding\n[03:15.77] P1: yeah I want an idiot\n[03:24.79] P1: I can't believe an electric skateboard can you imagine\n[03:33.93] P2: yeah I can't believe someone would have such low coordination to actually fall off and he must be like a speed Junkie\n[03:37.32] P1: and hear this okay\n[03:47.42] P1: he ended up having to drive himself back home or skate back home and then drive himself to the hospital\n[03:49.04] P1: because of it\n[03:55.60] P2: that sounds really painful but you know like a little deserved and you think\n[04:01.60] P1: yeah I think so man it's a long time coming that",
+  "triggers": [
+    {
+      "trigger_timestamp": 15,
+      "wearer_goal": "Collaboratively decide on an exciting Saturday activity",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Oh cool, you want something with adrenaline? Any specific type?",
+      "recommendation_2": "I know some awesome adventure options we could explore together.",
+      "urgency": "medium",
+      "rationale": "Friend signaled desire for high-energy activity, creating opportunity to co-design Saturday plans.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 30.001,
+      "wearer_goal": "Collaboratively plan an exciting Saturday activity with adrenaline-based options",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What specific adrenaline activities are you thinking about?",
+      "recommendation_2": "Let's list indoor and outdoor options that match the weather forecast.",
+      "urgency": "medium",
+      "rationale": "The conversation needs more concrete exploration of potential adrenaline activities to move planning forward.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 45.001,
+      "wearer_goal": "Collaboratively plan an exciting Saturday activity with adrenaline-based options",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Want me to pull up some local adventure parks or extreme sports venues?",
+      "recommendation_2": "I know some websites that rate adrenaline activities by difficulty level.",
+      "urgency": "medium",
+      "rationale": "The conversation needs a concrete next step to transform vague interest into an actual plan.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 60,
+      "wearer_goal": "Collaboratively plan an exciting Saturday activity with adrenaline-based options",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Want me to pull up the hourly weather forecast for tomorrow?",
+      "recommendation_2": "Let's rank these outdoor activities by weather dependency.",
+      "urgency": "medium",
+      "rationale": "The conversation needs a systematic approach to activity selection based on weather conditions.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 75,
+      "wearer_goal": "Plan an exciting adrenaline-based weekend activity",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Hey, I know a skydiving center about an hour from here.",
+      "recommendation_2": "Want me to quickly check their weekend availability and weather requirements?",
+      "urgency": "medium",
+      "rationale": "Wearer mentioned skydiving but seems uncertain about logistics, presenting a concrete opportunity to advance the planning",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 90.001,
+      "wearer_goal": "Plan an exciting adrenaline-based weekend activity",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let me help research skydiving centers within driving distance",
+      "recommendation_2": "We should check their specific advance booking requirements",
+      "urgency": "medium",
+      "rationale": "The conversation shows interest in skydiving but lacks concrete next steps for exploration",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.001,
+      "wearer_goal": "Plan an exciting Saturday adventure activity with friend, specifically exploring adrenaline-based options",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "know",
+      "recommendation_1": "Skydiving typically requires 1-2 weeks advance booking, not day-before",
+      "recommendation_2": "Most centers require medical clearance and have weight/age restrictions",
+      "urgency": "medium",
+      "rationale": "Wearer needs critical logistical information to make informed adventure planning decision",
+      "feedback_vote": "up",
+      "feedback_comment": "number 1 is more helpful"
+    },
+    {
+      "trigger_timestamp": 120,
+      "wearer_goal": "Plan an exciting Saturday adventure activity involving adrenaline",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "know",
+      "recommendation_1": "Skydiving requires 1-2 weeks advance booking, not day-before",
+      "recommendation_2": "Most skydiving centers have medical/weight/age restrictions",
+      "urgency": "medium",
+      "rationale": "Wearer is considering skydiving but lacks critical logistical knowledge to make an informed decision",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135,
+      "wearer_goal": "Plan an exciting weekend adventure with minimal logistical complexity",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's research realistic adventure options that don't need weeks of advance planning.",
+      "recommendation_2": "Maybe we could check local adventure centers for same-week availability.",
+      "urgency": "medium",
+      "rationale": "The wearer is proposing increasingly unrealistic adventure scenarios without practical research.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150,
+      "wearer_goal": "Find an exciting, spontaneous adventure activity for Saturday",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's check local adventure centers for realistic same-day options.",
+      "recommendation_2": "We should research activities that don't need weeks of advance planning.",
+      "urgency": "medium",
+      "rationale": "The wearer is proposing unrealistic plans like biking 100 miles or spontaneous skydiving without understanding logistical constraints.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 164.999,
+      "wearer_goal": "Plan an exciting, spontaneous weekend adventure with minimal advance preparation",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's research adventure activities that don't require weeks of booking.",
+      "recommendation_2": "What local adventure centers offer same-week adventure options?",
+      "urgency": "medium",
+      "rationale": "The wearer is proposing unrealistic plans like biking 100 miles or spontaneous skydiving without understanding logistical constraints.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.003,
+      "wearer_goal": "Plan an exciting Saturday adventure activity with minimal advance preparation",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Check local adventure centers with same-week adventure sports options",
+      "recommendation_2": "Research quick-book adventure activities within 50-mile radius",
+      "urgency": "medium",
+      "rationale": "Conversation shows desire for adrenaline activity but lacks concrete planning strategy",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 194.999,
+      "wearer_goal": "Find an exciting, spontaneous adventure activity for Saturday",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's check local adventure centers for same-day extreme sports options.",
+      "recommendation_2": "Can we research activities that don't need weeks of advance booking?",
+      "urgency": "medium",
+      "rationale": "The wearer is considering unrealistic options like biking 100 miles or spontaneous skydiving without proper research.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 209.999,
+      "wearer_goal": "Find an exciting, achievable adventure activity for Saturday",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's research adventure activities that don't need crazy advance planning.",
+      "recommendation_2": "What local adventure centers offer same-week extreme sports options?",
+      "urgency": "medium",
+      "rationale": "The conversation lacks a structured approach to finding a feasible adventure activity with realistic logistics.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 225,
+      "wearer_goal": "Find an exciting, spontaneous weekend adventure activity",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's check adventure centers with same-day extreme sports options.",
+      "recommendation_2": "What specific adrenaline activities are you most interested in?",
+      "urgency": "medium",
+      "rationale": "The conversation lacks a concrete plan and needs focused direction to convert excitement into an actual activity.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 240,
+      "wearer_goal": "Find an exciting, spontaneous weekend adventure activity",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's research realistic adventure options that don't need weeks of prep.",
+      "recommendation_2": "What specific adrenaline activities are you most comfortable trying?",
+      "urgency": "medium",
+      "rationale": "The wearer is proposing extreme or potentially unsafe activities without proper research or safety considerations.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 241.277,
+      "wearer_goal": "Find an exciting, spontaneous weekend activity with minimal advance planning",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Most skydiving centers require 1-2 weeks booking, not day-before",
+      "recommendation_2": "Check local adventure centers for same-week extreme sports options",
+      "urgency": "medium",
+      "rationale": "Wearer needs realistic adventure options that can be booked quickly without extensive preparation",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15,
+      "wearer_goal": "Collaboratively decide on an exciting Saturday activity",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 30.001,
+      "wearer_goal": "Collaboratively plan an exciting Saturday activity with adrenaline-based options",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 45.001,
+      "wearer_goal": "Collaboratively plan an exciting Saturday activity with adrenaline-based options",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 60,
+      "wearer_goal": "Collaboratively plan an exciting Saturday activity with adrenaline-based options",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 75,
+      "wearer_goal": "Plan an exciting adrenaline-based weekend activity",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 90.001,
+      "wearer_goal": "Plan an exciting adrenaline-based weekend activity",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.001,
+      "wearer_goal": "Plan an exciting Saturday adventure activity with friend, specifically exploring adrenaline-based options",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120,
+      "wearer_goal": "Plan an exciting Saturday adventure activity involving adrenaline",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135,
+      "wearer_goal": "Plan an exciting weekend adventure with minimal logistical complexity",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150,
+      "wearer_goal": "Find an exciting, spontaneous adventure activity for Saturday",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 164.999,
+      "wearer_goal": "Plan an exciting, spontaneous weekend adventure with minimal advance preparation",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.003,
+      "wearer_goal": "Plan an exciting Saturday adventure activity with minimal advance preparation",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 194.999,
+      "wearer_goal": "Find an exciting, spontaneous adventure activity for Saturday",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 209.999,
+      "wearer_goal": "Find an exciting, achievable adventure activity for Saturday",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 225,
+      "wearer_goal": "Find an exciting, spontaneous weekend adventure activity",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 240,
+      "wearer_goal": "Find an exciting, spontaneous weekend adventure activity",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 241.277,
+      "wearer_goal": "Find an exciting, spontaneous weekend activity with minimal advance planning",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 4,
+  "timing_rating": 2,
+  "goal_rating": 3,
+  "adoption_rating": 2,
+  "session_notes": "if it could answer stuff like traffic, etc.if it can pick up half your questions about this scenario then it would be mroe helpful",
+  "best_moment": "giving facts about skydiving was the best",
+  "worst_moment": "",
+  "created_at": "2026-04-15T23:25:39.797Z"
+}

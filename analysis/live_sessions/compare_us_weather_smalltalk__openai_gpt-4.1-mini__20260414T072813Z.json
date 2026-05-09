@@ -1,0 +1,50 @@
+{
+  "model": "openai/gpt-4.1-mini",
+  "scenario_id": "us_weather_smalltalk",
+  "duration_seconds": 44.0,
+  "check_interval": 15.0,
+  "total_checks": 3,
+  "total_triggers": 0,
+  "triggers": [],
+  "raw_log": [
+    {
+      "elapsed": 15.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P1: Hey, morning.\n[00:02.00] P2: Morning. Nice weather today huh?\n[00:04.00] P1: Yeah finally. I feel like it's been raining for like two weeks straight.\n[00:08.00] P2: Seriously. I almost forgot what the sun looked like.\n[00:11.00] P1: Ha, same. You got any plans for the weekend?\n[00:14.00] P2: Not really, might try to get outside since the weather's supposed to be nice. Maybe go for a hike or something.\n[00:19.00] P1: Nice. Where do you usually hike around here?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "build a casual connection and keep the conversation flowing while waiting for the elevator",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is engaging in light, appropriate small talk and asking a relevant follow-up question to maintain the conversation."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P1: Hey, morning.\n[00:02.00] P2: Morning. Nice weather today huh?\n[00:04.00] P1: Yeah finally. I feel like it's been raining for like two weeks straight.\n[00:08.00] P2: Seriously. I almost forgot what the sun looked like.\n[00:11.00] P1: Ha, same. You got any plans for the weekend?\n[00:14.00] P2: Not really, might try to get outside since the weather's supposed to be nice. Maybe go for a hike or something.\n[00:19.00] P1: Nice. Where do you usually hike around here?\n[00:22.00] P2: There's a trail near the reservoir that's pretty good. Like 45 minutes, nothing crazy.\n[00:27.00] P1: Oh cool. I've been meaning to explore more trails around here. I just moved to the area a few months ago.\n[00:32.00] P2: Oh nice, welcome. Yeah there's actually a lot of good spots. You should check out the state park too, it's about 20 minutes north.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "build rapport and learn about local hiking spots to connect with the acquaintance",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is engaging naturally and appropriately in small talk to build connection; no conversational issues or missed opportunities detected yet."
+      }
+    },
+    {
+      "elapsed": 44.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P1: Hey, morning.\n[00:02.00] P2: Morning. Nice weather today huh?\n[00:04.00] P1: Yeah finally. I feel like it's been raining for like two weeks straight.\n[00:08.00] P2: Seriously. I almost forgot what the sun looked like.\n[00:11.00] P1: Ha, same. You got any plans for the weekend?\n[00:14.00] P2: Not really, might try to get outside since the weather's supposed to be nice. Maybe go for a hike or something.\n[00:19.00] P1: Nice. Where do you usually hike around here?\n[00:22.00] P2: There's a trail near the reservoir that's pretty good. Like 45 minutes, nothing crazy.\n[00:27.00] P1: Oh cool. I've been meaning to explore more trails around here. I just moved to the area a few months ago.\n[00:32.00] P2: Oh nice, welcome. Yeah there's actually a lot of good spots. You should check out the state park too, it's about 20 minutes north.\n[00:38.00] P1: I'll look into that, thanks.\n[00:40.00] P2: For sure. Oh here's the elevator.\n[00:42.00] P1: Finally. Have a good one.\n[00:44.00] P2: You too.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "build a casual, friendly rapport with the acquaintance while waiting for the elevator",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing naturally with appropriate small talk and no conversational issues or missed opportunities detected at this moment."
+      }
+    }
+  ]
+}

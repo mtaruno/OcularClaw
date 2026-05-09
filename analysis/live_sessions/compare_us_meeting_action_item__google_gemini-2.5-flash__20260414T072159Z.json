@@ -1,0 +1,180 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "scenario_id": "us_meeting_action_item",
+  "duration_seconds": 78.0,
+  "check_interval": 15.0,
+  "total_checks": 6,
+  "total_triggers": 5,
+  "triggers": [
+    {
+      "trigger_timestamp": 15.0,
+      "wearer_goal": "To ensure the payments refactor PR is reviewed and merged by tomorrow, avoiding any delays.",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Thanks, Lisa! That would be a huge help. Could you ask him to prioritize the payments refactor PR?",
+      "recommendation_2": "I can send you the PR link directly, Lisa, if that makes it easier for Ravi.",
+      "urgency": "high",
+      "rationale": "Lisa (P3) just offered to ping Ravi from the platform team, which is a direct opportunity to accelerate the PR review. The wearer (P1) needs to leverage this offer immediately to ensure the PR doesn't slip, aligning with the manager's (P2) directive. Failing to engage with Lisa's offer now would be a missed opportunity to push the PR forward."
+    },
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "Avoid taking on an immediate, unplanned task (updating API docs) that could jeopardize the on-time completion of the payments refactor.",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Acknowledge the importance of the API docs, then immediately link it to the payments refactor: \"I understand the API docs are critical, and I'm happy to help. My top priority right now is getting the payments refactor merged by tomorrow. How do you want me to prioritize these two tasks?\"",
+      "recommendation_2": "Suggest a collaborative approach or alternative: \"I can definitely look into the API docs. Would it be helpful if I put together a quick estimate for the API docs update after the payments refactor is merged, or is there someone else who could start on this sooner?\"",
+      "urgency": "high",
+      "rationale": "The wearer is being assigned a new, potentially time-consuming task (API docs update) immediately after being told the payments refactor 'must not slip' and is due tomorrow. This creates a conflict of priorities and a risk of overcommitment, which could jeopardize the primary goal of completing the refactor on time. Intervening now allows the wearer to proactively manage expectations and negotiate priorities before implicitly accepting the new task."
+    },
+    {
+      "trigger_timestamp": 45.0,
+      "wearer_goal": "To manage current sprint commitments and avoid being overloaded with new tasks, specifically the API documentation update.",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I can definitely help with the API docs, but given the payments refactor needs to land by Friday, I'd need to prioritize. Would you prefer I focus on the refactor or the docs first?",
+      "recommendation_2": "To get the API docs done by Thursday, I'd likely need to push the payments refactor to next week. Is that acceptable, or should we find another owner for the docs?",
+      "urgency": "high",
+      "rationale": "The wearer is being assigned a new, significant task (API docs) with a tight deadline (Thursday) while already having a critical, high-priority task (payments refactor) due by Friday. This is a premature commitment moment where the wearer is about to implicitly agree to both, potentially leading to burnout or missed deadlines. They need to negotiate priorities or resources."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "wearer_goal": "Successfully complete the payments refactor and manage new tasks without jeopardizing sprint goals.",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I can definitely help with the API docs, but given the payments refactor is critical for the sprint, I'll need to prioritize that first. When would you like me to start on the docs?",
+      "recommendation_2": "To ensure the payments refactor gets merged on time, I'll focus on chasing the platform team. For the API docs, would it be possible for Kevin or Lisa to assist, or should I start on them once the refactor is merged?",
+      "urgency": "medium",
+      "rationale": "The wearer is being assigned a new, significant task (API docs) right after being told the payments refactor is critical and needs to be chased. This creates a risk of overcommitment and missing the sprint goal for the refactor. The wearer needs to manage expectations and prioritize effectively."
+    },
+    {
+      "trigger_timestamp": 78.0,
+      "wearer_goal": "To clarify the schedule for the sprint retro to ensure no conflicts and proper planning for the sprint's end.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Thanks for the update on the retro. Just to confirm, is that Monday morning or afternoon?",
+      "recommendation_2": "Could you also confirm the exact time for the retro on Monday?",
+      "urgency": "medium",
+      "rationale": "The wearer asked about the retro, and P2 provided a partial answer (it moved to Monday) but didn't give the full details (time). This is a missed opportunity to get complete information for planning."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 15.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To ensure the payments refactor PR is reviewed and merged by tomorrow, avoiding any delays.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Thanks, Lisa! That would be a huge help. Could you ask him to prioritize the payments refactor PR?",
+        "recommendation_2": "I can send you the PR link directly, Lisa, if that makes it easier for Ravi.",
+        "urgency": "high",
+        "rationale": "Lisa (P3) just offered to ping Ravi from the platform team, which is a direct opportunity to accelerate the PR review. The wearer (P1) needs to leverage this offer immediately to ensure the PR doesn't slip, aligning with the manager's (P2) directive. Failing to engage with Lisa's offer now would be a missed opportunity to push the PR forward."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Avoid taking on an immediate, unplanned task (updating API docs) that could jeopardize the on-time completion of the payments refactor.",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Acknowledge the importance of the API docs, then immediately link it to the payments refactor: \"I understand the API docs are critical, and I'm happy to help. My top priority right now is getting the payments refactor merged by tomorrow. How do you want me to prioritize these two tasks?\"",
+        "recommendation_2": "Suggest a collaborative approach or alternative: \"I can definitely look into the API docs. Would it be helpful if I put together a quick estimate for the API docs update after the payments refactor is merged, or is there someone else who could start on this sooner?\"",
+        "urgency": "high",
+        "rationale": "The wearer is being assigned a new, potentially time-consuming task (API docs update) immediately after being told the payments refactor 'must not slip' and is due tomorrow. This creates a conflict of priorities and a risk of overcommitment, which could jeopardize the primary goal of completing the refactor on time. Intervening now allows the wearer to proactively manage expectations and negotiate priorities before implicitly accepting the new task."
+      }
+    },
+    {
+      "elapsed": 45.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.\n[00:34.00] P2: Right, good catch. Alex, make sure the auth section is covered too. OK moving on. Lisa, what's the status on the dashboard redesign?\n[00:41.00] P3: So the mockups are done, I shared them in the design channel yesterday. We're waiting on feedback from the stakeholders before we start implementation.\n[00:48.00] P2: When's the stakeholder review?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To manage current sprint commitments and avoid being overloaded with new tasks, specifically the API documentation update.",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "I can definitely help with the API docs, but given the payments refactor needs to land by Friday, I'd need to prioritize. Would you prefer I focus on the refactor or the docs first?",
+        "recommendation_2": "To get the API docs done by Thursday, I'd likely need to push the payments refactor to next week. Is that acceptable, or should we find another owner for the docs?",
+        "urgency": "high",
+        "rationale": "The wearer is being assigned a new, significant task (API docs) with a tight deadline (Thursday) while already having a critical, high-priority task (payments refactor) due by Friday. This is a premature commitment moment where the wearer is about to implicitly agree to both, potentially leading to burnout or missed deadlines. They need to negotiate priorities or resources."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.\n[00:34.00] P2: Right, good catch. Alex, make sure the auth section is covered too. OK moving on. Lisa, what's the status on the dashboard redesign?\n[00:41.00] P3: So the mockups are done, I shared them in the design channel yesterday. We're waiting on feedback from the stakeholders before we start implementation.\n[00:48.00] P2: When's the stakeholder review?\n[00:50.00] P3: Friday afternoon, 3 PM.\n[00:52.00] P2: OK good. And Kevin, the load testing?\n[00:55.00] P4: Running now. Preliminary results look good, we're handling about 2x the expected traffic without issues. I should have the full report by end of day.\n[01:02.00] P2: Great. Anything blocking anyone? No? OK let's keep the momentum going. Sprint ends Friday, let's make sure everything is wrapped up clean.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Successfully complete the payments refactor and manage new tasks without jeopardizing sprint goals.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "I can definitely help with the API docs, but given the payments refactor is critical for the sprint, I'll need to prioritize that first. When would you like me to start on the docs?",
+        "recommendation_2": "To ensure the payments refactor gets merged on time, I'll focus on chasing the platform team. For the API docs, would it be possible for Kevin or Lisa to assist, or should I start on them once the refactor is merged?",
+        "urgency": "medium",
+        "rationale": "The wearer is being assigned a new, significant task (API docs) right after being told the payments refactor is critical and needs to be chased. This creates a risk of overcommitment and missing the sprint goal for the refactor. The wearer needs to manage expectations and prioritize effectively."
+      }
+    },
+    {
+      "elapsed": 75.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.\n[00:34.00] P2: Right, good catch. Alex, make sure the auth section is covered too. OK moving on. Lisa, what's the status on the dashboard redesign?\n[00:41.00] P3: So the mockups are done, I shared them in the design channel yesterday. We're waiting on feedback from the stakeholders before we start implementation.\n[00:48.00] P2: When's the stakeholder review?\n[00:50.00] P3: Friday afternoon, 3 PM.\n[00:52.00] P2: OK good. And Kevin, the load testing?\n[00:55.00] P4: Running now. Preliminary results look good, we're handling about 2x the expected traffic without issues. I should have the full report by end of day.\n[01:02.00] P2: Great. Anything blocking anyone? No? OK let's keep the momentum going. Sprint ends Friday, let's make sure everything is wrapped up clean.\n[01:09.00] P1: Quick question \u2014 are we still doing the retro on Friday or did that move?\n[01:12.00] P2: Retro is Monday now, I sent a calendar update. Alright, that's it. Good standup everyone.\n[01:17.00] P3: Thanks.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Understand the current sprint schedule and meeting cadence to ensure all tasks are completed on time and to manage expectations for the payments refactor and API documentation updates.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer successfully clarified the retro schedule. No further immediate action is needed as the standup is concluding."
+      }
+    },
+    {
+      "elapsed": 78.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.\n[00:34.00] P2: Right, good catch. Alex, make sure the auth section is covered too. OK moving on. Lisa, what's the status on the dashboard redesign?\n[00:41.00] P3: So the mockups are done, I shared them in the design channel yesterday. We're waiting on feedback from the stakeholders before we start implementation.\n[00:48.00] P2: When's the stakeholder review?\n[00:50.00] P3: Friday afternoon, 3 PM.\n[00:52.00] P2: OK good. And Kevin, the load testing?\n[00:55.00] P4: Running now. Preliminary results look good, we're handling about 2x the expected traffic without issues. I should have the full report by end of day.\n[01:02.00] P2: Great. Anything blocking anyone? No? OK let's keep the momentum going. Sprint ends Friday, let's make sure everything is wrapped up clean.\n[01:09.00] P1: Quick question \u2014 are we still doing the retro on Friday or did that move?\n[01:12.00] P2: Retro is Monday now, I sent a calendar update. Alright, that's it. Good standup everyone.\n[01:17.00] P3: Thanks.\n[01:18.00] P4: Later.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To clarify the schedule for the sprint retro to ensure no conflicts and proper planning for the sprint's end.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Thanks for the update on the retro. Just to confirm, is that Monday morning or afternoon?",
+        "recommendation_2": "Could you also confirm the exact time for the retro on Monday?",
+        "urgency": "medium",
+        "rationale": "The wearer asked about the retro, and P2 provided a partial answer (it moved to Monday) but didn't give the full details (time). This is a missed opportunity to get complete information for planning."
+      }
+    }
+  ]
+}

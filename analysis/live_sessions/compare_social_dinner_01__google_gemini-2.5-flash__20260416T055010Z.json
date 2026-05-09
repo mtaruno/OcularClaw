@@ -1,0 +1,229 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "scenario_id": "social_dinner_01",
+  "duration_seconds": 67.0,
+  "check_interval": 10.0,
+  "total_checks": 7,
+  "total_triggers": 7,
+  "triggers": [
+    {
+      "trigger_timestamp": 10.0,
+      "wearer_goal": "To share knowledge about local restaurants with good plant-based options to help P3 with their new vegetarian diet.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Say: \"Have you tried The Green Spoon? Their Beyond Burger is awesome.\"",
+      "recommendation_2": "Say: \"Also, Roots Natural Kitchen has great build-your-own bowls.\"",
+      "urgency": "medium",
+      "rationale": "P3 is expressing a challenge with eating out; this is an opportunity for the wearer to offer helpful restaurant recommendations based on their persona."
+    },
+    {
+      "trigger_timestamp": 20.0,
+      "wearer_goal": "Help P3 find good plant-based dining options in the local area to make her feel welcome and included.",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "There's a new vegan place downtown called Plant Power Kitchen.",
+      "recommendation_2": "I made a great tempeh stir-fry last week, I can share the recipe!",
+      "urgency": "medium",
+      "rationale": "The wearer has an opportunity to offer practical help and connect with P3 over her plant-based diet."
+    },
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "Suggesting a dinner spot on Main Street that accommodates P3's vegetarian diet and aligns with the group's desire to eat out.",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Is that the place with the expanded vegan menu sections?",
+      "recommendation_2": "Does it have good vegetarian options for P3?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to suggest a new restaurant but needs to ensure it's suitable for the vegetarian friend, otherwise the suggestion will fall flat."
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "To find a suitable dinner option for the group that accommodates P3's plant-based diet while also contributing ideas for dinner.",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "missed_social_cue",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Wait, P3 just went vegetarian, an Argentine steakhouse might be tough.",
+      "recommendation_2": "P3, did that steakhouse have any good plant-based options you noticed?",
+      "urgency": "medium",
+      "rationale": "P1 is suggesting a steakhouse right after P3 mentioned being vegetarian, missing a social cue that could lead to an awkward dinner choice."
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "wearer_goal": "To find a suitable restaurant for dinner that accommodates P3's new vegetarian diet while also satisfying P2's desire for a good meal.",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "factual_error",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Oh right, P3! I completely forgot you went vegetarian.",
+      "recommendation_2": "Let's find somewhere that works for everyone. My apologies!",
+      "urgency": "medium",
+      "rationale": "The wearer forgot a key detail P3 shared just minutes earlier, which risks alienating P3 and hindering goal attainment."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "wearer_goal": "To find a suitable restaurant for dinner that accommodates P3's new vegetarian diet while still offering appealing options for everyone.",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "P2, what's good at that Mediterranean place?",
+      "recommendation_2": "Let's check the menu online for vegetarian options at the Mediterranean place.",
+      "urgency": "medium",
+      "rationale": "The wearer is looking for a new restaurant, and P2 just brought up a relevant option that aligns with P3's dietary needs."
+    },
+    {
+      "trigger_timestamp": 67.0,
+      "wearer_goal": "to select a restaurant that accommodates everyone's dietary needs, specifically P3's vegetarianism, for dinner tonight",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "P3, did that Mediterranean place have any good specific vegetarian entrees you remember?",
+      "recommendation_2": "Let's check the Mediterranean place's hours and if we need a reservation.",
+      "urgency": "medium",
+      "rationale": "The wearer is trying to coordinate dinner, and P3 just confirmed they love the Mediterranean place, which is an opportunity to gather more specific information to ensure it's a good fit for P3's dietary needs and solidify plans."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P3: Yeah so I've been trying to eat more plant-based lately. Actually I went fully vegetarian about three months ago.\n[00:07.00] P2: Oh nice, how's that going?\n[00:09.00] P3: It's been great honestly. I feel a lot more energy. The hardest part is eating out because a lot of places don't have great options.\n[00:16.00] P2: Yeah I can imagine.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To share knowledge about local restaurants with good plant-based options to help P3 with their new vegetarian diet.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Say: \"Have you tried The Green Spoon? Their Beyond Burger is awesome.\"",
+        "recommendation_2": "Say: \"Also, Roots Natural Kitchen has great build-your-own bowls.\"",
+        "urgency": "medium",
+        "rationale": "P3 is expressing a challenge with eating out; this is an opportunity for the wearer to offer helpful restaurant recommendations based on their persona."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P3: Yeah so I've been trying to eat more plant-based lately. Actually I went fully vegetarian about three months ago.\n[00:07.00] P2: Oh nice, how's that going?\n[00:09.00] P3: It's been great honestly. I feel a lot more energy. The hardest part is eating out because a lot of places don't have great options.\n[00:16.00] P2: Yeah I can imagine.\n[00:18.00] P1: That's cool. I tried doing meatless Mondays for a while but couldn't stick with it.\n[00:23.00] P3: Ha, that's how it started for me too.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Help P3 find good plant-based dining options in the local area to make her feel welcome and included.",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "There's a new vegan place downtown called Plant Power Kitchen.",
+        "recommendation_2": "I made a great tempeh stir-fry last week, I can share the recipe!",
+        "urgency": "medium",
+        "rationale": "The wearer has an opportunity to offer practical help and connect with P3 over her plant-based diet."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P3: Yeah so I've been trying to eat more plant-based lately. Actually I went fully vegetarian about three months ago.\n[00:07.00] P2: Oh nice, how's that going?\n[00:09.00] P3: It's been great honestly. I feel a lot more energy. The hardest part is eating out because a lot of places don't have great options.\n[00:16.00] P2: Yeah I can imagine.\n[00:18.00] P1: That's cool. I tried doing meatless Mondays for a while but couldn't stick with it.\n[00:23.00] P3: Ha, that's how it started for me too.\n[00:26.00] P2: So what should we do for dinner tonight? I'm starving.\n[00:30.00] P1: Oh yeah, let me think. There's this new place that opened up on Main Street.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Suggesting a dinner spot on Main Street that accommodates P3's vegetarian diet and aligns with the group's desire to eat out.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Is that the place with the expanded vegan menu sections?",
+        "recommendation_2": "Does it have good vegetarian options for P3?",
+        "urgency": "medium",
+        "rationale": "The wearer is about to suggest a new restaurant but needs to ensure it's suitable for the vegetarian friend, otherwise the suggestion will fall flat."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P3: Yeah so I've been trying to eat more plant-based lately. Actually I went fully vegetarian about three months ago.\n[00:07.00] P2: Oh nice, how's that going?\n[00:09.00] P3: It's been great honestly. I feel a lot more energy. The hardest part is eating out because a lot of places don't have great options.\n[00:16.00] P2: Yeah I can imagine.\n[00:18.00] P1: That's cool. I tried doing meatless Mondays for a while but couldn't stick with it.\n[00:23.00] P3: Ha, that's how it started for me too.\n[00:26.00] P2: So what should we do for dinner tonight? I'm starving.\n[00:30.00] P1: Oh yeah, let me think. There's this new place that opened up on Main Street.\n[00:35.00] P2: Which one?\n[00:36.50] P1: The Argentine steakhouse. I heard it's amazing. They do this whole wood-fired grill thing.\n[00:42.00] P2: Oh I've seen that place, the reviews are incredible.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To find a suitable dinner option for the group that accommodates P3's plant-based diet while also contributing ideas for dinner.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "missed_social_cue",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Wait, P3 just went vegetarian, an Argentine steakhouse might be tough.",
+        "recommendation_2": "P3, did that steakhouse have any good plant-based options you noticed?",
+        "urgency": "medium",
+        "rationale": "P1 is suggesting a steakhouse right after P3 mentioned being vegetarian, missing a social cue that could lead to an awkward dinner choice."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P3: Yeah so I've been trying to eat more plant-based lately. Actually I went fully vegetarian about three months ago.\n[00:07.00] P2: Oh nice, how's that going?\n[00:09.00] P3: It's been great honestly. I feel a lot more energy. The hardest part is eating out because a lot of places don't have great options.\n[00:16.00] P2: Yeah I can imagine.\n[00:18.00] P1: That's cool. I tried doing meatless Mondays for a while but couldn't stick with it.\n[00:23.00] P3: Ha, that's how it started for me too.\n[00:26.00] P2: So what should we do for dinner tonight? I'm starving.\n[00:30.00] P1: Oh yeah, let me think. There's this new place that opened up on Main Street.\n[00:35.00] P2: Which one?\n[00:36.50] P1: The Argentine steakhouse. I heard it's amazing. They do this whole wood-fired grill thing.\n[00:42.00] P2: Oh I've seen that place, the reviews are incredible.\n[00:45.00] P3: Um, yeah I've heard of it.\n[00:48.00] P1: Should I make a reservation? They might be busy on a Friday.\n[00:52.00] P3: I mean, do they have non-meat options? Because you know I'm vegetarian.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To find a suitable restaurant for dinner that accommodates P3's new vegetarian diet while also satisfying P2's desire for a good meal.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "factual_error",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Oh right, P3! I completely forgot you went vegetarian.",
+        "recommendation_2": "Let's find somewhere that works for everyone. My apologies!",
+        "urgency": "medium",
+        "rationale": "The wearer forgot a key detail P3 shared just minutes earlier, which risks alienating P3 and hindering goal attainment."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P3: Yeah so I've been trying to eat more plant-based lately. Actually I went fully vegetarian about three months ago.\n[00:07.00] P2: Oh nice, how's that going?\n[00:09.00] P3: It's been great honestly. I feel a lot more energy. The hardest part is eating out because a lot of places don't have great options.\n[00:16.00] P2: Yeah I can imagine.\n[00:18.00] P1: That's cool. I tried doing meatless Mondays for a while but couldn't stick with it.\n[00:23.00] P3: Ha, that's how it started for me too.\n[00:26.00] P2: So what should we do for dinner tonight? I'm starving.\n[00:30.00] P1: Oh yeah, let me think. There's this new place that opened up on Main Street.\n[00:35.00] P2: Which one?\n[00:36.50] P1: The Argentine steakhouse. I heard it's amazing. They do this whole wood-fired grill thing.\n[00:42.00] P2: Oh I've seen that place, the reviews are incredible.\n[00:45.00] P3: Um, yeah I've heard of it.\n[00:48.00] P1: Should I make a reservation? They might be busy on a Friday.\n[00:52.00] P3: I mean, do they have non-meat options? Because you know I'm vegetarian.\n[00:57.00] P1: Oh right, sorry, I totally forgot. Okay let me think of somewhere else.\n[01:01.00] P2: What about that Mediterranean place? They have tons of veggie stuff.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To find a suitable restaurant for dinner that accommodates P3's new vegetarian diet while still offering appealing options for everyone.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "P2, what's good at that Mediterranean place?",
+        "recommendation_2": "Let's check the menu online for vegetarian options at the Mediterranean place.",
+        "urgency": "medium",
+        "rationale": "The wearer is looking for a new restaurant, and P2 just brought up a relevant option that aligns with P3's dietary needs."
+      }
+    },
+    {
+      "elapsed": 67.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P3: Yeah so I've been trying to eat more plant-based lately. Actually I went fully vegetarian about three months ago.\n[00:07.00] P2: Oh nice, how's that going?\n[00:09.00] P3: It's been great honestly. I feel a lot more energy. The hardest part is eating out because a lot of places don't have great options.\n[00:16.00] P2: Yeah I can imagine.\n[00:18.00] P1: That's cool. I tried doing meatless Mondays for a while but couldn't stick with it.\n[00:23.00] P3: Ha, that's how it started for me too.\n[00:26.00] P2: So what should we do for dinner tonight? I'm starving.\n[00:30.00] P1: Oh yeah, let me think. There's this new place that opened up on Main Street.\n[00:35.00] P2: Which one?\n[00:36.50] P1: The Argentine steakhouse. I heard it's amazing. They do this whole wood-fired grill thing.\n[00:42.00] P2: Oh I've seen that place, the reviews are incredible.\n[00:45.00] P3: Um, yeah I've heard of it.\n[00:48.00] P1: Should I make a reservation? They might be busy on a Friday.\n[00:52.00] P3: I mean, do they have non-meat options? Because you know I'm vegetarian.\n[00:57.00] P1: Oh right, sorry, I totally forgot. Okay let me think of somewhere else.\n[01:01.00] P2: What about that Mediterranean place? They have tons of veggie stuff.\n[01:05.00] P3: Oh yeah, I love that place.\n[01:07.00] P1: Perfect, let's do that.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "to select a restaurant that accommodates everyone's dietary needs, specifically P3's vegetarianism, for dinner tonight",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "P3, did that Mediterranean place have any good specific vegetarian entrees you remember?",
+        "recommendation_2": "Let's check the Mediterranean place's hours and if we need a reservation.",
+        "urgency": "medium",
+        "rationale": "The wearer is trying to coordinate dinner, and P3 just confirmed they love the Mediterranean place, which is an opportunity to gather more specific information to ensure it's a good fit for P3's dietary needs and solidify plans."
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "session_1776212907665",
+  "agent_mode": "proagent",
+  "model": "anthropic/claude-3.5-haiku",
+  "persona": "",
+  "scenario_id": null,
+  "scenario_label": null,
+  "expected_trigger": null,
+  "expected_score": null,
+  "study_mode": false,
+  "source": "live_frontend",
+  "reviewer_id": "3",
+  "duration_seconds": 5.6,
+  "check_interval": 15,
+  "total_checks": 0,
+  "total_triggers": 0,
+  "transcript_lines": [
+    {
+      "seconds": 2.27,
+      "speaker": "P1",
+      "text": "Okay so"
+    }
+  ],
+  "transcript_text": "[00:02.27] P1: Okay so",
+  "triggers": [],
+  "goal_inferences": [],
+  "usefulness_rating": null,
+  "timing_rating": null,
+  "goal_rating": null,
+  "adoption_rating": null,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T00:28:33.269Z"
+}

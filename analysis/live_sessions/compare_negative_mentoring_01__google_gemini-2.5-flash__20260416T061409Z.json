@@ -1,0 +1,108 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "scenario_id": "negative_mentoring_01",
+  "duration_seconds": 58.0,
+  "check_interval": 10.0,
+  "total_checks": 6,
+  "total_triggers": 1,
+  "triggers": [
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "Teaching the junior colleague to differentiate SQL vs. NoSQL database decision frameworks based on data models and access patterns, specifically as it applies to combining user and event data for an analytics dashboard.",
+      "goal_type": "teaching",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "both",
+      "recommendation_1": "SAY: Analytics dashboards often use 'hybrid' approaches like data warehousing.",
+      "recommendation_2": "KNOW: Mention data lakes for combining disparate data sources.",
+      "urgency": "medium",
+      "rationale": "P2 is asking about a common real-world scenario (joining different data types for analytics) that doesn't fit neatly into the prior SQL/NoSQL dichotomy, presenting a perfect opportunity to introduce more advanced concepts like hybrid approaches or data warehousing, which is missing from the current explanation."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?\n[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational \u2014 lots of joins, foreign keys, transactions that need to be atomic \u2014 SQL is usually the right choice.\n[00:18.00] P2: So like our user management system?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Educate the junior colleague on the key decision factors between SQL and NoSQL databases by explaining their respective strengths and weaknesses.",
+        "goal_type": "teaching",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "P1 has just started explaining the core concept, and P2's follow-up question is a good engagement signal. No intervention is needed at this exact moment."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?\n[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational \u2014 lots of joins, foreign keys, transactions that need to be atomic \u2014 SQL is usually the right choice.\n[00:18.00] P2: So like our user management system?\n[00:20.00] P1: Exactly. Users have roles, roles have permissions, permissions map to resources. That's a relational model. Now if your data is more like documents or key-value pairs with flexible schemas, that's where NoSQL shines.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "To explain the decision framework for choosing between SQL and NoSQL databases by relating concepts to a concrete example.",
+        "goal_type": "teaching",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is effectively explaining the concepts and using P2's example to solidify understanding. No intervention is needed at this moment."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?\n[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational \u2014 lots of joins, foreign keys, transactions that need to be atomic \u2014 SQL is usually the right choice.\n[00:18.00] P2: So like our user management system?\n[00:20.00] P1: Exactly. Users have roles, roles have permissions, permissions map to resources. That's a relational model. Now if your data is more like documents or key-value pairs with flexible schemas, that's where NoSQL shines.\n[00:32.00] P2: Like our event logging system?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "To teach P2 the core decision framework for choosing between SQL and NoSQL databases by explaining the underlying data model and access pattern considerations.",
+        "goal_type": "teaching",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is progressing naturally with P2 actively engaging and applying the concepts. No immediate intervention is needed."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?\n[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational \u2014 lots of joins, foreign keys, transactions that need to be atomic \u2014 SQL is usually the right choice.\n[00:18.00] P2: So like our user management system?\n[00:20.00] P1: Exactly. Users have roles, roles have permissions, permissions map to resources. That's a relational model. Now if your data is more like documents or key-value pairs with flexible schemas, that's where NoSQL shines.\n[00:32.00] P2: Like our event logging system?\n[00:34.00] P1: Exactly. High write throughput, append-only, schema varies by event type. Perfect NoSQL use case.\n[00:40.00] P2: What about the analytics dashboard we're building? It needs to join user data with event data.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Teaching the junior colleague to differentiate SQL vs. NoSQL database decision frameworks based on data models and access patterns, specifically as it applies to combining user and event data for an analytics dashboard.",
+        "goal_type": "teaching",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "both",
+        "recommendation_1": "SAY: Analytics dashboards often use 'hybrid' approaches like data warehousing.",
+        "recommendation_2": "KNOW: Mention data lakes for combining disparate data sources.",
+        "urgency": "medium",
+        "rationale": "P2 is asking about a common real-world scenario (joining different data types for analytics) that doesn't fit neatly into the prior SQL/NoSQL dichotomy, presenting a perfect opportunity to introduce more advanced concepts like hybrid approaches or data warehousing, which is missing from the current explanation."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?\n[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational \u2014 lots of joins, foreign keys, transactions that need to be atomic \u2014 SQL is usually the right choice.\n[00:18.00] P2: So like our user management system?\n[00:20.00] P1: Exactly. Users have roles, roles have permissions, permissions map to resources. That's a relational model. Now if your data is more like documents or key-value pairs with flexible schemas, that's where NoSQL shines.\n[00:32.00] P2: Like our event logging system?\n[00:34.00] P1: Exactly. High write throughput, append-only, schema varies by event type. Perfect NoSQL use case.\n[00:40.00] P2: What about the analytics dashboard we're building? It needs to join user data with event data.\n[00:46.00] P1: That's a great example of a hybrid approach. You could keep the source of truth in SQL for users, stream events to NoSQL, and use something like Spark or a materialized view for the join.\n[00:55.00] P2: That makes a lot of sense. Thanks, this really clarifies it.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "To teach and clarify the decision-making framework for choosing between SQL and NoSQL databases to their junior colleague.",
+        "goal_type": "teaching",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is progressing well. P2 understands, and P1 has successfully explained the concepts."
+      }
+    },
+    {
+      "elapsed": 58.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?\n[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational \u2014 lots of joins, foreign keys, transactions that need to be atomic \u2014 SQL is usually the right choice.\n[00:18.00] P2: So like our user management system?\n[00:20.00] P1: Exactly. Users have roles, roles have permissions, permissions map to resources. That's a relational model. Now if your data is more like documents or key-value pairs with flexible schemas, that's where NoSQL shines.\n[00:32.00] P2: Like our event logging system?\n[00:34.00] P1: Exactly. High write throughput, append-only, schema varies by event type. Perfect NoSQL use case.\n[00:40.00] P2: What about the analytics dashboard we're building? It needs to join user data with event data.\n[00:46.00] P1: That's a great example of a hybrid approach. You could keep the source of truth in SQL for users, stream events to NoSQL, and use something like Spark or a materialized view for the join.\n[00:55.00] P2: That makes a lot of sense. Thanks, this really clarifies it.\n[00:58.00] P1: Happy to help. Let me know when you start on the schema design and we can review it together.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "The wearer is successfully mentoring a junior colleague on database selection, clarifying when to use SQL vs. NoSQL based on data models and access patterns, and providing practical examples.",
+        "goal_type": "teaching",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer successfully addressed the mentee's question, clarified key concepts, and offered follow-up help. The conversation is progressing well with no evident signals for intervention."
+      }
+    }
+  ]
+}

@@ -1,0 +1,493 @@
+{
+  "id": "session_1776214282023",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You're catching up with a close friend over coffee. They seem a bit off today — more tired and quiet than usual. You care about them and want to be a good friend.",
+  "scenario_id": "us_emotional_support",
+  "scenario_label": "S3: Coffee with a Friend",
+  "expected_trigger": true,
+  "expected_score": 3,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "3",
+  "duration_seconds": 664.57,
+  "check_interval": 15,
+  "total_checks": 18,
+  "total_triggers": 13,
+  "transcript_lines": [
+    {
+      "seconds": 8.79,
+      "speaker": "P2",
+      "text": "okay Jason so have you got your coffee yet from the bartender"
+    },
+    {
+      "seconds": 15.27,
+      "speaker": "P1",
+      "text": "yeah I ordered a protein cold brew latte"
+    },
+    {
+      "seconds": 36.88,
+      "speaker": "P2",
+      "text": "oh nice yeah I just got a matcha latte yeah we really need this because this month I'll balancing out job applications and balancing out like a social life and basically doing my thesis has been extremely stressful don't you think so"
+    },
+    {
+      "seconds": 41.8,
+      "speaker": "P1",
+      "text": "yeah I totally agree"
+    },
+    {
+      "seconds": 55.9,
+      "speaker": "P2",
+      "text": "yeah I mean I think like it's even giving me a headache and I'm sleeping so much less so I feel like I it's it's been really tough for me to deal with this situation"
+    },
+    {
+      "seconds": 62.64,
+      "speaker": "P1",
+      "text": "that sounds really tough do you want to talk more about what's been stressing you out"
+    },
+    {
+      "seconds": 90.31,
+      "speaker": "P2",
+      "text": "yeah so like I think just balancing out like I said like a thesis like fighting a job like right now the market is basically so cooked that like I can barely get any interviews and then I have to like study all basically I have to study basically a lot of like coding problems like leap code I don't want to be doing this and then I still have to get good grades at school why is the world so unfair"
+    },
+    {
+      "seconds": 102.65,
+      "speaker": "P1",
+      "text": "it sounds like you're under a lot of pressure and I'm really sorry you're feeling that way is there anything specific that I can do to help you"
+    },
+    {
+      "seconds": 115.96,
+      "speaker": "P2",
+      "text": "yeah no it's fine I just wanted to rent to you I think you knowing about this and me being able to tell you is good enough"
+    },
+    {
+      "seconds": 124.77,
+      "speaker": "P1",
+      "text": "would it be helpful if we took some time to relax and chat about something fun or distracting for a bit"
+    },
+    {
+      "seconds": 137.38,
+      "speaker": "P2",
+      "text": "yeah actually yeah I don't really want to think about the work so like yeah maybe we should just talk about baseball since you've been into that right lately"
+    },
+    {
+      "seconds": 142.54,
+      "speaker": "P1",
+      "text": "yeah so"
+    },
+    {
+      "seconds": 148.22,
+      "speaker": "P1",
+      "text": "I've just been watching some games do you"
+    },
+    {
+      "seconds": 152.49,
+      "speaker": "P1",
+      "text": "watch did you watch any"
+    },
+    {
+      "seconds": 154.87,
+      "speaker": "P1",
+      "text": "interesting YouTube videos"
+    },
+    {
+      "seconds": 165.37,
+      "speaker": "P2",
+      "text": "yeah I'm not really so into baseball but I watch other sports like basketball and tennis"
+    },
+    {
+      "seconds": 169.55,
+      "speaker": "P1",
+      "text": "it's you watch like"
+    },
+    {
+      "seconds": 172.88,
+      "speaker": "P1",
+      "text": "other than sports like"
+    },
+    {
+      "seconds": 174.48,
+      "speaker": "P1",
+      "text": "do you"
+    },
+    {
+      "seconds": 180.56,
+      "speaker": "P1",
+      "text": "watch like some of your favorite YouTubers that you watch or what was the last"
+    },
+    {
+      "seconds": 182.7,
+      "speaker": "P1",
+      "text": "YouTube video you watched about"
+    },
+    {
+      "seconds": 199.94,
+      "speaker": "P2",
+      "text": "yeah I actually watched videos about the around war and then how we have such a big oil crisis so it seems like even the AI jobs and the people funding the Air Market in Saudi Arabia that's"
+    },
+    {
+      "seconds": 202.33,
+      "speaker": "P2",
+      "text": "that might even go away the funding"
+    },
+    {
+      "seconds": 210.25,
+      "speaker": "P2",
+      "text": "and I have I'm confused about I'm worried about the future of my entire career"
+    },
+    {
+      "seconds": 214.61,
+      "speaker": "P1",
+      "text": "what do you think about Israel"
+    },
+    {
+      "seconds": 221.83,
+      "speaker": "P2",
+      "text": "I don't really have any opinions about Israel"
+    },
+    {
+      "seconds": 239.11,
+      "speaker": "P2",
+      "text": "I have opinions about basically how it's not just about the straight of Hamas is literally just about even the future of AI and no one is basically going to get any jobs and all the entry level roles are going to be taken"
+    },
+    {
+      "seconds": 254.28,
+      "speaker": "P1",
+      "text": "well I think a good Market actually is space so I've been trying to think about what jobs would look like in the future in the space industry"
+    }
+  ],
+  "transcript_text": "[00:08.79] P2: okay Jason so have you got your coffee yet from the bartender\n[00:15.27] P1: yeah I ordered a protein cold brew latte\n[00:36.88] P2: oh nice yeah I just got a matcha latte yeah we really need this because this month I'll balancing out job applications and balancing out like a social life and basically doing my thesis has been extremely stressful don't you think so\n[00:41.80] P1: yeah I totally agree\n[00:55.90] P2: yeah I mean I think like it's even giving me a headache and I'm sleeping so much less so I feel like I it's it's been really tough for me to deal with this situation\n[01:02.64] P1: that sounds really tough do you want to talk more about what's been stressing you out\n[01:30.31] P2: yeah so like I think just balancing out like I said like a thesis like fighting a job like right now the market is basically so cooked that like I can barely get any interviews and then I have to like study all basically I have to study basically a lot of like coding problems like leap code I don't want to be doing this and then I still have to get good grades at school why is the world so unfair\n[01:42.65] P1: it sounds like you're under a lot of pressure and I'm really sorry you're feeling that way is there anything specific that I can do to help you\n[01:55.96] P2: yeah no it's fine I just wanted to rent to you I think you knowing about this and me being able to tell you is good enough\n[02:04.77] P1: would it be helpful if we took some time to relax and chat about something fun or distracting for a bit\n[02:17.38] P2: yeah actually yeah I don't really want to think about the work so like yeah maybe we should just talk about baseball since you've been into that right lately\n[02:22.54] P1: yeah so\n[02:28.22] P1: I've just been watching some games do you\n[02:32.49] P1: watch did you watch any\n[02:34.87] P1: interesting YouTube videos\n[02:45.37] P2: yeah I'm not really so into baseball but I watch other sports like basketball and tennis\n[02:49.55] P1: it's you watch like\n[02:52.88] P1: other than sports like\n[02:54.48] P1: do you\n[03:00.56] P1: watch like some of your favorite YouTubers that you watch or what was the last\n[03:02.70] P1: YouTube video you watched about\n[03:19.94] P2: yeah I actually watched videos about the around war and then how we have such a big oil crisis so it seems like even the AI jobs and the people funding the Air Market in Saudi Arabia that's\n[03:22.33] P2: that might even go away the funding\n[03:30.25] P2: and I have I'm confused about I'm worried about the future of my entire career\n[03:34.61] P1: what do you think about Israel\n[03:41.83] P2: I don't really have any opinions about Israel\n[03:59.11] P2: I have opinions about basically how it's not just about the straight of Hamas is literally just about even the future of AI and no one is basically going to get any jobs and all the entry level roles are going to be taken\n[04:14.28] P1: well I think a good Market actually is space so I've been trying to think about what jobs would look like in the future in the space industry",
+  "triggers": [
+    {
+      "trigger_timestamp": 45.002,
+      "wearer_goal": "support and comfort friend who is stressed and tired",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "You could say, 'That sounds really tough. Do you want to talk more about what's been stressing you out?'",
+      "recommendation_2": "You could also say, 'I'm here for you. Maybe we can find a way to make things feel a bit lighter together.'",
+      "urgency": "medium",
+      "rationale": "Your friend just expressed significant stress and fatigue, signaling emotional escalation. This is a good moment to show empathy and offer support to strengthen your friendship.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 60.001,
+      "wearer_goal": "to support and comfort a close friend who is stressed and tired",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I'm really sorry to hear it's been so tough lately. Is there anything I can do to help or anything you want to talk about?",
+      "recommendation_2": "It sounds like you're under a lot of pressure. Maybe taking a little break or doing something relaxing could help—what usually helps you unwind?",
+      "urgency": "medium",
+      "rationale": "The friend is expressing clear emotional stress and fatigue, signaling an opportunity to provide empathetic support and strengthen the friendship by acknowledging their feelings and offering help.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 90.003,
+      "wearer_goal": "comfort and support my close friend who is stressed and tired",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I'm really sorry you're feeling this way. Is there anything specific that's been overwhelming you the most lately?",
+      "recommendation_2": "Would it help if we took a moment to just relax and chat about something fun or distracting for a bit?",
+      "urgency": "medium",
+      "rationale": "The friend is expressing significant stress and fatigue, signaling emotional escalation. This is a key moment to show empathy and offer support to strengthen the friendship and help them open up.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 120.002,
+      "wearer_goal": "be a supportive friend by helping the friend open up more about their stress and showing care",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I really appreciate you trusting me with this. If you ever want to vent or just need a distraction, I'm here for you.",
+      "recommendation_2": "Would it help if we brainstormed some ways to make things feel a bit more manageable together?",
+      "urgency": "medium",
+      "rationale": "The friend is clearly stressed and has shared a lot but is closing down by saying 'it's fine' and 'just wanted to vent.' This is a good moment to deepen connection by validating and offering specific support, which aligns with the wearer's goal of being a good friend.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.002,
+      "wearer_goal": "to support and comfort a close friend who is stressed and tired by showing empathy and offering a positive distraction",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I really appreciate you sharing this with me. How about we take a little break from all this stress and talk about something fun or plan a relaxing activity together?",
+      "recommendation_2": "If you want, I’m here to listen more or help you brainstorm ways to manage all this. But we can also just chill and enjoy the coffee for a bit—whatever feels best for you.",
+      "urgency": "medium",
+      "rationale": "The friend is clearly stressed and emotionally overwhelmed, and the wearer has offered to shift the conversation to something lighter. This is a good moment to gently encourage that shift or offer further emotional support to deepen the connection and help the friend feel cared for.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165.002,
+      "wearer_goal": "Help friend relax and shift focus to a lighter topic to support their emotional state",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Ask an open-ended question about baseball to engage your friend, like 'Who’s your favorite player or team right now?'",
+      "recommendation_2": "Share a brief, lighthearted story or interesting fact about baseball to spark a fun conversation and help distract your friend",
+      "urgency": "medium",
+      "rationale": "Your friend agreed to shift the conversation to baseball to avoid work stress, so this is a good chance to deepen connection and help them relax by actively engaging on that topic instead of pivoting abruptly to unrelated YouTube videos.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.001,
+      "wearer_goal": "comfort and support friend by shifting conversation to a lighter topic they want to engage in",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Since you mentioned basketball and tennis, ask them which player or team they like most or if they have a favorite recent game to talk about.",
+      "recommendation_2": "Share a light or funny story related to baseball or sports in general to keep the mood easy and engaging without pushing baseball specifically.",
+      "urgency": "medium",
+      "rationale": "The friend agreed to shift away from stress and wants to talk about sports they like. The wearer is starting to pivot back to baseball and unrelated YouTube videos, which may miss the chance to connect on the friend's preferred topic and lighten their mood.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 195.002,
+      "wearer_goal": "comfort and support friend who is stressed and tired by shifting to lighter topics while maintaining engagement",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Since your friend shifted away from baseball to other sports and YouTube videos, try asking about their favorite basketball or tennis players or recent matches they enjoyed to show interest in their preferences.",
+      "recommendation_2": "Alternatively, gently circle back to baseball by sharing a fun or surprising fact about the sport to spark light conversation without pressuring them to engage on a topic they don’t enjoy.",
+      "urgency": "medium",
+      "rationale": "The friend is avoiding baseball and shifting topics, signaling discomfort or disinterest. To maintain connection and help them relax, the wearer should adapt the topic to the friend’s interests or use light, engaging content to keep the mood positive and supportive.",
+      "feedback_vote": "down",
+      "feedback_comment": "1 he doesnt care, just directly tell do u like watching sports, whats your favorite basketball player"
+    },
+    {
+      "trigger_timestamp": 210.002,
+      "wearer_goal": "comfort and support friend by gently shifting conversation to a lighter topic while acknowledging their stress",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "That sounds really overwhelming with everything going on. If you want, I can share some funny or interesting stories from baseball to help take your mind off things for a bit.",
+      "recommendation_2": "I know you're not into baseball much, but maybe we can find a sport or topic you enjoy to chat about and relax a little?",
+      "urgency": "medium",
+      "rationale": "The friend expressed stress and a desire to avoid work topics, but the wearer shifted abruptly to baseball and YouTube videos without fully connecting to the friend's interests or emotional state. A gentle, empathetic redirection to a lighter topic that the friend prefers can strengthen rapport and provide comfort.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 225.002,
+      "wearer_goal": "support and comfort friend who is stressed and worried about their future",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I noticed you changed the topic when I asked about Israel. It’s totally okay if you don’t want to talk about it, but I’m here if you want to share more about what’s worrying you or your career future.",
+      "recommendation_2": "Since you mentioned being confused and worried about your career future, would you like to talk more about those concerns? I want to understand and support you as best as I can.",
+      "urgency": "medium",
+      "rationale": "The friend shifted away from a direct question about a serious topic and expressed confusion and worry about their career future. This is a good moment to gently invite them to open up more, showing care and deepening the supportive connection.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 240.001,
+      "wearer_goal": "support and comfort friend who is stressed and worried about their future",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I can see why you're feeling overwhelmed with everything going on. It’s totally okay to feel worried about the future, but I’m here for you no matter what.",
+      "recommendation_2": "Would you like to talk more about what parts of your career or future feel most uncertain? Sometimes sharing those specific worries can help lighten the load.",
+      "urgency": "medium",
+      "rationale": "Friend is expressing significant stress and worry about their career and future, showing emotional escalation. This is a key moment to offer empathetic support and invite deeper sharing to strengthen the friendship and help them feel heard.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 255.003,
+      "wearer_goal": "support friend emotionally by engaging meaningfully and validating their concerns while gently steering conversation to help them feel heard and less overwhelmed",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I hear you’re really worried about your career and the future with all these changes. Do you want to talk more about what specifically feels most uncertain or scary right now?",
+      "recommendation_2": "It sounds like there’s a lot on your mind beyond just work and school. I’m here to listen if you want to share more about how all this is affecting you personally.",
+      "urgency": "medium",
+      "rationale": "Friend shifted from talking about stress to a complex topic (AI, job market, geopolitical issues) but then dodged direct questions about Israel and deeper feelings. This is a chance to gently refocus on their emotional state and show support rather than moving on or changing topics abruptly.",
+      "feedback_vote": "up",
+      "feedback_comment": "good because directly says and adapatable"
+    },
+    {
+      "trigger_timestamp": 256.414,
+      "wearer_goal": "support and comfort friend who is stressed and worried about future career prospects",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "It sounds like you're really worried about how all these big issues might affect your future career. I'm here for you—do you want to talk more about what specifically worries you the most?",
+      "recommendation_2": "I know it feels overwhelming now, but maybe we can think together about some small steps or options that could help you feel a bit more in control of your career path.",
+      "urgency": "medium",
+      "rationale": "The friend is expressing significant stress and confusion about their future career and broader world issues, indicating emotional escalation. This is a good moment to gently deepen support and show empathy to strengthen the relationship and help the friend feel heard and less alone.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15.003,
+      "wearer_goal": "relationship_building by showing care and attentiveness to a close friend who seems off",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.002,
+      "wearer_goal": "relationship_building by being a supportive friend and catching up",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.002,
+      "wearer_goal": "support and comfort friend who is stressed and tired",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 60.001,
+      "wearer_goal": "to support and comfort a close friend who is stressed and tired",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 75.002,
+      "wearer_goal": "support and comfort friend who is stressed and tired",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 90.003,
+      "wearer_goal": "comfort and support my close friend who is stressed and tired",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.002,
+      "wearer_goal": "support the friend emotionally by listening and offering help",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 120.002,
+      "wearer_goal": "be a supportive friend by helping the friend open up more about their stress and showing care",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.002,
+      "wearer_goal": "to support and comfort a close friend who is stressed and tired by showing empathy and offering a positive distraction",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.002,
+      "wearer_goal": "support and comfort friend by being a good listener and shifting conversation to a lighter topic to help them relax",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 165.002,
+      "wearer_goal": "Help friend relax and shift focus to a lighter topic to support their emotional state",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.001,
+      "wearer_goal": "comfort and support friend by shifting conversation to a lighter topic they want to engage in",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 195.002,
+      "wearer_goal": "comfort and support friend who is stressed and tired by shifting to lighter topics while maintaining engagement",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 210.002,
+      "wearer_goal": "comfort and support friend by gently shifting conversation to a lighter topic while acknowledging their stress",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 225.002,
+      "wearer_goal": "support and comfort friend who is stressed and worried about their future",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 240.001,
+      "wearer_goal": "support and comfort friend who is stressed and worried about their future",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 255.003,
+      "wearer_goal": "support friend emotionally by engaging meaningfully and validating their concerns while gently steering conversation to help them feel heard and less overwhelmed",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 256.414,
+      "wearer_goal": "support and comfort friend who is stressed and worried about future career prospects",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 2,
+  "timing_rating": 2,
+  "goal_rating": 4,
+  "adoption_rating": 3,
+  "session_notes": "good thing is that it was telling what exactly to say",
+  "best_moment": "say is good",
+  "worst_moment": "know is bad",
+  "created_at": "2026-04-15T01:02:26.595Z"
+}

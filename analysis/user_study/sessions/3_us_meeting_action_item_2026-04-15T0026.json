@@ -1,0 +1,473 @@
+{
+  "id": "session_1776211877463",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You work at a mid-size company. You're in a team meeting where your boss is handing out tasks for the week. You've got a lot on your plate and are thinking about your own to-do list.",
+  "scenario_id": "us_meeting_action_item",
+  "scenario_label": "S1: Team Meeting",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "3",
+  "duration_seconds": 908.33,
+  "check_interval": 15,
+  "total_checks": 18,
+  "total_triggers": 12,
+  "transcript_lines": [
+    {
+      "seconds": 11.39,
+      "speaker": "P2",
+      "text": "hi Jason so as the PM lead So today we're going to talk about Google Maps like there's this new AI feature that we want to roll out"
+    },
+    {
+      "seconds": 22.22,
+      "speaker": "P2",
+      "text": "this AI feature hopefully we can get done by the end of the of the quarter so particularly I think you're working on the user input"
+    },
+    {
+      "seconds": 30.35,
+      "speaker": "P2",
+      "text": "and I would like for your team to create a really clear PRD by the end of this week"
+    },
+    {
+      "seconds": 35.82,
+      "speaker": "P2",
+      "text": "oh does that sound like something that your team is able to execute"
+    },
+    {
+      "seconds": 42.65,
+      "speaker": "P1",
+      "text": "yes so it's good that you raise that point"
+    },
+    {
+      "seconds": 51.04,
+      "speaker": "P1",
+      "text": "I think first I probably need to do research about how our users are using Google Maps"
+    },
+    {
+      "seconds": 61.15,
+      "speaker": "P1",
+      "text": "and I also want to look at what our competitors are doing such as looking at Bing Maps and seeing if we can do anything there"
+    },
+    {
+      "seconds": 74.97,
+      "speaker": "P2",
+      "text": "so do you think that big Maps is something that would be something helpful for you to take a look at and do you need that to be explicitly"
+    },
+    {
+      "seconds": 84.11,
+      "speaker": "P2",
+      "text": "explicitly logged in your basically should we plan for that in your basically Gap chart"
+    },
+    {
+      "seconds": 92.64,
+      "speaker": "P1",
+      "text": "well I think before actually committing to how we should do the TRD deadline"
+    },
+    {
+      "seconds": 103.98,
+      "speaker": "P1",
+      "text": "I want to confirm if we should include this competitor analysis into our project plan and also what resources we have"
+    },
+    {
+      "seconds": 117.65,
+      "speaker": "P2",
+      "text": "So currently let's talk about what sort of things you want to be achieve that you think are reasonable by the end of this month if we're going to launch by the end of Q2"
+    },
+    {
+      "seconds": 128.49,
+      "speaker": "P2",
+      "text": "do you think what what are some of the important things in the scope that you would like to put if you want to implement we want to roll out this AI feature by the end of this quarter"
+    },
+    {
+      "seconds": 142.03,
+      "speaker": "P1",
+      "text": "I think so some features that we want to have would be something like maybe determining what information the AI can provide"
+    },
+    {
+      "seconds": 155.95,
+      "speaker": "P1",
+      "text": "and also I think we need to see more about the use cases of how our users are using our product and like which places do they go to frequently"
+    },
+    {
+      "seconds": 170.83,
+      "speaker": "P2",
+      "text": "okay but I think for our AI feature we want our Google Maps to be able to proactively make calls towards restaurants for example and do that whole thing do you think that's something your team would like to take"
+    },
+    {
+      "seconds": 184.88,
+      "speaker": "P1",
+      "text": "well I think we should I think restaurants is a good starting point and then also maybe thinking more about the who goes to these restaurants"
+    },
+    {
+      "seconds": 195.28,
+      "speaker": "P1",
+      "text": "and I guess one day I want to clarify is how many Engineers are researchers are going to work on this feature"
+    },
+    {
+      "seconds": 206.31,
+      "speaker": "P2",
+      "text": "yeah so my team I have a whole team of eight engineers and then I know the ratio is not very good you only have 2:00 p.m. on your team"
+    },
+    {
+      "seconds": 219.54,
+      "speaker": "P2",
+      "text": "but I was really hoping that you are able to complete we're able to launch this whole AI feature cuz we have a whole Google conference event that's coming up at the end of next month"
+    },
+    {
+      "seconds": 225.58,
+      "speaker": "P1",
+      "text": "okay then maybe I guess a quick way to scope it is"
+    },
+    {
+      "seconds": 236.25,
+      "speaker": "P1",
+      "text": "to look at some other Maps products get some ideas to see if there's any low hanging fruit and then just"
+    },
+    {
+      "seconds": 238.9,
+      "speaker": "P1",
+      "text": "quickly build it ourselves"
+    },
+    {
+      "seconds": 244.53,
+      "speaker": "P2",
+      "text": "okay okay that sounds like a good idea"
+    },
+    {
+      "seconds": 247.93,
+      "speaker": "P2",
+      "text": "thanks for talking through this"
+    },
+    {
+      "seconds": 251.52,
+      "speaker": "P2",
+      "text": "I think can we end this meeting right now"
+    },
+    {
+      "seconds": 256.13,
+      "speaker": "P1",
+      "text": "yes I think we have a good plan going forward"
+    }
+  ],
+  "transcript_text": "[00:11.39] P2: hi Jason so as the PM lead So today we're going to talk about Google Maps like there's this new AI feature that we want to roll out\n[00:22.22] P2: this AI feature hopefully we can get done by the end of the of the quarter so particularly I think you're working on the user input\n[00:30.35] P2: and I would like for your team to create a really clear PRD by the end of this week\n[00:35.82] P2: oh does that sound like something that your team is able to execute\n[00:42.65] P1: yes so it's good that you raise that point\n[00:51.04] P1: I think first I probably need to do research about how our users are using Google Maps\n[01:01.15] P1: and I also want to look at what our competitors are doing such as looking at Bing Maps and seeing if we can do anything there\n[01:14.97] P2: so do you think that big Maps is something that would be something helpful for you to take a look at and do you need that to be explicitly\n[01:24.11] P2: explicitly logged in your basically should we plan for that in your basically Gap chart\n[01:32.64] P1: well I think before actually committing to how we should do the TRD deadline\n[01:43.98] P1: I want to confirm if we should include this competitor analysis into our project plan and also what resources we have\n[01:57.65] P2: So currently let's talk about what sort of things you want to be achieve that you think are reasonable by the end of this month if we're going to launch by the end of Q2\n[02:08.49] P2: do you think what what are some of the important things in the scope that you would like to put if you want to implement we want to roll out this AI feature by the end of this quarter\n[02:22.03] P1: I think so some features that we want to have would be something like maybe determining what information the AI can provide\n[02:35.95] P1: and also I think we need to see more about the use cases of how our users are using our product and like which places do they go to frequently\n[02:50.83] P2: okay but I think for our AI feature we want our Google Maps to be able to proactively make calls towards restaurants for example and do that whole thing do you think that's something your team would like to take\n[03:04.88] P1: well I think we should I think restaurants is a good starting point and then also maybe thinking more about the who goes to these restaurants\n[03:15.28] P1: and I guess one day I want to clarify is how many Engineers are researchers are going to work on this feature\n[03:26.31] P2: yeah so my team I have a whole team of eight engineers and then I know the ratio is not very good you only have 2:00 p.m. on your team\n[03:39.54] P2: but I was really hoping that you are able to complete we're able to launch this whole AI feature cuz we have a whole Google conference event that's coming up at the end of next month\n[03:45.58] P1: okay then maybe I guess a quick way to scope it is\n[03:56.25] P1: to look at some other Maps products get some ideas to see if there's any low hanging fruit and then just\n[03:58.90] P1: quickly build it ourselves\n[04:04.53] P2: okay okay that sounds like a good idea\n[04:07.93] P2: thanks for talking through this\n[04:11.52] P2: I think can we end this meeting right now\n[04:16.13] P1: yes I think we have a good plan going forward",
+  "triggers": [
+    {
+      "trigger_timestamp": 60.002,
+      "wearer_goal": "Clarify and negotiate the feasibility and scope of delivering a clear PRD by the end of the week based on user research",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'Before committing to the PRD deadline, I want to confirm the key user behaviors we should focus on in our research to ensure the PRD is well-informed and realistic.'",
+      "recommendation_2": "Know: User research typically takes several days to gather meaningful insights; rushing this phase could compromise the quality of the PRD. It is reasonable to negotiate a timeline that allows for sufficient research before finalizing the PRD.",
+      "urgency": "medium",
+      "rationale": "The wearer is about to commit to a deliverable deadline without confirming the scope and feasibility based on necessary user research, risking overcommitment or under-delivery.",
+      "feedback_vote": "up",
+      "feedback_comment": "say is good, know is too long"
+    },
+    {
+      "trigger_timestamp": 90.002,
+      "wearer_goal": "Clarify scope and planning details for competitor research and PRD tasks",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Confirm whether the competitor research on Bing Maps should be officially included in the project plan and timeline.",
+      "recommendation_2": "Ask if your team needs any specific resources or access to conduct this competitor analysis effectively.",
+      "urgency": "medium",
+      "rationale": "The PM is asking if competitor research should be explicitly planned and logged, which affects your team's workload and deliverables. Clarifying this now prevents misunderstandings and helps you manage your team's tasks efficiently.",
+      "feedback_vote": "up",
+      "feedback_comment": "1 is good 2 is not needed"
+    },
+    {
+      "trigger_timestamp": 105.002,
+      "wearer_goal": "Clarify project scope and resource needs before committing to PRD deadline",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Could we clarify if competitor analysis is expected as part of the PRD or as a separate deliverable? This will help us prioritize our efforts effectively.",
+      "recommendation_2": "Also, can we discuss what resources will be available to support this research so we can realistically commit to the deadline?",
+      "urgency": "high",
+      "rationale": "The wearer is about to commit to a deadline without full clarity on scope and resources, which could lead to overcommitment or missed expectations.",
+      "feedback_vote": "down",
+      "feedback_comment": "Too similar to previous one but with way different wording"
+    },
+    {
+      "trigger_timestamp": 120.002,
+      "wearer_goal": "Clarify project scope and resource availability before committing to the PRD deadline",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Could we clarify whether competitor analysis is expected as part of the PRD deliverable, so I can plan the workload accordingly?",
+      "recommendation_2": "Also, can we discuss what resources will be available to my team to ensure we can meet the deadline realistically?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to commit to a deadline without full clarity on scope and resources, which could lead to overcommitment or missed expectations.",
+      "feedback_vote": "down",
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.002,
+      "wearer_goal": "Clarify project scope and resource allocation before committing to PRD deadline",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Could we clarify which specific resources will be available to support the competitor analysis and user research? This will help us set a realistic timeline for the PRD.",
+      "recommendation_2": "Before finalizing the PRD deadline, can we agree on whether the competitor analysis is a required deliverable or an optional input? That will impact our scope and priorities.",
+      "urgency": "medium",
+      "rationale": "The wearer is about to commit to a deadline without confirmed scope and resources, which could lead to overcommitment or missed expectations. Prompting clarification now can help align expectations and enable realistic planning.",
+      "feedback_vote": "down",
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150.002,
+      "wearer_goal": "Clarify project scope and resource needs before committing to PRD deadline",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I want to confirm whether competitor analysis should be included in the project plan and clarify what resources are available before we finalize the PRD deadline.",
+      "recommendation_2": "Can we discuss and agree on the key deliverables and scope priorities to ensure the timeline is realistic given our current capacity?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to commit to a PRD deadline without full clarity on scope and resources, which could lead to overcommitment and delivery risks.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165.004,
+      "wearer_goal": "Clarify project scope and resource needs for PRD creation including competitor analysis",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Could we clarify now whether competitor analysis is expected to be included in the PRD scope and if there are dedicated resources for that?",
+      "recommendation_2": "Can we agree on the key deliverables and timeline milestones for this AI feature so my team can plan accordingly?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to commit to the PRD deadline but is unsure about scope and resources. Clarifying these now will prevent misalignment and overcommitment.",
+      "feedback_vote": "down",
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.004,
+      "wearer_goal": "Clarify project scope and resource allocation for the AI feature PRD",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "both",
+      "recommendation_1": "Ask explicitly about the available resources and team capacity to realistically meet the PRD deadline, to avoid overcommitment.",
+      "recommendation_2": "Suggest confirming whether competitor analysis should be formally included in the project plan and timeline, to align expectations early.",
+      "urgency": "medium",
+      "rationale": "The wearer is at a critical moment deciding scope and resources for a key deliverable with a tight deadline. Clarifying these points now prevents misunderstandings and overcommitment.",
+      "feedback_vote": "down",
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 210.003,
+      "wearer_goal": "Clarify project scope, resource allocation, and competitor analysis inclusion for the AI feature PRD",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Could we clarify exactly how many engineers and researchers will be dedicated to this AI feature from both teams? That will help us realistically plan the PRD and timeline.",
+      "recommendation_2": "I want to confirm whether competitor analysis, like Bing Maps, should be formally included in our project plan and resource allocation to ensure alignment.",
+      "urgency": "medium",
+      "rationale": "The wearer is at a critical point of defining scope and resources for the AI feature PRD. Clarifying team capacity and competitor analysis inclusion now will prevent misunderstandings and help set realistic expectations for deliverables.",
+      "feedback_vote": "down",
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 225.003,
+      "wearer_goal": "Clarify project scope, resource allocation, and deliverables for the AI feature task to manage workload and expectations",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'Given the limited resources on my team, can we discuss prioritizing the key features for the PRD to ensure we can deliver quality work by the deadline?'",
+      "recommendation_2": "Know: The team has only 2 PMs and fewer engineers compared to the PM lead's 8 engineers; pushing for a clear prioritization and resource commitment now can prevent overcommitment and missed deadlines.",
+      "urgency": "high",
+      "rationale": "The boss is expressing strong expectations to launch the AI feature by the end of the quarter and at a conference next month, but the wearer has limited resources. This is a critical moment to negotiate scope and clarify commitments to avoid overloading the wearer’s team and ensure realistic planning.",
+      "feedback_vote": "down",
+      "feedback_comment": "know is some mis-understanding. Say related to Know"
+    },
+    {
+      "trigger_timestamp": 240.004,
+      "wearer_goal": "Clarify and negotiate realistic scope and resources for the AI feature project",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I appreciate the urgency with the Google conference coming up, but given our limited team size, can we discuss prioritizing the most impactful AI features to ensure quality delivery?",
+      "recommendation_2": "Could we explore the possibility of additional resources or phased rollout to better align with the timeline and team capacity?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to commit to launching the entire AI feature with limited resources and a tight deadline, risking overcommitment. Prompting a negotiation on scope and resources now can help set realistic expectations and avoid future issues.",
+      "feedback_vote": "up",
+      "feedback_comment": "Like first one, has more added context"
+    },
+    {
+      "trigger_timestamp": 255.004,
+      "wearer_goal": "Clarify project scope and resource allocation to realistically deliver the PRD and AI feature on time",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I want to ensure we have a clear understanding of the resources and timeline before fully committing to the PRD deadline. Can we discuss what support or additional resources might be available?",
+      "recommendation_2": "Given the limited team size on my side, can we prioritize the key features for the AI rollout so we can focus on delivering the most impactful parts by the conference?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to commit to a tight deadline with limited resources without fully clarifying scope and support, risking overcommitment and delivery issues.",
+      "feedback_vote": "down",
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15.002,
+      "wearer_goal": "understand and prepare for assigned tasks related to the new AI feature rollout on Google Maps",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.002,
+      "wearer_goal": "understand and clarify the tasks assigned for the AI feature rollout",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.002,
+      "wearer_goal": "Confirming ability to deliver the PRD task clearly and on time",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 60.002,
+      "wearer_goal": "Clarify and negotiate the feasibility and scope of delivering a clear PRD by the end of the week based on user research",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 75.001,
+      "wearer_goal": "Clarify and confirm the scope and feasibility of the PRD task for the AI feature rollout",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 90.002,
+      "wearer_goal": "Clarify scope and planning details for competitor research and PRD tasks",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.002,
+      "wearer_goal": "Clarify project scope and resource needs before committing to PRD deadline",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120.002,
+      "wearer_goal": "Clarify project scope and resource availability before committing to the PRD deadline",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.002,
+      "wearer_goal": "Clarify project scope and resource allocation before committing to PRD deadline",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.002,
+      "wearer_goal": "Clarify project scope and resource needs before committing to PRD deadline",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 165.004,
+      "wearer_goal": "Clarify project scope and resource needs for PRD creation including competitor analysis",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.004,
+      "wearer_goal": "Clarify project scope and resource allocation for the AI feature PRD",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 195.003,
+      "wearer_goal": "Clarify scope and resource needs for the AI feature PRD and confirm inclusion of competitor analysis",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 210.003,
+      "wearer_goal": "Clarify project scope, resource allocation, and competitor analysis inclusion for the AI feature PRD",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 225.003,
+      "wearer_goal": "Clarify project scope, resource allocation, and deliverables for the AI feature task to manage workload and expectations",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 240.004,
+      "wearer_goal": "Clarify and negotiate realistic scope and resources for the AI feature project",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 255.004,
+      "wearer_goal": "Clarify project scope and resource allocation to realistically deliver the PRD and AI feature on time",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 257.195,
+      "wearer_goal": "Clarify project scope and resource allocation to deliver a clear PRD for the AI feature on Google Maps",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": false
+    }
+  ],
+  "usefulness_rating": 3,
+  "timing_rating": 2,
+  "goal_rating": 4,
+  "adoption_rating": 4,
+  "session_notes": "liked the way it changed recommendations based on the topic we are talking about, latency not much problems",
+  "best_moment": "first trigger, helped steer the recommendation",
+  "worst_moment": "redundancies",
+  "created_at": "2026-04-15T00:26:25.794Z"
+}

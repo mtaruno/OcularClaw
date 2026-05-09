@@ -1,0 +1,60 @@
+{
+  "id": "session_1776212986465",
+  "agent_mode": "proagent",
+  "model": "google/gemini-2.5-flash-preview",
+  "persona": "You work at a mid-size company. You're in a team meeting where your boss is handing out tasks for the week. You've got a lot on your plate and are thinking about your own to-do list.",
+  "scenario_id": "us_meeting_action_item",
+  "scenario_label": "S1: Team Meeting",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "3",
+  "duration_seconds": 80.27,
+  "check_interval": 15,
+  "total_checks": 0,
+  "total_triggers": 0,
+  "transcript_lines": [
+    {
+      "seconds": 13.17,
+      "speaker": "P2",
+      "text": "okay so I want to basically assign you to decide what are the most high priority features to fix by next month we are want to launch a new"
+    },
+    {
+      "seconds": 25.47,
+      "speaker": "P2",
+      "text": "feature for Google Maps basically is the AI product and I have eight Engineers wanting to work on this project and I want you I know you have a smaller team of 2 PMS"
+    },
+    {
+      "seconds": 32.39,
+      "speaker": "P2",
+      "text": "but I want you to decide what are the top five most important features"
+    },
+    {
+      "seconds": 34.17,
+      "speaker": "P2",
+      "text": "how do you know"
+    },
+    {
+      "seconds": 38.17,
+      "speaker": "P1",
+      "text": "hello hello"
+    },
+    {
+      "seconds": 42.9,
+      "speaker": "P1",
+      "text": "it's fine I think Haiku ha"
+    }
+  ],
+  "transcript_text": "[00:13.17] P2: okay so I want to basically assign you to decide what are the most high priority features to fix by next month we are want to launch a new\n[00:25.47] P2: feature for Google Maps basically is the AI product and I have eight Engineers wanting to work on this project and I want you I know you have a smaller team of 2 PMS\n[00:32.39] P2: but I want you to decide what are the top five most important features\n[00:34.17] P2: how do you know\n[00:38.17] P1: hello hello\n[00:42.90] P1: it's fine I think Haiku ha",
+  "triggers": [],
+  "goal_inferences": [],
+  "usefulness_rating": null,
+  "timing_rating": null,
+  "goal_rating": null,
+  "adoption_rating": null,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T00:31:06.738Z"
+}

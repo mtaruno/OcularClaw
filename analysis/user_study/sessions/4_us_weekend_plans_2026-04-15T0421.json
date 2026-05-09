@@ -1,0 +1,546 @@
+{
+  "id": "session_1776226359671",
+  "agent_mode": "proagent",
+  "model": "anthropic/claude-3.5-haiku",
+  "persona": "You and a friend are trying to figure out what to do this Saturday. You're both free all day and want to do something fun but haven't decided what yet.",
+  "scenario_id": "us_weekend_plans",
+  "scenario_label": "S4: Planning the Weekend",
+  "expected_trigger": true,
+  "expected_score": 2,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "4",
+  "duration_seconds": 539.83,
+  "check_interval": 15,
+  "total_checks": 17,
+  "total_triggers": 17,
+  "transcript_lines": [
+    {
+      "seconds": 6.89,
+      "speaker": "P2",
+      "text": "yeah so tomorrow let's plan a hike what do you think"
+    },
+    {
+      "seconds": 11.78,
+      "speaker": "P1",
+      "text": "yeah it's a good idea"
+    },
+    {
+      "seconds": 16.04,
+      "speaker": "P1",
+      "text": "and which mountain do you want to go"
+    },
+    {
+      "seconds": 22.52,
+      "speaker": "P2",
+      "text": "yeah I think one place to go is Mount Rainier"
+    },
+    {
+      "seconds": 26.52,
+      "speaker": "P1",
+      "text": "yeah"
+    },
+    {
+      "seconds": 33.89,
+      "speaker": "P1",
+      "text": "that's a good idea"
+    },
+    {
+      "seconds": 48.39,
+      "speaker": "P2",
+      "text": "yeah I think maybe we can invite Jason and Lily and then I heard their Skyline Trail was really fun to do it takes about like 2 to 3 hours and it takes 3 hour drive to get there"
+    },
+    {
+      "seconds": 66.13,
+      "speaker": "P1",
+      "text": "it sounds good and are there any difficulty level like or are there any difficulty like through the skyline and if it's hard to go to the top"
+    },
+    {
+      "seconds": 89.03,
+      "speaker": "P2",
+      "text": "yeah I think it's a generally an easy hike it's a loop so you take maybe 3 hours to go through the whole Loop and then but if you want to Summit it I think it's a completely different Trail but I didn't know that you are really good at hiking that you would want to go all the way to the top"
+    },
+    {
+      "seconds": 91.05,
+      "speaker": "P1",
+      "text": "I see"
+    },
+    {
+      "seconds": 111.53,
+      "speaker": "P1",
+      "text": "I'm totally not good at hacking so yeah also go hiking for maybe two or three hours and after that we can find some place too I have some good food and also play Parker"
+    },
+    {
+      "seconds": 120.33,
+      "speaker": "P2",
+      "text": "oh wow poker yeah I think that's a great idea what else do you think we should bring to make the trip more fun"
+    },
+    {
+      "seconds": 124.26,
+      "speaker": "P1",
+      "text": "oh let me check"
+    },
+    {
+      "seconds": 132.18,
+      "speaker": "P1",
+      "text": "what can we bring"
+    },
+    {
+      "seconds": 140.71,
+      "speaker": "P1",
+      "text": "I'm trying to figure out"
+    },
+    {
+      "seconds": 154.88,
+      "speaker": "P1",
+      "text": "yeah we can also pack some like water or snacks and also some food and some oh we should bring hiking shoes what house do you think"
+    },
+    {
+      "seconds": 162.65,
+      "speaker": "P2",
+      "text": "yeah I think those are really smart I think we should if we're planning to stay over that night"
+    },
+    {
+      "seconds": 165.82,
+      "speaker": "P2",
+      "text": "we should also bring bear spray"
+    },
+    {
+      "seconds": 169.13,
+      "speaker": "P2",
+      "text": "and maybe hiking sticks"
+    },
+    {
+      "seconds": 179.02,
+      "speaker": "P2",
+      "text": "and then I'm not sure where to I'm not sure where we should actually live around me right here"
+    },
+    {
+      "seconds": 181.32,
+      "speaker": "P2",
+      "text": "do you think"
+    },
+    {
+      "seconds": 185.95,
+      "speaker": "P2",
+      "text": "Mount Rainier has like some good places where we can stay"
+    },
+    {
+      "seconds": 191.56,
+      "speaker": "P2",
+      "text": "actually I'm not"
+    },
+    {
+      "seconds": 217.36,
+      "speaker": "P1",
+      "text": "actually I'm not quite sure about there are some good place to stay at the month of Rainier I think maybe I need to check like for some Airbnb and for some like Google Maps to find out and it will take some time and can we do it together tonight"
+    },
+    {
+      "seconds": 224.04,
+      "speaker": "P2",
+      "text": "yeah yeah we can definitely find some specific places to go tonight"
+    },
+    {
+      "seconds": 229.37,
+      "speaker": "P1",
+      "text": "yeah so"
+    },
+    {
+      "seconds": 241.85,
+      "speaker": "P1",
+      "text": "yeah I think the plan is perfect and last maybe just a she's a good place to stay and we can share our plan to our friends"
+    },
+    {
+      "seconds": 245.41,
+      "speaker": "P2",
+      "text": "okay sounds good"
+    }
+  ],
+  "transcript_text": "[00:06.89] P2: yeah so tomorrow let's plan a hike what do you think\n[00:11.78] P1: yeah it's a good idea\n[00:16.04] P1: and which mountain do you want to go\n[00:22.52] P2: yeah I think one place to go is Mount Rainier\n[00:26.52] P1: yeah\n[00:33.89] P1: that's a good idea\n[00:48.39] P2: yeah I think maybe we can invite Jason and Lily and then I heard their Skyline Trail was really fun to do it takes about like 2 to 3 hours and it takes 3 hour drive to get there\n[01:06.13] P1: it sounds good and are there any difficulty level like or are there any difficulty like through the skyline and if it's hard to go to the top\n[01:29.03] P2: yeah I think it's a generally an easy hike it's a loop so you take maybe 3 hours to go through the whole Loop and then but if you want to Summit it I think it's a completely different Trail but I didn't know that you are really good at hiking that you would want to go all the way to the top\n[01:31.05] P1: I see\n[01:51.53] P1: I'm totally not good at hacking so yeah also go hiking for maybe two or three hours and after that we can find some place too I have some good food and also play Parker\n[02:00.33] P2: oh wow poker yeah I think that's a great idea what else do you think we should bring to make the trip more fun\n[02:04.26] P1: oh let me check\n[02:12.18] P1: what can we bring\n[02:20.71] P1: I'm trying to figure out\n[02:34.88] P1: yeah we can also pack some like water or snacks and also some food and some oh we should bring hiking shoes what house do you think\n[02:42.65] P2: yeah I think those are really smart I think we should if we're planning to stay over that night\n[02:45.82] P2: we should also bring bear spray\n[02:49.13] P2: and maybe hiking sticks\n[02:59.02] P2: and then I'm not sure where to I'm not sure where we should actually live around me right here\n[03:01.32] P2: do you think\n[03:05.95] P2: Mount Rainier has like some good places where we can stay\n[03:11.56] P2: actually I'm not\n[03:37.36] P1: actually I'm not quite sure about there are some good place to stay at the month of Rainier I think maybe I need to check like for some Airbnb and for some like Google Maps to find out and it will take some time and can we do it together tonight\n[03:44.04] P2: yeah yeah we can definitely find some specific places to go tonight\n[03:49.37] P1: yeah so\n[04:01.85] P1: yeah I think the plan is perfect and last maybe just a she's a good place to stay and we can share our plan to our friends\n[04:05.41] P2: okay sounds good",
+  "triggers": [
+    {
+      "trigger_timestamp": 15.001,
+      "wearer_goal": "Collaboratively decide on a Saturday activity",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What specific trail or area were you thinking about hiking?",
+      "recommendation_2": "Do you want to invite anyone else along?",
+      "urgency": "low",
+      "rationale": "Conversation needs more detail to turn vague agreement into concrete plan",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 30.001,
+      "wearer_goal": "Collaboratively decide on a specific hiking destination for Saturday",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What trails at Mount Rainier are you most interested in?",
+      "recommendation_2": "Have you checked the current trail conditions?",
+      "urgency": "medium",
+      "rationale": "Conversation lacks specific details about hiking plans, risking vague commitment",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 45.002,
+      "wearer_goal": "Collaboratively decide on a specific hiking plan for Saturday",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What specific trails are you interested in at Mount Rainier?",
+      "recommendation_2": "Are there any difficulty levels you prefer?",
+      "urgency": "medium",
+      "rationale": "Conversation lacks concrete details about hiking plan, needs more specificity to progress",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 60.003,
+      "wearer_goal": "Collaboratively plan a fun Saturday hiking trip to Mount Rainier",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What specific gear or preparation do we need for the Skyline Trail?",
+      "recommendation_2": "Should we check the weather forecast before confirming?",
+      "urgency": "medium",
+      "rationale": "The conversation needs more concrete planning details to ensure a successful hiking trip",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 75.003,
+      "wearer_goal": "Understand hiking trail difficulty and feasibility",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Skyline Trail at Mount Rainier ranges from moderate to difficult (5-7 miles)",
+      "recommendation_2": "Trail elevation gain is approximately 1,450 feet, challenging for casual hikers",
+      "urgency": "medium",
+      "rationale": "Wearer needs concrete information about trail difficulty to make informed hiking decision",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 90.002,
+      "wearer_goal": "Understand hiking difficulty and trail details for Mount Rainier's Skyline Trail",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "know",
+      "recommendation_1": "Skyline Trail is moderate difficulty, 5-7 miles, 1,450 feet elevation gain",
+      "recommendation_2": "Not recommended for beginners, requires moderate hiking fitness",
+      "urgency": "medium",
+      "rationale": "Wearer seems uncertain about trail difficulty and needs concrete information to make an informed hiking decision",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.001,
+      "wearer_goal": "Understand hiking difficulty and feasibility of Mount Rainier's Skyline Trail",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Skyline Trail is moderate difficulty, not recommended for beginners",
+      "recommendation_2": "Trail requires moderate fitness, 5-7 miles with 1,450 feet elevation gain",
+      "urgency": "medium",
+      "rationale": "Wearer needs clear, factual information about trail difficulty to make informed hiking decision",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 120.004,
+      "wearer_goal": "Understand hiking difficulty and plan a comfortable group activity",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Skyline Trail is moderate difficulty, not recommended for beginners",
+      "recommendation_2": "Trail requires 5-7 miles hiking with 1,450 feet elevation gain",
+      "urgency": "medium",
+      "rationale": "Wearer seems uncertain about trail difficulty and needs clarity before committing",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.003,
+      "wearer_goal": "Plan a fun Saturday hiking trip with friends and follow up with additional activities",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Pack essentials: water, snacks, first aid kit, layers, hiking shoes",
+      "recommendation_2": "Check Mount Rainier National Park website for current trail conditions",
+      "urgency": "medium",
+      "rationale": "Wearer is about to discuss trip preparation but lacks specific planning details",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150.003,
+      "wearer_goal": "Plan a fun group hiking and social activity for Saturday",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's check what snacks and group gear everyone should bring",
+      "recommendation_2": "Can we confirm everyone's hiking fitness level?",
+      "urgency": "medium",
+      "rationale": "Wearer needs practical preparation details to finalize group hiking plan",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165.003,
+      "wearer_goal": "Plan a safe and enjoyable group hiking trip to Mount Rainier",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Skyline Trail is moderate difficulty, not recommended for beginners",
+      "recommendation_2": "Bring essential hiking gear: water, snacks, first aid kit, layers, hiking shoes",
+      "urgency": "medium",
+      "rationale": "Wearer seems uncertain about trail difficulty and preparation, needs clear guidance on hiking requirements",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.003,
+      "wearer_goal": "Plan a fun Saturday hiking trip with friends",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we confirm everyone's hiking experience and comfort level?",
+      "recommendation_2": "Let's discuss backup plans if Skyline Trail feels too challenging.",
+      "urgency": "medium",
+      "rationale": "The group needs to align expectations about trail difficulty and group capabilities.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 195.003,
+      "wearer_goal": "Plan a fun Saturday hiking trip to Mount Rainier with friends",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Skyline Trail is moderate difficulty (5-7 miles, 1,450 ft elevation gain)",
+      "recommendation_2": "Mount Rainier has multiple lodging options near Paradise and Longmire areas",
+      "urgency": "medium",
+      "rationale": "Conversation lacks concrete details about trail difficulty and accommodation options",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 210.003,
+      "wearer_goal": "Plan a fun Saturday hiking trip with friends to Mount Rainier",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Skyline Trail is moderate difficulty, not suitable for beginners",
+      "recommendation_2": "Mount Rainier has lodging near Paradise and Longmire areas",
+      "urgency": "medium",
+      "rationale": "Wearer needs more specific information about trail difficulty and accommodation options to make an informed trip plan",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 225.003,
+      "wearer_goal": "Plan a successful group hiking trip to Mount Rainier",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Paradise area has multiple lodging options near Skyline Trail",
+      "recommendation_2": "Skyline Trail is moderate difficulty, not recommended for beginners",
+      "urgency": "medium",
+      "rationale": "Wearer needs more specific information about trail conditions and lodging to make informed trip planning decisions",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 240.003,
+      "wearer_goal": "Plan a successful Mount Rainier hiking trip with friends",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Paradise area has multiple lodging options near Skyline Trail",
+      "recommendation_2": "Skyline Trail is moderate difficulty (5-7 miles, 1,450 ft elevation gain)",
+      "urgency": "medium",
+      "rationale": "Wearer needs concrete information about trail and lodging to finalize trip planning",
+      "feedback_vote": "down",
+      "feedback_comment": "YOU KEEEP REPEATING"
+    },
+    {
+      "trigger_timestamp": 246.178,
+      "wearer_goal": "Collaboratively plan a Saturday hiking trip to Mount Rainier with friends",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "know",
+      "recommendation_1": "Paradise area has multiple lodging options near Skyline Trail",
+      "recommendation_2": "Skyline Trail is moderate difficulty (5-7 miles, 1,450 ft elevation gain)",
+      "urgency": "medium",
+      "rationale": "Wearer needs specific logistical details to finalize trip planning",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15.001,
+      "wearer_goal": "Collaboratively decide on a Saturday activity",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 30.001,
+      "wearer_goal": "Collaboratively decide on a specific hiking destination for Saturday",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 45.002,
+      "wearer_goal": "Collaboratively decide on a specific hiking plan for Saturday",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 60.003,
+      "wearer_goal": "Collaboratively plan a fun Saturday hiking trip to Mount Rainier",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 75.003,
+      "wearer_goal": "Understand hiking trail difficulty and feasibility",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 90.002,
+      "wearer_goal": "Understand hiking difficulty and trail details for Mount Rainier's Skyline Trail",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.001,
+      "wearer_goal": "Understand hiking difficulty and feasibility of Mount Rainier's Skyline Trail",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120.004,
+      "wearer_goal": "Understand hiking difficulty and plan a comfortable group activity",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.003,
+      "wearer_goal": "Plan a fun Saturday hiking trip with friends and follow up with additional activities",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.003,
+      "wearer_goal": "Plan a fun group hiking and social activity for Saturday",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 165.003,
+      "wearer_goal": "Plan a safe and enjoyable group hiking trip to Mount Rainier",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.003,
+      "wearer_goal": "Plan a fun Saturday hiking trip with friends",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 195.003,
+      "wearer_goal": "Plan a fun Saturday hiking trip to Mount Rainier with friends",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 210.003,
+      "wearer_goal": "Plan a fun Saturday hiking trip with friends to Mount Rainier",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 225.003,
+      "wearer_goal": "Plan a successful group hiking trip to Mount Rainier",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 240.003,
+      "wearer_goal": "Plan a successful Mount Rainier hiking trip with friends",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 246.178,
+      "wearer_goal": "Collaboratively plan a Saturday hiking trip to Mount Rainier with friends",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 3,
+  "timing_rating": 3,
+  "goal_rating": 3,
+  "adoption_rating": 3,
+  "session_notes": "should try to give information we don't know yet",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T04:21:39.502Z"
+}

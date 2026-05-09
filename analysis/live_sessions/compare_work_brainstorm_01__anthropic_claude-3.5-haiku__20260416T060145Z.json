@@ -1,0 +1,210 @@
+{
+  "model": "anthropic/claude-3.5-haiku",
+  "scenario_id": "work_brainstorm_01",
+  "duration_seconds": 83.0,
+  "check_interval": 10.0,
+  "total_checks": 9,
+  "total_triggers": 6,
+  "triggers": [
+    {
+      "trigger_timestamp": 10.0,
+      "wearer_goal": "Propose a technical solution to handle website traffic spikes",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can you elaborate on how the message queue would handle peak loads?",
+      "recommendation_2": "I've implemented similar solutions in past projects. Want details?",
+      "urgency": "medium",
+      "rationale": "Wearer proposed a good technical solution but didn't provide supporting details to gain team buy-in"
+    },
+    {
+      "trigger_timestamp": 20.0,
+      "wearer_goal": "Persuade team to adopt message queue solution for handling traffic spikes",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we prototype a hybrid approach with queues and additional server capacity?",
+      "recommendation_2": "I've worked with systems that successfully used queues for load management.",
+      "urgency": "medium",
+      "rationale": "Wearer's initial good idea is being dismissed without substantive technical discussion"
+    },
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "Persuade team to seriously consider message queue solution for handling traffic spikes",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "I've successfully implemented queue systems that solved similar scaling challenges.",
+      "recommendation_2": "Could we discuss a hybrid approach combining queues and server scaling?",
+      "urgency": "medium",
+      "rationale": "Wearer's initial good idea is at risk of being dismissed without further substantive discussion"
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "Convince team to adopt message queue solution for handling traffic spikes",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let me walk through a specific example of how queues solved similar scaling challenges.",
+      "recommendation_2": "We could demonstrate a quick prototype showing queue performance under simulated load.",
+      "urgency": "medium",
+      "rationale": "The wearer's initial queue idea is being subtly dismissed, and they need to re-establish technical credibility."
+    },
+    {
+      "trigger_timestamp": 80.0,
+      "wearer_goal": "Contribute meaningfully to the discussion and have his original message queue idea recognized",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Actually, my initial message queue suggestion aligns with the event-driven approach.",
+      "recommendation_2": "I proposed queues earlier, which seems similar to what we're discussing now.",
+      "urgency": "medium",
+      "rationale": "P1's original queue idea was dismissed but is now essentially being restated by P3, creating an opportunity for recognition and connection."
+    },
+    {
+      "trigger_timestamp": 83.0,
+      "wearer_goal": "Recover credibility after having his original message queue idea co-opted by P3",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "idea_co_option",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Actually, I initially suggested the message queue approach earlier.",
+      "recommendation_2": "My original proposal aligns closely with this event-driven architecture.",
+      "urgency": "medium",
+      "rationale": "P1's original queue suggestion was dismissed, then essentially restated by P3 without attribution"
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Okay so we need to figure out how to handle the traffic spikes during product launches. Last time the site went down for twenty minutes and we lost a ton of orders.\n[00:10.00] P1: What if we used a message queue? Like we could put incoming orders into a queue and process them asynchronously. That way the frontend stays responsive even under heavy load.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Propose a technical solution to handle website traffic spikes",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Can you elaborate on how the message queue would handle peak loads?",
+        "recommendation_2": "I've implemented similar solutions in past projects. Want details?",
+        "urgency": "medium",
+        "rationale": "Wearer proposed a good technical solution but didn't provide supporting details to gain team buy-in"
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Okay so we need to figure out how to handle the traffic spikes during product launches. Last time the site went down for twenty minutes and we lost a ton of orders.\n[00:10.00] P1: What if we used a message queue? Like we could put incoming orders into a queue and process them asynchronously. That way the frontend stays responsive even under heavy load.\n[00:20.00] P3: Hmm. I don't know, queues add complexity. What about just scaling up the servers?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Persuade team to adopt message queue solution for handling traffic spikes",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Can we prototype a hybrid approach with queues and additional server capacity?",
+        "recommendation_2": "I've worked with systems that successfully used queues for load management.",
+        "urgency": "medium",
+        "rationale": "Wearer's initial good idea is being dismissed without substantive technical discussion"
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Okay so we need to figure out how to handle the traffic spikes during product launches. Last time the site went down for twenty minutes and we lost a ton of orders.\n[00:10.00] P1: What if we used a message queue? Like we could put incoming orders into a queue and process them asynchronously. That way the frontend stays responsive even under heavy load.\n[00:20.00] P3: Hmm. I don't know, queues add complexity. What about just scaling up the servers?\n[00:26.00] P2: Auto-scaling takes time to spin up though. By the time new instances are ready we've already lost requests.\n[00:32.00] P3: Fair point.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Persuade team to seriously consider message queue solution for handling traffic spikes",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "I've successfully implemented queue systems that solved similar scaling challenges.",
+        "recommendation_2": "Could we discuss a hybrid approach combining queues and server scaling?",
+        "urgency": "medium",
+        "rationale": "Wearer's initial good idea is at risk of being dismissed without further substantive discussion"
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Okay so we need to figure out how to handle the traffic spikes during product launches. Last time the site went down for twenty minutes and we lost a ton of orders.\n[00:10.00] P1: What if we used a message queue? Like we could put incoming orders into a queue and process them asynchronously. That way the frontend stays responsive even under heavy load.\n[00:20.00] P3: Hmm. I don't know, queues add complexity. What about just scaling up the servers?\n[00:26.00] P2: Auto-scaling takes time to spin up though. By the time new instances are ready we've already lost requests.\n[00:32.00] P3: Fair point.\n[00:34.00] P2: What if we pre-warmed the instances before the launch?\n[00:37.50] P3: That could work but it's wasteful if we overestimate.\n[00:41.00] P2: True.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Convince team to adopt message queue solution for handling traffic spikes",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Let me walk through a specific example of how queues solved similar scaling challenges.",
+        "recommendation_2": "We could demonstrate a quick prototype showing queue performance under simulated load.",
+        "urgency": "medium",
+        "rationale": "The wearer's initial queue idea is being subtly dismissed, and they need to re-establish technical credibility."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "error": "Extra data: line 10 column 1 (char 382)"
+    },
+    {
+      "elapsed": 60.0,
+      "error": "Extra data: line 10 column 1 (char 361)"
+    },
+    {
+      "elapsed": 70.0,
+      "error": "Extra data: line 10 column 1 (char 341)"
+    },
+    {
+      "elapsed": 80.0,
+      "check_number": 8,
+      "transcript_snapshot": "[00:00.00] P2: Okay so we need to figure out how to handle the traffic spikes during product launches. Last time the site went down for twenty minutes and we lost a ton of orders.\n[00:10.00] P1: What if we used a message queue? Like we could put incoming orders into a queue and process them asynchronously. That way the frontend stays responsive even under heavy load.\n[00:20.00] P3: Hmm. I don't know, queues add complexity. What about just scaling up the servers?\n[00:26.00] P2: Auto-scaling takes time to spin up though. By the time new instances are ready we've already lost requests.\n[00:32.00] P3: Fair point.\n[00:34.00] P2: What if we pre-warmed the instances before the launch?\n[00:37.50] P3: That could work but it's wasteful if we overestimate.\n[00:41.00] P2: True.\n[00:43.00] P3: You know what, I just thought of something. What if we implement an event-driven architecture with a message broker? Orders come in, get published to a topic, and worker services process them at their own pace. The user gets an immediate acknowledgment and the order processes in the background.\n[00:58.00] P2: Oh that's really smart. Yeah an event-driven approach would decouple the ingestion from the processing.\n[01:03.00] P3: Exactly. And we can scale the workers independently.\n[01:07.00] P2: I love it. Let's go with that. P3, can you write up the architecture doc?\n[01:12.00] P3: Sure, I'll have a draft by tomorrow.\n[01:15.00] P2: Great. Let's reconvene Thursday to review. Anything else on the traffic issue?\n[01:20.00] P1: I mean... no, I think that covers it.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Contribute meaningfully to the discussion and have his original message queue idea recognized",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Actually, my initial message queue suggestion aligns with the event-driven approach.",
+        "recommendation_2": "I proposed queues earlier, which seems similar to what we're discussing now.",
+        "urgency": "medium",
+        "rationale": "P1's original queue idea was dismissed but is now essentially being restated by P3, creating an opportunity for recognition and connection."
+      }
+    },
+    {
+      "elapsed": 83.0,
+      "check_number": 9,
+      "transcript_snapshot": "[00:00.00] P2: Okay so we need to figure out how to handle the traffic spikes during product launches. Last time the site went down for twenty minutes and we lost a ton of orders.\n[00:10.00] P1: What if we used a message queue? Like we could put incoming orders into a queue and process them asynchronously. That way the frontend stays responsive even under heavy load.\n[00:20.00] P3: Hmm. I don't know, queues add complexity. What about just scaling up the servers?\n[00:26.00] P2: Auto-scaling takes time to spin up though. By the time new instances are ready we've already lost requests.\n[00:32.00] P3: Fair point.\n[00:34.00] P2: What if we pre-warmed the instances before the launch?\n[00:37.50] P3: That could work but it's wasteful if we overestimate.\n[00:41.00] P2: True.\n[00:43.00] P3: You know what, I just thought of something. What if we implement an event-driven architecture with a message broker? Orders come in, get published to a topic, and worker services process them at their own pace. The user gets an immediate acknowledgment and the order processes in the background.\n[00:58.00] P2: Oh that's really smart. Yeah an event-driven approach would decouple the ingestion from the processing.\n[01:03.00] P3: Exactly. And we can scale the workers independently.\n[01:07.00] P2: I love it. Let's go with that. P3, can you write up the architecture doc?\n[01:12.00] P3: Sure, I'll have a draft by tomorrow.\n[01:15.00] P2: Great. Let's reconvene Thursday to review. Anything else on the traffic issue?\n[01:20.00] P1: I mean... no, I think that covers it.\n[01:23.00] P2: Perfect. Let's move on.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Recover credibility after having his original message queue idea co-opted by P3",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "signal_type": "idea_co_option",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Actually, I initially suggested the message queue approach earlier.",
+        "recommendation_2": "My original proposal aligns closely with this event-driven architecture.",
+        "urgency": "medium",
+        "rationale": "P1's original queue suggestion was dismissed, then essentially restated by P3 without attribution"
+      }
+    }
+  ]
+}

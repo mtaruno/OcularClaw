@@ -1,0 +1,15 @@
+{
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "duration_seconds": 21.21,
+  "check_interval": 10.0,
+  "total_checks": 1,
+  "total_triggers": 0,
+  "transcript": "[00:05.00] P1: Test hello.\n[00:10.01] P1: you're a proactive agent So\n[00:15.01] P1: where are the ways",
+  "log": [
+    {
+      "elapsed": 10.01,
+      "error": "HTTP Error 401: Unauthorized"
+    }
+  ]
+}

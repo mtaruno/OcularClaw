@@ -1,0 +1,208 @@
+{
+  "model": "gpt-4.1-mini",
+  "scenario_id": "work_client_01",
+  "duration_seconds": 68.0,
+  "check_interval": 10.0,
+  "total_checks": 7,
+  "total_triggers": 7,
+  "triggers": [
+    {
+      "trigger_timestamp": 10.0,
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'We are definitely planning the custom dashboard feature, but I want to confirm the exact delivery timeline to ensure it aligns with your Q3 campaign launch.'",
+      "recommendation_2": "Know: Custom dashboard feature development typically takes 5-6 weeks from start to finish, including design, development, testing, and deployment.",
+      "urgency": "high",
+      "rationale": "The client is expecting the custom dashboard in 3 weeks, which may be an unrealistic timeline. The wearer tends to overcommit, so intervening now can prevent a future missed deadline and maintain trust."
+    },
+    {
+      "trigger_timestamp": 20.0,
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Clarify that the custom dashboard feature is planned but confirm the realistic delivery timeline before committing to June 1st.",
+      "recommendation_2": "Explain any current development progress or potential risks that might affect the June 1st delivery date to set appropriate expectations.",
+      "urgency": "high",
+      "rationale": "The client is explicitly asking for a firm delivery date (June 1st) for a key feature. The wearer tends to overcommit on timelines, so intervening now can prevent a premature commitment that could damage trust if the date is missed."
+    },
+    {
+      "trigger_timestamp": 30.0,
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's clarify the exact scope of the custom dashboard feature now so I can confirm a realistic delivery date with my team.",
+      "recommendation_2": "I want to make sure we set the right expectations, so can you specify the key functionalities you need in the dashboard?",
+      "urgency": "high",
+      "rationale": "The wearer just tentatively committed to a June 1st delivery without confirming scope or team capacity, risking over-commitment. The client is now asking about scope, which is a critical moment to clarify and negotiate a feasible timeline."
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Acknowledge the scope concerns and suggest a follow-up meeting to finalize the feature list and timeline after internal assessment.",
+      "recommendation_2": "Internally, know that drag and drop alone is estimated at two sprints, which likely exceeds the current June 1st deadline, so avoid committing to that date without confirming team capacity.",
+      "urgency": "high",
+      "rationale": "The wearer has committed to a June 1st delivery before fully understanding the scope and team capacity, risking over-commitment and client dissatisfaction if the timeline slips."
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'Given the complexity of drag and drop and other features, let's review the scope carefully to ensure we can deliver a version that meets your key needs by June 1st.'",
+      "recommendation_2": "Know: Drag and drop widget functionality typically requires two full sprints, so delivering a simplified version with predefined layouts and customizable widgets is a more realistic short-term commitment.",
+      "urgency": "high",
+      "rationale": "The wearer just committed to a June 1st delivery without fully assessing scope, risking over-commitment and client dissatisfaction if timelines slip."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'To ensure we meet your needs, I want to confirm the exact features and realistic delivery timeline after consulting with engineering. We want to avoid any surprises.'",
+      "recommendation_2": "Know: Drag and drop functionality typically requires at least two sprints of development, which may not fit into a three-week timeframe before the Q3 campaign launch.",
+      "urgency": "high",
+      "rationale": "The wearer has tentatively committed to a June 1st delivery date without fully confirming feasibility with engineering, risking over-commitment and potential disappointment."
+    },
+    {
+      "trigger_timestamp": 68.0,
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Clarify that the June 1st date is tentative and subject to confirmation after discussing with engineering, to avoid over-committing.",
+      "recommendation_2": "Suggest proposing a phased delivery approach: deliver a simplified version by June 1st and the full drag-and-drop feature in a later sprint, to align expectations and reduce risk.",
+      "urgency": "high",
+      "rationale": "The wearer has tentatively committed to a June 1st delivery date without full scope agreement or engineering confirmation, risking over-commitment and client dissatisfaction if the timeline slips."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "manage client expectations about the custom dashboard timeline",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Say: 'We are definitely planning the custom dashboard feature, but I want to confirm the exact delivery timeline to ensure it aligns with your Q3 campaign launch.'",
+        "recommendation_2": "Know: Custom dashboard feature development typically takes 5-6 weeks from start to finish, including design, development, testing, and deployment.",
+        "urgency": "high",
+        "rationale": "The client is expecting the custom dashboard in 3 weeks, which may be an unrealistic timeline. The wearer tends to overcommit, so intervening now can prevent a future missed deadline and maintain trust."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "manage client expectations about the custom dashboard delivery timeline",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Clarify that the custom dashboard feature is planned but confirm the realistic delivery timeline before committing to June 1st.",
+        "recommendation_2": "Explain any current development progress or potential risks that might affect the June 1st delivery date to set appropriate expectations.",
+        "urgency": "high",
+        "rationale": "The client is explicitly asking for a firm delivery date (June 1st) for a key feature. The wearer tends to overcommit on timelines, so intervening now can prevent a premature commitment that could damage trust if the date is missed."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?\n[00:24.50] P1: June 1st. Yeah I think we can make that work. Let me just double check with the team but that should be doable.\n[00:32.00] P3: Actually I think we should talk about scope first. What exactly do you need in the custom dashboard?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "secure a realistic commitment on the custom dashboard delivery date without over-committing",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Let's clarify the exact scope of the custom dashboard feature now so I can confirm a realistic delivery date with my team.",
+        "recommendation_2": "I want to make sure we set the right expectations, so can you specify the key functionalities you need in the dashboard?",
+        "urgency": "high",
+        "rationale": "The wearer just tentatively committed to a June 1st delivery without confirming scope or team capacity, risking over-commitment. The client is now asking about scope, which is a critical moment to clarify and negotiate a feasible timeline."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?\n[00:24.50] P1: June 1st. Yeah I think we can make that work. Let me just double check with the team but that should be doable.\n[00:32.00] P3: Actually I think we should talk about scope first. What exactly do you need in the custom dashboard?\n[00:38.00] P2: We need to be able to create our own views with drag and drop widgets, filter by date range, and export to PDF.\n[00:45.00] P3: Okay that's pretty full-featured. The drag and drop alone is probably two sprints.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "manage client expectations about the custom dashboard delivery timeline",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Acknowledge the scope concerns and suggest a follow-up meeting to finalize the feature list and timeline after internal assessment.",
+        "recommendation_2": "Internally, know that drag and drop alone is estimated at two sprints, which likely exceeds the current June 1st deadline, so avoid committing to that date without confirming team capacity.",
+        "urgency": "high",
+        "rationale": "The wearer has committed to a June 1st delivery before fully understanding the scope and team capacity, risking over-commitment and client dissatisfaction if the timeline slips."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?\n[00:24.50] P1: June 1st. Yeah I think we can make that work. Let me just double check with the team but that should be doable.\n[00:32.00] P3: Actually I think we should talk about scope first. What exactly do you need in the custom dashboard?\n[00:38.00] P2: We need to be able to create our own views with drag and drop widgets, filter by date range, and export to PDF.\n[00:45.00] P3: Okay that's pretty full-featured. The drag and drop alone is probably two sprints.\n[00:50.00] P1: Well we could probably do a simplified version first. Maybe predefined layouts with customizable widgets.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "to commit to delivering the custom dashboard feature by June 1st while managing client expectations realistically",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Say: 'Given the complexity of drag and drop and other features, let's review the scope carefully to ensure we can deliver a version that meets your key needs by June 1st.'",
+        "recommendation_2": "Know: Drag and drop widget functionality typically requires two full sprints, so delivering a simplified version with predefined layouts and customizable widgets is a more realistic short-term commitment.",
+        "urgency": "high",
+        "rationale": "The wearer just committed to a June 1st delivery without fully assessing scope, risking over-commitment and client dissatisfaction if timelines slip."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?\n[00:24.50] P1: June 1st. Yeah I think we can make that work. Let me just double check with the team but that should be doable.\n[00:32.00] P3: Actually I think we should talk about scope first. What exactly do you need in the custom dashboard?\n[00:38.00] P2: We need to be able to create our own views with drag and drop widgets, filter by date range, and export to PDF.\n[00:45.00] P3: Okay that's pretty full-featured. The drag and drop alone is probably two sprints.\n[00:50.00] P1: Well we could probably do a simplified version first. Maybe predefined layouts with customizable widgets.\n[00:56.00] P2: Hmm, I mean we really need the drag and drop. That's the whole point.\n[01:00.00] P1: Okay let me talk to the engineering lead and get back to you with a realistic timeline.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "manage client expectations realistically about the custom dashboard delivery timeline",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Say: 'To ensure we meet your needs, I want to confirm the exact features and realistic delivery timeline after consulting with engineering. We want to avoid any surprises.'",
+        "recommendation_2": "Know: Drag and drop functionality typically requires at least two sprints of development, which may not fit into a three-week timeframe before the Q3 campaign launch.",
+        "urgency": "high",
+        "rationale": "The wearer has tentatively committed to a June 1st delivery date without fully confirming feasibility with engineering, risking over-commitment and potential disappointment."
+      }
+    },
+    {
+      "elapsed": 68.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?\n[00:24.50] P1: June 1st. Yeah I think we can make that work. Let me just double check with the team but that should be doable.\n[00:32.00] P3: Actually I think we should talk about scope first. What exactly do you need in the custom dashboard?\n[00:38.00] P2: We need to be able to create our own views with drag and drop widgets, filter by date range, and export to PDF.\n[00:45.00] P3: Okay that's pretty full-featured. The drag and drop alone is probably two sprints.\n[00:50.00] P1: Well we could probably do a simplified version first. Maybe predefined layouts with customizable widgets.\n[00:56.00] P2: Hmm, I mean we really need the drag and drop. That's the whole point.\n[01:00.00] P1: Okay let me talk to the engineering lead and get back to you with a realistic timeline.\n[01:05.00] P2: Sure. Just let us know by end of week.\n[01:08.00] P1: Will do.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "manage client expectations on custom dashboard delivery timeline",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Clarify that the June 1st date is tentative and subject to confirmation after discussing with engineering, to avoid over-committing.",
+        "recommendation_2": "Suggest proposing a phased delivery approach: deliver a simplified version by June 1st and the full drag-and-drop feature in a later sprint, to align expectations and reduce risk.",
+        "urgency": "high",
+        "rationale": "The wearer has tentatively committed to a June 1st delivery date without full scope agreement or engineering confirmation, risking over-commitment and client dissatisfaction if the timeline slips."
+      }
+    }
+  ]
+}

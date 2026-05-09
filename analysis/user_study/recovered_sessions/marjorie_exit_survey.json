@@ -1,0 +1,15 @@
+{
+  "id": "recovered_marjorie_exit",
+  "source": "recovered_from_video",
+  "reviewer_id": "2",
+  "reviewer_name": "Marjorie",
+  "frequency_preference": "less",
+  "frequency_label": "Less than current",
+  "most_natural_scenario": "S1",
+  "most_natural_label": "Team Meeting",
+  "most_annoying_scenario": "S3",
+  "most_annoying_label": "Coffee with a Friend",
+  "one_change": "Change what types of suggestions it gives depending on the scenario. For professional settings, actionable suggestions work. For emotional conversations, don't intervene. For casual planning, help with information retrieval and brainstorming, not conversation coaching.",
+  "created_at": "2026-04-14T14:15:00.000Z",
+  "recovery_notes": "Exit survey responses recovered from video frames and transcript audio. One-change answer synthesized from multiple transcript statements (60:07-61:17)."
+}

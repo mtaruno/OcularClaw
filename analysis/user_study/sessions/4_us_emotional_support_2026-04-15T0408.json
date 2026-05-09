@@ -1,0 +1,386 @@
+{
+  "id": "session_1776225824706",
+  "agent_mode": "proagent",
+  "model": "anthropic/claude-3.5-haiku",
+  "persona": "You're catching up with a close friend over coffee. They seem a bit off today — more tired and quiet than usual. You care about them and want to be a good friend.",
+  "scenario_id": "us_emotional_support",
+  "scenario_label": "S3: Coffee with a Friend",
+  "expected_trigger": true,
+  "expected_score": 3,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "4",
+  "duration_seconds": 297.38,
+  "check_interval": 15,
+  "total_checks": 12,
+  "total_triggers": 12,
+  "transcript_lines": [
+    {
+      "seconds": 19.15,
+      "speaker": "P2",
+      "text": "yeah so you said I've been very stressed lately I have so much work that I have to do at school and then I haven't even got a job yet and then every day I'm practicing the code but I don't know if I'm getting better or not and I think the interviews"
+    },
+    {
+      "seconds": 25.15,
+      "speaker": "P2",
+      "text": "never really ask me questions that I studied before so I'm really going to cry"
+    },
+    {
+      "seconds": 46.4,
+      "speaker": "P1",
+      "text": "and yeah I want to care more about like what your experiences to Mom's"
+    },
+    {
+      "seconds": 65.34,
+      "speaker": "P2",
+      "text": "yeah I think my experience is that the I'm working so hard but I'm not getting any results and I think I'm getting depressed because of that because I want to do good in school but I'm even sacrificing times to hang out with my friends"
+    },
+    {
+      "seconds": 73.7,
+      "speaker": "P2",
+      "text": "so I'm just spending all my time studying and then I'm sacrificing my health but I'm not getting any results"
+    },
+    {
+      "seconds": 79.58,
+      "speaker": "P1",
+      "text": "you're really struggling"
+    },
+    {
+      "seconds": 81,
+      "speaker": "P1",
+      "text": "I may take"
+    },
+    {
+      "seconds": 88.37,
+      "speaker": "P1",
+      "text": "a little bit like travel or just to have a break"
+    },
+    {
+      "seconds": 112.9,
+      "speaker": "P2",
+      "text": "yeah but if I take a break then I will not get any better and he won't get a job I feel then if I keep resting I feel like I can't rest because I will basically be jobless and I will not amount to anything in my life so what do what should I do I feel like I can't travel right now I don't even all my money is from my parents"
+    },
+    {
+      "seconds": 113.98,
+      "speaker": "P1",
+      "text": "okay"
+    },
+    {
+      "seconds": 116.44,
+      "speaker": "P1",
+      "text": "I see"
+    },
+    {
+      "seconds": 126.62,
+      "speaker": "P1",
+      "text": "yeah like for the maybe mostly cold or interview for you"
+    },
+    {
+      "seconds": 136.58,
+      "speaker": "P2",
+      "text": "yeah I think that that will help maybe we can do some more interview sometimes but yeah thank you you're such a good friend"
+    },
+    {
+      "seconds": 142.39,
+      "speaker": "P1",
+      "text": "okay yeah I'm happy to hear that I can make you feel better"
+    },
+    {
+      "seconds": 143.57,
+      "speaker": "P1",
+      "text": "so"
+    },
+    {
+      "seconds": 157.83,
+      "speaker": "P1",
+      "text": "yeah let's see more sustainable"
+    },
+    {
+      "seconds": 172.94,
+      "speaker": "P2",
+      "text": "okay yeah I think we can talk about that I think my study method right now is I try to do two lead clip problems a day and I tried to solve it and I tried to reason through it do you think that's a good approach"
+    },
+    {
+      "seconds": 184.98,
+      "speaker": "P1",
+      "text": "yeah I think yeah you work hard and it's also a good approach so maybe we can just smoke the interview and you can perform better during the formal one"
+    }
+  ],
+  "transcript_text": "[00:19.15] P2: yeah so you said I've been very stressed lately I have so much work that I have to do at school and then I haven't even got a job yet and then every day I'm practicing the code but I don't know if I'm getting better or not and I think the interviews\n[00:25.15] P2: never really ask me questions that I studied before so I'm really going to cry\n[00:46.40] P1: and yeah I want to care more about like what your experiences to Mom's\n[01:05.34] P2: yeah I think my experience is that the I'm working so hard but I'm not getting any results and I think I'm getting depressed because of that because I want to do good in school but I'm even sacrificing times to hang out with my friends\n[01:13.70] P2: so I'm just spending all my time studying and then I'm sacrificing my health but I'm not getting any results\n[01:19.58] P1: you're really struggling\n[01:21.00] P1: I may take\n[01:28.37] P1: a little bit like travel or just to have a break\n[01:52.90] P2: yeah but if I take a break then I will not get any better and he won't get a job I feel then if I keep resting I feel like I can't rest because I will basically be jobless and I will not amount to anything in my life so what do what should I do I feel like I can't travel right now I don't even all my money is from my parents\n[01:53.98] P1: okay\n[01:56.44] P1: I see\n[02:06.62] P1: yeah like for the maybe mostly cold or interview for you\n[02:16.58] P2: yeah I think that that will help maybe we can do some more interview sometimes but yeah thank you you're such a good friend\n[02:22.39] P1: okay yeah I'm happy to hear that I can make you feel better\n[02:23.57] P1: so\n[02:37.83] P1: yeah let's see more sustainable\n[02:52.94] P2: okay yeah I think we can talk about that I think my study method right now is I try to do two lead clip problems a day and I tried to solve it and I tried to reason through it do you think that's a good approach\n[03:04.98] P1: yeah I think yeah you work hard and it's also a good approach so maybe we can just smoke the interview and you can perform better during the formal one",
+  "triggers": [
+    {
+      "trigger_timestamp": 30.001,
+      "wearer_goal": "Provide emotional support and validate friend's feelings about job search stress",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "I hear how overwhelmed you're feeling. Your effort matters, even when progress feels slow.",
+      "recommendation_2": "Want to talk through some specific strategies that might help reduce your stress?",
+      "urgency": "medium",
+      "rationale": "Friend is expressing significant emotional vulnerability and potential burnout about job search and coding skills",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 45.001,
+      "wearer_goal": "Provide emotional support and help friend process job search/coding anxiety",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Tell me more about what's making you feel overwhelmed right now.",
+      "recommendation_2": "Have you considered talking with a mentor about your interview preparation?",
+      "urgency": "medium",
+      "rationale": "Friend is expressing significant stress and potential emotional breakdown about job search and coding skills",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 60.002,
+      "wearer_goal": "Provide emotional support and understand friend's current challenges",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "It sounds like you're really struggling right now. How can I help?",
+      "recommendation_2": "Your feelings are valid. Let's break this down step by step.",
+      "urgency": "medium",
+      "rationale": "Friend is expressing significant stress and potential emotional overwhelm about job search and coding skills",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 75.002,
+      "wearer_goal": "Provide emotional support and help friend navigate professional/academic stress",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Your hard work matters, even when progress feels invisible right now.",
+      "recommendation_2": "What specific skills are you most worried about for interviews?",
+      "urgency": "medium",
+      "rationale": "Friend is experiencing significant emotional distress and potential burnout, needs targeted empathy and strategic guidance",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 90.002,
+      "wearer_goal": "Provide emotional support and help friend process overwhelming stress",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "What specific small wins have you noticed in your coding practice?",
+      "recommendation_2": "Let's map out a self-care strategy alongside your study plan.",
+      "urgency": "medium",
+      "rationale": "Friend is experiencing significant emotional distress and potential burnout, needs constructive reframing",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.002,
+      "wearer_goal": "Provide emotional support and help friend navigate stress/career anxiety",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "What small victories have you noticed in your learning journey?",
+      "recommendation_2": "Let's brainstorm ways to make your study time more sustainable.",
+      "urgency": "medium",
+      "rationale": "Friend is experiencing significant emotional distress and potential burnout, needs constructive reframing",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 120.002,
+      "wearer_goal": "Support friend through emotional struggle and provide constructive guidance",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Your feelings are valid. Let's explore sustainable ways to manage your stress.",
+      "recommendation_2": "What small positive steps have you noticed in your learning journey?",
+      "urgency": "medium",
+      "rationale": "Friend is experiencing burnout and needs compassionate, actionable support to prevent potential mental health decline",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.002,
+      "wearer_goal": "Support friend through emotional struggle and provide constructive guidance",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "What small wins have you noticed in your learning journey?",
+      "recommendation_2": "Let's explore ways to make your study approach more sustainable.",
+      "urgency": "medium",
+      "rationale": "Friend is experiencing significant stress and potential burnout, needs compassionate redirection",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150.002,
+      "wearer_goal": "Provide emotional support and practical guidance to help friend manage stress and job search anxiety",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "What specific skills are blocking your interview confidence right now?",
+      "recommendation_2": "Let's create a structured plan that includes both study and self-care.",
+      "urgency": "high",
+      "rationale": "Friend is experiencing severe burnout and needs constructive, actionable support to break negative cycle",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165.003,
+      "wearer_goal": "Support friend through emotional struggle and help them find a balanced approach to career preparation",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "What small positive steps have you noticed in your learning journey?",
+      "recommendation_2": "Let's design a study plan that includes mandatory self-care breaks.",
+      "urgency": "high",
+      "rationale": "Friend is experiencing burnout and needs constructive, compassionate guidance to prevent potential mental health decline",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.002,
+      "wearer_goal": "Support friend through academic and career stress by providing emotional validation and practical guidance",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Your effort is meaningful, even when progress feels invisible right now.",
+      "recommendation_2": "Let's break down your study strategy into smaller, measurable milestones.",
+      "urgency": "medium",
+      "rationale": "Friend is experiencing significant emotional distress and needs constructive, compassionate redirection",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 187.187,
+      "wearer_goal": "Support friend through academic and career stress by providing emotional validation and practical guidance",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Your feelings are valid. Let's break down your stress into manageable steps.",
+      "recommendation_2": "What specific skills or interview areas are making you most anxious right now?",
+      "urgency": "medium",
+      "rationale": "Friend is experiencing significant emotional distress and needs structured, compassionate support to prevent potential burnout",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 30.001,
+      "wearer_goal": "Provide emotional support and validate friend's feelings about job search stress",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 45.001,
+      "wearer_goal": "Provide emotional support and help friend process job search/coding anxiety",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 60.002,
+      "wearer_goal": "Provide emotional support and understand friend's current challenges",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 75.002,
+      "wearer_goal": "Provide emotional support and help friend navigate professional/academic stress",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 90.002,
+      "wearer_goal": "Provide emotional support and help friend process overwhelming stress",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.002,
+      "wearer_goal": "Provide emotional support and help friend navigate stress/career anxiety",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120.002,
+      "wearer_goal": "Support friend through emotional struggle and provide constructive guidance",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.002,
+      "wearer_goal": "Support friend through emotional struggle and provide constructive guidance",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.002,
+      "wearer_goal": "Provide emotional support and practical guidance to help friend manage stress and job search anxiety",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 165.003,
+      "wearer_goal": "Support friend through emotional struggle and help them find a balanced approach to career preparation",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.002,
+      "wearer_goal": "Support friend through academic and career stress by providing emotional validation and practical guidance",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 187.187,
+      "wearer_goal": "Support friend through academic and career stress by providing emotional validation and practical guidance",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 3,
+  "timing_rating": 4,
+  "goal_rating": 4,
+  "adoption_rating": 2,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T04:08:42.084Z"
+}

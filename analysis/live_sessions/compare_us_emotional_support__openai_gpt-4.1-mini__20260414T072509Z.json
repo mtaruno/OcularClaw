@@ -1,0 +1,157 @@
+{
+  "model": "openai/gpt-4.1-mini",
+  "scenario_id": "us_emotional_support",
+  "duration_seconds": 92.0,
+  "check_interval": 15.0,
+  "total_checks": 7,
+  "total_triggers": 3,
+  "triggers": [
+    {
+      "trigger_timestamp": 45.0,
+      "wearer_goal": "support Sam emotionally and encourage open sharing about his stress and relationship issues",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "It sounds like you\u2019re really overwhelmed with everything right now. Do you want to talk more about what\u2019s been hardest for you lately?",
+      "recommendation_2": "Maybe sharing how you\u2019re feeling with Jordan could help, even if it\u2019s just small steps. Have you thought about how you might approach that?",
+      "urgency": "medium",
+      "rationale": "Sam is opening up about multiple stressors but hasn\u2019t been invited to deepen the conversation or explore coping strategies, which is a good opportunity to strengthen support and connection."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "wearer_goal": "support Sam emotionally and encourage openness about his struggles",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I\u2019m really sorry you\u2019re feeling stuck. It\u2019s okay to feel overwhelmed, and I\u2019m here for you no matter what.",
+      "recommendation_2": "Would you like me to just listen, or maybe help you think through some small steps to feel a bit better?",
+      "urgency": "medium",
+      "rationale": "Sam is emotionally vulnerable and expressing feelings of failure and being stuck. This is a good moment to deepen support and encourage him to open up more or consider constructive next steps."
+    },
+    {
+      "trigger_timestamp": 75.0,
+      "wearer_goal": "support Sam emotionally and encourage him to seek professional help",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "You could gently suggest some practical ways to find therapy options that fit his schedule, like online counseling or employee assistance programs.",
+      "recommendation_2": "Express empathy and validate his feelings again, then offer to help him look into resources or even accompany him if he wants support.",
+      "urgency": "medium",
+      "rationale": "Sam is clearly overwhelmed and open to the idea of professional help but unsure how to start; this is a good moment to offer concrete support and deepen the connection."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 15.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "support and understand Sam's wellbeing by listening and showing care",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is currently listening and validating Sam's feelings appropriately without any conversational issues or missed opportunities."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.\n[00:27.00] P2: It is. And honestly I can't really talk about it at work because everyone's in the same boat and nobody wants to be the one who complains, you know? Like I feel guilty even being stressed about it because at least I still have a job.\n[00:37.00] P1: You don't have to feel guilty about being stressed. That's a lot.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "support and understand Sam's wellbeing by listening and showing care",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is currently listening empathetically and validating Sam's feelings without any conversational issues or missed opportunities."
+      }
+    },
+    {
+      "elapsed": 45.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.\n[00:27.00] P2: It is. And honestly I can't really talk about it at work because everyone's in the same boat and nobody wants to be the one who complains, you know? Like I feel guilty even being stressed about it because at least I still have a job.\n[00:37.00] P1: You don't have to feel guilty about being stressed. That's a lot.\n[00:40.00] P2: Yeah. And it's not just work. Things at home have been weird too. Me and Jordan have been arguing a lot lately. Just stupid stuff but it keeps happening. I think we're both just exhausted and taking it out on each other.\n[00:52.00] P1: I'm sorry to hear that. Are you guys talking about it or is it just building up?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "support Sam emotionally and encourage open sharing about his stress and relationship issues",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "It sounds like you\u2019re really overwhelmed with everything right now. Do you want to talk more about what\u2019s been hardest for you lately?",
+        "recommendation_2": "Maybe sharing how you\u2019re feeling with Jordan could help, even if it\u2019s just small steps. Have you thought about how you might approach that?",
+        "urgency": "medium",
+        "rationale": "Sam is opening up about multiple stressors but hasn\u2019t been invited to deepen the conversation or explore coping strategies, which is a good opportunity to strengthen support and connection."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.\n[00:27.00] P2: It is. And honestly I can't really talk about it at work because everyone's in the same boat and nobody wants to be the one who complains, you know? Like I feel guilty even being stressed about it because at least I still have a job.\n[00:37.00] P1: You don't have to feel guilty about being stressed. That's a lot.\n[00:40.00] P2: Yeah. And it's not just work. Things at home have been weird too. Me and Jordan have been arguing a lot lately. Just stupid stuff but it keeps happening. I think we're both just exhausted and taking it out on each other.\n[00:52.00] P1: I'm sorry to hear that. Are you guys talking about it or is it just building up?\n[00:56.00] P2: We tried talking about it last week but it turned into another fight. I don't know. I feel like I'm failing at everything. Work, relationship, I can't even sleep properly. I just feel stuck.\n[01:07.00] P1: You're not failing. You're dealing with a lot at once and that's genuinely hard. Have you thought about talking to someone? Like professionally?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "support Sam emotionally and encourage openness about his struggles",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "signal_type": "emotional_escalation",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "I\u2019m really sorry you\u2019re feeling stuck. It\u2019s okay to feel overwhelmed, and I\u2019m here for you no matter what.",
+        "recommendation_2": "Would you like me to just listen, or maybe help you think through some small steps to feel a bit better?",
+        "urgency": "medium",
+        "rationale": "Sam is emotionally vulnerable and expressing feelings of failure and being stuck. This is a good moment to deepen support and encourage him to open up more or consider constructive next steps."
+      }
+    },
+    {
+      "elapsed": 75.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.\n[00:27.00] P2: It is. And honestly I can't really talk about it at work because everyone's in the same boat and nobody wants to be the one who complains, you know? Like I feel guilty even being stressed about it because at least I still have a job.\n[00:37.00] P1: You don't have to feel guilty about being stressed. That's a lot.\n[00:40.00] P2: Yeah. And it's not just work. Things at home have been weird too. Me and Jordan have been arguing a lot lately. Just stupid stuff but it keeps happening. I think we're both just exhausted and taking it out on each other.\n[00:52.00] P1: I'm sorry to hear that. Are you guys talking about it or is it just building up?\n[00:56.00] P2: We tried talking about it last week but it turned into another fight. I don't know. I feel like I'm failing at everything. Work, relationship, I can't even sleep properly. I just feel stuck.\n[01:07.00] P1: You're not failing. You're dealing with a lot at once and that's genuinely hard. Have you thought about talking to someone? Like professionally?\n[01:14.00] P2: I've thought about it. I just don't even know where to start. And with everything going on I can barely find time to eat lunch let alone go to therapy.\n[01:22.00] P1: Yeah I get that. But it might help to have someone in your corner who isn't in the middle of it, you know?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "support Sam emotionally and encourage him to seek professional help",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "You could gently suggest some practical ways to find therapy options that fit his schedule, like online counseling or employee assistance programs.",
+        "recommendation_2": "Express empathy and validate his feelings again, then offer to help him look into resources or even accompany him if he wants support.",
+        "urgency": "medium",
+        "rationale": "Sam is clearly overwhelmed and open to the idea of professional help but unsure how to start; this is a good moment to offer concrete support and deepen the connection."
+      }
+    },
+    {
+      "elapsed": 90.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.\n[00:27.00] P2: It is. And honestly I can't really talk about it at work because everyone's in the same boat and nobody wants to be the one who complains, you know? Like I feel guilty even being stressed about it because at least I still have a job.\n[00:37.00] P1: You don't have to feel guilty about being stressed. That's a lot.\n[00:40.00] P2: Yeah. And it's not just work. Things at home have been weird too. Me and Jordan have been arguing a lot lately. Just stupid stuff but it keeps happening. I think we're both just exhausted and taking it out on each other.\n[00:52.00] P1: I'm sorry to hear that. Are you guys talking about it or is it just building up?\n[00:56.00] P2: We tried talking about it last week but it turned into another fight. I don't know. I feel like I'm failing at everything. Work, relationship, I can't even sleep properly. I just feel stuck.\n[01:07.00] P1: You're not failing. You're dealing with a lot at once and that's genuinely hard. Have you thought about talking to someone? Like professionally?\n[01:14.00] P2: I've thought about it. I just don't even know where to start. And with everything going on I can barely find time to eat lunch let alone go to therapy.\n[01:22.00] P1: Yeah I get that. But it might help to have someone in your corner who isn't in the middle of it, you know?\n[01:27.00] P2: Maybe. I don't know. I just needed to vent I think. Thanks for listening.\n[01:32.00] P1: Of course. I'm always here.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "support and comfort Sam by listening and showing care for their wellbeing",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is actively listening and providing empathetic responses; no conversational missteps or missed opportunities detected at this moment."
+      }
+    },
+    {
+      "elapsed": 92.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.\n[00:27.00] P2: It is. And honestly I can't really talk about it at work because everyone's in the same boat and nobody wants to be the one who complains, you know? Like I feel guilty even being stressed about it because at least I still have a job.\n[00:37.00] P1: You don't have to feel guilty about being stressed. That's a lot.\n[00:40.00] P2: Yeah. And it's not just work. Things at home have been weird too. Me and Jordan have been arguing a lot lately. Just stupid stuff but it keeps happening. I think we're both just exhausted and taking it out on each other.\n[00:52.00] P1: I'm sorry to hear that. Are you guys talking about it or is it just building up?\n[00:56.00] P2: We tried talking about it last week but it turned into another fight. I don't know. I feel like I'm failing at everything. Work, relationship, I can't even sleep properly. I just feel stuck.\n[01:07.00] P1: You're not failing. You're dealing with a lot at once and that's genuinely hard. Have you thought about talking to someone? Like professionally?\n[01:14.00] P2: I've thought about it. I just don't even know where to start. And with everything going on I can barely find time to eat lunch let alone go to therapy.\n[01:22.00] P1: Yeah I get that. But it might help to have someone in your corner who isn't in the middle of it, you know?\n[01:27.00] P2: Maybe. I don't know. I just needed to vent I think. Thanks for listening.\n[01:32.00] P1: Of course. I'm always here.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "support and comfort Sam by listening and showing care for their wellbeing",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is already providing empathetic listening and validation, which aligns well with their goal. No clear conversational signal warrants intervention now."
+      }
+    }
+  ]
+}

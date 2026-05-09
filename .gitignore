@@ -47,3 +47,6 @@ public/window-clips/
 # Generated benchmark experiment artifacts
 analysis/experiment_runs/
 analysis/archive/legacy_experiments/
+
+# Raw user-study video recordings (too large for git)
+analysis/user_study/session_recordings/

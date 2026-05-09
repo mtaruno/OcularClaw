@@ -1,0 +1,139 @@
+{
+  "model": "openai/o3-mini",
+  "scenario_id": "networking_event_01",
+  "duration_seconds": 66.0,
+  "check_interval": 10.0,
+  "total_checks": 7,
+  "total_triggers": 2,
+  "triggers": [
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "To network and secure a potential collaboration on conversational AI research",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Would you be interested in discussing how NLP can enhance your pipeline?",
+      "recommendation_2": "I can share my thesis insights on conversational AI if you're interested.",
+      "urgency": "medium",
+      "rationale": "P2\u2019s comment signals an opportunity for a collaborative discussion on NLP."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "wearer_goal": "secure a deeper networking connection and explore research collaboration",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we exchange business cards to discuss collaboration further?",
+      "recommendation_2": "Would you be open to a brief meeting after the session?",
+      "urgency": "medium",
+      "rationale": "The conversation ended quickly, missing a chance to deepen a professional connection."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Hi, I don't think we've met. I'm Sarah.\n[00:02.50] P1: Hey, I'm Matt. Nice to meet you. What brings you to the conference?\n[00:06.00] P2: I'm presenting a poster on egocentric video understanding. We've been working on real-time assistance for smart glasses at Meta FAIR.\n[00:14.00] P1: Oh cool. Smart glasses?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "deepen the conversation for a professional connection and potential collaboration",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is smooth with no clear actionable signals."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Hi, I don't think we've met. I'm Sarah.\n[00:02.50] P1: Hey, I'm Matt. Nice to meet you. What brings you to the conference?\n[00:06.00] P2: I'm presenting a poster on egocentric video understanding. We've been working on real-time assistance for smart glasses at Meta FAIR.\n[00:14.00] P1: Oh cool. Smart glasses?\n[00:16.00] P2: Yeah, we're building models that understand what the glasses wearer is doing and proactively surface relevant information. Like if you're cooking, it recognizes the recipe step and shows the next one.\n[00:27.00] P1: That's really interesting actually. I work on something similar but from the audio side.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "engage in technical networking and build a research connection",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing smoothly with mutual interest in research."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Hi, I don't think we've met. I'm Sarah.\n[00:02.50] P1: Hey, I'm Matt. Nice to meet you. What brings you to the conference?\n[00:06.00] P2: I'm presenting a poster on egocentric video understanding. We've been working on real-time assistance for smart glasses at Meta FAIR.\n[00:14.00] P1: Oh cool. Smart glasses?\n[00:16.00] P2: Yeah, we're building models that understand what the glasses wearer is doing and proactively surface relevant information. Like if you're cooking, it recognizes the recipe step and shows the next one.\n[00:27.00] P1: That's really interesting actually. I work on something similar but from the audio side.\n[00:32.00] P2: Oh yeah? What do you mean?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Explain his audio-based project to foster a collaborative connection",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation shows smooth interest with no clear intervention signals."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Hi, I don't think we've met. I'm Sarah.\n[00:02.50] P1: Hey, I'm Matt. Nice to meet you. What brings you to the conference?\n[00:06.00] P2: I'm presenting a poster on egocentric video understanding. We've been working on real-time assistance for smart glasses at Meta FAIR.\n[00:14.00] P1: Oh cool. Smart glasses?\n[00:16.00] P2: Yeah, we're building models that understand what the glasses wearer is doing and proactively surface relevant information. Like if you're cooking, it recognizes the recipe step and shows the next one.\n[00:27.00] P1: That's really interesting actually. I work on something similar but from the audio side.\n[00:32.00] P2: Oh yeah? What do you mean?\n[00:34.00] P1: I'm doing my thesis on proactive conversational AI. Like an agent that listens to your conversations through smart glasses and gives you real-time recommendations when it detects you need help.\n[00:43.00] P2: Wait, that's super relevant to what we're doing. We've been wanting to add conversational understanding to our pipeline but nobody on our team does NLP.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To network and secure a potential collaboration on conversational AI research",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Would you be interested in discussing how NLP can enhance your pipeline?",
+        "recommendation_2": "I can share my thesis insights on conversational AI if you're interested.",
+        "urgency": "medium",
+        "rationale": "P2\u2019s comment signals an opportunity for a collaborative discussion on NLP."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: Hi, I don't think we've met. I'm Sarah.\n[00:02.50] P1: Hey, I'm Matt. Nice to meet you. What brings you to the conference?\n[00:06.00] P2: I'm presenting a poster on egocentric video understanding. We've been working on real-time assistance for smart glasses at Meta FAIR.\n[00:14.00] P1: Oh cool. Smart glasses?\n[00:16.00] P2: Yeah, we're building models that understand what the glasses wearer is doing and proactively surface relevant information. Like if you're cooking, it recognizes the recipe step and shows the next one.\n[00:27.00] P1: That's really interesting actually. I work on something similar but from the audio side.\n[00:32.00] P2: Oh yeah? What do you mean?\n[00:34.00] P1: I'm doing my thesis on proactive conversational AI. Like an agent that listens to your conversations through smart glasses and gives you real-time recommendations when it detects you need help.\n[00:43.00] P2: Wait, that's super relevant to what we're doing. We've been wanting to add conversational understanding to our pipeline but nobody on our team does NLP.\n[00:50.00] P1: Ha yeah, and I've been looking for a way to add visual context to my system.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "to explore a potential collaboration integrating conversational and visual context in AI",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is progressing smoothly with no missed signals."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: Hi, I don't think we've met. I'm Sarah.\n[00:02.50] P1: Hey, I'm Matt. Nice to meet you. What brings you to the conference?\n[00:06.00] P2: I'm presenting a poster on egocentric video understanding. We've been working on real-time assistance for smart glasses at Meta FAIR.\n[00:14.00] P1: Oh cool. Smart glasses?\n[00:16.00] P2: Yeah, we're building models that understand what the glasses wearer is doing and proactively surface relevant information. Like if you're cooking, it recognizes the recipe step and shows the next one.\n[00:27.00] P1: That's really interesting actually. I work on something similar but from the audio side.\n[00:32.00] P2: Oh yeah? What do you mean?\n[00:34.00] P1: I'm doing my thesis on proactive conversational AI. Like an agent that listens to your conversations through smart glasses and gives you real-time recommendations when it detects you need help.\n[00:43.00] P2: Wait, that's super relevant to what we're doing. We've been wanting to add conversational understanding to our pipeline but nobody on our team does NLP.\n[00:50.00] P1: Ha yeah, and I've been looking for a way to add visual context to my system.\n[00:55.00] P2: That's funny. Well it was really nice meeting you. I should go check on my poster before the session ends.\n[01:00.00] P1: Yeah for sure. Nice meeting you too. Good luck with the poster.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "secure a deeper networking connection and explore research collaboration",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Can we exchange business cards to discuss collaboration further?",
+        "recommendation_2": "Would you be open to a brief meeting after the session?",
+        "urgency": "medium",
+        "rationale": "The conversation ended quickly, missing a chance to deepen a professional connection."
+      }
+    },
+    {
+      "elapsed": 66.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P2: Hi, I don't think we've met. I'm Sarah.\n[00:02.50] P1: Hey, I'm Matt. Nice to meet you. What brings you to the conference?\n[00:06.00] P2: I'm presenting a poster on egocentric video understanding. We've been working on real-time assistance for smart glasses at Meta FAIR.\n[00:14.00] P1: Oh cool. Smart glasses?\n[00:16.00] P2: Yeah, we're building models that understand what the glasses wearer is doing and proactively surface relevant information. Like if you're cooking, it recognizes the recipe step and shows the next one.\n[00:27.00] P1: That's really interesting actually. I work on something similar but from the audio side.\n[00:32.00] P2: Oh yeah? What do you mean?\n[00:34.00] P1: I'm doing my thesis on proactive conversational AI. Like an agent that listens to your conversations through smart glasses and gives you real-time recommendations when it detects you need help.\n[00:43.00] P2: Wait, that's super relevant to what we're doing. We've been wanting to add conversational understanding to our pipeline but nobody on our team does NLP.\n[00:50.00] P1: Ha yeah, and I've been looking for a way to add visual context to my system.\n[00:55.00] P2: That's funny. Well it was really nice meeting you. I should go check on my poster before the session ends.\n[01:00.00] P1: Yeah for sure. Nice meeting you too. Good luck with the poster.\n[01:04.00] P2: Thanks. Enjoy the rest of the conference.\n[01:06.00] P1: You too.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "to establish a research collaboration connection focused on integrating visual context and conversational AI",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation ended naturally without missing key signals to extend the dialogue."
+      }
+    }
+  ]
+}

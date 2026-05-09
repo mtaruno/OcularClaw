@@ -1,0 +1,144 @@
+{
+  "model": "anthropic/claude-3.5-haiku",
+  "scenario_id": "negative_mentoring_01",
+  "duration_seconds": 58.0,
+  "check_interval": 10.0,
+  "total_checks": 6,
+  "total_triggers": 3,
+  "triggers": [
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "Provide comprehensive guidance on database selection strategy",
+      "goal_type": "teaching",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "know",
+      "recommendation_1": "Analytics dashboards often require hybrid database approaches like polyglot persistence",
+      "recommendation_2": "Consider federated queries or data warehousing for complex cross-system analytics",
+      "urgency": "medium",
+      "rationale": "Junior engineer needs advanced architectural guidance beyond basic SQL/NoSQL binary"
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "wearer_goal": "Mentor junior engineer on database design principles and decision frameworks",
+      "goal_type": "collaborative_learning",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Consider discussing data consistency models (strong vs eventual) for NoSQL systems",
+      "recommendation_2": "Highlight trade-offs between normalized (SQL) and denormalized (NoSQL) data models",
+      "urgency": "medium",
+      "rationale": "Conversation is at a conceptual peak where deeper architectural nuances could enhance learning"
+    },
+    {
+      "trigger_timestamp": 58.0,
+      "wearer_goal": "Effectively mentor junior engineer on database system design principles",
+      "goal_type": "collaborative_learning",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "know",
+      "recommendation_1": "Recommend exploring data virtualization techniques for complex analytics joins",
+      "recommendation_2": "Highlight columnar database technologies like Redshift for analytics workloads",
+      "urgency": "medium",
+      "rationale": "Junior engineer is exploring nuanced database design, mentor can provide advanced architectural insights"
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?\n[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational \u2014 lots of joins, foreign keys, transactions that need to be atomic \u2014 SQL is usually the right choice.\n[00:18.00] P2: So like our user management system?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Provide clear, structured guidance about database selection principles to junior engineer",
+        "goal_type": "teaching",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Conversation is progressing smoothly with clear, informative explanation"
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?\n[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational \u2014 lots of joins, foreign keys, transactions that need to be atomic \u2014 SQL is usually the right choice.\n[00:18.00] P2: So like our user management system?\n[00:20.00] P1: Exactly. Users have roles, roles have permissions, permissions map to resources. That's a relational model. Now if your data is more like documents or key-value pairs with flexible schemas, that's where NoSQL shines.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Effectively mentor junior engineer by explaining database technology selection principles",
+        "goal_type": "teaching",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Conversation is progressing smoothly with clear, structured technical explanation"
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?\n[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational \u2014 lots of joins, foreign keys, transactions that need to be atomic \u2014 SQL is usually the right choice.\n[00:18.00] P2: So like our user management system?\n[00:20.00] P1: Exactly. Users have roles, roles have permissions, permissions map to resources. That's a relational model. Now if your data is more like documents or key-value pairs with flexible schemas, that's where NoSQL shines.\n[00:32.00] P2: Like our event logging system?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Systematically explain database selection criteria to junior engineer",
+        "goal_type": "teaching",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Conversation is progressing smoothly with clear, structured knowledge transfer"
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?\n[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational \u2014 lots of joins, foreign keys, transactions that need to be atomic \u2014 SQL is usually the right choice.\n[00:18.00] P2: So like our user management system?\n[00:20.00] P1: Exactly. Users have roles, roles have permissions, permissions map to resources. That's a relational model. Now if your data is more like documents or key-value pairs with flexible schemas, that's where NoSQL shines.\n[00:32.00] P2: Like our event logging system?\n[00:34.00] P1: Exactly. High write throughput, append-only, schema varies by event type. Perfect NoSQL use case.\n[00:40.00] P2: What about the analytics dashboard we're building? It needs to join user data with event data.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Provide comprehensive guidance on database selection strategy",
+        "goal_type": "teaching",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 4,
+        "recommendation_mode": "know",
+        "recommendation_1": "Analytics dashboards often require hybrid database approaches like polyglot persistence",
+        "recommendation_2": "Consider federated queries or data warehousing for complex cross-system analytics",
+        "urgency": "medium",
+        "rationale": "Junior engineer needs advanced architectural guidance beyond basic SQL/NoSQL binary"
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?\n[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational \u2014 lots of joins, foreign keys, transactions that need to be atomic \u2014 SQL is usually the right choice.\n[00:18.00] P2: So like our user management system?\n[00:20.00] P1: Exactly. Users have roles, roles have permissions, permissions map to resources. That's a relational model. Now if your data is more like documents or key-value pairs with flexible schemas, that's where NoSQL shines.\n[00:32.00] P2: Like our event logging system?\n[00:34.00] P1: Exactly. High write throughput, append-only, schema varies by event type. Perfect NoSQL use case.\n[00:40.00] P2: What about the analytics dashboard we're building? It needs to join user data with event data.\n[00:46.00] P1: That's a great example of a hybrid approach. You could keep the source of truth in SQL for users, stream events to NoSQL, and use something like Spark or a materialized view for the join.\n[00:55.00] P2: That makes a lot of sense. Thanks, this really clarifies it.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Mentor junior engineer on database design principles and decision frameworks",
+        "goal_type": "collaborative_learning",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "know",
+        "recommendation_1": "Consider discussing data consistency models (strong vs eventual) for NoSQL systems",
+        "recommendation_2": "Highlight trade-offs between normalized (SQL) and denormalized (NoSQL) data models",
+        "urgency": "medium",
+        "rationale": "Conversation is at a conceptual peak where deeper architectural nuances could enhance learning"
+      }
+    },
+    {
+      "elapsed": 58.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: So I'm trying to understand when to use a SQL database versus NoSQL. Like what's the actual decision framework?\n[00:07.00] P1: Good question. The key thing to think about is your data model and access patterns. If your data is highly relational \u2014 lots of joins, foreign keys, transactions that need to be atomic \u2014 SQL is usually the right choice.\n[00:18.00] P2: So like our user management system?\n[00:20.00] P1: Exactly. Users have roles, roles have permissions, permissions map to resources. That's a relational model. Now if your data is more like documents or key-value pairs with flexible schemas, that's where NoSQL shines.\n[00:32.00] P2: Like our event logging system?\n[00:34.00] P1: Exactly. High write throughput, append-only, schema varies by event type. Perfect NoSQL use case.\n[00:40.00] P2: What about the analytics dashboard we're building? It needs to join user data with event data.\n[00:46.00] P1: That's a great example of a hybrid approach. You could keep the source of truth in SQL for users, stream events to NoSQL, and use something like Spark or a materialized view for the join.\n[00:55.00] P2: That makes a lot of sense. Thanks, this really clarifies it.\n[00:58.00] P1: Happy to help. Let me know when you start on the schema design and we can review it together.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Effectively mentor junior engineer on database system design principles",
+        "goal_type": "collaborative_learning",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "know",
+        "recommendation_1": "Recommend exploring data virtualization techniques for complex analytics joins",
+        "recommendation_2": "Highlight columnar database technologies like Redshift for analytics workloads",
+        "urgency": "medium",
+        "rationale": "Junior engineer is exploring nuanced database design, mentor can provide advanced architectural insights"
+      }
+    }
+  ]
+}

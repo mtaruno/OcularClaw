@@ -1,0 +1,264 @@
+{
+  "model": "gpt-4.1-mini",
+  "scenario_id": "work_negotiation_01",
+  "duration_seconds": 82.0,
+  "check_interval": 10.0,
+  "total_checks": 9,
+  "total_triggers": 9,
+  "triggers": [
+    {
+      "trigger_timestamp": 10.0,
+      "signal_type": "missed_buying_signal",
+      "proactive_score": 3,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'Thank you for the offer. Could we discuss the possibility of a higher base salary given my experience and the market rates?'",
+      "recommendation_2": "Know: 'Senior Software Engineer base salaries in this region typically range from $140K to $160K depending on experience and company size.'",
+      "urgency": "medium",
+      "rationale": "The employer just presented the initial salary offer, which is a key moment to engage in salary negotiation before accepting or moving on."
+    },
+    {
+      "trigger_timestamp": 20.0,
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'Thank you for the offer. Before I make a decision, could we discuss the possibility of adjusting the base salary to better reflect my experience and market standards?'",
+      "recommendation_2": "Know: 'The typical base salary for Senior Software Engineers in this region and industry ranges from $140K to $160K, with bonuses often around 10-15%.'",
+      "urgency": "medium",
+      "rationale": "The wearer is pausing but not yet negotiating; this is a key moment to initiate salary negotiation before acceptance."
+    },
+    {
+      "trigger_timestamp": 30.0,
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'Based on my research and the leadership responsibilities I'll be taking on, I believe a base salary closer to $160K would be more appropriate. Is there flexibility to discuss this further?'",
+      "recommendation_2": "Know: 'Typical base salaries for Senior Software Engineers leading platform teams in this region range from $150K to $170K, with $160K being a reasonable midpoint given 8 years of experience.'",
+      "urgency": "medium",
+      "rationale": "This is the initial salary negotiation moment where the wearer has introduced a counteroffer. Providing a confident, data-backed response now can set the tone and improve chances of a better offer."
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'I appreciate your flexibility. Could you help me understand what factors limit the salary band? Perhaps we can explore other compensation elements like signing bonuses or additional equity to bridge the gap?'",
+      "recommendation_2": "Know: 'Typical Senior Software Engineer salaries in this region range from 150K to 170K base, with total compensation often including bonuses and equity. Companies sometimes compensate for band limits with signing bonuses or accelerated review cycles.'",
+      "urgency": "medium",
+      "rationale": "The wearer has just stated a counteroffer and the employer indicated limited flexibility. This is a critical moment to tactfully probe constraints and explore alternative compensation to improve the offer before the employer closes the discussion."
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'I appreciate your flexibility. To help us find a middle ground, could you share what typical equity grants and signing bonuses look like for this role? That way, we can discuss total compensation more effectively.'",
+      "recommendation_2": "Know: Typical total compensation for senior software engineers in this region includes base salaries around $140-160K, plus equity grants valued at 10-20% of base annually, and signing bonuses ranging from $10K to $20K.",
+      "urgency": "medium",
+      "rationale": "This is a critical moment to clarify total compensation components beyond base salary, which can strengthen your negotiation position and avoid missing an opportunity to improve the offer."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "signal_type": "missed_buying_signal",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'Thank you for the flexibility. To help me understand the full value, could you clarify the vesting schedule for the RSUs and if there is any room to increase the signing bonus? Also, would it be possible to revisit the base salary closer to 150K given my leadership role and experience?'",
+      "recommendation_2": "Know: Typical RSU packages for senior engineers often vest over 4 years with a 1-year cliff; signing bonuses commonly range from $5K to $20K depending on company budget; base salaries for senior engineers with leadership responsibilities in this region typically range from $140K to $160K.",
+      "urgency": "medium",
+      "rationale": "The wearer has just opened the door to total compensation negotiation but has not yet pressed on clarifying or pushing for better terms. This is a key moment to leverage the employer's indicated flexibility before they finalize the offer."
+    },
+    {
+      "trigger_timestamp": 70.0,
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'I appreciate the flexibility on equity and signing bonus. To help me make a confident decision, could you clarify if there\u2019s any room to increase the base salary closer to 155K, considering my leadership role and experience?'",
+      "recommendation_2": "Know: Typical base salary range for Senior Software Engineers leading platform teams in this region is approximately 145K to 160K; total compensation often includes equity and signing bonuses, but base salary remains a key component for retention and motivation.",
+      "urgency": "high",
+      "rationale": "The wearer is at a critical point in salary negotiation where confirming or improving the base salary offer is crucial before accepting or continuing discussions. Clear, confident communication and understanding market context will strengthen their position."
+    },
+    {
+      "trigger_timestamp": 80.0,
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Before agreeing to 150 base, ask for a clear commitment on the equity and signing bonus amounts and vesting schedule to avoid ambiguity.",
+      "recommendation_2": "Express appreciation for the flexibility shown but reiterate your value and ask if there's any possibility to revisit the base salary after a performance review in 6 months to reach your target.",
+      "urgency": "medium",
+      "rationale": "The wearer is about to accept 150 base contingent on equity and signing bonus, but the other party has not yet firmly committed to those. Securing clarity now prevents misunderstandings and strengthens the negotiation outcome."
+    },
+    {
+      "trigger_timestamp": 82.0,
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'I appreciate your flexibility on the base. To make 150 workable for me, could we get a clear commitment on the 20K RSUs and 10K signing bonus? Also, can we discuss the vesting schedule or any acceleration clauses?'",
+      "recommendation_2": "Know: Typical RSU vesting schedules are over 4 years with a 1-year cliff; signing bonuses are often one-time payments. Firm commitments on these can significantly affect total compensation value.",
+      "urgency": "high",
+      "rationale": "The wearer is about to finalize agreement on base salary contingent on equity and signing bonus. Securing explicit commitments now prevents misunderstandings and strengthens negotiation outcomes."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "to negotiate a better salary offer",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "missed_buying_signal",
+        "proactive_score": 3,
+        "recommendation_mode": "both",
+        "recommendation_1": "Say: 'Thank you for the offer. Could we discuss the possibility of a higher base salary given my experience and the market rates?'",
+        "recommendation_2": "Know: 'Senior Software Engineer base salaries in this region typically range from $140K to $160K depending on experience and company size.'",
+        "urgency": "medium",
+        "rationale": "The employer just presented the initial salary offer, which is a key moment to engage in salary negotiation before accepting or moving on."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a better salary offer",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Say: 'Thank you for the offer. Before I make a decision, could we discuss the possibility of adjusting the base salary to better reflect my experience and market standards?'",
+        "recommendation_2": "Know: 'The typical base salary for Senior Software Engineers in this region and industry ranges from $140K to $160K, with bonuses often around 10-15%.'",
+        "urgency": "medium",
+        "rationale": "The wearer is pausing but not yet negotiating; this is a key moment to initiate salary negotiation before acceptance."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a higher salary offer aligned with experience and role responsibilities",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Say: 'Based on my research and the leadership responsibilities I'll be taking on, I believe a base salary closer to $160K would be more appropriate. Is there flexibility to discuss this further?'",
+        "recommendation_2": "Know: 'Typical base salaries for Senior Software Engineers leading platform teams in this region range from $150K to $170K, with $160K being a reasonable midpoint given 8 years of experience.'",
+        "urgency": "medium",
+        "rationale": "This is the initial salary negotiation moment where the wearer has introduced a counteroffer. Providing a confident, data-backed response now can set the tone and improve chances of a better offer."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a higher salary offer closer to 160K",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Say: 'I appreciate your flexibility. Could you help me understand what factors limit the salary band? Perhaps we can explore other compensation elements like signing bonuses or additional equity to bridge the gap?'",
+        "recommendation_2": "Know: 'Typical Senior Software Engineer salaries in this region range from 150K to 170K base, with total compensation often including bonuses and equity. Companies sometimes compensate for band limits with signing bonuses or accelerated review cycles.'",
+        "urgency": "medium",
+        "rationale": "The wearer has just stated a counteroffer and the employer indicated limited flexibility. This is a critical moment to tactfully probe constraints and explore alternative compensation to improve the offer before the employer closes the discussion."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.\n[00:53.00] P1: I understand bands can be tight. Would it help if we talked about the total comp? I'm also interested in equity and the signing bonus if that's on the table.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a better overall compensation package including base salary, equity, and signing bonus",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Say: 'I appreciate your flexibility. To help us find a middle ground, could you share what typical equity grants and signing bonuses look like for this role? That way, we can discuss total compensation more effectively.'",
+        "recommendation_2": "Know: Typical total compensation for senior software engineers in this region includes base salaries around $140-160K, plus equity grants valued at 10-20% of base annually, and signing bonuses ranging from $10K to $20K.",
+        "urgency": "medium",
+        "rationale": "This is a critical moment to clarify total compensation components beyond base salary, which can strengthen your negotiation position and avoid missing an opportunity to improve the offer."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.\n[00:53.00] P1: I understand bands can be tight. Would it help if we talked about the total comp? I'm also interested in equity and the signing bonus if that's on the table.\n[01:03.00] P2: Yeah absolutely. We can do 20K in RSUs vesting over four years and I might be able to get a 10K signing bonus approved.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a better overall compensation package including base salary, equity, and signing bonus",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "missed_buying_signal",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Say: 'Thank you for the flexibility. To help me understand the full value, could you clarify the vesting schedule for the RSUs and if there is any room to increase the signing bonus? Also, would it be possible to revisit the base salary closer to 150K given my leadership role and experience?'",
+        "recommendation_2": "Know: Typical RSU packages for senior engineers often vest over 4 years with a 1-year cliff; signing bonuses commonly range from $5K to $20K depending on company budget; base salaries for senior engineers with leadership responsibilities in this region typically range from $140K to $160K.",
+        "urgency": "medium",
+        "rationale": "The wearer has just opened the door to total compensation negotiation but has not yet pressed on clarifying or pushing for better terms. This is a key moment to leverage the employer's indicated flexibility before they finalize the offer."
+      }
+    },
+    {
+      "elapsed": 70.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.\n[00:53.00] P1: I understand bands can be tight. Would it help if we talked about the total comp? I'm also interested in equity and the signing bonus if that's on the table.\n[01:03.00] P2: Yeah absolutely. We can do 20K in RSUs vesting over four years and I might be able to get a 10K signing bonus approved.\n[01:12.00] P1: That's helpful. What about the base though? Could we meet at 155?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a higher total compensation package including base salary, equity, and signing bonus",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Say: 'I appreciate the flexibility on equity and signing bonus. To help me make a confident decision, could you clarify if there\u2019s any room to increase the base salary closer to 155K, considering my leadership role and experience?'",
+        "recommendation_2": "Know: Typical base salary range for Senior Software Engineers leading platform teams in this region is approximately 145K to 160K; total compensation often includes equity and signing bonuses, but base salary remains a key component for retention and motivation.",
+        "urgency": "high",
+        "rationale": "The wearer is at a critical point in salary negotiation where confirming or improving the base salary offer is crucial before accepting or continuing discussions. Clear, confident communication and understanding market context will strengthen their position."
+      }
+    },
+    {
+      "elapsed": 80.0,
+      "check_number": 8,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.\n[00:53.00] P1: I understand bands can be tight. Would it help if we talked about the total comp? I'm also interested in equity and the signing bonus if that's on the table.\n[01:03.00] P2: Yeah absolutely. We can do 20K in RSUs vesting over four years and I might be able to get a 10K signing bonus approved.\n[01:12.00] P1: That's helpful. What about the base though? Could we meet at 155?\n[01:17.00] P2: Let me take that back to the comp team. I think 150 base might be doable.\n[01:22.00] P1: I could work with 150 if we can firm up the equity and signing bonus.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a higher total compensation package including base salary, equity, and signing bonus",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Before agreeing to 150 base, ask for a clear commitment on the equity and signing bonus amounts and vesting schedule to avoid ambiguity.",
+        "recommendation_2": "Express appreciation for the flexibility shown but reiterate your value and ask if there's any possibility to revisit the base salary after a performance review in 6 months to reach your target.",
+        "urgency": "medium",
+        "rationale": "The wearer is about to accept 150 base contingent on equity and signing bonus, but the other party has not yet firmly committed to those. Securing clarity now prevents misunderstandings and strengthens the negotiation outcome."
+      }
+    },
+    {
+      "elapsed": 82.0,
+      "check_number": 9,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for coming in today. We're really excited to extend an offer. Let me walk you through the details.\n[00:06.00] P1: Great, I'm excited to hear it.\n[00:08.50] P2: So the role is Senior Software Engineer. We're thinking a base salary of 130K, with standard benefits, and a 10 percent annual bonus target.\n[00:18.00] P1: Okay.\n[00:19.50] P2: We think it's a competitive package given the market.\n[00:22.00] P1: Hmm. I appreciate the offer. Let me think about the base for a second.\n[00:27.00] P2: Of course, take your time.\n[00:30.00] P1: So 130 is a bit below what I was expecting based on my research. I've seen similar roles in this area going for 150 to 170. Given my eight years of experience and the fact that I'd be leading the platform team, I was hoping we could land closer to 160.\n[00:47.00] P2: I hear you. We do have some flexibility but 160 might be at the top of our band for this level.\n[00:53.00] P1: I understand bands can be tight. Would it help if we talked about the total comp? I'm also interested in equity and the signing bonus if that's on the table.\n[01:03.00] P2: Yeah absolutely. We can do 20K in RSUs vesting over four years and I might be able to get a 10K signing bonus approved.\n[01:12.00] P1: That's helpful. What about the base though? Could we meet at 155?\n[01:17.00] P2: Let me take that back to the comp team. I think 150 base might be doable.\n[01:22.00] P1: I could work with 150 if we can firm up the equity and signing bonus.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "negotiate a higher total compensation package including base salary, equity, and signing bonus",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Say: 'I appreciate your flexibility on the base. To make 150 workable for me, could we get a clear commitment on the 20K RSUs and 10K signing bonus? Also, can we discuss the vesting schedule or any acceleration clauses?'",
+        "recommendation_2": "Know: Typical RSU vesting schedules are over 4 years with a 1-year cliff; signing bonuses are often one-time payments. Firm commitments on these can significantly affect total compensation value.",
+        "urgency": "high",
+        "rationale": "The wearer is about to finalize agreement on base salary contingent on equity and signing bonus. Securing explicit commitments now prevents misunderstandings and strengthens negotiation outcomes."
+      }
+    }
+  ]
+}

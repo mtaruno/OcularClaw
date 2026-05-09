@@ -1,0 +1,50 @@
+{
+  "model": "anthropic/claude-3.5-haiku",
+  "scenario_id": "negative_coffee_order_01",
+  "duration_seconds": 27.0,
+  "check_interval": 10.0,
+  "total_checks": 3,
+  "total_triggers": 0,
+  "triggers": [],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P1: Hey I'm doing a coffee run, anyone want anything?\n[00:03.00] P2: Oh yes please. Can I get an oat milk latte?\n[00:06.00] P1: Sure. Hot or iced?\n[00:08.00] P2: Iced. Thanks.\n[00:10.00] P3: I'll take a drip coffee, black. Large.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Efficiently coordinate a coffee order for colleagues",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Conversation is proceeding smoothly with clear communication"
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P1: Hey I'm doing a coffee run, anyone want anything?\n[00:03.00] P2: Oh yes please. Can I get an oat milk latte?\n[00:06.00] P1: Sure. Hot or iced?\n[00:08.00] P2: Iced. Thanks.\n[00:10.00] P3: I'll take a drip coffee, black. Large.\n[00:13.00] P1: Got it. Oat milk iced latte for you, large black drip for you. Anyone want a pastry or anything?\n[00:19.00] P2: I'm good, just the latte.\n[00:21.00] P3: Same, just coffee. Thanks.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Efficiently coordinate a coffee order for colleagues",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Conversation is proceeding smoothly with clear communication and no apparent obstacles"
+      }
+    },
+    {
+      "elapsed": 27.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P1: Hey I'm doing a coffee run, anyone want anything?\n[00:03.00] P2: Oh yes please. Can I get an oat milk latte?\n[00:06.00] P1: Sure. Hot or iced?\n[00:08.00] P2: Iced. Thanks.\n[00:10.00] P3: I'll take a drip coffee, black. Large.\n[00:13.00] P1: Got it. Oat milk iced latte for you, large black drip for you. Anyone want a pastry or anything?\n[00:19.00] P2: I'm good, just the latte.\n[00:21.00] P3: Same, just coffee. Thanks.\n[00:23.00] P1: Cool, I'll be back in ten.\n[00:25.00] P2: You're the best.\n[00:27.00] P1: I know.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Coordinate coffee order for colleagues",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Conversation is proceeding smoothly and efficiently"
+      }
+    }
+  ]
+}

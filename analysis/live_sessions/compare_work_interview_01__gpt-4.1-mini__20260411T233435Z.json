@@ -1,0 +1,193 @@
+{
+  "model": "gpt-4.1-mini",
+  "scenario_id": "work_interview_01",
+  "duration_seconds": 67.0,
+  "check_interval": 10.0,
+  "total_checks": 7,
+  "total_triggers": 6,
+  "triggers": [
+    {
+      "trigger_timestamp": 20.0,
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Add specific quantifiable outcomes to your story, such as how the workshop improved team alignment or reduced conflict resolution time.",
+      "recommendation_2": "Mention any measurable impact on project delivery or team productivity resulting from your intervention.",
+      "urgency": "medium",
+      "rationale": "The wearer is telling a conflict resolution story but has not yet included quantifiable results, which are important to strengthen the impact in a senior software engineer interview."
+    },
+    {
+      "trigger_timestamp": 30.0,
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Include specific quantifiable outcomes from the workshop, such as how it improved team alignment or reduced conflict resolution time.",
+      "recommendation_2": "Mention any measurable impact on project delivery or team productivity resulting from your intervention.",
+      "urgency": "medium",
+      "rationale": "The wearer is telling a conflict resolution story but has not yet included quantifiable outcomes, which are important to strengthen the impact and meet interview expectations for a senior role."
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Include quantifiable outcomes or results from the workshop, such as how the decision improved team productivity or reduced conflicts.",
+      "recommendation_2": "Mention any follow-up actions or metrics you tracked to ensure the solution was effective over time.",
+      "urgency": "medium",
+      "rationale": "The interviewer asked what happened after the workshop, which is an opportunity to show impact with concrete results. The wearer tends to skip quantifiable outcomes, so adding them now will strengthen persuasion."
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Add a quantifiable outcome to your story, such as how the modular monolith approach improved deployment speed or reduced conflicts by a specific percentage.",
+      "recommendation_2": "Mention any feedback from stakeholders or measurable improvements in team productivity after implementing the solution.",
+      "urgency": "medium",
+      "rationale": "The interviewer asked about the outcome, and the wearer has not yet provided quantifiable results, which are important to strengthen the impact of the story in a senior role interview."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Add a quantifiable outcome to your story, such as how the modular monolith approach improved deployment speed or reduced bugs by a certain percentage.",
+      "recommendation_2": "Mention specific metrics or feedback that show the success of your resolution, like team satisfaction scores or project delivery time improvements.",
+      "urgency": "medium",
+      "rationale": "The interviewer asked about the outcome, and your answer was vague and lacked quantifiable results, which weakens the impact of your story in a senior role interview."
+    },
+    {
+      "trigger_timestamp": 67.0,
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Provide specific metrics or results from the project, such as improved deployment speed, reduced bugs, or team satisfaction scores after the decision.",
+      "recommendation_2": "Mention any measurable business impact like increased user engagement, revenue growth, or platform stability improvements attributable to the architectural decision.",
+      "urgency": "medium",
+      "rationale": "The interviewer explicitly asked for quantifiable outcomes, and the wearer gave a vague, unconvincing answer. Providing concrete metrics will strengthen the impact of the story and better persuade the interviewer of the wearer\u2019s leadership effectiveness."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "demonstrate ability to handle team conflict effectively",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is responding appropriately and the interviewer is asking for more detail; no issues detected yet."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "demonstrate effective conflict resolution with quantifiable outcomes",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Add specific quantifiable outcomes to your story, such as how the workshop improved team alignment or reduced conflict resolution time.",
+        "recommendation_2": "Mention any measurable impact on project delivery or team productivity resulting from your intervention.",
+        "urgency": "medium",
+        "rationale": "The wearer is telling a conflict resolution story but has not yet included quantifiable results, which are important to strengthen the impact in a senior software engineer interview."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "demonstrate effective conflict resolution with measurable impact",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Include specific quantifiable outcomes from the workshop, such as how it improved team alignment or reduced conflict resolution time.",
+        "recommendation_2": "Mention any measurable impact on project delivery or team productivity resulting from your intervention.",
+        "urgency": "medium",
+        "rationale": "The wearer is telling a conflict resolution story but has not yet included quantifiable outcomes, which are important to strengthen the impact and meet interview expectations for a senior role."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.\n[00:42.00] P2: That sounds structured. What happened?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "demonstrate effective conflict resolution with measurable impact",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Include quantifiable outcomes or results from the workshop, such as how the decision improved team productivity or reduced conflicts.",
+        "recommendation_2": "Mention any follow-up actions or metrics you tracked to ensure the solution was effective over time.",
+        "urgency": "medium",
+        "rationale": "The interviewer asked what happened after the workshop, which is an opportunity to show impact with concrete results. The wearer tends to skip quantifiable outcomes, so adding them now will strengthen persuasion."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.\n[00:42.00] P2: That sounds structured. What happened?\n[00:44.00] P1: We ended up going with a modular monolith approach that gave us the clean separation the backend team wanted but without the operational overhead that concerned the frontend team. Everyone felt heard and we moved forward.\n[00:57.00] P2: Interesting. And what was the outcome?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "convince the interviewer of effective conflict resolution with measurable impact",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Add a quantifiable outcome to your story, such as how the modular monolith approach improved deployment speed or reduced conflicts by a specific percentage.",
+        "recommendation_2": "Mention any feedback from stakeholders or measurable improvements in team productivity after implementing the solution.",
+        "urgency": "medium",
+        "rationale": "The interviewer asked about the outcome, and the wearer has not yet provided quantifiable results, which are important to strengthen the impact of the story in a senior role interview."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.\n[00:42.00] P2: That sounds structured. What happened?\n[00:44.00] P1: We ended up going with a modular monolith approach that gave us the clean separation the backend team wanted but without the operational overhead that concerned the frontend team. Everyone felt heard and we moved forward.\n[00:57.00] P2: Interesting. And what was the outcome?\n[01:00.00] P1: I mean everyone was happy with the decision. We moved on and built the thing.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "demonstrate effective conflict resolution with measurable impact",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Add a quantifiable outcome to your story, such as how the modular monolith approach improved deployment speed or reduced bugs by a certain percentage.",
+        "recommendation_2": "Mention specific metrics or feedback that show the success of your resolution, like team satisfaction scores or project delivery time improvements.",
+        "urgency": "medium",
+        "rationale": "The interviewer asked about the outcome, and your answer was vague and lacked quantifiable results, which weakens the impact of your story in a senior role interview."
+      }
+    },
+    {
+      "elapsed": 67.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.\n[00:42.00] P2: That sounds structured. What happened?\n[00:44.00] P1: We ended up going with a modular monolith approach that gave us the clean separation the backend team wanted but without the operational overhead that concerned the frontend team. Everyone felt heard and we moved forward.\n[00:57.00] P2: Interesting. And what was the outcome?\n[01:00.00] P1: I mean everyone was happy with the decision. We moved on and built the thing.\n[01:05.00] P2: Can you quantify the impact at all?\n[01:07.00] P1: Uh, well we shipped the platform on time which was good.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "convince the interviewer of strong leadership and impact by quantifying the outcome of conflict resolution",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Provide specific metrics or results from the project, such as improved deployment speed, reduced bugs, or team satisfaction scores after the decision.",
+        "recommendation_2": "Mention any measurable business impact like increased user engagement, revenue growth, or platform stability improvements attributable to the architectural decision.",
+        "urgency": "medium",
+        "rationale": "The interviewer explicitly asked for quantifiable outcomes, and the wearer gave a vague, unconvincing answer. Providing concrete metrics will strengthen the impact of the story and better persuade the interviewer of the wearer\u2019s leadership effectiveness."
+      }
+    }
+  ]
+}

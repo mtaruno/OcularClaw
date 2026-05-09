@@ -1,0 +1,89 @@
+{
+  "model": "openai/o3-mini",
+  "scenario_id": "negative_standup_01",
+  "duration_seconds": 50.0,
+  "check_interval": 10.0,
+  "total_checks": 6,
+  "total_triggers": 0,
+  "triggers": [],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Provide a clear status update in the standup",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The update flow is smooth with no missed signals or contradictions."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "provide project update and plan tasks for the day",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Standup is progressing normally with clear updates and no issues."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.\n[00:33.00] P1: Quick question \u2014 are we still targeting Friday for the staging deploy?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Confirm the timeline for the staging deploy",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer's question is clear and no intervention signal is detected."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.\n[00:33.00] P1: Quick question \u2014 are we still targeting Friday for the staging deploy?\n[00:37.00] P2: Yeah, Friday afternoon. P3, will the webhook be ready by then?\n[00:41.00] P3: Should be, as long as I get those credentials today.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Confirm deployment schedule details with the team",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is proceeding normally with a clear answer already provided."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.\n[00:33.00] P1: Quick question \u2014 are we still targeting Friday for the staging deploy?\n[00:37.00] P2: Yeah, Friday afternoon. P3, will the webhook be ready by then?\n[00:41.00] P3: Should be, as long as I get those credentials today.\n[00:44.00] P2: I'll make sure you get them this morning. Anything else?\n[00:47.00] P1: Nope, good here.\n[00:48.50] P3: All good.\n[00:50.00] P2: Cool, let's ship it. Have a good one.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "confirm and align on the deployment schedule for staging",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Standup discussion is proceeding normally with clear schedule confirmation."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.\n[00:33.00] P1: Quick question \u2014 are we still targeting Friday for the staging deploy?\n[00:37.00] P2: Yeah, Friday afternoon. P3, will the webhook be ready by then?\n[00:41.00] P3: Should be, as long as I get those credentials today.\n[00:44.00] P2: I'll make sure you get them this morning. Anything else?\n[00:47.00] P1: Nope, good here.\n[00:48.50] P3: All good.\n[00:50.00] P2: Cool, let's ship it. Have a good one.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Ensure clarity on project timeline and deliverables",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Standup updates are smooth with clear timeline; no intervention required."
+      }
+    }
+  ]
+}

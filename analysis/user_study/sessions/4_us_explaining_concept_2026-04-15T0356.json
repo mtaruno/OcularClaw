@@ -1,0 +1,433 @@
+{
+  "id": "session_1776225036274",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You're trying to explain to a coworker why a project deadline should be pushed back. You understand the reasons well, but the other person doesn't have the same background knowledge as you.",
+  "scenario_id": "us_explaining_concept",
+  "scenario_label": "S2: One-on-One Discussion",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "4",
+  "duration_seconds": 330.25,
+  "check_interval": 15,
+  "total_checks": 18,
+  "total_triggers": 12,
+  "transcript_lines": [
+    {
+      "seconds": 9.84,
+      "speaker": "P2",
+      "text": "okay hi Eugene till today let's discuss the plan for the next quarter so"
+    },
+    {
+      "seconds": 15.64,
+      "speaker": "P2",
+      "text": "currently our customer service agent is static"
+    },
+    {
+      "seconds": 65.26,
+      "speaker": "P2",
+      "text": "and we want to make it so that recently there's a lot of good news about its agentic AI so I really think that we need to make a customer service agent that is able to use all the tools and all the have all skills and then we want to implement it like Cloud code basically and we want all this features to be done by I think since you're a very high performer and you're very good I think we can do this in 2 months to production so maybe for development and for beta deployment we can probably do maybe next month and then to make sure it's very stable and there's zero bugs by 2 months we can push it to production"
+    },
+    {
+      "seconds": 67.52,
+      "speaker": "P2",
+      "text": "what do you think about this"
+    },
+    {
+      "seconds": 76.82,
+      "speaker": "P1",
+      "text": "flexible"
+    },
+    {
+      "seconds": 100.14,
+      "speaker": "P2",
+      "text": "oh actually in parallel we also have a lot of customer complaints about the customer service I think the the robot is always pushing to our customer representative so all our customers have to talk with real people and I think on so I think you'd have to be on call"
+    },
+    {
+      "seconds": 104.81,
+      "speaker": "P2",
+      "text": "two times this month I'm sorry there is"
+    },
+    {
+      "seconds": 110.96,
+      "speaker": "P2",
+      "text": "we only have four engineers in this team so yeah currently the"
+    },
+    {
+      "seconds": 113.35,
+      "speaker": "P2",
+      "text": "the demand is very high"
+    },
+    {
+      "seconds": 126.84,
+      "speaker": "P1",
+      "text": "I see but actually we have this customer service like for a year can we just like"
+    },
+    {
+      "seconds": 138.88,
+      "speaker": "P1",
+      "text": "keep the timeline more controllable and flexible like I think maybe we need three to four months to get it into the production"
+    },
+    {
+      "seconds": 152.44,
+      "speaker": "P2",
+      "text": "okay why do you think we need three to four months do you have any justification to why it would take that long I thought our leadership principle is we have to move fast"
+    },
+    {
+      "seconds": 185.56,
+      "speaker": "P2",
+      "text": "yeah yeah I agree with our relationships a development or just a platform development so you can control all the past and you need to test all the scenarios and also I think the customer service is very important scenario so we should make sure it will like not deliver something bad"
+    },
+    {
+      "seconds": 209.62,
+      "speaker": "P2",
+      "text": "I see but I think right now we're in an age where AI is getting so good so we we can you can probably just ask Amazon queue or some Cloud code to make these features right for a genetic workflow so maybe the timeline should be even faster"
+    },
+    {
+      "seconds": 215.81,
+      "speaker": "P1",
+      "text": "the"
+    },
+    {
+      "seconds": 221.13,
+      "speaker": "P1",
+      "text": "tests"
+    },
+    {
+      "seconds": 238.38,
+      "speaker": "P1",
+      "text": "so also I think the address need like customizations and also we can't just use some existing solution so that's why I think I need more time"
+    },
+    {
+      "seconds": 255.58,
+      "speaker": "P2",
+      "text": "okay I hope that we are able to okay I will accept it but you know our short stock price has been falling down in the past month by a lot so hopefully you're able to keep it up and do pretty good job"
+    },
+    {
+      "seconds": 258.26,
+      "speaker": "P1",
+      "text": "I will try my"
+    }
+  ],
+  "transcript_text": "[00:09.84] P2: okay hi Eugene till today let's discuss the plan for the next quarter so\n[00:15.64] P2: currently our customer service agent is static\n[01:05.26] P2: and we want to make it so that recently there's a lot of good news about its agentic AI so I really think that we need to make a customer service agent that is able to use all the tools and all the have all skills and then we want to implement it like Cloud code basically and we want all this features to be done by I think since you're a very high performer and you're very good I think we can do this in 2 months to production so maybe for development and for beta deployment we can probably do maybe next month and then to make sure it's very stable and there's zero bugs by 2 months we can push it to production\n[01:07.52] P2: what do you think about this\n[01:16.82] P1: flexible\n[01:40.14] P2: oh actually in parallel we also have a lot of customer complaints about the customer service I think the the robot is always pushing to our customer representative so all our customers have to talk with real people and I think on so I think you'd have to be on call\n[01:44.81] P2: two times this month I'm sorry there is\n[01:50.96] P2: we only have four engineers in this team so yeah currently the\n[01:53.35] P2: the demand is very high\n[02:06.84] P1: I see but actually we have this customer service like for a year can we just like\n[02:18.88] P1: keep the timeline more controllable and flexible like I think maybe we need three to four months to get it into the production\n[02:32.44] P2: okay why do you think we need three to four months do you have any justification to why it would take that long I thought our leadership principle is we have to move fast\n[03:05.56] P2: yeah yeah I agree with our relationships a development or just a platform development so you can control all the past and you need to test all the scenarios and also I think the customer service is very important scenario so we should make sure it will like not deliver something bad\n[03:29.62] P2: I see but I think right now we're in an age where AI is getting so good so we we can you can probably just ask Amazon queue or some Cloud code to make these features right for a genetic workflow so maybe the timeline should be even faster\n[03:35.81] P1: the\n[03:41.13] P1: tests\n[03:58.38] P1: so also I think the address need like customizations and also we can't just use some existing solution so that's why I think I need more time\n[04:15.58] P2: okay I hope that we are able to okay I will accept it but you know our short stock price has been falling down in the past month by a lot so hopefully you're able to keep it up and do pretty good job\n[04:18.26] P1: I will try my",
+  "triggers": [
+    {
+      "trigger_timestamp": 90.003,
+      "wearer_goal": "explain why the project deadline should be pushed back to the coworker",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I appreciate your confidence, but we need more time for quality assurance.",
+      "recommendation_2": "Let's discuss potential risks if we rush to meet the two-month deadline.",
+      "urgency": "medium",
+      "rationale": "The coworker is committing to a two-month deadline without understanding the project's complexity.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 120.002,
+      "wearer_goal": "Explain why the project deadline should be pushed back to the coworker",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Given only four engineers, two months is too optimistic for zero bugs.",
+      "recommendation_2": "Let's consider phased deployment to manage workload and ensure quality.",
+      "urgency": "medium",
+      "rationale": "The coworker is optimistic about the timeline but hasn't acknowledged resource constraints or quality risks yet.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.004,
+      "wearer_goal": "Explain why the project deadline should be pushed back due to resource constraints and complexity",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "With only four engineers, two months is too short for full feature stability.",
+      "recommendation_2": "We should prioritize core features first to ensure quality within the timeline.",
+      "urgency": "medium",
+      "rationale": "The coworker is optimistic about the two-month deadline but may not grasp resource limits yet.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150.003,
+      "wearer_goal": "convince coworker to extend the project deadline due to realistic workload and quality concerns",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Two months is too short given our current engineer count and complexity.",
+      "recommendation_2": "We risk quality issues if we rush; a longer timeline ensures stability.",
+      "urgency": "medium",
+      "rationale": "The coworker is optimistic about a 2-month deadline; clarifying risks now prevents premature commitment.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165.003,
+      "wearer_goal": "Convince coworker to accept a longer, more realistic project timeline",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Moving fast is important, but quality and stability require more time.",
+      "recommendation_2": "Let me explain the technical complexities that justify a longer timeline.",
+      "urgency": "medium",
+      "rationale": "Coworker challenges the timeline extension request by citing leadership principles, needing a clear, focused response.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.003,
+      "wearer_goal": "Convince coworker to accept a longer project timeline with clear justification",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let me explain the technical challenges that require more than two months.",
+      "recommendation_2": "Rushing risks bugs and instability; quality needs adequate development time.",
+      "urgency": "medium",
+      "rationale": "Coworker demands justification but wearer hasn't yet provided clear reasons for timeline extension.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 195.003,
+      "wearer_goal": "Convince coworker to accept a longer project deadline by explaining technical challenges",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "The complexity of integrating multiple tools requires thorough testing beyond two months.",
+      "recommendation_2": "Rushing risks critical bugs that could harm customer experience and trust.",
+      "urgency": "medium",
+      "rationale": "Coworker challenges the longer timeline without understanding technical reasons; clarifying now can prevent dismissal of the request.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 210.004,
+      "wearer_goal": "Convince coworker to extend project deadline beyond two months by explaining technical challenges",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "The AI tools need customization; off-the-shelf won't cover all scenarios.",
+      "recommendation_2": "Testing edge cases is critical and time-consuming to avoid customer issues.",
+      "urgency": "medium",
+      "rationale": "Coworker is dismissing timeline concerns by suggesting faster AI solutions without understanding complexity.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 225.003,
+      "wearer_goal": "convince coworker to extend project deadline beyond two months by explaining technical challenges clearly",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "The AI tools need significant customization beyond off-the-shelf solutions.",
+      "recommendation_2": "Testing all edge cases is critical to avoid costly customer issues later.",
+      "urgency": "medium",
+      "rationale": "Coworker is dismissing timeline concerns by focusing on moving fast without addressing technical complexities.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 240.003,
+      "wearer_goal": "Convince coworker to accept a longer project deadline by explaining technical challenges clearly",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "The AI tools require deep customization, not just plug-and-play solutions.",
+      "recommendation_2": "Thorough testing of all scenarios is essential to avoid costly failures later.",
+      "urgency": "medium",
+      "rationale": "Coworker is pushing for a faster timeline without understanding technical complexities; clarify why more time is needed.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 255.004,
+      "wearer_goal": "Convince coworker to accept a longer project deadline by explaining technical complexities",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let me clarify why off-the-shelf AI tools won't meet our needs.",
+      "recommendation_2": "Customizing AI requires deep integration, which takes more than two months.",
+      "urgency": "medium",
+      "rationale": "Coworker is dismissing timeline concerns by suggesting faster off-the-shelf solutions without understanding customization needs.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 258.007,
+      "wearer_goal": "convince coworker to accept a longer project deadline by explaining technical complexities and risks",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I appreciate your trust, but rushing risks critical bugs and customer dissatisfaction.",
+      "recommendation_2": "Extending the timeline slightly ensures thorough testing and a stable launch.",
+      "urgency": "medium",
+      "rationale": "Coworker accepted the shorter timeline under pressure; reinforcing risks can prevent premature commitment.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15.002,
+      "wearer_goal": "explain why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.003,
+      "wearer_goal": "explain why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.004,
+      "wearer_goal": "explain why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 60.002,
+      "wearer_goal": "explain why the project deadline should be pushed back",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 75.003,
+      "wearer_goal": "explain why the project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 90.003,
+      "wearer_goal": "explain why the project deadline should be pushed back to the coworker",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.002,
+      "wearer_goal": "explain why the project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 120.002,
+      "wearer_goal": "Explain why the project deadline should be pushed back to the coworker",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.004,
+      "wearer_goal": "Explain why the project deadline should be pushed back due to resource constraints and complexity",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.003,
+      "wearer_goal": "convince coworker to extend the project deadline due to realistic workload and quality concerns",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 165.003,
+      "wearer_goal": "Convince coworker to accept a longer, more realistic project timeline",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.003,
+      "wearer_goal": "Convince coworker to accept a longer project timeline with clear justification",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 195.003,
+      "wearer_goal": "Convince coworker to accept a longer project deadline by explaining technical challenges",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 210.004,
+      "wearer_goal": "Convince coworker to extend project deadline beyond two months by explaining technical challenges",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 225.003,
+      "wearer_goal": "convince coworker to extend project deadline beyond two months by explaining technical challenges clearly",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 240.003,
+      "wearer_goal": "Convince coworker to accept a longer project deadline by explaining technical challenges clearly",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 255.004,
+      "wearer_goal": "Convince coworker to accept a longer project deadline by explaining technical complexities",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 258.007,
+      "wearer_goal": "convince coworker to accept a longer project deadline by explaining technical complexities and risks",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 3,
+  "timing_rating": 4,
+  "goal_rating": 5,
+  "adoption_rating": 4,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T03:56:06.523Z"
+}

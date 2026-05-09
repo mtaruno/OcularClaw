@@ -1,0 +1,87 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "scenario_id": "negative_coffee_order_01",
+  "duration_seconds": 27.0,
+  "check_interval": 10.0,
+  "total_checks": 3,
+  "total_triggers": 2,
+  "triggers": [
+    {
+      "trigger_timestamp": 10.0,
+      "wearer_goal": "Collecting coffee orders from colleagues to fulfill a coffee run.",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Anyone need anything else?",
+      "recommendation_2": "I'm heading out in 5 minutes.",
+      "urgency": "medium",
+      "rationale": "The wearer is collecting orders but hasn't explicitly set a deadline or asked if more people want to order, which could lead to missed orders or delays."
+    },
+    {
+      "trigger_timestamp": 20.0,
+      "wearer_goal": "Gather all coffee and snack orders accurately for a group coffee run.",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What about toppings for the latte?",
+      "recommendation_2": "Any specific kind of pastry if I do get one?",
+      "urgency": "medium",
+      "rationale": "The wearer is collecting orders but hasn't confirmed specific details for custom drinks or if there are any dietary restrictions for pastries."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P1: Hey I'm doing a coffee run, anyone want anything?\n[00:03.00] P2: Oh yes please. Can I get an oat milk latte?\n[00:06.00] P1: Sure. Hot or iced?\n[00:08.00] P2: Iced. Thanks.\n[00:10.00] P3: I'll take a drip coffee, black. Large.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Collecting coffee orders from colleagues to fulfill a coffee run.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Anyone need anything else?",
+        "recommendation_2": "I'm heading out in 5 minutes.",
+        "urgency": "medium",
+        "rationale": "The wearer is collecting orders but hasn't explicitly set a deadline or asked if more people want to order, which could lead to missed orders or delays."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P1: Hey I'm doing a coffee run, anyone want anything?\n[00:03.00] P2: Oh yes please. Can I get an oat milk latte?\n[00:06.00] P1: Sure. Hot or iced?\n[00:08.00] P2: Iced. Thanks.\n[00:10.00] P3: I'll take a drip coffee, black. Large.\n[00:13.00] P1: Got it. Oat milk iced latte for you, large black drip for you. Anyone want a pastry or anything?\n[00:19.00] P2: I'm good, just the latte.\n[00:21.00] P3: Same, just coffee. Thanks.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Gather all coffee and snack orders accurately for a group coffee run.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "What about toppings for the latte?",
+        "recommendation_2": "Any specific kind of pastry if I do get one?",
+        "urgency": "medium",
+        "rationale": "The wearer is collecting orders but hasn't confirmed specific details for custom drinks or if there are any dietary restrictions for pastries."
+      }
+    },
+    {
+      "elapsed": 27.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P1: Hey I'm doing a coffee run, anyone want anything?\n[00:03.00] P2: Oh yes please. Can I get an oat milk latte?\n[00:06.00] P1: Sure. Hot or iced?\n[00:08.00] P2: Iced. Thanks.\n[00:10.00] P3: I'll take a drip coffee, black. Large.\n[00:13.00] P1: Got it. Oat milk iced latte for you, large black drip for you. Anyone want a pastry or anything?\n[00:19.00] P2: I'm good, just the latte.\n[00:21.00] P3: Same, just coffee. Thanks.\n[00:23.00] P1: Cool, I'll be back in ten.\n[00:25.00] P2: You're the best.\n[00:27.00] P1: I know.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Successfully fulfill coffee and pastry orders for P2 and P3.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer has successfully gathered the primary orders and confirmed there are no pastry requests. This is a smooth interaction without any immediate concerns or missed opportunities for intervention."
+      }
+    }
+  ]
+}

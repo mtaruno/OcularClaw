@@ -1,0 +1,442 @@
+{
+  "id": "session_1776224442988",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You work at a mid-size company. You're in a team meeting where your boss is handing out tasks for the week. You've got a lot on your plate and are thinking about your own to-do list.",
+  "scenario_id": "us_meeting_action_item",
+  "scenario_label": "S1: Team Meeting",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "4",
+  "duration_seconds": 514.62,
+  "check_interval": 15,
+  "total_checks": 15,
+  "total_triggers": 13,
+  "transcript_lines": [
+    {
+      "seconds": 31.28,
+      "speaker": "P2",
+      "text": "okay hello so in this meeting we will be talking about setting up our project for for Amazon Fresh So I think we want to launch a new update into the into the app so do you think that you'll be able to so I want you this month to be able to come up with the list of priorities for what we want to improve with our app I think"
+    },
+    {
+      "seconds": 41.5,
+      "speaker": "P2",
+      "text": "there was a lot of users that complained that the the checkout page is has a lot of bugs and it was not working"
+    },
+    {
+      "seconds": 43.7,
+      "speaker": "P1",
+      "text": "oh okay"
+    },
+    {
+      "seconds": 58.06,
+      "speaker": "P1",
+      "text": "actually I'm on call this mom's and also like taking the the interface like something different and I'm still working on that"
+    },
+    {
+      "seconds": 60.5,
+      "speaker": "P1",
+      "text": "so"
+    },
+    {
+      "seconds": 76.64,
+      "speaker": "P1",
+      "text": "oh okay so maybe I want to ensure that I can balance this with the ongoing work effectively"
+    },
+    {
+      "seconds": 89.47,
+      "speaker": "P2",
+      "text": "okay sure but I don't think you mentioned the problem of the bug that we need to solve because I think right now a lot of customers are saying that"
+    },
+    {
+      "seconds": 99.55,
+      "speaker": "P2",
+      "text": "are saying that the we can't even check out and they're basically we're losing a lot of money I think this quarter it's led to a million dollars loss"
+    },
+    {
+      "seconds": 104.12,
+      "speaker": "P1",
+      "text": "oh so maybe"
+    },
+    {
+      "seconds": 105.91,
+      "speaker": "P1",
+      "text": "like"
+    },
+    {
+      "seconds": 115.82,
+      "speaker": "P1",
+      "text": "like can we clarify and can we prioritize the bug fix and my current house kick it together"
+    },
+    {
+      "seconds": 144.08,
+      "speaker": "P2",
+      "text": "yeah we can clarify together but I think right now the important thing is we haven't really understand the root cause of the bug so I want you this week to report back what this what this problem is so that's a task for you to do not for my it's not my scope Okay so"
+    },
+    {
+      "seconds": 145.75,
+      "speaker": "P1",
+      "text": "maybe"
+    },
+    {
+      "seconds": 149.42,
+      "speaker": "P1",
+      "text": "yeah so maybe"
+    },
+    {
+      "seconds": 166.92,
+      "speaker": "P1",
+      "text": "can we set a realistic timeline for all my tasks like I can't put some other my current task to like maybe next week or later do you think and I can focus on this book this week"
+    },
+    {
+      "seconds": 182.85,
+      "speaker": "P2",
+      "text": "okay yeah sure this week you can focus on making sure there's no more checkouts but I think we have a safe three this is almost have too so hopefully you finish this within tomorrow"
+    },
+    {
+      "seconds": 198.16,
+      "speaker": "P1",
+      "text": "okay okay I will try my best but I don't think that maybe for one day I can handle this all of the like I can find"
+    },
+    {
+      "seconds": 207.28,
+      "speaker": "P1",
+      "text": "or is there some flexibility if the bug fix like longer than one day"
+    },
+    {
+      "seconds": 217.76,
+      "speaker": "P2",
+      "text": "okay maximum two days if you don't finish in two days then I think I'll put you on a performance Improvement plan you'll get picked"
+    },
+    {
+      "seconds": 226.4,
+      "speaker": "P1",
+      "text": "okay I see let me think about that"
+    },
+    {
+      "seconds": 240.14,
+      "speaker": "P1",
+      "text": "so maybe I want to propose a backup plan if the bug fixed extend beyond this deadline"
+    },
+    {
+      "seconds": 245.26,
+      "speaker": "P1",
+      "text": "or is there anybody that can support me with this"
+    }
+  ],
+  "transcript_text": "[00:31.28] P2: okay hello so in this meeting we will be talking about setting up our project for for Amazon Fresh So I think we want to launch a new update into the into the app so do you think that you'll be able to so I want you this month to be able to come up with the list of priorities for what we want to improve with our app I think\n[00:41.50] P2: there was a lot of users that complained that the the checkout page is has a lot of bugs and it was not working\n[00:43.70] P1: oh okay\n[00:58.06] P1: actually I'm on call this mom's and also like taking the the interface like something different and I'm still working on that\n[01:00.50] P1: so\n[01:16.64] P1: oh okay so maybe I want to ensure that I can balance this with the ongoing work effectively\n[01:29.47] P2: okay sure but I don't think you mentioned the problem of the bug that we need to solve because I think right now a lot of customers are saying that\n[01:39.55] P2: are saying that the we can't even check out and they're basically we're losing a lot of money I think this quarter it's led to a million dollars loss\n[01:44.12] P1: oh so maybe\n[01:45.91] P1: like\n[01:55.82] P1: like can we clarify and can we prioritize the bug fix and my current house kick it together\n[02:24.08] P2: yeah we can clarify together but I think right now the important thing is we haven't really understand the root cause of the bug so I want you this week to report back what this what this problem is so that's a task for you to do not for my it's not my scope Okay so\n[02:25.75] P1: maybe\n[02:29.42] P1: yeah so maybe\n[02:46.92] P1: can we set a realistic timeline for all my tasks like I can't put some other my current task to like maybe next week or later do you think and I can focus on this book this week\n[03:02.85] P2: okay yeah sure this week you can focus on making sure there's no more checkouts but I think we have a safe three this is almost have too so hopefully you finish this within tomorrow\n[03:18.16] P1: okay okay I will try my best but I don't think that maybe for one day I can handle this all of the like I can find\n[03:27.28] P1: or is there some flexibility if the bug fix like longer than one day\n[03:37.76] P2: okay maximum two days if you don't finish in two days then I think I'll put you on a performance Improvement plan you'll get picked\n[03:46.40] P1: okay I see let me think about that\n[04:00.14] P1: so maybe I want to propose a backup plan if the bug fixed extend beyond this deadline\n[04:05.26] P1: or is there anybody that can support me with this",
+  "triggers": [
+    {
+      "trigger_timestamp": 60.002,
+      "wearer_goal": "manage workload and clarify task priorities",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we discuss my current tasks before I commit to new priorities?",
+      "recommendation_2": "I want to ensure I can balance this with ongoing work effectively.",
+      "urgency": "medium",
+      "rationale": "The wearer is about to commit to new tasks without addressing existing workload constraints.",
+      "feedback_vote": "up",
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 75.002,
+      "wearer_goal": "Manage workload and clarify task priorities before committing to new tasks",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we review my current tasks before I take on new priorities?",
+      "recommendation_2": "I want to ensure I can deliver quality work without overload.",
+      "urgency": "medium",
+      "rationale": "The wearer is about to commit to new tasks without addressing existing workload concerns.",
+      "feedback_vote": "down",
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 90.001,
+      "wearer_goal": "Clarify task priorities and address bug issue while managing workload",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we clarify if fixing the checkout bugs is part of my priorities?",
+      "recommendation_2": "How should I balance the new bug fixes with my current interface work?",
+      "urgency": "medium",
+      "rationale": "The boss highlighted a critical bug issue that the wearer hasn't addressed yet, risking misalignment on priorities.",
+      "feedback_vote": "up",
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.002,
+      "wearer_goal": "Clarify task priorities and workload balance with boss",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we prioritize the bug fixes and my current tasks together?",
+      "recommendation_2": "What is the deadline for fixing the checkout bugs?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to commit to new urgent bug fixes without clarifying priorities or deadlines.",
+      "feedback_vote": "up",
+      "feedback_comment": "better than the top one even though it is the same"
+    },
+    {
+      "trigger_timestamp": 120.001,
+      "wearer_goal": "Clarify task priorities and negotiate workload balance with boss",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we set a realistic timeline for both bug fixes and interface work?",
+      "recommendation_2": "Should we consider reallocating some tasks to meet urgent bug fix needs?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to commit to handling bug fixes alongside current tasks without timeline clarity or resource discussion.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150.002,
+      "wearer_goal": "Clarify task scope and negotiate realistic expectations for bug investigation and current workload",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we set clear criteria for the bug report scope this week?",
+      "recommendation_2": "What resources can support me to investigate the bug effectively?",
+      "urgency": "medium",
+      "rationale": "The wearer risks overcommitting to a bug investigation task without clear scope or support.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165.003,
+      "wearer_goal": "Clarify task scope and negotiate realistic workload for bug investigation and current tasks",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we discuss the expected depth of the bug report to manage my workload?",
+      "recommendation_2": "Should we consider temporary help to speed up the bug investigation?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to accept a new task without clarifying scope or workload balance.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.003,
+      "wearer_goal": "To negotiate a realistic timeline and task prioritization with the boss to manage workload effectively",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we agree on which current tasks to defer before I focus on the bug report?",
+      "recommendation_2": "What criteria should we use to decide which tasks get postponed?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to commit to focusing on the bug without clear agreement on deferring other tasks, risking overload.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 195.002,
+      "wearer_goal": "Clarify timeline and task prioritization for bug fix and current workload",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we confirm the exact deadline and consequences if delayed?",
+      "recommendation_2": "Is there flexibility if the bug fix takes longer than expected?",
+      "urgency": "medium",
+      "rationale": "Wearer is about to commit to a tight deadline without confirming feasibility or flexibility.",
+      "feedback_vote": "up",
+      "feedback_comment": "favorite"
+    },
+    {
+      "trigger_timestamp": 210.003,
+      "wearer_goal": "Clarify timeline flexibility and negotiate realistic expectations for bug fix task",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we discuss possible support if the bug fix extends beyond tomorrow?",
+      "recommendation_2": "What are the priorities if the bug fix can't be completed in one day?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to accept an unrealistic one-day deadline without confirming support or fallback plans.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 225.002,
+      "wearer_goal": "to negotiate a realistic timeline and workload balance for the urgent bug fix task",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we discuss consequences if the bug fix requires more than two days?",
+      "recommendation_2": "I want to propose a backup plan if the bug fix extends beyond the deadline.",
+      "urgency": "medium",
+      "rationale": "The boss threatened a performance plan after two days, risking premature commitment without backup options.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 240.003,
+      "wearer_goal": "clarify workload and negotiate realistic expectations for bug fix timeline",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we discuss consequences and support if the bug fix extends beyond two days?",
+      "recommendation_2": "I want to propose a backup plan if the bug fix deadline is missed.",
+      "urgency": "high",
+      "rationale": "The boss threatened a performance plan after two days, so clarifying flexibility and backup plans is critical now.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 245.314,
+      "wearer_goal": "Negotiate realistic support and backup for bug fix deadline",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we identify specific backup resources if the bug fix extends beyond two days?",
+      "recommendation_2": "I suggest we document a clear escalation path if the bug fix is delayed.",
+      "urgency": "high",
+      "rationale": "The wearer is about to propose a backup plan and ask for support under tight deadline pressure.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 45.001,
+      "wearer_goal": "Understand assigned tasks and plan workload for the week",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 60.002,
+      "wearer_goal": "manage workload and clarify task priorities",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 75.002,
+      "wearer_goal": "Manage workload and clarify task priorities before committing to new tasks",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 90.001,
+      "wearer_goal": "Clarify task priorities and address bug issue while managing workload",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.002,
+      "wearer_goal": "Clarify task priorities and workload balance with boss",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120.001,
+      "wearer_goal": "Clarify task priorities and negotiate workload balance with boss",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.002,
+      "wearer_goal": "Clarify and negotiate task priorities to manage workload effectively",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 150.002,
+      "wearer_goal": "Clarify task scope and negotiate realistic expectations for bug investigation and current workload",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 165.003,
+      "wearer_goal": "Clarify task scope and negotiate realistic workload for bug investigation and current tasks",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.003,
+      "wearer_goal": "To negotiate a realistic timeline and task prioritization with the boss to manage workload effectively",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 195.002,
+      "wearer_goal": "Clarify timeline and task prioritization for bug fix and current workload",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 210.003,
+      "wearer_goal": "Clarify timeline flexibility and negotiate realistic expectations for bug fix task",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 225.002,
+      "wearer_goal": "to negotiate a realistic timeline and workload balance for the urgent bug fix task",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 240.003,
+      "wearer_goal": "clarify workload and negotiate realistic expectations for bug fix timeline",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 245.314,
+      "wearer_goal": "Negotiate realistic support and backup for bug fix deadline",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 4,
+  "timing_rating": 3,
+  "goal_rating": 5,
+  "adoption_rating": 4,
+  "session_notes": "",
+  "best_moment": "flexibility",
+  "worst_moment": "sometimes it triggers with same content and we need to read again so this is time consuming",
+  "created_at": "2026-04-15T03:49:17.610Z"
+}

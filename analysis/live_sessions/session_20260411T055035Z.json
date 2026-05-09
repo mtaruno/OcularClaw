@@ -1,0 +1,15 @@
+{
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "duration_seconds": 17.15,
+  "check_interval": 10.0,
+  "total_checks": 1,
+  "total_triggers": 0,
+  "transcript": "[00:05.01] P1: Hello, test, so right now\n[00:10.01] P1: I kind of want to explain what I do for work. I work on MSN device.",
+  "log": [
+    {
+      "elapsed": 10.01,
+      "error": "HTTP Error 401: Unauthorized"
+    }
+  ]
+}

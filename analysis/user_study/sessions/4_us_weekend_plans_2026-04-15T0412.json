@@ -1,0 +1,171 @@
+{
+  "id": "session_1776226153864",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You and a friend are trying to figure out what to do this Saturday. You're both free all day and want to do something fun but haven't decided what yet.",
+  "scenario_id": "us_weekend_plans",
+  "scenario_label": "S4: Planning the Weekend",
+  "expected_trigger": true,
+  "expected_score": 2,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "4",
+  "duration_seconds": 196.3,
+  "check_interval": 15,
+  "total_checks": 10,
+  "total_triggers": 0,
+  "transcript_lines": [
+    {
+      "seconds": 12.15,
+      "speaker": "P2",
+      "text": "well yeah tomorrow I think we should go hiking to are you open to do a hike at Mount Rainier tomorrow"
+    },
+    {
+      "seconds": 22.97,
+      "speaker": "P1",
+      "text": "for a long time and which track do you want to go tomorrow"
+    },
+    {
+      "seconds": 29.65,
+      "speaker": "P2",
+      "text": "yeah I want I think I heard the skyline Loop is really good"
+    },
+    {
+      "seconds": 35.53,
+      "speaker": "P2",
+      "text": "and I also heard that there they have Huts where you can stay overnight"
+    },
+    {
+      "seconds": 48.58,
+      "speaker": "P2",
+      "text": "yes"
+    },
+    {
+      "seconds": 51.05,
+      "speaker": "P2",
+      "text": "I do"
+    },
+    {
+      "seconds": 60.95,
+      "speaker": "P2",
+      "text": "yes I do understand I have a few but I think we should invite more friends what do you think"
+    },
+    {
+      "seconds": 72.01,
+      "speaker": "P1",
+      "text": "yeah yeah"
+    },
+    {
+      "seconds": 81.61,
+      "speaker": "P1",
+      "text": "yeah maybe we should spend time with Jason early to see if they have time to go with us"
+    },
+    {
+      "seconds": 93.47,
+      "speaker": "P2",
+      "text": "yeah so I think yeah let's see it's a bit short on time since it's tomorrow so I think maybe we tell them tomorrow morning"
+    },
+    {
+      "seconds": 110.46,
+      "speaker": "P1",
+      "text": "so if we tell them tomorrow morning they will be maybe tomorrow"
+    },
+    {
+      "seconds": 125.21,
+      "speaker": "P2",
+      "text": "okay yeah we can let them know tonight as well I think we just need to finish a lot of our work and then submit it and then I guess we should tell them as soon as possible"
+    },
+    {
+      "seconds": 136.81,
+      "speaker": "P1",
+      "text": "so do you know how long it would take to go to Skyline"
+    },
+    {
+      "seconds": 143.56,
+      "speaker": "P2",
+      "text": "yeah I think it takes around 3 hour drive to go to Skyline"
+    }
+  ],
+  "transcript_text": "[00:12.15] P2: well yeah tomorrow I think we should go hiking to are you open to do a hike at Mount Rainier tomorrow\n[00:22.97] P1: for a long time and which track do you want to go tomorrow\n[00:29.65] P2: yeah I want I think I heard the skyline Loop is really good\n[00:35.53] P2: and I also heard that there they have Huts where you can stay overnight\n[00:48.58] P2: yes\n[00:51.05] P2: I do\n[01:00.95] P2: yes I do understand I have a few but I think we should invite more friends what do you think\n[01:12.01] P1: yeah yeah\n[01:21.61] P1: yeah maybe we should spend time with Jason early to see if they have time to go with us\n[01:33.47] P2: yeah so I think yeah let's see it's a bit short on time since it's tomorrow so I think maybe we tell them tomorrow morning\n[01:50.46] P1: so if we tell them tomorrow morning they will be maybe tomorrow\n[02:05.21] P2: okay yeah we can let them know tonight as well I think we just need to finish a lot of our work and then submit it and then I guess we should tell them as soon as possible\n[02:16.81] P1: so do you know how long it would take to go to Skyline\n[02:23.56] P2: yeah I think it takes around 3 hour drive to go to Skyline",
+  "triggers": [],
+  "goal_inferences": [
+    {
+      "timestamp": 15.001,
+      "wearer_goal": "deciding on a fun activity for Saturday",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.001,
+      "wearer_goal": "deciding on a fun activity to do with a friend this Saturday",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.002,
+      "wearer_goal": "decide on a fun activity to do this Saturday with friend",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 60.002,
+      "wearer_goal": "decide on a fun activity for Saturday with a friend",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 75.002,
+      "wearer_goal": "deciding on a fun activity for Saturday with friends",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 90.001,
+      "wearer_goal": "Coordinate plans for a group hiking trip this Saturday",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 105.002,
+      "wearer_goal": "decide on a fun activity for Saturday with friends",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 120.002,
+      "wearer_goal": "Coordinate plans with friend and possibly others for hiking tomorrow",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 135.004,
+      "wearer_goal": "Coordinate plans for a hiking trip with friends this Saturday",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 148.573,
+      "wearer_goal": "Coordinate plans for a hiking trip with friends",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    }
+  ],
+  "usefulness_rating": null,
+  "timing_rating": null,
+  "goal_rating": null,
+  "adoption_rating": null,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T04:12:30.160Z"
+}

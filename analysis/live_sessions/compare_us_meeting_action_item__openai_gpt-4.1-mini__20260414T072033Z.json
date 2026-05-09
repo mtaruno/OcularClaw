@@ -1,0 +1,89 @@
+{
+  "model": "openai/gpt-4.1-mini",
+  "scenario_id": "us_meeting_action_item",
+  "duration_seconds": 78.0,
+  "check_interval": 15.0,
+  "total_checks": 6,
+  "total_triggers": 0,
+  "triggers": [],
+  "raw_log": [
+    {
+      "elapsed": 15.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "provide status update on payments refactor and ensure timely PR merge",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is giving a clear update and the team is collaboratively discussing follow-up actions; no issues or missed opportunities detected yet."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Provide status updates on current tasks and confirm commitments for the sprint",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is responding appropriately to questions and confirming next steps; no errors or missed opportunities detected yet."
+      }
+    },
+    {
+      "elapsed": 45.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.\n[00:34.00] P2: Right, good catch. Alex, make sure the auth section is covered too. OK moving on. Lisa, what's the status on the dashboard redesign?\n[00:41.00] P3: So the mockups are done, I shared them in the design channel yesterday. We're waiting on feedback from the stakeholders before we start implementation.\n[00:48.00] P2: When's the stakeholder review?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "provide status updates and confirm commitments on current sprint tasks",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is clearly updating the team on their tasks and confirming deadlines; no issues or missed opportunities detected yet."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.\n[00:34.00] P2: Right, good catch. Alex, make sure the auth section is covered too. OK moving on. Lisa, what's the status on the dashboard redesign?\n[00:41.00] P3: So the mockups are done, I shared them in the design channel yesterday. We're waiting on feedback from the stakeholders before we start implementation.\n[00:48.00] P2: When's the stakeholder review?\n[00:50.00] P3: Friday afternoon, 3 PM.\n[00:52.00] P2: OK good. And Kevin, the load testing?\n[00:55.00] P4: Running now. Preliminary results look good, we're handling about 2x the expected traffic without issues. I should have the full report by end of day.\n[01:02.00] P2: Great. Anything blocking anyone? No? OK let's keep the momentum going. Sprint ends Friday, let's make sure everything is wrapped up clean.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Provide status updates and confirm commitments on current sprint tasks to ensure timely completion",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer has clearly communicated progress and commitments; no issues or missed opportunities detected at this moment."
+      }
+    },
+    {
+      "elapsed": 75.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.\n[00:34.00] P2: Right, good catch. Alex, make sure the auth section is covered too. OK moving on. Lisa, what's the status on the dashboard redesign?\n[00:41.00] P3: So the mockups are done, I shared them in the design channel yesterday. We're waiting on feedback from the stakeholders before we start implementation.\n[00:48.00] P2: When's the stakeholder review?\n[00:50.00] P3: Friday afternoon, 3 PM.\n[00:52.00] P2: OK good. And Kevin, the load testing?\n[00:55.00] P4: Running now. Preliminary results look good, we're handling about 2x the expected traffic without issues. I should have the full report by end of day.\n[01:02.00] P2: Great. Anything blocking anyone? No? OK let's keep the momentum going. Sprint ends Friday, let's make sure everything is wrapped up clean.\n[01:09.00] P1: Quick question \u2014 are we still doing the retro on Friday or did that move?\n[01:12.00] P2: Retro is Monday now, I sent a calendar update. Alright, that's it. Good standup everyone.\n[01:17.00] P3: Thanks.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Provide updates on assigned tasks and clarify scheduling details",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer has effectively communicated status and asked a relevant scheduling question; no errors or missed opportunities detected."
+      }
+    },
+    {
+      "elapsed": 78.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's keep this quick, we've got a lot to cover. So first up, payments refactor. Alex, where are we on that?\n[00:06.00] P1: Yeah so the PR is up, I'm waiting on review from the platform team. Should be merged by tomorrow if they get to it today.\n[00:12.00] P2: Good. Let's make sure that doesn't slip. Platform team has been slow lately. Chase them if you don't hear back by noon.\n[00:18.00] P3: I can ping Ravi, I talked to him yesterday about something else.\n[00:21.00] P2: Perfect, thanks. OK next, the API docs. These are way out of date and product has been complaining. Alex, can you take that? I need the REST endpoints and the webhook section updated by Thursday.\n[00:30.00] P4: Also the authentication flow changed last sprint, that section is completely wrong now.\n[00:34.00] P2: Right, good catch. Alex, make sure the auth section is covered too. OK moving on. Lisa, what's the status on the dashboard redesign?\n[00:41.00] P3: So the mockups are done, I shared them in the design channel yesterday. We're waiting on feedback from the stakeholders before we start implementation.\n[00:48.00] P2: When's the stakeholder review?\n[00:50.00] P3: Friday afternoon, 3 PM.\n[00:52.00] P2: OK good. And Kevin, the load testing?\n[00:55.00] P4: Running now. Preliminary results look good, we're handling about 2x the expected traffic without issues. I should have the full report by end of day.\n[01:02.00] P2: Great. Anything blocking anyone? No? OK let's keep the momentum going. Sprint ends Friday, let's make sure everything is wrapped up clean.\n[01:09.00] P1: Quick question \u2014 are we still doing the retro on Friday or did that move?\n[01:12.00] P2: Retro is Monday now, I sent a calendar update. Alright, that's it. Good standup everyone.\n[01:17.00] P3: Thanks.\n[01:18.00] P4: Later.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Provide updates on the payments refactor and API docs tasks and clarify schedule for the sprint",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer has clearly communicated status updates and asked a relevant clarifying question; no errors or missed opportunities detected."
+      }
+    }
+  ]
+}

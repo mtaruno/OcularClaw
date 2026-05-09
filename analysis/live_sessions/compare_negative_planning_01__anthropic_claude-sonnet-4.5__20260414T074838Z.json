@@ -1,0 +1,27 @@
+{
+  "model": "anthropic/claude-sonnet-4.5",
+  "scenario_id": "negative_planning_01",
+  "duration_seconds": 56.0,
+  "check_interval": 15.0,
+  "total_checks": 4,
+  "total_triggers": 0,
+  "triggers": [],
+  "raw_log": [
+    {
+      "elapsed": 15.0,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "elapsed": 30.0,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "elapsed": 45.0,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "elapsed": 56.0,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    }
+  ]
+}

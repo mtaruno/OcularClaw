@@ -1,0 +1,464 @@
+{
+  "id": "session_1776292794607",
+  "agent_mode": "proagent",
+  "model": "anthropic/claude-3.5-haiku",
+  "persona": "You work at a mid-size company. You're in a team meeting where your boss is handing out tasks for the week. You've got a lot on your plate and are thinking about your own to-do list.",
+  "scenario_id": "us_meeting_action_item",
+  "scenario_label": "S1: Team Meeting",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "5",
+  "duration_seconds": 477.97,
+  "check_interval": 15,
+  "total_checks": 16,
+  "total_triggers": 15,
+  "transcript_lines": [
+    {
+      "seconds": 8.51,
+      "speaker": "P2",
+      "text": "so yeah so I know last fiscal year Spotify wrapped has been doing really well and"
+    },
+    {
+      "seconds": 26.54,
+      "speaker": "P2",
+      "text": "I have a team of four Engineers that I've freed up for this new fiscal year and hopefully you can think of I think the test I want to give you is what is the new rap that you can figure out for this year cuz we we still need to bump up our Revenue so our stock price can go pretty high"
+    },
+    {
+      "seconds": 36.01,
+      "speaker": "P1",
+      "text": "okay well since you have four Engineers we can allocate each one of them to one new feature"
+    },
+    {
+      "seconds": 39.08,
+      "speaker": "P1",
+      "text": "why is it"
+    },
+    {
+      "seconds": 52.31,
+      "speaker": "P1",
+      "text": "okay we can keep trying the first engineer can work on introductions to newer artist and so bringing more recommendations on"
+    },
+    {
+      "seconds": 63.16,
+      "speaker": "P1",
+      "text": "what artist would be you know would be best for the individual depending on their listening patterns their favorite genre their top artist"
+    },
+    {
+      "seconds": 68.68,
+      "speaker": "P1",
+      "text": "and that way we're able to kind of bring more artists onto the platform"
+    },
+    {
+      "seconds": 74.57,
+      "speaker": "P2",
+      "text": "okay so you're saying trying to find a way to bring new artists to the platform"
+    },
+    {
+      "seconds": 81.4,
+      "speaker": "P2",
+      "text": "and I wonder how you're thinking this would manifest into a future that's on Spotify"
+    },
+    {
+      "seconds": 97.72,
+      "speaker": "P1",
+      "text": "well I think you can you can break down the artist and I guess an individual is listening pattern by multiple things it would it could be first of all that could be broken down by like song or podcast or audiobook"
+    },
+    {
+      "seconds": 113.4,
+      "speaker": "P1",
+      "text": "and then from there you can break it down by genre you can break it down by maybe language style Tempo whatever that may be and then from there we can kind of essentially categorize the artist that we have on the platform"
+    },
+    {
+      "seconds": 118.44,
+      "speaker": "P1",
+      "text": "and match them match the users kind of profile with"
+    },
+    {
+      "seconds": 124.24,
+      "speaker": "P1",
+      "text": "other artists' profile that are similar in in their preferences"
+    },
+    {
+      "seconds": 132.34,
+      "speaker": "P2",
+      "text": "so you usually want a better way to organize for for users to discover artists"
+    },
+    {
+      "seconds": 136.52,
+      "speaker": "P2",
+      "text": "essentially for and you think that this would be the new Spotify wrapped"
+    },
+    {
+      "seconds": 145.73,
+      "speaker": "P1",
+      "text": "well it wouldn't be the new spot if I wrap it would just be an addition so instead of it being just an overview of your year"
+    },
+    {
+      "seconds": 164.37,
+      "speaker": "P1",
+      "text": "it really is just us trying to invite our users to listen to more artists and that way if we kind of expand our top of funnel and get more more artists into the platform because they're getting recommended more that should theoretically to more Revenue"
+    },
+    {
+      "seconds": 203.99,
+      "speaker": "P2",
+      "text": "how how would this recommendations be different from what we already have since I think we put in a lot of work last year on improving our algorithm for the for you for the recommendations like songs that are similar and I know we have features like song radio where you can or song that you like it can actually give you a lot of similar songs that are within the same Vibe and I think we also currently have features like every week we could essentially give you based on the your listening habits it gives you a playlist of like the songs that you might discover this week so I think we have a lot of stuff for recommendations so how do you think it's different from these"
+    },
+    {
+      "seconds": 214.61,
+      "speaker": "P1",
+      "text": "well it I think we did a decent job last year recommending newer artists or just kind of supporting the exploration phase"
+    }
+  ],
+  "transcript_text": "[00:08.51] P2: so yeah so I know last fiscal year Spotify wrapped has been doing really well and\n[00:26.54] P2: I have a team of four Engineers that I've freed up for this new fiscal year and hopefully you can think of I think the test I want to give you is what is the new rap that you can figure out for this year cuz we we still need to bump up our Revenue so our stock price can go pretty high\n[00:36.01] P1: okay well since you have four Engineers we can allocate each one of them to one new feature\n[00:39.08] P1: why is it\n[00:52.31] P1: okay we can keep trying the first engineer can work on introductions to newer artist and so bringing more recommendations on\n[01:03.16] P1: what artist would be you know would be best for the individual depending on their listening patterns their favorite genre their top artist\n[01:08.68] P1: and that way we're able to kind of bring more artists onto the platform\n[01:14.57] P2: okay so you're saying trying to find a way to bring new artists to the platform\n[01:21.40] P2: and I wonder how you're thinking this would manifest into a future that's on Spotify\n[01:37.72] P1: well I think you can you can break down the artist and I guess an individual is listening pattern by multiple things it would it could be first of all that could be broken down by like song or podcast or audiobook\n[01:53.40] P1: and then from there you can break it down by genre you can break it down by maybe language style Tempo whatever that may be and then from there we can kind of essentially categorize the artist that we have on the platform\n[01:58.44] P1: and match them match the users kind of profile with\n[02:04.24] P1: other artists' profile that are similar in in their preferences\n[02:12.34] P2: so you usually want a better way to organize for for users to discover artists\n[02:16.52] P2: essentially for and you think that this would be the new Spotify wrapped\n[02:25.73] P1: well it wouldn't be the new spot if I wrap it would just be an addition so instead of it being just an overview of your year\n[02:44.37] P1: it really is just us trying to invite our users to listen to more artists and that way if we kind of expand our top of funnel and get more more artists into the platform because they're getting recommended more that should theoretically to more Revenue\n[03:23.99] P2: how how would this recommendations be different from what we already have since I think we put in a lot of work last year on improving our algorithm for the for you for the recommendations like songs that are similar and I know we have features like song radio where you can or song that you like it can actually give you a lot of similar songs that are within the same Vibe and I think we also currently have features like every week we could essentially give you based on the your listening habits it gives you a playlist of like the songs that you might discover this week so I think we have a lot of stuff for recommendations so how do you think it's different from these\n[03:34.61] P1: well it I think we did a decent job last year recommending newer artists or just kind of supporting the exploration phase",
+  "triggers": [
+    {
+      "trigger_timestamp": 45.001,
+      "wearer_goal": "Strategically allocate engineering resources to maximize potential revenue growth",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can you elaborate on the specific revenue targets we're trying to achieve?",
+      "recommendation_2": "What metrics are we using to measure the success of these new features?",
+      "urgency": "medium",
+      "rationale": "The conversation lacks concrete details about feature selection and success criteria",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 60.002,
+      "wearer_goal": "Strategically allocate engineering resources to create new revenue-generating features",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we discuss specific revenue targets these features should address?",
+      "recommendation_2": "What customer segments are we targeting with these new features?",
+      "urgency": "medium",
+      "rationale": "The wearer is proposing feature allocation without clear strategic alignment or measurable outcomes.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 75.003,
+      "wearer_goal": "Define strategic feature allocation for engineering team to increase Spotify's revenue",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can we quantify the expected revenue impact for each proposed feature?",
+      "recommendation_2": "What specific user engagement metrics will we track?",
+      "urgency": "medium",
+      "rationale": "Wearer is proposing features without clear revenue or performance measurement criteria",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 90.002,
+      "wearer_goal": "Propose a strategic feature enhancement for Spotify's recommendation system",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "How will these artist recommendations generate direct revenue?",
+      "recommendation_2": "Can we prototype a monetization model for new artist discovery?",
+      "urgency": "medium",
+      "rationale": "The wearer proposed a feature without connecting it to the explicit revenue goal mentioned by the boss.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.002,
+      "wearer_goal": "Propose a strategic feature for artist discovery and platform growth",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "How will this feature generate direct revenue for Spotify?",
+      "recommendation_2": "Can we map these artist recommendations to monetization strategies?",
+      "urgency": "medium",
+      "rationale": "The wearer is proposing a feature without clearly articulating its business value or monetization potential.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 120.003,
+      "wearer_goal": "Propose a strategic feature for artist discovery and platform growth",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "How will we measure user engagement and conversion for these artist recommendations?",
+      "recommendation_2": "Can we explore potential monetization strategies for this discovery feature?",
+      "urgency": "medium",
+      "rationale": "The wearer is pitching an artist recommendation feature but hasn't addressed its business value or measurement strategy.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.002,
+      "wearer_goal": "Propose a strategic feature for artist discovery and platform growth",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "How will this recommendation generate direct user engagement or revenue?",
+      "recommendation_2": "Can we quantify the potential user growth from these artist introductions?",
+      "urgency": "medium",
+      "rationale": "The wearer is proposing a feature but hasn't connected it to concrete business metrics or outcomes",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150.004,
+      "wearer_goal": "Propose a new artist recommendation feature for Spotify that improves user discovery",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "How will this feature generate measurable revenue for Spotify?",
+      "recommendation_2": "Can we define specific metrics to validate the recommendation algorithm?",
+      "urgency": "medium",
+      "rationale": "The wearer is pitching a feature without addressing its business impact or measurability",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165.005,
+      "wearer_goal": "Propose a new feature for artist discovery that can potentially increase platform revenue",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "How will we track user engagement and conversion for these artist recommendations?",
+      "recommendation_2": "Can we estimate the potential revenue uplift from this discovery feature?",
+      "urgency": "medium",
+      "rationale": "The wearer is proposing an interesting feature but hasn't articulated its concrete business impact or measurement strategy.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.004,
+      "wearer_goal": "Propose a new artist discovery feature that could increase Spotify's revenue",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "How will we measure user engagement and conversion for these artist recommendations?",
+      "recommendation_2": "Can we estimate the potential revenue uplift from this discovery feature?",
+      "urgency": "medium",
+      "rationale": "The wearer has a promising concept but hasn't articulated concrete measurement or revenue strategies",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 195.003,
+      "wearer_goal": "Propose a new feature for artist discovery that could potentially increase platform revenue",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "How could we monetize these artist recommendations directly?",
+      "recommendation_2": "Can we track user conversion rates from these recommendations?",
+      "urgency": "medium",
+      "rationale": "Wearer has a promising concept but hasn't connected it explicitly to revenue generation strategy",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 210.002,
+      "wearer_goal": "Persuade boss to approve a new artist recommendation feature that could potentially increase platform revenue",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "We could differentiate by using multi-dimensional artist matching beyond current algorithms.",
+      "recommendation_2": "Our approach combines more granular user preference mapping than existing features.",
+      "urgency": "medium",
+      "rationale": "The wearer needs to clearly distinguish this proposed feature from existing recommendation systems to gain approval.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 225.003,
+      "wearer_goal": "Persuade boss to approve a new artist recommendation feature that could potentially increase platform revenue",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let me outline a concrete differentiation from our existing recommendation features.",
+      "recommendation_2": "We could leverage machine learning to create multi-dimensional artist matching.",
+      "urgency": "medium",
+      "rationale": "The wearer needs to clearly distinguish this proposed feature from existing recommendation systems to gain approval.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 240.003,
+      "wearer_goal": "Propose a novel artist recommendation feature that differentiates from existing Spotify discovery mechanisms",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "We could leverage machine learning to create multi-dimensional artist matching beyond genre.",
+      "recommendation_2": "Our approach combines more granular user preference mapping than current algorithms.",
+      "urgency": "medium",
+      "rationale": "The wearer needs to clearly articulate how this recommendation feature is substantively different from existing Spotify discovery tools.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 243.946,
+      "wearer_goal": "Propose a novel artist recommendation feature that differentiates from existing Spotify recommendation algorithms",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "We could leverage contextual metadata beyond listening history to create unique matches.",
+      "recommendation_2": "Our approach could incorporate cross-genre affinity and emotional resonance mapping.",
+      "urgency": "medium",
+      "rationale": "The wearer needs to clearly articulate how this recommendation feature is substantively different from existing Spotify discovery mechanisms.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15.002,
+      "wearer_goal": "Mentally tracking personal tasks while listening to team assignment discussion",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "medium",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.001,
+      "wearer_goal": "Strategically allocate engineering resources to maximize potential revenue growth",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 60.002,
+      "wearer_goal": "Strategically allocate engineering resources to create new revenue-generating features",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 75.003,
+      "wearer_goal": "Define strategic feature allocation for engineering team to increase Spotify's revenue",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 90.002,
+      "wearer_goal": "Propose a strategic feature enhancement for Spotify's recommendation system",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.002,
+      "wearer_goal": "Propose a strategic feature for artist discovery and platform growth",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120.003,
+      "wearer_goal": "Propose a strategic feature for artist discovery and platform growth",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.002,
+      "wearer_goal": "Propose a strategic feature for artist discovery and platform growth",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.004,
+      "wearer_goal": "Propose a new artist recommendation feature for Spotify that improves user discovery",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 165.005,
+      "wearer_goal": "Propose a new feature for artist discovery that can potentially increase platform revenue",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.004,
+      "wearer_goal": "Propose a new artist discovery feature that could increase Spotify's revenue",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 195.003,
+      "wearer_goal": "Propose a new feature for artist discovery that could potentially increase platform revenue",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 210.002,
+      "wearer_goal": "Persuade boss to approve a new artist recommendation feature that could potentially increase platform revenue",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 225.003,
+      "wearer_goal": "Persuade boss to approve a new artist recommendation feature that could potentially increase platform revenue",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 240.003,
+      "wearer_goal": "Propose a novel artist recommendation feature that differentiates from existing Spotify discovery mechanisms",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 243.946,
+      "wearer_goal": "Propose a novel artist recommendation feature that differentiates from existing Spotify recommendation algorithms",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 2,
+  "timing_rating": 3,
+  "goal_rating": 4,
+  "adoption_rating": 1,
+  "session_notes": "",
+  "best_moment": "didint use it at all, cut thought process short",
+  "worst_moment": "",
+  "created_at": "2026-04-15T22:47:52.575Z"
+}

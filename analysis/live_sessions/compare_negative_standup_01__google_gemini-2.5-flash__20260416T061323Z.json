@@ -1,0 +1,126 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "scenario_id": "negative_standup_01",
+  "duration_seconds": 50.0,
+  "check_interval": 10.0,
+  "total_checks": 6,
+  "total_triggers": 2,
+  "triggers": [
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "Confirming the release schedule for the staging deployment to ensure team alignment and manage expectations.",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What steps are still pending for Friday's deploy?",
+      "recommendation_2": "Will P3's credential blocker affect the Friday target?",
+      "urgency": "medium",
+      "rationale": "P1 is asking a high-stakes question about the deployment timeline right after P3 mentioned a blocker. This is an opportune moment to get clarity on potential impacts."
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "Understand the full impact of P3's credential blocker on the Friday staging deploy target to proactively manage related dependencies and timelines.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What's the contingency if DevOps is slow?",
+      "recommendation_2": "Will you prioritize the webhook once you have credentials?",
+      "urgency": "medium",
+      "rationale": "P3 identified a blocker, but the plan to mitigate is not yet clear, leaving a structural gap in the daily update given the Friday deadline."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "To provide a concise update on their progress and planned work in the daily standup.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer successfully delivered their update and there are no immediate signals for intervention."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Acknowledge team members' updates and prepare for their own next update.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "No immediate actionable opportunities or issues detected. The wearer has already given their update."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.\n[00:33.00] P1: Quick question \u2014 are we still targeting Friday for the staging deploy?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Confirming the release schedule for the staging deployment to ensure team alignment and manage expectations.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "What steps are still pending for Friday's deploy?",
+        "recommendation_2": "Will P3's credential blocker affect the Friday target?",
+        "urgency": "medium",
+        "rationale": "P1 is asking a high-stakes question about the deployment timeline right after P3 mentioned a blocker. This is an opportune moment to get clarity on potential impacts."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.\n[00:33.00] P1: Quick question \u2014 are we still targeting Friday for the staging deploy?\n[00:37.00] P2: Yeah, Friday afternoon. P3, will the webhook be ready by then?\n[00:41.00] P3: Should be, as long as I get those credentials today.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Understand the full impact of P3's credential blocker on the Friday staging deploy target to proactively manage related dependencies and timelines.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "What's the contingency if DevOps is slow?",
+        "recommendation_2": "Will you prioritize the webhook once you have credentials?",
+        "urgency": "medium",
+        "rationale": "P3 identified a blocker, but the plan to mitigate is not yet clear, leaving a structural gap in the daily update given the Friday deadline."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.\n[00:33.00] P1: Quick question \u2014 are we still targeting Friday for the staging deploy?\n[00:37.00] P2: Yeah, Friday afternoon. P3, will the webhook be ready by then?\n[00:41.00] P3: Should be, as long as I get those credentials today.\n[00:44.00] P2: I'll make sure you get them this morning. Anything else?\n[00:47.00] P1: Nope, good here.\n[00:48.50] P3: All good.\n[00:50.00] P2: Cool, let's ship it. Have a good one.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Understand and confirm if the project is still on track for Friday's deployment target despite potential dependencies, ensuring clear expectations for the upcoming work. They are confirming shared understanding of the team's commitment to the deployment timeline.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "P2 has confirmed Friday deployment and taken ownership of P3's blocker, closing the loop on the wearer's question and removing any immediate need for follow-up or intervention. The conversation concluded naturally without any obvious unresolved signals."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.\n[00:33.00] P1: Quick question \u2014 are we still targeting Friday for the staging deploy?\n[00:37.00] P2: Yeah, Friday afternoon. P3, will the webhook be ready by then?\n[00:41.00] P3: Should be, as long as I get those credentials today.\n[00:44.00] P2: I'll make sure you get them this morning. Anything else?\n[00:47.00] P1: Nope, good here.\n[00:48.50] P3: All good.\n[00:50.00] P2: Cool, let's ship it. Have a good one.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Understand potential risks to the Friday deploy target and confirm P3's commitment to delivering the webhook on time.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "P2 has already committed to ensuring P3 receives the credentials this morning, addressing the immediate blocker for P3. There's no new signal to intervene on."
+      }
+    }
+  ]
+}

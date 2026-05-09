@@ -1,0 +1,229 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "scenario_id": "medical_visit_01",
+  "duration_seconds": 68.0,
+  "check_interval": 10.0,
+  "total_checks": 7,
+  "total_triggers": 7,
+  "triggers": [
+    {
+      "trigger_timestamp": 10.0,
+      "wearer_goal": "accurately convey all relevant symptoms to the doctor to receive an accurate diagnosis for her headaches.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Before I describe the headache, can I also mention the dizziness?",
+      "recommendation_2": "The dizziness is also in the mornings, sometimes with blurry vision.",
+      "urgency": "medium",
+      "rationale": "The wearer mentioned dizziness but the doctor swiftly moved to headache questions, creating an opportunity for the dizziness to be forgotten. The wearer needs to ensure all symptoms are conveyed."
+    },
+    {
+      "trigger_timestamp": 20.0,
+      "wearer_goal": "To provide a comprehensive and accurate description of all symptoms to the doctor for proper diagnosis.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "The dizziness sometimes comes with lightheadedness.",
+      "recommendation_2": "I also have blurred vision during the dizziness.",
+      "urgency": "medium",
+      "rationale": "The doctor is asking about associated symptoms, and the wearer previously mentioned dizziness but didn't elaborate; this is a chance to provide more detail and ensure the doctor has a full picture."
+    },
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "To accurately and comprehensively describe all current health symptoms to the doctor for diagnosis.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "self_contradiction_recall",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "The dizziness also happens a few times a week.",
+      "recommendation_2": "The dizziness is new, roughly coinciding with the headaches.",
+      "urgency": "medium",
+      "rationale": "The wearer mentioned dizziness initially but has since focused only on headaches, possibly overlooking an important symptom that the doctor is now asking about in relation to general well-being."
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "Receive an accurate diagnosis and treatment plan for sudden onset headaches and dizziness.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Doctor, can we go back to the dizziness I mentioned?",
+      "recommendation_2": "The dizziness is concerning because it's new for me.",
+      "urgency": "medium",
+      "rationale": "The doctor is focusing on peripheral issues while the wearer's initial mention of dizziness, a potentially significant symptom, has been overlooked."
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "wearer_goal": "To get an accurate diagnosis and treatment plan for both headaches and dizziness, without one symptom overshadowing the other.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "self_contradiction_recall",
+      "proactive_score": 5,
+      "recommendation_mode": "say",
+      "recommendation_1": "I'm still concerned about the dizziness.",
+      "recommendation_2": "The dizziness is equally important to me.",
+      "urgency": "high",
+      "rationale": "The wearer initially mentioned dizziness but has now dismissed it, leading to a potential misdiagnosis without considering all symptoms."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "wearer_goal": "To get a proper diagnosis and treatment for all of their concerning symptoms, including dizziness.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "missed_buying_signal",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Doctor, can we revisit the dizziness I mentioned earlier?",
+      "recommendation_2": "The dizziness is also in the mornings, sometimes with blurry vision.",
+      "urgency": "high",
+      "rationale": "The wearer forgot to mention dizziness when asked for other symptoms and the doctor is concluding the appointment without addressing it."
+    },
+    {
+      "trigger_timestamp": 68.0,
+      "wearer_goal": "To get a proper diagnosis and treatment for her medical symptoms, including dizziness, which she initially mentioned but then downplayed.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "I am worried about the dizziness I mentioned. Could that be connected?",
+      "recommendation_2": "The dizziness is happening almost every day.",
+      "urgency": "high",
+      "rationale": "The doctor is concluding the appointment and the wearer has failed to adequately address a significant symptom they previously mentioned. Intervening now provides a last chance to bring it up before the appointment ends."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: So what brings you in today?\n[00:02.50] P1: I've been having these headaches for about two weeks now. They're mostly in the morning when I wake up. Also I've been getting a bit dizzy sometimes but the headaches are the main thing.\n[00:12.00] P2: Okay. Can you describe the headache pain? Is it sharp, dull, throbbing?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "accurately convey all relevant symptoms to the doctor to receive an accurate diagnosis for her headaches.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "question_dodge",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Before I describe the headache, can I also mention the dizziness?",
+        "recommendation_2": "The dizziness is also in the mornings, sometimes with blurry vision.",
+        "urgency": "medium",
+        "rationale": "The wearer mentioned dizziness but the doctor swiftly moved to headache questions, creating an opportunity for the dizziness to be forgotten. The wearer needs to ensure all symptoms are conveyed."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: So what brings you in today?\n[00:02.50] P1: I've been having these headaches for about two weeks now. They're mostly in the morning when I wake up. Also I've been getting a bit dizzy sometimes but the headaches are the main thing.\n[00:12.00] P2: Okay. Can you describe the headache pain? Is it sharp, dull, throbbing?\n[00:16.00] P1: More like a dull pressure. Kind of behind my eyes and across my forehead.\n[00:21.00] P2: Any nausea or sensitivity to light?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To provide a comprehensive and accurate description of all symptoms to the doctor for proper diagnosis.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "The dizziness sometimes comes with lightheadedness.",
+        "recommendation_2": "I also have blurred vision during the dizziness.",
+        "urgency": "medium",
+        "rationale": "The doctor is asking about associated symptoms, and the wearer previously mentioned dizziness but didn't elaborate; this is a chance to provide more detail and ensure the doctor has a full picture."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: So what brings you in today?\n[00:02.50] P1: I've been having these headaches for about two weeks now. They're mostly in the morning when I wake up. Also I've been getting a bit dizzy sometimes but the headaches are the main thing.\n[00:12.00] P2: Okay. Can you describe the headache pain? Is it sharp, dull, throbbing?\n[00:16.00] P1: More like a dull pressure. Kind of behind my eyes and across my forehead.\n[00:21.00] P2: Any nausea or sensitivity to light?\n[00:23.50] P1: No nausea. Maybe a little light sensitivity but nothing major.\n[00:28.00] P2: Have you been under more stress than usual? Any changes in sleep?\n[00:32.00] P1: I mean work has been busy but nothing crazy. Sleep is okay, maybe six hours a night.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To accurately and comprehensively describe all current health symptoms to the doctor for diagnosis.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "self_contradiction_recall",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "The dizziness also happens a few times a week.",
+        "recommendation_2": "The dizziness is new, roughly coinciding with the headaches.",
+        "urgency": "medium",
+        "rationale": "The wearer mentioned dizziness initially but has since focused only on headaches, possibly overlooking an important symptom that the doctor is now asking about in relation to general well-being."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: So what brings you in today?\n[00:02.50] P1: I've been having these headaches for about two weeks now. They're mostly in the morning when I wake up. Also I've been getting a bit dizzy sometimes but the headaches are the main thing.\n[00:12.00] P2: Okay. Can you describe the headache pain? Is it sharp, dull, throbbing?\n[00:16.00] P1: More like a dull pressure. Kind of behind my eyes and across my forehead.\n[00:21.00] P2: Any nausea or sensitivity to light?\n[00:23.50] P1: No nausea. Maybe a little light sensitivity but nothing major.\n[00:28.00] P2: Have you been under more stress than usual? Any changes in sleep?\n[00:32.00] P1: I mean work has been busy but nothing crazy. Sleep is okay, maybe six hours a night.\n[00:38.00] P2: Six hours is a bit low. Are you drinking enough water?\n[00:41.50] P1: Probably not as much as I should be.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Receive an accurate diagnosis and treatment plan for sudden onset headaches and dizziness.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "question_dodge",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Doctor, can we go back to the dizziness I mentioned?",
+        "recommendation_2": "The dizziness is concerning because it's new for me.",
+        "urgency": "medium",
+        "rationale": "The doctor is focusing on peripheral issues while the wearer's initial mention of dizziness, a potentially significant symptom, has been overlooked."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: So what brings you in today?\n[00:02.50] P1: I've been having these headaches for about two weeks now. They're mostly in the morning when I wake up. Also I've been getting a bit dizzy sometimes but the headaches are the main thing.\n[00:12.00] P2: Okay. Can you describe the headache pain? Is it sharp, dull, throbbing?\n[00:16.00] P1: More like a dull pressure. Kind of behind my eyes and across my forehead.\n[00:21.00] P2: Any nausea or sensitivity to light?\n[00:23.50] P1: No nausea. Maybe a little light sensitivity but nothing major.\n[00:28.00] P2: Have you been under more stress than usual? Any changes in sleep?\n[00:32.00] P1: I mean work has been busy but nothing crazy. Sleep is okay, maybe six hours a night.\n[00:38.00] P2: Six hours is a bit low. Are you drinking enough water?\n[00:41.50] P1: Probably not as much as I should be.\n[00:44.00] P2: Any other symptoms I should know about? Anything at all?\n[00:47.00] P1: No I think the headaches are really the main thing.\n[00:50.00] P2: Alright. This sounds like tension headaches, possibly aggravated by mild dehydration and sleep deficit. I'm going to recommend increasing your water intake, trying to get seven to eight hours, and you can take ibuprofen as needed.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To get an accurate diagnosis and treatment plan for both headaches and dizziness, without one symptom overshadowing the other.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "self_contradiction_recall",
+        "proactive_score": 5,
+        "recommendation_mode": "say",
+        "recommendation_1": "I'm still concerned about the dizziness.",
+        "recommendation_2": "The dizziness is equally important to me.",
+        "urgency": "high",
+        "rationale": "The wearer initially mentioned dizziness but has now dismissed it, leading to a potential misdiagnosis without considering all symptoms."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: So what brings you in today?\n[00:02.50] P1: I've been having these headaches for about two weeks now. They're mostly in the morning when I wake up. Also I've been getting a bit dizzy sometimes but the headaches are the main thing.\n[00:12.00] P2: Okay. Can you describe the headache pain? Is it sharp, dull, throbbing?\n[00:16.00] P1: More like a dull pressure. Kind of behind my eyes and across my forehead.\n[00:21.00] P2: Any nausea or sensitivity to light?\n[00:23.50] P1: No nausea. Maybe a little light sensitivity but nothing major.\n[00:28.00] P2: Have you been under more stress than usual? Any changes in sleep?\n[00:32.00] P1: I mean work has been busy but nothing crazy. Sleep is okay, maybe six hours a night.\n[00:38.00] P2: Six hours is a bit low. Are you drinking enough water?\n[00:41.50] P1: Probably not as much as I should be.\n[00:44.00] P2: Any other symptoms I should know about? Anything at all?\n[00:47.00] P1: No I think the headaches are really the main thing.\n[00:50.00] P2: Alright. This sounds like tension headaches, possibly aggravated by mild dehydration and sleep deficit. I'm going to recommend increasing your water intake, trying to get seven to eight hours, and you can take ibuprofen as needed.\n[01:01.00] P1: Okay sounds good.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To get a proper diagnosis and treatment for all of their concerning symptoms, including dizziness.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "missed_buying_signal",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Doctor, can we revisit the dizziness I mentioned earlier?",
+        "recommendation_2": "The dizziness is also in the mornings, sometimes with blurry vision.",
+        "urgency": "high",
+        "rationale": "The wearer forgot to mention dizziness when asked for other symptoms and the doctor is concluding the appointment without addressing it."
+      }
+    },
+    {
+      "elapsed": 68.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P2: So what brings you in today?\n[00:02.50] P1: I've been having these headaches for about two weeks now. They're mostly in the morning when I wake up. Also I've been getting a bit dizzy sometimes but the headaches are the main thing.\n[00:12.00] P2: Okay. Can you describe the headache pain? Is it sharp, dull, throbbing?\n[00:16.00] P1: More like a dull pressure. Kind of behind my eyes and across my forehead.\n[00:21.00] P2: Any nausea or sensitivity to light?\n[00:23.50] P1: No nausea. Maybe a little light sensitivity but nothing major.\n[00:28.00] P2: Have you been under more stress than usual? Any changes in sleep?\n[00:32.00] P1: I mean work has been busy but nothing crazy. Sleep is okay, maybe six hours a night.\n[00:38.00] P2: Six hours is a bit low. Are you drinking enough water?\n[00:41.50] P1: Probably not as much as I should be.\n[00:44.00] P2: Any other symptoms I should know about? Anything at all?\n[00:47.00] P1: No I think the headaches are really the main thing.\n[00:50.00] P2: Alright. This sounds like tension headaches, possibly aggravated by mild dehydration and sleep deficit. I'm going to recommend increasing your water intake, trying to get seven to eight hours, and you can take ibuprofen as needed.\n[01:01.00] P1: Okay sounds good.\n[01:03.00] P2: If it doesn't improve in two weeks come back and we'll do some further testing. Any other questions?\n[01:08.00] P1: No I think that covers it. Thank you.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To get a proper diagnosis and treatment for her medical symptoms, including dizziness, which she initially mentioned but then downplayed.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "I am worried about the dizziness I mentioned. Could that be connected?",
+        "recommendation_2": "The dizziness is happening almost every day.",
+        "urgency": "high",
+        "rationale": "The doctor is concluding the appointment and the wearer has failed to adequately address a significant symptom they previously mentioned. Intervening now provides a last chance to bring it up before the appointment ends."
+      }
+    }
+  ]
+}

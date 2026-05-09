@@ -1,0 +1,29 @@
+{
+  "agent_mode": "proagent",
+  "model": "gpt-4.1-mini",
+  "duration_seconds": 30.15,
+  "check_interval": 10.0,
+  "total_checks": 2,
+  "total_triggers": 0,
+  "transcript": "[00:10.02] P1: All right.\n[00:15.03] P1: testing so I have working on Amazon differences.\n[00:20.03] P1: Okay, right now I want to introduce to you guys.\n[00:25.03] P1: product that we have. It's called Alexa Plus.",
+  "log": [
+    {
+      "elapsed": 10.02,
+      "check_number": 1,
+      "transcript_snapshot": "[00:10.02] P1: All right.",
+      "result": {
+        "action": "none",
+        "reason": "The conversation has just started with a neutral statement, no decision or question present yet."
+      }
+    },
+    {
+      "elapsed": 20.03,
+      "check_number": 2,
+      "transcript_snapshot": "[00:10.02] P1: All right.\n[00:15.03] P1: testing so I have working on Amazon differences.\n[00:20.03] P1: Okay, right now I want to introduce to you guys.",
+      "result": {
+        "action": "none",
+        "reason": "The speaker is just beginning their introduction and no clear question or decision point is present yet."
+      }
+    }
+  ]
+}

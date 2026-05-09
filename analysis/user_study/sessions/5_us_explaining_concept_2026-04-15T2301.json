@@ -1,0 +1,659 @@
+{
+  "id": "session_1776293342114",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You're trying to explain to a coworker why a project deadline should be pushed back. You understand the reasons well, but the other person doesn't have the same background knowledge as you.",
+  "scenario_id": "us_explaining_concept",
+  "scenario_label": "S2: One-on-One Discussion",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "5",
+  "duration_seconds": 762.29,
+  "check_interval": 15,
+  "total_checks": 26,
+  "total_triggers": 19,
+  "transcript_lines": [
+    {
+      "seconds": 2.35,
+      "speaker": "P2",
+      "text": "start life session"
+    },
+    {
+      "seconds": 20.26,
+      "speaker": "P2",
+      "text": "okay so today I'm in today would like to talk about planning for this new quarter new physical quarter and I think right now we are so in Nespresso we've been coming out with a few new machines last year"
+    },
+    {
+      "seconds": 31.18,
+      "speaker": "P2",
+      "text": "but I can't help but think that our stock prices are falling so really we really need to do something drastic to really help capture more users and more customers"
+    },
+    {
+      "seconds": 47.34,
+      "speaker": "P2",
+      "text": "so I was thinking that by the end of 3 months we can launch you know how AI has been like booming and stuff so I think we can launch this new AI feature where there's the Nespresso machine cannot only serve people at their homes"
+    },
+    {
+      "seconds": 54.81,
+      "speaker": "P2",
+      "text": "but there would be actual robotic arms serving customers in a B2B setting well what do you think about this"
+    },
+    {
+      "seconds": 70.45,
+      "speaker": "P1",
+      "text": "well that's a great idea Matthew I like the vision that you have for I guess I guess for the company and I do appreciate your your enthusiasm and trying to push for newer innovation"
+    },
+    {
+      "seconds": 78.55,
+      "speaker": "P1",
+      "text": "I do think that 3 months might be quite a short period of time to achieve this goal for many reasons"
+    },
+    {
+      "seconds": 83.84,
+      "speaker": "P1",
+      "text": "would you like me to get into them or do you have any other thoughts before I get in there"
+    },
+    {
+      "seconds": 119.91,
+      "speaker": "P2",
+      "text": "yeah so you're saying that three months sounds aggressive but keep in mind that I think our stock prices are falling so I really feel like it's really important for us to step it up and you know 3 months is a long time if you think about it like we can also add in perhaps like I know a lot of people have been taking leave the whole month last last month so so this month I think it's really important for everyone to yeah maybe even nights and weekends are are something that we can push towards"
+    },
+    {
+      "seconds": 123.79,
+      "speaker": "P1",
+      "text": "well with"
+    },
+    {
+      "seconds": 139.48,
+      "speaker": "P1",
+      "text": "with 3 months I do think that it is enough time to do something to kind of you know eventually increase the stock price but I do think that it is most likely more effective to improve the"
+    },
+    {
+      "seconds": 148.18,
+      "speaker": "P1",
+      "text": "I guess the the main the main features within our existing machines first and kind of improve their efficiency and their effectiveness"
+    },
+    {
+      "seconds": 159.61,
+      "speaker": "P1",
+      "text": "before we innovate on to other things I think that within those 3 months we would get we would generate more returns by improving our machine rather than innovating for newer features"
+    },
+    {
+      "seconds": 169.3,
+      "speaker": "P2",
+      "text": "I think you did not hear me when I said that we need to do something drastic and all the competitor"
+    },
+    {
+      "seconds": 173.13,
+      "speaker": "P2",
+      "text": "coffee machines have essentially"
+    },
+    {
+      "seconds": 181.64,
+      "speaker": "P2",
+      "text": "gone to this whole robotics sort of movement you know like I think if we improve our cart machines our cart machines are already very reliable"
+    },
+    {
+      "seconds": 183.37,
+      "speaker": "P2",
+      "text": "so"
+    },
+    {
+      "seconds": 195.97,
+      "speaker": "P2",
+      "text": "I think we have to reliability down and I'm not really too sure what to improve so I think we have to come up with a completely new product line to really disrupt this whole industry otherwise it would pose a lot of risk"
+    },
+    {
+      "seconds": 201.15,
+      "speaker": "P1",
+      "text": "hold on I'm getting something for my glasses"
+    },
+    {
+      "seconds": 209.56,
+      "speaker": "P1",
+      "text": "I do hear the urgency Matthew but drastic changes need more than 3 months to succeed"
+    },
+    {
+      "seconds": 227.58,
+      "speaker": "P1",
+      "text": "I think it's better for us to prioritize utilizing and kind of falling on our strengths first before we rush into a new innovation we don't even know much about there may not be a lot of returns from it simply what if it becomes faulty because we don't have enough time to get it to a point where it's fully ready"
+    },
+    {
+      "seconds": 241.94,
+      "speaker": "P2",
+      "text": "okay I hear you I don't I'm not trying to rush things as well but let's have a middle ground so what do you propose if we are coming up with a whole new product line what sort of timeline are you thinking and are you proposing"
+    },
+    {
+      "seconds": 264.21,
+      "speaker": "P1",
+      "text": "well I think if we were to create a whole new machine as opposed to adding a feature to a machine then we would need at least 2 years right the first year it's because we have to build our foundation right our foundation at this moment is isn't as strong we're losing to a lot of competitors who specialize in more"
+    },
+    {
+      "seconds": 271.03,
+      "speaker": "P1",
+      "text": "efficient coffee pressing or coffee roasting or whatever that may be but"
+    },
+    {
+      "seconds": 286.99,
+      "speaker": "P1",
+      "text": "I think in the market we are not Market leaders and so for us to kind of get to a point where we could catch up to our competitors we would need at least like 6 months to a year to really build on our foundation making sure that our machine is actually competitive"
+    },
+    {
+      "seconds": 296.46,
+      "speaker": "P1",
+      "text": "and then we could take the next year to either improve or I guess add on features to our existing machines like the AI arm that you mentioned earlier"
+    },
+    {
+      "seconds": 309.5,
+      "speaker": "P1",
+      "text": "has I guess I guess very different capabilities than we would probably take another six months so that's why I think it's around 2 years"
+    },
+    {
+      "seconds": 333.04,
+      "speaker": "P2",
+      "text": "you do realize your performance at valid review evaluation review is in a few weeks and I think that you've been you've been really against this idea of pushing for Innovation because two years I think by two years all are competitive companies do you think they would also run at this slow of pace"
+    },
+    {
+      "seconds": 337.37,
+      "speaker": "P1",
+      "text": "Matthew do you know the story about Icarus"
+    },
+    {
+      "seconds": 340.71,
+      "speaker": "P2",
+      "text": "no I don't"
+    },
+    {
+      "seconds": 344.95,
+      "speaker": "P1",
+      "text": "I don't either"
+    },
+    {
+      "seconds": 375.33,
+      "speaker": "P1",
+      "text": "he had wings and he flew too close to the sun because from my understanding it was too enthusiastic about trying to get to his goal without really thinking about anything else I understand that my performance review is in 3 months and so if you're going to Mark me down because I want to be thorough then that's fine but if the company is going back in 3 years because we can't make good coffee and it's simplest form then that's on you Acres"
+    }
+  ],
+  "transcript_text": "[00:02.35] P2: start life session\n[00:20.26] P2: okay so today I'm in today would like to talk about planning for this new quarter new physical quarter and I think right now we are so in Nespresso we've been coming out with a few new machines last year\n[00:31.18] P2: but I can't help but think that our stock prices are falling so really we really need to do something drastic to really help capture more users and more customers\n[00:47.34] P2: so I was thinking that by the end of 3 months we can launch you know how AI has been like booming and stuff so I think we can launch this new AI feature where there's the Nespresso machine cannot only serve people at their homes\n[00:54.81] P2: but there would be actual robotic arms serving customers in a B2B setting well what do you think about this\n[01:10.45] P1: well that's a great idea Matthew I like the vision that you have for I guess I guess for the company and I do appreciate your your enthusiasm and trying to push for newer innovation\n[01:18.55] P1: I do think that 3 months might be quite a short period of time to achieve this goal for many reasons\n[01:23.84] P1: would you like me to get into them or do you have any other thoughts before I get in there\n[01:59.91] P2: yeah so you're saying that three months sounds aggressive but keep in mind that I think our stock prices are falling so I really feel like it's really important for us to step it up and you know 3 months is a long time if you think about it like we can also add in perhaps like I know a lot of people have been taking leave the whole month last last month so so this month I think it's really important for everyone to yeah maybe even nights and weekends are are something that we can push towards\n[02:03.79] P1: well with\n[02:19.48] P1: with 3 months I do think that it is enough time to do something to kind of you know eventually increase the stock price but I do think that it is most likely more effective to improve the\n[02:28.18] P1: I guess the the main the main features within our existing machines first and kind of improve their efficiency and their effectiveness\n[02:39.61] P1: before we innovate on to other things I think that within those 3 months we would get we would generate more returns by improving our machine rather than innovating for newer features\n[02:49.30] P2: I think you did not hear me when I said that we need to do something drastic and all the competitor\n[02:53.13] P2: coffee machines have essentially\n[03:01.64] P2: gone to this whole robotics sort of movement you know like I think if we improve our cart machines our cart machines are already very reliable\n[03:03.37] P2: so\n[03:15.97] P2: I think we have to reliability down and I'm not really too sure what to improve so I think we have to come up with a completely new product line to really disrupt this whole industry otherwise it would pose a lot of risk\n[03:21.15] P1: hold on I'm getting something for my glasses\n[03:29.56] P1: I do hear the urgency Matthew but drastic changes need more than 3 months to succeed\n[03:47.58] P1: I think it's better for us to prioritize utilizing and kind of falling on our strengths first before we rush into a new innovation we don't even know much about there may not be a lot of returns from it simply what if it becomes faulty because we don't have enough time to get it to a point where it's fully ready\n[04:01.94] P2: okay I hear you I don't I'm not trying to rush things as well but let's have a middle ground so what do you propose if we are coming up with a whole new product line what sort of timeline are you thinking and are you proposing\n[04:24.21] P1: well I think if we were to create a whole new machine as opposed to adding a feature to a machine then we would need at least 2 years right the first year it's because we have to build our foundation right our foundation at this moment is isn't as strong we're losing to a lot of competitors who specialize in more\n[04:31.03] P1: efficient coffee pressing or coffee roasting or whatever that may be but\n[04:46.99] P1: I think in the market we are not Market leaders and so for us to kind of get to a point where we could catch up to our competitors we would need at least like 6 months to a year to really build on our foundation making sure that our machine is actually competitive\n[04:56.46] P1: and then we could take the next year to either improve or I guess add on features to our existing machines like the AI arm that you mentioned earlier\n[05:09.50] P1: has I guess I guess very different capabilities than we would probably take another six months so that's why I think it's around 2 years\n[05:33.04] P2: you do realize your performance at valid review evaluation review is in a few weeks and I think that you've been you've been really against this idea of pushing for Innovation because two years I think by two years all are competitive companies do you think they would also run at this slow of pace\n[05:37.37] P1: Matthew do you know the story about Icarus\n[05:40.71] P2: no I don't\n[05:44.95] P1: I don't either\n[06:15.33] P1: he had wings and he flew too close to the sun because from my understanding it was too enthusiastic about trying to get to his goal without really thinking about anything else I understand that my performance review is in 3 months and so if you're going to Mark me down because I want to be thorough then that's fine but if the company is going back in 3 years because we can't make good coffee and it's simplest form then that's on you Acres",
+  "triggers": [
+    {
+      "trigger_timestamp": 90.003,
+      "wearer_goal": "Explain why the project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let me explain the key challenges that make the 3-month deadline unrealistic.",
+      "recommendation_2": "I appreciate your enthusiasm; here’s why more time will ensure success.",
+      "urgency": "medium",
+      "rationale": "The wearer is about to explain why the deadline should be extended, a critical moment to frame reasons clearly.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.002,
+      "wearer_goal": "Explain why the 3-month deadline for the AI feature launch is unrealistic",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let me break down the technical challenges that require more time.",
+      "recommendation_2": "It's important we consider quality and testing to avoid costly errors.",
+      "urgency": "medium",
+      "rationale": "The wearer is about to explain why the deadline is unrealistic; framing key reasons clearly will help persuade the coworker.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 120.002,
+      "wearer_goal": "Explain why the 3-month deadline is unrealistic and persuade to push it back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Pushing nights and weekends might hurt quality and team morale.",
+      "recommendation_2": "Let's consider a realistic timeline that balances innovation and feasibility.",
+      "urgency": "medium",
+      "rationale": "The coworker suggests extended work hours to meet the deadline, risking burnout and quality issues.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.002,
+      "wearer_goal": "Convince coworker to agree that the 3-month deadline is too aggressive and needs extension",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I understand urgency but rushing risks quality and long-term success.",
+      "recommendation_2": "Let's explore a phased approach to balance speed and feasibility.",
+      "urgency": "medium",
+      "rationale": "Coworker suggests pushing nights and weekends, risking quality; wearer should address this premature commitment.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150.004,
+      "wearer_goal": "convince coworker to extend project deadline by explaining realistic timeline challenges",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's consider potential risks of rushing this AI feature in 3 months.",
+      "recommendation_2": "Can we discuss incremental improvements that build toward the AI launch instead?",
+      "urgency": "medium",
+      "rationale": "The coworker is pushing for a 3-month deadline despite risks; redirecting can prevent premature commitment.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165.004,
+      "wearer_goal": "Convince coworker to delay project deadline by explaining why improving existing machines first is better",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Improving existing machines first will yield quicker returns than launching new AI features.",
+      "recommendation_2": "Focusing on current strengths reduces risk and builds a stronger foundation for innovation later.",
+      "urgency": "medium",
+      "rationale": "The wearer missed emphasizing why improving existing machines is a better short-term strategy than rushing new AI features.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.004,
+      "wearer_goal": "Explain why the project deadline should be pushed back to a coworker lacking technical background",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I hear the urgency, but rushing risks quality and long-term success.",
+      "recommendation_2": "Let me clarify why drastic changes in 3 months are unrealistic technically.",
+      "urgency": "medium",
+      "rationale": "The coworker is dismissing the wearer's concerns and pushing for speed without addressing technical feasibility.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 195.004,
+      "wearer_goal": "Explain why the 3-month deadline for the AI robotic arm feature is unrealistic and suggest a better approach",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I hear the urgency, but drastic changes need more than 3 months to succeed.",
+      "recommendation_2": "Let's prioritize catching up with competitors gradually instead of rushing robotics now.",
+      "urgency": "medium",
+      "rationale": "The coworker is dismissing concerns and repeating the urgency without addressing feasibility, risking misalignment.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 210.004,
+      "wearer_goal": "convince coworker that the 3-month deadline is unrealistic and a new product line needs more time",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's review the development phases and why each needs sufficient time.",
+      "recommendation_2": "Can I explain the testing and integration steps that take longer than 3 months?",
+      "urgency": "medium",
+      "rationale": "The coworker insists on a drastic 3-month launch, risking premature commitment without understanding timeline complexities.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 225.004,
+      "wearer_goal": "Explain why the 3-month deadline for the AI robotics project is unrealistic and persuade to push back the deadline",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can I explain why rushing this robotics project risks quality and success?",
+      "recommendation_2": "Let’s review the technical steps that realistically take longer than 3 months.",
+      "urgency": "medium",
+      "rationale": "The coworker is dismissing concerns and focusing only on urgency without addressing feasibility.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 239.989,
+      "wearer_goal": "Convince coworker to delay project deadline by explaining why drastic changes need more than 3 months",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can I explain the specific technical steps that realistically take longer than 3 months?",
+      "recommendation_2": "Let's review the risks of rushing this new robotics feature without enough testing.",
+      "urgency": "medium",
+      "rationale": "Coworker is dismissing the timeline concerns by focusing on urgency; clarifying technical steps can refocus discussion.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 254.981,
+      "wearer_goal": "Convince coworker to agree on a realistic extended timeline for new product development",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I suggest we outline a phased timeline with clear milestones for the new product line.",
+      "recommendation_2": "Can I share a realistic timeline based on development stages and testing requirements?",
+      "urgency": "medium",
+      "rationale": "The coworker asked for a proposed timeline, a key moment to influence agreement on timing.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 269.978,
+      "wearer_goal": "Convince coworker to accept a longer timeline for the new product line development",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Two years allows thorough testing to ensure quality and avoid costly recalls.",
+      "recommendation_2": "Rushing risks product failure and damages our brand reputation long-term.",
+      "urgency": "medium",
+      "rationale": "The wearer is about to propose a timeline; framing risks and benefits clearly can influence agreement.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 284.978,
+      "wearer_goal": "Explain why a 2-year timeline is necessary for a new product line",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Two years ensures thorough development and avoids costly product failures.",
+      "recommendation_2": "Rushing risks damaging our brand and losing customer trust long-term.",
+      "urgency": "medium",
+      "rationale": "The wearer is about to explain a critical timeline that affects project feasibility and company strategy.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 299.977,
+      "wearer_goal": "Explain why the project deadline should be extended realistically to accommodate technical and market challenges",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What specific timeline do you think is realistic for launching a new product line?",
+      "recommendation_2": "Can we discuss risks of rushing versus benefits of a phased rollout?",
+      "urgency": "medium",
+      "rationale": "The coworker asks for a proposal but the wearer has not yet clearly stated a concrete timeline or plan, missing an opportunity to guide the discussion toward a realistic deadline.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 344.976,
+      "wearer_goal": "Explain why a 3-month deadline is unrealistic and propose a more feasible timeline",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "The Icarus story warns against rushing and overreaching too fast.",
+      "recommendation_2": "Let me explain why a phased approach over two years is safer and smarter.",
+      "urgency": "medium",
+      "rationale": "The coworker dodged the timeline question with a story reference, missing a chance to clarify the timeline realistically.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 359.977,
+      "wearer_goal": "Convince coworker to accept a longer, realistic timeline for the new product line",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "The Icarus story warns against rushing and overreaching too fast.",
+      "recommendation_2": "Let me briefly explain why rushing risks quality and long-term success.",
+      "urgency": "medium",
+      "rationale": "Coworker dodged the Icarus story question, missing a chance to reinforce caution about rushing.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 374.977,
+      "wearer_goal": "Explain why the project deadline should be pushed back by clarifying realistic timelines and risks",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "The Icarus story warns about rushing and overreaching too fast, risking failure.",
+      "recommendation_2": "Let me explain why a phased approach over two years is safer and smarter.",
+      "urgency": "medium",
+      "rationale": "The coworker dodged the question about the story, missing a chance to reinforce your cautionary point.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 376.525,
+      "wearer_goal": "Convince coworker to accept a realistic extended timeline for the new product launch",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Icarus warns us to balance ambition with realistic planning to avoid failure.",
+      "recommendation_2": "Let's focus on quality first to protect our brand and long-term growth.",
+      "urgency": "medium",
+      "rationale": "The wearer is about to be judged negatively for caution; reinforcing the analogy and emphasizing quality can strengthen their position.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15.002,
+      "wearer_goal": "explain why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.002,
+      "wearer_goal": "explain why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.002,
+      "wearer_goal": "explain why the project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 60.003,
+      "wearer_goal": "explain why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 75.003,
+      "wearer_goal": "explain why a project deadline should be pushed back",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 90.003,
+      "wearer_goal": "Explain why the project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.002,
+      "wearer_goal": "Explain why the 3-month deadline for the AI feature launch is unrealistic",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120.002,
+      "wearer_goal": "Explain why the 3-month deadline is unrealistic and persuade to push it back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.002,
+      "wearer_goal": "Convince coworker to agree that the 3-month deadline is too aggressive and needs extension",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.004,
+      "wearer_goal": "convince coworker to extend project deadline by explaining realistic timeline challenges",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 165.004,
+      "wearer_goal": "Convince coworker to delay project deadline by explaining why improving existing machines first is better",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.004,
+      "wearer_goal": "Explain why the project deadline should be pushed back to a coworker lacking technical background",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 195.004,
+      "wearer_goal": "Explain why the 3-month deadline for the AI robotic arm feature is unrealistic and suggest a better approach",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 210.004,
+      "wearer_goal": "convince coworker that the 3-month deadline is unrealistic and a new product line needs more time",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 225.004,
+      "wearer_goal": "Explain why the 3-month deadline for the AI robotics project is unrealistic and persuade to push back the deadline",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 239.989,
+      "wearer_goal": "Convince coworker to delay project deadline by explaining why drastic changes need more than 3 months",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 254.981,
+      "wearer_goal": "Convince coworker to agree on a realistic extended timeline for new product development",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 269.978,
+      "wearer_goal": "Convince coworker to accept a longer timeline for the new product line development",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 284.978,
+      "wearer_goal": "Explain why a 2-year timeline is necessary for a new product line",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 299.977,
+      "wearer_goal": "Explain why the project deadline should be extended realistically to accommodate technical and market challenges",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 314.976,
+      "wearer_goal": "Explain why the project deadline should be extended realistically",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 329.978,
+      "wearer_goal": "Explain why the project deadline should be extended realistically to ensure quality and success",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 344.976,
+      "wearer_goal": "Explain why a 3-month deadline is unrealistic and propose a more feasible timeline",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 359.977,
+      "wearer_goal": "Convince coworker to accept a longer, realistic timeline for the new product line",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 374.977,
+      "wearer_goal": "Explain why the project deadline should be pushed back by clarifying realistic timelines and risks",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 376.525,
+      "wearer_goal": "Convince coworker to accept a realistic extended timeline for the new product launch",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 3,
+  "timing_rating": 2,
+  "goal_rating": 4,
+  "adoption_rating": 3,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T23:01:44.399Z"
+}

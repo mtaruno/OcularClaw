@@ -1,0 +1,35 @@
+{
+  "model": "anthropic/claude-sonnet-4.5",
+  "scenario_id": "work_brainstorm_01",
+  "duration_seconds": 83.0,
+  "check_interval": 15.0,
+  "total_checks": 6,
+  "total_triggers": 0,
+  "triggers": [],
+  "raw_log": [
+    {
+      "elapsed": 15.0,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "elapsed": 30.0,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "elapsed": 45.0,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "elapsed": 60.0,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "elapsed": 75.0,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "elapsed": 83.0,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    }
+  ]
+}

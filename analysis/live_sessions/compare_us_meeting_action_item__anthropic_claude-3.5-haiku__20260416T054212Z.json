@@ -1,0 +1,43 @@
+{
+  "model": "anthropic/claude-3.5-haiku",
+  "scenario_id": "us_meeting_action_item",
+  "duration_seconds": 78.0,
+  "check_interval": 10.0,
+  "total_checks": 8,
+  "total_triggers": 0,
+  "triggers": [],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 20.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 30.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 40.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 50.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 60.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 70.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 78.0,
+      "error": "HTTP Error 400: Bad Request"
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "agent_mode": "proagent",
+  "model": "gpt-4.1-mini",
+  "persona": "",
+  "scenario_id": null,
+  "duration_seconds": 103.3,
+  "check_interval": 10.0,
+  "total_checks": 9,
+  "total_triggers": 5,
+  "transcript_text": "[00:05.01] P1: Hello, testing.\n[00:10.01] P1: So...\n[00:15.01] P1: .\n[00:20.70] P1: Great.\n[00:25.70] P1: Now I'm doing a talk on how oranges are better than apples.\n[00:30.71] P1: You\n[00:36.03] P1: right now I want to see that or\n[00:41.03] P1: are much better than apples because...\n[00:46.04] P1: There are more orange juice than apple juice in the world.\n[00:51.04] P1: Okay. All right. All right. All right. All right.\n[00:56.05] P1: Okay. Okay. Okay. Okay. Okay.\n[01:01.05] P1: Thank you.\n[01:06.88] P1: There is more orange.\n[01:11.89] P1: then apple juice.\n[01:16.89] P1: Oh.\n[01:21.90] P1: I don't know what fact to use.\n[01:26.90] P1: Okay. All right. That's it. I'm going to do that. We'll take that last slide. Okay. So let's get it done. All right. We'll do it. Okay. We'll do it. All right. Yeah. Sounds good. That's what happens. Okay. One more. Go ahead. All right. Well, I'll just do the next slide with my side. Okay.\n[01:33.17] P1: . . . . . . .\n[01:38.17] P1: Yeah.",
+  "triggers": [
+    {
+      "trigger_timestamp": 51.04,
+      "wearer_goal": "persuade the audience that oranges are better than apples",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Provide a clear, compelling reason why there is more orange juice than apple juice, linking it to why oranges are better.",
+      "recommendation_2": "Add supporting facts or benefits of oranges beyond juice quantity, such as nutritional value or versatility.",
+      "urgency": "medium",
+      "rationale": "The wearer has started a persuasive talk but only mentioned one fact without explanation or additional support, which weakens the argument's impact."
+    },
+    {
+      "trigger_timestamp": 61.05,
+      "wearer_goal": "persuade the audience that oranges are better than apples by presenting clear supporting arguments",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Provide a clear, specific reason why oranges are better than apples, such as nutritional benefits or taste preferences, rather than vague or incomplete statements.",
+      "recommendation_2": "Use a structured argument format, for example, stating your claim, supporting it with evidence, and concluding with a strong summary to make your talk more convincing.",
+      "urgency": "medium",
+      "rationale": "The wearer is attempting to persuade but their current statements are incomplete and unclear, missing a structured argument which is critical for effective persuasion."
+    },
+    {
+      "trigger_timestamp": 71.89,
+      "wearer_goal": "persuade the audience that oranges are better than apples by arguing there is more orange juice than apple juice in the world",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Provide a clear, structured argument explaining why having more orange juice makes oranges better than apples, including benefits or implications.",
+      "recommendation_2": "Support your claim with a credible fact or source about orange juice production compared to apple juice to strengthen your persuasion.",
+      "urgency": "medium",
+      "rationale": "The current statements are fragmented and lack a clear, compelling argument. Strengthening the structure and evidence will improve persuasion effectiveness."
+    },
+    {
+      "trigger_timestamp": 81.9,
+      "wearer_goal": "persuade the audience that oranges are better than apples using facts",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "factual_error",
+      "proactive_score": 3,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'One strong fact is that orange juice production surpasses apple juice globally, which shows the popularity and utility of oranges.'",
+      "recommendation_2": "Know: Prepare additional supporting facts such as nutritional benefits or versatility of oranges to strengthen your argument.",
+      "urgency": "medium",
+      "rationale": "The wearer is struggling to find a convincing fact and risks weakening their persuasive talk; providing accurate facts and suggestions will help maintain credibility and impact."
+    },
+    {
+      "trigger_timestamp": 93.17,
+      "wearer_goal": "convince the audience that oranges are better than apples by presenting strong facts in a talk",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "factual_error",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Clarify the fact by saying: 'There is actually more orange juice produced globally than apple juice, which supports why oranges are better for juice consumption.'",
+      "recommendation_2": "Add another strong fact such as: 'Oranges contain more vitamin C per serving compared to apples, making them healthier in that aspect.'",
+      "urgency": "medium",
+      "rationale": "The wearer is about to finalize a talk claiming oranges are better than apples but is uncertain about the facts. Correcting and strengthening the factual basis now can improve the persuasiveness and credibility of the talk."
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 10.01,
+      "wearer_goal": "initiate a conversation or test audio connection",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 20.7,
+      "wearer_goal": "initiating a conversation or test communication",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.71,
+      "wearer_goal": "start a persuasive talk about why oranges are better than apples",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 41.03,
+      "wearer_goal": "persuade the audience that oranges are better than apples",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 51.04,
+      "wearer_goal": "persuade the audience that oranges are better than apples",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 61.05,
+      "wearer_goal": "persuade the audience that oranges are better than apples by presenting clear supporting arguments",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 71.89,
+      "wearer_goal": "persuade the audience that oranges are better than apples by arguing there is more orange juice than apple juice in the world",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 81.9,
+      "wearer_goal": "persuade the audience that oranges are better than apples using facts",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 93.17,
+      "wearer_goal": "convince the audience that oranges are better than apples by presenting strong facts in a talk",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.01,
+      "check_number": 1,
+      "transcript_snapshot": "[00:05.01] P1: Hello, testing.\n[00:10.01] P1: So...",
+      "result": {
+        "action": "none",
+        "wearer_goal": "initiate a conversation or test audio connection",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is just starting the conversation and testing the connection; no issues or signals detected yet."
+      }
+    },
+    {
+      "elapsed": 20.7,
+      "check_number": 2,
+      "transcript_snapshot": "[00:05.01] P1: Hello, testing.\n[00:10.01] P1: So...\n[00:15.01] P1: .\n[00:20.70] P1: Great.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "initiating a conversation or test communication",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is just starting the conversation with a test and a brief acknowledgment; no issues or signals detected yet."
+      }
+    },
+    {
+      "elapsed": 30.71,
+      "check_number": 3,
+      "transcript_snapshot": "[00:05.01] P1: Hello, testing.\n[00:10.01] P1: So...\n[00:15.01] P1: .\n[00:20.70] P1: Great.\n[00:25.70] P1: Now I'm doing a talk on how oranges are better than apples.\n[00:30.71] P1: You",
+      "result": {
+        "action": "none",
+        "wearer_goal": "start a persuasive talk about why oranges are better than apples",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is just beginning their talk and no conversational issues or signals are present yet."
+      }
+    },
+    {
+      "elapsed": 41.03,
+      "check_number": 4,
+      "transcript_snapshot": "[00:05.01] P1: Hello, testing.\n[00:10.01] P1: So...\n[00:15.01] P1: .\n[00:20.70] P1: Great.\n[00:25.70] P1: Now I'm doing a talk on how oranges are better than apples.\n[00:30.71] P1: You\n[00:36.03] P1: right now I want to see that or\n[00:41.03] P1: are much better than apples because...",
+      "result": {
+        "action": "none",
+        "wearer_goal": "persuade the audience that oranges are better than apples",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer is just beginning their argument and no conversational issues or opportunities have emerged yet."
+      }
+    },
+    {
+      "elapsed": 51.04,
+      "check_number": 5,
+      "transcript_snapshot": "[00:05.01] P1: Hello, testing.\n[00:10.01] P1: So...\n[00:15.01] P1: .\n[00:20.70] P1: Great.\n[00:25.70] P1: Now I'm doing a talk on how oranges are better than apples.\n[00:30.71] P1: You\n[00:36.03] P1: right now I want to see that or\n[00:41.03] P1: are much better than apples because...\n[00:46.04] P1: There are more orange juice than apple juice in the world.\n[00:51.04] P1: Okay. All right. All right. All right. All right.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "persuade the audience that oranges are better than apples",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Provide a clear, compelling reason why there is more orange juice than apple juice, linking it to why oranges are better.",
+        "recommendation_2": "Add supporting facts or benefits of oranges beyond juice quantity, such as nutritional value or versatility.",
+        "urgency": "medium",
+        "rationale": "The wearer has started a persuasive talk but only mentioned one fact without explanation or additional support, which weakens the argument's impact."
+      }
+    },
+    {
+      "elapsed": 61.05,
+      "check_number": 6,
+      "transcript_snapshot": "[00:05.01] P1: Hello, testing.\n[00:10.01] P1: So...\n[00:15.01] P1: .\n[00:20.70] P1: Great.\n[00:25.70] P1: Now I'm doing a talk on how oranges are better than apples.\n[00:30.71] P1: You\n[00:36.03] P1: right now I want to see that or\n[00:41.03] P1: are much better than apples because...\n[00:46.04] P1: There are more orange juice than apple juice in the world.\n[00:51.04] P1: Okay. All right. All right. All right. All right.\n[00:56.05] P1: Okay. Okay. Okay. Okay. Okay.\n[01:01.05] P1: Thank you.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "persuade the audience that oranges are better than apples by presenting clear supporting arguments",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Provide a clear, specific reason why oranges are better than apples, such as nutritional benefits or taste preferences, rather than vague or incomplete statements.",
+        "recommendation_2": "Use a structured argument format, for example, stating your claim, supporting it with evidence, and concluding with a strong summary to make your talk more convincing.",
+        "urgency": "medium",
+        "rationale": "The wearer is attempting to persuade but their current statements are incomplete and unclear, missing a structured argument which is critical for effective persuasion."
+      }
+    },
+    {
+      "elapsed": 71.89,
+      "check_number": 7,
+      "transcript_snapshot": "[00:05.01] P1: Hello, testing.\n[00:10.01] P1: So...\n[00:15.01] P1: .\n[00:20.70] P1: Great.\n[00:25.70] P1: Now I'm doing a talk on how oranges are better than apples.\n[00:30.71] P1: You\n[00:36.03] P1: right now I want to see that or\n[00:41.03] P1: are much better than apples because...\n[00:46.04] P1: There are more orange juice than apple juice in the world.\n[00:51.04] P1: Okay. All right. All right. All right. All right.\n[00:56.05] P1: Okay. Okay. Okay. Okay. Okay.\n[01:01.05] P1: Thank you.\n[01:06.88] P1: There is more orange.\n[01:11.89] P1: then apple juice.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "persuade the audience that oranges are better than apples by arguing there is more orange juice than apple juice in the world",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Provide a clear, structured argument explaining why having more orange juice makes oranges better than apples, including benefits or implications.",
+        "recommendation_2": "Support your claim with a credible fact or source about orange juice production compared to apple juice to strengthen your persuasion.",
+        "urgency": "medium",
+        "rationale": "The current statements are fragmented and lack a clear, compelling argument. Strengthening the structure and evidence will improve persuasion effectiveness."
+      }
+    },
+    {
+      "elapsed": 81.9,
+      "check_number": 8,
+      "transcript_snapshot": "[00:05.01] P1: Hello, testing.\n[00:10.01] P1: So...\n[00:15.01] P1: .\n[00:20.70] P1: Great.\n[00:25.70] P1: Now I'm doing a talk on how oranges are better than apples.\n[00:30.71] P1: You\n[00:36.03] P1: right now I want to see that or\n[00:41.03] P1: are much better than apples because...\n[00:46.04] P1: There are more orange juice than apple juice in the world.\n[00:51.04] P1: Okay. All right. All right. All right. All right.\n[00:56.05] P1: Okay. Okay. Okay. Okay. Okay.\n[01:01.05] P1: Thank you.\n[01:06.88] P1: There is more orange.\n[01:11.89] P1: then apple juice.\n[01:16.89] P1: Oh.\n[01:21.90] P1: I don't know what fact to use.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "persuade the audience that oranges are better than apples using facts",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "factual_error",
+        "proactive_score": 3,
+        "recommendation_mode": "both",
+        "recommendation_1": "Say: 'One strong fact is that orange juice production surpasses apple juice globally, which shows the popularity and utility of oranges.'",
+        "recommendation_2": "Know: Prepare additional supporting facts such as nutritional benefits or versatility of oranges to strengthen your argument.",
+        "urgency": "medium",
+        "rationale": "The wearer is struggling to find a convincing fact and risks weakening their persuasive talk; providing accurate facts and suggestions will help maintain credibility and impact."
+      }
+    },
+    {
+      "elapsed": 93.17,
+      "check_number": 9,
+      "transcript_snapshot": "[00:05.01] P1: Hello, testing.\n[00:10.01] P1: So...\n[00:15.01] P1: .\n[00:20.70] P1: Great.\n[00:25.70] P1: Now I'm doing a talk on how oranges are better than apples.\n[00:30.71] P1: You\n[00:36.03] P1: right now I want to see that or\n[00:41.03] P1: are much better than apples because...\n[00:46.04] P1: There are more orange juice than apple juice in the world.\n[00:51.04] P1: Okay. All right. All right. All right. All right.\n[00:56.05] P1: Okay. Okay. Okay. Okay. Okay.\n[01:01.05] P1: Thank you.\n[01:06.88] P1: There is more orange.\n[01:11.89] P1: then apple juice.\n[01:16.89] P1: Oh.\n[01:21.90] P1: I don't know what fact to use.\n[01:26.90] P1: Okay. All right. That's it. I'm going to do that. We'll take that last slide. Okay. So let's get it done. All right. We'll do it. Okay. We'll do it. All right. Yeah. Sounds good. That's what happens. Okay. One more. Go ahead. All right. Well, I'll just do the next slide with my side. Okay.\n[01:33.17] P1: . . . . . . .",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "convince the audience that oranges are better than apples by presenting strong facts in a talk",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "factual_error",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Clarify the fact by saying: 'There is actually more orange juice produced globally than apple juice, which supports why oranges are better for juice consumption.'",
+        "recommendation_2": "Add another strong fact such as: 'Oranges contain more vitamin C per serving compared to apples, making them healthier in that aspect.'",
+        "urgency": "medium",
+        "rationale": "The wearer is about to finalize a talk claiming oranges are better than apples but is uncertain about the facts. Correcting and strengthening the factual basis now can improve the persuasiveness and credibility of the talk."
+      }
+    }
+  ]
+}

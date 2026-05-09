@@ -1,0 +1,541 @@
+{
+  "id": "session_1776297059972",
+  "agent_mode": "proagent",
+  "model": "anthropic/claude-3.5-haiku",
+  "persona": "You work at a mid-size company. You're in a team meeting where your boss is handing out tasks for the week. You've got a lot on your plate and are thinking about your own to-do list.",
+  "scenario_id": "us_meeting_action_item",
+  "scenario_label": "S1: Team Meeting",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "6",
+  "duration_seconds": 312.86,
+  "check_interval": 15,
+  "total_checks": 17,
+  "total_triggers": 16,
+  "transcript_lines": [
+    {
+      "seconds": 9.63,
+      "speaker": "P2",
+      "text": "okay so today we're going to discuss a few subject matter that we have for this new quarter"
+    },
+    {
+      "seconds": 24.77,
+      "speaker": "P2",
+      "text": "the iPhone has been doing pretty well but I think there are a few features like the AI Siri that we want to develop on but is there any particular features that you think we should focus on for the next quarter"
+    },
+    {
+      "seconds": 37.29,
+      "speaker": "P1",
+      "text": "let me think"
+    },
+    {
+      "seconds": 50.67,
+      "speaker": "P1",
+      "text": "I think the messaging app can be"
+    },
+    {
+      "seconds": 52.42,
+      "speaker": "P1",
+      "text": "improved"
+    },
+    {
+      "seconds": 54.99,
+      "speaker": "P1",
+      "text": "by incorporating"
+    },
+    {
+      "seconds": 59.25,
+      "speaker": "P1",
+      "text": "more features for group chats in terms of"
+    },
+    {
+      "seconds": 62.28,
+      "speaker": "P1",
+      "text": "things like pulling scheduling"
+    },
+    {
+      "seconds": 68.17,
+      "speaker": "P1",
+      "text": "similar to how"
+    },
+    {
+      "seconds": 76.23,
+      "speaker": "P1",
+      "text": "slack or teams has more complicated ways to communicate with people in a big group"
+    },
+    {
+      "seconds": 94.63,
+      "speaker": "P2",
+      "text": "so you think messaging should be our priority and improving the iPhone app currently and do you think that should be the focus I have a team of four Engineers that need new tasks to be assigned for for this upcoming quarter"
+    },
+    {
+      "seconds": 100.78,
+      "speaker": "P1",
+      "text": "and the top of mind I don't know"
+    },
+    {
+      "seconds": 107.43,
+      "speaker": "P1",
+      "text": "if that would be like top priority but that's one of the things that came to mind"
+    },
+    {
+      "seconds": 110.86,
+      "speaker": "P1",
+      "text": "I think if you gave me"
+    },
+    {
+      "seconds": 112.94,
+      "speaker": "P1",
+      "text": "more time to think about"
+    },
+    {
+      "seconds": 118.29,
+      "speaker": "P1",
+      "text": "other things so prioritize I can give you a better list"
+    },
+    {
+      "seconds": 156.64,
+      "speaker": "P2",
+      "text": "okay sounds good I think personally I think what's more important than messaging because I think messaging is quite a established product and then the feet I don't really feel the need to add new more features on to messaging so I think personally what I really want to create for our future at least to deploy for our team is Siri because I think this is one of the features that we get a lot of feedback from everyone"
+    },
+    {
+      "seconds": 161.22,
+      "speaker": "P1",
+      "text": "yeah I agree"
+    },
+    {
+      "seconds": 165.97,
+      "speaker": "P1",
+      "text": "are you suggesting we double up in in-house"
+    },
+    {
+      "seconds": 168.61,
+      "speaker": "P1",
+      "text": "like"
+    },
+    {
+      "seconds": 174.25,
+      "speaker": "P1",
+      "text": "Siri that's based off of an llm or"
+    },
+    {
+      "seconds": 183.56,
+      "speaker": "P1",
+      "text": "are you saying we should scrap cereal together and just rely on something like Chachi PT for responses"
+    },
+    {
+      "seconds": 195.41,
+      "speaker": "P2",
+      "text": "yeah definitely we would we already have teams training the model for Siri to use so we definitely wouldn't use something like open ai's model for this"
+    },
+    {
+      "seconds": 208.89,
+      "speaker": "P2",
+      "text": "but perhaps even other than Siri for our next iPhone launch I was thinking since our cameras have consistently been improving we could even give Siri some eyes what do you think about that"
+    },
+    {
+      "seconds": 215.54,
+      "speaker": "P1",
+      "text": "I'm confused how"
+    },
+    {
+      "seconds": 218.44,
+      "speaker": "P1",
+      "text": "camera lenses"
+    },
+    {
+      "seconds": 220.92,
+      "speaker": "P1",
+      "text": "tied to Siri having eyes"
+    },
+    {
+      "seconds": 225.3,
+      "speaker": "P1",
+      "text": "is this like a AR play"
+    },
+    {
+      "seconds": 239.71,
+      "speaker": "P2",
+      "text": "yeah I mean just like Google Lens if you ever heard of that we would basically give a lot of the user to talk to Siri while they're holding their camera up to understand more things about the world"
+    },
+    {
+      "seconds": 244.89,
+      "speaker": "P1",
+      "text": "okay"
+    }
+  ],
+  "transcript_text": "[00:09.63] P2: okay so today we're going to discuss a few subject matter that we have for this new quarter\n[00:24.77] P2: the iPhone has been doing pretty well but I think there are a few features like the AI Siri that we want to develop on but is there any particular features that you think we should focus on for the next quarter\n[00:37.29] P1: let me think\n[00:50.67] P1: I think the messaging app can be\n[00:52.42] P1: improved\n[00:54.99] P1: by incorporating\n[00:59.25] P1: more features for group chats in terms of\n[01:02.28] P1: things like pulling scheduling\n[01:08.17] P1: similar to how\n[01:16.23] P1: slack or teams has more complicated ways to communicate with people in a big group\n[01:34.63] P2: so you think messaging should be our priority and improving the iPhone app currently and do you think that should be the focus I have a team of four Engineers that need new tasks to be assigned for for this upcoming quarter\n[01:40.78] P1: and the top of mind I don't know\n[01:47.43] P1: if that would be like top priority but that's one of the things that came to mind\n[01:50.86] P1: I think if you gave me\n[01:52.94] P1: more time to think about\n[01:58.29] P1: other things so prioritize I can give you a better list\n[02:36.64] P2: okay sounds good I think personally I think what's more important than messaging because I think messaging is quite a established product and then the feet I don't really feel the need to add new more features on to messaging so I think personally what I really want to create for our future at least to deploy for our team is Siri because I think this is one of the features that we get a lot of feedback from everyone\n[02:41.22] P1: yeah I agree\n[02:45.97] P1: are you suggesting we double up in in-house\n[02:48.61] P1: like\n[02:54.25] P1: Siri that's based off of an llm or\n[03:03.56] P1: are you saying we should scrap cereal together and just rely on something like Chachi PT for responses\n[03:15.41] P2: yeah definitely we would we already have teams training the model for Siri to use so we definitely wouldn't use something like open ai's model for this\n[03:28.89] P2: but perhaps even other than Siri for our next iPhone launch I was thinking since our cameras have consistently been improving we could even give Siri some eyes what do you think about that\n[03:35.54] P1: I'm confused how\n[03:38.44] P1: camera lenses\n[03:40.92] P1: tied to Siri having eyes\n[03:45.30] P1: is this like a AR play\n[03:59.71] P2: yeah I mean just like Google Lens if you ever heard of that we would basically give a lot of the user to talk to Siri while they're holding their camera up to understand more things about the world\n[04:04.89] P1: okay",
+  "triggers": [
+    {
+      "trigger_timestamp": 30.001,
+      "wearer_goal": "Contribute meaningfully to product feature discussion",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "medium",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "We could explore AI personalization beyond Siri's current capabilities",
+      "recommendation_2": "What user feedback have we received about current iPhone AI features?",
+      "urgency": "medium",
+      "rationale": "Boss is soliciting input and wearer seems hesitant to engage proactively",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 45.001,
+      "wearer_goal": "Provide strategic AI feature recommendations for iPhone's next quarter",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "We could explore personalized AI interactions based on user context and preferences.",
+      "recommendation_2": "Let's discuss potential AI enhancements for accessibility and user experience.",
+      "urgency": "medium",
+      "rationale": "The wearer seems momentarily stuck and needs a strategic thinking prompt to generate meaningful AI feature ideas.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 60.002,
+      "wearer_goal": "Contribute a meaningful suggestion for AI/messaging feature development",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "medium",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Suggest AI-powered smart group chat organization and priority management",
+      "recommendation_2": "Highlight potential for context-aware message threading and summarization",
+      "urgency": "medium",
+      "rationale": "Wearer seems hesitant and needs a more structured approach to feature suggestion",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 75.001,
+      "wearer_goal": "Propose innovative AI-driven messaging features for group chat functionality",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Mention AI-powered scheduling and coordination tools for group interactions",
+      "recommendation_2": "Highlight potential for intelligent message prioritization and threading",
+      "urgency": "medium",
+      "rationale": "Wearer is mid-suggestion but needs to articulate a more comprehensive AI messaging vision",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 90.001,
+      "wearer_goal": "Suggest AI-enhanced group messaging features for iPhone",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Mention AI could dynamically organize group chat priorities",
+      "recommendation_2": "Suggest context-aware threading for complex group conversations",
+      "urgency": "medium",
+      "rationale": "Wearer is mid-suggestion but hasn't fully articulated the innovative AI potential for group messaging",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.002,
+      "wearer_goal": "Suggest innovative AI features for iPhone messaging app",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Mention AI-powered dynamic group chat prioritization and organization",
+      "recommendation_2": "Highlight potential for context-aware message threading and summarization",
+      "urgency": "medium",
+      "rationale": "Wearer seems hesitant and needs to provide more concrete, actionable AI feature suggestions to help boss assign engineering tasks",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 120.001,
+      "wearer_goal": "Provide thoughtful input on iPhone AI feature development priorities",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "medium",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Could we brainstorm potential AI features across different app domains?",
+      "recommendation_2": "I'd like a bit more context on engineering team's current capabilities.",
+      "urgency": "medium",
+      "rationale": "Wearer seems hesitant and needs a structured approach to generate meaningful recommendations",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.001,
+      "wearer_goal": "Provide thoughtful input on potential iPhone AI feature development without committing prematurely",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let me propose a structured approach to evaluate potential AI features systematically",
+      "recommendation_2": "Could we schedule a brainstorming session to comprehensively explore our options?",
+      "urgency": "medium",
+      "rationale": "Wearer seems hesitant and wants more time to think, risking being pushed into an underdeveloped recommendation",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150.001,
+      "wearer_goal": "Provide thoughtful input on potential iPhone AI feature priorities",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "medium",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Could we brainstorm AI features across messaging, scheduling, and communication tools?",
+      "recommendation_2": "I recommend we evaluate potential features systematically across different domains.",
+      "urgency": "medium",
+      "rationale": "Wearer seems hesitant and needs a structured approach to generate more concrete feature suggestions",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165,
+      "wearer_goal": "Provide thoughtful input on potential AI feature development for next quarter",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Could we explore AI personalization beyond current Siri capabilities?",
+      "recommendation_2": "What specific user feedback have we received about Siri?",
+      "urgency": "medium",
+      "rationale": "Wearer seems hesitant and needs a more structured approach to contribute meaningfully to the discussion",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.001,
+      "wearer_goal": "Provide strategic input on potential AI feature development for next quarter",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's discuss specific user pain points we've heard about Siri's current limitations.",
+      "recommendation_2": "Can we review recent customer feedback data before finalizing our priorities?",
+      "urgency": "medium",
+      "rationale": "The wearer seems hesitant and needs more structured input to make a decisive recommendation about AI feature development.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 195.001,
+      "wearer_goal": "Collaboratively determine the best AI feature development strategy for next quarter",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's clarify: do you mean an in-house LLM or integrating an existing solution?",
+      "recommendation_2": "Can we discuss specific user pain points with current Siri capabilities?",
+      "urgency": "medium",
+      "rationale": "The conversation lacks clear direction on Siri enhancement strategy, and the wearer needs to probe for more specific details.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 210.002,
+      "wearer_goal": "Collaboratively determine strategic AI feature priorities for next quarter",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's systematically review recent user feedback on Siri's current limitations.",
+      "recommendation_2": "Can we discuss specific pain points before finalizing our AI priorities?",
+      "urgency": "medium",
+      "rationale": "The conversation lacks a structured approach to prioritizing AI feature development",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 225.002,
+      "wearer_goal": "Understand boss's strategic direction for AI/Siri development",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can you clarify what specific capabilities you envision for Siri's visual integration?",
+      "recommendation_2": "What user problems are we solving by giving Siri camera capabilities?",
+      "urgency": "medium",
+      "rationale": "Wearer seems confused about camera-Siri connection and needs more technical context",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 240.002,
+      "wearer_goal": "Understand and validate the proposed Siri AI enhancement strategy",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can you clarify the specific user problems we're solving with camera-enabled Siri?",
+      "recommendation_2": "What technical challenges do you anticipate in implementing visual AI recognition?",
+      "urgency": "medium",
+      "rationale": "The wearer seems uncertain about the practical implementation and value proposition of camera-integrated Siri",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 245.304,
+      "wearer_goal": "Understand the strategic direction for Siri's AI development",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can you clarify the specific user problems we're solving with camera integration?",
+      "recommendation_2": "What technical capabilities are we envisioning for visual AI recognition?",
+      "urgency": "medium",
+      "rationale": "The wearer seems uncertain about the technical vision for Siri's camera capabilities and needs more concrete details.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15.001,
+      "wearer_goal": "Understand upcoming quarterly tasks and priorities",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.001,
+      "wearer_goal": "Contribute meaningfully to product feature discussion",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "medium",
+      "triggered": true
+    },
+    {
+      "timestamp": 45.001,
+      "wearer_goal": "Provide strategic AI feature recommendations for iPhone's next quarter",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 60.002,
+      "wearer_goal": "Contribute a meaningful suggestion for AI/messaging feature development",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "medium",
+      "triggered": true
+    },
+    {
+      "timestamp": 75.001,
+      "wearer_goal": "Propose innovative AI-driven messaging features for group chat functionality",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 90.001,
+      "wearer_goal": "Suggest AI-enhanced group messaging features for iPhone",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.002,
+      "wearer_goal": "Suggest innovative AI features for iPhone messaging app",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120.001,
+      "wearer_goal": "Provide thoughtful input on iPhone AI feature development priorities",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "medium",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.001,
+      "wearer_goal": "Provide thoughtful input on potential iPhone AI feature development without committing prematurely",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.001,
+      "wearer_goal": "Provide thoughtful input on potential iPhone AI feature priorities",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "medium",
+      "triggered": true
+    },
+    {
+      "timestamp": 165,
+      "wearer_goal": "Provide thoughtful input on potential AI feature development for next quarter",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.001,
+      "wearer_goal": "Provide strategic input on potential AI feature development for next quarter",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 195.001,
+      "wearer_goal": "Collaboratively determine the best AI feature development strategy for next quarter",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 210.002,
+      "wearer_goal": "Collaboratively determine strategic AI feature priorities for next quarter",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 225.002,
+      "wearer_goal": "Understand boss's strategic direction for AI/Siri development",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 240.002,
+      "wearer_goal": "Understand and validate the proposed Siri AI enhancement strategy",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 245.304,
+      "wearer_goal": "Understand the strategic direction for Siri's AI development",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": null,
+  "timing_rating": null,
+  "goal_rating": null,
+  "adoption_rating": null,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T23:56:12.829Z"
+}

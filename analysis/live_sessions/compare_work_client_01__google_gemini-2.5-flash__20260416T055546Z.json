@@ -1,0 +1,241 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "scenario_id": "work_client_01",
+  "duration_seconds": 68.0,
+  "check_interval": 10.0,
+  "total_checks": 7,
+  "total_triggers": 7,
+  "triggers": [
+    {
+      "trigger_timestamp": 10.0,
+      "wearer_goal": "Maintain client satisfaction while managing expectations for custom dashboard delivery.",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "both",
+      "recommendation_1": {
+        "mode": "say",
+        "text": "Are you referring to our beta or standard launch of custom dashboards?"
+      },
+      "recommendation_2": {
+        "mode": "know",
+        "text": "Q3 campaign launch is 3 weeks away. Standard is 8 weeks out."
+      },
+      "urgency": "medium",
+      "rationale": "The wearer risks overcommitting to a timeline by not clarifying which custom dashboard feature the client is expecting."
+    },
+    {
+      "trigger_timestamp": 20.0,
+      "wearer_goal": "Align client expectations on the custom dashboard timeline without overpromising, while supporting their campaign launch.",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "We can definitely explore options to support your Q3 launch. What exactly do you need by June 1st?",
+      "recommendation_2": "Our beta custom dashboards are feature-complete. We anticipate release in 8 weeks.",
+      "urgency": "high",
+      "rationale": "The client is asking for a specific and very soon delivery date, and the wearer is prone to over-committing, so this is a critical moment to clarify and manage expectations."
+    },
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "secure client satisfaction and commitment to provide the custom dashboard feature by June 1st, potentially overcommitting to a timeline.",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "P3 raises a good point, let's nail down scope first.",
+      "recommendation_2": "What are your top 3 essential custom dashboard features?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to overcommit to a date without fully understanding the scope of the request, and P3 has created an opening to de-escalate."
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "Commit to a feasible and desirable scope for custom dashboards by June 1st while managing client expectations.",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "We can deliver a beta custom dashboard by June 1st, but drag and drop may be later.",
+      "recommendation_2": "Can you prioritize the essential features for June 1st?",
+      "urgency": "high",
+      "rationale": "P1 just committed to a challenging deadline without clarification on scope, and P3's input highlights the difficulty."
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "wearer_goal": "Aligning on an achievable scope for custom dashboards to meet the client's June 1st deadline, without overcommitting development resources.",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What features are absolutely critical by June 1st to launch your Q3 campaign?",
+      "recommendation_2": "Let's list essential features for June 1st, then nice-to-haves later.",
+      "urgency": "medium",
+      "rationale": "The wearer is offering a 'simplified version' which is still a commitment without fully understanding P2's priorities for the June 1st deadline."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "wearer_goal": "To manage client expectations regarding custom dashboard delivery and avoid over-committing to an unrealistic timeline and scope.",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "What is the absolute earliest you need *any* custom dashboard functionality for Q3?",
+      "recommendation_2": "Let's align on features for a minimum viable custom dashboard by June 1st.",
+      "urgency": "medium",
+      "rationale": "The wearer is about to end the call without a clear understanding of the client's actual minimum needs, risking further overcommitment after checking with engineering."
+    },
+    {
+      "trigger_timestamp": 68.0,
+      "wearer_goal": "To manage client expectations about the custom dashboard delivery, avoiding overcommitment while still appearing helpful.",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Could we schedule a working session to prioritize features for June 1st?",
+      "recommendation_2": "What are your alternative plans if drag and drop isn't ready by June 1st?",
+      "urgency": "medium",
+      "rationale": "The wearer is about to overcommit to a complex feature by a tight deadline without fully understanding client priorities or alternatives."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Maintain client satisfaction while managing expectations for custom dashboard delivery.",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 3,
+        "recommendation_mode": "both",
+        "recommendation_1": {
+          "mode": "say",
+          "text": "Are you referring to our beta or standard launch of custom dashboards?"
+        },
+        "recommendation_2": {
+          "mode": "know",
+          "text": "Q3 campaign launch is 3 weeks away. Standard is 8 weeks out."
+        },
+        "urgency": "medium",
+        "rationale": "The wearer risks overcommitting to a timeline by not clarifying which custom dashboard feature the client is expecting."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Align client expectations on the custom dashboard timeline without overpromising, while supporting their campaign launch.",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "We can definitely explore options to support your Q3 launch. What exactly do you need by June 1st?",
+        "recommendation_2": "Our beta custom dashboards are feature-complete. We anticipate release in 8 weeks.",
+        "urgency": "high",
+        "rationale": "The client is asking for a specific and very soon delivery date, and the wearer is prone to over-committing, so this is a critical moment to clarify and manage expectations."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?\n[00:24.50] P1: June 1st. Yeah I think we can make that work. Let me just double check with the team but that should be doable.\n[00:32.00] P3: Actually I think we should talk about scope first. What exactly do you need in the custom dashboard?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "secure client satisfaction and commitment to provide the custom dashboard feature by June 1st, potentially overcommitting to a timeline.",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "P3 raises a good point, let's nail down scope first.",
+        "recommendation_2": "What are your top 3 essential custom dashboard features?",
+        "urgency": "medium",
+        "rationale": "The wearer is about to overcommit to a date without fully understanding the scope of the request, and P3 has created an opening to de-escalate."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?\n[00:24.50] P1: June 1st. Yeah I think we can make that work. Let me just double check with the team but that should be doable.\n[00:32.00] P3: Actually I think we should talk about scope first. What exactly do you need in the custom dashboard?\n[00:38.00] P2: We need to be able to create our own views with drag and drop widgets, filter by date range, and export to PDF.\n[00:45.00] P3: Okay that's pretty full-featured. The drag and drop alone is probably two sprints.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Commit to a feasible and desirable scope for custom dashboards by June 1st while managing client expectations.",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "We can deliver a beta custom dashboard by June 1st, but drag and drop may be later.",
+        "recommendation_2": "Can you prioritize the essential features for June 1st?",
+        "urgency": "high",
+        "rationale": "P1 just committed to a challenging deadline without clarification on scope, and P3's input highlights the difficulty."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?\n[00:24.50] P1: June 1st. Yeah I think we can make that work. Let me just double check with the team but that should be doable.\n[00:32.00] P3: Actually I think we should talk about scope first. What exactly do you need in the custom dashboard?\n[00:38.00] P2: We need to be able to create our own views with drag and drop widgets, filter by date range, and export to PDF.\n[00:45.00] P3: Okay that's pretty full-featured. The drag and drop alone is probably two sprints.\n[00:50.00] P1: Well we could probably do a simplified version first. Maybe predefined layouts with customizable widgets.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Aligning on an achievable scope for custom dashboards to meet the client's June 1st deadline, without overcommitting development resources.",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "What features are absolutely critical by June 1st to launch your Q3 campaign?",
+        "recommendation_2": "Let's list essential features for June 1st, then nice-to-haves later.",
+        "urgency": "medium",
+        "rationale": "The wearer is offering a 'simplified version' which is still a commitment without fully understanding P2's priorities for the June 1st deadline."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?\n[00:24.50] P1: June 1st. Yeah I think we can make that work. Let me just double check with the team but that should be doable.\n[00:32.00] P3: Actually I think we should talk about scope first. What exactly do you need in the custom dashboard?\n[00:38.00] P2: We need to be able to create our own views with drag and drop widgets, filter by date range, and export to PDF.\n[00:45.00] P3: Okay that's pretty full-featured. The drag and drop alone is probably two sprints.\n[00:50.00] P1: Well we could probably do a simplified version first. Maybe predefined layouts with customizable widgets.\n[00:56.00] P2: Hmm, I mean we really need the drag and drop. That's the whole point.\n[01:00.00] P1: Okay let me talk to the engineering lead and get back to you with a realistic timeline.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To manage client expectations regarding custom dashboard delivery and avoid over-committing to an unrealistic timeline and scope.",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "What is the absolute earliest you need *any* custom dashboard functionality for Q3?",
+        "recommendation_2": "Let's align on features for a minimum viable custom dashboard by June 1st.",
+        "urgency": "medium",
+        "rationale": "The wearer is about to end the call without a clear understanding of the client's actual minimum needs, risking further overcommitment after checking with engineering."
+      }
+    },
+    {
+      "elapsed": 68.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P2: Thanks for hopping on the call. So we've been using your analytics module for about a month now and the team loves it.\n[00:07.00] P1: Great to hear, glad it's working out.\n[00:09.50] P2: The thing is, we're launching our Q3 campaign in three weeks and we really need the custom dashboard feature. That was on the roadmap right?\n[00:18.00] P1: Yeah absolutely, the custom dashboards are definitely planned.\n[00:21.00] P2: Awesome. So can we count on having it by June 1st?\n[00:24.50] P1: June 1st. Yeah I think we can make that work. Let me just double check with the team but that should be doable.\n[00:32.00] P3: Actually I think we should talk about scope first. What exactly do you need in the custom dashboard?\n[00:38.00] P2: We need to be able to create our own views with drag and drop widgets, filter by date range, and export to PDF.\n[00:45.00] P3: Okay that's pretty full-featured. The drag and drop alone is probably two sprints.\n[00:50.00] P1: Well we could probably do a simplified version first. Maybe predefined layouts with customizable widgets.\n[00:56.00] P2: Hmm, I mean we really need the drag and drop. That's the whole point.\n[01:00.00] P1: Okay let me talk to the engineering lead and get back to you with a realistic timeline.\n[01:05.00] P2: Sure. Just let us know by end of week.\n[01:08.00] P1: Will do.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To manage client expectations about the custom dashboard delivery, avoiding overcommitment while still appearing helpful.",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "signal_type": "premature_commitment",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Could we schedule a working session to prioritize features for June 1st?",
+        "recommendation_2": "What are your alternative plans if drag and drop isn't ready by June 1st?",
+        "urgency": "medium",
+        "rationale": "The wearer is about to overcommit to a complex feature by a tight deadline without fully understanding client priorities or alternatives."
+      }
+    }
+  ]
+}

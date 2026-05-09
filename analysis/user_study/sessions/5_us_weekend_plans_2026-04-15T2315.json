@@ -1,0 +1,135 @@
+{
+  "id": "session_1776294768735",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You and a friend are trying to figure out what to do this Saturday. You're both free all day and want to do something fun but haven't decided what yet.",
+  "scenario_id": "us_weekend_plans",
+  "scenario_label": "S4: Planning the Weekend",
+  "expected_trigger": true,
+  "expected_score": 2,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "5",
+  "duration_seconds": 142.58,
+  "check_interval": 15,
+  "total_checks": 7,
+  "total_triggers": 0,
+  "transcript_lines": [
+    {
+      "seconds": 1.64,
+      "speaker": "P2",
+      "text": "start"
+    },
+    {
+      "seconds": 13.34,
+      "speaker": "P2",
+      "text": "okay so tomorrow I'm pretty free and I think I'd like to do something active so what do you think you're in the mood to do for tomorrow"
+    },
+    {
+      "seconds": 20.48,
+      "speaker": "P1",
+      "text": "okay well I mean I guess it depends on the weather for tomorrow right"
+    },
+    {
+      "seconds": 40.21,
+      "speaker": "P2",
+      "text": "yeah I think tomorrow it should be pretty sunny so I think perhaps I mean hikes are I know you're not the biggest fan of hikes unless you could bring your dog but I think do you want to go hiking tomorrow"
+    },
+    {
+      "seconds": 50.02,
+      "speaker": "P1",
+      "text": "no not really I mean I guess I'd have to really know the weather first for me to kind of plan but I do"
+    },
+    {
+      "seconds": 51.69,
+      "speaker": "P1",
+      "text": "let's see"
+    },
+    {
+      "seconds": 60,
+      "speaker": "P1",
+      "text": "I am thinking of doing more High adrenaline activities in the area like I wonder"
+    },
+    {
+      "seconds": 65.93,
+      "speaker": "P1",
+      "text": "what I can actually what we can do cuz I know that the like I don't really know the weather now and so"
+    },
+    {
+      "seconds": 73.48,
+      "speaker": "P1",
+      "text": "I wonder if we're able to maybe rock climb outside or go mountain biking or skiing"
+    },
+    {
+      "seconds": 76.64,
+      "speaker": "P1",
+      "text": "I don't know I don't know we'd have to look up the options"
+    },
+    {
+      "seconds": 100.37,
+      "speaker": "P2",
+      "text": "that's true I think I would prefer to go yeah well I think I'm done to do something hydrogenaline yeah so I think we have to maybe look up on our phones for the weather tomorrow I wonder if we have like a phone handy nearby"
+    }
+  ],
+  "transcript_text": "[00:01.64] P2: start\n[00:13.34] P2: okay so tomorrow I'm pretty free and I think I'd like to do something active so what do you think you're in the mood to do for tomorrow\n[00:20.48] P1: okay well I mean I guess it depends on the weather for tomorrow right\n[00:40.21] P2: yeah I think tomorrow it should be pretty sunny so I think perhaps I mean hikes are I know you're not the biggest fan of hikes unless you could bring your dog but I think do you want to go hiking tomorrow\n[00:50.02] P1: no not really I mean I guess I'd have to really know the weather first for me to kind of plan but I do\n[00:51.69] P1: let's see\n[01:00.00] P1: I am thinking of doing more High adrenaline activities in the area like I wonder\n[01:05.93] P1: what I can actually what we can do cuz I know that the like I don't really know the weather now and so\n[01:13.48] P1: I wonder if we're able to maybe rock climb outside or go mountain biking or skiing\n[01:16.64] P1: I don't know I don't know we'd have to look up the options\n[01:40.37] P2: that's true I think I would prefer to go yeah well I think I'm done to do something hydrogenaline yeah so I think we have to maybe look up on our phones for the weather tomorrow I wonder if we have like a phone handy nearby",
+  "triggers": [],
+  "goal_inferences": [
+    {
+      "timestamp": 14.993,
+      "wearer_goal": "decide on an active plan for Saturday",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 29.99,
+      "wearer_goal": "deciding on an active plan for Saturday",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 44.989,
+      "wearer_goal": "decide on an enjoyable activity for Saturday",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 59.989,
+      "wearer_goal": "Decide on an active plan for Saturday based on weather",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 74.988,
+      "wearer_goal": "decide on an active, fun outdoor activity for Saturday",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 89.988,
+      "wearer_goal": "Decide on an active, high-adrenaline activity to do together on Saturday",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 103.488,
+      "wearer_goal": "Decide on an active, fun plan for Saturday based on weather and options",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    }
+  ],
+  "usefulness_rating": null,
+  "timing_rating": null,
+  "goal_rating": null,
+  "adoption_rating": null,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T23:15:11.317Z"
+}

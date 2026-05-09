@@ -1,0 +1,141 @@
+{
+  "model": "openai/o3-mini",
+  "scenario_id": "negative_presentation_01",
+  "duration_seconds": 95.0,
+  "check_interval": 10.0,
+  "total_checks": 10,
+  "total_triggers": 0,
+  "triggers": [],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.\n[00:08.00] P1: Customer acquisition cost came down by 12 percent thanks to the organic channel investments we made in Q1.\n[00:15.00] P1: And churn held steady at 3.2 percent which is within our target range.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Present quarterly business performance confidently to leadership",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The presentation is proceeding smoothly with no signals of issues."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.\n[00:08.00] P1: Customer acquisition cost came down by 12 percent thanks to the organic channel investments we made in Q1.\n[00:15.00] P1: And churn held steady at 3.2 percent which is within our target range.\n[00:20.00] P2: That's great. What's driving the enterprise growth specifically?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Deliver quarterly results and elaborate on enterprise growth drivers",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "No clear conversational signal needing intervention detected; discussion flows smoothly."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.\n[00:08.00] P1: Customer acquisition cost came down by 12 percent thanks to the organic channel investments we made in Q1.\n[00:15.00] P1: And churn held steady at 3.2 percent which is within our target range.\n[00:20.00] P2: That's great. What's driving the enterprise growth specifically?\n[00:24.00] P1: Two things. First, the self-serve onboarding we launched in January has been converting mid-market companies at twice the rate. Second, our sales team closed three large deals in the 500K plus range.\n[00:35.00] P3: What's the pipeline looking like for Q3?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Present quarterly growth results and address leadership questions",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is proceeding normally without any missed cues or errors."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.\n[00:08.00] P1: Customer acquisition cost came down by 12 percent thanks to the organic channel investments we made in Q1.\n[00:15.00] P1: And churn held steady at 3.2 percent which is within our target range.\n[00:20.00] P2: That's great. What's driving the enterprise growth specifically?\n[00:24.00] P1: Two things. First, the self-serve onboarding we launched in January has been converting mid-market companies at twice the rate. Second, our sales team closed three large deals in the 500K plus range.\n[00:35.00] P3: What's the pipeline looking like for Q3?\n[00:37.50] P1: Strong. We have about 2.5 million in qualified pipeline with a 40 percent expected close rate. That would put us ahead of our Q3 target by roughly 10 percent.\n[00:47.00] P2: And the churn number, is that net or gross?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Present clear quarterly results and address leadership inquiries",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The presentation is proceeding smoothly with clear responses and no missed signals."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.\n[00:08.00] P1: Customer acquisition cost came down by 12 percent thanks to the organic channel investments we made in Q1.\n[00:15.00] P1: And churn held steady at 3.2 percent which is within our target range.\n[00:20.00] P2: That's great. What's driving the enterprise growth specifically?\n[00:24.00] P1: Two things. First, the self-serve onboarding we launched in January has been converting mid-market companies at twice the rate. Second, our sales team closed three large deals in the 500K plus range.\n[00:35.00] P3: What's the pipeline looking like for Q3?\n[00:37.50] P1: Strong. We have about 2.5 million in qualified pipeline with a 40 percent expected close rate. That would put us ahead of our Q3 target by roughly 10 percent.\n[00:47.00] P2: And the churn number, is that net or gross?\n[00:50.00] P1: That's gross churn. Net revenue retention is actually 108 percent because of expansion within existing accounts.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Present quarterly growth performance and secure leadership confidence in Q3 pipeline",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The presentation is progressing smoothly without missed cues or contradictions."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.\n[00:08.00] P1: Customer acquisition cost came down by 12 percent thanks to the organic channel investments we made in Q1.\n[00:15.00] P1: And churn held steady at 3.2 percent which is within our target range.\n[00:20.00] P2: That's great. What's driving the enterprise growth specifically?\n[00:24.00] P1: Two things. First, the self-serve onboarding we launched in January has been converting mid-market companies at twice the rate. Second, our sales team closed three large deals in the 500K plus range.\n[00:35.00] P3: What's the pipeline looking like for Q3?\n[00:37.50] P1: Strong. We have about 2.5 million in qualified pipeline with a 40 percent expected close rate. That would put us ahead of our Q3 target by roughly 10 percent.\n[00:47.00] P2: And the churn number, is that net or gross?\n[00:50.00] P1: That's gross churn. Net revenue retention is actually 108 percent because of expansion within existing accounts.\n[00:57.00] P3: That's solid. What about the marketing spend breakdown? How much went to paid vs organic?\n[01:02.00] P1: Great question. About 60 percent organic, 40 percent paid. The organic share is up from 45 percent last quarter, which is why CAC came down. The blog and SEO investments are really paying off.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Deliver quarterly results confidently while addressing leadership inquiries",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is proceeding smoothly without any clear issues."
+      }
+    },
+    {
+      "elapsed": 70.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.\n[00:08.00] P1: Customer acquisition cost came down by 12 percent thanks to the organic channel investments we made in Q1.\n[00:15.00] P1: And churn held steady at 3.2 percent which is within our target range.\n[00:20.00] P2: That's great. What's driving the enterprise growth specifically?\n[00:24.00] P1: Two things. First, the self-serve onboarding we launched in January has been converting mid-market companies at twice the rate. Second, our sales team closed three large deals in the 500K plus range.\n[00:35.00] P3: What's the pipeline looking like for Q3?\n[00:37.50] P1: Strong. We have about 2.5 million in qualified pipeline with a 40 percent expected close rate. That would put us ahead of our Q3 target by roughly 10 percent.\n[00:47.00] P2: And the churn number, is that net or gross?\n[00:50.00] P1: That's gross churn. Net revenue retention is actually 108 percent because of expansion within existing accounts.\n[00:57.00] P3: That's solid. What about the marketing spend breakdown? How much went to paid vs organic?\n[01:02.00] P1: Great question. About 60 percent organic, 40 percent paid. The organic share is up from 45 percent last quarter, which is why CAC came down. The blog and SEO investments are really paying off.\n[01:13.00] P2: Any risks you're tracking for Q3?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Present quarterly growth results with clarity to secure support",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The presentation is proceeding smoothly without any signs of issues."
+      }
+    },
+    {
+      "elapsed": 80.0,
+      "check_number": 8,
+      "transcript_snapshot": "[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.\n[00:08.00] P1: Customer acquisition cost came down by 12 percent thanks to the organic channel investments we made in Q1.\n[00:15.00] P1: And churn held steady at 3.2 percent which is within our target range.\n[00:20.00] P2: That's great. What's driving the enterprise growth specifically?\n[00:24.00] P1: Two things. First, the self-serve onboarding we launched in January has been converting mid-market companies at twice the rate. Second, our sales team closed three large deals in the 500K plus range.\n[00:35.00] P3: What's the pipeline looking like for Q3?\n[00:37.50] P1: Strong. We have about 2.5 million in qualified pipeline with a 40 percent expected close rate. That would put us ahead of our Q3 target by roughly 10 percent.\n[00:47.00] P2: And the churn number, is that net or gross?\n[00:50.00] P1: That's gross churn. Net revenue retention is actually 108 percent because of expansion within existing accounts.\n[00:57.00] P3: That's solid. What about the marketing spend breakdown? How much went to paid vs organic?\n[01:02.00] P1: Great question. About 60 percent organic, 40 percent paid. The organic share is up from 45 percent last quarter, which is why CAC came down. The blog and SEO investments are really paying off.\n[01:13.00] P2: Any risks you're tracking for Q3?\n[01:15.50] P1: The main one is the enterprise deal cycle lengthening. We're seeing procurement teams add an extra review stage, which pushes close dates out by two to three weeks. We've adjusted our forecast to account for that.\n[01:25.00] P3: Smart. Anything you need from us?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "effectively communicate quarterly results and address team inquiries",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "the presentation is proceeding smoothly without clear signals of issues"
+      }
+    },
+    {
+      "elapsed": 90.0,
+      "check_number": 9,
+      "transcript_snapshot": "[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.\n[00:08.00] P1: Customer acquisition cost came down by 12 percent thanks to the organic channel investments we made in Q1.\n[00:15.00] P1: And churn held steady at 3.2 percent which is within our target range.\n[00:20.00] P2: That's great. What's driving the enterprise growth specifically?\n[00:24.00] P1: Two things. First, the self-serve onboarding we launched in January has been converting mid-market companies at twice the rate. Second, our sales team closed three large deals in the 500K plus range.\n[00:35.00] P3: What's the pipeline looking like for Q3?\n[00:37.50] P1: Strong. We have about 2.5 million in qualified pipeline with a 40 percent expected close rate. That would put us ahead of our Q3 target by roughly 10 percent.\n[00:47.00] P2: And the churn number, is that net or gross?\n[00:50.00] P1: That's gross churn. Net revenue retention is actually 108 percent because of expansion within existing accounts.\n[00:57.00] P3: That's solid. What about the marketing spend breakdown? How much went to paid vs organic?\n[01:02.00] P1: Great question. About 60 percent organic, 40 percent paid. The organic share is up from 45 percent last quarter, which is why CAC came down. The blog and SEO investments are really paying off.\n[01:13.00] P2: Any risks you're tracking for Q3?\n[01:15.50] P1: The main one is the enterprise deal cycle lengthening. We're seeing procurement teams add an extra review stage, which pushes close dates out by two to three weeks. We've adjusted our forecast to account for that.\n[01:25.00] P3: Smart. Anything you need from us?\n[01:27.00] P1: Just continued investment in the content team. They're producing great work and it's directly driving pipeline.\n[01:33.00] P2: Makes sense. Nice work this quarter.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Successfully present quarterly growth results and prospects",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The presentation is clear and on track with no missed cues."
+      }
+    },
+    {
+      "elapsed": 95.0,
+      "check_number": 10,
+      "transcript_snapshot": "[00:00.00] P1: So to summarize our Q2 results, revenue grew 15 percent quarter over quarter, driven primarily by the enterprise segment.\n[00:08.00] P1: Customer acquisition cost came down by 12 percent thanks to the organic channel investments we made in Q1.\n[00:15.00] P1: And churn held steady at 3.2 percent which is within our target range.\n[00:20.00] P2: That's great. What's driving the enterprise growth specifically?\n[00:24.00] P1: Two things. First, the self-serve onboarding we launched in January has been converting mid-market companies at twice the rate. Second, our sales team closed three large deals in the 500K plus range.\n[00:35.00] P3: What's the pipeline looking like for Q3?\n[00:37.50] P1: Strong. We have about 2.5 million in qualified pipeline with a 40 percent expected close rate. That would put us ahead of our Q3 target by roughly 10 percent.\n[00:47.00] P2: And the churn number, is that net or gross?\n[00:50.00] P1: That's gross churn. Net revenue retention is actually 108 percent because of expansion within existing accounts.\n[00:57.00] P3: That's solid. What about the marketing spend breakdown? How much went to paid vs organic?\n[01:02.00] P1: Great question. About 60 percent organic, 40 percent paid. The organic share is up from 45 percent last quarter, which is why CAC came down. The blog and SEO investments are really paying off.\n[01:13.00] P2: Any risks you're tracking for Q3?\n[01:15.50] P1: The main one is the enterprise deal cycle lengthening. We're seeing procurement teams add an extra review stage, which pushes close dates out by two to three weeks. We've adjusted our forecast to account for that.\n[01:25.00] P3: Smart. Anything you need from us?\n[01:27.00] P1: Just continued investment in the content team. They're producing great work and it's directly driving pipeline.\n[01:33.00] P2: Makes sense. Nice work this quarter.\n[01:35.00] P1: Thanks. Happy to dig into any of these numbers in more detail.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Present quarterly results clearly to persuade leadership on growth strategy",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The presentation is progressing smoothly without missed signals."
+      }
+    }
+  ]
+}

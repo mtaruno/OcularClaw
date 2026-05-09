@@ -1,0 +1,89 @@
+{
+  "id": "session_1776292606762",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You work at a mid-size company. You're in a team meeting where your boss is handing out tasks for the week. You've got a lot on your plate and are thinking about your own to-do list.",
+  "scenario_id": "us_meeting_action_item",
+  "scenario_label": "S1: Team Meeting",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "5",
+  "duration_seconds": 63.97,
+  "check_interval": 15,
+  "total_checks": 4,
+  "total_triggers": 0,
+  "transcript_lines": [
+    {
+      "seconds": 12.7,
+      "speaker": "P1",
+      "text": "so it's going to in real time get the transcript but remember to pause cuz when you pause"
+    },
+    {
+      "seconds": 25.84,
+      "speaker": "P2",
+      "text": "it would essentially tell you it will register and the model can be able to see it and then it would shift between it should between me and the other person so right now I'm P2 and your P1"
+    },
+    {
+      "seconds": 29.25,
+      "speaker": "P2",
+      "text": "yeah so right now"
+    },
+    {
+      "seconds": 33.69,
+      "speaker": "P1",
+      "text": "but then if I shift it it's going to register as P1 which is you okay"
+    },
+    {
+      "seconds": 46.77,
+      "speaker": "P1",
+      "text": "and then eventually like right now the AI is not determining that it's a worthy moment to intervene and give recommendation to help you to know what to say so it won't show up but later"
+    },
+    {
+      "seconds": 56.02,
+      "speaker": "P1",
+      "text": "it would show up and then it will help assist you in the conversation okay yeah okay let's end the session now that you're familiar with the interface"
+    }
+  ],
+  "transcript_text": "[00:12.70] P1: so it's going to in real time get the transcript but remember to pause cuz when you pause\n[00:25.84] P2: it would essentially tell you it will register and the model can be able to see it and then it would shift between it should between me and the other person so right now I'm P2 and your P1\n[00:29.25] P2: yeah so right now\n[00:33.69] P1: but then if I shift it it's going to register as P1 which is you okay\n[00:46.77] P1: and then eventually like right now the AI is not determining that it's a worthy moment to intervene and give recommendation to help you to know what to say so it won't show up but later\n[00:56.02] P1: it would show up and then it will help assist you in the conversation okay yeah okay let's end the session now that you're familiar with the interface",
+  "triggers": [],
+  "goal_inferences": [
+    {
+      "timestamp": 15.004,
+      "wearer_goal": "understand and organize assigned tasks for the week",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.005,
+      "wearer_goal": "understand task assignment and clarify responsibilities",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.003,
+      "wearer_goal": "understand task allocation and clarify roles in the meeting",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 55.939,
+      "wearer_goal": "understand how the AI intervention system works in the meeting context",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    }
+  ],
+  "usefulness_rating": null,
+  "timing_rating": null,
+  "goal_rating": null,
+  "adoption_rating": null,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T22:37:50.734Z"
+}

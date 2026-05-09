@@ -1,0 +1,79 @@
+{
+  "id": "session_1776296985472",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You work at a mid-size company. You're in a team meeting where your boss is handing out tasks for the week. You've got a lot on your plate and are thinking about your own to-do list.",
+  "scenario_id": "us_meeting_action_item",
+  "scenario_label": "S1: Team Meeting",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "6",
+  "duration_seconds": 58.6,
+  "check_interval": 15,
+  "total_checks": 4,
+  "total_triggers": 0,
+  "transcript_lines": [
+    {
+      "seconds": 9.83,
+      "speaker": "P2",
+      "text": "so okay so there will be two so this is the other person so other I'll be P2 and you'll be P1 and as we talk we should remember to do pauses"
+    },
+    {
+      "seconds": 20.33,
+      "speaker": "P2",
+      "text": "because it will register at the transcript and the the AI could only see if we are essentially putting like pausing yeah"
+    },
+    {
+      "seconds": 23.89,
+      "speaker": "P1",
+      "text": "and if it goes here it would just be P1"
+    },
+    {
+      "seconds": 45.37,
+      "speaker": "P1",
+      "text": "and then basically the agent will check every 15 seconds and then if it decides there's something it wants to intervene on you'll basically see a recommendation over here and then for something that you could say in this scenario and then yeah you can evaluate how helpful it is in this conversation"
+    }
+  ],
+  "transcript_text": "[00:09.83] P2: so okay so there will be two so this is the other person so other I'll be P2 and you'll be P1 and as we talk we should remember to do pauses\n[00:20.33] P2: because it will register at the transcript and the the AI could only see if we are essentially putting like pausing yeah\n[00:23.89] P1: and if it goes here it would just be P1\n[00:45.37] P1: and then basically the agent will check every 15 seconds and then if it decides there's something it wants to intervene on you'll basically see a recommendation over here and then for something that you could say in this scenario and then yeah you can evaluate how helpful it is in this conversation",
+  "triggers": [],
+  "goal_inferences": [
+    {
+      "timestamp": 15.002,
+      "wearer_goal": "understand and clarify task assignments for the week",
+      "goal_type": "information_exchange",
+      "goal_confidence": "medium",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.002,
+      "wearer_goal": "understand task assignment and coordinate with team",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.002,
+      "wearer_goal": "understand task distribution and manage workload",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 47.687,
+      "wearer_goal": "understand how the AI intervention system works in the meeting",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "triggered": false
+    }
+  ],
+  "usefulness_rating": null,
+  "timing_rating": null,
+  "goal_rating": null,
+  "adoption_rating": null,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T23:50:44.074Z"
+}

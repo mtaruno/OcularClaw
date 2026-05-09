@@ -1,0 +1,19 @@
+{
+  "agent_mode": "proagent",
+  "model": "gpt-4.1-mini",
+  "duration_seconds": 30.86,
+  "check_interval": 10.0,
+  "total_checks": 2,
+  "total_triggers": 0,
+  "transcript": "[00:05.01] P1: Hi there, so I work for the Amazon device.\n[00:10.04] P1: and I kind of want to give an introduction to the to\n[00:15.05] P1: the sort of work that we're doing right now.\n[00:25.05] P1: Okay. Okay. Okay. Okay. Okay.",
+  "log": [
+    {
+      "elapsed": 10.04,
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "elapsed": 20.05,
+      "error": "HTTP Error 401: Unauthorized"
+    }
+  ]
+}

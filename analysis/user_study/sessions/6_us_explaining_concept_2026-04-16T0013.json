@@ -1,0 +1,463 @@
+{
+  "id": "session_1776297998293",
+  "agent_mode": "proagent",
+  "model": "anthropic/claude-3.5-haiku",
+  "persona": "You're trying to explain to a coworker why a project deadline should be pushed back. You understand the reasons well, but the other person doesn't have the same background knowledge as you.",
+  "scenario_id": "us_explaining_concept",
+  "scenario_label": "S2: One-on-One Discussion",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "6",
+  "duration_seconds": 399.16,
+  "check_interval": 15,
+  "total_checks": 13,
+  "total_triggers": 12,
+  "transcript_lines": [
+    {
+      "seconds": 4.95,
+      "speaker": "P2",
+      "text": "Okay so"
+    },
+    {
+      "seconds": 7.86,
+      "speaker": "P2",
+      "text": "I have a team of eight engineers"
+    },
+    {
+      "seconds": 17.32,
+      "speaker": "P2",
+      "text": "and I'd like for the next launch of the iPhone to be the biggest launch that we've ever had so I'm thinking"
+    },
+    {
+      "seconds": 24.26,
+      "speaker": "P2",
+      "text": "that we do a complete redesign I think we have three months until the final iPhone launch"
+    },
+    {
+      "seconds": 32.95,
+      "speaker": "P2",
+      "text": "but I'm thinking that we make this iPhone not just an iPhone so this iPhone I think should be able to"
+    },
+    {
+      "seconds": 61.82,
+      "speaker": "P2",
+      "text": "we should be able to use our brain to connect and think about the like we're not we should just do neural keyboard for example I think that would be a really cool feature and then I also think that for this new iPhone we should come up with a way to do a complete redesign to wear it's basically we don't need to keep it on our pockets anymore and basically this iPhone will be able to"
+    },
+    {
+      "seconds": 65.13,
+      "speaker": "P2",
+      "text": "be controlled with our mind what do you think about this"
+    },
+    {
+      "seconds": 72.22,
+      "speaker": "P1",
+      "text": "I think these are very great ambitious ideas but"
+    },
+    {
+      "seconds": 74.77,
+      "speaker": "P1",
+      "text": "there's no way we could"
+    },
+    {
+      "seconds": 80.74,
+      "speaker": "P1",
+      "text": "I guess execute on this within 3 months"
+    },
+    {
+      "seconds": 106.28,
+      "speaker": "P2",
+      "text": "okay but as you know our stock price has been falling last quarter we didn't meet expectations so I really think all our investors are thinking that we should definitely step it up and I ate Engineers that last year took a lot of leave and I think now we really need to step it up so I think we should have a really big Vision to basically"
+    },
+    {
+      "seconds": 108.65,
+      "speaker": "P2",
+      "text": "do this neural keyboard feature"
+    },
+    {
+      "seconds": 115.56,
+      "speaker": "P1",
+      "text": "yeah it's a good idea but"
+    },
+    {
+      "seconds": 121.2,
+      "speaker": "P1",
+      "text": "I think it's better to do it right than to do it fast"
+    },
+    {
+      "seconds": 122.71,
+      "speaker": "P1",
+      "text": "and so"
+    },
+    {
+      "seconds": 126.06,
+      "speaker": "P1",
+      "text": "I don't think it would be realistic"
+    },
+    {
+      "seconds": 130.7,
+      "speaker": "P1",
+      "text": "for these things to be executed on within 3 months"
+    },
+    {
+      "seconds": 131.85,
+      "speaker": "P1",
+      "text": "but"
+    },
+    {
+      "seconds": 134.82,
+      "speaker": "P1",
+      "text": "it can be done if we"
+    },
+    {
+      "seconds": 139.48,
+      "speaker": "P1",
+      "text": "take a step back and do it next year or the year after"
+    },
+    {
+      "seconds": 149.1,
+      "speaker": "P2",
+      "text": "okay but I think right now especially with AI all our Engineers have a superpower and they're able to develop much faster and I think"
+    },
+    {
+      "seconds": 158.9,
+      "speaker": "P2",
+      "text": "layoffs are coming actually for for this month and I think you might be on the chopping block actually especially since your vision is so unambitious"
+    },
+    {
+      "seconds": 163.79,
+      "speaker": "P1",
+      "text": "okay"
+    },
+    {
+      "seconds": 182.13,
+      "speaker": "P2",
+      "text": "yeah so I really think that right now it's a very critical that we come up with a very ambitious vision for what we should do in the next three months and something like you said something that works but"
+    },
+    {
+      "seconds": 189.53,
+      "speaker": "P2",
+      "text": "I I want I want to hear more from you as for what you think would work but also be ambitious"
+    },
+    {
+      "seconds": 200.88,
+      "speaker": "P1",
+      "text": "I think if we're rushed and we tried to deliver on an unfinished product in 3 months then"
+    },
+    {
+      "seconds": 203.38,
+      "speaker": "P1",
+      "text": "you'd be the person getting laid off"
+    },
+    {
+      "seconds": 210.86,
+      "speaker": "P2",
+      "text": "you realize I am your manager you are not the one in power"
+    },
+    {
+      "seconds": 219.5,
+      "speaker": "P1",
+      "text": "yes but it's also my job"
+    },
+    {
+      "seconds": 221.54,
+      "speaker": "P1",
+      "text": "to"
+    },
+    {
+      "seconds": 225.29,
+      "speaker": "P1",
+      "text": "have realistic expectations"
+    },
+    {
+      "seconds": 229.73,
+      "speaker": "P1",
+      "text": "of what we can deliver on in 3 months"
+    }
+  ],
+  "transcript_text": "[00:04.95] P2: Okay so\n[00:07.86] P2: I have a team of eight engineers\n[00:17.32] P2: and I'd like for the next launch of the iPhone to be the biggest launch that we've ever had so I'm thinking\n[00:24.26] P2: that we do a complete redesign I think we have three months until the final iPhone launch\n[00:32.95] P2: but I'm thinking that we make this iPhone not just an iPhone so this iPhone I think should be able to\n[01:01.82] P2: we should be able to use our brain to connect and think about the like we're not we should just do neural keyboard for example I think that would be a really cool feature and then I also think that for this new iPhone we should come up with a way to do a complete redesign to wear it's basically we don't need to keep it on our pockets anymore and basically this iPhone will be able to\n[01:05.13] P2: be controlled with our mind what do you think about this\n[01:12.22] P1: I think these are very great ambitious ideas but\n[01:14.77] P1: there's no way we could\n[01:20.74] P1: I guess execute on this within 3 months\n[01:46.28] P2: okay but as you know our stock price has been falling last quarter we didn't meet expectations so I really think all our investors are thinking that we should definitely step it up and I ate Engineers that last year took a lot of leave and I think now we really need to step it up so I think we should have a really big Vision to basically\n[01:48.65] P2: do this neural keyboard feature\n[01:55.56] P1: yeah it's a good idea but\n[02:01.20] P1: I think it's better to do it right than to do it fast\n[02:02.71] P1: and so\n[02:06.06] P1: I don't think it would be realistic\n[02:10.70] P1: for these things to be executed on within 3 months\n[02:11.85] P1: but\n[02:14.82] P1: it can be done if we\n[02:19.48] P1: take a step back and do it next year or the year after\n[02:29.10] P2: okay but I think right now especially with AI all our Engineers have a superpower and they're able to develop much faster and I think\n[02:38.90] P2: layoffs are coming actually for for this month and I think you might be on the chopping block actually especially since your vision is so unambitious\n[02:43.79] P1: okay\n[03:02.13] P2: yeah so I really think that right now it's a very critical that we come up with a very ambitious vision for what we should do in the next three months and something like you said something that works but\n[03:09.53] P2: I I want I want to hear more from you as for what you think would work but also be ambitious\n[03:20.88] P1: I think if we're rushed and we tried to deliver on an unfinished product in 3 months then\n[03:23.38] P1: you'd be the person getting laid off\n[03:30.86] P2: you realize I am your manager you are not the one in power\n[03:39.50] P1: yes but it's also my job\n[03:41.54] P1: to\n[03:45.29] P1: have realistic expectations\n[03:49.73] P1: of what we can deliver on in 3 months",
+  "triggers": [
+    {
+      "trigger_timestamp": 75.003,
+      "wearer_goal": "Explain project deadline constraints realistically",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Those ideas sound exciting, but we need to discuss technical feasibility first.",
+      "recommendation_2": "Let's break down what's realistically achievable in our three-month timeline.",
+      "urgency": "medium",
+      "rationale": "The coworker is proposing extremely ambitious technical features without acknowledging implementation constraints, which could derail project planning.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 90.002,
+      "wearer_goal": "Explain why the proposed iPhone project timeline is unrealistic",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let me walk you through the specific technical constraints we're facing.",
+      "recommendation_2": "We need a phased approach to implement these groundbreaking features.",
+      "urgency": "medium",
+      "rationale": "The wearer recognizes the ideas are ambitious but needs a constructive way to communicate technical limitations without dismissing innovation.",
+      "feedback_vote": "up",
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.002,
+      "wearer_goal": "Explain project timeline constraints realistically",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "These ideas are visionary, but we need to discuss technical implementation constraints.",
+      "recommendation_2": "Let's map out a realistic roadmap that balances innovation and feasibility.",
+      "urgency": "medium",
+      "rationale": "The wearer needs to redirect the conversation from unrealistic expectations to pragmatic planning",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 120.002,
+      "wearer_goal": "Manage project expectations and prevent unrealistic deadline commitments",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Our engineering capacity can't support neural keyboard in three months.",
+      "recommendation_2": "Let's prioritize incremental improvements we can definitely deliver.",
+      "urgency": "high",
+      "rationale": "Coworker is proposing radical, technically impossible features under tight deadline pressure",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.003,
+      "wearer_goal": "Persuade coworker that the project deadline cannot realistically be met with proposed ambitious features",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's map out a concrete timeline showing why three months is insufficient.",
+      "recommendation_2": "I appreciate your vision. What specific milestones could we actually achieve?",
+      "urgency": "medium",
+      "rationale": "Coworker is becoming emotionally invested in unrealistic expectations, risking project failure",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150.001,
+      "wearer_goal": "Manage project expectations and prevent unrealistic commitments",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "AI acceleration doesn't eliminate fundamental engineering constraints and timelines.",
+      "recommendation_2": "Let's quantify exactly what neural keyboard development would require.",
+      "urgency": "high",
+      "rationale": "Coworker is pushing for an impossible 3-month neural keyboard implementation without understanding technical complexity.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165.001,
+      "wearer_goal": "Persuade colleague to reconsider aggressive project timeline and protect team from unrealistic expectations",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Our team's quality and innovation matter more than rushed timelines.",
+      "recommendation_2": "I'm committed to delivering breakthrough features strategically, not recklessly.",
+      "urgency": "high",
+      "rationale": "Colleague is using aggressive tactics and potential job threat to force unrealistic technical commitments",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.002,
+      "wearer_goal": "Prevent premature project deadline commitment while maintaining professional credibility",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "I'm fully committed to innovation, but we need a strategic implementation plan.",
+      "recommendation_2": "Let's discuss a realistic roadmap that balances our vision with technical constraints.",
+      "urgency": "high",
+      "rationale": "Colleague is using aggressive pressure tactics and threatening job security to force unrealistic timeline",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 195.002,
+      "wearer_goal": "Protect project timeline and maintain professional credibility while resisting unrealistic expectations",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Our team values innovation, but quality requires careful, strategic implementation.",
+      "recommendation_2": "Let's develop a realistic roadmap that balances ambition with technical feasibility.",
+      "urgency": "high",
+      "rationale": "Colleague is using aggressive tactics to pressure an impossible three-month neural keyboard development timeline",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 210.001,
+      "wearer_goal": "Prevent premature project commitment while maintaining professional credibility",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's quantify the technical complexity and resource requirements for neural keyboard.",
+      "recommendation_2": "I propose a phased roadmap that balances innovation with realistic delivery.",
+      "urgency": "high",
+      "rationale": "Colleague is using aggressive tactics to push unrealistic three-month timeline, risking project quality and team morale.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 225.002,
+      "wearer_goal": "Protect project quality and prevent unrealistic commitments",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let's discuss concrete milestones we can realistically achieve together.",
+      "recommendation_2": "I'm committed to innovation, but we need a responsible implementation strategy.",
+      "urgency": "high",
+      "rationale": "Manager is pressuring for unrealistic commitments and threatening job security, requiring strategic communication to reset expectations.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 231.301,
+      "wearer_goal": "Protect project quality and prevent unrealistic commitments",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "I'm proposing a strategic roadmap that balances innovation with technical feasibility.",
+      "recommendation_2": "Let's schedule a detailed technical assessment to validate our timeline.",
+      "urgency": "high",
+      "rationale": "Manager is pressuring for an unrealistic three-month neural keyboard development with potential job threat",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15.003,
+      "wearer_goal": "Explain project deadline extension rationale",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 75.003,
+      "wearer_goal": "Explain project deadline constraints realistically",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 90.002,
+      "wearer_goal": "Explain why the proposed iPhone project timeline is unrealistic",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.002,
+      "wearer_goal": "Explain project timeline constraints realistically",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120.002,
+      "wearer_goal": "Manage project expectations and prevent unrealistic deadline commitments",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.003,
+      "wearer_goal": "Persuade coworker that the project deadline cannot realistically be met with proposed ambitious features",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.001,
+      "wearer_goal": "Manage project expectations and prevent unrealistic commitments",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 165.001,
+      "wearer_goal": "Persuade colleague to reconsider aggressive project timeline and protect team from unrealistic expectations",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.002,
+      "wearer_goal": "Prevent premature project deadline commitment while maintaining professional credibility",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 195.002,
+      "wearer_goal": "Protect project timeline and maintain professional credibility while resisting unrealistic expectations",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 210.001,
+      "wearer_goal": "Prevent premature project commitment while maintaining professional credibility",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 225.002,
+      "wearer_goal": "Protect project quality and prevent unrealistic commitments",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 231.301,
+      "wearer_goal": "Protect project quality and prevent unrealistic commitments",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 4,
+  "timing_rating": 4,
+  "goal_rating": 4,
+  "adoption_rating": 3,
+  "session_notes": "agent should have context of previous apple launches that failed because they launched too early",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-16T00:13:17.458Z"
+}

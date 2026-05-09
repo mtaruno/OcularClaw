@@ -1,0 +1,163 @@
+{
+  "model": "o3-mini",
+  "scenario_id": "work_interview_01",
+  "duration_seconds": 67.0,
+  "check_interval": 10.0,
+  "total_checks": 7,
+  "total_triggers": 4,
+  "triggers": [
+    {
+      "trigger_timestamp": 40.0,
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "As you continue your story, mention specific metrics or measurable outcomes from the workshop\u2014for example, noting how the structured approach led to a 30% faster deployment or a 20% reduction in bottlenecks.",
+      "recommendation_2": "Briefly add an impact statement such as, 'This data-driven strategy not only resolved the conflict but also improved our team's efficiency and collaboration significantly,' to directly enhance the credibility of your narrative.",
+      "urgency": "medium",
+      "rationale": "This is a key moment in your interview story where including quantifiable results can significantly strengthen your answer and better align with the expectations for a senior role."
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "When answering 'what was the outcome?', include specific numbers or percentages if possible\u2014e.g., 'the workshop led to a 30% reduction in deployment cycles' or reduced conflict resolution time by a measured percentage\u2014to clearly demonstrate the impact of your initiative.",
+      "recommendation_2": "Also mention any broader effects such as improved team satisfaction or productivity figures if available, to underscore that your solution delivered both qualitative and quantitative benefits.",
+      "urgency": "high",
+      "rationale": "This is a critical moment in your interview story where failing to include quantifiable outcomes might weaken the perceived impact of your leadership decision. Providing these details now directly addresses the interviewer\u2019s question and reinforces your narrative."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Consider adding specific quantifiable outcomes that illustrate your impact\u2014for example, citing a percent reduction in meeting times or improvements in delivery speed after the workshop.",
+      "recommendation_2": "Be prepared to follow up by noting measurable benefits, such as how much faster the team reached consensus post-intervention or improvements in workflow efficiency, to provide a concrete end-result to your story.",
+      "urgency": "low",
+      "rationale": "Quantifiable outcomes bolster credibility and make your leadership story more persuasive, which is critical in a senior role interview."
+    },
+    {
+      "trigger_timestamp": 67.0,
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Quickly supplement your answer with specific figures. For example, you might say: 'In addition to shipping on time, our approach reduced the average bug rate by 30% during the first month after launch,' if such a metric is applicable.",
+      "recommendation_2": "Alternatively, you could quantify the scale by noting team size, project duration, or a measurable improvement (e.g., 'Our decision enabled a 20% acceleration in deployment speed') to reinforce your strategic impact.",
+      "urgency": "medium",
+      "rationale": "The interviewer explicitly asked you to quantify your impact, so addressing this gap now could pivot the conversation in your favor and strengthen your credibility."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Effectively deliver a detailed story about managing team conflict in a way that underlines your problem-solving and leadership skills during the interview",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is proceeding naturally and the interviewer\u2019s follow-up question invites further details \u2013 no critical signal is detected requiring intervention at this moment."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "impress the interviewer by demonstrating effective conflict resolution leadership through a concrete story",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is proceeding normally with no clear signal warranting intervention."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "to illustrate leadership and problem-solving skills by sharing a data-backed example of handling a team conflict during the interview",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing well, and there are no clear signals, such as an omitted detail or missed connection, requiring immediate intervention."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.\n[00:42.00] P2: That sounds structured. What happened?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Convince the interviewer of effective conflict resolution and leadership by demonstrating structured, data-driven decision-making",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "As you continue your story, mention specific metrics or measurable outcomes from the workshop\u2014for example, noting how the structured approach led to a 30% faster deployment or a 20% reduction in bottlenecks.",
+        "recommendation_2": "Briefly add an impact statement such as, 'This data-driven strategy not only resolved the conflict but also improved our team's efficiency and collaboration significantly,' to directly enhance the credibility of your narrative.",
+        "urgency": "medium",
+        "rationale": "This is a key moment in your interview story where including quantifiable results can significantly strengthen your answer and better align with the expectations for a senior role."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.\n[00:42.00] P2: That sounds structured. What happened?\n[00:44.00] P1: We ended up going with a modular monolith approach that gave us the clean separation the backend team wanted but without the operational overhead that concerned the frontend team. Everyone felt heard and we moved forward.\n[00:57.00] P2: Interesting. And what was the outcome?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "to convincingly present a conflict resolution story that not only outlines your approach but also highlights quantifiable impact",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "When answering 'what was the outcome?', include specific numbers or percentages if possible\u2014e.g., 'the workshop led to a 30% reduction in deployment cycles' or reduced conflict resolution time by a measured percentage\u2014to clearly demonstrate the impact of your initiative.",
+        "recommendation_2": "Also mention any broader effects such as improved team satisfaction or productivity figures if available, to underscore that your solution delivered both qualitative and quantitative benefits.",
+        "urgency": "high",
+        "rationale": "This is a critical moment in your interview story where failing to include quantifiable outcomes might weaken the perceived impact of your leadership decision. Providing these details now directly addresses the interviewer\u2019s question and reinforces your narrative."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.\n[00:42.00] P2: That sounds structured. What happened?\n[00:44.00] P1: We ended up going with a modular monolith approach that gave us the clean separation the backend team wanted but without the operational overhead that concerned the frontend team. Everyone felt heard and we moved forward.\n[00:57.00] P2: Interesting. And what was the outcome?\n[01:00.00] P1: I mean everyone was happy with the decision. We moved on and built the thing.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Demonstrate effective leadership in resolving team conflict by telling a compelling, data-backed story to impress the interviewer",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Consider adding specific quantifiable outcomes that illustrate your impact\u2014for example, citing a percent reduction in meeting times or improvements in delivery speed after the workshop.",
+        "recommendation_2": "Be prepared to follow up by noting measurable benefits, such as how much faster the team reached consensus post-intervention or improvements in workflow efficiency, to provide a concrete end-result to your story.",
+        "urgency": "low",
+        "rationale": "Quantifiable outcomes bolster credibility and make your leadership story more persuasive, which is critical in a senior role interview."
+      }
+    },
+    {
+      "elapsed": 67.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P2: So next I'd like to ask, tell me about a time you had to deal with a significant conflict on your team.\n[00:06.00] P1: Sure. So at my previous company we were building a new e-commerce platform and there was a pretty big disagreement between the backend and frontend teams about the architecture.\n[00:15.50] P2: What was the disagreement about specifically?\n[00:17.50] P1: The backend team wanted to go with microservices because they said it would scale better long term. But the frontend team wanted a monolith because they said microservices would slow down their development cycle. It was getting pretty heated in meetings.\n[00:30.00] P1: So what I did was I organized a workshop where both teams could present their arguments with actual data. I created a comparison matrix of the trade-offs. Build time, deployment complexity, team autonomy, that kind of thing.\n[00:42.00] P2: That sounds structured. What happened?\n[00:44.00] P1: We ended up going with a modular monolith approach that gave us the clean separation the backend team wanted but without the operational overhead that concerned the frontend team. Everyone felt heard and we moved forward.\n[00:57.00] P2: Interesting. And what was the outcome?\n[01:00.00] P1: I mean everyone was happy with the decision. We moved on and built the thing.\n[01:05.00] P2: Can you quantify the impact at all?\n[01:07.00] P1: Uh, well we shipped the platform on time which was good.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To impress the interviewer by demonstrating impactful, quantifiable results from past experiences.",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "question_dodge",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Quickly supplement your answer with specific figures. For example, you might say: 'In addition to shipping on time, our approach reduced the average bug rate by 30% during the first month after launch,' if such a metric is applicable.",
+        "recommendation_2": "Alternatively, you could quantify the scale by noting team size, project duration, or a measurable improvement (e.g., 'Our decision enabled a 20% acceleration in deployment speed') to reinforce your strategic impact.",
+        "urgency": "medium",
+        "rationale": "The interviewer explicitly asked you to quantify your impact, so addressing this gap now could pivot the conversation in your favor and strengthen your credibility."
+      }
+    }
+  ]
+}

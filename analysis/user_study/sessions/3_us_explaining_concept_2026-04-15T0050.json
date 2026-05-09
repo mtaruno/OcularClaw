@@ -1,0 +1,559 @@
+{
+  "id": "session_1776213449554",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You're trying to explain to a coworker why a project deadline should be pushed back. You understand the reasons well, but the other person doesn't have the same background knowledge as you.",
+  "scenario_id": "us_explaining_concept",
+  "scenario_label": "S2: One-on-One Discussion",
+  "expected_trigger": true,
+  "expected_score": 4,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "3",
+  "duration_seconds": 804.52,
+  "check_interval": 15,
+  "total_checks": 21,
+  "total_triggers": 16,
+  "transcript_lines": [
+    {
+      "seconds": 8.22,
+      "speaker": "P2",
+      "text": "okay hi Jason so as Park of the Outlook team we"
+    },
+    {
+      "seconds": 14.1,
+      "speaker": "P2",
+      "text": "would like to set the new projects that we're going to do for this new quarter"
+    },
+    {
+      "seconds": 24.94,
+      "speaker": "P2",
+      "text": "so I believe since we are already in the age of AI that we can make Outlook sort of have a really big vision for Outlook"
+    },
+    {
+      "seconds": 40.07,
+      "speaker": "P2",
+      "text": "so I think it's a really good idea to do a huge redesign because I think we've had a lot of customers and users say that Outlook is very boring and that it needs a major design rehaul what do you think about that"
+    },
+    {
+      "seconds": 49.43,
+      "speaker": "P1",
+      "text": "so one thing I'm thinking about is the resources we have"
+    },
+    {
+      "seconds": 57.38,
+      "speaker": "P1",
+      "text": "what timeline are you thinking about so you said next quarter should we make"
+    },
+    {
+      "seconds": 66.85,
+      "speaker": "P1",
+      "text": "should we make that next quarter be like in preview like a beta version or like a general version for everybody"
+    },
+    {
+      "seconds": 80.1,
+      "speaker": "P2",
+      "text": "yeah I know with the with the team we've just completed a really good project so I know the capabilities of our team I was thinking because of this we can set the beta that line"
+    },
+    {
+      "seconds": 85.47,
+      "speaker": "P2",
+      "text": "to actually be 2 weeks from now and then buy"
+    },
+    {
+      "seconds": 101.84,
+      "speaker": "P2",
+      "text": "2 months from now I think that's a pretty good that line for us to do the whole design overhaul because all the developers can basically use AI now so I think actually even one month this is actually doable I don't want to waste the company resources"
+    },
+    {
+      "seconds": 115.66,
+      "speaker": "P1",
+      "text": "okay so I appreciate it enthusiasm about setting the beta launch but pushing it back in my allowance to maintain some"
+    },
+    {
+      "seconds": 123.42,
+      "speaker": "P1",
+      "text": "quality and we should also think about having some slack time"
+    },
+    {
+      "seconds": 131.94,
+      "speaker": "P1",
+      "text": "in case our recommend in case an hour work gets pushed back because some"
+    },
+    {
+      "seconds": 138.35,
+      "speaker": "P1",
+      "text": "some team members are actually going on vacation this quarter"
+    },
+    {
+      "seconds": 158.6,
+      "speaker": "P2",
+      "text": "you guys already took a lot of time off last quarter I think you should still stay in this place and then I don't like how you use the word slack it makes me think that you're slacking off doing work and I feel like that is not an appropriate word to use for our meet for when we talk professionally"
+    },
+    {
+      "seconds": 171.81,
+      "speaker": "P1",
+      "text": "I understand your enthusiasm but I think that rest is important and we don't want to push something"
+    },
+    {
+      "seconds": 181.62,
+      "speaker": "P1",
+      "text": "out that is low quality and also by slack time I mean playing buffer to ensure quality"
+    },
+    {
+      "seconds": 185.97,
+      "speaker": "P1",
+      "text": "not sucking off to reduce tension"
+    },
+    {
+      "seconds": 194.42,
+      "speaker": "P2",
+      "text": "okay so I guess that sounds a little better than slacking off because hopefully no one is slacking off in my office"
+    },
+    {
+      "seconds": 203.2,
+      "speaker": "P2",
+      "text": "so what makes you think that so so with this in mind do you still agree with the one month timeline that I said earlier"
+    },
+    {
+      "seconds": 209.16,
+      "speaker": "P1",
+      "text": "so"
+    },
+    {
+      "seconds": 225.6,
+      "speaker": "P1",
+      "text": "I think that we should still focus on realistic timeline so we need to think about our team availability so I propose we can have a initial draft at the end of this quarter so"
+    },
+    {
+      "seconds": 234.52,
+      "speaker": "P1",
+      "text": "some user some figma markups and the engine usage Journey we can finalize I think that's a reasonable plan for Outlook"
+    },
+    {
+      "seconds": 250.75,
+      "speaker": "P2",
+      "text": "okay so fix my markups and user Journey for one month that is that something that is aligned with what other teams are doing and the speed of other organization in the team or do you think that we're going to be a little performer"
+    },
+    {
+      "seconds": 259.86,
+      "speaker": "P1",
+      "text": "so I think that there's a risk of rushing the timeline and we need to emphasize quality"
+    },
+    {
+      "seconds": 269.5,
+      "speaker": "P1",
+      "text": "especially since Microsoft now is known as Microsoft so we need to improve our product quality"
+    },
+    {
+      "seconds": 292.99,
+      "speaker": "P2",
+      "text": "yeah but you do realize our shares have been falling especially last week it has felt a lot so I think we really need to get otherwise we're in the cutting block our team has been all the team has been in the lowest performing Gap Revenue organization in the whole world so I think we really need to step it up otherwise we might just get cut"
+    },
+    {
+      "seconds": 310.86,
+      "speaker": "P1",
+      "text": "make some compromise such as we can do an initial draft and then that balances speed and quality"
+    }
+  ],
+  "transcript_text": "[00:08.22] P2: okay hi Jason so as Park of the Outlook team we\n[00:14.10] P2: would like to set the new projects that we're going to do for this new quarter\n[00:24.94] P2: so I believe since we are already in the age of AI that we can make Outlook sort of have a really big vision for Outlook\n[00:40.07] P2: so I think it's a really good idea to do a huge redesign because I think we've had a lot of customers and users say that Outlook is very boring and that it needs a major design rehaul what do you think about that\n[00:49.43] P1: so one thing I'm thinking about is the resources we have\n[00:57.38] P1: what timeline are you thinking about so you said next quarter should we make\n[01:06.85] P1: should we make that next quarter be like in preview like a beta version or like a general version for everybody\n[01:20.10] P2: yeah I know with the with the team we've just completed a really good project so I know the capabilities of our team I was thinking because of this we can set the beta that line\n[01:25.47] P2: to actually be 2 weeks from now and then buy\n[01:41.84] P2: 2 months from now I think that's a pretty good that line for us to do the whole design overhaul because all the developers can basically use AI now so I think actually even one month this is actually doable I don't want to waste the company resources\n[01:55.66] P1: okay so I appreciate it enthusiasm about setting the beta launch but pushing it back in my allowance to maintain some\n[02:03.42] P1: quality and we should also think about having some slack time\n[02:11.94] P1: in case our recommend in case an hour work gets pushed back because some\n[02:18.35] P1: some team members are actually going on vacation this quarter\n[02:38.60] P2: you guys already took a lot of time off last quarter I think you should still stay in this place and then I don't like how you use the word slack it makes me think that you're slacking off doing work and I feel like that is not an appropriate word to use for our meet for when we talk professionally\n[02:51.81] P1: I understand your enthusiasm but I think that rest is important and we don't want to push something\n[03:01.62] P1: out that is low quality and also by slack time I mean playing buffer to ensure quality\n[03:05.97] P1: not sucking off to reduce tension\n[03:14.42] P2: okay so I guess that sounds a little better than slacking off because hopefully no one is slacking off in my office\n[03:23.20] P2: so what makes you think that so so with this in mind do you still agree with the one month timeline that I said earlier\n[03:29.16] P1: so\n[03:45.60] P1: I think that we should still focus on realistic timeline so we need to think about our team availability so I propose we can have a initial draft at the end of this quarter so\n[03:54.52] P1: some user some figma markups and the engine usage Journey we can finalize I think that's a reasonable plan for Outlook\n[04:10.75] P2: okay so fix my markups and user Journey for one month that is that something that is aligned with what other teams are doing and the speed of other organization in the team or do you think that we're going to be a little performer\n[04:19.86] P1: so I think that there's a risk of rushing the timeline and we need to emphasize quality\n[04:29.50] P1: especially since Microsoft now is known as Microsoft so we need to improve our product quality\n[04:52.99] P2: yeah but you do realize our shares have been falling especially last week it has felt a lot so I think we really need to get otherwise we're in the cutting block our team has been all the team has been in the lowest performing Gap Revenue organization in the whole world so I think we really need to step it up otherwise we might just get cut\n[05:10.86] P1: make some compromise such as we can do an initial draft and then that balances speed and quality",
+  "triggers": [
+    {
+      "trigger_timestamp": 90.002,
+      "wearer_goal": "explain why the project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I appreciate the enthusiasm about setting the beta launch just two weeks from now, but I think we should consider pushing the deadline back to ensure quality and thorough testing.",
+      "recommendation_2": "Let me explain some key reasons why a later deadline would benefit the project, including resource constraints and complexity, so we can align expectations.",
+      "urgency": "medium",
+      "rationale": "The coworker is proposing a very soon beta launch without fully understanding the project's challenges. This is a critical moment to clarify and persuade for a deadline extension before they commit to an unrealistic timeline.",
+      "feedback_vote": "up",
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.001,
+      "wearer_goal": "explain why the project deadline should be pushed back to the coworker who lacks the same background knowledge",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I understand the enthusiasm about using AI to speed things up, but we should consider the complexity of the redesign and potential unforeseen challenges before committing to such a tight deadline.",
+      "recommendation_2": "Could we review the key risks and resource constraints together to better estimate a realistic timeline that ensures quality without overloading the team?",
+      "urgency": "medium",
+      "rationale": "The coworker is proposing a very aggressive timeline based on assumptions about AI capabilities without acknowledging potential risks. This is a critical moment to clarify and manage expectations before a premature commitment is made.",
+      "feedback_vote": "up",
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 120.002,
+      "wearer_goal": "explain why the project deadline should be pushed back to the coworker who lacks background knowledge",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'I understand the enthusiasm for a quick beta launch, but given the complexity of the redesign and the team's current workload, pushing the deadline back will ensure we deliver a quality product without overextending resources.'",
+      "recommendation_2": "Know: The coworker may not fully grasp the technical challenges and resource constraints involved in the redesign, so providing concrete examples of these challenges can help justify the need for a deadline extension.",
+      "urgency": "medium",
+      "rationale": "The coworker is pushing for a tight beta launch timeline without fully understanding the resource and complexity constraints. This is a key moment to clarify and persuade to avoid premature commitment to an unrealistic deadline.",
+      "feedback_vote": "down",
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.002,
+      "wearer_goal": "convince coworker to push back the project deadline for the redesign",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "premature_commitment",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Acknowledge the enthusiasm for the beta launch but emphasize the importance of quality and the risks of rushing, suggesting a slightly later beta date to ensure thorough testing and stability.",
+      "recommendation_2": "Explain clearly why some slack time is necessary, perhaps by giving examples of potential delays or unforeseen issues, to help your coworker understand the practical need for a deadline extension.",
+      "urgency": "medium",
+      "rationale": "The coworker is proposing an ambitious timeline that may be unrealistic, and you are about to push back. This is a critical moment to frame your reasoning clearly to avoid conflict and gain agreement on a more feasible schedule.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150.002,
+      "wearer_goal": "explain why the project deadline should be pushed back to ensure quality and accommodate team availability",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'I understand the enthusiasm for a quick beta launch, but considering the team's upcoming vacations and the need for thorough testing, I recommend we extend the timeline to maintain quality and avoid burnout.'",
+      "recommendation_2": "Know: The team has limited availability next quarter due to vacations, and rushing the beta launch risks lowering product quality and increasing technical debt, which could cost more time later.",
+      "urgency": "medium",
+      "rationale": "The wearer is at a critical moment where they need to justify pushing back the deadline despite pressure for a quick launch; providing clear reasons and acknowledging the other person's enthusiasm can help persuade effectively.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165.002,
+      "wearer_goal": "Explain why the project deadline should be pushed back to ensure quality and account for team availability",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Acknowledge their enthusiasm but calmly clarify that 'slack time' means planned buffer to ensure quality, not slacking off, to reduce tension.",
+      "recommendation_2": "Suggest focusing on how the buffer helps prevent rushed work and maintains the team's productivity despite vacations, appealing to shared goals.",
+      "urgency": "medium",
+      "rationale": "The coworker reacted emotionally to the word 'slack,' which risks escalating conflict and undermining your persuasion to push back the deadline. Addressing this calmly can restore constructive dialogue.",
+      "feedback_vote": "up",
+      "feedback_comment": "favorite"
+    },
+    {
+      "trigger_timestamp": 180.001,
+      "wearer_goal": "explain why the project deadline should be pushed back to ensure quality and accommodate team availability",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'I understand your eagerness to move fast, but using the word \"slack\" was meant to highlight the importance of buffer time to maintain quality, not to imply anyone is slacking off. Let's focus on how a realistic timeline benefits the whole team and project success.'",
+      "recommendation_2": "Know: Emphasize that pushing the deadline without buffer risks burnout and quality issues, especially with team members on vacation, and that a well-planned schedule ultimately saves resources and improves outcomes.",
+      "urgency": "medium",
+      "rationale": "The coworker reacted emotionally to the term \"slack,\" which risks escalating tension and undermining the wearer's attempt to persuade on timeline extension. Addressing this misunderstanding calmly can keep the conversation constructive and focused on the deadline rationale.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 195.001,
+      "wearer_goal": "Explain why the project deadline should be pushed back to ensure quality and realistic timelines",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Acknowledge their enthusiasm and clarify that 'slack time' means planned buffer time to maintain quality, not slacking off, to reduce misunderstanding.",
+      "recommendation_2": "Gently steer the conversation back to the importance of realistic timelines considering team availability and quality standards to reinforce your point without escalating tension.",
+      "urgency": "medium",
+      "rationale": "The coworker reacted emotionally to the term 'slack time,' which risks derailing the conversation. Addressing this misunderstanding calmly can maintain rapport and keep the focus on persuading them about the deadline extension.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 210.003,
+      "wearer_goal": "convince coworker to agree on pushing back the project deadline",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Say: 'I understand your confidence in the team's abilities and the potential of AI, but given the recent vacations and the importance of quality, I recommend we set a realistic timeline with buffer to avoid rushed work and ensure a successful launch.'",
+      "recommendation_2": "Know: Emphasize that adding slack time is a common project management practice to handle unexpected delays and maintain quality, not a sign of slacking off, which can help reframe the coworker's negative perception.",
+      "urgency": "medium",
+      "rationale": "The coworker just asked if you still agree with the one-month timeline, making this a critical moment to clearly explain why a deadline extension is necessary without alienating them or seeming inflexible.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 225.001,
+      "wearer_goal": "explain why the project deadline should be pushed back to the coworker",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Clarify that the one month timeline is optimistic given current team capacity and upcoming vacations, emphasizing the risk to quality if rushed.",
+      "recommendation_2": "Suggest proposing a revised timeline with built-in buffer to ensure quality deliverables and avoid burnout, framing it as a strategic decision for project success.",
+      "urgency": "medium",
+      "rationale": "The wearer is about to respond to a direct question on timeline agreement, a critical moment to clearly communicate the need for deadline extension to avoid misunderstanding or premature commitment.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 240.001,
+      "wearer_goal": "explain to coworker why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Acknowledge the coworker's enthusiasm and then clearly explain the risks of rushing the timeline, emphasizing the importance of quality and team availability to ensure a successful redesign.",
+      "recommendation_2": "Suggest a concrete alternative timeline with specific milestones, such as delivering an initial draft by the end of the quarter, to show a balanced and realistic plan that addresses both innovation and resource constraints.",
+      "urgency": "medium",
+      "rationale": "The wearer is at a critical moment where they need to persuade the coworker to accept a later deadline. Providing a clear, respectful explanation and a concrete alternative plan can help align both parties and avoid conflict or misunderstanding.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 255.001,
+      "wearer_goal": "Explain why the project deadline should be pushed back to ensure quality and realistic timelines",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Clarify that the proposed one-month timeline is not aligned with other teams' pace and explain the risks of rushing the design overhaul, emphasizing quality and team availability.",
+      "recommendation_2": "Suggest a compromise by proposing a phased approach: deliver initial drafts by the end of the quarter with room for iteration, which matches realistic team capacity and maintains quality.",
+      "urgency": "medium",
+      "rationale": "The coworker just asked if the one-month timeline aligns with other teams, which is an opportunity to clarify and persuade realistically rather than letting the question go unanswered or deflected.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 270.001,
+      "wearer_goal": "Explain why the project deadline should be pushed back to ensure a realistic timeline and maintain quality",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Acknowledge the enthusiasm for a quick timeline but emphasize the importance of quality and realistic resource planning to avoid burnout and rework.",
+      "recommendation_2": "Clarify that 'slack time' is a professional buffer to manage unforeseen delays, not a sign of slacking off, to reduce tension and keep the conversation constructive.",
+      "urgency": "medium",
+      "rationale": "There is rising tension around the term 'slack' and timeline feasibility; addressing this clearly can help maintain a collaborative tone and strengthen the case for a deadline extension.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 285.001,
+      "wearer_goal": "Explain to coworker why the project deadline should be pushed back to ensure quality and realistic timelines",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Acknowledge your coworker's enthusiasm but clearly restate the importance of quality and realistic timelines, emphasizing that rushing could harm the product's reputation and user experience.",
+      "recommendation_2": "Use a collaborative tone to suggest a compromise, such as proposing a phased approach with an initial draft by the end of the quarter, which aligns with team capacity and maintains quality standards.",
+      "urgency": "medium",
+      "rationale": "The coworker is emotionally reacting to the timeline pushback and misunderstanding the term 'slack time,' which could escalate tension and hinder agreement. Intervening now can help clarify your position, reduce emotional friction, and guide the conversation toward a realistic, quality-focused timeline.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 300.002,
+      "wearer_goal": "Explain why the project deadline should be pushed back to ensure quality and realistic expectations",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Acknowledge the urgency about the team's performance and share your concern that rushing the timeline could lead to lower quality, which might hurt the product and the team's reputation even more.",
+      "recommendation_2": "Propose a compromise by suggesting a phased approach: deliver an initial draft by the end of the quarter as you mentioned, then iterate based on feedback, balancing speed and quality.",
+      "urgency": "medium",
+      "rationale": "The coworker is expressing high stress about performance and deadlines, which is escalating tension. This is a critical moment to clarify your position clearly and empathetically to maintain collaboration and persuade them to accept a more realistic timeline.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 310.936,
+      "wearer_goal": "explain why the project deadline should be pushed back to ensure quality and realistic timelines",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Acknowledge the urgency and share understanding of the team's pressure to perform, then calmly restate that quality and realistic timelines are critical to avoid bigger risks like product failure or reputational damage.",
+      "recommendation_2": "Propose a concrete compromise: suggest delivering an initial draft or beta in one month to show progress, while allowing additional time for refinement to maintain quality and team well-being.",
+      "urgency": "medium",
+      "rationale": "The conversation shows rising tension and disagreement about timeline feasibility and resource use. This is a key moment to de-escalate and clearly persuade the coworker with a balanced approach to avoid conflict and align on a realistic plan.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15.003,
+      "wearer_goal": "explain why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.003,
+      "wearer_goal": "explain why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.001,
+      "wearer_goal": "explain why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 60.003,
+      "wearer_goal": "explain why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 75.003,
+      "wearer_goal": "explain why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 90.002,
+      "wearer_goal": "explain why the project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.001,
+      "wearer_goal": "explain why the project deadline should be pushed back to the coworker who lacks the same background knowledge",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120.002,
+      "wearer_goal": "explain why the project deadline should be pushed back to the coworker who lacks background knowledge",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.002,
+      "wearer_goal": "convince coworker to push back the project deadline for the redesign",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.002,
+      "wearer_goal": "explain why the project deadline should be pushed back to ensure quality and accommodate team availability",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 165.002,
+      "wearer_goal": "Explain why the project deadline should be pushed back to ensure quality and account for team availability",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.001,
+      "wearer_goal": "explain why the project deadline should be pushed back to ensure quality and accommodate team availability",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 195.001,
+      "wearer_goal": "Explain why the project deadline should be pushed back to ensure quality and realistic timelines",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 210.003,
+      "wearer_goal": "convince coworker to agree on pushing back the project deadline",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 225.001,
+      "wearer_goal": "explain why the project deadline should be pushed back to the coworker",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 240.001,
+      "wearer_goal": "explain to coworker why a project deadline should be pushed back",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 255.001,
+      "wearer_goal": "Explain why the project deadline should be pushed back to ensure quality and realistic timelines",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 270.001,
+      "wearer_goal": "Explain why the project deadline should be pushed back to ensure a realistic timeline and maintain quality",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 285.001,
+      "wearer_goal": "Explain to coworker why the project deadline should be pushed back to ensure quality and realistic timelines",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 300.002,
+      "wearer_goal": "Explain why the project deadline should be pushed back to ensure quality and realistic expectations",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 310.936,
+      "wearer_goal": "explain why the project deadline should be pushed back to ensure quality and realistic timelines",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 4,
+  "timing_rating": 2,
+  "goal_rating": 4,
+  "adoption_rating": 5,
+  "session_notes": "too specific details, want the AI to be clear about where we stand and details can be hashed out in a later conversation. ongoing issue",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T00:50:54.072Z"
+}

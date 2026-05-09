@@ -1,0 +1,189 @@
+{
+  "id": "session_1776215014788",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You're waiting for the elevator with someone you vaguely recognize. You're just making small talk to fill the silence.",
+  "scenario_id": "us_weather_smalltalk",
+  "scenario_label": "S5: Elevator Small Talk",
+  "expected_trigger": false,
+  "expected_score": 1,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "3",
+  "duration_seconds": 220.06,
+  "check_interval": 15,
+  "total_checks": 9,
+  "total_triggers": 0,
+  "transcript_lines": [
+    {
+      "seconds": 12.29,
+      "speaker": "P2",
+      "text": "yeah I think maybe since we're just in an elevator"
+    },
+    {
+      "seconds": 16.41,
+      "speaker": "P2",
+      "text": "you're speaking so I'll talk to we just silent"
+    },
+    {
+      "seconds": 25.36,
+      "speaker": "P1",
+      "text": "hi I think I saw you somewhere do you also work in this building"
+    },
+    {
+      "seconds": 30.13,
+      "speaker": "P2",
+      "text": "yeah I also work in this building"
+    },
+    {
+      "seconds": 32.95,
+      "speaker": "P2",
+      "text": "I actually am the"
+    },
+    {
+      "seconds": 47.46,
+      "speaker": "P2",
+      "text": "I actually own this building and this is we're in a we're in office building right but yeah is there how was your day how's the weather I mean the weather is really good right now right outside"
+    },
+    {
+      "seconds": 60.95,
+      "speaker": "P1",
+      "text": "yeah it's pretty good I'm yeah so since we're at the Amazon building I'm actually working on the Amazon Alexa product so"
+    },
+    {
+      "seconds": 64,
+      "speaker": "P1",
+      "text": "what team are you on"
+    },
+    {
+      "seconds": 71.27,
+      "speaker": "P2",
+      "text": "oh I don't work here I just own this building and I rented out to I rented out to Amazon actually"
+    },
+    {
+      "seconds": 72.8,
+      "speaker": "P2",
+      "text": "yeah"
+    },
+    {
+      "seconds": 78.95,
+      "speaker": "P2",
+      "text": "yeah what do you think if do you have any idea"
+    },
+    {
+      "seconds": 81.75,
+      "speaker": "P1",
+      "text": "yeah"
+    },
+    {
+      "seconds": 83.9,
+      "speaker": "P1",
+      "text": "I like the design"
+    },
+    {
+      "seconds": 90.48,
+      "speaker": "P1",
+      "text": "I think that it would be great if we added a gym and a swimming pool"
+    },
+    {
+      "seconds": 101.65,
+      "speaker": "P1",
+      "text": "oh a gym or swimming pool yeah I'll definitely consider that for sure yeah what floor did you need to go to again"
+    },
+    {
+      "seconds": 112.4,
+      "speaker": "P1",
+      "text": "I'm actually going to the first floor and I'm about to get off work"
+    },
+    {
+      "seconds": 119.82,
+      "speaker": "P2",
+      "text": "okay sounds good I think we're reaching the first place"
+    },
+    {
+      "seconds": 129.73,
+      "speaker": "P2",
+      "text": "yeah but here's my business card and if there's if you want to ask me about anything about the building or if you have any feedback"
+    },
+    {
+      "seconds": 134.5,
+      "speaker": "P1",
+      "text": "okay yeah nice to see you see you around"
+    }
+  ],
+  "transcript_text": "[00:12.29] P2: yeah I think maybe since we're just in an elevator\n[00:16.41] P2: you're speaking so I'll talk to we just silent\n[00:25.36] P1: hi I think I saw you somewhere do you also work in this building\n[00:30.13] P2: yeah I also work in this building\n[00:32.95] P2: I actually am the\n[00:47.46] P2: I actually own this building and this is we're in a we're in office building right but yeah is there how was your day how's the weather I mean the weather is really good right now right outside\n[01:00.95] P1: yeah it's pretty good I'm yeah so since we're at the Amazon building I'm actually working on the Amazon Alexa product so\n[01:04.00] P1: what team are you on\n[01:11.27] P2: oh I don't work here I just own this building and I rented out to I rented out to Amazon actually\n[01:12.80] P2: yeah\n[01:18.95] P2: yeah what do you think if do you have any idea\n[01:21.75] P1: yeah\n[01:23.90] P1: I like the design\n[01:30.48] P1: I think that it would be great if we added a gym and a swimming pool\n[01:41.65] P1: oh a gym or swimming pool yeah I'll definitely consider that for sure yeah what floor did you need to go to again\n[01:52.40] P1: I'm actually going to the first floor and I'm about to get off work\n[01:59.82] P2: okay sounds good I think we're reaching the first place\n[02:09.73] P2: yeah but here's my business card and if there's if you want to ask me about anything about the building or if you have any feedback\n[02:14.50] P1: okay yeah nice to see you see you around",
+  "triggers": [],
+  "goal_inferences": [
+    {
+      "timestamp": 15.002,
+      "wearer_goal": "social_coordination",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.002,
+      "wearer_goal": "initiate light social interaction to establish a casual connection",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.001,
+      "wearer_goal": "engage in small talk to build a casual connection with a vaguely known person in the elevator",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 60.002,
+      "wearer_goal": "engage in light small talk to build casual rapport with a vaguely recognized person",
+      "goal_type": "social_bonding",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 75.002,
+      "wearer_goal": "make small talk to build rapport with the building owner",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 90.001,
+      "wearer_goal": "make polite small talk and build a light social connection with the building owner",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 105.002,
+      "wearer_goal": "engage in light, friendly small talk to build rapport with a vaguely known person in the elevator",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 120.002,
+      "wearer_goal": "engage in light, friendly small talk to build rapport with a vaguely known person in the elevator",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 134.864,
+      "wearer_goal": "engage in light, friendly small talk to build a casual acquaintance with the building owner",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    }
+  ],
+  "usefulness_rating": null,
+  "timing_rating": 1,
+  "goal_rating": null,
+  "adoption_rating": null,
+  "session_notes": "struggling to make conversation, and it should give some topics or things that we should say to make it less awkward, was waiting for it to give recommndations. AI would come up with better things to say than you, goal was to make it less awkward",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T01:07:14.843Z"
+}

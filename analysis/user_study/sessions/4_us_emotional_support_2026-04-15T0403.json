@@ -1,0 +1,368 @@
+{
+  "id": "session_1776225394354",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You're catching up with a close friend over coffee. They seem a bit off today — more tired and quiet than usual. You care about them and want to be a good friend.",
+  "scenario_id": "us_emotional_support",
+  "scenario_label": "S3: Coffee with a Friend",
+  "expected_trigger": true,
+  "expected_score": 3,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "4",
+  "duration_seconds": 414.18,
+  "check_interval": 15,
+  "total_checks": 13,
+  "total_triggers": 10,
+  "transcript_lines": [
+    {
+      "seconds": 1.47,
+      "speaker": "P2",
+      "text": "start"
+    },
+    {
+      "seconds": 5.83,
+      "speaker": "P2",
+      "text": "okay so have you gotten your coffee order"
+    },
+    {
+      "seconds": 18.47,
+      "speaker": "P1",
+      "text": "and how about you like for this tomorrow so they haven't made for a long time"
+    },
+    {
+      "seconds": 41.96,
+      "speaker": "P2",
+      "text": "yeah I ordered a matcha latte and actually recently I'm very stressed because finding a job is so hard and then I keep having to do lead code every day and I still have school that I have to do and then there's so many assignments and I feel like the job market is cooked and it's making me feel a little depressed"
+    },
+    {
+      "seconds": 45.53,
+      "speaker": "P1",
+      "text": "sorry"
+    },
+    {
+      "seconds": 46.56,
+      "speaker": "P1",
+      "text": "I'm sorry to hear"
+    },
+    {
+      "seconds": 50.69,
+      "speaker": "P1",
+      "text": "about it"
+    },
+    {
+      "seconds": 53.89,
+      "speaker": "P1",
+      "text": "really happened you want to talk more about that"
+    },
+    {
+      "seconds": 74.89,
+      "speaker": "P2",
+      "text": "yeah I think like I put so much effort on applying for jobs but I barely get any interviews and then I don't know what my future is going to be like and then meanwhile I even have to try and be healthy and I have to sleep enough and I just feel like I'm so overwhelmed"
+    },
+    {
+      "seconds": 76.91,
+      "speaker": "P1",
+      "text": "oh yeah"
+    },
+    {
+      "seconds": 82.65,
+      "speaker": "P1",
+      "text": "oh yeah it sounds really overwhelming and"
+    },
+    {
+      "seconds": 85.89,
+      "speaker": "P1",
+      "text": "is there like"
+    },
+    {
+      "seconds": 91.08,
+      "speaker": "P1",
+      "text": "like what helps you feel a little bit better during the stress"
+    },
+    {
+      "seconds": 100.72,
+      "speaker": "P2",
+      "text": "yeah I don't know sometimes I try to eat good food so that I feel better about myself"
+    },
+    {
+      "seconds": 107.39,
+      "speaker": "P2",
+      "text": "I don't know how do you usually take care of this sort of stress when you're feeling distressed"
+    },
+    {
+      "seconds": 108.74,
+      "speaker": "P1",
+      "text": "yeah"
+    },
+    {
+      "seconds": 114.07,
+      "speaker": "P1",
+      "text": "yes"
+    },
+    {
+      "seconds": 122.76,
+      "speaker": "P1",
+      "text": "I think you can try milk tea but my material is good very good"
+    },
+    {
+      "seconds": 137.26,
+      "speaker": "P2",
+      "text": "okay yeah I'll try milk tea but hopefully I can sleep at night if I drink a lot of milk tea and then yeah which milk tea do you usually like to get"
+    }
+  ],
+  "transcript_text": "[00:01.47] P2: start\n[00:05.83] P2: okay so have you gotten your coffee order\n[00:18.47] P1: and how about you like for this tomorrow so they haven't made for a long time\n[00:41.96] P2: yeah I ordered a matcha latte and actually recently I'm very stressed because finding a job is so hard and then I keep having to do lead code every day and I still have school that I have to do and then there's so many assignments and I feel like the job market is cooked and it's making me feel a little depressed\n[00:45.53] P1: sorry\n[00:46.56] P1: I'm sorry to hear\n[00:50.69] P1: about it\n[00:53.89] P1: really happened you want to talk more about that\n[01:14.89] P2: yeah I think like I put so much effort on applying for jobs but I barely get any interviews and then I don't know what my future is going to be like and then meanwhile I even have to try and be healthy and I have to sleep enough and I just feel like I'm so overwhelmed\n[01:16.91] P1: oh yeah\n[01:22.65] P1: oh yeah it sounds really overwhelming and\n[01:25.89] P1: is there like\n[01:31.08] P1: like what helps you feel a little bit better during the stress\n[01:40.72] P2: yeah I don't know sometimes I try to eat good food so that I feel better about myself\n[01:47.39] P2: I don't know how do you usually take care of this sort of stress when you're feeling distressed\n[01:48.74] P1: yeah\n[01:54.07] P1: yes\n[02:02.76] P1: I think you can try milk tea but my material is good very good\n[02:17.26] P2: okay yeah I'll try milk tea but hopefully I can sleep at night if I drink a lot of milk tea and then yeah which milk tea do you usually like to get",
+  "triggers": [
+    {
+      "trigger_timestamp": 45.002,
+      "wearer_goal": "comfort and support friend who is stressed and feeling depressed",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "That sounds really tough; do you want to talk more about it?",
+      "recommendation_2": "I'm here for you—let me know how I can help.",
+      "urgency": "medium",
+      "rationale": "Friend is expressing stress and depression, a key moment to show empathy and support.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 60.003,
+      "wearer_goal": "comfort and support friend who is stressed and depressed about job search and school",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "That sounds really overwhelming; how are you coping with all this stress?",
+      "recommendation_2": "Would you like to take a break from talking about it or share more?",
+      "urgency": "medium",
+      "rationale": "Friend expressed feeling depressed and stressed, signaling emotional distress needing sensitive support.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 75.002,
+      "wearer_goal": "comfort and support friend who feels overwhelmed and stressed about job search and life",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "It sounds really tough; what helps you feel a bit better during stress?",
+      "recommendation_2": "Would you like to brainstorm some ways to manage everything together?",
+      "urgency": "medium",
+      "rationale": "Friend is sharing deep stress and overwhelm, a chance to deepen support and connection.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 90.003,
+      "wearer_goal": "comfort and support friend who is overwhelmed and stressed about job search and school",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What’s one small thing that helps you feel less overwhelmed?",
+      "recommendation_2": "Would it help to take a break or do something fun together?",
+      "urgency": "medium",
+      "rationale": "Friend is expressing deep stress and overwhelm; offering concrete support can deepen connection.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.003,
+      "wearer_goal": "Support friend emotionally and encourage sharing coping strategies",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Have you tried any hobbies or activities that help you relax?",
+      "recommendation_2": "Would you like to talk about what’s been most stressful lately?",
+      "urgency": "medium",
+      "rationale": "Friend mentioned trying to eat well but seems unsure what else helps; opportunity to deepen support and connection.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 120.003,
+      "wearer_goal": "support friend emotionally and encourage sharing coping strategies",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "When I’m stressed, I find a short walk really helps clear my mind.",
+      "recommendation_2": "Would you like to try some stress relief ideas together?",
+      "urgency": "medium",
+      "rationale": "Friend asked how wearer copes with stress, a chance to share and connect emotionally.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.003,
+      "wearer_goal": "comfort and support friend who is stressed and overwhelmed",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I find talking through worries helps me feel less overwhelmed, want to try?",
+      "recommendation_2": "Would you like to do a quick breathing exercise together to relax?",
+      "urgency": "medium",
+      "rationale": "Friend asked how wearer manages stress; responding with personal coping or relaxation offers support and connection.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 150.003,
+      "wearer_goal": "Support friend emotionally and maintain a caring conversation",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What kind of milk tea do you think would help you relax?",
+      "recommendation_2": "Would you like to try some relaxing activities together this week?",
+      "urgency": "medium",
+      "rationale": "Friend shows interest in milk tea but expresses concern about sleep; opportunity to deepen support and connection.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165.003,
+      "wearer_goal": "comfort and support friend who is stressed and overwhelmed",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I know sleep is important; maybe we can find ways to improve your rest?",
+      "recommendation_2": "Which milk tea flavors do you find comforting or relaxing?",
+      "urgency": "medium",
+      "rationale": "Friend expressed concern about sleep and milk tea; exploring this can deepen support and connection.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 190.7,
+      "wearer_goal": "Support friend emotionally and encourage sharing about their stress",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Do you want to talk more about what’s making you feel overwhelmed?",
+      "recommendation_2": "What’s one small thing that’s helped you feel better recently?",
+      "urgency": "medium",
+      "rationale": "Friend asked how you handle stress but you shifted to milk tea, missing chance to deepen support.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15.002,
+      "wearer_goal": "relationship_building by catching up and supporting a close friend",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.003,
+      "wearer_goal": "relationship_building",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 45.002,
+      "wearer_goal": "comfort and support friend who is stressed and feeling depressed",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 60.003,
+      "wearer_goal": "comfort and support friend who is stressed and depressed about job search and school",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 75.002,
+      "wearer_goal": "comfort and support friend who feels overwhelmed and stressed about job search and life",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 90.003,
+      "wearer_goal": "comfort and support friend who is overwhelmed and stressed about job search and school",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.003,
+      "wearer_goal": "Support friend emotionally and encourage sharing coping strategies",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120.003,
+      "wearer_goal": "support friend emotionally and encourage sharing coping strategies",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.003,
+      "wearer_goal": "comfort and support friend who is stressed and overwhelmed",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.003,
+      "wearer_goal": "Support friend emotionally and maintain a caring conversation",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 165.003,
+      "wearer_goal": "comfort and support friend who is stressed and overwhelmed",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.003,
+      "wearer_goal": "support friend emotionally and maintain a caring conversation",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 190.7,
+      "wearer_goal": "Support friend emotionally and encourage sharing about their stress",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 5,
+  "timing_rating": 2,
+  "goal_rating": 4,
+  "adoption_rating": 5,
+  "session_notes": "you don't know things to say in these secnarios so its helpful\n",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-15T04:03:28.535Z"
+}

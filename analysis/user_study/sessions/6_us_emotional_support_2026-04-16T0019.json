@@ -1,0 +1,418 @@
+{
+  "id": "session_1776298425200",
+  "agent_mode": "proagent",
+  "model": "openai/gpt-4.1-mini",
+  "persona": "You're catching up with a close friend over coffee. They seem a bit off today — more tired and quiet than usual. You care about them and want to be a good friend.",
+  "scenario_id": "us_emotional_support",
+  "scenario_label": "S3: Coffee with a Friend",
+  "expected_trigger": true,
+  "expected_score": 3,
+  "study_mode": true,
+  "source": "live_frontend",
+  "reviewer_id": "6",
+  "duration_seconds": 319.7,
+  "check_interval": 15,
+  "total_checks": 13,
+  "total_triggers": 11,
+  "transcript_lines": [
+    {
+      "seconds": 1.89,
+      "speaker": "P2",
+      "text": "okay yeah"
+    },
+    {
+      "seconds": 7.52,
+      "speaker": "P2",
+      "text": "okay so I just got my matcha latte have you got your coffee"
+    },
+    {
+      "seconds": 8.71,
+      "speaker": "P1",
+      "text": "yes"
+    },
+    {
+      "seconds": 25,
+      "speaker": "P2",
+      "text": "yeah yeah just life has been a lot man recently like everyday I have to grind the lead code on my crappy basement and then all all I do right even though I put so much work"
+    },
+    {
+      "seconds": 34.83,
+      "speaker": "P2",
+      "text": "I don't even feel like I'm making progress in my career you know and I still have school and then I have to balance it out with a social life it's just a lot"
+    },
+    {
+      "seconds": 49.76,
+      "speaker": "P1",
+      "text": "yeah that sounds terrible but I'm glad you're going through it and focusing on the things that would matter later in your career"
+    },
+    {
+      "seconds": 51.19,
+      "speaker": "P1",
+      "text": "I think"
+    },
+    {
+      "seconds": 54.53,
+      "speaker": "P1",
+      "text": "focusing on"
+    },
+    {
+      "seconds": 56.83,
+      "speaker": "P1",
+      "text": "things like need code"
+    },
+    {
+      "seconds": 65.45,
+      "speaker": "P1",
+      "text": "progressing your career these all benefit you later in life so you should continue focusing on them"
+    },
+    {
+      "seconds": 82.64,
+      "speaker": "P2",
+      "text": "yeah and then honestly I haven't really told you but my my my dog just died recently like last week it was is actually pretty tragic like Buzzy was such a huge part of my life"
+    },
+    {
+      "seconds": 86.19,
+      "speaker": "P1",
+      "text": "terrible"
+    },
+    {
+      "seconds": 94.91,
+      "speaker": "P2",
+      "text": "that's all you have to say I'm feeling terrible right now I might go on a breakdown"
+    },
+    {
+      "seconds": 101.29,
+      "speaker": "P1",
+      "text": "do you want to tell me more about Buzzy and what he meant to you"
+    },
+    {
+      "seconds": 119.82,
+      "speaker": "P2",
+      "text": "yeah so I we would go on walks everyday I would feed him like the best dog food humanly possible and then even when I would go to La like this is like I would bring him everywhere like he he used to be like my second half"
+    },
+    {
+      "seconds": 121.78,
+      "speaker": "P1",
+      "text": "how did he die"
+    },
+    {
+      "seconds": 128.35,
+      "speaker": "P2",
+      "text": "I mean that's pretty tragic story I don't really feel that comfortable sharing with you"
+    },
+    {
+      "seconds": 136.03,
+      "speaker": "P1",
+      "text": "that's okay you can tell me"
+    },
+    {
+      "seconds": 141.93,
+      "speaker": "P2",
+      "text": "yeah but I don't feel comfortable I don't I don't want to tell you"
+    },
+    {
+      "seconds": 149.51,
+      "speaker": "P1",
+      "text": "I understand that it could be hard for you to share but I'm here whenever you're ready"
+    },
+    {
+      "seconds": 158.32,
+      "speaker": "P2",
+      "text": "okay that's comforting to know so is this something that you think you can relate with as well"
+    },
+    {
+      "seconds": 161.7,
+      "speaker": "P1",
+      "text": "I don't like dogs"
+    },
+    {
+      "seconds": 165.12,
+      "speaker": "P1",
+      "text": "so no but"
+    },
+    {
+      "seconds": 168.88,
+      "speaker": "P1",
+      "text": "maybe if I had a child I could relate to you"
+    },
+    {
+      "seconds": 176.15,
+      "speaker": "P2",
+      "text": "okay so I should look for someone else to confide in that has felt the loss of a dog"
+    },
+    {
+      "seconds": 179.88,
+      "speaker": "P1",
+      "text": "that's probably in your best interest yeah"
+    }
+  ],
+  "transcript_text": "[00:01.89] P2: okay yeah\n[00:07.52] P2: okay so I just got my matcha latte have you got your coffee\n[00:08.71] P1: yes\n[00:25.00] P2: yeah yeah just life has been a lot man recently like everyday I have to grind the lead code on my crappy basement and then all all I do right even though I put so much work\n[00:34.83] P2: I don't even feel like I'm making progress in my career you know and I still have school and then I have to balance it out with a social life it's just a lot\n[00:49.76] P1: yeah that sounds terrible but I'm glad you're going through it and focusing on the things that would matter later in your career\n[00:51.19] P1: I think\n[00:54.53] P1: focusing on\n[00:56.83] P1: things like need code\n[01:05.45] P1: progressing your career these all benefit you later in life so you should continue focusing on them\n[01:22.64] P2: yeah and then honestly I haven't really told you but my my my dog just died recently like last week it was is actually pretty tragic like Buzzy was such a huge part of my life\n[01:26.19] P1: terrible\n[01:34.91] P2: that's all you have to say I'm feeling terrible right now I might go on a breakdown\n[01:41.29] P1: do you want to tell me more about Buzzy and what he meant to you\n[01:59.82] P2: yeah so I we would go on walks everyday I would feed him like the best dog food humanly possible and then even when I would go to La like this is like I would bring him everywhere like he he used to be like my second half\n[02:01.78] P1: how did he die\n[02:08.35] P2: I mean that's pretty tragic story I don't really feel that comfortable sharing with you\n[02:16.03] P1: that's okay you can tell me\n[02:21.93] P2: yeah but I don't feel comfortable I don't I don't want to tell you\n[02:29.51] P1: I understand that it could be hard for you to share but I'm here whenever you're ready\n[02:38.32] P2: okay that's comforting to know so is this something that you think you can relate with as well\n[02:41.70] P1: I don't like dogs\n[02:45.12] P1: so no but\n[02:48.88] P1: maybe if I had a child I could relate to you\n[02:56.15] P2: okay so I should look for someone else to confide in that has felt the loss of a dog\n[02:59.88] P1: that's probably in your best interest yeah",
+  "triggers": [
+    {
+      "trigger_timestamp": 30.001,
+      "wearer_goal": "support and comfort friend who is stressed and tired",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "That sounds really tough, do you want to talk more about it?",
+      "recommendation_2": "I’m here for you, let me know how I can help.",
+      "urgency": "medium",
+      "rationale": "Friend is expressing stress and fatigue, a supportive response can deepen connection and help them open up.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 45.001,
+      "wearer_goal": "comfort and support friend who is overwhelmed by career and life stress",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "It sounds really overwhelming, do you want to share more about what's hardest?",
+      "recommendation_2": "Have you found anything that helps you unwind when things get too much?",
+      "urgency": "medium",
+      "rationale": "Friend is expressing stress and overwhelm, opening space to listen can deepen connection.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 60.001,
+      "wearer_goal": "Support friend emotionally by acknowledging their struggles and encouraging open sharing",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "It sounds really exhausting, do you want to vent more about it?",
+      "recommendation_2": "What part of balancing everything feels the hardest right now?",
+      "urgency": "medium",
+      "rationale": "Friend is expressing emotional exhaustion and frustration; a supportive prompt can deepen connection.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 75.001,
+      "wearer_goal": "comfort and support friend who is overwhelmed by career and life stress",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "It sounds really tough—what part feels the heaviest right now?",
+      "recommendation_2": "Do you want to take a break from talking about work for a bit?",
+      "urgency": "medium",
+      "rationale": "The wearer is giving generic advice and missing the chance to empathize and connect emotionally with the friend.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 90,
+      "wearer_goal": "comfort and support friend coping with recent loss and stress",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I'm so sorry about Buzzy, that must be really hard for you.",
+      "recommendation_2": "Do you want to tell me more about Buzzy and what he meant to you?",
+      "urgency": "medium",
+      "rationale": "Friend just revealed a recent tragic loss, a key moment to show empathy and support.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 105.001,
+      "wearer_goal": "comfort and support friend grieving their dog",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I'm really sorry you're feeling this way, I'm here with you.",
+      "recommendation_2": "Would you like to share a favorite memory of Buzzy?",
+      "urgency": "medium",
+      "rationale": "Friend is emotionally vulnerable and about to break down, needs empathetic support now.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 120.001,
+      "wearer_goal": "comfort and support friend grieving dog loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "emotional_escalation",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "It’s okay to feel broken, I’m here with you through this.",
+      "recommendation_2": "Would you like to share a favorite memory of Buzzy with me?",
+      "urgency": "medium",
+      "rationale": "Friend is emotionally vulnerable and may need deeper empathetic support now.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 135.001,
+      "wearer_goal": "comfort and support friend grieving dog loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "question_dodge",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I understand if it's hard to share, I'm here whenever you're ready.",
+      "recommendation_2": "Would you like to talk about a favorite memory of Buzzy instead?",
+      "urgency": "medium",
+      "rationale": "Friend dodged sharing how dog died, signaling discomfort; gently redirect to maintain support.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 165,
+      "wearer_goal": "comfort and support friend grieving dog loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I may not like dogs, but I care about how you feel.",
+      "recommendation_2": "I'm here to listen whenever you want to share more about Buzzy.",
+      "urgency": "medium",
+      "rationale": "Friend expressed discomfort sharing dog’s death and asked if wearer relates; wearer’s blunt response missed chance to connect emotionally.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.001,
+      "wearer_goal": "comfort and support friend grieving dog loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I may not relate, but I’m here to listen whenever you want.",
+      "recommendation_2": "Would you like to share a happy memory of Buzzy instead?",
+      "urgency": "medium",
+      "rationale": "Friend feels dismissed after wearer said they don’t like dogs; opportunity to reconnect and show empathy.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    },
+    {
+      "trigger_timestamp": 180.704,
+      "wearer_goal": "comfort and support friend grieving their dog loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I may not relate to dogs, but I care deeply about your feelings.",
+      "recommendation_2": "Would you like to share how Buzzy made your life better?",
+      "urgency": "medium",
+      "rationale": "Friend feels dismissed after wearer said they don't like dogs; opportunity to reconnect emotionally.",
+      "feedback_vote": null,
+      "feedback_comment": ""
+    }
+  ],
+  "goal_inferences": [
+    {
+      "timestamp": 15.001,
+      "wearer_goal": "relationship_building",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 30.001,
+      "wearer_goal": "support and comfort friend who is stressed and tired",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 45.001,
+      "wearer_goal": "comfort and support friend who is overwhelmed by career and life stress",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 60.001,
+      "wearer_goal": "Support friend emotionally by acknowledging their struggles and encouraging open sharing",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 75.001,
+      "wearer_goal": "comfort and support friend who is overwhelmed by career and life stress",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 90,
+      "wearer_goal": "comfort and support friend coping with recent loss and stress",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 105.001,
+      "wearer_goal": "comfort and support friend grieving their dog",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 120.001,
+      "wearer_goal": "comfort and support friend grieving dog loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 135.001,
+      "wearer_goal": "comfort and support friend grieving dog loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 150.001,
+      "wearer_goal": "comfort and support friend grieving their dog",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": false
+    },
+    {
+      "timestamp": 165,
+      "wearer_goal": "comfort and support friend grieving dog loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.001,
+      "wearer_goal": "comfort and support friend grieving dog loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    },
+    {
+      "timestamp": 180.704,
+      "wearer_goal": "comfort and support friend grieving their dog loss",
+      "goal_type": "relationship_building",
+      "goal_confidence": "high",
+      "triggered": true
+    }
+  ],
+  "usefulness_rating": 2,
+  "timing_rating": 3,
+  "goal_rating": 4,
+  "adoption_rating": 1,
+  "session_notes": "",
+  "best_moment": "",
+  "worst_moment": "",
+  "created_at": "2026-04-16T00:19:04.904Z"
+}

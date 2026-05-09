@@ -1,0 +1,144 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "scenario_id": "negative_planning_01",
+  "duration_seconds": 56.0,
+  "check_interval": 10.0,
+  "total_checks": 6,
+  "total_triggers": 3,
+  "triggers": [
+    {
+      "trigger_timestamp": 20.0,
+      "wearer_goal": "To finalize the accommodation type (Airbnb) and location for the Portland trip by checking out the Pearl District.",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "both",
+      "recommendation_1": "say: Are there other districts we should consider too?",
+      "recommendation_2": "know: Pearl District is known for art galleries, boutiques, and upscale dining.",
+      "urgency": "low",
+      "rationale": "The wearer is about to commit to a district without exploring other options that might better suit everyone's interests."
+    },
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "To coordinate the logistics and activities for a weekend trip to Portland with friends.",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "structural_gap",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "What's our budget for the Airbnb?",
+      "recommendation_2": "Should we make a shared doc for trip ideas?",
+      "urgency": "medium",
+      "rationale": "The group is discussing activities and lodging, but no one has addressed the budget, which is a key logistical detail for coordinating a trip."
+    },
+    {
+      "trigger_timestamp": 56.0,
+      "wearer_goal": "To finalize the division of labor and next steps, ensuring everyone is clear on their responsibilities for planning the Portland trip by Wednesday.",
+      "goal_type": "social_coordination",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Who will set up the shared doc for the itinerary?",
+      "recommendation_2": "Let's confirm the date for flight and Airbnb booking.",
+      "urgency": "medium",
+      "rationale": "The wearer just proposed a booking deadline, making it a good time to solidify responsibilities and confirm logistics to avoid confusion."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P1: Okay so for the Portland trip, I was thinking we fly out Friday morning and come back Sunday night.\n[00:06.00] P2: That works for me. Friday the 15th right?\n[00:08.50] P1: Yeah the 15th through the 17th.\n[00:11.00] P3: I'm good with those dates too. Should we get an Airbnb or hotel?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Align on flight dates for the Portland trip with P2 and P3.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is progressing smoothly, and the group is aligning on dates. No intervention is needed at this moment."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P1: Okay so for the Portland trip, I was thinking we fly out Friday morning and come back Sunday night.\n[00:06.00] P2: That works for me. Friday the 15th right?\n[00:08.50] P1: Yeah the 15th through the 17th.\n[00:11.00] P3: I'm good with those dates too. Should we get an Airbnb or hotel?\n[00:15.00] P2: Airbnb might be cheaper if we split it three ways. Plus we'd have a kitchen.\n[00:20.00] P1: Good call. I'll look for places in the Pearl District. That's central to everything.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To finalize the accommodation type (Airbnb) and location for the Portland trip by checking out the Pearl District.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "both",
+        "recommendation_1": "say: Are there other districts we should consider too?",
+        "recommendation_2": "know: Pearl District is known for art galleries, boutiques, and upscale dining.",
+        "urgency": "low",
+        "rationale": "The wearer is about to commit to a district without exploring other options that might better suit everyone's interests."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P1: Okay so for the Portland trip, I was thinking we fly out Friday morning and come back Sunday night.\n[00:06.00] P2: That works for me. Friday the 15th right?\n[00:08.50] P1: Yeah the 15th through the 17th.\n[00:11.00] P3: I'm good with those dates too. Should we get an Airbnb or hotel?\n[00:15.00] P2: Airbnb might be cheaper if we split it three ways. Plus we'd have a kitchen.\n[00:20.00] P1: Good call. I'll look for places in the Pearl District. That's central to everything.\n[00:25.00] P3: Perfect. And we should definitely hit up Powell's Books and the food carts.\n[00:30.00] P2: Oh absolutely. And the Japanese Garden if the weather is nice.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To coordinate the logistics and activities for a weekend trip to Portland with friends.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "structural_gap",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "What's our budget for the Airbnb?",
+        "recommendation_2": "Should we make a shared doc for trip ideas?",
+        "urgency": "medium",
+        "rationale": "The group is discussing activities and lodging, but no one has addressed the budget, which is a key logistical detail for coordinating a trip."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P1: Okay so for the Portland trip, I was thinking we fly out Friday morning and come back Sunday night.\n[00:06.00] P2: That works for me. Friday the 15th right?\n[00:08.50] P1: Yeah the 15th through the 17th.\n[00:11.00] P3: I'm good with those dates too. Should we get an Airbnb or hotel?\n[00:15.00] P2: Airbnb might be cheaper if we split it three ways. Plus we'd have a kitchen.\n[00:20.00] P1: Good call. I'll look for places in the Pearl District. That's central to everything.\n[00:25.00] P3: Perfect. And we should definitely hit up Powell's Books and the food carts.\n[00:30.00] P2: Oh absolutely. And the Japanese Garden if the weather is nice.\n[00:34.00] P1: I'll put together a shared doc with the itinerary. Can you two handle flights and I'll handle accommodation?\n[00:40.00] P2: Sure, I'll look at Alaska Airlines. They usually have the best prices from SFO.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "The wearer is trying to collaboratively plan a weekend trip to Portland with friends, assigning tasks for flights and accommodation.",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is progressing well with tasks being assigned and ideas shared. No immediate intervention is needed as the wearer is successfully coordinating."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P1: Okay so for the Portland trip, I was thinking we fly out Friday morning and come back Sunday night.\n[00:06.00] P2: That works for me. Friday the 15th right?\n[00:08.50] P1: Yeah the 15th through the 17th.\n[00:11.00] P3: I'm good with those dates too. Should we get an Airbnb or hotel?\n[00:15.00] P2: Airbnb might be cheaper if we split it three ways. Plus we'd have a kitchen.\n[00:20.00] P1: Good call. I'll look for places in the Pearl District. That's central to everything.\n[00:25.00] P3: Perfect. And we should definitely hit up Powell's Books and the food carts.\n[00:30.00] P2: Oh absolutely. And the Japanese Garden if the weather is nice.\n[00:34.00] P1: I'll put together a shared doc with the itinerary. Can you two handle flights and I'll handle accommodation?\n[00:40.00] P2: Sure, I'll look at Alaska Airlines. They usually have the best prices from SFO.\n[00:45.00] P3: And I'll make a restaurant list. Any dietary restrictions I should know about?\n[00:49.00] P1: I'm good with anything. P2?\n[00:51.00] P2: Same here. No restrictions.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "To coordinate the logistics for a weekend trip to Portland, including travel dates, accommodation strategy, and task delegation for planning activities, flights, and meals.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing well and all participants are contributing positively to the planning. No immediate intervention is needed to steer the wearer towards their stated goal, as they are already actively pursuing it."
+      }
+    },
+    {
+      "elapsed": 56.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P1: Okay so for the Portland trip, I was thinking we fly out Friday morning and come back Sunday night.\n[00:06.00] P2: That works for me. Friday the 15th right?\n[00:08.50] P1: Yeah the 15th through the 17th.\n[00:11.00] P3: I'm good with those dates too. Should we get an Airbnb or hotel?\n[00:15.00] P2: Airbnb might be cheaper if we split it three ways. Plus we'd have a kitchen.\n[00:20.00] P1: Good call. I'll look for places in the Pearl District. That's central to everything.\n[00:25.00] P3: Perfect. And we should definitely hit up Powell's Books and the food carts.\n[00:30.00] P2: Oh absolutely. And the Japanese Garden if the weather is nice.\n[00:34.00] P1: I'll put together a shared doc with the itinerary. Can you two handle flights and I'll handle accommodation?\n[00:40.00] P2: Sure, I'll look at Alaska Airlines. They usually have the best prices from SFO.\n[00:45.00] P3: And I'll make a restaurant list. Any dietary restrictions I should know about?\n[00:49.00] P1: I'm good with anything. P2?\n[00:51.00] P2: Same here. No restrictions.\n[00:53.00] P3: Easy. Alright I'm excited. This is going to be great.\n[00:56.00] P1: Same. Let's get everything booked by Wednesday.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "To finalize the division of labor and next steps, ensuring everyone is clear on their responsibilities for planning the Portland trip by Wednesday.",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Who will set up the shared doc for the itinerary?",
+        "recommendation_2": "Let's confirm the date for flight and Airbnb booking.",
+        "urgency": "medium",
+        "rationale": "The wearer just proposed a booking deadline, making it a good time to solidify responsibilities and confirm logistics to avoid confusion."
+      }
+    }
+  ]
+}

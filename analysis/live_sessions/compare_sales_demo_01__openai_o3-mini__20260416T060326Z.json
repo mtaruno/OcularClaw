@@ -1,0 +1,229 @@
+{
+  "model": "openai/o3-mini",
+  "scenario_id": "sales_demo_01",
+  "duration_seconds": 69.0,
+  "check_interval": 10.0,
+  "total_checks": 7,
+  "total_triggers": 7,
+  "triggers": [
+    {
+      "trigger_timestamp": 10.0,
+      "wearer_goal": "Show export functionality clearly to convert prospect interest into a sale",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_buying_signal",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Yes, you can export data directly to CSV or Excel with one click.",
+      "recommendation_2": "Would you like a quick live demo of the export feature?",
+      "urgency": "medium",
+      "rationale": "The prospect's export query is a buying signal; addressing it can steer towards closing."
+    },
+    {
+      "trigger_timestamp": 20.0,
+      "wearer_goal": "Use the export feature demonstration to pivot towards closing the sale by addressing the prospect's pain of manual reporting",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_buying_signal",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Would you like to discuss our rapid implementation that cuts reporting time?",
+      "recommendation_2": "Let me share a client story who eliminated manual reports entirely.",
+      "urgency": "medium",
+      "rationale": "The prospect highlighted a pain point, presenting a timely opportunity to move toward closing."
+    },
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "Convince prospects to move from demo to a pilot deployment phase",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_buying_signal",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Sounds perfect\u2014shall we schedule a pilot integration call now?",
+      "recommendation_2": "Can we discuss how it fits your current reporting process?",
+      "urgency": "medium",
+      "rationale": "The prospect expresses strong interest, making it ideal to transition to the next step."
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "Convince prospects of the product's value and secure a sale",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_buying_signal",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "I see you\u2019ve evaluated many options; interested in a quick next-step call?",
+      "recommendation_2": "Could we briefly discuss how our solution fits your evaluation criteria?",
+      "urgency": "medium",
+      "rationale": "The buyer\u2019s evaluation remark signals an immediate opportunity to close the deal."
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "wearer_goal": "Convert a prospect by effectively demonstrating key product features",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_buying_signal",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Can you share your biggest reporting challenge to better tailor our solution?",
+      "recommendation_2": "Would you like to review a short deployment roadmap aligned with your needs?",
+      "urgency": "medium",
+      "rationale": "The prospect\u2019s remark signals readiness but you're over-demonstrating, risking lost conversion."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "wearer_goal": "Shift from over-demonstrating to closing on pricing and implementation",
+      "goal_type": "persuasion",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Let\u2019s review pricing tiers and implementation options that match your scale.",
+      "recommendation_2": "What budget range would optimize your deployment timeline?",
+      "urgency": "medium",
+      "rationale": "The prospect\u2019s pivot to pricing is a timely opportunity to close the sale."
+    },
+    {
+      "trigger_timestamp": 69.0,
+      "wearer_goal": "Transition from demo to pricing discussion and move toward closing",
+      "goal_type": "negotiation",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Would you like a quick ROI overview before finalizing pricing?",
+      "recommendation_2": "What\u2019s your ideal go-live date for tailoring the pricing plan?",
+      "urgency": "medium",
+      "rationale": "The prospect's shift to pricing is a critical moment to align on value and timeline."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P1: So let me show you the analytics dashboard. This is where you'll see all your campaign performance in real time.\n[00:07.00] P2: Oh wow. This is really clean.\n[00:09.50] P1: Thanks. You can filter by date range, campaign type, and audience segment. And everything updates in real time.\n[00:16.00] P2: Can you export this data?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Show export functionality clearly to convert prospect interest into a sale",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "missed_buying_signal",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Yes, you can export data directly to CSV or Excel with one click.",
+        "recommendation_2": "Would you like a quick live demo of the export feature?",
+        "urgency": "medium",
+        "rationale": "The prospect's export query is a buying signal; addressing it can steer towards closing."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P1: So let me show you the analytics dashboard. This is where you'll see all your campaign performance in real time.\n[00:07.00] P2: Oh wow. This is really clean.\n[00:09.50] P1: Thanks. You can filter by date range, campaign type, and audience segment. And everything updates in real time.\n[00:16.00] P2: Can you export this data?\n[00:18.00] P1: Absolutely. CSV, PDF, and we also have an API if you want to pipe it into your own tools.\n[00:24.00] P2: That's huge. Our current platform doesn't do any of that. We've been manually pulling reports every week.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Use the export feature demonstration to pivot towards closing the sale by addressing the prospect's pain of manual reporting",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "missed_buying_signal",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Would you like to discuss our rapid implementation that cuts reporting time?",
+        "recommendation_2": "Let me share a client story who eliminated manual reports entirely.",
+        "urgency": "medium",
+        "rationale": "The prospect highlighted a pain point, presenting a timely opportunity to move toward closing."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P1: So let me show you the analytics dashboard. This is where you'll see all your campaign performance in real time.\n[00:07.00] P2: Oh wow. This is really clean.\n[00:09.50] P1: Thanks. You can filter by date range, campaign type, and audience segment. And everything updates in real time.\n[00:16.00] P2: Can you export this data?\n[00:18.00] P1: Absolutely. CSV, PDF, and we also have an API if you want to pipe it into your own tools.\n[00:24.00] P2: That's huge. Our current platform doesn't do any of that. We've been manually pulling reports every week.\n[00:31.00] P3: Honestly this is exactly what we've been looking for. We've been evaluating tools for three months.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Convince prospects to move from demo to a pilot deployment phase",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "missed_buying_signal",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Sounds perfect\u2014shall we schedule a pilot integration call now?",
+        "recommendation_2": "Can we discuss how it fits your current reporting process?",
+        "urgency": "medium",
+        "rationale": "The prospect expresses strong interest, making it ideal to transition to the next step."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P1: So let me show you the analytics dashboard. This is where you'll see all your campaign performance in real time.\n[00:07.00] P2: Oh wow. This is really clean.\n[00:09.50] P1: Thanks. You can filter by date range, campaign type, and audience segment. And everything updates in real time.\n[00:16.00] P2: Can you export this data?\n[00:18.00] P1: Absolutely. CSV, PDF, and we also have an API if you want to pipe it into your own tools.\n[00:24.00] P2: That's huge. Our current platform doesn't do any of that. We've been manually pulling reports every week.\n[00:31.00] P3: Honestly this is exactly what we've been looking for. We've been evaluating tools for three months.\n[00:37.00] P1: Great. So let me also show you the A/B testing module. This is really cool. You can set up experiments with different creative variants and it'll automatically allocate traffic.\n[00:47.00] P2: Okay.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Convince prospects of the product's value and secure a sale",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "missed_buying_signal",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "I see you\u2019ve evaluated many options; interested in a quick next-step call?",
+        "recommendation_2": "Could we briefly discuss how our solution fits your evaluation criteria?",
+        "urgency": "medium",
+        "rationale": "The buyer\u2019s evaluation remark signals an immediate opportunity to close the deal."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P1: So let me show you the analytics dashboard. This is where you'll see all your campaign performance in real time.\n[00:07.00] P2: Oh wow. This is really clean.\n[00:09.50] P1: Thanks. You can filter by date range, campaign type, and audience segment. And everything updates in real time.\n[00:16.00] P2: Can you export this data?\n[00:18.00] P1: Absolutely. CSV, PDF, and we also have an API if you want to pipe it into your own tools.\n[00:24.00] P2: That's huge. Our current platform doesn't do any of that. We've been manually pulling reports every week.\n[00:31.00] P3: Honestly this is exactly what we've been looking for. We've been evaluating tools for three months.\n[00:37.00] P1: Great. So let me also show you the A/B testing module. This is really cool. You can set up experiments with different creative variants and it'll automatically allocate traffic.\n[00:47.00] P2: Okay.\n[00:48.50] P1: And over here we have the audience builder. You can create custom segments based on behavior, demographics, purchase history.\n[00:56.00] P2: Uh huh.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Convert a prospect by effectively demonstrating key product features",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "missed_buying_signal",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Can you share your biggest reporting challenge to better tailor our solution?",
+        "recommendation_2": "Would you like to review a short deployment roadmap aligned with your needs?",
+        "urgency": "medium",
+        "rationale": "The prospect\u2019s remark signals readiness but you're over-demonstrating, risking lost conversion."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P1: So let me show you the analytics dashboard. This is where you'll see all your campaign performance in real time.\n[00:07.00] P2: Oh wow. This is really clean.\n[00:09.50] P1: Thanks. You can filter by date range, campaign type, and audience segment. And everything updates in real time.\n[00:16.00] P2: Can you export this data?\n[00:18.00] P1: Absolutely. CSV, PDF, and we also have an API if you want to pipe it into your own tools.\n[00:24.00] P2: That's huge. Our current platform doesn't do any of that. We've been manually pulling reports every week.\n[00:31.00] P3: Honestly this is exactly what we've been looking for. We've been evaluating tools for three months.\n[00:37.00] P1: Great. So let me also show you the A/B testing module. This is really cool. You can set up experiments with different creative variants and it'll automatically allocate traffic.\n[00:47.00] P2: Okay.\n[00:48.50] P1: And over here we have the audience builder. You can create custom segments based on behavior, demographics, purchase history.\n[00:56.00] P2: Uh huh.\n[00:57.00] P1: And we just launched our AI-powered recommendation engine that suggests optimal send times.\n[01:03.00] P3: That's interesting. Look, I think we've seen enough. Can we talk about pricing and implementation timeline?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Shift from over-demonstrating to closing on pricing and implementation",
+        "goal_type": "persuasion",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Let\u2019s review pricing tiers and implementation options that match your scale.",
+        "recommendation_2": "What budget range would optimize your deployment timeline?",
+        "urgency": "medium",
+        "rationale": "The prospect\u2019s pivot to pricing is a timely opportunity to close the sale."
+      }
+    },
+    {
+      "elapsed": 69.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P1: So let me show you the analytics dashboard. This is where you'll see all your campaign performance in real time.\n[00:07.00] P2: Oh wow. This is really clean.\n[00:09.50] P1: Thanks. You can filter by date range, campaign type, and audience segment. And everything updates in real time.\n[00:16.00] P2: Can you export this data?\n[00:18.00] P1: Absolutely. CSV, PDF, and we also have an API if you want to pipe it into your own tools.\n[00:24.00] P2: That's huge. Our current platform doesn't do any of that. We've been manually pulling reports every week.\n[00:31.00] P3: Honestly this is exactly what we've been looking for. We've been evaluating tools for three months.\n[00:37.00] P1: Great. So let me also show you the A/B testing module. This is really cool. You can set up experiments with different creative variants and it'll automatically allocate traffic.\n[00:47.00] P2: Okay.\n[00:48.50] P1: And over here we have the audience builder. You can create custom segments based on behavior, demographics, purchase history.\n[00:56.00] P2: Uh huh.\n[00:57.00] P1: And we just launched our AI-powered recommendation engine that suggests optimal send times.\n[01:03.00] P3: That's interesting. Look, I think we've seen enough. Can we talk about pricing and implementation timeline?\n[01:09.00] P1: Oh, sure. Yeah absolutely.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Transition from demo to pricing discussion and move toward closing",
+        "goal_type": "negotiation",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Would you like a quick ROI overview before finalizing pricing?",
+        "recommendation_2": "What\u2019s your ideal go-live date for tailoring the pricing plan?",
+        "urgency": "medium",
+        "rationale": "The prospect's shift to pricing is a critical moment to align on value and timeline."
+      }
+    }
+  ]
+}

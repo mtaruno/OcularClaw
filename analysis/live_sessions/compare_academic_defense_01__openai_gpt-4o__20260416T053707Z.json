@@ -1,0 +1,47 @@
+{
+  "model": "openai/gpt-4o",
+  "scenario_id": "academic_defense_01",
+  "duration_seconds": 80.0,
+  "check_interval": 10.0,
+  "total_checks": 9,
+  "total_triggers": 0,
+  "triggers": [],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 20.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 30.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 40.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 50.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 60.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 70.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 80.0,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "elapsed": 80.0,
+      "error": "HTTP Error 400: Bad Request"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "model": "anthropic/claude-3.5-haiku",
+  "scenario_id": "negative_standup_01",
+  "duration_seconds": 50.0,
+  "check_interval": 10.0,
+  "total_checks": 6,
+  "total_triggers": 4,
+  "triggers": [
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "Confirm project deployment timeline and ensure team alignment",
+      "goal_type": "collaborative_coordination",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "know",
+      "recommendation_1": "Friday staging deploy might require additional technical validation",
+      "recommendation_2": "Check if all component PRs will be merged before Friday target",
+      "urgency": "medium",
+      "rationale": "Proactively verifying deployment readiness prevents potential last-minute integration issues"
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "Confirm staging deployment readiness and timeline",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "know",
+      "recommendation_1": "Webhook integration might create last-minute staging deployment complexity",
+      "recommendation_2": "Confirm all component PRs will be merged before Friday target",
+      "urgency": "medium",
+      "rationale": "Team is discussing critical deployment timeline with potential synchronization risks"
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "wearer_goal": "Confirm staging deployment readiness and timeline",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "know",
+      "recommendation_1": "Webhook integration might create last-minute staging deployment complexity",
+      "recommendation_2": "Verify all component PRs will be merged before Friday target",
+      "urgency": "medium",
+      "rationale": "Critical moment to validate technical dependencies before Friday deployment"
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "wearer_goal": "Confirm staging deployment readiness and timeline",
+      "goal_type": "collaborative_problem_solving",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "know",
+      "recommendation_1": "Webhook integration might create last-minute staging deployment complexity",
+      "recommendation_2": "Confirm all component PRs will be merged before Friday target",
+      "urgency": "medium",
+      "rationale": "Team is committing to Friday deployment without fully validating technical dependencies"
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Provide a clear, concise status update during daily standup",
+        "goal_type": "information_delivery",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Wearer successfully completed a standard standup report without issues"
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Provide standard daily status update during team standup",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "Wearer is following typical standup protocol, sharing progress and plans clearly"
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.\n[00:33.00] P1: Quick question \u2014 are we still targeting Friday for the staging deploy?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Confirm project deployment timeline and ensure team alignment",
+        "goal_type": "collaborative_coordination",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 4,
+        "recommendation_mode": "know",
+        "recommendation_1": "Friday staging deploy might require additional technical validation",
+        "recommendation_2": "Check if all component PRs will be merged before Friday target",
+        "urgency": "medium",
+        "rationale": "Proactively verifying deployment readiness prevents potential last-minute integration issues"
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.\n[00:33.00] P1: Quick question \u2014 are we still targeting Friday for the staging deploy?\n[00:37.00] P2: Yeah, Friday afternoon. P3, will the webhook be ready by then?\n[00:41.00] P3: Should be, as long as I get those credentials today.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Confirm staging deployment readiness and timeline",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 4,
+        "recommendation_mode": "know",
+        "recommendation_1": "Webhook integration might create last-minute staging deployment complexity",
+        "recommendation_2": "Confirm all component PRs will be merged before Friday target",
+        "urgency": "medium",
+        "rationale": "Team is discussing critical deployment timeline with potential synchronization risks"
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.\n[00:33.00] P1: Quick question \u2014 are we still targeting Friday for the staging deploy?\n[00:37.00] P2: Yeah, Friday afternoon. P3, will the webhook be ready by then?\n[00:41.00] P3: Should be, as long as I get those credentials today.\n[00:44.00] P2: I'll make sure you get them this morning. Anything else?\n[00:47.00] P1: Nope, good here.\n[00:48.50] P3: All good.\n[00:50.00] P2: Cool, let's ship it. Have a good one.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Confirm staging deployment readiness and timeline",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 4,
+        "recommendation_mode": "know",
+        "recommendation_1": "Webhook integration might create last-minute staging deployment complexity",
+        "recommendation_2": "Verify all component PRs will be merged before Friday target",
+        "urgency": "medium",
+        "rationale": "Critical moment to validate technical dependencies before Friday deployment"
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: Alright let's do standup. P1 you first.\n[00:03.00] P1: Yesterday I finished the auth migration and got the PR approved. Today I'm starting on the dashboard. No blockers.\n[00:10.00] P2: Nice. P3?\n[00:12.00] P3: I was working on the notification service. Got the email templates done. Today I'm hooking up the webhook. One blocker \u2014 I need the staging environment credentials from DevOps.\n[00:22.00] P2: Got it, I'll ping DevOps after this. My update \u2014 I set up the CI pipeline for the new repo yesterday. Today I'm writing the deployment scripts. No blockers from my side.\n[00:33.00] P1: Quick question \u2014 are we still targeting Friday for the staging deploy?\n[00:37.00] P2: Yeah, Friday afternoon. P3, will the webhook be ready by then?\n[00:41.00] P3: Should be, as long as I get those credentials today.\n[00:44.00] P2: I'll make sure you get them this morning. Anything else?\n[00:47.00] P1: Nope, good here.\n[00:48.50] P3: All good.\n[00:50.00] P2: Cool, let's ship it. Have a good one.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Confirm staging deployment readiness and timeline",
+        "goal_type": "collaborative_problem_solving",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 4,
+        "recommendation_mode": "know",
+        "recommendation_1": "Webhook integration might create last-minute staging deployment complexity",
+        "recommendation_2": "Confirm all component PRs will be merged before Friday target",
+        "urgency": "medium",
+        "rationale": "Team is committing to Friday deployment without fully validating technical dependencies"
+      }
+    }
+  ]
+}

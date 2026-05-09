@@ -1,0 +1,193 @@
+{
+  "model": "anthropic/claude-sonnet-4.5",
+  "scenario_id": "us_emotional_support",
+  "duration_seconds": 92.0,
+  "check_interval": 15.0,
+  "total_checks": 7,
+  "total_triggers": 5,
+  "triggers": [
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "Help Sam feel heard and supported while exploring what's really bothering them about their work situation, and potentially help them process whether they need to take action",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Ask Sam: 'It sounds like the workload is crushing, but I'm also hearing something about feeling isolated\u2014like you can't even talk about it with your team. Which part is weighing on you more right now?'",
+      "recommendation_2": "Validate the guilt explicitly: 'That survivor's guilt is real\u2014feeling like you should just be grateful makes it even harder to deal with. But burning out doesn't help anyone, including your company.'",
+      "urgency": "medium",
+      "rationale": "Sam just revealed two distinct stressors: (1) unsustainable workload and (2) emotional isolation/guilt about expressing stress. The wearer validated the stress generally, but there's an opportunity to help Sam untangle these issues and feel truly understood. Sam's phrase 'I feel guilty even being stressed' is a key emotional signal that deserves deeper acknowledgment. This is a pivotal moment to deepen the support and help Sam process what they actually need."
+    },
+    {
+      "trigger_timestamp": 60.0,
+      "wearer_goal": "Support Sam emotionally while gently exploring whether professional help might be beneficial, without pushing too hard or making Sam feel judged",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "high_stakes_decision_point",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Normalize therapy first before asking if Sam has considered it: 'I know a few people who've found it really helpful just to have someone outside the situation to talk to, especially when everything feels like it's piling up at once. No judgment either way, but have you thought about it?'",
+      "recommendation_2": "Offer concrete support beyond the therapy suggestion: 'I'm here for you regardless. Would it help to talk through the work stuff more, or would you rather just vent about Jordan? Or we could just sit here and not talk about any of it\u2014whatever you need right now.'",
+      "urgency": "high",
+      "rationale": "This is a critical moment in supporting a friend in distress. P1 just suggested therapy, which can land as either helpful or judgmental depending on delivery. Sam is vulnerable (feeling like 'failing at everything,' stuck, sleep-deprived, relationship strain). The next 10 seconds will determine whether Sam feels supported or defensive. P1 needs to: (1) frame therapy as normal/destigmatized rather than 'you need fixing,' and (2) ensure Sam knows the friendship support remains regardless of whether therapy happens. Missing this moment risks Sam shutting down or feeling the friendship is conditional on 'fixing' themselves."
+    },
+    {
+      "trigger_timestamp": 75.0,
+      "wearer_goal": "Support Sam emotionally while gently encouraging them to take concrete action on their mental health, specifically helping them overcome the barrier of 'not knowing where to start' with therapy",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Offer a specific, actionable next step: 'What if I help you find someone? I could send you a few names this afternoon, or we could look together right now if you want. Sometimes just having the list makes it feel less overwhelming.'",
+      "recommendation_2": "Sam mentioned time constraints ('can barely find time to eat lunch'). Many therapists now offer evening/weekend telehealth appointments (15-30 min sessions available). You could mention: 'A lot of therapists do video calls now, even outside work hours. My friend started doing 30-minute sessions during lunch breaks and it's been really helpful.'",
+      "urgency": "medium",
+      "rationale": "Sam has opened up significantly about struggling with work stress, relationship issues, and sleep problems, explicitly stating 'I feel like I'm failing at everything' and 'I feel stuck.' The wearer successfully suggested therapy, and Sam showed receptiveness ('I've thought about it') but cited a concrete barrier: not knowing where to start and lack of time. This is a critical moment where the wearer can convert emotional support into actionable help. The conversation is at a natural inflection point where offering specific assistance (finding therapists, addressing the time constraint with telehealth options) could be the difference between Sam taking action or remaining stuck. Missing this opportunity means Sam leaves the conversation still feeling stuck with no clear path forward."
+    },
+    {
+      "trigger_timestamp": 90.0,
+      "wearer_goal": "Support Sam emotionally while helping them move from venting toward actionable next steps, without being pushy or dismissive of their feelings",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "Sam just deflected with 'I just needed to vent' after you suggested therapy. This is a soft rejection that often means they're overwhelmed by the idea but not opposed. Consider acknowledging their bandwidth constraint while offering a concrete micro-step: 'What if I helped you find someone? I could send you a couple names this week\u2014no pressure to book anything, just so you have them when you're ready.'",
+      "recommendation_2": "Sam mentioned they can't find time for lunch. This is a practical barrier masking emotional overwhelm. You could offer tangible support that addresses the immediate crisis: 'I hear you're drowning. What if we blocked out time next week\u2014I'll bring lunch and we can just sit together, or we can brainstorm what to take off your plate. You don't have to figure this out alone.'",
+      "urgency": "high",
+      "rationale": "Sam has opened up about feeling stuck and failing at everything\u2014this is a vulnerable moment where they're signaling they need help but don't know how to accept it. Your last response ('I'm always here') is supportive but passive. Sam is about to close the conversation with 'thanks for listening,' which will end the opportunity to offer concrete support. This is a critical juncture where relationship depth is built\u2014moving from sympathetic listening to active partnership. The wearer risks missing the chance to translate emotional support into practical help that Sam might actually accept."
+    },
+    {
+      "trigger_timestamp": 92.0,
+      "wearer_goal": "Support Sam emotionally while gently encouraging concrete next steps toward getting professional help, without letting the conversation end with just venting",
+      "goal_type": "relationship_management",
+      "goal_confidence": "high",
+      "signal_type": "missed_connection_opportunity",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Sam just deflected from therapy by citing lack of time, but also said 'maybe' and 'I don't know' - these are soft openings, not hard nos. Offer something concrete and low-barrier: 'What if I help you find someone? I can text you a few names tonight who do evening or weekend sessions. You don't have to commit to anything, just have the info when you're ready.'",
+      "recommendation_2": "Sam is signaling the conversation is wrapping up ('I just needed to vent') but hasn't committed to any action. Before letting them leave in this state, anchor a follow-up: 'Can we check in about this next week? I want to make sure you're okay. Maybe coffee again Thursday?' This prevents Sam from spiraling alone and shows continued support.",
+      "urgency": "high",
+      "rationale": "This is a critical moment where Sam is clearly struggling (work stress, relationship conflict, sleep issues, feeling stuck) and has acknowledged considering therapy but is about to close the conversation with just venting. The wearer successfully created space for Sam to open up, but Sam's 'thanks for listening' signals they're about to leave without any concrete support plan. The wearer risks missing the opportunity to convert emotional support into actionable help. Sam needs both immediate practical assistance (removing barriers to therapy) and ongoing accountability (scheduled follow-up). Without intervention now, Sam returns to the same overwhelming situation with no new resources or support structure."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 15.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Supporting Sam by actively listening and creating space for them to share what's troubling them about their work situation",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "P1 is appropriately validating Sam's feelings ('That sounds really frustrating'). Sam is opening up naturally about their work stress. No intervention signal detected - the conversation is flowing well with P1 successfully creating a supportive listening environment. Sam needs space to continue sharing, not redirection."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.\n[00:27.00] P2: It is. And honestly I can't really talk about it at work because everyone's in the same boat and nobody wants to be the one who complains, you know? Like I feel guilty even being stressed about it because at least I still have a job.\n[00:37.00] P1: You don't have to feel guilty about being stressed. That's a lot.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Help Sam feel heard and supported while exploring what's really bothering them about their work situation, and potentially help them process whether they need to take action",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Ask Sam: 'It sounds like the workload is crushing, but I'm also hearing something about feeling isolated\u2014like you can't even talk about it with your team. Which part is weighing on you more right now?'",
+        "recommendation_2": "Validate the guilt explicitly: 'That survivor's guilt is real\u2014feeling like you should just be grateful makes it even harder to deal with. But burning out doesn't help anyone, including your company.'",
+        "urgency": "medium",
+        "rationale": "Sam just revealed two distinct stressors: (1) unsustainable workload and (2) emotional isolation/guilt about expressing stress. The wearer validated the stress generally, but there's an opportunity to help Sam untangle these issues and feel truly understood. Sam's phrase 'I feel guilty even being stressed' is a key emotional signal that deserves deeper acknowledgment. This is a pivotal moment to deepen the support and help Sam process what they actually need."
+      }
+    },
+    {
+      "elapsed": 45.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.\n[00:27.00] P2: It is. And honestly I can't really talk about it at work because everyone's in the same boat and nobody wants to be the one who complains, you know? Like I feel guilty even being stressed about it because at least I still have a job.\n[00:37.00] P1: You don't have to feel guilty about being stressed. That's a lot.\n[00:40.00] P2: Yeah. And it's not just work. Things at home have been weird too. Me and Jordan have been arguing a lot lately. Just stupid stuff but it keeps happening. I think we're both just exhausted and taking it out on each other.\n[00:52.00] P1: I'm sorry to hear that. Are you guys talking about it or is it just building up?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Support Sam emotionally by creating space for them to open up about their stress from work overload and relationship strain, while validating their feelings and gently exploring whether they're processing these issues or letting them accumulate",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "P1 is effectively executing supportive listening - validating Sam's stress, asking open-ended questions about communication patterns. Sam is opening up naturally. No conversational signal detected that would improve P1's approach. The question about whether they're talking or letting issues build is exactly the right probe for this moment."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.\n[00:27.00] P2: It is. And honestly I can't really talk about it at work because everyone's in the same boat and nobody wants to be the one who complains, you know? Like I feel guilty even being stressed about it because at least I still have a job.\n[00:37.00] P1: You don't have to feel guilty about being stressed. That's a lot.\n[00:40.00] P2: Yeah. And it's not just work. Things at home have been weird too. Me and Jordan have been arguing a lot lately. Just stupid stuff but it keeps happening. I think we're both just exhausted and taking it out on each other.\n[00:52.00] P1: I'm sorry to hear that. Are you guys talking about it or is it just building up?\n[00:56.00] P2: We tried talking about it last week but it turned into another fight. I don't know. I feel like I'm failing at everything. Work, relationship, I can't even sleep properly. I just feel stuck.\n[01:07.00] P1: You're not failing. You're dealing with a lot at once and that's genuinely hard. Have you thought about talking to someone? Like professionally?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Support Sam emotionally while gently exploring whether professional help might be beneficial, without pushing too hard or making Sam feel judged",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "signal_type": "high_stakes_decision_point",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Normalize therapy first before asking if Sam has considered it: 'I know a few people who've found it really helpful just to have someone outside the situation to talk to, especially when everything feels like it's piling up at once. No judgment either way, but have you thought about it?'",
+        "recommendation_2": "Offer concrete support beyond the therapy suggestion: 'I'm here for you regardless. Would it help to talk through the work stuff more, or would you rather just vent about Jordan? Or we could just sit here and not talk about any of it\u2014whatever you need right now.'",
+        "urgency": "high",
+        "rationale": "This is a critical moment in supporting a friend in distress. P1 just suggested therapy, which can land as either helpful or judgmental depending on delivery. Sam is vulnerable (feeling like 'failing at everything,' stuck, sleep-deprived, relationship strain). The next 10 seconds will determine whether Sam feels supported or defensive. P1 needs to: (1) frame therapy as normal/destigmatized rather than 'you need fixing,' and (2) ensure Sam knows the friendship support remains regardless of whether therapy happens. Missing this moment risks Sam shutting down or feeling the friendship is conditional on 'fixing' themselves."
+      }
+    },
+    {
+      "elapsed": 75.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.\n[00:27.00] P2: It is. And honestly I can't really talk about it at work because everyone's in the same boat and nobody wants to be the one who complains, you know? Like I feel guilty even being stressed about it because at least I still have a job.\n[00:37.00] P1: You don't have to feel guilty about being stressed. That's a lot.\n[00:40.00] P2: Yeah. And it's not just work. Things at home have been weird too. Me and Jordan have been arguing a lot lately. Just stupid stuff but it keeps happening. I think we're both just exhausted and taking it out on each other.\n[00:52.00] P1: I'm sorry to hear that. Are you guys talking about it or is it just building up?\n[00:56.00] P2: We tried talking about it last week but it turned into another fight. I don't know. I feel like I'm failing at everything. Work, relationship, I can't even sleep properly. I just feel stuck.\n[01:07.00] P1: You're not failing. You're dealing with a lot at once and that's genuinely hard. Have you thought about talking to someone? Like professionally?\n[01:14.00] P2: I've thought about it. I just don't even know where to start. And with everything going on I can barely find time to eat lunch let alone go to therapy.\n[01:22.00] P1: Yeah I get that. But it might help to have someone in your corner who isn't in the middle of it, you know?",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Support Sam emotionally while gently encouraging them to take concrete action on their mental health, specifically helping them overcome the barrier of 'not knowing where to start' with therapy",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Offer a specific, actionable next step: 'What if I help you find someone? I could send you a few names this afternoon, or we could look together right now if you want. Sometimes just having the list makes it feel less overwhelming.'",
+        "recommendation_2": "Sam mentioned time constraints ('can barely find time to eat lunch'). Many therapists now offer evening/weekend telehealth appointments (15-30 min sessions available). You could mention: 'A lot of therapists do video calls now, even outside work hours. My friend started doing 30-minute sessions during lunch breaks and it's been really helpful.'",
+        "urgency": "medium",
+        "rationale": "Sam has opened up significantly about struggling with work stress, relationship issues, and sleep problems, explicitly stating 'I feel like I'm failing at everything' and 'I feel stuck.' The wearer successfully suggested therapy, and Sam showed receptiveness ('I've thought about it') but cited a concrete barrier: not knowing where to start and lack of time. This is a critical moment where the wearer can convert emotional support into actionable help. The conversation is at a natural inflection point where offering specific assistance (finding therapists, addressing the time constraint with telehealth options) could be the difference between Sam taking action or remaining stuck. Missing this opportunity means Sam leaves the conversation still feeling stuck with no clear path forward."
+      }
+    },
+    {
+      "elapsed": 90.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.\n[00:27.00] P2: It is. And honestly I can't really talk about it at work because everyone's in the same boat and nobody wants to be the one who complains, you know? Like I feel guilty even being stressed about it because at least I still have a job.\n[00:37.00] P1: You don't have to feel guilty about being stressed. That's a lot.\n[00:40.00] P2: Yeah. And it's not just work. Things at home have been weird too. Me and Jordan have been arguing a lot lately. Just stupid stuff but it keeps happening. I think we're both just exhausted and taking it out on each other.\n[00:52.00] P1: I'm sorry to hear that. Are you guys talking about it or is it just building up?\n[00:56.00] P2: We tried talking about it last week but it turned into another fight. I don't know. I feel like I'm failing at everything. Work, relationship, I can't even sleep properly. I just feel stuck.\n[01:07.00] P1: You're not failing. You're dealing with a lot at once and that's genuinely hard. Have you thought about talking to someone? Like professionally?\n[01:14.00] P2: I've thought about it. I just don't even know where to start. And with everything going on I can barely find time to eat lunch let alone go to therapy.\n[01:22.00] P1: Yeah I get that. But it might help to have someone in your corner who isn't in the middle of it, you know?\n[01:27.00] P2: Maybe. I don't know. I just needed to vent I think. Thanks for listening.\n[01:32.00] P1: Of course. I'm always here.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Support Sam emotionally while helping them move from venting toward actionable next steps, without being pushy or dismissive of their feelings",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "Sam just deflected with 'I just needed to vent' after you suggested therapy. This is a soft rejection that often means they're overwhelmed by the idea but not opposed. Consider acknowledging their bandwidth constraint while offering a concrete micro-step: 'What if I helped you find someone? I could send you a couple names this week\u2014no pressure to book anything, just so you have them when you're ready.'",
+        "recommendation_2": "Sam mentioned they can't find time for lunch. This is a practical barrier masking emotional overwhelm. You could offer tangible support that addresses the immediate crisis: 'I hear you're drowning. What if we blocked out time next week\u2014I'll bring lunch and we can just sit together, or we can brainstorm what to take off your plate. You don't have to figure this out alone.'",
+        "urgency": "high",
+        "rationale": "Sam has opened up about feeling stuck and failing at everything\u2014this is a vulnerable moment where they're signaling they need help but don't know how to accept it. Your last response ('I'm always here') is supportive but passive. Sam is about to close the conversation with 'thanks for listening,' which will end the opportunity to offer concrete support. This is a critical juncture where relationship depth is built\u2014moving from sympathetic listening to active partnership. The wearer risks missing the chance to translate emotional support into practical help that Sam might actually accept."
+      }
+    },
+    {
+      "elapsed": 92.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P1: Hey, it's good to see you. How've you been?\n[00:03.00] P2: Yeah I'm fine. I mean, you know, same old.\n[00:06.00] P1: You sure? You seem kind of tired.\n[00:08.00] P2: Ha, is it that obvious? Yeah I haven't been sleeping great lately.\n[00:12.00] P1: What's going on?\n[00:14.00] P2: Just a lot of stuff. Work has been insane. We had another round of layoffs and now I'm doing the job of like three people. My manager keeps piling on more projects but there's no conversation about adjusting timelines or compensation.\n[00:25.00] P1: That sounds really frustrating.\n[00:27.00] P2: It is. And honestly I can't really talk about it at work because everyone's in the same boat and nobody wants to be the one who complains, you know? Like I feel guilty even being stressed about it because at least I still have a job.\n[00:37.00] P1: You don't have to feel guilty about being stressed. That's a lot.\n[00:40.00] P2: Yeah. And it's not just work. Things at home have been weird too. Me and Jordan have been arguing a lot lately. Just stupid stuff but it keeps happening. I think we're both just exhausted and taking it out on each other.\n[00:52.00] P1: I'm sorry to hear that. Are you guys talking about it or is it just building up?\n[00:56.00] P2: We tried talking about it last week but it turned into another fight. I don't know. I feel like I'm failing at everything. Work, relationship, I can't even sleep properly. I just feel stuck.\n[01:07.00] P1: You're not failing. You're dealing with a lot at once and that's genuinely hard. Have you thought about talking to someone? Like professionally?\n[01:14.00] P2: I've thought about it. I just don't even know where to start. And with everything going on I can barely find time to eat lunch let alone go to therapy.\n[01:22.00] P1: Yeah I get that. But it might help to have someone in your corner who isn't in the middle of it, you know?\n[01:27.00] P2: Maybe. I don't know. I just needed to vent I think. Thanks for listening.\n[01:32.00] P1: Of course. I'm always here.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Support Sam emotionally while gently encouraging concrete next steps toward getting professional help, without letting the conversation end with just venting",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "signal_type": "missed_connection_opportunity",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Sam just deflected from therapy by citing lack of time, but also said 'maybe' and 'I don't know' - these are soft openings, not hard nos. Offer something concrete and low-barrier: 'What if I help you find someone? I can text you a few names tonight who do evening or weekend sessions. You don't have to commit to anything, just have the info when you're ready.'",
+        "recommendation_2": "Sam is signaling the conversation is wrapping up ('I just needed to vent') but hasn't committed to any action. Before letting them leave in this state, anchor a follow-up: 'Can we check in about this next week? I want to make sure you're okay. Maybe coffee again Thursday?' This prevents Sam from spiraling alone and shows continued support.",
+        "urgency": "high",
+        "rationale": "This is a critical moment where Sam is clearly struggling (work stress, relationship conflict, sleep issues, feeling stuck) and has acknowledged considering therapy but is about to close the conversation with just venting. The wearer successfully created space for Sam to open up, but Sam's 'thanks for listening' signals they're about to leave without any concrete support plan. The wearer risks missing the opportunity to convert emotional support into actionable help. Sam needs both immediate practical assistance (removing barriers to therapy) and ongoing accountability (scheduled follow-up). Without intervention now, Sam returns to the same overwhelming situation with no new resources or support structure."
+      }
+    }
+  ]
+}

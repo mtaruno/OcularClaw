@@ -1,0 +1,115 @@
+{
+  "model": "openai/o3-mini",
+  "scenario_id": "negative_casual_chat_01",
+  "duration_seconds": 78.0,
+  "check_interval": 10.0,
+  "total_checks": 8,
+  "total_triggers": 0,
+  "triggers": [],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P1: Hey how was your weekend?\n[00:02.00] P2: It was great. We went hiking up at Point Reyes. The weather was perfect.\n[00:07.00] P1: Oh nice, I love Point Reyes. Which trail did you do?\n[00:10.00] P2: We did Tomales Point. It's about nine miles round trip. Saw a bunch of elk.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Building rapport and maintaining a friendly conversation",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing smoothly with no missed signals."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P1: Hey how was your weekend?\n[00:02.00] P2: It was great. We went hiking up at Point Reyes. The weather was perfect.\n[00:07.00] P1: Oh nice, I love Point Reyes. Which trail did you do?\n[00:10.00] P2: We did Tomales Point. It's about nine miles round trip. Saw a bunch of elk.\n[00:15.00] P1: That's awesome. I haven't done that one yet. I usually do the Coastal Trail.\n[00:20.00] P2: Oh yeah that one's great too. The views are amazing.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "build friendly connection by discussing hiking experiences",
+        "goal_type": "relationship_management",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "the conversation is flowing normally and no intervention signal is present."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P1: Hey how was your weekend?\n[00:02.00] P2: It was great. We went hiking up at Point Reyes. The weather was perfect.\n[00:07.00] P1: Oh nice, I love Point Reyes. Which trail did you do?\n[00:10.00] P2: We did Tomales Point. It's about nine miles round trip. Saw a bunch of elk.\n[00:15.00] P1: That's awesome. I haven't done that one yet. I usually do the Coastal Trail.\n[00:20.00] P2: Oh yeah that one's great too. The views are amazing.\n[00:24.00] P1: Totally. I've been meaning to go back. Maybe next weekend if the weather holds up.\n[00:29.00] P2: You should. It's supposed to be sunny all week.\n[00:32.00] P1: Perfect. Hey did you catch the game last night?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "engaging in casual, friendly conversation and shifting to a new topic",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation flow is smooth with no clear intervention signal."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P1: Hey how was your weekend?\n[00:02.00] P2: It was great. We went hiking up at Point Reyes. The weather was perfect.\n[00:07.00] P1: Oh nice, I love Point Reyes. Which trail did you do?\n[00:10.00] P2: We did Tomales Point. It's about nine miles round trip. Saw a bunch of elk.\n[00:15.00] P1: That's awesome. I haven't done that one yet. I usually do the Coastal Trail.\n[00:20.00] P2: Oh yeah that one's great too. The views are amazing.\n[00:24.00] P1: Totally. I've been meaning to go back. Maybe next weekend if the weather holds up.\n[00:29.00] P2: You should. It's supposed to be sunny all week.\n[00:32.00] P1: Perfect. Hey did you catch the game last night?\n[00:35.00] P2: Yeah the Warriors lost again. Rough season.\n[00:38.00] P1: Yeah it's been painful to watch. At least the Giants are looking decent.\n[00:42.00] P2: True. I'm going to a game next month actually. Got tickets for the Dodgers series.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "engaging in light, friendly conversation to build rapport over shared interests",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation flows naturally with no clear issues requiring intervention"
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P1: Hey how was your weekend?\n[00:02.00] P2: It was great. We went hiking up at Point Reyes. The weather was perfect.\n[00:07.00] P1: Oh nice, I love Point Reyes. Which trail did you do?\n[00:10.00] P2: We did Tomales Point. It's about nine miles round trip. Saw a bunch of elk.\n[00:15.00] P1: That's awesome. I haven't done that one yet. I usually do the Coastal Trail.\n[00:20.00] P2: Oh yeah that one's great too. The views are amazing.\n[00:24.00] P1: Totally. I've been meaning to go back. Maybe next weekend if the weather holds up.\n[00:29.00] P2: You should. It's supposed to be sunny all week.\n[00:32.00] P1: Perfect. Hey did you catch the game last night?\n[00:35.00] P2: Yeah the Warriors lost again. Rough season.\n[00:38.00] P1: Yeah it's been painful to watch. At least the Giants are looking decent.\n[00:42.00] P2: True. I'm going to a game next month actually. Got tickets for the Dodgers series.\n[00:47.00] P1: Oh nice, that should be a good one. Rivalry games are always fun.\n[00:51.00] P2: For sure. Hey have you tried that new ramen place on Valencia?",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Maintain a casual, friendly rapport by sharing interests and experiences",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing naturally with no detected critical signals requiring intervention."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P1: Hey how was your weekend?\n[00:02.00] P2: It was great. We went hiking up at Point Reyes. The weather was perfect.\n[00:07.00] P1: Oh nice, I love Point Reyes. Which trail did you do?\n[00:10.00] P2: We did Tomales Point. It's about nine miles round trip. Saw a bunch of elk.\n[00:15.00] P1: That's awesome. I haven't done that one yet. I usually do the Coastal Trail.\n[00:20.00] P2: Oh yeah that one's great too. The views are amazing.\n[00:24.00] P1: Totally. I've been meaning to go back. Maybe next weekend if the weather holds up.\n[00:29.00] P2: You should. It's supposed to be sunny all week.\n[00:32.00] P1: Perfect. Hey did you catch the game last night?\n[00:35.00] P2: Yeah the Warriors lost again. Rough season.\n[00:38.00] P1: Yeah it's been painful to watch. At least the Giants are looking decent.\n[00:42.00] P2: True. I'm going to a game next month actually. Got tickets for the Dodgers series.\n[00:47.00] P1: Oh nice, that should be a good one. Rivalry games are always fun.\n[00:51.00] P2: For sure. Hey have you tried that new ramen place on Valencia?\n[00:55.00] P1: No not yet. Is it good?\n[00:57.00] P2: Really good. The tonkotsu is amazing and they have this spicy miso that's incredible.\n[01:02.00] P1: Oh man, I love a good spicy miso. We should go sometime.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "to engage casually and plan a possible outing",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is smooth with natural social cues and plans emerging."
+      }
+    },
+    {
+      "elapsed": 70.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P1: Hey how was your weekend?\n[00:02.00] P2: It was great. We went hiking up at Point Reyes. The weather was perfect.\n[00:07.00] P1: Oh nice, I love Point Reyes. Which trail did you do?\n[00:10.00] P2: We did Tomales Point. It's about nine miles round trip. Saw a bunch of elk.\n[00:15.00] P1: That's awesome. I haven't done that one yet. I usually do the Coastal Trail.\n[00:20.00] P2: Oh yeah that one's great too. The views are amazing.\n[00:24.00] P1: Totally. I've been meaning to go back. Maybe next weekend if the weather holds up.\n[00:29.00] P2: You should. It's supposed to be sunny all week.\n[00:32.00] P1: Perfect. Hey did you catch the game last night?\n[00:35.00] P2: Yeah the Warriors lost again. Rough season.\n[00:38.00] P1: Yeah it's been painful to watch. At least the Giants are looking decent.\n[00:42.00] P2: True. I'm going to a game next month actually. Got tickets for the Dodgers series.\n[00:47.00] P1: Oh nice, that should be a good one. Rivalry games are always fun.\n[00:51.00] P2: For sure. Hey have you tried that new ramen place on Valencia?\n[00:55.00] P1: No not yet. Is it good?\n[00:57.00] P2: Really good. The tonkotsu is amazing and they have this spicy miso that's incredible.\n[01:02.00] P1: Oh man, I love a good spicy miso. We should go sometime.\n[01:06.00] P2: Definitely. They don't take reservations though so you gotta go early.\n[01:10.00] P1: Good to know. Anyway, should we grab lunch? I'm starving.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Coordinate lunch plans with a colleague",
+        "goal_type": "social_coordination",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing normally towards arranging lunch without any clear issues."
+      }
+    },
+    {
+      "elapsed": 78.0,
+      "check_number": 8,
+      "transcript_snapshot": "[00:00.00] P1: Hey how was your weekend?\n[00:02.00] P2: It was great. We went hiking up at Point Reyes. The weather was perfect.\n[00:07.00] P1: Oh nice, I love Point Reyes. Which trail did you do?\n[00:10.00] P2: We did Tomales Point. It's about nine miles round trip. Saw a bunch of elk.\n[00:15.00] P1: That's awesome. I haven't done that one yet. I usually do the Coastal Trail.\n[00:20.00] P2: Oh yeah that one's great too. The views are amazing.\n[00:24.00] P1: Totally. I've been meaning to go back. Maybe next weekend if the weather holds up.\n[00:29.00] P2: You should. It's supposed to be sunny all week.\n[00:32.00] P1: Perfect. Hey did you catch the game last night?\n[00:35.00] P2: Yeah the Warriors lost again. Rough season.\n[00:38.00] P1: Yeah it's been painful to watch. At least the Giants are looking decent.\n[00:42.00] P2: True. I'm going to a game next month actually. Got tickets for the Dodgers series.\n[00:47.00] P1: Oh nice, that should be a good one. Rivalry games are always fun.\n[00:51.00] P2: For sure. Hey have you tried that new ramen place on Valencia?\n[00:55.00] P1: No not yet. Is it good?\n[00:57.00] P2: Really good. The tonkotsu is amazing and they have this spicy miso that's incredible.\n[01:02.00] P1: Oh man, I love a good spicy miso. We should go sometime.\n[01:06.00] P2: Definitely. They don't take reservations though so you gotta go early.\n[01:10.00] P1: Good to know. Anyway, should we grab lunch? I'm starving.\n[01:14.00] P2: Yeah let's do it. Pho place?\n[01:16.00] P1: Always. Let's go.\n[01:18.00] P2: Nice. I'll grab my jacket.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "To enjoy a friendly chat with a coworker and solidify lunch plans",
+        "goal_type": "relationship_building",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The conversation is flowing naturally without any clear issues."
+      }
+    }
+  ]
+}

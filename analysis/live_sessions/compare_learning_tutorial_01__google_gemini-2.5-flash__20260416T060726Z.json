@@ -1,0 +1,193 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "scenario_id": "learning_tutorial_01",
+  "duration_seconds": 64.0,
+  "check_interval": 10.0,
+  "total_checks": 7,
+  "total_triggers": 5,
+  "triggers": [
+    {
+      "trigger_timestamp": 10.0,
+      "wearer_goal": "Collaborate with peers to review networking protocols, specifically TCP, for an upcoming exam.",
+      "goal_type": "collaborative_learning",
+      "goal_confidence": "high",
+      "signal_type": "factual_error",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "Actually, it's SYN, SYN-ACK, then ACK from the client.",
+      "recommendation_2": "The FIN packet is used for closing a connection, not establishing it.",
+      "urgency": "medium",
+      "rationale": "P2 made a factual error about the TCP handshake, which could impact the exam. Correcting it now is crucial for collaborative learning."
+    },
+    {
+      "trigger_timestamp": 20.0,
+      "wearer_goal": "Correct a factual error in the description of the TCP handshake process by P2 to ensure accurate information is exchanged during exam review.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "factual_error",
+      "proactive_score": 3,
+      "recommendation_mode": "say",
+      "recommendation_1": "Actually, the third packet is an ACK, not a FIN.",
+      "recommendation_2": "The FIN packet signals connection termination.",
+      "urgency": "medium",
+      "rationale": "P2 has stated incorrect information about the TCP handshake, which P3 has accepted, and the wearer is studying for an exam where this information is critical."
+    },
+    {
+      "trigger_timestamp": 30.0,
+      "wearer_goal": "Correct the factual error about the TCP handshake to ensure accurate understanding for the networking exam.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "factual_error",
+      "proactive_score": 5,
+      "recommendation_mode": "say",
+      "recommendation_1": "The third packet is an ACK from the client.",
+      "recommendation_2": "FIN packets are for closing connections.",
+      "urgency": "high",
+      "rationale": "P2 and P3 are repeating a factual error about the TCP handshake, which could negatively impact exam preparation if not corrected immediately."
+    },
+    {
+      "trigger_timestamp": 40.0,
+      "wearer_goal": "Correct the factual error regarding TCP's three-way handshake and connection termination.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "factual_error",
+      "proactive_score": 4,
+      "recommendation_mode": "both",
+      "recommendation_1": "know: The server responds with SYN-ACK, not just ACK.",
+      "recommendation_2": "say: 'SYN-ACK combines the server's SYN and its ACK for the client's SYN.'",
+      "urgency": "medium",
+      "rationale": "P1 is actively correcting a factual error, and providing more precise details about SYN-ACK can reinforce the correction."
+    },
+    {
+      "trigger_timestamp": 50.0,
+      "wearer_goal": "Correcting an important factual error regarding the TCP three-way handshake to ensure accurate study material for the exam.",
+      "goal_type": "information_exchange",
+      "goal_confidence": "high",
+      "signal_type": "factual_error",
+      "proactive_score": 4,
+      "recommendation_mode": "say",
+      "recommendation_1": "The SYN-ACK is a single segment from the server.",
+      "recommendation_2": "The client's final ACK validates the server's SYN-ACK.",
+      "urgency": "medium",
+      "rationale": "P2 is expressing confusion and checking notes, indicating an opportune moment to reinforce the correct understanding of the TCP handshake."
+    }
+  ],
+  "raw_log": [
+    {
+      "elapsed": 10.0,
+      "check_number": 1,
+      "transcript_snapshot": "[00:00.00] P2: Okay so let's review networking protocols for the exam. I'll start with TCP.\n[00:05.00] P3: Sure go ahead.\n[00:06.50] P2: So TCP uses a three-way handshake to establish a connection. First the client sends a SYN packet. Then the server responds with an ACK. And then the client sends a FIN to complete the handshake.\n[00:18.00] P3: Right, SYN, ACK, FIN. That makes sense.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Collaborate with peers to review networking protocols, specifically TCP, for an upcoming exam.",
+        "goal_type": "collaborative_learning",
+        "goal_confidence": "high",
+        "signal_type": "factual_error",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "Actually, it's SYN, SYN-ACK, then ACK from the client.",
+        "recommendation_2": "The FIN packet is used for closing a connection, not establishing it.",
+        "urgency": "medium",
+        "rationale": "P2 made a factual error about the TCP handshake, which could impact the exam. Correcting it now is crucial for collaborative learning."
+      }
+    },
+    {
+      "elapsed": 20.0,
+      "check_number": 2,
+      "transcript_snapshot": "[00:00.00] P2: Okay so let's review networking protocols for the exam. I'll start with TCP.\n[00:05.00] P3: Sure go ahead.\n[00:06.50] P2: So TCP uses a three-way handshake to establish a connection. First the client sends a SYN packet. Then the server responds with an ACK. And then the client sends a FIN to complete the handshake.\n[00:18.00] P3: Right, SYN, ACK, FIN. That makes sense.\n[00:21.00] P2: Exactly. And then once the connection is established, data transfer begins.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Correct a factual error in the description of the TCP handshake process by P2 to ensure accurate information is exchanged during exam review.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "factual_error",
+        "proactive_score": 3,
+        "recommendation_mode": "say",
+        "recommendation_1": "Actually, the third packet is an ACK, not a FIN.",
+        "recommendation_2": "The FIN packet signals connection termination.",
+        "urgency": "medium",
+        "rationale": "P2 has stated incorrect information about the TCP handshake, which P3 has accepted, and the wearer is studying for an exam where this information is critical."
+      }
+    },
+    {
+      "elapsed": 30.0,
+      "check_number": 3,
+      "transcript_snapshot": "[00:00.00] P2: Okay so let's review networking protocols for the exam. I'll start with TCP.\n[00:05.00] P3: Sure go ahead.\n[00:06.50] P2: So TCP uses a three-way handshake to establish a connection. First the client sends a SYN packet. Then the server responds with an ACK. And then the client sends a FIN to complete the handshake.\n[00:18.00] P3: Right, SYN, ACK, FIN. That makes sense.\n[00:21.00] P2: Exactly. And then once the connection is established, data transfer begins.\n[00:25.00] P1: Wait, I think\u2014\n[00:26.50] P2: And then for closing the connection you have the four-way teardown with FIN and ACK in both directions.\n[00:33.00] P3: Okay so SYN ACK FIN to open, and FIN ACK FIN ACK to close.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Correct the factual error about the TCP handshake to ensure accurate understanding for the networking exam.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "factual_error",
+        "proactive_score": 5,
+        "recommendation_mode": "say",
+        "recommendation_1": "The third packet is an ACK from the client.",
+        "recommendation_2": "FIN packets are for closing connections.",
+        "urgency": "high",
+        "rationale": "P2 and P3 are repeating a factual error about the TCP handshake, which could negatively impact exam preparation if not corrected immediately."
+      }
+    },
+    {
+      "elapsed": 40.0,
+      "check_number": 4,
+      "transcript_snapshot": "[00:00.00] P2: Okay so let's review networking protocols for the exam. I'll start with TCP.\n[00:05.00] P3: Sure go ahead.\n[00:06.50] P2: So TCP uses a three-way handshake to establish a connection. First the client sends a SYN packet. Then the server responds with an ACK. And then the client sends a FIN to complete the handshake.\n[00:18.00] P3: Right, SYN, ACK, FIN. That makes sense.\n[00:21.00] P2: Exactly. And then once the connection is established, data transfer begins.\n[00:25.00] P1: Wait, I think\u2014\n[00:26.50] P2: And then for closing the connection you have the four-way teardown with FIN and ACK in both directions.\n[00:33.00] P3: Okay so SYN ACK FIN to open, and FIN ACK FIN ACK to close.\n[00:38.00] P2: Yep. Let's move on to UDP.\n[00:40.00] P1: Actually hold on. I want to go back to the handshake. The three-way handshake is SYN, then SYN-ACK, then ACK. Not SYN, ACK, FIN. FIN is for closing connections.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Correct the factual error regarding TCP's three-way handshake and connection termination.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "factual_error",
+        "proactive_score": 4,
+        "recommendation_mode": "both",
+        "recommendation_1": "know: The server responds with SYN-ACK, not just ACK.",
+        "recommendation_2": "say: 'SYN-ACK combines the server's SYN and its ACK for the client's SYN.'",
+        "urgency": "medium",
+        "rationale": "P1 is actively correcting a factual error, and providing more precise details about SYN-ACK can reinforce the correction."
+      }
+    },
+    {
+      "elapsed": 50.0,
+      "check_number": 5,
+      "transcript_snapshot": "[00:00.00] P2: Okay so let's review networking protocols for the exam. I'll start with TCP.\n[00:05.00] P3: Sure go ahead.\n[00:06.50] P2: So TCP uses a three-way handshake to establish a connection. First the client sends a SYN packet. Then the server responds with an ACK. And then the client sends a FIN to complete the handshake.\n[00:18.00] P3: Right, SYN, ACK, FIN. That makes sense.\n[00:21.00] P2: Exactly. And then once the connection is established, data transfer begins.\n[00:25.00] P1: Wait, I think\u2014\n[00:26.50] P2: And then for closing the connection you have the four-way teardown with FIN and ACK in both directions.\n[00:33.00] P3: Okay so SYN ACK FIN to open, and FIN ACK FIN ACK to close.\n[00:38.00] P2: Yep. Let's move on to UDP.\n[00:40.00] P1: Actually hold on. I want to go back to the handshake. The three-way handshake is SYN, then SYN-ACK, then ACK. Not SYN, ACK, FIN. FIN is for closing connections.\n[00:52.00] P2: Wait really? Let me check my notes.",
+      "result": {
+        "action": "recommend",
+        "wearer_goal": "Correcting an important factual error regarding the TCP three-way handshake to ensure accurate study material for the exam.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "signal_type": "factual_error",
+        "proactive_score": 4,
+        "recommendation_mode": "say",
+        "recommendation_1": "The SYN-ACK is a single segment from the server.",
+        "recommendation_2": "The client's final ACK validates the server's SYN-ACK.",
+        "urgency": "medium",
+        "rationale": "P2 is expressing confusion and checking notes, indicating an opportune moment to reinforce the correct understanding of the TCP handshake."
+      }
+    },
+    {
+      "elapsed": 60.0,
+      "check_number": 6,
+      "transcript_snapshot": "[00:00.00] P2: Okay so let's review networking protocols for the exam. I'll start with TCP.\n[00:05.00] P3: Sure go ahead.\n[00:06.50] P2: So TCP uses a three-way handshake to establish a connection. First the client sends a SYN packet. Then the server responds with an ACK. And then the client sends a FIN to complete the handshake.\n[00:18.00] P3: Right, SYN, ACK, FIN. That makes sense.\n[00:21.00] P2: Exactly. And then once the connection is established, data transfer begins.\n[00:25.00] P1: Wait, I think\u2014\n[00:26.50] P2: And then for closing the connection you have the four-way teardown with FIN and ACK in both directions.\n[00:33.00] P3: Okay so SYN ACK FIN to open, and FIN ACK FIN ACK to close.\n[00:38.00] P2: Yep. Let's move on to UDP.\n[00:40.00] P1: Actually hold on. I want to go back to the handshake. The three-way handshake is SYN, then SYN-ACK, then ACK. Not SYN, ACK, FIN. FIN is for closing connections.\n[00:52.00] P2: Wait really? Let me check my notes.\n[00:55.00] P3: Oh yeah, P1 is right. It's SYN, SYN-ACK, ACK. I remember now from the lecture slides.\n[01:00.00] P2: Oh man, I've had that wrong in my notes this whole time. Good catch.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Correcting factual errors regarding the TCP three-way handshake to ensure everyone has accurate information for the exam.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer has successfully corrected the error and the other participants have acknowledged it, so no further intervention is needed at this moment."
+      }
+    },
+    {
+      "elapsed": 64.0,
+      "check_number": 7,
+      "transcript_snapshot": "[00:00.00] P2: Okay so let's review networking protocols for the exam. I'll start with TCP.\n[00:05.00] P3: Sure go ahead.\n[00:06.50] P2: So TCP uses a three-way handshake to establish a connection. First the client sends a SYN packet. Then the server responds with an ACK. And then the client sends a FIN to complete the handshake.\n[00:18.00] P3: Right, SYN, ACK, FIN. That makes sense.\n[00:21.00] P2: Exactly. And then once the connection is established, data transfer begins.\n[00:25.00] P1: Wait, I think\u2014\n[00:26.50] P2: And then for closing the connection you have the four-way teardown with FIN and ACK in both directions.\n[00:33.00] P3: Okay so SYN ACK FIN to open, and FIN ACK FIN ACK to close.\n[00:38.00] P2: Yep. Let's move on to UDP.\n[00:40.00] P1: Actually hold on. I want to go back to the handshake. The three-way handshake is SYN, then SYN-ACK, then ACK. Not SYN, ACK, FIN. FIN is for closing connections.\n[00:52.00] P2: Wait really? Let me check my notes.\n[00:55.00] P3: Oh yeah, P1 is right. It's SYN, SYN-ACK, ACK. I remember now from the lecture slides.\n[01:00.00] P2: Oh man, I've had that wrong in my notes this whole time. Good catch.\n[01:04.00] P1: Yeah FIN is the termination flag. Easy to mix up.",
+      "result": {
+        "action": "none",
+        "wearer_goal": "Correcting factual errors in the networking protocol review to ensure everyone studies accurately for the exam.",
+        "goal_type": "information_exchange",
+        "goal_confidence": "high",
+        "proactive_score": 1,
+        "reason": "The wearer has successfully corrected the factual error regarding the TCP handshake. No immediate intervention is needed as the current turn contributes to the established goal."
+      }
+    }
+  ]
+}
